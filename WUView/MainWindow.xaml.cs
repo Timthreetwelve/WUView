@@ -104,7 +104,7 @@ namespace WUView
             }
 
             // Hide details panel
-            if (!Settings.Default.HideDetails)
+            if (!Settings.Default.ShowDetails)
             {
                 sc1.Visibility = Visibility.Collapsed;
             }
@@ -191,6 +191,10 @@ namespace WUView
 
             // Shut down NLog
             LogManager.Shutdown();
+
+            // details pane height
+            double h = sc1.ActualHeight;
+            Settings.Default.DetailsHeight = sc1.ActualHeight;
 
             // save the property settings
             Settings.Default.WindowLeft = Left;
@@ -308,7 +312,7 @@ namespace WUView
                         }
                         break;
                     }
-                case "HideDetails":
+                case "ShowDetails":
                     {
                         if ((bool)e.NewValue)
                         {
@@ -662,12 +666,13 @@ namespace WUView
         #region Save details to a text file
         private void SaveToFile()
         {
+            string fname = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".txt";
             SaveFileDialog dialog = new SaveFileDialog
             {
                 Title = "Save",
                 Filter = "Text File|*.txt",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                FileName = "WUView.txt"
+                FileName = fname
             };
             var result = dialog.ShowDialog();
             if (result == true)
@@ -709,5 +714,10 @@ namespace WUView
             }
         }
         #endregion Save details to a text file
+
+        private void Window_ContentRendered(object sender, EventArgs e)
+        {
+            sc1.Height = Settings.Default.DetailsHeight;
+        }
     }
 }

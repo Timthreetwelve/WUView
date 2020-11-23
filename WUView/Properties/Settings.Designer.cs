@@ -12,7 +12,7 @@ namespace WUView.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -61,7 +61,7 @@ namespace WUView.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("400")]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
         public double WindowHeight {
             get {
                 return ((double)(this["WindowHeight"]));
@@ -145,19 +145,19 @@ namespace WUView.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool HideDetails {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowDetails {
             get {
-                return ((bool)(this["HideDetails"]));
+                return ((bool)(this["ShowDetails"]));
             }
             set {
-                this["HideDetails"] = value;
+                this["ShowDetails"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("230")]
+        [global::System.Configuration.DefaultSettingValueAttribute("280")]
         public double DetailsHeight {
             get {
                 return ((double)(this["DetailsHeight"]));

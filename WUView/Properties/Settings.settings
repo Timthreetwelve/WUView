@@ -12,7 +12,7 @@
       <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="WindowHeight" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">400</Value>
+      <Value Profile="(Default)">500</Value>
     </Setting>
     <Setting Name="WindowWidth" Type="System.Double" Scope="User">
       <Value Profile="(Default)">300</Value>
@@ -32,11 +32,11 @@
     <Setting Name="FontFamily" Type="System.String" Scope="User">
       <Value Profile="(Default)">Segoe UI</Value>
     </Setting>
-    <Setting Name="HideDetails" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+    <Setting Name="ShowDetails" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="DetailsHeight" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">230</Value>
+      <Value Profile="(Default)">280</Value>
     </Setting>
   </Settings>
 </SettingsFile>
