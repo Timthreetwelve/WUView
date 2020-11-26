@@ -49,7 +49,7 @@ namespace WUView.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        [global::System.Configuration.DefaultSettingValueAttribute("300")]
         public double WindowLeft {
             get {
                 return ((double)(this["WindowLeft"]));
@@ -61,7 +61,7 @@ namespace WUView.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        [global::System.Configuration.DefaultSettingValueAttribute("600")]
         public double WindowHeight {
             get {
                 return ((double)(this["WindowHeight"]));
@@ -73,7 +73,7 @@ namespace WUView.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        [global::System.Configuration.DefaultSettingValueAttribute("900")]
         public double WindowWidth {
             get {
                 return ((double)(this["WindowWidth"]));
@@ -157,7 +157,7 @@ namespace WUView.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("280")]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
         public double DetailsHeight {
             get {
                 return ((double)(this["DetailsHeight"]));

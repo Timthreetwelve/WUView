@@ -178,6 +178,9 @@
     <Resource Include="Icons\json.png" />
     <Resource Include="Icons\font.png" />
     <Resource Include="Icons\disk--pencil.png" />
+    <Resource Include="Icons\gear.png" />
+    <Resource Include="Icons\binocular.png" />
+    <Resource Include="Icons\document-excel-csv.png" />
     <Content Include="ReadMe.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

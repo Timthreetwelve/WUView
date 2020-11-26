@@ -14,7 +14,8 @@ Getting Started
 After installing Windows Update Viewer, launch it from the Start menu. You will see that the window
 has a grid on the top and a details pane on the bottom. Select a row in the grid and details for
 that update will be displayed in the details pane. The details pane can be closed by unchecking
-Show Detail Pane on the Options menu.
+Show Detail Pane on the Options menu. The details pane can be resized by dragging the splitter up
+or down.
 
 
 Filtering the Grid
@@ -43,13 +44,14 @@ information in the grid portion to the Windows clipboard by selecting that item 
 Save to a File
 ==============
 You may save the details for all updates that haven't been excluded to a text file by selecting Save
-Details to Text File from the File menu.
+Details to Text File from the File menu. You can also gave the grid data to a CSV file.
 
 
 Other Options
 =============
 There are other menu options to change the zoom level of the window, choose another font, show grid
-lines and alternate row shading.
+lines and alternate row shading. It is also possible to open the Windows Event Log and Windows Update
+from the File menu.
 
 
 Notices and License

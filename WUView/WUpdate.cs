@@ -1,7 +1,6 @@
 ﻿// Copyright(c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 using System;
-using System.Windows.Documents;
 
 namespace WUView
 {
@@ -101,11 +100,6 @@ namespace WUView
         public string ELProvider { get; set; }
 
         public DateTime? ELDate { get; set; }
-
-        //public object ElProperty { get; set; }
-
         #endregion Properties from Event Log
-
-        //
     }
 }

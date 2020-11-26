@@ -12,14 +12,13 @@
     MinHeight="250"
     Closing="Window_Closing"
     KeyDown="Window_KeyDown"
-    SizeToContent="Width"
-    ContentRendered="Window_ContentRendered"
+    SizeToContent="Manual"
     mc:Ignorable="d">
 
     <!--#region Styles-->
     <Window.Resources>
         <Style x:Key="ColumnMargin5" TargetType="TextBlock">
-            <Setter Property="Margin" Value="5,0,5,0" />
+            <Setter Property="Margin" Value="5,0,8,0" />
         </Style>
         <Style x:Key="MyWaterMarkStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Template">
@@ -91,7 +90,7 @@
     </Window.Resources>
     <!--#endregion-->
 
-    <Grid Background="AliceBlue">
+    <Grid Background="Cornsilk">
         <!--#region Row & Column Definitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10" />
@@ -100,9 +99,9 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="24" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3" />
+            <RowDefinition x:Name="deetsRow" Height="{Binding DetailsHeight, Source={x:Static p:Settings.Default}}" />
             <RowDefinition Height="24" />
         </Grid.RowDefinitions>
         <!--#endregion-->
@@ -131,11 +130,30 @@
                     </MenuItem>
                     <Separator />
                     <MenuItem
+                        Click="MnuSaveToCsv_Click"
+                        Header="Save Grid to CSV File"
+                        InputGestureText="Ctrl+Shift+S">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/document-excel-csv.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem
                         Click="MnuSaveText_Click"
                         Header="Save Details to Text File"
                         InputGestureText="Ctrl+S">
                         <MenuItem.Icon>
                             <Image Source="/Icons/disk--pencil.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem Click="OpenWU_Click" Header="Open Windows Update">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/gear.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Click="OpenEV_Click" Header="Open Event Viewer">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/binocular.png" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
@@ -164,7 +182,7 @@
                         <MenuItem
                             Click="GridSmaller_Click"
                             Header="_Smaller"
-                            InputGestureText="NumPad -"
+                            InputGestureText="Ctrl+NumPad -"
                             StaysOpenOnClick="True">
                             <MenuItem.Icon>
                                 <Image Source="/Icons/magnifier-zoom-out.png" />
@@ -173,7 +191,7 @@
                         <MenuItem
                             Click="GridLarger_Click"
                             Header="_Larger"
-                            InputGestureText="NumPad +"
+                            InputGestureText="Ctrl+NumPad +"
                             StaysOpenOnClick="True">
                             <MenuItem.Icon>
                                 <Image Source="/Icons/magnifier-zoom-in.png" />
@@ -183,7 +201,7 @@
                         <MenuItem
                             Click="GridReset_Click"
                             Header="_Reset"
-                            InputGestureText="NumPad 0"
+                            InputGestureText="Ctrl+NumPad 0"
                             StaysOpenOnClick="True">
                             <MenuItem.Icon>
                                 <Image Source="/Icons/magnifier-zoom-actual-equal.png" />
@@ -204,7 +222,8 @@
                     <MenuItem
                         x:Name="mnuEditExcludes"
                         Click="MnuEditExcludes_Click"
-                        Header="Edit Exclude List">
+                        Header="_Edit Exclude List"
+                        InputGestureText="Ctrl+E">
                         <MenuItem.Icon>
                             <Image Source="/Icons/document--pencil.png" />
                         </MenuItem.Icon>
@@ -212,25 +231,25 @@
                     <MenuItem
                         x:Name="mnuHideDefender"
                         Checked="MnuHideDefender_Click"
-                        Header="Hide Excluded"
+                        Header="_Hide Excluded"
                         IsCheckable="True"
                         IsChecked="{Binding HideExcluded, Source={x:Static p:Settings.Default}}"
                         Unchecked="MnuHideDefender_Click" />
                     <Separator />
                     <MenuItem
                         x:Name="mnuHideDetails"
-                        Header="Show Details Pane"
+                        Header="Show _Details Pane"
                         IsCheckable="True"
                         IsChecked="{Binding ShowDetails, Source={x:Static p:Settings.Default}}" />
                     <Separator />
                     <MenuItem
                         x:Name="mnuShadeAltRows"
-                        Header="Shade Alternating Rows"
+                        Header="Shade _Alternating Rows"
                         IsCheckable="True"
                         IsChecked="{Binding ShadeAltRows, Source={x:Static p:Settings.Default}}" />
                     <MenuItem
                         x:Name="mnuGridLines"
-                        Header="Show Grid Lines"
+                        Header="Show _Grid Lines"
                         IsCheckable="True"
                         IsChecked="{Binding ShowGridLines, Source={x:Static p:Settings.Default}}" />
                 </MenuItem>
@@ -238,7 +257,8 @@
                     <MenuItem
                         Name="mnuAbout"
                         Click="MnuAbout_Click"
-                        Header="_About">
+                        Header="_About"
+                        InputGestureText="F1">
                         <MenuItem.Icon>
                             <Image Source="/Icons/information.png" />
                         </MenuItem.Icon>
@@ -247,12 +267,12 @@
                     <MenuItem
                         Name="mnuReadme"
                         Click="MnuReadme_Click"
-                        Header="View ReadMe File">
+                        Header="_View ReadMe File">
                         <MenuItem.Icon>
                             <Image Source="/Icons/document-list.png" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="Debug">
+                    <MenuItem Header="_Debug">
                         <MenuItem
                             Name="mnuViewTemp"
                             Click="ViewTemp_Click"
@@ -298,7 +318,7 @@
                     Click="BtnSearch_Click"
                     Content="X"
                     FontSize="10"
-                    Foreground="Black"
+                    Foreground="Red"
                     Style="{DynamicResource myButton}" />
             </StackPanel>
             <!--#endregion-->
@@ -355,95 +375,171 @@
             Height="5"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
-            Background="DimGray"
-            IsTabStop="False"
-            ResizeDirection="Rows" />
+            Background="SteelBlue"
+            DragCompleted="GridSplitter_DragCompleted" />
         <!--#endregion-->
 
         <!--#region Details area-->
-        <ScrollViewer
-            x:Name="sc1"
+        <Grid
+            x:Name="bottomGrid"
             Grid.Row="3"
             Grid.Column="0"
             Grid.ColumnSpan="3"
-            Padding="2"
-            VerticalAlignment="Top"
-            Background="AliceBlue"
-            FontFamily="{Binding FontFamily, Source={x:Static p:Settings.Default}}"
-            FontSize="14"
-            VerticalScrollBarVisibility="Visible">
-            <ScrollViewer.DataContext>
-                <Binding ElementName="dataGrid" Path="SelectedItem" />
-            </ScrollViewer.DataContext>
-            <StackPanel>
-                <TextBlock
-                    Margin="5,2"
-                    FontWeight="Bold"
-                    Text="Windows Update details:" />
-                <StackPanel Margin="5,2" Orientation="Horizontal">
-                    <TextBlock Width="140" Text="Title:" />
+            PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+            <ScrollViewer
+                x:Name="sc1"
+                Padding="2"
+                VerticalAlignment="Top"
+                Background="Cornsilk"
+                DataContext="{Binding SelectedItem, ElementName=dataGrid}"
+                FontFamily="{Binding FontFamily, Source={x:Static p:Settings.Default}}"
+                FontSize="14"
+                VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
                     <TextBlock
-                        MaxWidth="1000"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Margin="0,5"
+                        FontWeight="Bold"
+                        Text="Windows Update details:" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,1"
+                        Text="Title:" />
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Margin="0,1"
                         Text="{Binding Title}"
                         TextWrapping="Wrap" />
-                </StackPanel>
-                <StackPanel Margin="5,2" Orientation="Horizontal">
-                    <TextBlock Width="140" Text="KB Number:" />
-                    <TextBlock Text="{Binding KBNum}" />
-                </StackPanel>
-                <StackPanel Margin="5,2" Orientation="Horizontal">
-                    <TextBlock Width="140" Text="Date:" />
-                    <TextBlock Text="{Binding Date}" />
-                </StackPanel>
-                <StackPanel Margin="5,2" Orientation="Horizontal">
-                    <TextBlock Width="140" Text="Description:" />
                     <TextBlock
-                        MaxWidth="850"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="0,1"
+                        Text="KB Number:" />
+                    <TextBlock
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Margin="0,1"
+                        Text="{Binding KBNum}" />
+                    <TextBlock
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="0,1"
+                        Text="Date:" />
+                    <TextBlock
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Margin="0,1"
+                        Text="{Binding Date}"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Margin="0,1"
+                        Text="Description:" />
+                    <TextBlock
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        Margin="0,1"
                         Text="{Binding Description}"
                         TextWrapping="Wrap" />
-                </StackPanel>
-                <StackPanel Margin="5,2" Orientation="Horizontal">
-                    <TextBlock Width="140" Text="Operation:" />
-                    <TextBlock Text="{Binding Operation}" />
-                </StackPanel>
-                <StackPanel Margin="5,2" Orientation="Horizontal">
-                    <TextBlock Width="140" Text="Result Code:" />
-                    <TextBlock Text="{Binding ResultCode}" />
-                </StackPanel>
-                <StackPanel Margin="5,2" Orientation="Horizontal">
-                    <TextBlock Width="140" Text="HResult:" />
-                    <TextBlock Text="{Binding HResult}" />
-                </StackPanel>
-
-                <StackPanel Margin="5,2" Orientation="Horizontal">
-                    <TextBlock Width="140" Text="Update ID:" />
-                    <TextBlock Text="{Binding UpdateID}" />
-                </StackPanel>
-                <StackPanel Margin="5,2" Orientation="Horizontal">
-                    <TextBlock Width="140" Text="Support URL:" />
-                    <TextBlock>
+                    <TextBlock
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Margin="0,1"
+                        Text="Operation:" />
+                    <TextBlock
+                        Grid.Row="5"
+                        Grid.Column="2"
+                        Margin="0,1"
+                        Text="{Binding Operation}" />
+                    <TextBlock
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Margin="0,1"
+                        Text="Result Code:" />
+                    <TextBlock
+                        Grid.Row="6"
+                        Grid.Column="2"
+                        Margin="0,1"
+                        Text="{Binding ResultCode}" />
+                    <TextBlock
+                        Grid.Row="7"
+                        Grid.Column="1"
+                        Margin="0,1"
+                        Text="HResult:" />
+                    <TextBlock
+                        Grid.Row="7"
+                        Grid.Column="2"
+                        Margin="0,1"
+                        Text="{Binding HResult}" />
+                    <TextBlock
+                        Grid.Row="8"
+                        Grid.Column="1"
+                        Width="140"
+                        Margin="0,1"
+                        Text="Update ID:" />
+                    <TextBlock
+                        Grid.Row="8"
+                        Grid.Column="2"
+                        Margin="0,1"
+                        Text="{Binding UpdateID}" />
+                    <TextBlock
+                        Grid.Row="9"
+                        Grid.Column="1"
+                        Margin="0,1"
+                        Text="Support URL:" />
+                    <TextBlock
+                        Grid.Row="9"
+                        Grid.Column="2"
+                        Margin="0,1">
                         <Hyperlink NavigateUri="{Binding SupportURL}" RequestNavigate="Hyperlink_RequestNavigate">
                             <Hyperlink.Inlines>
                                 <Run Text="{Binding Path=SupportURL}" />
                             </Hyperlink.Inlines>
                         </Hyperlink>
                     </TextBlock>
-                </StackPanel>
-
-                <TextBlock
-                    Margin="5,12,0,0"
-                    FontWeight="Bold"
-                    Text="Windows Event Log details:" />
-                <TextBlock
-                    MaxWidth="1020"
-                    Margin="7,0"
-                    HorizontalAlignment="Left"
-                    LineHeight="22"
-                    LineStackingStrategy="BlockLineHeight"
-                    Text="{Binding ELDescription}"
-                    TextWrapping="Wrap" />
-            </StackPanel>
-        </ScrollViewer>
+                    <TextBlock
+                        Grid.Row="10"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Margin="0,10,0,5"
+                        FontWeight="Bold"
+                        Text="Windows Event Log details:" />
+                    <TextBlock
+                        Grid.Row="11"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Margin="0,1"
+                        LineHeight="22"
+                        Text="{Binding ELDescription}"
+                        TextWrapping="Wrap" />
+                </Grid>
+            </ScrollViewer>
+        </Grid>
         <!--#endregion-->
 
         <!--#region Status bar-->

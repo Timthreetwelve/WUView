@@ -103,10 +103,14 @@ namespace WUView
                 dataGrid.GridLinesVisibility = DataGridGridLinesVisibility.None;
             }
 
-            // Hide details panel
+            // Details pane
             if (!Settings.Default.ShowDetails)
             {
-                sc1.Visibility = Visibility.Collapsed;
+                bottomGrid.Visibility = Visibility.Collapsed;
+            }
+            if (Settings.Default.ShowDetails && Settings.Default.DetailsHeight == 0)
+            {
+                Settings.Default.DetailsHeight = 250;
             }
         }
         #endregion Read Settings
@@ -127,6 +131,32 @@ namespace WUView
             SaveToFile();
         }
 
+        private void MnuSaveToCsv_Click(object sender, RoutedEventArgs e)
+        {
+            SaveToCSV();
+        }
+
+        private void OpenWU_Click(object sender, RoutedEventArgs e)
+        {
+            using (Process procWU = new Process())
+            {
+                procWU.StartInfo.FileName = "ms-settings:windowsupdate";
+                _ = procWU.Start();
+                log.Info("Launching Windows Update");
+            }
+        }
+
+        private void OpenEV_Click(object sender, RoutedEventArgs e)
+        {
+            using (Process procEV = new Process())
+            {
+                procEV.StartInfo.FileName = "MMC.exe";
+                procEV.StartInfo.Arguments = "Eventvwr.msc";
+                _ = procEV.Start();
+                log.Info("Launching Event Viewer");
+            }
+        }
+
         private void MnuAbout_Click(object sender, RoutedEventArgs e)
         {
             About about = new About
@@ -141,7 +171,9 @@ namespace WUView
         {
             if (IsLoaded)
             {
+                Mouse.OverrideCursor = Cursors.Wait;
                 UpdateGrid();
+                Mouse.OverrideCursor = null;
             }
         }
 
@@ -155,6 +187,11 @@ namespace WUView
         }
 
         private void MnuEditExcludes_Click(object sender, RoutedEventArgs e)
+        {
+            EditExcludes();
+        }
+
+        private void EditExcludes()
         {
             Excludes excl = new Excludes
             {
@@ -185,16 +222,12 @@ namespace WUView
         #endregion Menu Events
 
         #region Window Events
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Window_Closing(object sender, CancelEventArgs e)
         {
             log.Info("{0} is shutting down.", AppInfo.AppName);
 
             // Shut down NLog
             LogManager.Shutdown();
-
-            // details pane height
-            double h = sc1.ActualHeight;
-            Settings.Default.DetailsHeight = sc1.ActualHeight;
 
             // save the property settings
             Settings.Default.WindowLeft = Left;
@@ -202,6 +235,11 @@ namespace WUView
             Settings.Default.WindowHeight = Height;
             Settings.Default.WindowWidth = Width;
             Settings.Default.Save();
+        }
+
+        private void GridSplitter_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
+        {
+            Settings.Default.DetailsHeight = deetsRow.Height.Value;
         }
         #endregion Window Events
 
@@ -251,29 +289,52 @@ namespace WUView
         #region Keyboard Events
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.NumPad0)
+            if (e.Key == Key.NumPad0 && (Keyboard.Modifiers & ModifierKeys.Control) != 0)
             {
                 GridSizeReset();
             }
 
-            if (e.Key == Key.Add)
+            if (e.Key == Key.Add && (Keyboard.Modifiers & ModifierKeys.Control) != 0)
             {
                 GridLarger();
             }
 
-            if (e.Key == Key.Subtract)
+            if (e.Key == Key.Subtract && (Keyboard.Modifiers & ModifierKeys.Control) != 0)
             {
                 GridSmaller();
             }
 
-            if (e.Key == Key.C && Keyboard.Modifiers == ModifierKeys.Control && Keyboard.Modifiers == ModifierKeys.Shift)
+            if (e.Key == Key.C && (Keyboard.Modifiers & ModifierKeys.Control) != 0
+                               && (Keyboard.Modifiers & ModifierKeys.Shift) != 0)
             {
                 Copy2Clipboard();
             }
 
-            if (e.Key == Key.S && Keyboard.Modifiers == ModifierKeys.Control)
+            if (e.Key == Key.E && (Keyboard.Modifiers & ModifierKeys.Control) != 0)
             {
-                SaveToFile();
+                EditExcludes();
+            }
+
+            if (e.Key == Key.S && (Keyboard.Modifiers & ModifierKeys.Control) != 0)
+            {
+                if ((Keyboard.Modifiers & ModifierKeys.Shift) != 0)
+                {
+                    SaveToCSV();
+                }
+                else
+                {
+                    SaveToFile();
+                }
+            }
+
+            if (e.Key == Key.F1)
+            {
+                About about = new About
+                {
+                    Owner = Application.Current.MainWindow,
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner
+                };
+                _ = about.ShowDialog();
             }
 
             if (e.Key == Key.F5)
@@ -316,11 +377,13 @@ namespace WUView
                     {
                         if ((bool)e.NewValue)
                         {
-                            sc1.Visibility = Visibility.Visible;
+                            bottomGrid.Visibility = Visibility.Visible;
+                            deetsRow.Height = new GridLength(Settings.Default.DetailsHeight);
                         }
                         else
                         {
-                            sc1.Visibility = Visibility.Collapsed;
+                            bottomGrid.Visibility = Visibility.Collapsed;
+                            deetsRow.Height = new GridLength(0);
                         }
                         break;
                     }
@@ -409,7 +472,7 @@ namespace WUView
                     SupportURL = x.SupportUrl,
                     ServerSelection = x.ServerSelection.ToString(),
                     ELDate = eRecord.ELDate,
-                    ELDescription = sbEventLog.ToString()
+                    ELDescription = sbEventLog.ToString().TrimEnd()
                 };
                 updatesList.Add(update);
                 sbEventLog.Clear();
@@ -516,9 +579,11 @@ namespace WUView
         #region Update the grid
         private void UpdateGrid()
         {
+            Mouse.OverrideCursor = Cursors.Wait;
             updatesList.Clear();
             GetListOfUpdates();
             dataGrid.Items.Refresh();
+            Mouse.OverrideCursor = null;
         }
         #endregion Update the grid
 
@@ -663,13 +728,34 @@ namespace WUView
         }
         #endregion Copy to clipboard
 
+        #region Save grid to CSV file
+        private void SaveToCSV()
+        {
+            string fname = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".csv";
+            SaveFileDialog dialog = new SaveFileDialog
+            {
+                Title = "Save Grid as CSV FIle",
+                Filter = "CSV File|*.csv",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                FileName = fname
+            };
+            var result = dialog.ShowDialog();
+            if (result == true)
+            {
+                Copy2Clipboard();
+                string gridData = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
+                File.WriteAllText(dialog.FileName, gridData, Encoding.UTF8);
+            }
+        }
+        #endregion Save grid to CSV file
+
         #region Save details to a text file
         private void SaveToFile()
         {
             string fname = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".txt";
             SaveFileDialog dialog = new SaveFileDialog
             {
-                Title = "Save",
+                Title = "Save Details as Text File",
                 Filter = "Text File|*.txt",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
                 FileName = fname
@@ -678,8 +764,8 @@ namespace WUView
             if (result == true)
             {
                 StringBuilder sb = new StringBuilder();
-                _ = sb.Append("Windows update details for ").Append(Environment.MachineName)
-                    .Append(" on ").AppendFormat("{0:G}", DateTime.Now).AppendLine();
+                _ = sb.Append("Windows Update details for ").Append(Environment.MachineName)
+                    .Append(" - ").AppendFormat("{0:G}", DateTime.Now).AppendLine();
                 string uscore = new string('-', sb.Length - 2);
                 _ = sb.Append(uscore).AppendLine("\r\n");
                 for (int i = 0; i < updatesList.Count; i++)
@@ -709,15 +795,10 @@ namespace WUView
                     _ = sb.AppendLine("\r\n");
                 }
                 File.WriteAllText(dialog.FileName, sb.ToString());
-
+                _ = sb.Clear();
                 log.Info($"Details written to {dialog.FileName}");
             }
         }
         #endregion Save details to a text file
-
-        private void Window_ContentRendered(object sender, EventArgs e)
-        {
-            sc1.Height = Settings.Default.DetailsHeight;
-        }
     }
 }

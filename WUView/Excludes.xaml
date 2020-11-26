@@ -11,7 +11,7 @@
     FontSize="14"
     WindowStartupLocation="CenterOwner"
     mc:Ignorable="d">
-    <Grid Background="AliceBlue">
+    <Grid Background="Cornsilk">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10" />
             <ColumnDefinition />
@@ -27,16 +27,16 @@
         <TextBlock
             Grid.Row="1"
             Grid.Column="1"
-            FontWeight="Bold"
             Background="Transparent"
+            FontWeight="Bold"
             Text="Enter strings to exclude (one per line)" />
         <TextBox
             x:Name="tb1"
             Grid.Row="2"
             Grid.Column="1"
+            Padding="5,2"
             HorizontalAlignment="Stretch"
             AcceptsReturn="True"
-            Padding="5,2"
             VerticalScrollBarVisibility="Auto" />
         <StackPanel
             Grid.Row="3"
