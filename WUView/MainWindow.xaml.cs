@@ -14,14 +14,13 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
+using Microsoft.Win32;
 using Newtonsoft.Json;
 using NLog;
 using NLog.Targets;
 using TKUtils;
 using WUApiLib;
 using WUView.Properties;
-using Microsoft.Win32;
-
 #endregion
 
 namespace WUView
@@ -436,53 +435,67 @@ namespace WUView
             int count = updateSearcher.GetTotalHistoryCount();
             sw.Stop();
             log.Info($"Found {count} updates in {sw.ElapsedMilliseconds:N0} milliseconds");
-            StringBuilder sbEventLog = new StringBuilder();
-            foreach (var item in updateSearcher.QueryHistory(0, count))
-            {
-                IUpdateHistoryEntry x = item as IUpdateHistoryEntry;
-                EvRec eRecord = new EvRec();
 
-                if (!CheckForExcluded(x.Title))
+            // Believe it or not, it's possible to not have any updates.
+            if (count > 0)
+            {
+                StringBuilder sbEventLog = new StringBuilder();
+                foreach (var item in updateSearcher.QueryHistory(0, count))
                 {
-                    continue;
-                }
-                foreach (var evlog in eventRecords)
-                {
-                    if (evlog.FormatDescription().Contains(GetKB(x.Title)))
+                    IUpdateHistoryEntry x = item as IUpdateHistoryEntry;
+                    EvRec eRecord = new EvRec();
+
+                    if (!CheckForExcluded(x.Title))
                     {
-                        string tc = string.Format("{0}", evlog.TimeCreated);
-                        string fd = string.Format("  -  {0}", evlog.FormatDescription());
-                        string id = string.Format("  Event ID: {0}.", evlog.Id);
-                        _ = sbEventLog.Append(tc);
-                        _ = sbEventLog.Append(fd);
-                        _ = sbEventLog.AppendLine(id);
+                        continue;
+                    }
+                    foreach (var evlog in eventRecords)
+                    {
+                        if (evlog.FormatDescription().Contains(GetKB(x.Title)))
+                        {
+                            string tc = string.Format("{0}", evlog.TimeCreated);
+                            string fd = string.Format("  -  {0}", evlog.FormatDescription());
+                            string id = string.Format("  Event ID: {0}.", evlog.Id);
+                            _ = sbEventLog.Append(tc);
+                            _ = sbEventLog.Append(fd);
+                            _ = sbEventLog.AppendLine(id);
+                        }
+                    }
+                    WUpdate update = new WUpdate
+                    {
+                        Title = x.Title,
+                        KBNum = GetKB(x.Title),
+                        Date = x.Date.ToLocalTime(),
+                        ResultCode = x.ResultCode.ToString(),
+                        HResult = x.HResult.ToString(),
+                        Operation = x.Operation.ToString(),
+                        Revision = x.UpdateIdentity.RevisionNumber,
+                        UpdateID = x.UpdateIdentity.UpdateID,
+                        Description = x.Description,
+                        SupportURL = x.SupportUrl,
+                        ServerSelection = x.ServerSelection.ToString(),
+                        ELDate = eRecord.ELDate,
+                        ELDescription = sbEventLog.ToString().TrimEnd()
+                    };
+                    updatesList.Add(update);
+                    sbEventLog.Clear();
+                    if (x.HResult != 0)
+                    {
+                        log.Warn($"KB:{update.KBNum,-10} Date: {update.Date,-23} HResult: {update.HResult,-10} " +
+                                 $" Operation: {update.Operation,-12}  UpdateID: {update.UpdateID}");
                     }
                 }
-                WUpdate update = new WUpdate
-                {
-                    Title = x.Title,
-                    KBNum = GetKB(x.Title),
-                    Date = x.Date.ToLocalTime(),
-                    ResultCode = x.ResultCode.ToString(),
-                    HResult = x.HResult.ToString(),
-                    Operation = x.Operation.ToString(),
-                    Revision = x.UpdateIdentity.RevisionNumber,
-                    UpdateID = x.UpdateIdentity.UpdateID,
-                    Description = x.Description,
-                    SupportURL = x.SupportUrl,
-                    ServerSelection = x.ServerSelection.ToString(),
-                    ELDate = eRecord.ELDate,
-                    ELDescription = sbEventLog.ToString().TrimEnd()
-                };
-                updatesList.Add(update);
-                sbEventLog.Clear();
-                if (x.HResult != 0)
-                {
-                    log.Warn($"KB:{update.KBNum,-10} Date: {update.Date,-23} HResult: {update.HResult,-10} " +
-                             $" Operation: {update.Operation,-12}  UpdateID: {update.UpdateID}");
-                }
+                dataGrid.ItemsSource = updatesList;
             }
-            dataGrid.ItemsSource = updatesList;
+            else
+            {
+                log.Info($"No updates found! IUpdateSearcher.GetTotalHistoryCount returned {count}.");
+                _ = MessageBox.Show(
+                    "No updates were found",
+                    "WUView",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
             tb1.Text = string.Format($"Including {dataGrid.Items.Count} of {count} updates");
             log.Info($"Displaying {dataGrid.Items.Count} items");
         }
