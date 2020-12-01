@@ -272,6 +272,16 @@
                             <Image Source="/Icons/document-list.png" />
                         </MenuItem.Icon>
                     </MenuItem>
+                    <Separator />
+                    <MenuItem
+                        x:Name="mnuLookUp"
+                        Click="MnuLookUp_Click"
+                        Header="Windows Update Error Codes">
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/globe--arrow.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
                     <MenuItem Header="_Debug">
                         <MenuItem
                             Name="mnuViewTemp"

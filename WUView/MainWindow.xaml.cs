@@ -813,5 +813,26 @@ namespace WUView
             }
         }
         #endregion Save details to a text file
+
+        private void MnuLookUp_Click(object sender, RoutedEventArgs e)
+        {
+            const string url = "https://docs.microsoft.com/en-us/windows/deployment/update/windows-update-error-reference#automatic-update-errors";
+            try
+            {
+                using (Process p = new Process())
+                {
+                    p.StartInfo.FileName = url;
+                    _ = p.Start();
+                }
+            }
+            catch (Exception ex)
+            {
+                _ = MessageBox.Show(
+                    $"Could not open browser\n{ex}",
+                    "WUView",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
     }
 }
