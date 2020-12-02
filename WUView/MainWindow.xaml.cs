@@ -1,4 +1,5 @@
 ﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+
 #region Using directives
 using System;
 using System.Collections.Generic;
@@ -28,13 +29,23 @@ namespace WUView
 {
     public partial class MainWindow : Window
     {
-        #region NLog
+        #region NLog Instance
         private static readonly Logger log = LogManager.GetCurrentClassLogger();
-        #endregion NLog
+        #endregion NLog Instance
 
+        #region Event record and WUpdate Lists
         private readonly List<EventRecord> eventRecords = new List<EventRecord>();
         private readonly List<WUpdate> updatesList = new List<WUpdate>();
+        #endregion Event record and WUpdate Lists
 
+        #region Color Constants
+        private const string bgColorBlue = "#FFF0F8FF";
+        private const string bgColorGray = "#FFEAEAEA";
+        private const string bgColorGreen = "#FFEAFDE1";
+        private const string bgColorYellow = "#FFFFF8DC";
+        #endregion Color Constants
+
+        #region MainWindow Method
         public MainWindow()
         {
             InitializeComponent();
@@ -43,6 +54,7 @@ namespace WUView
             GetEventLog();
             GetListOfUpdates();
         }
+        #endregion MainWindow Method
 
         #region Read Settings
         private void ReadSettings()
@@ -111,6 +123,26 @@ namespace WUView
             if (Settings.Default.ShowDetails && Settings.Default.DetailsHeight == 0)
             {
                 Settings.Default.DetailsHeight = 250;
+            }
+
+            //Details background menu selection
+            switch (Settings.Default.DetailsBackground)
+            {
+                case bgColorBlue:
+                    mnuBlue.IsChecked = true;
+                    break;
+                case bgColorGray:
+                    mnuGray.IsChecked = true;
+                    break;
+                case bgColorGreen:
+                    mnuGreen.IsChecked = true;
+                    break;
+                case bgColorYellow:
+                    mnuYellow.IsChecked = true;
+                    break;
+                default:
+                    log.Info($"Unknown value found for DetailsBAckground: {Settings.Default.DetailsBackground}");
+                    break;
             }
         }
         #endregion Read Settings
@@ -239,6 +271,38 @@ namespace WUView
         private void MnuReadme_Click(object sender, RoutedEventArgs e)
         {
             TextFileViewer.ViewTextFile(Path.Combine(AppInfo.AppDirectory, "ReadMe.txt"));
+        }
+
+        private void DetailBG_Checked(object sender, RoutedEventArgs e)
+        {
+            var mi = (MenuItem)e.OriginalSource;
+            switch (mi.Header)
+            {
+                case "Blue":
+                    mnuGreen.IsChecked = false;
+                    mnuGray.IsChecked = false;
+                    mnuYellow.IsChecked = false;
+                    Settings.Default.DetailsBackground = "#FFF0F8FF";
+                    break;
+                case "Gray":
+                    mnuBlue.IsChecked = false;
+                    mnuGreen.IsChecked = false;
+                    mnuYellow.IsChecked = false;
+                    Settings.Default.DetailsBackground = "#FFEAEAEA";
+                    break;
+                case "Green":
+                    mnuBlue.IsChecked = false;
+                    mnuGray.IsChecked = false;
+                    mnuYellow.IsChecked = false;
+                    Settings.Default.DetailsBackground = "#FFEAFDE1";
+                    break;
+                case "Yellow":
+                    mnuBlue.IsChecked = false;
+                    mnuGreen.IsChecked = false;
+                    mnuGray.IsChecked = false;
+                    Settings.Default.DetailsBackground = "#FFFFF8DC";
+                    break;
+            }
         }
         #endregion Menu Events
 
@@ -704,15 +768,25 @@ namespace WUView
             {
                 cv.Filter = null;
             }
-            else
+            else if (!filter.StartsWith("-"))
             {
                 cv.Filter = o =>
                 {
                     WUpdate wu = o as WUpdate;
                     return wu.Title.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 ||
                            wu.ResultCode.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                           wu.KBNum.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                           wu.Date.ToString("MM/dd/yyyy HH:mm").Contains(filter);
+                           wu.KBNum.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0;
+                };
+            }
+            else
+            {
+                filter = filter.Remove(0, 1);
+                cv.Filter = o =>
+                {
+                    WUpdate wu = o as WUpdate;
+                    return wu.Title.IndexOf(filter, StringComparison.OrdinalIgnoreCase) == -1 &&
+                           wu.ResultCode.IndexOf(filter, StringComparison.OrdinalIgnoreCase) == -1 &&
+                           wu.KBNum.IndexOf(filter, StringComparison.OrdinalIgnoreCase) == -1;
                 };
             }
 
@@ -843,9 +917,11 @@ namespace WUView
         #region Mouse click on HResult
         private void HResult_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            Run tb = (Run)e.OriginalSource;
-            Clipboard.SetText(tb.Text);
-            Debug.WriteLine(tb.Text);
+            if (hypHResult.Inlines.FirstInline is Run run)
+            {
+                Clipboard.SetText(run.Text);
+                Debug.WriteLine($"Setting clipboard to {run.Text}");
+            }
         }
         #endregion Mouse click on HResult
     }

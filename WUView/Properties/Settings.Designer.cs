@@ -179,5 +179,17 @@ namespace WUView.Properties {
                 this["ResultCodeUrl"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FFFFF8DC")]
+        public string DetailsBackground {
+            get {
+                return ((string)(this["DetailsBackground"]));
+            }
+            set {
+                this["DetailsBackground"] = value;
+            }
+        }
     }
 }

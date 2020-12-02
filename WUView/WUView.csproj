@@ -182,6 +182,7 @@
     <Resource Include="Icons\binocular.png" />
     <Resource Include="Icons\document-excel-csv.png" />
     <Resource Include="Icons\globe--arrow.png" />
+    <Resource Include="Icons\palette.png" />
     <Content Include="ReadMe.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

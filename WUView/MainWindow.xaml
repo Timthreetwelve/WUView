@@ -99,7 +99,7 @@
     </Window.Resources>
     <!--#endregion-->
 
-    <Grid Background="Cornsilk">
+    <Grid x:Name="grid1" Background="{Binding DetailsBackground, Source={x:Static p:Settings.Default}}">
         <!--#region Row & Column Definitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10" />
@@ -250,6 +250,35 @@
                         Header="Show _Details Pane"
                         IsCheckable="True"
                         IsChecked="{Binding ShowDetails, Source={x:Static p:Settings.Default}}" />
+                    <MenuItem Header="Details Pane Color">
+                        <MenuItem
+                            x:Name="mnuBlue"
+                            Checked="DetailBG_Checked"
+                            Header="Blue"
+                            IsCheckable="True"
+                            StaysOpenOnClick="True" />
+                        <MenuItem
+                            x:Name="mnuGray"
+                            Checked="DetailBG_Checked"
+                            Header="Gray"
+                            IsCheckable="True"
+                            StaysOpenOnClick="True" />
+                        <MenuItem
+                            x:Name="mnuGreen"
+                            Checked="DetailBG_Checked"
+                            Header="Green"
+                            IsCheckable="True"
+                            StaysOpenOnClick="True" />
+                        <MenuItem
+                            x:Name="mnuYellow"
+                            Checked="DetailBG_Checked"
+                            Header="Yellow"
+                            IsCheckable="True"
+                            StaysOpenOnClick="True" />
+                        <MenuItem.Icon>
+                            <Image Source="/Icons/palette.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                     <Separator />
                     <MenuItem
                         x:Name="mnuShadeAltRows"
@@ -409,7 +438,7 @@
                 x:Name="sc1"
                 Padding="2"
                 VerticalAlignment="Top"
-                Background="Cornsilk"
+                Background="Transparent"
                 DataContext="{Binding SelectedItem, ElementName=dataGrid}"
                 FontFamily="{Binding FontFamily, Source={x:Static p:Settings.Default}}"
                 FontSize="14"
@@ -507,8 +536,11 @@
                         Grid.Column="1"
                         Margin="0,1"
                         Text="HResult:" />
-                    <TextBlock Grid.Column="2" Grid.Row="7" PreviewMouseDown="HResult_PreviewMouseDown">
-                        <Hyperlink NavigateUri="{Binding ResultCodeUrl, Source={x:Static p:Settings.Default}}" RequestNavigate="Hyperlink_RequestNavigate">
+                    <TextBlock
+                        Grid.Row="7"
+                        Grid.Column="2"
+                        PreviewMouseDown="HResult_PreviewMouseDown">
+                        <Hyperlink x:Name="hypHResult" NavigateUri="{Binding ResultCodeUrl, Source={x:Static p:Settings.Default}}" RequestNavigate="Hyperlink_RequestNavigate">
                             <Hyperlink.Inlines>
                                 <Run Text="{Binding HResult}" />
                             </Hyperlink.Inlines>

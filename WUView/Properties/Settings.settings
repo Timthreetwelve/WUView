@@ -41,5 +41,8 @@
     <Setting Name="ResultCodeUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://docs.microsoft.com/en-us/windows/deployment/update/windows-update-error-reference</Value>
     </Setting>
+    <Setting Name="DetailsBackground" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFFFF8DC</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

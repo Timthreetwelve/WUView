@@ -6,7 +6,17 @@ Introduction
 Windows Update Viewer is an application that consolidates information about Windows Updates.
 Windows Update Viewer uses the Windows Update API and event logs to display details of installed
 updated. Event log entries are associated with individual updates by using the "KB" number. If an
-update does not use a KB number, no event log entries will be displayed.
+update does not use a KB number, or it isn't presented in a consistent format, no event log entries
+will be displayed.
+
+
+HResult Codes
+=============
+The HResult code for each update is shown in the details pane. Clicking on it will open the Windows
+Update error code page in your default browser. The value of the error code is also copied to the
+clipboard. One the error code page is open in your browser, you can simply type Ctrl+F followed by
+Ctrl+V to find the error code. The Help menu also contains a selection that will open the error code
+page.
 
 
 Getting Started
@@ -20,21 +30,25 @@ or down.
 
 Filtering the Grid
 ==================
-There is a text box to the right of the Help menu. Typing in this box will add a filter to the Title
-column in the grid. If you only want to see the updates for the malicious software remover tool, then
-type "malicious" in the filter text box. The grid will update as you type. To see all of the updates,
-simply clear the filter text box. The filter will be reset each time Windows Update Viewer is started.
+There is a text box to the right of the Help menu. Typing in this box will add a filter to any of the
+text columns in the grid. The Date column is not included. Fore example, if you only want to see the
+updates for the malicious software remover tool, then type "malicious" in the filter text box. The
+grid will update as you type. To exclude updates, type a minus sign or dash "-" in the first position
+immediately followed by the text you wish to exclude.  For example, to exclude the malicious software
+removal tool, you can type "-malicious".  To see all of the updates, simply clear the filter text box.
+The filter will be reset each time Windows Update Viewer is started.
 
 
-Excluding Updates
-=================
-To exclude updates, first click on the Options menu then on Edit Exclude List. A small window will
-open. This window is where you can specify strings to be excluded. When you first open this window
-you will see that "Defender" has already been added. Consequently any update that has the word
-"Defender" in the update title will be excluded. Feel free to add any other strings to this list.
-For example, you don't want to see the malicious software remover tool you cold add "malicious" to
-the list. The words on this list are not case sensitive. The exclude list will be saved and reapplied
-the next time Windows Update Viewer is started.
+The Exclude List
+================
+To exclude updates without the need to type a filter every time, there is an exclude list. To use it
+click on the Options menu then on Edit Exclude List. A small window will open. This window is where
+you can specify strings to be excluded. When you first open this window you will see that "Defender"
+has already been added. Consequently any update that has the word "Defender" in the update title will
+be excluded. Feel free to add any other strings to this list. For example, you don't want to see the
+malicious software remover tool you cold add "malicious" to the list. The words on this list are not
+case sensitive. The exclude list will be saved and reapplied the next time Windows Update Viewer is
+started.
 
 If you want to temporarily see all the installed updates, you can uncheck Hide Excluded on the
 Options menu instead of deleting everything from the exclude list. You can also copy just the
@@ -51,7 +65,8 @@ Other Options
 =============
 There are other menu options to change the zoom level of the window, choose another font, show grid
 lines and alternate row shading. It is also possible to open the Windows Event Log and Windows Update
-from the File menu.
+from the File menu. You can change the background of the details pane by selecting the option from
+the Options menu.
 
 
 Notices and License
