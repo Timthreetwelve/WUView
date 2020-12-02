@@ -209,6 +209,27 @@ namespace WUView
             }
         }
 
+        private void MnuLookUp_Click(object sender, RoutedEventArgs e)
+        {
+            const string url = "https://docs.microsoft.com/en-us/windows/deployment/update/windows-update-error-reference#automatic-update-errors";
+            try
+            {
+                using (Process p = new Process())
+                {
+                    p.StartInfo.FileName = url;
+                    _ = p.Start();
+                }
+            }
+            catch (Exception ex)
+            {
+                _ = MessageBox.Show(
+                    $"Could not open browser\n{ex}",
+                    "WUView",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+        }
+
         private void MnuViewExcl_Click(object sender, RoutedEventArgs e)
         {
             TextFileViewer.ViewTextFile(GetJsonFile());
@@ -671,11 +692,12 @@ namespace WUView
         }
         #endregion Reset zoom
 
-        #region Filter Title column
+        #region Filter Any column
         private void TbxSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // I really don't understand how this works
             string filter = tbxSearch.Text;
+
+            // I really don't understand how this works
             ICollectionView cv = CollectionViewSource.GetDefaultView(dataGrid.ItemsSource);
             if (filter?.Length == 0)
             {
@@ -686,7 +708,10 @@ namespace WUView
                 cv.Filter = o =>
                 {
                     WUpdate wu = o as WUpdate;
-                    return wu.Title.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0;
+                    return wu.Title.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                           wu.ResultCode.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                           wu.KBNum.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                           wu.Date.ToString("MM/dd/yyyy HH:mm").Contains(filter);
                 };
             }
 
@@ -713,7 +738,7 @@ namespace WUView
         {
             tbxSearch.Clear();
         }
-        #endregion Filter Title column
+        #endregion Filter Any column
 
         #region Copy to clipboard
         private void Copy2Clipboard()
@@ -813,26 +838,5 @@ namespace WUView
             }
         }
         #endregion Save details to a text file
-
-        private void MnuLookUp_Click(object sender, RoutedEventArgs e)
-        {
-            const string url = "https://docs.microsoft.com/en-us/windows/deployment/update/windows-update-error-reference#automatic-update-errors";
-            try
-            {
-                using (Process p = new Process())
-                {
-                    p.StartInfo.FileName = url;
-                    _ = p.Start();
-                }
-            }
-            catch (Exception ex)
-            {
-                _ = MessageBox.Show(
-                    $"Could not open browser\n{ex}",
-                    "WUView",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error);
-            }
-        }
     }
 }

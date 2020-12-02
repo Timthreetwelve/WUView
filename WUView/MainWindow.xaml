@@ -316,7 +316,7 @@
                     Height="24"
                     FontSize="15"
                     Style="{StaticResource MyWaterMarkStyle}"
-                    Tag="Filter Title Column"
+                    Tag="Filter Any Column"
                     TextChanged="TbxSearch_TextChanged" />
                 <Button
                     x:Name="btnSearch"
