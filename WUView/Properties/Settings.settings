@@ -38,5 +38,8 @@
     <Setting Name="DetailsHeight" Type="System.Double" Scope="User">
       <Value Profile="(Default)">250</Value>
     </Setting>
+    <Setting Name="ResultCodeUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://docs.microsoft.com/en-us/windows/deployment/update/windows-update-error-reference</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

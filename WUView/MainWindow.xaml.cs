@@ -12,6 +12,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using Microsoft.Win32;
@@ -211,7 +212,7 @@ namespace WUView
 
         private void MnuLookUp_Click(object sender, RoutedEventArgs e)
         {
-            const string url = "https://docs.microsoft.com/en-us/windows/deployment/update/windows-update-error-reference#automatic-update-errors";
+            string url = Settings.Default.ResultCodeUrl;
             try
             {
                 using (Process p = new Process())
@@ -838,5 +839,14 @@ namespace WUView
             }
         }
         #endregion Save details to a text file
+
+        #region Mouse click on HResult
+        private void HResult_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Run tb = (Run)e.OriginalSource;
+            Clipboard.SetText(tb.Text);
+            Debug.WriteLine(tb.Text);
+        }
+        #endregion Mouse click on HResult
     }
 }

@@ -166,5 +166,18 @@ namespace WUView.Properties {
                 this["DetailsHeight"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://docs.microsoft.com/en-us/windows/deployment/update/windows-update-error-r" +
+            "eference")]
+        public string ResultCodeUrl {
+            get {
+                return ((string)(this["ResultCodeUrl"]));
+            }
+            set {
+                this["ResultCodeUrl"] = value;
+            }
+        }
     }
 }
