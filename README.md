@@ -1,5 +1,5 @@
 # WUView
-Repository for the Windows Update Viewer project
+This is the repository for the Windows Update Viewer project
 
 Introduction
 ============
