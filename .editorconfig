@@ -1,0 +1,3 @@
+﻿[*.xaml]
+# XLS1106: DataContext is not set
+dotnet_diagnostic.XLS1106.severity = none

@@ -10,6 +10,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Security.Principal;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -34,8 +35,9 @@ namespace WUView
         #endregion NLog Instance
 
         #region Event record and WUpdate Lists
-        private readonly List<EventRecord> eventRecords = new List<EventRecord>();
-        private readonly List<WUpdate> updatesList = new List<WUpdate>();
+        private readonly List<EventRecord> eventLogRecords = new List<EventRecord>();
+        private readonly List<WUpdate> updatesFullList = new List<WUpdate>();
+        private readonly List<WUpdate> updatesWithoutExcludesList = new List<WUpdate>();
         #endregion Event record and WUpdate Lists
 
         #region Color Constants
@@ -45,32 +47,46 @@ namespace WUView
         private const string bgColorYellow = "#FFFFF8DC";
         #endregion Color Constants
 
-        #region MainWindow Method
+        #region Main Stopwatch
+        private readonly Stopwatch mainsw = new Stopwatch();
+        #endregion
+
         public MainWindow()
         {
             InitializeComponent();
             ReadSettings();
+        }
+
+        private void Window_ContentRendered(object sender, EventArgs e)
+        {
+            Mouse.OverrideCursor = Cursors.Wait;
             GetExcludes();
             GetEventLog();
             GetListOfUpdates();
+            PopulateExcludedList();
+            WhichList();
+            Mouse.OverrideCursor = null;
+            _ = dataGrid.Focus();
+            dataGrid.SelectedIndex = 0;
+            mainsw.Stop();
+            log.Debug($"Total startup time {mainsw.Elapsed.TotalMilliseconds:N2} milliseconds");
         }
-        #endregion MainWindow Method
 
         #region Read Settings
         private void ReadSettings()
         {
+            mainsw.Start();
+
             // Change the log file filename when debugging
-            if (Debugger.IsAttached)
-            {
-                GlobalDiagnosticsContext.Set("TempOrDebug", "debug");
-            }
-            else
-            {
-                GlobalDiagnosticsContext.Set("TempOrDebug", "temp");
-            }
+            string env = Debugger.IsAttached ? "debug" : "temp";
+            GlobalDiagnosticsContext.Set("TempOrDebug", env);
 
             // Startup message in the temp file
             log.Info($"{AppInfo.AppName} {AppInfo.TitleVersion} is starting up");
+
+            // NLog logging level
+            LogManager.Configuration.Variables["logLev"] = Settings.Default.VerboseLogging ? "Debug" : "Info";
+            LogManager.ReconfigExistingLoggers();
 
             // Unhandled exception handler
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
@@ -141,9 +157,11 @@ namespace WUView
                     mnuYellow.IsChecked = true;
                     break;
                 default:
-                    log.Info($"Unknown value found for DetailsBAckground: {Settings.Default.DetailsBackground}");
+                    log.Info($"Unknown value for DetailsBackground: {Settings.Default.DetailsBackground}");
                     break;
             }
+            log.Debug($"Read settings took {mainsw.Elapsed.TotalMilliseconds:N2} milliseconds");
+            tb1.Text = "Loading...";
         }
         #endregion Read Settings
 
@@ -174,7 +192,7 @@ namespace WUView
             {
                 procWU.StartInfo.FileName = "ms-settings:windowsupdate";
                 _ = procWU.Start();
-                log.Info("Launching Windows Update");
+                log.Debug("Launching Windows Update");
             }
         }
 
@@ -185,7 +203,7 @@ namespace WUView
                 procEV.StartInfo.FileName = "MMC.exe";
                 procEV.StartInfo.Arguments = "Eventvwr.msc";
                 _ = procEV.Start();
-                log.Info("Launching Event Viewer");
+                log.Debug("Launching Event Viewer");
             }
         }
 
@@ -199,7 +217,7 @@ namespace WUView
             _ = about.ShowDialog();
         }
 
-        private void MnuHideDefender_Click(object sender, RoutedEventArgs e)
+        private void MnuHideExcluded_Click(object sender, RoutedEventArgs e)
         {
             if (IsLoaded)
             {
@@ -229,11 +247,12 @@ namespace WUView
             {
                 Owner = this
             };
-            var r = excl.ShowDialog();
+            bool? r = excl.ShowDialog();
             if (r == true)
             {
                 string json = JsonConvert.SerializeObject(ExcludedItems.ExcludedStrings, Formatting.Indented);
                 File.WriteAllText(GetJsonFile(), json);
+                PopulateExcludedList();
                 UpdateGrid();
                 foreach (ExcludedItems item in ExcludedItems.ExcludedStrings)
                 {
@@ -344,11 +363,6 @@ namespace WUView
             }
         }
 
-        private void MnuRefresh_Click(object sender, RoutedEventArgs e)
-        {
-            UpdateGrid();
-        }
-
         private void GridSmaller_Click(object sender, RoutedEventArgs e)
         {
             GridSmaller();
@@ -371,9 +385,21 @@ namespace WUView
 
         #endregion Mouse Events
 
+        #region Mouse click on HResult
+        private void HResult_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (hypHResult.Inlines.FirstInline is Run run)
+            {
+                Clipboard.SetText(run.Text);
+                Debug.WriteLine($"Setting clipboard to {run.Text}");
+            }
+        }
+        #endregion Mouse click on HResult
+
         #region Keyboard Events
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
+            Debug.WriteLine(e.Key);
             if (e.Key == Key.NumPad0 && (Keyboard.Modifiers & ModifierKeys.Control) != 0)
             {
                 GridSizeReset();
@@ -398,6 +424,11 @@ namespace WUView
             if (e.Key == Key.E && (Keyboard.Modifiers & ModifierKeys.Control) != 0)
             {
                 EditExcludes();
+            }
+
+            if (e.Key == Key.H && (Keyboard.Modifiers & ModifierKeys.Control) != 0)
+            {
+                mnuHideExcluded.IsChecked = !mnuHideExcluded.IsChecked;
             }
 
             if (e.Key == Key.S && (Keyboard.Modifiers & ModifierKeys.Control) != 0)
@@ -472,8 +503,24 @@ namespace WUView
                         }
                         break;
                     }
+                case "VerboseLogging":
+                    {
+                        if ((bool)e.NewValue)
+                        {
+                            LogManager.Configuration.Variables["logLev"] = "Debug";
+                        }
+                        else
+                        {
+                            LogManager.Configuration.Variables["logLev"] = "Info";
+                        }
+                        LogManager.ReconfigExistingLoggers();
+                        break;
+                    }
             }
-            log.Debug($"Setting: {e.SettingName} New Value: {e.NewValue}");
+            if (IsLoaded)
+            {
+                log.Debug($"Setting change: {e.SettingName} - New Value: {e.NewValue}");
+            }
         }
         #endregion Setting change
 
@@ -519,73 +566,122 @@ namespace WUView
             UpdateSession updateSession = new UpdateSession();
             IUpdateSearcher updateSearcher = updateSession.CreateUpdateSearcher();
             int count = updateSearcher.GetTotalHistoryCount();
-            sw.Stop();
-            log.Info($"Found {count} updates in {sw.ElapsedMilliseconds:N0} milliseconds");
-
+            log.Debug($"Read {count} Windows Update records in {sw.Elapsed.TotalMilliseconds:N2} milliseconds");
+            sw.Restart();
             // Believe it or not, it's possible to not have any updates.
             if (count > 0)
             {
-                StringBuilder sbEventLog = new StringBuilder();
-                foreach (var item in updateSearcher.QueryHistory(0, count))
+                Stopwatch gkbsw = new Stopwatch();
+                Stopwatch updsw = new Stopwatch();
+                foreach (IUpdateHistoryEntry x in updateSearcher.QueryHistory(0, count))
                 {
-                    IUpdateHistoryEntry x = item as IUpdateHistoryEntry;
-                    EvRec eRecord = new EvRec();
-
-                    if (!CheckForExcluded(x.Title))
-                    {
-                        continue;
-                    }
-                    foreach (var evlog in eventRecords)
-                    {
-                        if (evlog.FormatDescription().Contains(GetKB(x.Title)))
-                        {
-                            string tc = string.Format("{0}", evlog.TimeCreated);
-                            string fd = string.Format("  -  {0}", evlog.FormatDescription());
-                            string id = string.Format("  Event ID: {0}.", evlog.Id);
-                            _ = sbEventLog.Append(tc);
-                            _ = sbEventLog.Append(fd);
-                            _ = sbEventLog.AppendLine(id);
-                        }
-                    }
+                    gkbsw.Start();
+                    string kbNum = GetKB(x.Title);
+                    gkbsw.Stop();
+                    updsw.Start();
                     WUpdate update = new WUpdate
                     {
                         Title = x.Title,
-                        KBNum = GetKB(x.Title),
+                        KBNum = kbNum,
                         Date = x.Date.ToLocalTime(),
                         ResultCode = x.ResultCode.ToString(),
                         HResult = x.HResult.ToString(),
                         Operation = x.Operation.ToString(),
-                        Revision = x.UpdateIdentity.RevisionNumber,
                         UpdateID = x.UpdateIdentity.UpdateID,
                         Description = x.Description,
                         SupportURL = x.SupportUrl,
-                        ServerSelection = x.ServerSelection.ToString(),
-                        ELDate = eRecord.ELDate,
-                        ELDescription = sbEventLog.ToString().TrimEnd()
+                        ELDescription = FindEventLogs(kbNum)
                     };
-                    updatesList.Add(update);
-                    sbEventLog.Clear();
+                    updatesFullList.Add(update);
+                    updsw.Stop();
                     if (x.HResult != 0)
                     {
                         log.Warn($"KB:{update.KBNum,-10} Date: {update.Date,-23} HResult: {update.HResult,-10} " +
                                  $" Operation: {update.Operation,-12}  UpdateID: {update.UpdateID}");
                     }
                 }
-                dataGrid.ItemsSource = updatesList;
+                log.Debug($"Extracting KB numbers took {gkbsw.Elapsed.TotalMilliseconds:N2} milliseconds");
+                log.Debug($"Building WUpdate object took {updsw.Elapsed.TotalMilliseconds:N2} milliseconds");
             }
             else
             {
                 log.Info($"No updates found! IUpdateSearcher.GetTotalHistoryCount returned {count}.");
-                _ = MessageBox.Show(
-                    "No updates were found",
-                    "WUView",
+                _ = MessageBox.Show("No updates were found", "WUView",
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
             }
-            tb1.Text = string.Format($"Including {dataGrid.Items.Count} of {count} updates");
-            log.Info($"Displaying {dataGrid.Items.Count} items");
+            log.Debug($"Building the list of updates took {sw.Elapsed.TotalMilliseconds:N2} milliseconds");
         }
         #endregion Get the list of Windows updates
+
+        #region Match event logs to update items
+        private string FindEventLogs(string kb)
+        {
+            if (kb == "n/a")
+            {
+                return string.Empty;
+            }
+            StringBuilder sbEventLog = new StringBuilder();
+            foreach (var item in eventLogRecords)
+            {
+                if (item.Properties[0].Value.ToString().Contains(kb))
+                //if (item.FormatDescription().Contains(kb))  This took forever
+                {
+                    string tc = string.Format($"{item.TimeCreated} - {item.FormatDescription()}  Event ID: {item.Id}.");
+                    _ = sbEventLog.AppendLine(tc);
+                }
+            }
+            return sbEventLog.ToString();
+        }
+        #endregion Match event logs to update items
+
+        #region Remove excluded items and create list without excludes
+        private void PopulateExcludedList()
+        {
+            Stopwatch esw = new Stopwatch();
+            esw.Start();
+            updatesWithoutExcludesList.Clear();
+            foreach (WUpdate upd in updatesFullList)
+            {
+                bool skip = false;
+                foreach (ExcludedItems exc in ExcludedItems.ExcludedStrings)
+                {
+                    if (upd.Title.Contains(exc.ExcludedString) && !skip)
+                    {
+                        skip = true;
+                    }
+                }
+                if (!skip)
+                {
+                    updatesWithoutExcludesList.Add(upd.GetClone());
+                }
+            }
+            esw.Stop();
+            log.Debug($"Removing excluded items took {esw.Elapsed.TotalMilliseconds:N2} milliseconds");
+        }
+        #endregion Remove excluded items and create list without excludes
+
+        #region Full list or list without excludes
+        private void WhichList()
+        {
+            Stopwatch wsw = new Stopwatch();
+            wsw.Start();
+            if (Settings.Default.HideExcluded)
+            {
+                dataGrid.ItemsSource = updatesWithoutExcludesList;
+            }
+            else
+            {
+                dataGrid.ItemsSource = updatesFullList;
+            }
+            dataGrid.Items.Refresh();
+            int cnt = dataGrid.Items.Count;
+            tb1.Text = string.Format($"Displaying {cnt} of {updatesFullList.Count} updates");
+            log.Info(tb1.Text);
+            wsw.Stop();
+            log.Debug($"Loading data grid took {wsw.Elapsed.TotalMilliseconds:N2} milliseconds");
+        }
+        #endregion Full list or list without excludes
 
         #region Get Event Log details
         private void GetEventLog()
@@ -600,7 +696,10 @@ namespace WUView
                 EventLogReader logReader = new EventLogReader(eventsQuery);
                 for (EventRecord eventdetail = logReader.ReadEvent(); eventdetail != null; eventdetail = logReader.ReadEvent())
                 {
-                    eventRecords.Add(eventdetail);
+                    if (eventdetail.FormatDescription().Contains("KB"))
+                    {
+                        eventLogRecords.Add(eventdetail);
+                    }
                 }
             }
             catch (EventLogNotFoundException e)
@@ -608,7 +707,7 @@ namespace WUView
                 log.Error($"Error while reading the event logs\n{e.Message}");
             }
             swe.Stop();
-            log.Info($"Read \"Setup\" event log in {swe.ElapsedMilliseconds:N0} milliseconds");
+            log.Debug($"Read {eventLogRecords.Count} Setup event log records in {swe.Elapsed.TotalMilliseconds:N2} milliseconds");
         }
         #endregion Get Event Log details
 
@@ -679,8 +778,7 @@ namespace WUView
         private void UpdateGrid()
         {
             Mouse.OverrideCursor = Cursors.Wait;
-            updatesList.Clear();
-            GetListOfUpdates();
+            WhichList();
             dataGrid.Items.Refresh();
             Mouse.OverrideCursor = null;
         }
@@ -696,24 +794,6 @@ namespace WUView
         }
         #endregion
 
-        #region Check for excluded strings
-        private static bool CheckForExcluded(string excludeItem)
-        {
-            if (!Settings.Default.HideExcluded)
-            {
-                return true;
-            }
-            foreach (ExcludedItems item in ExcludedItems.ExcludedStrings)
-            {
-                if (excludeItem.IndexOf(item.ExcludedString, StringComparison.InvariantCultureIgnoreCase) >= 0)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-        #endregion Check for excluded strings
-
         #region Get the JSON file name
         private static string GetJsonFile()
         {
@@ -724,7 +804,7 @@ namespace WUView
         #region Open support URL
         private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
-            log.Info($"Opening {e.Uri.AbsoluteUri}");
+            log.Debug($"Opening {e.Uri.AbsoluteUri}");
             if (!string.IsNullOrWhiteSpace(e.Uri.AbsoluteUri))
             {
                 _ = Process.Start(e.Uri.AbsoluteUri);
@@ -736,15 +816,22 @@ namespace WUView
         #region Read the Exclude file
         private void GetExcludes()
         {
+            Stopwatch rxsw = new Stopwatch();
+            rxsw.Start();
             string json = File.ReadAllText(GetJsonFile());
             ExcludedItems.ExcludedStrings = JsonConvert.DeserializeObject<List<ExcludedItems>>(json);
-            if (ExcludedItems.ExcludedStrings.Count > 0)
+            rxsw.Stop();
+            int xCount = ExcludedItems.ExcludedStrings.Count;
+            string xRecs;
+            if (xCount > 0)
             {
                 foreach (var item in ExcludedItems.ExcludedStrings)
                 {
                     log.Info($"Excluding updates containing: \"{item.ExcludedString}\"");
                 }
             }
+            xRecs = xCount == 1 ? "record" : "records";
+            log.Debug($"Read {ExcludedItems.ExcludedStrings.Count} exclude {xRecs} from disk in {rxsw.Elapsed.TotalMilliseconds:N2} milliseconds");
         }
         #endregion Read the Exclude file
 
@@ -881,48 +968,40 @@ namespace WUView
                     .Append(" - ").AppendFormat("{0:G}", DateTime.Now).AppendLine();
                 string uscore = new string('-', sb.Length - 2);
                 _ = sb.Append(uscore).AppendLine("\r\n");
-                for (int i = 0; i < updatesList.Count; i++)
-                {
-                    _ = sb.Append("Title:        ").AppendLine(updatesList[i].Title)
-                        .AppendFormat("Date:         {0:G}\n", updatesList[i].Date)
-                        .Append("KB Number:    ").AppendLine(updatesList[i].KBNum)
-                        .Append("Operation:    ").AppendLine(updatesList[i].Operation)
-                        .Append("Result Code:  ").AppendLine(updatesList[i].ResultCode)
-                        .Append("HResult:      ").AppendLine(updatesList[i].HResult)
-                        .Append("Update ID:    ").AppendLine(updatesList[i].UpdateID)
-                        .Append("Support URL:  ").AppendLine(updatesList[i].SupportURL)
-                        .Append("Description:  ").AppendLine(updatesList[i].Description);
 
-                    foreach (var evlog in eventRecords)
+                List<WUpdate> listInUse = updatesFullList;
+                if (mnuHideExcluded.IsChecked)
+                {
+                    listInUse = updatesWithoutExcludesList;
+                }
+
+                for (int i = 0; i < listInUse.Count; i++)
+                {
+                    _ = sb.Append("Title:        ").AppendLine(listInUse[i].Title)
+                        .AppendFormat("Date:         {0:G}\n", listInUse[i].Date)
+                        .Append("KB Number:    ").AppendLine(listInUse[i].KBNum)
+                        .Append("Operation:    ").AppendLine(listInUse[i].Operation)
+                        .Append("Result Code:  ").AppendLine(listInUse[i].ResultCode)
+                        .Append("HResult:      ").AppendLine(listInUse[i].HResult)
+                        .Append("Update ID:    ").AppendLine(listInUse[i].UpdateID)
+                        .Append("Support URL:  ").AppendLine(listInUse[i].SupportURL)
+                        .Append("Description:  ").AppendLine(listInUse[i].Description);
+
+                    var lines = Regex.Split(FindEventLogs(listInUse[i].KBNum), "\r\n|\r|\n");
+                    foreach (var line in lines)
                     {
-                        if (evlog.FormatDescription().Contains(GetKB(updatesList[i].Title)))
+                        if (!string.IsNullOrWhiteSpace(line))
                         {
-                            string tc = string.Format("Event Log:    {0}", evlog.TimeCreated);
-                            string fd = string.Format(" - {0}", evlog.FormatDescription());
-                            string id = string.Format("  Event ID: {0}.", evlog.Id);
-                            _ = sb.Append(tc);
-                            _ = sb.Append(fd);
-                            _ = sb.AppendLine(id);
+                            _ = sb.Append("Event Log:    ").AppendLine(line);
                         }
                     }
                     _ = sb.AppendLine("\r\n");
                 }
                 File.WriteAllText(dialog.FileName, sb.ToString());
                 _ = sb.Clear();
-                log.Info($"Details written to {dialog.FileName}");
+                log.Debug($"Details written to {dialog.FileName}");
             }
         }
         #endregion Save details to a text file
-
-        #region Mouse click on HResult
-        private void HResult_PreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (hypHResult.Inlines.FirstInline is Run run)
-            {
-                Clipboard.SetText(run.Text);
-                Debug.WriteLine($"Setting clipboard to {run.Text}");
-            }
-        }
-        #endregion Mouse click on HResult
     }
 }

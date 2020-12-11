@@ -101,5 +101,12 @@ namespace WUView
 
         public DateTime? ELDate { get; set; }
         #endregion Properties from Event Log
+
+        #region GetClone Method
+        internal WUpdate GetClone()
+        {
+            return (WUpdate)MemberwiseClone();
+        }
+        #endregion GetClone Method
     }
 }

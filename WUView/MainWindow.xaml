@@ -11,6 +11,7 @@
     MinWidth="300"
     MinHeight="250"
     Closing="Window_Closing"
+    ContentRendered="Window_ContentRendered"
     KeyDown="Window_KeyDown"
     SizeToContent="Manual"
     mc:Ignorable="d">
@@ -177,16 +178,7 @@
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="View">
-                    <MenuItem
-                        x:Name="mnuRefresh"
-                        Click="MnuRefresh_Click"
-                        Header="_Refresh"
-                        InputGestureText="F5">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/arrow-circle-double.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
+
                     <MenuItem Header="_Zoom">
                         <MenuItem
                             Click="GridSmaller_Click"
@@ -238,12 +230,13 @@
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem
-                        x:Name="mnuHideDefender"
-                        Checked="MnuHideDefender_Click"
+                        x:Name="mnuHideExcluded"
+                        Checked="MnuHideExcluded_Click"
                         Header="_Hide Excluded"
+                        InputGestureText="Ctrl+H"
                         IsCheckable="True"
                         IsChecked="{Binding HideExcluded, Source={x:Static p:Settings.Default}}"
-                        Unchecked="MnuHideDefender_Click" />
+                        Unchecked="MnuHideExcluded_Click" />
                     <Separator />
                     <MenuItem
                         x:Name="mnuHideDetails"
@@ -322,6 +315,11 @@
                     <Separator />
                     <MenuItem Header="_Debug">
                         <MenuItem
+                            Name="mnuDebugLogLevel"
+                            Header="Verbose Logging"
+                            IsCheckable="True"
+                            IsChecked="{Binding VerboseLogging, Source={x:Static p:Settings.Default}}" />
+                        <MenuItem
                             Name="mnuViewTemp"
                             Click="ViewTemp_Click"
                             Header="View _Log File">
@@ -390,8 +388,12 @@
             HeadersVisibility="Column"
             HorizontalGridLinesBrush="#d0d0d0"
             IsReadOnly="True"
+            KeyboardNavigation.DirectionalNavigation="Contained"
+            KeyboardNavigation.TabNavigation="Continue"
             PreviewMouseWheel="DataGrid_PreviewMouseWheel"
             SelectionMode="Single"
+            SelectionUnit="FullRow"
+            TabIndex="0"
             VerticalGridLinesBrush="#d0d0d0"
             VerticalScrollBarVisibility="Visible">
 
@@ -424,7 +426,8 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
             Background="SteelBlue"
-            DragCompleted="GridSplitter_DragCompleted" />
+            DragCompleted="GridSplitter_DragCompleted"
+            IsTabStop="False" />
         <!--#endregion-->
 
         <!--#region Details area-->
@@ -540,7 +543,10 @@
                         Grid.Row="7"
                         Grid.Column="2"
                         PreviewMouseDown="HResult_PreviewMouseDown">
-                        <Hyperlink x:Name="hypHResult" NavigateUri="{Binding ResultCodeUrl, Source={x:Static p:Settings.Default}}" RequestNavigate="Hyperlink_RequestNavigate">
+                        <Hyperlink
+                            x:Name="hypHResult"
+                            NavigateUri="{Binding ResultCodeUrl, Source={x:Static p:Settings.Default}}"
+                            RequestNavigate="Hyperlink_RequestNavigate">
                             <Hyperlink.Inlines>
                                 <Run Text="{Binding HResult}" />
                             </Hyperlink.Inlines>

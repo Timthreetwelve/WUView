@@ -22,8 +22,7 @@ namespace WUView
         {
             List<ExcludedItems> lines = new List<ExcludedItems>();
 
-            int lineCount = tb1.LineCount;
-            for (int line = 0; line < lineCount; line++)
+            for (int line = 0; line < tb1.LineCount; line++)
             {
                 ExcludedItems xi = new ExcludedItems();
                 // GetLineText takes a zero-based line index.

@@ -191,5 +191,17 @@ namespace WUView.Properties {
                 this["DetailsBackground"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool VerboseLogging {
+            get {
+                return ((bool)(this["VerboseLogging"]));
+            }
+            set {
+                this["VerboseLogging"] = value;
+            }
+        }
     }
 }

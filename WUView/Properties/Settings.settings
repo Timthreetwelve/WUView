@@ -44,5 +44,8 @@
     <Setting Name="DetailsBackground" Type="System.String" Scope="User">
       <Value Profile="(Default)">#FFFFF8DC</Value>
     </Setting>
+    <Setting Name="VerboseLogging" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
