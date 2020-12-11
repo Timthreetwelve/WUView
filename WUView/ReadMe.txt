@@ -71,9 +71,9 @@ the Options menu.
 
 Notices and License
 ===================
-MyScheduledTasks was written in C# by Tim Kennedy.
+Windows Update Viewer  was written in C# by Tim Kennedy.
 
-MyScheduledTasks uses the following icons & packages:
+Windows Update Viewer uses the following icons & packages:
 
 Fugue Icons set https://p.yusukekamiyamane.com/
 
