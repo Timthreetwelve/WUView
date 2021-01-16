@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("T_K")]
 [assembly: AssemblyProduct("WUView")]
-[assembly: AssemblyCopyright("Copyright ©  2020 Tim Kennedy")]
+[assembly: AssemblyCopyright("Copyright ©  2021 Tim Kennedy")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -38,5 +38,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.3.2.346")]
-[assembly: AssemblyFileVersion("0.3.2.346")]
+[assembly: AssemblyVersion("0.3.3.16")]
+[assembly: AssemblyFileVersion("0.3.3.16")]

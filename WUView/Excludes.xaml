@@ -12,7 +12,7 @@
     FontSize="14"
     WindowStartupLocation="CenterOwner"
     mc:Ignorable="d">
-    <Grid Background="{Binding DetailsBackground, Source={x:Static p:Settings.Default}}">
+    <Grid Background="{Binding DetailsBackground, Source={x:Static local:UserSettings.Setting}}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10" />
             <ColumnDefinition />

@@ -1,3 +1,7 @@
 ﻿[*.xaml]
 # XLS1106: DataContext is not set
 dotnet_diagnostic.XLS1106.severity = none
+[*.cs]
+
+# RCS1158: Static member in generic type should use a type parameter.
+dotnet_diagnostic.RCS1158.severity = none

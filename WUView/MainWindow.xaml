@@ -100,7 +100,7 @@
     </Window.Resources>
     <!--#endregion-->
 
-    <Grid x:Name="grid1" Background="{Binding DetailsBackground, Source={x:Static p:Settings.Default}}">
+    <Grid x:Name="grid1" Background="{Binding DetailsBackground, Source={x:Static local:UserSettings.Setting}}">
         <!--#region Row & Column Definitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10" />
@@ -111,7 +111,7 @@
             <RowDefinition Height="24" />
             <RowDefinition Height="*" />
             <RowDefinition Height="3" />
-            <RowDefinition x:Name="deetsRow" Height="{Binding DetailsHeight, Source={x:Static p:Settings.Default}}" />
+            <RowDefinition x:Name="deetsRow" Height="{Binding DetailsHeight, Source={x:Static local:UserSettings.Setting}}" />
             <RowDefinition Height="24" />
         </Grid.RowDefinitions>
         <!--#endregion-->
@@ -235,14 +235,14 @@
                         Header="_Hide Excluded"
                         InputGestureText="Ctrl+H"
                         IsCheckable="True"
-                        IsChecked="{Binding HideExcluded, Source={x:Static p:Settings.Default}}"
+                        IsChecked="{Binding HideExcluded, Source={x:Static local:UserSettings.Setting}}"
                         Unchecked="MnuHideExcluded_Click" />
                     <Separator />
                     <MenuItem
                         x:Name="mnuHideDetails"
                         Header="Show _Details Pane"
                         IsCheckable="True"
-                        IsChecked="{Binding ShowDetails, Source={x:Static p:Settings.Default}}" />
+                        IsChecked="{Binding ShowDetails, Source={x:Static local:UserSettings.Setting}}" />
                     <MenuItem Header="Details Pane Color">
                         <MenuItem
                             x:Name="mnuBlue"
@@ -277,12 +277,12 @@
                         x:Name="mnuShadeAltRows"
                         Header="Shade _Alternating Rows"
                         IsCheckable="True"
-                        IsChecked="{Binding ShadeAltRows, Source={x:Static p:Settings.Default}}" />
+                        IsChecked="{Binding ShadeAltRows, Source={x:Static local:UserSettings.Setting}}" />
                     <MenuItem
                         x:Name="mnuGridLines"
                         Header="Show _Grid Lines"
                         IsCheckable="True"
-                        IsChecked="{Binding ShowGridLines, Source={x:Static p:Settings.Default}}" />
+                        IsChecked="{Binding ShowGridLines, Source={x:Static local:UserSettings.Setting}}" />
                 </MenuItem>
                 <MenuItem x:Name="mnuHelp" Header="_Help">
                     <MenuItem
@@ -318,7 +318,7 @@
                             Name="mnuDebugLogLevel"
                             Header="Verbose Logging"
                             IsCheckable="True"
-                            IsChecked="{Binding VerboseLogging, Source={x:Static p:Settings.Default}}" />
+                            IsChecked="{Binding VerboseLogging, Source={x:Static local:UserSettings.Setting}}" />
                         <MenuItem
                             Name="mnuViewTemp"
                             Click="ViewTemp_Click"
@@ -383,7 +383,7 @@
             BorderBrush="#E2E2E2"
             CanUserAddRows="False"
             CanUserDeleteRows="False"
-            FontFamily="{Binding FontFamily, Source={x:Static p:Settings.Default}}"
+            FontFamily="{Binding FontFamily, Source={x:Static local:UserSettings.Setting}}"
             FontSize="14"
             HeadersVisibility="Column"
             HorizontalGridLinesBrush="#d0d0d0"
@@ -443,7 +443,7 @@
                 VerticalAlignment="Top"
                 Background="Transparent"
                 DataContext="{Binding SelectedItem, ElementName=dataGrid}"
-                FontFamily="{Binding FontFamily, Source={x:Static p:Settings.Default}}"
+                FontFamily="{Binding FontFamily, Source={x:Static local:UserSettings.Setting}}"
                 FontSize="14"
                 VerticalScrollBarVisibility="Auto">
                 <Grid>
@@ -545,7 +545,7 @@
                         PreviewMouseDown="HResult_PreviewMouseDown">
                         <Hyperlink
                             x:Name="hypHResult"
-                            NavigateUri="{Binding ResultCodeUrl, Source={x:Static p:Settings.Default}}"
+                            NavigateUri="{Binding ResultCodeUrl, Source={x:Static local:UserSettings.Setting}}"
                             RequestNavigate="Hyperlink_RequestNavigate">
                             <Hyperlink.Inlines>
                                 <Run Text="{Binding HResult}" />

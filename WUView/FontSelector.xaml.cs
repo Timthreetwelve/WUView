@@ -20,7 +20,7 @@ namespace WUView
             System.Collections.Generic.ICollection<FontFamily> fontlist = Fonts.SystemFontFamilies;
             lb1.ItemsSource = fontlist.OrderBy(x => x.Source);
             lb1.SelectedValuePath = "Source";
-            lb1.SelectedValue = Properties.Settings.Default.FontFamily;
+            lb1.SelectedValue = UserSettings.Setting.FontFamily;
             lb1.ScrollIntoView(lb1.SelectedItem);
             _ = lb1.Focus();
         }
@@ -29,7 +29,7 @@ namespace WUView
         {
             if (IsLoaded)
             {
-                Properties.Settings.Default.FontFamily = lb1.SelectedValue.ToString();
+                UserSettings.Setting.FontFamily = lb1.SelectedValue.ToString();
             }
         }
     }

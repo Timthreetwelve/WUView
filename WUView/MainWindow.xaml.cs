@@ -4,10 +4,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.IO;
+using System.Reflection;
 using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -23,7 +23,6 @@ using NLog;
 using NLog.Targets;
 using TKUtils;
 using WUApiLib;
-using WUView.Properties;
 #endregion
 
 namespace WUView
@@ -53,6 +52,7 @@ namespace WUView
 
         public MainWindow()
         {
+            UserSettings.Init(UserSettings.AppFolder, UserSettings.DefaultFilename, true);
             InitializeComponent();
             ReadSettings();
         }
@@ -85,34 +85,25 @@ namespace WUView
             log.Info($"{AppInfo.AppName} {AppInfo.TitleVersion} is starting up");
 
             // NLog logging level
-            LogManager.Configuration.Variables["logLev"] = Settings.Default.VerboseLogging ? "Debug" : "Info";
+            LogManager.Configuration.Variables["logLev"] = UserSettings.Setting.VerboseLogging ? "Debug" : "Info";
             LogManager.ReconfigExistingLoggers();
 
             // Unhandled exception handler
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
-            // Settings upgrade
-            if (Settings.Default.SettingsUpgradeRequired)
-            {
-                Settings.Default.Upgrade();
-                Settings.Default.SettingsUpgradeRequired = false;
-                Settings.Default.Save();
-                CleanUp.CleanupPrevSettings();
-            }
-
             // Settings change event
-            Settings.Default.SettingChanging += SettingChanging;
+            UserSettings.Setting.PropertyChanged += UserSettingChanged;
 
             // Window position & Size
-            Top = Settings.Default.WindowTop;
-            Left = Settings.Default.WindowLeft;
-            Height = Settings.Default.WindowHeight;
-            Width = Settings.Default.WindowWidth;
+            Top = UserSettings.Setting.WindowTop;
+            Left = UserSettings.Setting.WindowLeft;
+            Height = UserSettings.Setting.WindowHeight;
+            Width = UserSettings.Setting.WindowWidth;
             MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
             MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth;
 
             // Set Datagrid zoom
-            double curZoom = Settings.Default.GridZoom;
+            double curZoom = UserSettings.Setting.GridZoom;
             dataGrid.LayoutTransform = new ScaleTransform(curZoom, curZoom);
             sc1.LayoutTransform = new ScaleTransform(curZoom, curZoom);
 
@@ -120,29 +111,29 @@ namespace WUView
             WindowTitleVersionAdmin();
 
             // Alternate row shading
-            if (Settings.Default.ShadeAltRows)
+            if (UserSettings.Setting.ShadeAltRows)
             {
                 AltRowShadingOn();
             }
 
             // Show grid lines
-            if (!Settings.Default.ShowGridLines)
+            if (!UserSettings.Setting.ShowGridLines)
             {
                 dataGrid.GridLinesVisibility = DataGridGridLinesVisibility.None;
             }
 
             // Details pane
-            if (!Settings.Default.ShowDetails)
+            if (!UserSettings.Setting.ShowDetails)
             {
                 bottomGrid.Visibility = Visibility.Collapsed;
             }
-            if (Settings.Default.ShowDetails && Settings.Default.DetailsHeight == 0)
+            if (UserSettings.Setting.ShowDetails && UserSettings.Setting.DetailsHeight == 0)
             {
-                Settings.Default.DetailsHeight = 250;
+                UserSettings.Setting.DetailsHeight = 250;
             }
 
             //Details background menu selection
-            switch (Settings.Default.DetailsBackground)
+            switch (UserSettings.Setting.DetailsBackground)
             {
                 case bgColorBlue:
                     mnuBlue.IsChecked = true;
@@ -157,7 +148,7 @@ namespace WUView
                     mnuYellow.IsChecked = true;
                     break;
                 default:
-                    log.Info($"Unknown value for DetailsBackground: {Settings.Default.DetailsBackground}");
+                    log.Info($"Unknown value for DetailsBackground: {UserSettings.Setting.DetailsBackground}");
                     break;
             }
             log.Debug($"Read settings took {mainsw.Elapsed.TotalMilliseconds:N2} milliseconds");
@@ -263,7 +254,7 @@ namespace WUView
 
         private void MnuLookUp_Click(object sender, RoutedEventArgs e)
         {
-            string url = Settings.Default.ResultCodeUrl;
+            string url = UserSettings.Setting.ResultCodeUrl;
             try
             {
                 using (Process p = new Process())
@@ -301,25 +292,25 @@ namespace WUView
                     mnuGreen.IsChecked = false;
                     mnuGray.IsChecked = false;
                     mnuYellow.IsChecked = false;
-                    Settings.Default.DetailsBackground = "#FFF0F8FF";
+                    UserSettings.Setting.DetailsBackground = "#FFF0F8FF";
                     break;
                 case "Gray":
                     mnuBlue.IsChecked = false;
                     mnuGreen.IsChecked = false;
                     mnuYellow.IsChecked = false;
-                    Settings.Default.DetailsBackground = "#FFEAEAEA";
+                    UserSettings.Setting.DetailsBackground = "#FFEAEAEA";
                     break;
                 case "Green":
                     mnuBlue.IsChecked = false;
                     mnuGray.IsChecked = false;
                     mnuYellow.IsChecked = false;
-                    Settings.Default.DetailsBackground = "#FFEAFDE1";
+                    UserSettings.Setting.DetailsBackground = "#FFEAFDE1";
                     break;
                 case "Yellow":
                     mnuBlue.IsChecked = false;
                     mnuGreen.IsChecked = false;
                     mnuGray.IsChecked = false;
-                    Settings.Default.DetailsBackground = "#FFFFF8DC";
+                    UserSettings.Setting.DetailsBackground = "#FFFFF8DC";
                     break;
             }
         }
@@ -334,16 +325,16 @@ namespace WUView
             LogManager.Shutdown();
 
             // save the property settings
-            Settings.Default.WindowLeft = Left;
-            Settings.Default.WindowTop = Top;
-            Settings.Default.WindowHeight = Height;
-            Settings.Default.WindowWidth = Width;
-            Settings.Default.Save();
+            UserSettings.Setting.WindowLeft = Left;
+            UserSettings.Setting.WindowTop = Top;
+            UserSettings.Setting.WindowHeight = Height;
+            UserSettings.Setting.WindowWidth = Width;
+            UserSettings.SaveSettings();
         }
 
         private void GridSplitter_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
         {
-            Settings.Default.DetailsHeight = deetsRow.Height.Value;
+            UserSettings.Setting.DetailsHeight = deetsRow.Height.Value;
         }
         #endregion Window Events
 
@@ -399,7 +390,7 @@ namespace WUView
         #region Keyboard Events
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            Debug.WriteLine(e.Key);
+            //Debug.WriteLine(e.Key);
             if (e.Key == Key.NumPad0 && (Keyboard.Modifiers & ModifierKeys.Control) != 0)
             {
                 GridSizeReset();
@@ -461,66 +452,57 @@ namespace WUView
         #endregion Keyboard Events
 
         #region Setting change
-        private void SettingChanging(object sender, SettingChangingEventArgs e)
+        private void UserSettingChanged(object sender, PropertyChangedEventArgs e)
         {
-            switch (e.SettingName)
+            PropertyInfo prop = sender.GetType().GetProperty(e.PropertyName);
+            var newValue = prop?.GetValue(sender, null);
+            switch (e.PropertyName)
             {
                 case "ShadeAltRows":
+                    if ((bool)newValue)
                     {
-                        if ((bool)e.NewValue)
-                        {
-                            AltRowShadingOn();
-                        }
-                        else
-                        {
-                            AltRowShadingOff();
-                        }
-                        break;
+                        AltRowShadingOn();
                     }
+                    else
+                    {
+                        AltRowShadingOff();
+                    }
+                    break;
                 case "ShowGridLines":
+                    if ((bool)newValue)
                     {
-                        if ((bool)e.NewValue)
-                        {
-                            dataGrid.GridLinesVisibility = DataGridGridLinesVisibility.All;
-                        }
-                        else
-                        {
-                            dataGrid.GridLinesVisibility = DataGridGridLinesVisibility.None;
-                        }
-                        break;
+                        dataGrid.GridLinesVisibility = DataGridGridLinesVisibility.All;
                     }
+                    else
+                    {
+                        dataGrid.GridLinesVisibility = DataGridGridLinesVisibility.None;
+                    }
+                    break;
                 case "ShowDetails":
+                    if ((bool)newValue)
                     {
-                        if ((bool)e.NewValue)
-                        {
-                            bottomGrid.Visibility = Visibility.Visible;
-                            deetsRow.Height = new GridLength(Settings.Default.DetailsHeight);
-                        }
-                        else
-                        {
-                            bottomGrid.Visibility = Visibility.Collapsed;
-                            deetsRow.Height = new GridLength(0);
-                        }
-                        break;
+                        bottomGrid.Visibility = Visibility.Visible;
+                        deetsRow.Height = new GridLength(UserSettings.Setting.DetailsHeight);
                     }
+                    else
+                    {
+                        bottomGrid.Visibility = Visibility.Collapsed;
+                        deetsRow.Height = new GridLength(0);
+                    }
+                    break;
                 case "VerboseLogging":
+                    if ((bool)newValue)
                     {
-                        if ((bool)e.NewValue)
-                        {
-                            LogManager.Configuration.Variables["logLev"] = "Debug";
-                        }
-                        else
-                        {
-                            LogManager.Configuration.Variables["logLev"] = "Info";
-                        }
-                        LogManager.ReconfigExistingLoggers();
-                        break;
+                        LogManager.Configuration.Variables["logLev"] = "Debug";
                     }
+                    else
+                    {
+                        LogManager.Configuration.Variables["logLev"] = "Info";
+                    }
+                    LogManager.ReconfigExistingLoggers();
+                    break;
             }
-            if (IsLoaded)
-            {
-                log.Debug($"Setting change: {e.SettingName} - New Value: {e.NewValue}");
-            }
+            log.Debug($"***Setting change: {e.PropertyName} New Value: {newValue}");
         }
         #endregion Setting change
 
@@ -666,7 +648,7 @@ namespace WUView
         {
             Stopwatch wsw = new Stopwatch();
             wsw.Start();
-            if (Settings.Default.HideExcluded)
+            if (UserSettings.Setting.HideExcluded)
             {
                 dataGrid.ItemsSource = updatesWithoutExcludesList;
             }
@@ -732,11 +714,11 @@ namespace WUView
         #region Grid Size
         private void GridSmaller()
         {
-            double curZoom = Settings.Default.GridZoom;
+            double curZoom = UserSettings.Setting.GridZoom;
             if (curZoom > 0.5)
             {
                 curZoom -= .05;
-                Settings.Default.GridZoom = Math.Round(curZoom, 2);
+                UserSettings.Setting.GridZoom = Math.Round(curZoom, 2);
             }
             dataGrid.LayoutTransform = new ScaleTransform(curZoom, curZoom);
             sc1.LayoutTransform = new ScaleTransform(curZoom, curZoom);
@@ -744,11 +726,11 @@ namespace WUView
 
         private void GridLarger()
         {
-            double curZoom = Settings.Default.GridZoom;
+            double curZoom = UserSettings.Setting.GridZoom;
             if (curZoom < 2.0)
             {
                 curZoom += .05;
-                Settings.Default.GridZoom = Math.Round(curZoom, 2);
+                UserSettings.Setting.GridZoom = Math.Round(curZoom, 2);
             }
 
             dataGrid.LayoutTransform = new ScaleTransform(curZoom, curZoom);
@@ -838,7 +820,7 @@ namespace WUView
         #region Reset zoom
         private void GridSizeReset()
         {
-            Settings.Default.GridZoom = 1.0;
+            UserSettings.Setting.GridZoom = 1.0;
             dataGrid.LayoutTransform = new ScaleTransform(1, 1);
             sc1.LayoutTransform = new ScaleTransform(1, 1);
         }

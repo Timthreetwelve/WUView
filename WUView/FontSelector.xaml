@@ -15,7 +15,6 @@
         <ListBox
             x:Name="lb1"
             Margin="5"
-
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             SelectionChanged="ListBox_SelectionChanged"
             SelectionMode="Single">
