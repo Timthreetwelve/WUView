@@ -15,7 +15,7 @@ Windows Update Viewer (WUView) is an application that displays information about
 👉 WUView requires .Net Framework 4.8
 
 ### The Main Window
-![WUView screenshot](https://github.com/Timthreetwelve/DailyDocuments/blob/main/Images/WUView.png?raw=true)
+![WUView screenshot](https://github.com/Timthreetwelve/WUView/blob/main/Images/WUView.png?raw=true)
 
 #### Oddities
 
