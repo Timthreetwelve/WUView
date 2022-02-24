@@ -1,87 +1,86 @@
 ﻿// Copyright(c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
-// Comment out the following if MessageBox is not to be used
-//#define messagebox
+namespace WUView;
 
-#region using directives
-using NLog;
-using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
-using System.Windows;
-#endregion
-
-namespace TKUtils
+/// <summary>
+/// Class to open text files in the default application for the file type.
+/// If there isn't a default, open the file in notepad.exe
+/// </summary>
+internal static class TextFileViewer
 {
-    /// <summary>
-    ///  Class for viewing text files. If the file extension is not associated
-    ///  with an application, notepad.exe will be attempted.
-    /// </summary>
-    public static class TextFileViewer
-    {
-        #region Text file viewer
-        /// <summary>
-        /// Opens specified text file
-        /// </summary>
-        /// <param name="txtfile">Full path for text file</param>
-        private static readonly Logger log = LogManager.GetCurrentClassLogger();
+    #region NLog Instance
+    private static readonly Logger log = LogManager.GetCurrentClassLogger();
+    #endregion NLog Instance
 
-        public static void ViewTextFile(string txtfile)
+    #region Text file viewer
+    /// <summary>
+    /// Open the file in the default application
+    /// </summary>
+    /// <param name="txtfile">File to open</param>
+    public static void ViewTextFile(string txtfile)
+    {
+        if (File.Exists(txtfile))
         {
-            if (File.Exists(txtfile))
+            try
             {
-                try
+                using Process p = new();
+                p.StartInfo.FileName = txtfile;
+                p.StartInfo.UseShellExecute = true;
+                p.StartInfo.ErrorDialog = false;
+                _ = p.Start();
+            }
+            catch (Win32Exception ex)
+            {
+                if (ex.NativeErrorCode == 1155)
                 {
-                    using (Process p = new Process())
-                    {
-                        p.StartInfo.FileName = txtfile;
-                        p.StartInfo.UseShellExecute = true;
-                        p.StartInfo.ErrorDialog = false;
-                        _ = p.Start();
-                    }
+                    using Process p = new();
+                    p.StartInfo.FileName = "notepad.exe";
+                    p.StartInfo.Arguments = txtfile;
+                    p.StartInfo.UseShellExecute = true;
+                    p.StartInfo.ErrorDialog = false;
+                    _ = p.Start();
                 }
-                catch (Win32Exception ex)
+                else
                 {
-                    if (ex.NativeErrorCode == 1155)
-                    {
-                        using (Process p = new Process())
-                        {
-                            p.StartInfo.FileName = "notepad.exe";
-                            p.StartInfo.Arguments = txtfile;
-                            p.StartInfo.UseShellExecute = true;
-                            p.StartInfo.ErrorDialog = false;
-                            _ = p.Start();
-                        }
-                    }
-                    else
-                    {
-#if messagebox
-                        _ = TKMessageBox.Show($"Error reading file {txtfile}\n{ex.Message}", "Watcher Error",
-                            MessageBoxButton.OK, MessageBoxImage.Error);
-#endif
-                        log.Error($"* Unable to open {txtfile}");
-                        log.Error($"* {ex.Message}");
-                    }
-                }
-                catch (Exception ex)
-                {
-#if messagebox
-                    _ = TKMessageBox.Show("Unable to start default application used to open" +
-                                          $" {txtfile}",
-                                          "Error",
-                                          MessageBoxButton.OK,
-                                          MessageBoxImage.Error);
-#endif
-                    log.Error($"* Unable to open {txtfile}");
-                    log.Error($"* {ex.Message}");
+                    log.Error(ex, $"Unable to open {txtfile}");
+                    string msg = $"Unable to open {txtfile}. See the log file for more information.";
+                    DisplayDialog(msg);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                log.Debug($">>> File not found: {txtfile}");
+                log.Error(ex, $"Unable to open {txtfile}");
+                string msg = $"Unable to open {txtfile}. See the log file for more information.";
+                DisplayDialog(msg);
             }
         }
-        #endregion
+        else
+        {
+            log.Error($"File not found {txtfile}");
+            string msg = $"File not found {txtfile}.";
+            DisplayDialog(msg);
+        }
     }
+    #endregion Text file viewer
+
+    #region Display an error dialog
+    private static async void DisplayDialog(string msg)
+    {
+        if (!DialogHost.IsDialogOpen("MainDialogHost"))
+        {
+            SystemSounds.Exclamation.Play();
+            ErrorDialog error = new();
+            error.Message = msg;
+            _ = await DialogHost.Show(error, "MainDialogHost");
+        }
+        else
+        {
+            DialogHost.Close("MainDialogHost");
+            SystemSounds.Exclamation.Play();
+            ErrorDialog error = new();
+            error.Message = msg;
+            _ = await DialogHost.Show(error, "MainDialogHost");
+        }
+    }
+    #endregion Display an error dialog
 }

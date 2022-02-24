@@ -6,43 +6,45 @@ Introduction
 Windows Update Viewer is an application that consolidates information about Windows Updates.
 Windows Update Viewer uses the Windows Update API and event logs to display details of installed
 updated. Event log entries are associated with individual updates by using the "KB" number. If an
-update does not use a KB number, or it isn't presented in a consistent format, no event log entries
+update does not use a KB number, or it isn't presented in a recognized format, no event log entries
 will be displayed.
-
-
-HResult Codes
-=============
-The HResult code for each update is shown in the details pane. Clicking on it will open the Windows
-Update error code page in your default browser. The value of the error code is also copied to the
-clipboard. One the error code page is open in your browser, you can simply type Ctrl+F followed by
-Ctrl+V to find the error code. The Help menu also contains a selection that will open the error code
-page.
 
 
 Getting Started
 ===============
 After installing Windows Update Viewer, launch it from the Start menu. You will see that the window
 has a grid on the top and a details pane on the bottom. Select a row in the grid and details for
-that update will be displayed in the details pane. The details pane can be closed by unchecking
-Show Detail Pane on the Options menu. The details pane can be resized by dragging the splitter up
-or down.
+that update will be displayed in the details pane. The details pane can be closed and opened by
+selecting Toggle Details Pane on the View menu. The details pane can be resized by dragging the
+splitter up or down.
+
+
+Navigation
+==========
+Click the three-lined (hamburger) icon at the top left and use the bar that appears on the left to
+access the various options in the application.
+
+To the right of the filter box are two menus. The Copy menu, under the copy icon has options to copy
+the grid to the clipboard, to copy the grid to a CSV file and an option to copy details to a text file.
+
+The View menu, under the eye glasses icon, has options to increase and decrease the size of the UI, to
+toggle the display of excluded items, toggle the display of the details pane and to remove any sorts
+applied to the grid columns.
 
 
 Filtering the Grid
 ==================
-There is a text box to the right of the Help menu. Typing in this box will add a filter to any of the
-text columns in the grid. The Date column is not included. Fore example, if you only want to see the
-updates for the malicious software remover tool, then type "malicious" in the filter text box. The
-grid will update as you type. To exclude updates, type a minus sign or dash "-" in the first position
-immediately followed by the text you wish to exclude.  For example, to exclude the malicious software
-removal tool, you can type "-malicious".  To see all of the updates, simply clear the filter text box.
+There is a text box at the top left of the main window. Typing in this box will add a filter to any
+of the text columns in the grid. The Date column is not included. For example, if you only want to
+see the updates for the malicious software remover tool, then type "malicious" in the filter text
+box. The grid will update as you type. To see all of the updates, simply clear the filter text box.
 The filter will be reset each time Windows Update Viewer is started.
 
 
 The Exclude List
 ================
-To exclude updates without the need to type a filter every time, there is an exclude list. To use it
-click on the Options menu then on Edit Exclude List. A small window will open. This window is where
+To exclude updates without the need to type a filter every time, there is an exclude list. To access it
+select Edit Exclude List from the navigation bar. A small dialog will open. This window is where
 you can specify strings to be excluded. When you first open this window you will see that "Defender"
 has already been added. Consequently any update that has the word "Defender" in the update title will
 be excluded. Feel free to add any other strings to this list. For example, you don't want to see the
@@ -50,23 +52,52 @@ malicious software remover tool you cold add "malicious" to the list. The words 
 case sensitive. The exclude list will be saved and reapplied the next time Windows Update Viewer is
 started.
 
-If you want to temporarily see all the installed updates, you can uncheck Hide Excluded on the
-Options menu instead of deleting everything from the exclude list. You can also copy just the
-information in the grid portion to the Windows clipboard by selecting that item from the File menu.
+If you want to temporarily see all the installed updates, you can select Toggle Excluded Items from
+the View Menu instead of deleting everything from the exclude list.
 
 
 Save to a File
 ==============
-You may save the details for all updates that haven't been excluded to a text file by selecting Save
+You may save the details for all updates that haven't been excluded to a text file by selecting Copy
 Details to Text File from the File menu. You can also gave the grid data to a CSV file.
 
 
 Other Options
 =============
-There are other menu options to change the zoom level of the window, choose another font, show grid
-lines and alternate row shading. It is also possible to open the Windows Event Log and Windows Update
-from the File menu. You can change the background of the details pane by selecting the option from
-the Options menu.
+Other options on the navigation bar are the Settings dialog. You can select between Light, Dark and
+System themes. You can select the accent color and you can choose between five sizes for the app.
+You can choose the font weight and row spacing in the grid. You can also control the visibility of
+the Details pane and to show or hide updated that match items on the exclude list. There are also
+options to have WUView stay on top of other windows and you can control the detail of the log file.
+
+Selecting About will display the About dialog which shows information about the app such as the
+version number and has a link to the GitHub repository where you can check for updates.
+
+It is also possible to open the Windows Event Log and Windows Update from the navigation bar.
+
+You can view the log file, the exclude file or this ReadMe file by clicking on the three dot icon
+at the right end of the banner at the top of the screen.
+
+
+Keyboard Shortcuts
+==================
+These keyboard shortcuts are available:
+
+	F1 = Go to the About screen
+    Ctrl + D = Toggle the Details pane
+    Ctrl + E = Toggle display of excluded items
+    Ctrl + D = Move focus to the Filter text box
+	Ctrl + M = Change the theme
+	Ctrl + N = Change the accent color
+	Ctrl + R = Reset column sorts
+	Ctrl + comma = Go to Settings
+	Ctrl + Numpad Plus = Increase size
+	Ctrl + Numpad Minus = Decrease size
+
+
+Uninstalling WUView
+===================
+To uninstall, use the regular Windows add/remove programs feature.
 
 
 Notices and License
@@ -75,15 +106,15 @@ Windows Update Viewer  was written in C# by Tim Kennedy.
 
 Windows Update Viewer uses the following icons & packages:
 
-Fugue Icons set https://p.yusukekamiyamane.com/
+* Material Design in XAML Toolkit https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit
 
-Json.net v12.0.3 from Newtonsoft https://www.newtonsoft.com/json
+* NLog https://nlog-project.org/
 
-NLog v4.7.5 https://nlog-project.org/
+* Inno Setup was used to create the installer. https://jrsoftware.org/isinfo.php
 
 
 MIT License
-Copyright (c) 2020 Tim Kennedy
+Copyright (c) 2022 Tim Kennedy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
 associated documentation files (the "Software"), to deal in the Software without restriction, including

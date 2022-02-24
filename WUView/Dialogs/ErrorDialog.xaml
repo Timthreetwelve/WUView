@@ -1,0 +1,43 @@
+﻿<UserControl
+    x:Class="WUView.Dialogs.ErrorDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WUView"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    MaxWidth="700"
+    d:DesignHeight="100"
+    d:DesignWidth="200"
+    mc:Ignorable="d">
+    <Border
+        BorderBrush="Red"
+        BorderThickness="3"
+        CornerRadius="3">
+        <StackPanel Margin="16">
+            <TextBlock
+                Margin="8"
+                Padding="10"
+                HorizontalAlignment="Center"
+                FontSize="15"
+                Text="{Binding Path=Message, FallbackValue='Message Here'}"
+                TextWrapping="Wrap" />
+
+            <Button
+                Width="80"
+                VerticalContentAlignment="Center"
+                Command="materialDesign:DialogHost.CloseDialogCommand"
+                Content="OK"
+                FontWeight="DemiBold"
+                IsDefault="True"
+                Style="{StaticResource MaterialDesignRaisedAccentButton}">
+                <Button.CommandParameter>
+                    <system:Boolean>true</system:Boolean>
+                </Button.CommandParameter>
+            </Button>
+
+
+        </StackPanel>
+    </Border>
+</UserControl>

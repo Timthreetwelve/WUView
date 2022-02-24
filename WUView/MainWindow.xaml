@@ -4,619 +4,570 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WUView"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:p="clr-namespace:WUView.Properties"
-    Title="Windows Update Viewer"
-    Width="400"
-    MinWidth="300"
-    MinHeight="250"
+    Title="MainWindow"
+    Width="600"
+    Height="450"
+    MinWidth="350"
+    Background="{DynamicResource MaterialDesignPaper}"
     Closing="Window_Closing"
     ContentRendered="Window_ContentRendered"
+    FontSize="14"
     KeyDown="Window_KeyDown"
-    SizeToContent="Manual"
+    MouseWheel="Window_MouseWheel"
+    Style="{StaticResource MaterialDesignWindow}"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    TextOptions.TextFormattingMode="Ideal"
+    TextOptions.TextRenderingMode="Auto"
     mc:Ignorable="d">
 
-    <!--#region Styles-->
-    <Window.Resources>
-        <Style x:Key="ColumnMargin5" TargetType="TextBlock">
-            <Setter Property="Margin" Value="5,0,8,0" />
-        </Style>
-        <Style x:Key="MyWaterMarkStyle" TargetType="{x:Type TextBox}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Grid>
-                            <Border
-                                Background="White"
-                                BorderBrush="LightGray"
-                                BorderThickness="1" />
-                            <ScrollViewer
-                                x:Name="PART_ContentHost"
-                                Margin="5,0,0,0"
-                                VerticalAlignment="Center" />
-                            <Label
-                                x:Name="WaterMarkLabel"
-                                Margin="5,-3,0,0"
+    <materialDesign:DialogHost
+        x:Name="MainDH"
+        CloseOnClickAway="False"
+        DialogTheme="Inherit"
+        Identifier="MainDialogHost">
+
+        <Grid x:Name="OuterGrid">
+            <Grid.RowDefinitions>
+                <!--  ColorZone  -->
+                <RowDefinition Height="Auto" />
+                <!--  DrawerHost  -->
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--#region ColorZone-->
+            <DockPanel
+                Grid.Row="0"
+                LastChildFill="True">
+                <materialDesign:ColorZone
+                    Height="33"
+                    Margin="10"
+                    Padding="0,0,0,3"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                    CornerRadius="4"
+                    Mode="PrimaryMid">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <ToggleButton
+                                Width="30"
+                                Height="30"
+                                Margin="5,2"
+                                IsChecked="{Binding IsLeftDrawerOpen, ElementName=NavDrawer}"
+                                Style="{DynamicResource MaterialDesignHamburgerToggleButton}"
+                                ToolTip="Click to navigate" />
+                            <TextBlock
+                                x:Name="PageTitle"
+                                Margin="6,0,0,0"
+                                HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
-                                Content="{TemplateBinding Tag}"
-                                FontSize="14"
-                                Foreground="LightGray"
-                                Visibility="Collapsed" />
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="Text" Value="" />
-                                </MultiTrigger.Conditions>
-                                <Setter TargetName="WaterMarkLabel" Property="Visibility" Value="Visible" />
-                            </MultiTrigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Foreground" Value="DimGray" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="myButton" TargetType="{x:Type Button}">
-            <Setter Property="HorizontalContentAlignment" Value="Center" />
-            <Setter Property="VerticalContentAlignment" Value="Center" />
-            <Setter Property="Padding" Value="1" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid x:Name="grid">
-                            <Border
-                                x:Name="border"
-                                Background="White"
-                                BorderBrush="White"
-                                BorderThickness="1">
+                                FontSize="20"
+                                FontWeight="DemiBold"
+                                Text="Windows Update Viewer" />
+                        </StackPanel>
 
-                                <ContentPresenter
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    TextElement.FontWeight="Normal" />
-                            </Border>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="Red" />
-                                <Setter TargetName="border" Property="TextElement.Foreground" Value="White" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="ReadOnlyTextBox" TargetType="TextBox">
-            <Setter Property="IsReadOnly" Value="True" />
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderBrush" Value="Transparent" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="IsTabStop" Value="False" />
-            <Setter Property="Margin" Value="0,1" />
-            <Setter Property="TextWrapping" Value="Wrap" />
-        </Style>
-    </Window.Resources>
-    <!--#endregion-->
+                        <materialDesign:PopupBox
+                            Margin="10,4,0,0"
+                            HorizontalAlignment="Right"
+                            PlacementMode="LeftAndAlignTopEdges">
+                            <Grid
+                                Width="150"
+                                Margin="0">
+                                <StackPanel Orientation="Vertical">
+                                    <Button
+                                        Click="BtnReadme_Click"
+                                        Content="View ReadMe"
+                                        Style="{StaticResource MaterialDesignFlatLightButton}" />
+                                    <Separator Background="{DynamicResource PrimaryHueMidBrush}" />
+                                    <Button
+                                        Click="BtnLog_Click"
+                                        Content="View Log File"
+                                        Style="{StaticResource MaterialDesignFlatLightButton}" />
+                                    <Button
+                                        Click="BtnExcludes_Click"
+                                        Content="View Exclude File"
+                                        Style="{StaticResource MaterialDesignFlatLightButton}" />
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:PopupBox>
 
-    <Grid x:Name="grid1" Background="{Binding DetailsBackground, Source={x:Static local:UserSettings.Setting}}">
-        <!--#region Row & Column Definitions-->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10" />
-            <ColumnDefinition />
-            <ColumnDefinition Width="10" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="24" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="3" />
-            <RowDefinition x:Name="deetsRow" Height="{Binding DetailsHeight, Source={x:Static local:UserSettings.Setting}}" />
-            <RowDefinition Height="24" />
-        </Grid.RowDefinitions>
-        <!--#endregion-->
-
-        <DockPanel
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            Height="24"
-            LastChildFill="False">
-            <!--#region Menu-->
-            <Menu
-                x:Name="mnuMain"
-                Height="24"
-                DockPanel.Dock="Top"
-                FontSize="14">
-                <MenuItem Header="File">
-                    <MenuItem
-                        x:Name="mnuCopy"
-                        Click="MnuCopy_Click"
-                        Header="Copy Grid to Clipboard"
-                        InputGestureText="Ctrl+Shift+C">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/clipboard-plus.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem
-                        Click="MnuSaveToCsv_Click"
-                        Header="Save Grid to CSV File"
-                        InputGestureText="Ctrl+Shift+S">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/document-excel-csv.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem
-                        Click="MnuSaveText_Click"
-                        Header="Save Details to Text File"
-                        InputGestureText="Ctrl+S">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/disk--pencil.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem Click="OpenWU_Click" Header="Open Windows Update">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/gear.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Click="OpenEV_Click" Header="Open Event Viewer">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/binocular.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem
-                        x:Name="mnuExit"
-                        Click="MnuExit_Click"
-                        Header="E_xit"
-                        InputGestureText="Alt+F4">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/door--arrow.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="View">
-
-                    <MenuItem Header="_Zoom">
-                        <MenuItem
-                            Click="GridSmaller_Click"
-                            Header="_Smaller"
-                            InputGestureText="Ctrl+NumPad -"
-                            StaysOpenOnClick="True">
-                            <MenuItem.Icon>
-                                <Image Source="/Icons/magnifier-zoom-out.png" />
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem
-                            Click="GridLarger_Click"
-                            Header="_Larger"
-                            InputGestureText="Ctrl+NumPad +"
-                            StaysOpenOnClick="True">
-                            <MenuItem.Icon>
-                                <Image Source="/Icons/magnifier-zoom-in.png" />
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <Separator />
-                        <MenuItem
-                            Click="GridReset_Click"
-                            Header="_Reset"
-                            InputGestureText="Ctrl+NumPad 0"
-                            StaysOpenOnClick="True">
-                            <MenuItem.Icon>
-                                <Image Source="/Icons/magnifier-zoom-actual-equal.png" />
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/magnifier.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem Click="Font_Click" Header="_Font">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/font.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="Options">
-                    <MenuItem
-                        x:Name="mnuEditExcludes"
-                        Click="MnuEditExcludes_Click"
-                        Header="_Edit Exclude List"
-                        InputGestureText="Ctrl+E">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/document--pencil.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem
-                        x:Name="mnuHideExcluded"
-                        Checked="MnuHideExcluded_Click"
-                        Header="_Hide Excluded"
-                        InputGestureText="Ctrl+H"
-                        IsCheckable="True"
-                        IsChecked="{Binding HideExcluded, Source={x:Static local:UserSettings.Setting}}"
-                        Unchecked="MnuHideExcluded_Click" />
-                    <Separator />
-                    <MenuItem
-                        x:Name="mnuHideDetails"
-                        Header="Show _Details Pane"
-                        IsCheckable="True"
-                        IsChecked="{Binding ShowDetails, Source={x:Static local:UserSettings.Setting}}" />
-                    <MenuItem Header="Details Pane Color">
-                        <MenuItem
-                            x:Name="mnuBlue"
-                            Checked="DetailBG_Checked"
-                            Header="Blue"
-                            IsCheckable="True"
-                            StaysOpenOnClick="True" />
-                        <MenuItem
-                            x:Name="mnuGray"
-                            Checked="DetailBG_Checked"
-                            Header="Gray"
-                            IsCheckable="True"
-                            StaysOpenOnClick="True" />
-                        <MenuItem
-                            x:Name="mnuGreen"
-                            Checked="DetailBG_Checked"
-                            Header="Green"
-                            IsCheckable="True"
-                            StaysOpenOnClick="True" />
-                        <MenuItem
-                            x:Name="mnuYellow"
-                            Checked="DetailBG_Checked"
-                            Header="Yellow"
-                            IsCheckable="True"
-                            StaysOpenOnClick="True" />
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/palette.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem
-                        x:Name="mnuShadeAltRows"
-                        Header="Shade _Alternating Rows"
-                        IsCheckable="True"
-                        IsChecked="{Binding ShadeAltRows, Source={x:Static local:UserSettings.Setting}}" />
-                    <MenuItem
-                        x:Name="mnuGridLines"
-                        Header="Show _Grid Lines"
-                        IsCheckable="True"
-                        IsChecked="{Binding ShowGridLines, Source={x:Static local:UserSettings.Setting}}" />
-                </MenuItem>
-                <MenuItem x:Name="mnuHelp" Header="_Help">
-                    <MenuItem
-                        Name="mnuAbout"
-                        Click="MnuAbout_Click"
-                        Header="_About"
-                        InputGestureText="F1">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/information.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem
-                        Name="mnuReadme"
-                        Click="MnuReadme_Click"
-                        Header="_View ReadMe File">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/document-list.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem
-                        x:Name="mnuLookUp"
-                        Click="MnuLookUp_Click"
-                        Header="Windows Update Error Codes">
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/globe--arrow.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <Separator />
-                    <MenuItem Header="_Debug">
-                        <MenuItem
-                            Name="mnuDebugLogLevel"
-                            Header="Verbose Logging"
-                            IsCheckable="True"
-                            IsChecked="{Binding VerboseLogging, Source={x:Static local:UserSettings.Setting}}" />
-                        <MenuItem
-                            Name="mnuViewTemp"
-                            Click="ViewTemp_Click"
-                            Header="View _Log File">
-                            <MenuItem.Icon>
-                                <Image Source="/Icons/document-list.png" />
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <Separator />
-                        <MenuItem
-                            Name="mnuViewExcl"
-                            Click="MnuViewExcl_Click"
-                            Header="View _Exclude File">
-                            <MenuItem.Icon>
-                                <Image Source="/Icons/json.png" />
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem.Icon>
-                            <Image Source="/Icons/bug.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-            </Menu>
+                    </Grid>
+                </materialDesign:ColorZone>
+            </DockPanel>
             <!--#endregion-->
 
-            <!--#region Search box-->
-            <StackPanel Margin="208,-24,0,0" Orientation="Horizontal">
-                <TextBox
-                    x:Name="tbxSearch"
-                    Width="200"
-                    Height="24"
-                    FontSize="15"
-                    Style="{StaticResource MyWaterMarkStyle}"
-                    Tag="Filter Text"
-                    TextChanged="TbxSearch_TextChanged" />
-                <Button
-                    x:Name="btnSearch"
-                    Width="12"
-                    Height="15"
-                    Margin="-20,0,0,0"
-                    Background="White"
-                    BorderThickness="0"
-                    Click="BtnSearch_Click"
-                    Content="X"
-                    FontSize="10"
-                    Foreground="Red"
-                    Style="{DynamicResource myButton}" />
-            </StackPanel>
-            <!--#endregion-->
-        </DockPanel>
+            <materialDesign:DrawerHost
+                x:Name="NavDrawer"
+                Grid.Row="1"
+                VerticalAlignment="Stretch"
+                LeftDrawerCloseOnClickAway="True"
+                LeftDrawerCornerRadius="0">
+                <!--#region Navigation Drawer Content-->
+                <materialDesign:DrawerHost.LeftDrawerContent>
+                    <ListBox
+                        x:Name="NavListBox"
+                        Width="auto"
+                        Margin="0,16,0,16"
+                        HorizontalAlignment="Left"
+                        FontFamily="Segue UI"
+                        FontSize="16"
+                        SelectionChanged="NavListBox_SelectionChanged"
+                        Style="{StaticResource MaterialDesignNavigationPrimaryListBox}">
+                        <ListBoxItem>
+                            <ListBoxItem.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+                                        Width="24"
+                                        Height="24"
+                                        Kind="EyeOutline" />
+                                    <TextBlock
+                                        Margin="10,0"
+                                        VerticalAlignment="Center"
+                                        Text="Update Viewer" />
+                                </StackPanel>
+                            </ListBoxItem.Content>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <ListBoxItem.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+                                        Width="24"
+                                        Height="24"
+                                        Kind="Edit" />
+                                    <TextBlock
+                                        Margin="10,0"
+                                        VerticalAlignment="Center"
+                                        Text="Edit Exclude List" />
+                                </StackPanel>
+                            </ListBoxItem.Content>
+                        </ListBoxItem>
+                        <Separator Background="{DynamicResource PrimaryHueMidBrush}" />
+                        <ListBoxItem>
+                            <ListBoxItem.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+                                        Width="24"
+                                        Height="24"
+                                        Kind="GearOutline" />
+                                    <TextBlock
+                                        Margin="10,0"
+                                        VerticalAlignment="Center"
+                                        Text="Settings" />
+                                </StackPanel>
+                            </ListBoxItem.Content>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <ListBoxItem.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+                                        Width="24"
+                                        Height="24"
+                                        Kind="AboutOutline" />
+                                    <TextBlock
+                                        Margin="10,0"
+                                        VerticalAlignment="Center"
+                                        Text="About" />
+                                </StackPanel>
+                            </ListBoxItem.Content>
+                        </ListBoxItem>
+                        <Separator Background="{DynamicResource PrimaryHueMidBrush}" />
+                        <ListBoxItem>
+                            <ListBoxItem.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+                                        Width="24"
+                                        Height="24"
+                                        Kind="CircleArrows" />
+                                    <TextBlock
+                                        Margin="10,0"
+                                        VerticalAlignment="Center"
+                                        Text="Open Windows Update" />
+                                </StackPanel>
+                            </ListBoxItem.Content>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <ListBoxItem.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+                                        Width="24"
+                                        Height="24"
+                                        Kind="TableEye" />
+                                    <TextBlock
+                                        Margin="10,0"
+                                        VerticalAlignment="Center"
+                                        Text="Open Event Viewer" />
+                                </StackPanel>
+                            </ListBoxItem.Content>
+                        </ListBoxItem>
+                        <Separator Background="{DynamicResource PrimaryHueMidBrush}" />
+                        <ListBoxItem>
+                            <ListBoxItem.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+                                        Width="24"
+                                        Height="24"
+                                        Kind="ExitRun" />
+                                    <TextBlock
+                                        Margin="10,0"
+                                        VerticalAlignment="Center"
+                                        Text="Exit" />
+                                </StackPanel>
+                            </ListBoxItem.Content>
+                        </ListBoxItem>
+                        <ListBox.Resources>
+                            <Style
+                                BasedOn="{StaticResource MaterialDesignScrollBarMinimal}"
+                                TargetType="ScrollBar" />
+                        </ListBox.Resources>
+                    </ListBox>
+                </materialDesign:DrawerHost.LeftDrawerContent>
+                <!--#endregion-->
 
-        <!--#region DataGrid-->
-        <DataGrid
-            x:Name="dataGrid"
-            Grid.Row="1"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
-            AutoGenerateColumns="False"
-            Background="WhiteSmoke"
-            BorderBrush="#E2E2E2"
-            CanUserAddRows="False"
-            CanUserDeleteRows="False"
-            FontFamily="{Binding FontFamily, Source={x:Static local:UserSettings.Setting}}"
-            FontSize="14"
-            HeadersVisibility="Column"
-            HorizontalGridLinesBrush="#d0d0d0"
-            IsReadOnly="True"
-            KeyboardNavigation.DirectionalNavigation="Contained"
-            KeyboardNavigation.TabNavigation="Continue"
-            PreviewMouseWheel="DataGrid_PreviewMouseWheel"
-            SelectionMode="Single"
-            SelectionUnit="FullRow"
-            TabIndex="0"
-            VerticalGridLinesBrush="#d0d0d0"
-            VerticalScrollBarVisibility="Visible">
-
-            <DataGrid.Columns>
-                <DataGridTextColumn
-                    Binding="{Binding KBNum}"
-                    ElementStyle="{StaticResource ColumnMargin5}"
-                    Header="KB Number" />
-                <DataGridTextColumn
-                    Binding="{Binding Date, StringFormat='MM/dd/yyyy  HH:mm'}"
-                    ElementStyle="{StaticResource ColumnMargin5}"
-                    Header="Date &amp; Time" />
-                <DataGridTextColumn
-                    Binding="{Binding Title}"
-                    ElementStyle="{StaticResource ColumnMargin5}"
-                    Header="Title" />
-                <DataGridTextColumn
-                    Binding="{Binding ResultCode}"
-                    ElementStyle="{StaticResource ColumnMargin5}"
-                    Header="Result" />
-            </DataGrid.Columns>
-        </DataGrid>
-        <!--#endregion-->
-
-        <!--#region GridSplitter-->
-        <GridSplitter
-            Grid.Row="2"
-            Grid.ColumnSpan="3"
-            Height="5"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Center"
-            Background="SteelBlue"
-            DragCompleted="GridSplitter_DragCompleted"
-            IsTabStop="False" />
-        <!--#endregion-->
-
-        <!--#region Details area-->
-        <Grid
-            x:Name="bottomGrid"
-            Grid.Row="3"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            PreviewMouseWheel="DataGrid_PreviewMouseWheel">
-            <ScrollViewer
-                x:Name="sc1"
-                Padding="2"
-                VerticalAlignment="Top"
-                Background="Transparent"
-                DataContext="{Binding SelectedItem, ElementName=dataGrid}"
-                FontFamily="{Binding FontFamily, Source={x:Static local:UserSettings.Setting}}"
-                FontSize="14"
-                VerticalScrollBarVisibility="Auto">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="10" />
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+                <Grid x:Name="MainGrid">
+                    <!--#region Row & Column Definitions-->
                     <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
+                        <RowDefinition Height="45" />
                         <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <TextBlock
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        Grid.ColumnSpan="2"
-                        Margin="0,5"
-                        FontWeight="Bold"
-                        Text="Windows Update details:" />
-                    <TextBlock
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        Margin="0,1"
-                        Text="Title:" />
-                    <TextBox
-                        Grid.Row="1"
-                        Grid.Column="2"
-                        Style="{StaticResource ReadOnlyTextBox}"
-                        Text="{Binding Title}" />
-                    <TextBlock
-                        Grid.Row="2"
-                        Grid.Column="1"
-                        Margin="0,1"
-                        Text="KB Number:" />
-                    <TextBox
-                        Grid.Row="2"
-                        Grid.Column="2"
-                        Style="{StaticResource ReadOnlyTextBox}"
-                        Text="{Binding KBNum}" />
-                    <TextBlock
-                        Grid.Row="3"
-                        Grid.Column="1"
-                        Margin="0,1"
-                        Text="Date:" />
-                    <TextBox
-                        Grid.Row="3"
-                        Grid.Column="2"
-                        Style="{StaticResource ReadOnlyTextBox}"
-                        Text="{Binding Date}" />
-                    <TextBlock
-                        Grid.Row="4"
-                        Grid.Column="1"
-                        Margin="0,1"
-                        Text="Description:" />
-                    <TextBox
-                        Grid.Row="4"
-                        Grid.Column="2"
-                        Style="{StaticResource ReadOnlyTextBox}"
-                        Text="{Binding Description}" />
-                    <TextBlock
-                        Grid.Row="5"
-                        Grid.Column="1"
-                        Margin="0,1"
-                        Text="Operation:" />
-                    <TextBox
-                        Grid.Row="5"
-                        Grid.Column="2"
-                        Style="{StaticResource ReadOnlyTextBox}"
-                        Text="{Binding Operation}" />
-                    <TextBlock
-                        Grid.Row="6"
-                        Grid.Column="1"
-                        Margin="0,1"
-                        Text="Result Code:" />
-                    <TextBox
-                        Grid.Row="6"
-                        Grid.Column="2"
-                        Style="{StaticResource ReadOnlyTextBox}"
-                        Text="{Binding ResultCode}" />
-                    <TextBlock
-                        Grid.Row="7"
-                        Grid.Column="1"
-                        Margin="0,1"
-                        Text="HResult:" />
-                    <TextBlock
-                        Grid.Row="7"
-                        Grid.Column="2"
-                        PreviewMouseDown="HResult_PreviewMouseDown">
-                        <Hyperlink
-                            x:Name="hypHResult"
-                            NavigateUri="{Binding ResultCodeUrl, Source={x:Static local:UserSettings.Setting}}"
-                            RequestNavigate="Hyperlink_RequestNavigate">
-                            <Hyperlink.Inlines>
-                                <Run Text="{Binding HResult}" />
-                            </Hyperlink.Inlines>
-                        </Hyperlink>
-                    </TextBlock>
-                    <TextBlock
-                        Grid.Row="8"
-                        Grid.Column="1"
-                        Margin="0,1"
-                        Text="Update ID:" />
-                    <TextBox
-                        Grid.Row="8"
-                        Grid.Column="2"
-                        Style="{StaticResource ReadOnlyTextBox}"
-                        Text="{Binding UpdateID}" />
-                    <TextBlock
-                        Grid.Row="9"
-                        Grid.Column="1"
-                        Margin="0,1"
-                        Text="Support URL:" />
-                    <TextBlock
-                        Grid.Row="9"
-                        Grid.Column="2"
-                        Margin="0,1">
-                        <Hyperlink NavigateUri="{Binding SupportURL}" RequestNavigate="Hyperlink_RequestNavigate">
-                            <Hyperlink.Inlines>
-                                <Run Text="{Binding Path=SupportURL}" />
-                            </Hyperlink.Inlines>
-                        </Hyperlink>
-                    </TextBlock>
-                    <TextBlock
-                        Grid.Row="10"
-                        Grid.Column="1"
-                        Grid.ColumnSpan="2"
-                        Margin="0,10,0,5"
-                        FontWeight="Bold"
-                        Text="Windows Event Log details:" />
-                    <TextBox
-                        Grid.Row="11"
-                        Grid.Column="1"
-                        Grid.ColumnSpan="2"
-                        Style="{StaticResource ReadOnlyTextBox}"
-                        Text="{Binding ELDescription, Mode=OneWay}" />
-                </Grid>
-            </ScrollViewer>
-        </Grid>
-        <!--#endregion-->
+                        <RowDefinition Height="auto" />
+                        <RowDefinition
+                            x:Name="deetsRow"
+                            Height="{Binding DetailsHeight, Source={x:Static local:UserSettings.Setting}}" />
 
-        <!--#region Status bar-->
-        <StatusBar
-            Grid.Row="4"
-            Grid.ColumnSpan="3"
-            VerticalAlignment="Bottom"
-            Background="Gainsboro"
-            FontSize="14">
-            <Separator Margin="2,0" Background="Gainsboro" />
-            <StatusBarItem>
-                <TextBlock
-                    x:Name="tb1"
-                    Background="Gainsboro"
-                    Foreground="Black" />
-            </StatusBarItem>
-            <Separator Margin="10,0" Background="Gainsboro" />
-            <StatusBarItem>
-                <TextBlock
-                    x:Name="tb2"
-                    Background="Gainsboro"
-                    Foreground="Black" />
-            </StatusBarItem>
-        </StatusBar>
-        <!--#endregion-->
-    </Grid>
+                    </Grid.RowDefinitions>
+                    <!--#endregion-->
+
+                    <!--#region Filter box and Menu-->
+                    <DockPanel
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        LastChildFill="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox
+                                x:Name="tbxSearch"
+                                Width="300"
+                                Height="35"
+                                Margin="20,0"
+                                Padding="10,8"
+                                VerticalContentAlignment="Top"
+                                materialDesign:HintAssist.Hint="Filter"
+                                materialDesign:TextFieldAssist.HasClearButton="True"
+                                FontSize="14"
+                                IsTabStop="True"
+                                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                                Tag="Filter Text"
+                                TextChanged="TbxSearch_TextChanged" />
+
+                            <Menu
+                                x:Name="mnuMain"
+                                Margin="15,0"
+                                DockPanel.Dock="Top">
+                                <MenuItem
+                                    Header="{materialDesign:PackIcon Kind=ContentCopy,
+                                                                     Size=22}"
+                                    ToolTip="Copy Menu">
+                                    <MenuItem
+                                        Name="mnuCopy"
+                                        Click="MnuCopy_Click"
+                                        Header="Copy Grid to Clipboard" />
+                                    <Separator Background="{DynamicResource PrimaryHueMidBrush}" />
+                                    <MenuItem
+                                        Name="mnuSaveToCsv"
+                                        Click="MnuSaveToCsv_Click"
+                                        Header="Copy Grid to CSV File" />
+                                    <MenuItem
+                                        Name="mnuSaveToText"
+                                        Click="MnuSaveToText_Click"
+                                        Header="Copy Details to Text File" />
+                                </MenuItem>
+                                <Separator
+                                    Width="20"
+                                    Background="Transparent" />
+                                <MenuItem
+                                    Header="{materialDesign:PackIcon Kind=Glasses,
+                                                                     Size=30}"
+                                    ToolTip="View Menu">
+                                    <MenuItem
+                                        x:Name="mnuLarger"
+                                        Click="MnuLarger_Click"
+                                        Header="UI Larger"
+                                        InputGestureText="Ctrl + Numpad Plus" />
+                                    <MenuItem
+                                        x:Name="mnuSmaller"
+                                        Click="MnuSmaller_Click"
+                                        Header="UI Smaller"
+                                        InputGestureText="Ctrl + Numpad Minus" />
+                                    <Separator Background="{DynamicResource PrimaryHueMidBrush}" />
+                                    <MenuItem
+                                        x:Name="mnuToggleExclude"
+                                        Click="MnuToggleExclude_Click"
+                                        Header="Toggle Excluded Items "
+                                        InputGestureText="Ctrl + E" />
+                                    <MenuItem
+                                        x:Name="mnuToggleDetails"
+                                        Click="MnuToggleDetails_Click"
+                                        Header="Toggle Details Pane "
+                                        InputGestureText="Ctrl + D" />
+                                    <Separator Background="{DynamicResource PrimaryHueMidBrush}" />
+                                    <MenuItem
+                                        Name="mnuRemoveSort"
+                                        Click="MnuRemoveSort_Click"
+                                        Header="Remove Column Sort"
+                                        InputGestureText="Ctrl + R" />
+                                </MenuItem>
+                            </Menu>
+
+                        </StackPanel>
+                    </DockPanel>
+                    <!--#endregion-->
+
+                    <!--#region SnackBar-->
+                    <materialDesign:Snackbar
+                        x:Name="SnackBar1"
+                        Grid.Row="0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Background="{DynamicResource MaterialDesignPaper}"
+                        Foreground="{DynamicResource MaterialDesignBody}"
+                        MessageQueue="{materialDesign:MessageQueue}" />
+                    <!--#endregion-->
+
+                    <!--#region DataGrid-->
+                    <DataGrid
+                        x:Name="dataGrid"
+                        Grid.Row="1"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        d:ItemsSource="{d:SampleData ItemCount=5}"
+                        materialDesign:ThemeAssist.Theme="Inherit"
+                        AutoGenerateColumns="False"
+                        CanUserAddRows="False"
+                        CanUserDeleteRows="False"
+                        FontFamily="Segue UI"
+                        FontSize="14"
+                        HeadersVisibility="Column"
+                        IsReadOnly="True"
+                        IsTabStop="False"
+                        KeyboardNavigation.DirectionalNavigation="Contained"
+                        KeyboardNavigation.TabNavigation="Continue"
+                        PreviewMouseWheel="DataGrid_PreviewMouseWheel"
+                        SelectionMode="Single"
+                        SelectionUnit="FullRow"
+                        Style="{DynamicResource MaterialDesignDataGrid}"
+                        TabIndex="0"
+                        VerticalScrollBarVisibility="Auto">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Binding="{Binding KBNum}"
+                                Header="KB Number" />
+                            <DataGridTextColumn
+                                Binding="{Binding Date, StringFormat='MM/dd/yyyy  HH:mm'}"
+                                Header="Date &amp; Time" />
+                            <DataGridTextColumn
+                                Binding="{Binding Title}"
+                                Header="Title" />
+                            <DataGridTextColumn
+                                Binding="{Binding ResultCode}"
+                                Header="Result" />
+                        </DataGrid.Columns>
+                        <DataGrid.Resources>
+                            <Style
+                                BasedOn="{StaticResource MaterialDesignScrollBarMinimal}"
+                                TargetType="ScrollBar" />
+                        </DataGrid.Resources>
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Command="Copy" />
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                    <!--#endregion-->
+
+                    <!--#region GridSplitter-->
+                    <GridSplitter
+                        x:Name="splitter"
+                        Grid.Row="2"
+                        Height="6"
+                        HorizontalAlignment="Stretch"
+                        Background="{DynamicResource PrimaryHueMidBrush}"
+                        DragCompleted="GridSplitter_DragCompleted"
+                        IsTabStop="False"
+                        ResizeBehavior="BasedOnAlignment"
+                        Style="{DynamicResource MaterialDesignGridSplitter}" />
+                    <!--#endregion-->
+
+                    <!--#region Details area-->
+                    <Grid
+                        x:Name="bottomGrid"
+                        Grid.Row="3"
+                        PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+                        <ScrollViewer
+                            x:Name="sc1"
+                            VerticalAlignment="Top"
+                            DataContext="{Binding SelectedItem, ElementName=dataGrid}"
+                            FontFamily="Segue UI"
+                            VerticalScrollBarVisibility="Auto">
+                            <Grid Margin="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="2"
+                                    Margin="-10,5"
+                                    FontSize="15"
+                                    Foreground="{DynamicResource PrimaryHueMidBrush}"
+                                    Text="Windows Update details:" />
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Margin="0,1"
+                                    Text="Title:" />
+                                <TextBox
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ReadOnlyTextBox}"
+                                    Text="{Binding Title}" />
+                                <TextBlock
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Margin="0,1"
+                                    Text="KB Number:" />
+                                <TextBox
+                                    Grid.Row="2"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ReadOnlyTextBox}"
+                                    Text="{Binding KBNum}" />
+                                <TextBlock
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    Margin="0,1"
+                                    Text="Date:" />
+                                <TextBox
+                                    Grid.Row="3"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ReadOnlyTextBox}"
+                                    Text="{Binding Date}" />
+                                <TextBlock
+                                    Grid.Row="4"
+                                    Grid.Column="1"
+                                    Margin="0,1"
+                                    Text="Description:" />
+                                <TextBox
+                                    Grid.Row="4"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ReadOnlyTextBox}"
+                                    Text="{Binding Description}" />
+                                <TextBlock
+                                    Grid.Row="5"
+                                    Grid.Column="1"
+                                    Margin="0,1"
+                                    Text="Operation:" />
+                                <TextBox
+                                    Grid.Row="5"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ReadOnlyTextBox}"
+                                    Text="{Binding Operation}" />
+                                <TextBlock
+                                    Grid.Row="6"
+                                    Grid.Column="1"
+                                    Margin="0,1"
+                                    Text="Result Code:" />
+                                <TextBox
+                                    Grid.Row="6"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ReadOnlyTextBox}"
+                                    Text="{Binding ResultCode}" />
+                                <TextBlock
+                                    Grid.Row="7"
+                                    Grid.Column="1"
+                                    Margin="0,1"
+                                    Text="HResult:" />
+                                <TextBlock
+                                    Grid.Row="7"
+                                    Grid.Column="2"
+                                    Width="100"
+                                    HorizontalAlignment="Left"
+                                    PreviewMouseDown="HResult_PreviewMouseDown">
+                                    <Hyperlink
+                                        x:Name="hypHResult"
+                                        NavigateUri="{Binding ResultCodeUrl, Source={x:Static local:UserSettings.Setting}}"
+                                        RequestNavigate="Hyperlink_RequestNavigate">
+                                        <Hyperlink.Inlines>
+                                            <Run Text="{Binding HResult}" />
+                                        </Hyperlink.Inlines>
+                                    </Hyperlink>
+                                </TextBlock>
+                                <TextBlock
+                                    Grid.Row="8"
+                                    Grid.Column="1"
+                                    Margin="0,1"
+                                    Text="Update ID:" />
+                                <TextBox
+                                    Grid.Row="8"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ReadOnlyTextBox}"
+                                    Text="{Binding UpdateID}" />
+                                <TextBlock
+                                    Grid.Row="9"
+                                    Grid.Column="1"
+                                    Margin="0,1"
+                                    Text="Support URL:" />
+                                <TextBlock
+                                    Grid.Row="9"
+                                    Grid.Column="2"
+                                    Margin="0,1">
+                                    <Hyperlink
+                                        NavigateUri="{Binding SupportURL}"
+                                        RequestNavigate="Hyperlink_RequestNavigate">
+                                        <Hyperlink.Inlines>
+                                            <Run Text="{Binding Path=SupportURL}" />
+                                        </Hyperlink.Inlines>
+                                    </Hyperlink>
+                                </TextBlock>
+                                <TextBlock
+                                    Grid.Row="10"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="2"
+                                    Margin="-10,15,0,5"
+                                    FontSize="15"
+                                    Foreground="{DynamicResource PrimaryHueMidBrush}"
+                                    Text="Windows Event Log details:" />
+                                <TextBox
+                                    Grid.Row="11"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="2"
+                                    Style="{StaticResource ReadOnlyTextBox}"
+                                    Text="{Binding ELDescription, Mode=OneWay}" />
+                            </Grid>
+                            <ScrollViewer.Resources>
+                                <Style
+                                    BasedOn="{StaticResource MaterialDesignScrollBarMinimal}"
+                                    TargetType="ScrollBar" />
+                            </ScrollViewer.Resources>
+                        </ScrollViewer>
+                    </Grid>
+                    <!--#endregion-->
+                </Grid>
+            </materialDesign:DrawerHost>
+        </Grid>
+    </materialDesign:DialogHost>
 </Window>
