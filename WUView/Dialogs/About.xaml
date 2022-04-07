@@ -170,9 +170,9 @@
                         Grid.Column="0"
                         Text="Build Date" />
                     <TextBlock
+                        x:Name="txtBuildDate"
                         Grid.Row="2"
-                        Grid.Column="1"
-                        Text="{Binding Source={x:Static local:BuildInfo.BuildDateObj}, StringFormat=f}" />
+                        Grid.Column="1" />
                 </Grid>
             </materialDesign:Card>
             <!--#endregion-->

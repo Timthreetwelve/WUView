@@ -49,7 +49,7 @@ public partial class MainWindow : Window
         // Log the version, build date and commit id
         log.Info($"{AppInfo.AppName} ({AppInfo.AppProduct}) {AppInfo.AppVersion} is starting up");
         log.Info($"{AppInfo.AppName} {AppInfo.AppCopyright}");
-        log.Debug($"{AppInfo.AppName} Build date: {BuildInfo.BuildDateObj:f}");
+        log.Debug($"{AppInfo.AppName} Build date: {BuildInfo.BuildDateUtc.ToUniversalTime():f} (UTC)");
         log.Debug($"{AppInfo.AppName} Commit ID: {BuildInfo.CommitIDString} ");
 
         // Log the .NET version, app framework and OS platform

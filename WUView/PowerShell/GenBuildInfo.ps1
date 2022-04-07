@@ -1,6 +1,6 @@
 ﻿param($outputFile="BuildInfo.cs")
 
-$buildDate = Get-Date
+$nowUTC = (Get-Date).ToUniversalTime()
 $gitOutput = git rev-parse --short HEAD
 if ($gitOutput.Length -lt 1 ) {
     $gitOutput = "n/a"
@@ -11,17 +11,15 @@ $class =
 // This file is generated during the pre-build event by GenBuildInfo.ps1.
 // Any edits to this file will be overwritten during the next build!
 
-using System;
-
 namespace WUView
 {
     public static class BuildInfo
     {
         public const string CommitIDString = `"$gitOutput`";
 
-        public const string BuildDateString = `"$buildDate`";
+        public const string BuildDateString = `"$nowUTC`";
 
-        public static readonly DateTime BuildDateObj = DateTime.Parse(BuildDateString);
+        public static readonly DateTime BuildDateUtc = DateTime.SpecifyKind(DateTime.Parse(BuildDateString), DateTimeKind.Utc);
     }
 }"
 

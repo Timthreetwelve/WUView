@@ -361,7 +361,7 @@
                                 Binding="{Binding KBNum}"
                                 Header="KB Number" />
                             <DataGridTextColumn
-                                Binding="{Binding Date, StringFormat='MM/dd/yyyy  HH:mm'}"
+                                Binding="{Binding Date}"
                                 Header="Date &amp; Time" />
                             <DataGridTextColumn
                                 Binding="{Binding Title}"

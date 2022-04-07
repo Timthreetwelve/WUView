@@ -10,6 +10,8 @@ namespace WUView.Dialogs
         public About()
         {
             InitializeComponent();
+
+            txtBuildDate.Text = $"{BuildInfo.BuildDateUtc:f}  (UTC)";
         }
 
         #region License click
