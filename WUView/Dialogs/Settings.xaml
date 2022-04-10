@@ -98,36 +98,12 @@
                             HorizontalAlignment="Left"
                             materialDesign:HintAssist.Hint="Theme"
                             SelectedIndex="{Binding DarkMode, Source={x:Static local:UserSettings.Setting}}"
-                            Style="{StaticResource MaterialDesignComboBox}">
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            TabIndex="1">
                             <ComboBox.Items>
                                 <ComboBoxItem Content="{x:Static local:ThemeType.Light}" />
                                 <ComboBoxItem Content="{x:Static local:ThemeType.Dark}" />
                                 <ComboBoxItem Content="{x:Static local:ThemeType.System}" />
-                            </ComboBox.Items>
-                        </ComboBox>
-                    </StackPanel>
-
-                    <StackPanel
-                        Grid.Row="2"
-                        Grid.Column="0"
-                        Orientation="Horizontal">
-                        <Label
-                            Width="80"
-                            Content="UI Size" />
-                        <ComboBox
-                            x:Name="cbxSize"
-                            Width="110"
-                            Margin="0,0,0,5"
-                            HorizontalAlignment="Left"
-                            materialDesign:HintAssist.Hint="Size"
-                            SelectedIndex="{Binding UISize, Source={x:Static local:UserSettings.Setting}}"
-                            Style="{StaticResource MaterialDesignComboBox}">
-                            <ComboBox.Items>
-                                <ComboBoxItem Content="{x:Static local:MySize.Smallest}" />
-                                <ComboBoxItem Content="{x:Static local:MySize.Smaller}" />
-                                <ComboBoxItem Content="{x:Static local:MySize.Default}" />
-                                <ComboBoxItem Content="{x:Static local:MySize.Larger}" />
-                                <ComboBoxItem Content="{x:Static local:MySize.Largest}" />
                             </ComboBox.Items>
                         </ComboBox>
                     </StackPanel>
@@ -147,7 +123,8 @@
                             materialDesign:HintAssist.Hint="Color"
                             MaxDropDownHeight="170"
                             SelectedIndex="{Binding PrimaryColor, Source={x:Static local:UserSettings.Setting}}"
-                            Style="{StaticResource MaterialDesignComboBox}">
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            TabIndex="2">
                             <ComboBox.Items>
                                 <ComboBoxItem Content="Red" />
                                 <ComboBoxItem Content="Pink" />
@@ -173,6 +150,32 @@
                     </StackPanel>
 
                     <StackPanel
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Orientation="Horizontal">
+                        <Label
+                            Width="80"
+                            Content="UI Size" />
+                        <ComboBox
+                            x:Name="cbxSize"
+                            Width="110"
+                            Margin="0,0,0,5"
+                            HorizontalAlignment="Left"
+                            materialDesign:HintAssist.Hint="Size"
+                            SelectedIndex="{Binding UISize, Source={x:Static local:UserSettings.Setting}}"
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            TabIndex="3">
+                            <ComboBox.Items>
+                                <ComboBoxItem Content="{x:Static local:MySize.Smallest}" />
+                                <ComboBoxItem Content="{x:Static local:MySize.Smaller}" />
+                                <ComboBoxItem Content="{x:Static local:MySize.Default}" />
+                                <ComboBoxItem Content="{x:Static local:MySize.Larger}" />
+                                <ComboBoxItem Content="{x:Static local:MySize.Largest}" />
+                            </ComboBox.Items>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel
                         Grid.Row="0"
                         Grid.Column="1"
                         Orientation="Horizontal">
@@ -187,7 +190,8 @@
                             materialDesign:HintAssist.Hint="Font Weight"
                             MaxDropDownHeight="170"
                             SelectedIndex="{Binding GridFontWeight, Source={x:Static local:UserSettings.Setting}}"
-                            Style="{StaticResource MaterialDesignComboBox}">
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            TabIndex="4">
                             <ComboBox.Items>
                                 <ComboBoxItem Content="Thin" />
                                 <ComboBoxItem Content="Regular" />
@@ -213,11 +217,41 @@
                             materialDesign:HintAssist.Hint="Height"
                             MaxDropDownHeight="170"
                             SelectedIndex="{Binding RowSpacing, Source={x:Static local:UserSettings.Setting}}"
-                            Style="{StaticResource MaterialDesignComboBox}">
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            TabIndex="5">
                             <ComboBox.Items>
                                 <ComboBoxItem Content="Compact" />
                                 <ComboBoxItem Content="Comfortable" />
                                 <ComboBoxItem Content="Spacious" />
+                            </ComboBox.Items>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Orientation="Horizontal">
+                        <Label
+                            Width="100"
+                            Content="Date Format" />
+                        <ComboBox
+                            x:Name="cbxDateFmt"
+                            Width="110"
+                            Margin="0,0,0,5"
+                            HorizontalAlignment="Left"
+                            materialDesign:ComboBoxAssist.ShowSelectedItem="True"
+                            materialDesign:HintAssist.Hint="Date Format"
+                            MaxDropDownHeight="170"
+                            SelectedIndex="{Binding DateFormat, Source={x:Static local:UserSettings.Setting}}"
+                            Style="{StaticResource MaterialDesignComboBox}"
+                            TabIndex="6">
+                            <ComboBox.Items>
+                                <ComboBoxItem Content="Default" />
+                                <ComboBoxItem Content="yyyy/MM/dd" />
+                                <ComboBoxItem Content="MM/dd/yyyy" />
+                                <ComboBoxItem Content="dd MMM yyyy" />
+                                <ComboBoxItem Content="UTC" />
+                                <ComboBoxItem Content="Sortable" />
                             </ComboBox.Items>
                         </ComboBox>
                     </StackPanel>
@@ -243,7 +277,6 @@
                         <RowDefinition Height="31" />
                         <RowDefinition Height="31" />
                         <RowDefinition Height="31" />
-                        <RowDefinition Height="31" />
                     </Grid.RowDefinitions>
 
                     <StackPanel
@@ -253,7 +286,8 @@
                         <ToggleButton
                             HorizontalAlignment="Left"
                             IsChecked="{Binding ShowDetails, Source={x:Static local:UserSettings.Setting}}"
-                            Style="{StaticResource MaterialDesignSwitchToggleButton}" />
+                            Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                            TabIndex="7" />
                         <Label
                             Margin="10,-1,0,0"
                             Content="Show Details Panel" />
@@ -266,7 +300,8 @@
                         <ToggleButton
                             HorizontalAlignment="Left"
                             IsChecked="{Binding HideExcluded, Source={x:Static local:UserSettings.Setting}}"
-                            Style="{StaticResource MaterialDesignSwitchToggleButton}" />
+                            Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                            TabIndex="8" />
                         <Label
                             Margin="10,-1,0,0"
                             Content="Hide Excluded Items" />
@@ -278,7 +313,8 @@
                         <ToggleButton
                             HorizontalAlignment="Left"
                             IsChecked="{Binding KeepOnTop, Source={x:Static local:UserSettings.Setting}}"
-                            Style="{StaticResource MaterialDesignSwitchToggleButton}" />
+                            Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                            TabIndex="9" />
                         <Label
                             Margin="10,-1,0,0"
                             Content="Keep Windows Update Viewer on top of other windows" />
@@ -291,7 +327,8 @@
                         <ToggleButton
                             HorizontalAlignment="Left"
                             IsChecked="{Binding IncludeDebug, Source={x:Static local:UserSettings.Setting}}"
-                            Style="{StaticResource MaterialDesignSwitchToggleButton}" />
+                            Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                            TabIndex="10" />
                         <Label
                             Margin="10,-1,0,0"
                             Content="Include debug level messages in log file" />

@@ -14,6 +14,29 @@ public class WUpdate
     public string Description { get; set; }
     public string UpdateID { get; set; }
     public DateTime Date { get; set; }
+
+    public string FormattedDate
+    {
+        get
+        {
+            switch (UserSettings.Setting.DateFormat)
+            {
+                case 1:
+                    return Date.ToString("yyyy/MM/dd  HH:mm");
+                case 2:
+                    return Date.ToString("MM/dd/yyyy  hh:mm tt");
+                case 3:
+                    return Date.ToString("d MMM yyyy  H:mm");
+                case 4:
+                    return Date.ToUniversalTime().ToString("u").Replace("Z", " UTC");
+                case 5:
+                    return Date.ToString("s");
+                default:
+                    return Date.ToString("g");
+            }
+        }
+    }
+
     public string SupportURL
     {
         get

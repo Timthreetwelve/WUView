@@ -149,6 +149,10 @@ public partial class MainWindow : Window
                 double newSize = MainWindowUIHelpers.UIScale((MySize)size);
                 MainGrid.LayoutTransform = new ScaleTransform(newSize, newSize);
                 break;
+
+            case nameof(UserSettings.Setting.DateFormat):
+                dataGrid.Items.Refresh();
+                break;
         }
     }
     #endregion Setting change
@@ -312,6 +316,17 @@ public partial class MainWindow : Window
                     DialogHost.Close("MainDialogHost");
                     DialogHelpers.ShowSettingsDialog();
                 }
+            }
+        }
+        if (e.Key == Key.T)
+        {
+            if (UserSettings.Setting.DateFormat >= 5)
+            {
+                UserSettings.Setting.DateFormat = 0;
+            }
+            else
+            {
+                UserSettings.Setting.DateFormat++;
             }
         }
         // No CTRL key

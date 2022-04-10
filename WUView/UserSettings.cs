@@ -18,6 +18,17 @@ public class UserSettings : SettingsManager<UserSettings>, INotifyPropertyChange
         }
     }
 
+    public int DateFormat
+    {
+        get { return dateFormat; }
+        set
+        {
+            dateFormat = value;
+            OnPropertyChanged();
+        }
+    }
+
+
     public double DetailsHeight
     {
         get { return detailsHeight; }
@@ -183,6 +194,7 @@ public class UserSettings : SettingsManager<UserSettings>, INotifyPropertyChange
 
     #region Private backing fields
     private int darkmode = (int)ThemeType.Light;
+    private int dateFormat;
     private double detailsHeight = 250;
     private int gridFontWeight = (int)Weight.Regular;
     private bool hideExcluded = true;
