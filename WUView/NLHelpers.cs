@@ -81,7 +81,7 @@ internal static class NLHelpers
 
         // combine temp folder with filename
         string tempdir = Path.GetTempPath();
-        return Path.Combine(tempdir, filename);
+        return Path.Combine(tempdir, "T_K", filename);
     }
     #endregion Create a filename in the temp folder
 
