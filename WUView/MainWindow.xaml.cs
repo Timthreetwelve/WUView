@@ -1065,4 +1065,20 @@ public partial class MainWindow : Window
             "DailyDocuments Error", ButtonType.Ok).ShowDialog();
     }
     #endregion Unhandled Exception Handler
+
+    #region Double click ColorZone
+    /// <summary>
+    /// Double click the ColorZone to set optimal width
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ColorZone_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+    {
+        SizeToContent = SizeToContent.Width;
+        double width = ActualWidth;
+        Thread.Sleep(50);
+        SizeToContent = SizeToContent.Manual;
+        Width = width + 1;
+    }
+    #endregion Double click ColorZone
 }
