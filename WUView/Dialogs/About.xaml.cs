@@ -46,5 +46,22 @@ namespace WUView.Dialogs
             ShadowAssist.SetShadowDepth(card, ShadowDepth.Depth2);
         }
         #endregion Mouse enter/leave shadow effect
+
+        #region ReadMe click
+        /// <summary>
+        /// Handles the Click event of the BtnReadMe control.
+        /// </summary>
+        /// <param name="sender">
+        /// The source of the event.
+        /// </param>
+        /// <param name="e">
+        /// The <see cref="RoutedEventArgs" /> instance containing the event data.
+        /// </param>
+        private void BtnReadMe_Click(object sender, RoutedEventArgs e)
+        {
+            string dir = AppInfo.AppDirectory;
+            TextFileViewer.ViewTextFile(Path.Combine(dir, "ReadMe.txt"));
+        }
+        #endregion ReadMe click
     }
 }

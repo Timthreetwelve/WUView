@@ -56,8 +56,20 @@
                             <materialDesign:PackIcon
                                 Width="24"
                                 Height="24"
-                                Kind="CloseThick" />
+                                Kind="Close" />
                         </Button.Content>
+                    </Button>
+                    <Button Margin="0,0,50,0"
+                            HorizontalAlignment="Right"
+                            Click="BtnReadMe_Click"
+                            FocusVisualStyle="{x:Null}"
+                            Foreground="{Binding ElementName=tbHeader,
+                                                 Path=Foreground}"
+                            IsDefault="False" IsTabStop="False"
+                            ToolTip="Open ReadMe Document"
+                            Style="{StaticResource MaterialDesignFlatButton}">
+                        <materialDesign:PackIcon Width="24" Height="24"
+                                                 Kind="BookOpenPageVariantOutline" />
                     </Button>
                 </Grid>
             </materialDesign:ColorZone>
