@@ -17,31 +17,36 @@ internal static class NLHelpers
         LoggingConfiguration config = new();
 
         // create log file Target for NLog
-        FileTarget logfile = new("logfile");
+        FileTarget logfile = new("logfile")
+        {
+            // new file on startup
+            DeleteOldFileOnStartup = newfile,
 
-        // new file on startup
-        logfile.DeleteOldFileOnStartup = newfile;
+            // create the file if needed
+            FileName = CreateFilename(),
 
-        // create the file if needed
-        logfile.FileName = CreateFilename();
-
-        // message and footer layouts
-        logfile.Footer = "${date:format=yyyy/MM/dd HH\\:mm\\:ss}";
-        logfile.Layout = "${date:format=yyyy/MM/dd HH\\:mm\\:ss} " +
+            // message and footer layouts
+            Footer = "${date:format=yyyy/MM/dd HH\\:mm\\:ss}",
+            Layout = "${date:format=yyyy/MM/dd HH\\:mm\\:ss} " +
                          "${pad:padding=-5:inner=${level:uppercase=true}}  " +
-                         "${message}${onexception:${newline}${exception:format=tostring}}";
+                         "${message}${onexception:${newline}${exception:format=tostring}}"
+        };
 
         // add the log file target
         config.AddTarget(logfile);
 
         // add the rule for the log file
-        LoggingRule file = new("*", LogLevel.Debug, logfile);
-        file.RuleName = "LogToFile";
+        LoggingRule file = new("*", LogLevel.Debug, logfile)
+        {
+            RuleName = "LogToFile"
+        };
         config.LoggingRules.Add(file);
 
         // create debugger target
-        DebuggerTarget debugger = new("debugger");
-        debugger.Layout = "${processtime} >>> ${message} ";
+        DebuggerTarget debugger = new("debugger")
+        {
+            Layout = "${processtime} >>> ${message} "
+        };
 
         // add the target
         config.AddTarget(debugger);

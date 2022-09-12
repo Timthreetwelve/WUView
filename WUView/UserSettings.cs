@@ -28,7 +28,6 @@ public class UserSettings : SettingsManager<UserSettings>, INotifyPropertyChange
         }
     }
 
-
     public double DetailsHeight
     {
         get { return detailsHeight; }
