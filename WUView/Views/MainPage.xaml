@@ -172,11 +172,6 @@
                 <DataGridTextColumn Binding="{Binding ResultCode, Converter={StaticResource results}, ConverterParameter='ResultCode'}"
                                     Header="Result" />
             </DataGrid.Columns>
-            <DataGrid.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Command="Copy" />
-                </ContextMenu>
-            </DataGrid.ContextMenu>
         </DataGrid>
         <!--#endregion-->
 
