@@ -254,7 +254,7 @@ public partial class NavigationViewModel : ObservableObject
         #region Keys with Ctrl
         if (e.KeyboardDevice.Modifiers == ModifierKeys.Control)
         {
-            if (e.Key == Key.M)
+            if (e.Key == Key.N)
             {
                 _mainWindow.NavDrawer.IsLeftDrawerOpen = !_mainWindow.NavDrawer.IsLeftDrawerOpen;
             }
@@ -277,6 +277,10 @@ public partial class NavigationViewModel : ObservableObject
             if (e.Key == Key.E)
             {
                 UserSettings.Setting.HideExcluded = !UserSettings.Setting.HideExcluded;
+            }
+            if (e.Key == Key.F)
+            {
+                MainPage.Instance.tbxSearch.Focus();
             }
             if (e.Key == Key.R)
             {
