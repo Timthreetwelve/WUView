@@ -1,22 +1,21 @@
-﻿// Copyright(c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
-
-// Like it says on the tin, this is a global using file
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 global using System;
 global using System.Collections.Generic;
+global using System.Collections.ObjectModel;
 global using System.ComponentModel;
 global using System.Diagnostics;
 global using System.Diagnostics.Eventing.Reader;
+global using System.Globalization;
 global using System.IO;
-global using System.Media;
+global using System.Linq;
 global using System.Reflection;
-global using System.Runtime.CompilerServices;
 global using System.Runtime.InteropServices;
 global using System.Runtime.Versioning;
+global using System.Security.Principal;
 global using System.Text;
-global using System.Text.RegularExpressions;
 global using System.Text.Json;
-global using System.Threading;
+global using System.Text.RegularExpressions;
 global using System.Threading.Tasks;
 global using System.Windows;
 global using System.Windows.Controls;
@@ -27,15 +26,23 @@ global using System.Windows.Input;
 global using System.Windows.Media;
 global using System.Windows.Navigation;
 
-global using Microsoft.Win32;
-
-global using WUApiLib;
-
-global using WUView.Dialogs;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
 
 global using MaterialDesignColors;
 global using MaterialDesignThemes.Wpf;
 
+global using Microsoft.Win32;
+
 global using NLog;
 global using NLog.Config;
 global using NLog.Targets;
+
+global using WUApiLib;
+
+global using WUView.Configuration;
+global using WUView.Dialogs;
+global using WUView.Helpers;
+global using WUView.Models;
+global using WUView.ViewModels;
+global using WUView.Views;

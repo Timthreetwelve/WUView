@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.1.32210.238
+VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WUView", "WUView\WUView.csproj", "{06BE239B-0636-4175-917D-6BB16A48FB13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WUView", "WUView\WUView.csproj", "{2E751468-2744-4042-81F5-853FBE67C098}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{06BE239B-0636-4175-917D-6BB16A48FB13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06BE239B-0636-4175-917D-6BB16A48FB13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06BE239B-0636-4175-917D-6BB16A48FB13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06BE239B-0636-4175-917D-6BB16A48FB13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E751468-2744-4042-81F5-853FBE67C098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E751468-2744-4042-81F5-853FBE67C098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E751468-2744-4042-81F5-853FBE67C098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E751468-2744-4042-81F5-853FBE67C098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6E90BD97-9AC6-4F5D-9AF6-03DA630E7084}
+		SolutionGuid = {79767ED0-375D-4153-9F6A-DAE1A0B29ACF}
 	EndGlobalSection
 EndGlobal

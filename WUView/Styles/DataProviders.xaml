@@ -1,0 +1,43 @@
+<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WUView"
+                    xmlns:models="clr-namespace:WUView.Models"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--#region Data providers for enums on the settings page-->
+    <ObjectDataProvider x:Key="enumAccentColors"
+                        MethodName="GetValues"
+                        ObjectType="{x:Type system:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="models:AccentColor" />
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <ObjectDataProvider x:Key="enumThemeType"
+                        MethodName="GetValues"
+                        ObjectType="{x:Type system:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="models:ThemeType" />
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <ObjectDataProvider x:Key="enumUISize"
+                        MethodName="GetValues"
+                        ObjectType="{x:Type system:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="models:MySize" />
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <ObjectDataProvider x:Key="enumRowSpacing"
+                        MethodName="GetValues"
+                        ObjectType="{x:Type system:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="models:Spacing" />
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+    <!--#endregion-->
+
+</ResourceDictionary>

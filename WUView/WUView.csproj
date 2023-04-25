@@ -5,12 +5,12 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>Images\UV.ico</ApplicationIcon>
-    <Copyright>Copyright © $([System.DateTime]::UtcNow.Year) Tim Kennedy</Copyright>
     <Description>Windows Update Viewer</Description>
+    <Copyright>Copyright © $([System.DateTime]::UtcNow.Year) Tim Kennedy</Copyright>
     <Authors>Tim Kennedy</Authors>
     <Company>T_K</Company>
     <Product>Windows Update Viewer</Product>
+    <ApplicationIcon>Images\UV.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,27 +26,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Images\UV.ico" />
+    <Resource Include="Images\UV.ico" />
+    <Resource Include="Images\UV.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
     <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="MaterialDesignThemes" Version="4.7.1" />
-    <PackageReference Include="NLog" Version="5.1.1" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.8.0" />
+    <PackageReference Include="NLog" Version="5.1.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="License.txt">
+    <None Update="LICENSE.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="ReadMe.txt">
+    <None Update="Readme.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="WUViewExcludes.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

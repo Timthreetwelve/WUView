@@ -1,4 +1,4 @@
-﻿// Copyright(c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Dialogs
 {
@@ -22,6 +22,7 @@ namespace WUView.Dialogs
                 tb1.AppendText(line.ExcludedString);
                 tb1.AppendText(Environment.NewLine);
             }
+            tb1.CaretIndex = tb1.Text.Length;
         }
         #endregion Load existing exclude items into the textbox
     }

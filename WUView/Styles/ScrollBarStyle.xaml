@@ -1,0 +1,17 @@
+<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <!--#region Style for ALL ScrollBars-->
+    <Style TargetType="ScrollBar"
+           BasedOn="{StaticResource MaterialDesignScrollBar}">
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="materialDesign:ScrollBarAssist.ButtonsVisibility" Value="Collapsed" />
+        <Setter Property="materialDesign:ScrollBarAssist.ThumbCornerRadius" Value="4" />
+        <Setter Property="materialDesign:ScrollBarAssist.ThumbHeight" Value="7" />
+        <Setter Property="materialDesign:ScrollBarAssist.ThumbWidth" Value="7" />
+    </Style>
+    <!--#endregion-->
+
+</ResourceDictionary>
