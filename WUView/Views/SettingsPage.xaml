@@ -53,7 +53,7 @@
                             HorizontalAlignment="Left"
                             Command="{Binding EditExcludeCommand,
                                               Source={StaticResource command}}"
-                            Content="Exit Exclude List"
+                            Content="Edit Exclude List"
                             FontSize="16"
                             Style="{StaticResource PlainOutlinedButton}"
                             ToolTip="Shift-Click to open file with default application" />
