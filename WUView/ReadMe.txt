@@ -67,8 +67,8 @@ the log file.
 Selecting About will display the About dialog which shows information about the app such as the
 version number and has a link to the GitHub repository where you can check for updates.
 
-You can view the log file, the exclude file or this ReadMe file by clicking on the three dot icon
-at the right end of the banner at the top of the screen.
+You can view the log file or this ReadMe file by clicking on the three dot icon at the right end
+of the banner at the top of the screen.
 
 
 Keyboard Shortcuts
