@@ -103,7 +103,7 @@ public partial class NavigationViewModel : ObservableObject
     }
     #endregion Navigate Command
 
-    #region Exit the exclude file
+    #region Edit the exclude file
     [RelayCommand]
     public static void EditExclude()
     {
@@ -235,6 +235,14 @@ public partial class NavigationViewModel : ObservableObject
         MainPage.Instance.Copy2Clipboard(true);
     }
     #endregion Copy to clipboard
+
+    #region Check for new release
+    [RelayCommand]
+    public static async Task CheckReleaseAsync()
+    {
+        await GitHubHelpers.CheckRelease();
+    }
+    #endregion Check for new release
 
     #endregion Relay Commands
 

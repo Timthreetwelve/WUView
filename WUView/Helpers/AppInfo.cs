@@ -44,10 +44,16 @@ public static class AppInfo
         Assembly.GetEntryAssembly().GetCustomAttribute<AssemblyFileVersionAttribute>().Version;
 
     /// <summary>
-    /// Returns the full version number
+    /// Returns the full version number as String
     /// </summary>
     public static string AppVersion =>
             Assembly.GetEntryAssembly().GetName().Version.ToString();
+
+    /// <summary>
+    /// Returns the full version number as Version
+    /// </summary>
+    public static Version AppVersionVer =>
+            Assembly.GetEntryAssembly().GetName().Version;
 
     /// <summary>
     /// Returns the app's full path including the EXE name

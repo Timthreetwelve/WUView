@@ -58,7 +58,7 @@
                         <viewmodels:NavigationViewModel />
                     </Menu.DataContext>
                     <!--#region File menu-->
-                    <MenuItem Header="File">
+                    <MenuItem Header="_File">
                         <MenuItem Name="mnuSaveToCsv"
                                   Command="{Binding SaveCSVCommand}"
                                   Header="Save Grid to CSV File" />
@@ -78,14 +78,14 @@
                     <!--#endregion-->
 
                     <!--#region Copy menu-->
-                    <MenuItem Header="Copy" ToolTip="Copy Menu">
+                    <MenuItem Header="_Copy" ToolTip="Copy Menu">
                         <MenuItem Name="mnuCopy"
                                   Header="Copy Grid to Clipboard" />
                     </MenuItem>
                     <!--#endregion-->
 
                     <!--#region View menu-->
-                    <MenuItem Header="View" ToolTip="View Menu">
+                    <MenuItem Header="_View" ToolTip="View Menu">
                         <MenuItem x:Name="mnuLarger"
                                   Command="{Binding UILargerCommand}"
                                   Header="Larger View"
@@ -95,14 +95,19 @@
                                   Header="Smaller View"
                                   InputGestureText="Ctrl + Numpad Minus" />
                         <Separator />
-                        <MenuItem x:Name="mnuToggleExclude"
-                                  Command="{Binding ToggleExcludedCommand}"
-                                  Header="Toggle Excluded Items "
-                                  InputGestureText="Ctrl + E" />
                         <MenuItem x:Name="mnuToggleDetails"
                                   Command="{Binding ToggleDetailsCommand}"
                                   Header="Toggle Details Pane "
                                   InputGestureText="Ctrl + D" />
+                        <MenuItem x:Name="mnuToggleExclude"
+                                  Command="{Binding ToggleExcludedCommand}"
+                                  Header="Toggle Excluded Items "
+                                  InputGestureText="Ctrl + E" />
+                        <Separator />
+                        <MenuItem x:Name="mnuEditExclude"
+                                  Command="{Binding EditExcludeCommand}"
+                                  Header="Edit Exclude List"
+                                  InputGestureText="Ctrl + L" />
                         <Separator />
                         <MenuItem Name="mnuRemoveSort"
                                   Command="{Binding RemoveSortCommand}"

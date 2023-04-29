@@ -15,10 +15,14 @@
              FontSize="14"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}">
 
-    <!--#region DataContext -->
+    <!--#region DataContext-->
     <UserControl.DataContext>
         <viewmodels:AboutViewModel />
     </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <viewmodels:NavigationViewModel x:Key="navigationVM" />
+    </UserControl.Resources>
     <!--#endregion-->
 
     <Grid Background="{DynamicResource MaterialDesignCardBackground}">
@@ -42,6 +46,7 @@
                     <RowDefinition Height="26" />
                     <RowDefinition Height="26" />
                     <RowDefinition Height="26" />
+                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <!--#endregion-->
 
@@ -118,6 +123,17 @@
                         <TextBlock Text="Open the read me file" />
                     </Hyperlink>
                 </TextBlock>
+                <!--#endregion-->
+
+                <!--#region Check for new release button-->
+                <Button Grid.Row="9"
+                        Width="160"
+                        Margin="0,20" HorizontalAlignment="Left"
+                        Command="{Binding CheckReleaseCommand}"
+                        Content="Check for New Release"
+                        DataContext="{StaticResource navigationVM}"
+                        Style="{StaticResource PlainOutlinedButton}"
+                        ToolTip="Check for updates to this application." />
                 <!--#endregion-->
             </Grid>
         </ScrollViewer>

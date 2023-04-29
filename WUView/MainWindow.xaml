@@ -116,7 +116,7 @@
                         <Border Padding="3"
                                 BorderBrush="{DynamicResource MaterialDesignDivider}"
                                 BorderThickness="2">
-                            <Grid Width="150"
+                            <Grid Width="170"
                                   Margin="0">
                                   <StackPanel Orientation="Vertical">
                                     <Button Height="35"
@@ -129,6 +129,13 @@
                                             Command="{Binding ViewReadMeFileCommand}"
                                             Content="View ReadMe File"
                                             ToolTip="Open the ReadMe file in the default application." />
+                                    <Separator Margin="0" Padding="1"
+                                               Background="{DynamicResource MaterialDesignDivider}" />
+                                    <Button Height="35"
+                                            Padding="15,1,0,22"
+                                            Command="{Binding CheckReleaseCommand}"
+                                            Content="Check for New Release"
+                                            ToolTip="Check for new release of this application." />
                                     <Separator Margin="0" Padding="1"
                                                Background="{DynamicResource MaterialDesignDivider}" />
                                     <Button Height="35"
