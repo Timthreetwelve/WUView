@@ -98,7 +98,7 @@ internal static class GitHubHelpers
         }
         catch (Exception ex)
         {
-            _log.Error(ex, "Get latest release on GitHub failed.");
+            _log.Error(ex, "Get latest release from GitHub failed.");
             return null;
         }
     }
