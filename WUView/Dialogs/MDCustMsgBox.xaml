@@ -17,6 +17,31 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         WindowStyle="None">
 
+    <!--#region Window Resources-->
+    <Window.Resources>
+        <Style TargetType="Button"
+               x:Key="DialogCloseButton"
+               BasedOn="{StaticResource MaterialDesignFlatButton}">
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="ToolTip" Value="Close" />
+            <Setter Property="Width" Value="30" />
+        </Style>
+        <Style TargetType="Button"
+               x:Key="DialogButton"
+               BasedOn="{StaticResource MaterialDesignOutlinedButton}">
+            <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignDivider}" />
+            <Setter Property="BorderThickness" Value="1.5" />
+            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="materialDesign:RippleAssist.Feedback" Value="{DynamicResource MaterialDesignBody}" />
+        </Style>
+    </Window.Resources>
+    <!--#endregion-->
+
     <Grid>
         <!--#region Row and Column definitions-->
         <Grid.ColumnDefinitions>
@@ -32,7 +57,7 @@
         <!--#region Title bar and Close button-->
         <materialDesign:Card x:Name="cardHeader"
                              Grid.Row="0" Grid.ColumnSpan="2"
-                             Height="45"
+                             Height="35"
                              Padding="10,5,5,5"
                              materialDesign:ElevationAssist.Elevation="Dp5"
                              Background="{DynamicResource PrimaryHueMidBrush}"
@@ -43,24 +68,23 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
-                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="38" />
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="txtTitle"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
-                           FontSize="18"
+                           FontSize="16"
+                           FontWeight="SemiBold"
                            Style="{DynamicResource MaterialDesignTitleTextBlock}"
                            Text="Title Text"
                            TextTrimming="CharacterEllipsis" />
                 <Button x:Name="btnClose"
                         Grid.Column="1"
-                        Width="32" Height="32"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         Command="{Binding CancelButtonCommand}"
-                        Style="{StaticResource MaterialDesignFloatingActionButton}"
-                        ToolTip="Close">
-                    <materialDesign:PackIcon Width="24" Height="24"
+                        Style="{StaticResource DialogCloseButton}">
+                    <materialDesign:PackIcon Width="26" Height="26"
                                              Kind="Close" />
                 </Button>
             </Grid>
@@ -68,6 +92,7 @@
         <!--#endregion-->
 
         <Grid Grid.Row="1" Grid.ColumnSpan="2"
+              MinWidth="250"
               Margin="15">
             <!--#region Row Definitions-->
             <Grid.RowDefinitions>
@@ -109,32 +134,24 @@
 
                 <Button x:Name="btnOk"
                         Grid.Column="1"
-                        Width="100"
-                        Margin="5"
                         Command="{Binding OKButtonCommand}"
                         Content="OK"
-                        Style="{StaticResource MaterialDesignRaisedButton}" />
+                        Style="{StaticResource DialogButton}" />
                 <Button x:Name="btnYes"
                         Grid.Column="2"
-                        Width="100"
-                        Margin="5"
                         Command="{Binding YesButtonCommand}"
                         Content="Yes"
-                        Style="{StaticResource MaterialDesignRaisedButton}" />
+                        Style="{StaticResource DialogButton}" />
                 <Button x:Name="btnNo"
                         Grid.Column="3"
-                        Width="100"
-                        Margin="5"
                         Command="{Binding NoButtonCommand}"
                         Content="No"
-                        Style="{StaticResource MaterialDesignRaisedButton}" />
+                        Style="{StaticResource DialogButton}" />
                 <Button x:Name="btnCancel"
                         Grid.Column="4"
-                        Width="100"
-                        Margin="5"
                         Command="{Binding CancelButtonCommand}"
                         Content="Cancel"
-                        Style="{StaticResource MaterialDesignRaisedButton}" />
+                        Style="{StaticResource DialogButton}" />
             </Grid>
         </Grid>
         <!--#endregion-->
