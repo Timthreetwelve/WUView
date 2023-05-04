@@ -12,26 +12,6 @@ internal static class DialogHelpers
     {
         ExcludesEditor ee = new();
         object retval = await DialogHost.Show(ee, "MainDialogHost");
-        if (retval != null && (bool)retval)
-        {
-            List<ExcludedItems> exItems = new();
-            for (int line = 0; line < ee.tb1.LineCount; line++)
-            {
-                ExcludedItems xi = new();
-                string tbline = ee.tb1.GetLineText(line).TrimEnd('\n').TrimEnd('\r');
-                if (!string.IsNullOrWhiteSpace(tbline))
-                {
-                    xi.ExcludedString = tbline;
-                    if (!exItems.Contains(xi))
-                    {
-                        exItems.Add(xi);
-                    }
-                }
-            }
-            ExcludedItems.ExcludedStrings.Clear();
-            ExcludedItems.ExcludedStrings = exItems;
-            return true;
-        }
-        return false;
+        return retval != null && (bool)retval;
     }
 }

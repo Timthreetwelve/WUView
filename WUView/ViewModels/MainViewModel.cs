@@ -225,6 +225,7 @@ internal partial class MainViewModel : ObservableObject
             FileHelpers.SaveExcludeFile();
             PopulateExcludedList();
             MainPage.Instance.UpdateGrid();
+            DisplayCount();
         }
     }
     #endregion Edit exclude file

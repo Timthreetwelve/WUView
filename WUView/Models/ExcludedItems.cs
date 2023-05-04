@@ -5,23 +5,23 @@ namespace WUView.Models;
 /// <summary>
 /// Class for the excluded items
 /// </summary>
-public class ExcludedItems : IEquatable<ExcludedItems>
+public class ExcludedItems : ObservableObject
 {
     public string ExcludedString { get; set; }
-    public static List<ExcludedItems> ExcludedStrings { get; set; } = new();
+    public static ObservableCollection<ExcludedItems> ExcludedStrings { get; set; } = new();
 
-    public bool Equals(ExcludedItems other)
-    {
-        return string.Equals(ExcludedString, other.ExcludedString, StringComparison.OrdinalIgnoreCase);
-    }
+    //public bool Equals(ExcludedItems other)
+    //{
+    //    return string.Equals(ExcludedString, other.ExcludedString, StringComparison.OrdinalIgnoreCase);
+    //}
 
-    public override bool Equals(object obj)
-    {
-        return Equals(obj as ExcludedItems);
-    }
+    //public override bool Equals(object obj)
+    //{
+    //    return Equals(obj as ExcludedItems);
+    //}
 
-    public override int GetHashCode()
-    {
-        throw new NotImplementedException();
-    }
+    //public override int GetHashCode()
+    //{
+    //    return ExcludedStrings.GetHashCode();
+    //}
 }

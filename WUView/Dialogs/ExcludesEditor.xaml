@@ -3,16 +3,24 @@
 <UserControl x:Class="WUView.Dialogs.ExcludesEditor"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:convert="clr-namespace:WUView.Converters"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:WUView.Models"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
              Width="400" Height="300"
              FontSize="16"
+             Loaded="UserControl_Loaded"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
              TextOptions.TextFormattingMode="Ideal"
              TextOptions.TextRenderingMode="Auto">
+
+    <UserControl.Resources>
+        <convert:ExcludedItemsConverter x:Key="exclConv" />
+    </UserControl.Resources>
+
     <Border BorderBrush="{DynamicResource MaterialDesignDivider}"
             BorderThickness="1" CornerRadius="3">
         <Grid>
@@ -48,9 +56,17 @@
                      FontFamily="Cascadia Code, Consolas"
                      FontWeight="Light"
                      Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     Text="{Binding ExcludedStrings,
+                                    Mode=TwoWay,
+                                    Converter={StaticResource exclConv},
+                                    UpdateSourceTrigger=LostFocus}"
                      TextAlignment="left"
                      TextBlock.LineHeight="24"
-                     VerticalScrollBarVisibility="Auto" />
+                     VerticalScrollBarVisibility="Auto">
+                <TextBox.DataContext>
+                    <models:ExcludedItems />
+                </TextBox.DataContext>
+            </TextBox>
             <!--#endregion-->
 
             <!--#region StackPanel with Buttons-->

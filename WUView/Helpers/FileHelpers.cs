@@ -20,7 +20,7 @@ public static class FileHelpers
         Stopwatch rxsw = Stopwatch.StartNew();
         string json = await File.ReadAllTextAsync(GetExcludesFile());
         rxsw.Stop();
-        ExcludedItems.ExcludedStrings = JsonSerializer.Deserialize<List<ExcludedItems>>(json);
+        ExcludedItems.ExcludedStrings = JsonSerializer.Deserialize<ObservableCollection<ExcludedItems>>(json);
         int xCount = ExcludedItems.ExcludedStrings.Count;
         string xRecs = xCount == 1 ? "record" : "records";
         _log.Debug($"Read {ExcludedItems.ExcludedStrings.Count} exclude {xRecs} from disk in {rxsw.Elapsed.TotalMilliseconds:N2} milliseconds");
