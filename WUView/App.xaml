@@ -17,7 +17,6 @@
                 <ResourceDictionary Source="Styles/DataGridStyles.xaml" />
                 <ResourceDictionary Source="Styles/DataProviders.xaml" />
                 <ResourceDictionary Source="Styles/DataTemplates.xaml" />
-                <ResourceDictionary Source="Styles/HyperlinkStyle.xaml" />
                 <ResourceDictionary Source="Styles/NavigationStyles.xaml" />
                 <ResourceDictionary Source="Styles/ScrollBarStyle.xaml" />
                 <ResourceDictionary Source="Styles/SnackbarStyle.xaml" />
