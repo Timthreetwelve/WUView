@@ -7,21 +7,20 @@ namespace WUView.Models;
 /// </summary>
 public class ExcludedItems : ObservableObject
 {
+    /// <summary>
+    /// Gets or sets the excluded string.
+    /// </summary>
+    /// <value>
+    /// The excluded string.
+    /// </value>
+
     public string ExcludedString { get; set; }
+
+    /// <summary>
+    /// Collection of excluded strings
+    /// </summary>
+    /// <value>
+    /// The excluded strings.
+    /// </value>
     public static ObservableCollection<ExcludedItems> ExcludedStrings { get; set; } = new();
-
-    //public bool Equals(ExcludedItems other)
-    //{
-    //    return string.Equals(ExcludedString, other.ExcludedString, StringComparison.OrdinalIgnoreCase);
-    //}
-
-    //public override bool Equals(object obj)
-    //{
-    //    return Equals(obj as ExcludedItems);
-    //}
-
-    //public override int GetHashCode()
-    //{
-    //    return ExcludedStrings.GetHashCode();
-    //}
 }
