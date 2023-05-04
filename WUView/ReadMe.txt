@@ -21,8 +21,7 @@ splitter up or down.
 
 Navigation
 ==========
-Click the three-lined (hamburger) icon at the top left and use the bar that appears on the left to
-access the various options in the application.
+Use the navigation bar on the left side of the application to go to the settings or about pages.
 
 
 Filtering the Grid
@@ -42,8 +41,8 @@ This window is where you can specify strings to be excluded. When you first open
 see that "Defender" has already been added. Consequently any update that has the word "Defender" in
 the update title will be excluded. Feel free to add any other strings to this list. For example, if
 you don't want to see the malicious software remover tool you cold add "malicious" to the list. The
-words on this list are not case sensitive. The exclude list will be saved and reapplied the next time
-Windows Update Viewer is started.
+words on this list are not case sensitive. Click OK to save any changes to the exclude list. The
+exclude list will be saved and reapplied the next time Windows Update Viewer is started.
 
 If you want to temporarily see all the installed updates, you can select Toggle Excluded Items from
 the View Menu or by pressing Ctrl + E instead of removing everything from the exclude list.
@@ -55,20 +54,21 @@ You may save the details for all updates that haven't been excluded to a text fi
 Details to Text File from the File menu. You can also save the current grid data to a CSV file.
 
 
-Other Options
+Settings Page
 =============
 Other options on the navigation bar include the Settings dialog. You can select between Light,
-Metro Dark, Darker and System themes. You can select the accent color and you can choose from seven
-size options for the app. You can from three options for row spacing in the grid. You can also control
-the visibility of the Details pane and to show or hide updated that match items on the exclude list.
-There are also options to have WUView stay on top of other windows and you can control the detail of
-the log file.
+Material Dark, Darker and System themes. You can select the accent color and you can choose from seven
+size options for the app. You can choose from three options for row spacing in the grid. You can also
+control the visibility of the Details pane and to show or hide updated that match items on the exclude
+list. There are also options to have WUView stay on top of other windows and you can control the detail
+level of the log file.
 
-Selecting About will display the About dialog which shows information about the app such as the
-version number and has a link to the GitHub repository where you can check for updates.
 
-You can view the log file or this ReadMe file by clicking on the three dot icon at the right end
-of the banner at the top of the screen.
+About Page
+==========
+Selecting About will display the About dialog which shows information about the app such as the version
+number and has a link to the GitHub repository. There is also a link to this read me file. You can also
+check for new releases of this application by clicking the button at the bottom of the About page.
 
 
 Keyboard Shortcuts
@@ -79,7 +79,6 @@ These keyboard shortcuts are available:
     Ctrl + D = Toggle the Details pane
     Ctrl + E = Toggle display of excluded items
 	Ctrl + L = Open the Excludes Editor
-	Ctrl + N = Open/close the navigation drawer
 	Ctrl + R = Reset column sort
 	Ctrl + T = Change the date & time format
 	Ctrl + U = Navigate to the Updates page
@@ -106,6 +105,8 @@ Windows Update Viewer uses the following packages:
     * Community Toolkit MVVM https://github.com/CommunityToolkit/dotnet
 
     * NLog https://nlog-project.org/
+
+    * OctoKit https://github.com/octokit/octokit.net
 
     * GitVersion https://github.com/GitTools/GitVersion
 
