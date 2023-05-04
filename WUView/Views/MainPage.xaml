@@ -59,19 +59,19 @@
                     </Menu.DataContext>
                     <!--#region File menu-->
                     <MenuItem Header="_File">
-                        <MenuItem Name="mnuSaveToCsv"
-                                  Command="{Binding SaveCSVCommand}"
+                        <MenuItem Command="{Binding SaveCSVCommand}"
                                   Header="Save Grid to CSV File" />
-                        <MenuItem Name="mnuSaveToText"
-                                  Command="{Binding SaveTextCommand}"
+                        <MenuItem Command="{Binding SaveTextCommand}"
                                   Header="Save Details to Text File" />
                         <Separator />
-                        <MenuItem x:Name="mnuOpenWU"
-                                  Command="{Binding OpenWindowsUpdateCommand}"
+                        <MenuItem Command="{Binding EditExcludeCommand}"
+                                  Header="Edit Exclude List"
+                                  InputGestureText="Ctrl + L" />
+                        <Separator />
+                        <MenuItem Command="{Binding OpenWindowsUpdateCommand}"
                                   Header="Open Windows Update" />
                         <Separator />
-                        <MenuItem x:Name="mnuExit"
-                                  Command="{Binding ExitCommand}"
+                        <MenuItem Command="{Binding ExitCommand}"
                                   Header="Exit"
                                   InputGestureText="Alt + F4" />
                     </MenuItem>
@@ -79,38 +79,27 @@
 
                     <!--#region Copy menu-->
                     <MenuItem Header="_Copy" ToolTip="Copy Menu">
-                        <MenuItem Name="mnuCopy"
-                                  Header="Copy Grid to Clipboard" />
+                        <MenuItem Header="Copy Grid to Clipboard" />
                     </MenuItem>
                     <!--#endregion-->
 
                     <!--#region View menu-->
                     <MenuItem Header="_View" ToolTip="View Menu">
-                        <MenuItem x:Name="mnuLarger"
-                                  Command="{Binding UILargerCommand}"
+                        <MenuItem Command="{Binding UILargerCommand}"
                                   Header="Larger View"
                                   InputGestureText="Ctrl + Numpad Plus" />
-                        <MenuItem x:Name="mnuSmaller"
-                                  Command="{Binding UISmallerCommand}"
+                        <MenuItem Command="{Binding UISmallerCommand}"
                                   Header="Smaller View"
                                   InputGestureText="Ctrl + Numpad Minus" />
                         <Separator />
-                        <MenuItem x:Name="mnuToggleDetails"
-                                  Command="{Binding ToggleDetailsCommand}"
+                        <MenuItem Command="{Binding ToggleDetailsCommand}"
                                   Header="Toggle Details Pane "
                                   InputGestureText="Ctrl + D" />
-                        <MenuItem x:Name="mnuToggleExclude"
-                                  Command="{Binding ToggleExcludedCommand}"
+                        <MenuItem Command="{Binding ToggleExcludedCommand}"
                                   Header="Toggle Excluded Items "
                                   InputGestureText="Ctrl + E" />
                         <Separator />
-                        <MenuItem x:Name="mnuEditExclude"
-                                  Command="{Binding EditExcludeCommand}"
-                                  Header="Edit Exclude List"
-                                  InputGestureText="Ctrl + L" />
-                        <Separator />
-                        <MenuItem Name="mnuRemoveSort"
-                                  Command="{Binding RemoveSortCommand}"
+                        <MenuItem Command="{Binding RemoveSortCommand}"
                                   Header="Remove Column Sort"
                                   InputGestureText="Ctrl + R" />
                     </MenuItem>
@@ -194,10 +183,8 @@
         <!--#endregion-->
 
         <!--#region Details area-->
-        <Grid x:Name="bottomGrid"
-              Grid.Row="3">
-            <ScrollViewer x:Name="sc1"
-                          VerticalAlignment="Top"
+        <Grid Grid.Row="3">
+            <ScrollViewer VerticalAlignment="Top"
                           DataContext="{Binding SelectedItem,
                                                 ElementName=dataGrid}"
                           FontFamily="Segue UI"
@@ -279,10 +266,7 @@
                                Width="100"
                                HorizontalAlignment="Left"
                                PreviewMouseDown="HResult_PreviewMouseDown">
-                        <Hyperlink x:Name="hypHResult"
-                                   NavigateUri="{Binding Setting.ResultCodeUrl,
-                                                         Source={StaticResource config}}"
-                                   RequestNavigate="Hyperlink_RequestNavigate">
+                        <Hyperlink x:Name="hypHResult">
                             <Hyperlink.Inlines>
                                 <Run Text="{Binding HResult, Converter={StaticResource results}, ConverterParameter='HResult'}" />
                             </Hyperlink.Inlines>
