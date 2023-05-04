@@ -1,11 +1,29 @@
 ﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:convert="clr-namespace:WUView.Converters">
 
+    <convert:TodayConverter x:Key="TodayConv" />
+
+    <!--#region DataGrid cell style -->
     <Style TargetType="DataGridCell"
            BasedOn="{StaticResource MaterialDesignDataGridCell}">
         <Setter Property="Focusable" Value="False" />
     </Style>
+    <!--#endregion-->
+
+    <!--#region DataGrid row style -->
+    <Style TargetType="DataGridRow"
+           x:Key="HiliteTodayStyle"
+           BasedOn="{StaticResource MaterialDesignDataGridRow}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Date, Converter={StaticResource TodayConv}}"
+                         Value="true">
+                <Setter Property="FontWeight" Value="Bold" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <!--#endregion-->
 
 </ResourceDictionary>

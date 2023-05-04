@@ -150,6 +150,7 @@
                                         Source={StaticResource config}}"
                   KeyboardNavigation.DirectionalNavigation="Contained"
                   KeyboardNavigation.TabNavigation="Continue"
+                  RowStyle="{StaticResource HiliteTodayStyle}"
                   ScrollViewer.CanContentScroll="True"
                   SelectionMode="Single"
                   SelectionUnit="FullRow"
