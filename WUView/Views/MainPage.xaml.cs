@@ -31,13 +31,13 @@ public partial class MainPage : UserControl
         {
             Clipboard.SetText(run.Text);
         }
-        _log.Debug($"Opening {UserSettings.Setting.ResultCodeUrl}");
+        _log.Debug($"Opening {AppConstUri.ResultCodeUrl}");
         Process p = new();
-        p.StartInfo.FileName = UserSettings.Setting.ResultCodeUrl;
+        p.StartInfo.FileName = AppConstUri.ResultCodeUrl.AbsoluteUri;
         p.StartInfo.UseShellExecute = true;
         p.Start();
         e.Handled = true;
-        SnackbarMsg.ClearAndQueueMessage($"Opening {UserSettings.Setting.ResultCodeUrl}", 2000);
+        SnackbarMsg.ClearAndQueueMessage($"Opening {AppConstUri.ResultCodeUrl}", 2000);
     }
     #endregion HResult click event
 

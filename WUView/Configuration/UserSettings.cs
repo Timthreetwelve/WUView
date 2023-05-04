@@ -32,9 +32,6 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private AccentColor _primaryColor = AccentColor.Blue;
 
     [ObservableProperty]
-    private string _resultCodeUrl = "https://docs.microsoft.com/en-us/windows/deployment/update/windows-update-error-reference";
-
-    [ObservableProperty]
     private Spacing _rowSpacing = Spacing.Comfortable;
 
     [ObservableProperty]

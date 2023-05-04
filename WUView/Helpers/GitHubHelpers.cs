@@ -28,7 +28,7 @@ internal static class GitHubHelpers
     public static async Task CheckRelease()
     {
         SnackbarMsg.ClearAndQueueMessage("Checking for updates");
-        Release release = await GetLatestReleaseAsync("TimThreeTwelve", "WUView");
+        Release release = await GetLatestReleaseAsync(AppConstString.RepoOwner, AppConstString.RepoName);
         if (release == null)
         {
             CheckFailed();
@@ -46,6 +46,7 @@ internal static class GitHubHelpers
 
         if (latestVersion <= AppInfo.AppVersionVer)
         {
+            _log.Debug("No newer releases were found.");
             _ = new MDCustMsgBox("No newer releases were found.",
                 "Windows Update Viewer",
                 ButtonType.Ok,
@@ -53,10 +54,10 @@ internal static class GitHubHelpers
                 true,
                 _mainWindow,
                 false).ShowDialog();
-            _log.Debug("No newer releases were found.");
         }
         else
         {
+            _log.Debug($"A newer release ({latestVersion}) has been found.");
             _ = new MDCustMsgBox($"A newer release ({latestVersion}) has been found.\n\n" +
                              "Do you want to go to the release page?\n",
                 "Windows Update Viewer",
@@ -65,7 +66,6 @@ internal static class GitHubHelpers
                 true,
                 _mainWindow,
                 false).ShowDialog();
-            _log.Debug($"A newer release ({latestVersion}) has been found.");
 
             if (MDCustMsgBox.CustResult == CustResultType.Yes)
             {

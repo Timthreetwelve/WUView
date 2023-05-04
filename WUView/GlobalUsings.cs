@@ -42,6 +42,7 @@ global using NLog.Targets;
 global using WUApiLib;
 
 global using WUView.Configuration;
+global using WUView.Constants;
 global using WUView.Dialogs;
 global using WUView.Helpers;
 global using WUView.Models;
