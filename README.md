@@ -17,7 +17,6 @@ Windows Update Viewer (WUView) is an application that displays information about
 * Hide details pane.
 * Save to a text or CSV file.
 * Open Windows Update from the app.
-* Open Event Viewer from the app. 
 
 ✨ WUView requires up-to-date .Net 6.0
 
