@@ -16,7 +16,7 @@ internal static class MainWindowHelpers
     #endregion MainWindow Instance
 
     #region StopWatch
-    public static Stopwatch _stopwatch = new();
+    public static Stopwatch _stopwatch = Stopwatch.StartNew();
     #endregion StopWatch
 
     #region Set and Save MainWindow position and size
