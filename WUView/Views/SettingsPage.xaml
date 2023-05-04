@@ -72,12 +72,22 @@
                                 <RowDefinition Height="5" />
                                 <RowDefinition />
                             </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="55" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
                             <!--#endregion-->
-                            <TextBlock Grid.Row="0"
-                                       FontSize="17" FontWeight="SemiBold"
+                            <materialDesign:PackIcon Grid.RowSpan="3"
+                                                     Width="28" Height="28"
+                                                     Margin="0,5,0,0"
+                                                     VerticalAlignment="Center"
+                                                     Foreground="{DynamicResource PrimaryHueMidBrush}"
+                                                     Kind="Wrench" />
+                            <TextBlock Grid.Row="0" Grid.Column="1"
+                                       FontSize="16" FontWeight="SemiBold"
                                        Text="Application Settings" />
-                            <TextBlock Grid.Row="2"
-                                       FontSize="13"
+                            <TextBlock Grid.Row="2" Grid.Column="1"
+                                       FontSize="12"
                                        Text="Date Format, Excluded Items, Details, &amp; more" />
                         </Grid>
                     </Expander.Header>
@@ -89,15 +99,18 @@
                             <RowDefinition Height="31" />
                             <RowDefinition Height="31" />
                             <RowDefinition Height="31" />
-
                         </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
                         <!--#endregion-->
-                        <StackPanel Grid.Row="0"
+                        <StackPanel Grid.Row="0" Grid.Column="1"
                                     Orientation="Horizontal">
                             <Label Width="100"
                                    VerticalAlignment="Center"
                                    Content="Date Format" />
-                            <ComboBox Width="170"
+                            <ComboBox Width="185"
                                       Margin="0,3,0,0"
                                       HorizontalAlignment="Left"
                                       SelectedIndex="{Binding Setting.DateFormat,
@@ -105,26 +118,26 @@
                                       Style="{StaticResource MaterialDesignComboBox}">
                                 <ComboBox.Items>
                                     <ComboBoxItem Content="MM/dd/yyyy" />
-                                    <ComboBoxItem Content="yyyy/MM/dd  HH:mm" />
-                                    <ComboBoxItem Content="MM/dd/yyyy  hh:mm tt" />
+                                    <ComboBoxItem Content="yyyy/MM/dd HH:mm" />
+                                    <ComboBoxItem Content="MM/dd/yyyy hh:mm tt" />
                                     <ComboBoxItem Content="d MMM yyyy H:mm" />
-                                    <ComboBoxItem Content="UTC" />
+                                    <ComboBoxItem Content="yyyy-MM-dd HH:mm UTC" />
                                 </ComboBox.Items>
                             </ComboBox>
                         </StackPanel>
-                        <CheckBox Grid.Row="1"
+                        <CheckBox Grid.Row="1" Grid.Column="1"
                                   Content="Hide Excluded Items"
                                   IsChecked="{Binding Setting.HideExcluded,
                                                       Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="2"
+                        <CheckBox Grid.Row="2" Grid.Column="1"
                                   Content="Show Details Panel"
                                   IsChecked="{Binding Setting.ShowDetails,
                                                       Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="3"
+                        <CheckBox Grid.Row="3" Grid.Column="1"
                                   Content="Keep on top of other windows"
                                   IsChecked="{Binding Setting.KeepOnTop,
                                                       Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="4"
+                        <CheckBox Grid.Row="4" Grid.Column="1"
                                   Content="Include debug level messages in log file"
                                   IsChecked="{Binding Setting.IncludeDebug,
                                                       Source={StaticResource config}}" />
@@ -145,12 +158,22 @@
                                 <RowDefinition Height="5" />
                                 <RowDefinition />
                             </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="55" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
                             <!--#endregion-->
-                            <TextBlock Grid.Row="0"
-                                       FontSize="17" FontWeight="SemiBold"
+                            <materialDesign:PackIcon Grid.RowSpan="3"
+                                                     Width="28" Height="28"
+                                                     Margin="0,5,0,0"
+                                                     VerticalAlignment="Center"
+                                                     Foreground="{DynamicResource PrimaryHueMidBrush}"
+                                                     Kind="Monitor" />
+                            <TextBlock Grid.Row="0" Grid.Column="1"
+                                       FontSize="16" FontWeight="SemiBold"
                                        Text="UI Settings" />
-                            <TextBlock Grid.Row="2"
-                                       FontSize="13"
+                            <TextBlock Grid.Row="2" Grid.Column="1"
+                                       FontSize="12"
                                        Text="Theme, Accent Color, UI Size, &amp; Row Height" />
                         </Grid>
                     </Expander.Header>
@@ -162,11 +185,14 @@
                             <RowDefinition Height="40" />
                             <RowDefinition Height="40" />
                             <RowDefinition Height="40" />
-
                         </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
                         <!--#endregion-->
-                        <StackPanel Grid.Row="0" Grid.Column="0"
+                        <StackPanel Grid.Row="0" Grid.Column="1"
                                     Orientation="Horizontal">
                             <Label Width="110"
                                    VerticalAlignment="Center"
@@ -187,7 +213,7 @@
                             </ComboBox>
                         </StackPanel>
 
-                        <StackPanel Grid.Row="1" Grid.Column="0"
+                        <StackPanel Grid.Row="1" Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     Orientation="Horizontal">
                             <Label Width="110"
