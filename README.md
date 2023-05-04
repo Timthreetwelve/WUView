@@ -22,7 +22,7 @@ Windows Update Viewer (WUView) is an application that displays information about
 ✨ WUView requires up-to-date .Net 6.0
 
 ### The Main Window
-![WUView screenshot](https://github.com/Timthreetwelve/WUView/blob/main/Images/WUView.png)
+![WUView screenshot](https://github.com/Timthreetwelve/WUView/blob/main/Images/WUView5.png)
 
 ### Oddities
 #### Update: It seems as this issue is not present under Windows 11
