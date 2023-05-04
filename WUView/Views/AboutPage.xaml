@@ -26,11 +26,10 @@
     <!--#endregion-->
 
     <Grid Background="{DynamicResource MaterialDesignCardBackground}">
-        <ScrollViewer Margin="20"
-                      Background="{DynamicResource MaterialDesignPaper}"
+        <ScrollViewer Margin="5"
                       HorizontalScrollBarVisibility="Auto"
                       VerticalScrollBarVisibility="Auto">
-            <Grid Margin="20">
+            <Grid Margin="15">
                 <!--#region Row & Column definitions-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="170" />
@@ -83,7 +82,9 @@
                            Text="License" />
                 <TextBlock Grid.Row="4" Grid.Column="1">
                     <Hyperlink Command="{Binding ViewLicenseCommand}"
-                               Foreground="{DynamicResource MaterialDesignBody}">
+                               Foreground="{DynamicResource MaterialDesignBody}"
+                               ToolTip="View the license document"
+                               ToolTipService.Placement="Left">
                         <TextBlock Text="This project is licensed under the terms of the MIT license." />
                     </Hyperlink>
                 </TextBlock>
@@ -109,7 +110,9 @@
                     <Hyperlink Command="{Binding GoToGitHubCommand}"
                                CommandParameter="{Binding Path=Text,
                                                           ElementName=tbxGithub}"
-                               Foreground="{DynamicResource MaterialDesignBody}">
+                               Foreground="{DynamicResource MaterialDesignBody}"
+                               ToolTip="Visit the WUView page on GitHub"
+                               ToolTipService.Placement="Left">
                         <TextBlock x:Name="tbxGithub"
                                    Text="https://github.com/Timthreetwelve/WUView" />
                     </Hyperlink>
@@ -119,7 +122,9 @@
                            Text="Documentation" />
                 <TextBlock Grid.Row="8" Grid.Column="1">
                     <Hyperlink Command="{Binding ViewReadMeCommand}"
-                               Foreground="{DynamicResource MaterialDesignBody}">
+                               Foreground="{DynamicResource MaterialDesignBody}"
+                               ToolTip="View the ReadMe file"
+                               ToolTipService.Placement="Left">
                         <TextBlock Text="Open the read me file" />
                     </Hyperlink>
                 </TextBlock>
@@ -133,6 +138,7 @@
                         Content="Check for New Release"
                         DataContext="{StaticResource navigationVM}"
                         Style="{StaticResource PlainOutlinedButton}"
+                        ToolTipService.Placement="Right"
                         ToolTip="Check for updates to this application." />
                 <!--#endregion-->
             </Grid>

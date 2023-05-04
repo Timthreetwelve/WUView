@@ -94,10 +94,6 @@ public partial class NavigationViewModel : ObservableObject
                 PageTitle = item.PageTitle;
                 CurrentViewModel = null;
                 CurrentViewModel = Activator.CreateInstance((Type)item.ViewModelType);
-                if (_mainWindow.NavDrawer != null)
-                {
-                    _mainWindow.NavDrawer.IsLeftDrawerOpen = false;
-                }
             }
         }
     }
@@ -262,10 +258,6 @@ public partial class NavigationViewModel : ObservableObject
         #region Keys with Ctrl
         if (e.KeyboardDevice.Modifiers == ModifierKeys.Control)
         {
-            if (e.Key == Key.N)
-            {
-                _mainWindow.NavDrawer.IsLeftDrawerOpen = !_mainWindow.NavDrawer.IsLeftDrawerOpen;
-            }
             if (e.Key == Key.OemComma)
             {
                 _mainWindow.NavigationListBox.SelectedValue = FindNavPage(NavPage.Settings);

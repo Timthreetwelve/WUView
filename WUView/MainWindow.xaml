@@ -11,8 +11,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodels="clr-namespace:WUView.ViewModels"
         mc:Ignorable="d"
+        d:DesignHeight="350" d:DesignWidth="800"
         Title="{x:Static helpers:AppInfo.AppName}"
-        Width="400" Height="400"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="Segoe UI" FontSize="12"
         Style="{StaticResource MaterialDesignWindow}"
@@ -53,36 +53,30 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="190" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
             <!--#endregion-->
 
             <!--#region Title Row-->
-            <Grid Grid.Column="0">
+            <Grid Grid.Column="0" Grid.ColumnSpan="2">
                 <!--#region Column definitions for the title row-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="185" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="60" />
                 </Grid.ColumnDefinitions>
                 <!--#endregion-->
 
-                <!--#region Hamburger menu toggle button-->
-                <ToggleButton Grid.Column="0"
-                              Width="26" Height="26"
-                              Margin="10,2" HorizontalAlignment="Left"
-                              IsChecked="{Binding IsLeftDrawerOpen,
-                                                  ElementName=NavDrawer}"
-                              Style="{DynamicResource MaterialDesignHamburgerToggleButton}"
-                              ToolTip="Click to navigate" />
-                <!--#endregion-->
-
                 <!--#region Page title label-->
                 <Label x:Name="PageTitle"
                        Grid.Column="1"
-                       HorizontalAlignment="Left"
+                       Margin="20,0" HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        Content="{Binding PageTitle}"
-                       FontSize="22" />
+                       FontSize="22" FontWeight="SemiBold" />
                 <!--#endregion-->
 
                 <!--#region SnackBar-->
@@ -118,7 +112,7 @@
                                 BorderThickness="2">
                             <Grid Width="170"
                                   Margin="0">
-                                  <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Vertical">
                                     <Button Height="35"
                                             Padding="15,1,0,22"
                                             Command="{Binding ViewLogFileCommand}"
@@ -133,13 +127,6 @@
                                                Background="{DynamicResource MaterialDesignDivider}" />
                                     <Button Height="35"
                                             Padding="15,1,0,22"
-                                            Command="{Binding CheckReleaseCommand}"
-                                            Content="Check for New Release"
-                                            ToolTip="Check for new release of this application." />
-                                    <Separator Margin="0" Padding="1"
-                                               Background="{DynamicResource MaterialDesignDivider}" />
-                                    <Button Height="35"
-                                            Padding="15,1,0,22"
                                             Content="Cancel" />
                                 </StackPanel>
                             </Grid>
@@ -150,54 +137,45 @@
             </Grid>
             <!--#endregion-->
 
-            <!--#region Drawer Host-->
-            <materialDesign:DrawerHost x:Name="NavDrawer"
-                                       Grid.Row="1" Grid.RowSpan="2"
-                                       VerticalAlignment="Stretch"
-                                       LeftDrawerCloseOnClickAway="True"
-                                       LeftDrawerCornerRadius="0">
-                <!--#endregion-->
+            <!--#region Navigation Listbox-->
+            <ListBox x:Name="NavigationListBox"
+                     Grid.Row="0" Grid.RowSpan="2"
+                     Grid.Column="0"
+                     Margin="5,5,5,0"
+                     ItemsSource="{Binding NavigationViewModelTypes,
+                                           Mode=TwoWay}"
+                     SelectedIndex="0"
+                     Style="{StaticResource MaterialDesignNavigationListBox}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Border Style="{StaticResource NavItemIndicator}" />
+                            <materialDesign:PackIcon Width="auto" Height="auto"
+                                                     VerticalAlignment="Center"
+                                                     Kind="{Binding IconKind}" />
+                            <TextBlock Margin="15,0" VerticalAlignment="Center"
+                                       FontSize="14"
+                                       Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <bh:Interaction.Triggers>
+                    <bh:EventTrigger EventName="SelectionChanged">
+                        <bh:InvokeCommandAction Command="{Binding NavigateCommand}"
+                                                CommandParameter="{Binding Path=SelectedItem,
+                                                                           RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" />
+                    </bh:EventTrigger>
+                </bh:Interaction.Triggers>
+            </ListBox>
+            <!--#endregion-->
 
-                <!--#region Navigation Listbox in Left drawer-->
-                <materialDesign:DrawerHost.LeftDrawerContent>
-                    <ListBox x:Name="NavigationListBox"
-                             MinWidth="100"
-                             Margin="0,5"
-                             ItemsSource="{Binding NavigationViewModelTypes,
-                                                   Mode=TwoWay}"
-                             SelectedIndex="0"
-                             Style="{StaticResource MaterialDesignNavigationListBox}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Border Style="{StaticResource NavItemIndicator}" />
-                                    <materialDesign:PackIcon Width="auto" Height="auto"
-                                                             VerticalAlignment="Center"
-                                                             Kind="{Binding IconKind}" />
-                                    <TextBlock Margin="15,0" VerticalAlignment="Center"
-                                               FontSize="14"
-                                               Text="{Binding Name}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                        <bh:Interaction.Triggers>
-                            <bh:EventTrigger EventName="SelectionChanged">
-                                <bh:InvokeCommandAction Command="{Binding NavigateCommand}"
-                                                        CommandParameter="{Binding Path=SelectedItem,
-                                                                                   RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}" />
-                            </bh:EventTrigger>
-                        </bh:Interaction.Triggers>
-                    </ListBox>
-                </materialDesign:DrawerHost.LeftDrawerContent>
-                <!--#endregion-->
-
-                <!--#region Content control for views-->
-                <Grid Grid.Row="1" Grid.Column="1"
-                      Background="{DynamicResource MaterialDesignCardBackground}">
-                    <ContentControl Content="{Binding CurrentViewModel}" />
-                </Grid>
-                <!--#endregion-->
-            </materialDesign:DrawerHost>
+            <!--#region Content control for views-->
+            <Grid Grid.Row="1" Grid.Column="1"
+                  Background="{DynamicResource MaterialDesignCardBackground}">
+                <ContentControl Content="{Binding CurrentViewModel}" />
+            </Grid>
+            <!--#endregion-->
         </Grid>
+
     </materialDesign:DialogHost>
 </Window>
