@@ -110,7 +110,7 @@
                             <Label Width="100"
                                    VerticalAlignment="Center"
                                    Content="Date Format" />
-                            <ComboBox Width="185"
+                            <ComboBox Width="190"
                                       Margin="0,3,0,0"
                                       HorizontalAlignment="Left"
                                       SelectedIndex="{Binding Setting.DateFormat,
@@ -120,8 +120,13 @@
                                     <ComboBoxItem Content="MM/dd/yyyy" />
                                     <ComboBoxItem Content="yyyy/MM/dd HH:mm" />
                                     <ComboBoxItem Content="MM/dd/yyyy hh:mm tt" />
-                                    <ComboBoxItem Content="d MMM yyyy H:mm" />
+                                    <ComboBoxItem Content="d-MMM-yyyy H:mm" />
                                     <ComboBoxItem Content="yyyy-MM-dd HH:mm UTC" />
+                                    <ComboBoxItem Content="dd/MM/yyyy" />
+                                    <ComboBoxItem Content="dd/MM/yyyy HH:mm" />
+                                    <ComboBoxItem Content="yyyy/MM/dd" />
+                                    <ComboBoxItem Content="Regional: date only" />
+                                    <ComboBoxItem Content="Regional: date &amp; time" />
                                 </ComboBox.Items>
                             </ComboBox>
                         </StackPanel>

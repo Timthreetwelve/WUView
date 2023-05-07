@@ -14,6 +14,7 @@ internal class DateFormatConverter : IValueConverter
         {
             DateTime item = (DateTime)value;
 
+            CultureInfo cult = CultureInfo.CurrentCulture;
             switch (UserSettings.Setting.DateFormat)
             {
                 case 1:
@@ -24,6 +25,20 @@ internal class DateFormatConverter : IValueConverter
                     return item.ToString("dd-MMM-yyyy  HH:mm");
                 case 4:
                     return item.ToUniversalTime().ToString("yyyy-MM-dd  HH:mm  UTC");
+                case 5:
+                    return item.ToString("dd/MM/yyyy");
+                case 6:
+                    return item.ToString("dd/MM/yyyy  HH:mm");
+                case 7:
+                    return item.ToString("yyyy/MM/dd");
+                case 8:
+                    string cultDateOnly = cult.DateTimeFormat.ShortDatePattern;
+                    return item.ToString(cultDateOnly);
+                case 9:
+                    string cultDate = cult.DateTimeFormat.ShortDatePattern;
+                    string cultTime = cult.DateTimeFormat.ShortTimePattern;
+                    return item.ToString($"{cultDate}  {cultTime}");
+
                 default:
                     return item.ToString("MM/dd/yyyy");
             }

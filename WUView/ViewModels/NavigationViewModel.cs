@@ -288,7 +288,7 @@ public partial class NavigationViewModel : ObservableObject
             }
             if (e.Key == Key.T)
             {
-                if (UserSettings.Setting.DateFormat >= 4)
+                if (UserSettings.Setting.DateFormat >= 9)
                 {
                     UserSettings.Setting.DateFormat = 0;
                 }
