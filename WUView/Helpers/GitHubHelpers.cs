@@ -27,55 +27,75 @@ internal static class GitHubHelpers
     /// </remarks>
     public static async Task CheckRelease()
     {
-        SnackbarMsg.ClearAndQueueMessage("Checking for updates");
-        Release release = await GetLatestReleaseAsync(AppConstString.RepoOwner, AppConstString.RepoName);
-        if (release == null)
+        try
         {
-            CheckFailed();
-            return;
-        }
-
-        Version latestVersion = new(release.TagName.TrimStart('v'));
-        if (latestVersion == null)
-        {
-            CheckFailed();
-            return;
-        }
-
-        _log.Debug($"Latest version is {latestVersion} released on {release.PublishedAt.Value.DateTime.ToShortDateString()}");
-
-        if (latestVersion <= AppInfo.AppVersionVer)
-        {
-            _log.Debug("No newer releases were found.");
-            _ = new MDCustMsgBox("No newer releases were found.",
-                "Windows Update Viewer",
-                ButtonType.Ok,
-                false,
-                true,
-                _mainWindow,
-                false).ShowDialog();
-        }
-        else
-        {
-            _log.Debug($"A newer release ({latestVersion}) has been found.");
-            _ = new MDCustMsgBox($"A newer release ({latestVersion}) has been found.\n\n" +
-                             "Do you want to go to the release page?\n",
-                "Windows Update Viewer",
-                ButtonType.YesNo,
-                false,
-                true,
-                _mainWindow,
-                false).ShowDialog();
-
-            if (MDCustMsgBox.CustResult == CustResultType.Yes)
+            SnackbarMsg.ClearAndQueueMessage("Checking for updates");
+            Release release = await GetLatestReleaseAsync(AppConstString.RepoOwner, AppConstString.RepoName);
+            if (release == null)
             {
-                _log.Debug($"Opening {release.HtmlUrl}");
-                string url = release.HtmlUrl;
-                Process p = new();
-                p.StartInfo.FileName = url;
-                p.StartInfo.UseShellExecute = true;
-                p.Start();
+                CheckFailed();
+                return;
             }
+
+            string tag = release.TagName;
+            if (string.IsNullOrEmpty(tag))
+            {
+                CheckFailed();
+                return;
+            }
+
+            if (tag.StartsWith("v", StringComparison.InvariantCultureIgnoreCase))
+            {
+                tag = tag.ToLower().TrimStart('v');
+            }
+
+            Version latestVersion = new(tag);
+            if (latestVersion == null)
+            {
+                CheckFailed();
+                return;
+            }
+
+            _log.Debug($"Latest version is {latestVersion} released on {release.PublishedAt.Value.DateTime.ToShortDateString()}");
+
+            if (latestVersion <= AppInfo.AppVersionVer)
+            {
+                _log.Debug("No newer releases were found.");
+                _ = new MDCustMsgBox("No newer releases were found.",
+                    "Windows Update Viewer",
+                    ButtonType.Ok,
+                    false,
+                    true,
+                    _mainWindow,
+                    false).ShowDialog();
+            }
+            else
+            {
+                _log.Debug($"A newer release ({latestVersion}) has been found.");
+                _ = new MDCustMsgBox($"A newer release ({latestVersion}) has been found.\n\n" +
+                                 "Do you want to go to the release page?\n",
+                    "Windows Update Viewer",
+                    ButtonType.YesNo,
+                    false,
+                    true,
+                    _mainWindow,
+                    false).ShowDialog();
+
+                if (MDCustMsgBox.CustResult == CustResultType.Yes)
+                {
+                    _log.Debug($"Opening {release.HtmlUrl}");
+                    string url = release.HtmlUrl;
+                    Process p = new();
+                    p.StartInfo.FileName = url;
+                    p.StartInfo.UseShellExecute = true;
+                    p.Start();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _log.Error(ex, "Error encountered while checking version");
+            CheckFailed();
         }
     }
     #endregion Check for newer release
@@ -89,11 +109,11 @@ internal static class GitHubHelpers
     /// <returns>Release object</returns>
     internal static async Task<Release> GetLatestReleaseAsync(string repoOwner, string repoName)
     {
-        GitHubClient client = new(new ProductHeaderValue(repoName));
-        _log.Debug("Checking GitHub for latest release.");
-
         try
         {
+            GitHubClient client = new(new ProductHeaderValue(repoName));
+            _log.Debug("Checking GitHub for latest release.");
+
             return await client.Repository.Release.GetLatest(repoOwner, repoName);
         }
         catch (Exception ex)
