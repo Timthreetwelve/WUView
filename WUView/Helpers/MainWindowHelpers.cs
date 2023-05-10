@@ -171,7 +171,7 @@ internal static class MainWindowHelpers
         // Log the version, build date and commit id
         _log.Info($"{AppInfo.AppName} ({AppInfo.AppProduct}) {AppInfo.AppVersion} is starting up");
         _log.Info($"{AppInfo.AppName} {AppInfo.AppCopyright}");
-        _log.Debug($"{AppInfo.AppName} Build date: {BuildInfo.BuildDateUtc.ToUniversalTime():f} (UTC)");
+        _log.Debug($"{AppInfo.AppName} Build date: {BuildInfo.BuildDateString} (UTC)");
         _log.Debug($"{AppInfo.AppName} Commit ID: {BuildInfo.CommitIDString} ");
 
         // Log the .NET version and OS platform
