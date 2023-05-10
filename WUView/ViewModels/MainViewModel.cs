@@ -15,10 +15,10 @@ internal partial class MainViewModel : ObservableObject
     #endregion Event record and WUpdate Lists
 
     #region Kick off the process of gathering the information
-    public static async void GatherInfo()
+    public static void GatherInfo()
     {
         Mouse.OverrideCursor = Cursors.Wait;
-        await FileHelpers.GetExcludes();
+        FileHelpers.GetExcludes();
         GetEventLog();
         GetListOfUpdates();
         PopulateExcludedList();

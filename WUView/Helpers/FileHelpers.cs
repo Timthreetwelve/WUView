@@ -15,10 +15,10 @@ public static class FileHelpers
     /// <summary>
     ///  Read the JSON file containing the exclude items
     /// </summary>
-    public static async Task GetExcludes()
+    public static void GetExcludes()
     {
         Stopwatch rxsw = Stopwatch.StartNew();
-        string json = await File.ReadAllTextAsync(GetExcludesFile());
+        string json = File.ReadAllText(GetExcludesFile());
         rxsw.Stop();
         ExcludedItems.ExcludedStrings = JsonSerializer.Deserialize<ObservableCollection<ExcludedItems>>(json);
         int xCount = ExcludedItems.ExcludedStrings.Count;
@@ -66,7 +66,7 @@ public static class FileHelpers
         if (!File.Exists(filePath))
         {
             File.Create(filePath).Dispose();
-            _ = File.WriteAllTextAsync(filePath, "[{ \"ExcludedString\": \"Defender\"}]");
+            File.WriteAllText(filePath, "[{ \"ExcludedString\": \"Defender\"}]");
             _log.Debug($"New Exclude file created: {filePath}");
         }
         return filePath;
