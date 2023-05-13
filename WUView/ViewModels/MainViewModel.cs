@@ -68,7 +68,8 @@ internal partial class MainViewModel : ObservableObject
                 updsw.Stop();
                 if (hist.HResult != 0)
                 {
-                    _log.Warn($"KB:{update.KBNum,-10} Date: {update.Date,-23} HResult: {update.HResult,-10} " +
+                    string HResultHex = string.Format($"0x{int.Parse(update.HResult):X8}");
+                    _log.Warn($"KB: {update.KBNum,-10} Date: {update.Date,-23} HResult: {HResultHex,-10} " +
                              $" Operation: {update.Operation,-12}  UpdateID: {update.UpdateID}");
                 }
             }
