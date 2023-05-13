@@ -184,4 +184,29 @@ public partial class MainPage : UserControl
         UserSettings.Setting.DetailsHeight = DetailsRow.Height.Value;
     }
     #endregion GridSplitter drag event
+
+    #region Refresh everything
+    /// <summary>
+    /// Handles the Click event of the Refresh control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+    private void Refresh_Click(object sender, RoutedEventArgs e)
+    {
+        RefreshAll();
+    }
+
+    /// <summary>
+    /// Refreshes all update and event log data.
+    /// </summary>
+    public static void RefreshAll()
+    {
+        _log.Debug("Refresh in progress");
+        MainViewModel.UpdatesWithoutExcludedItems.Clear();
+        MainViewModel.UpdatesFullList.Clear();
+        MainViewModel.GatherInfo();
+        Instance.UpdateGrid();
+        SnackbarMsg.ClearAndQueueMessage("List Refreshed", 2000);
+    }
+    #endregion Refresh everything
 }

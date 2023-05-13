@@ -45,7 +45,7 @@
         </Grid.RowDefinitions>
         <!--#endregion-->
 
-        <!--#region Filter box and Menu-->
+        <!--#region Filter box, Menu and Refresh button-->
         <DockPanel Grid.Row="0"
                    LastChildFill="False">
             <StackPanel Margin="0,0,0,5"
@@ -85,6 +85,10 @@
 
                     <!--#region View menu-->
                     <MenuItem Header="_View" ToolTip="View Menu">
+                        <MenuItem Click="Refresh_Click"
+                                  Header="Refresh Updates"
+                                  InputGestureText="F5" />
+                        <Separator />
                         <MenuItem Command="{Binding UILargerCommand}"
                                   Header="Larger View"
                                   InputGestureText="Ctrl + Numpad Plus" />
@@ -118,8 +122,15 @@
                          Tag="Filter Text"
                          TextChanged="TbxSearch_TextChanged" />
                 <!--#endregion-->
+
+                <!--#region Refresh button-->
+                <Button Click="Refresh_Click"
+                        Style="{StaticResource RefreshButton}" />
+                <!--#endregion-->
+
             </StackPanel>
         </DockPanel>
+
         <!--#region Item counter-->
         <TextBlock Grid.Row="0"
                    Width="40"

@@ -253,6 +253,10 @@ public partial class NavigationViewModel : ObservableObject
         {
             _mainWindow.NavigationListBox.SelectedValue = FindNavPage(NavPage.About);
         }
+        if (e.Key == Key.F5)
+        {
+            MainPage.RefreshAll();
+        }
         #endregion Keys without modifiers
 
         #region Keys with Ctrl
