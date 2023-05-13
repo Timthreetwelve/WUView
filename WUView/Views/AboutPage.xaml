@@ -71,7 +71,9 @@
                 <TextBlock Grid.Row="2" Grid.Column="0"
                            Text="Created by " />
                 <TextBlock Grid.Row="2" Grid.Column="1"
-                           Text="Tim Kennedy" />
+                           Text="Tim Kennedy"
+                           ToolTip="https://github.com/Timthreetwelve"
+                           ToolTipService.Placement="Top" />
 
                 <TextBlock Grid.Row="3" Grid.Column="0"
                            Text="Copyright " />
@@ -84,7 +86,7 @@
                     <Hyperlink Command="{Binding ViewLicenseCommand}"
                                Foreground="{DynamicResource MaterialDesignBody}"
                                ToolTip="View the license document"
-                               ToolTipService.Placement="Left">
+                               ToolTipService.Placement="Top">
                         <TextBlock Text="This project is licensed under the terms of the MIT license." />
                     </Hyperlink>
                 </TextBlock>
@@ -97,7 +99,9 @@
                 <TextBlock Grid.Row="6" Grid.Column="0"
                            Text="Commit ID" />
                 <TextBlock Grid.Row="6" Grid.Column="1"
-                           Text="{x:Static buildinfo:BuildInfo.CommitIDString}" />
+                           Text="{x:Static buildinfo:BuildInfo.CommitIDString}"
+                           ToolTip="{x:Static buildinfo:BuildInfo.CommitIDFullString}"
+                           ToolTipService.Placement="Top" />
 
                 <TextBlock Grid.Row="7" Grid.Column="0"
                            Text="GitHub" />
@@ -112,7 +116,7 @@
                                                           ElementName=tbxGithub}"
                                Foreground="{DynamicResource MaterialDesignBody}"
                                ToolTip="Visit the WUView page on GitHub"
-                               ToolTipService.Placement="Left">
+                               ToolTipService.Placement="Top">
                         <TextBlock x:Name="tbxGithub"
                                    Text="https://github.com/Timthreetwelve/WUView" />
                     </Hyperlink>
@@ -124,7 +128,7 @@
                     <Hyperlink Command="{Binding ViewReadMeCommand}"
                                Foreground="{DynamicResource MaterialDesignBody}"
                                ToolTip="View the ReadMe file"
-                               ToolTipService.Placement="Left">
+                               ToolTipService.Placement="Top">
                         <TextBlock Text="Open the read me file" />
                     </Hyperlink>
                 </TextBlock>
@@ -138,8 +142,8 @@
                         Content="Check for New Release"
                         DataContext="{StaticResource navigationVM}"
                         Style="{StaticResource PlainOutlinedButton}"
-                        ToolTipService.Placement="Right"
-                        ToolTip="Check for updates to this application." />
+                        ToolTip="Check GitHub for updates to this application."
+                        ToolTipService.Placement="Top" />
                 <!--#endregion-->
             </Grid>
         </ScrollViewer>
