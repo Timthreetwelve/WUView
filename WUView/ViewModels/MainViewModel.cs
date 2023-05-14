@@ -242,4 +242,16 @@ internal partial class MainViewModel : ObservableObject
         SnackbarMsg.ClearAndQueueMessage($"Displaying {displayed} of {total} updates");
     }
     #endregion Display update count
+
+    #region Clear the lists
+    /// <summary>
+    /// Clears the updates and event log lists.
+    /// </summary>
+    public static void ClearLists()
+    {
+        UpdatesWithoutExcludedItems.Clear();
+        UpdatesFullList.Clear();
+        EventLogRecords.Clear();
+    }
+    #endregion
 }

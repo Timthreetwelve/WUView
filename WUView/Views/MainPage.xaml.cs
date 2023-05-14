@@ -202,8 +202,7 @@ public partial class MainPage : UserControl
     public static void RefreshAll()
     {
         _log.Debug("Refresh in progress");
-        MainViewModel.UpdatesWithoutExcludedItems.Clear();
-        MainViewModel.UpdatesFullList.Clear();
+        MainViewModel.ClearLists();
         MainViewModel.GatherInfo();
         Instance.UpdateGrid();
         SnackbarMsg.ClearAndQueueMessage("List Refreshed", 2000);
