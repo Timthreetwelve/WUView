@@ -14,6 +14,9 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private static bool _appExpanderOpen;
 
     [ObservableProperty]
+    private static bool _boldToday = true;
+
+    [ObservableProperty]
     private int _dateFormat;
 
     [ObservableProperty]
