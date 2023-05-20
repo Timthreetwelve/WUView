@@ -72,7 +72,7 @@
 
                 <!--#region Page title label-->
                 <Label x:Name="PageTitle"
-                       Grid.Column="1"
+                       Grid.Column="1" Grid.ColumnSpan="2"
                        Margin="20,0" HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        Content="{Binding PageTitle}"
