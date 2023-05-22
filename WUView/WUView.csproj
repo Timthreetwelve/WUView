@@ -36,9 +36,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="MaterialDesignThemes" Version="4.8.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
     <PackageReference Include="NLog" Version="5.1.4" />
-    <PackageReference Include="Octokit" Version="5.1.0" />
+    <PackageReference Include="Octokit" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
