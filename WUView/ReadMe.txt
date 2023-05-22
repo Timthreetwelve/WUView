@@ -68,7 +68,7 @@ About Page
 ==========
 Selecting About will display the About dialog which shows information about the app such as the version
 number and has a link to the GitHub repository. There is also a link to this read me file. You can also
-check for new releases of this application by clicking the button at the bottom of the About page.
+check for new releases of this application by clicking the link at the bottom of the About page.
 
 
 Keyboard Shortcuts

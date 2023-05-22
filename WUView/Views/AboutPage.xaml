@@ -45,6 +45,7 @@
                     <RowDefinition Height="26" />
                     <RowDefinition Height="26" />
                     <RowDefinition Height="26" />
+                    <RowDefinition Height="26" />
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <!--#endregion-->
@@ -71,9 +72,14 @@
                 <TextBlock Grid.Row="2" Grid.Column="0"
                            Text="Created by " />
                 <TextBlock Grid.Row="2" Grid.Column="1"
-                           Text="Tim Kennedy"
                            ToolTip="https://github.com/Timthreetwelve"
-                           ToolTipService.Placement="Top" />
+                           ToolTipService.Placement="Top" >
+                             <Hyperlink Command="{Binding GoToGitHubCommand}"
+                    CommandParameter="https://github.com/Timthreetwelve"
+                    Foreground="{DynamicResource MaterialDesignBody}">
+             <TextBlock Text="Tim Kennedy" />
+         </Hyperlink>
+                </TextBlock>
 
                 <TextBlock Grid.Row="3" Grid.Column="0"
                            Text="Copyright " />
@@ -134,16 +140,17 @@
                 </TextBlock>
                 <!--#endregion-->
 
-                <!--#region Check for new release button-->
-                <Button Grid.Row="9"
-                        Width="160"
-                        Margin="0,20" HorizontalAlignment="Left"
-                        Command="{Binding CheckReleaseCommand}"
-                        Content="Check for New Release"
-                        DataContext="{StaticResource navigationVM}"
-                        Style="{StaticResource PlainOutlinedButton}"
-                        ToolTip="Check GitHub for updates to this application."
-                        ToolTipService.Placement="Top" />
+                <!--#region Check for new release -->
+                <TextBlock Grid.Row="9" Grid.Column="0"
+                           Text="Update WUView" />
+                <TextBlock Grid.Row="9" Grid.Column="1">
+                    <Hyperlink Command="{Binding CheckReleaseCommand}"
+                               Foreground="{DynamicResource MaterialDesignBody}"
+                               ToolTip="Check GitHub for a newer release"
+                               ToolTipService.Placement="Top">
+                        <TextBlock Text="Check for new release of Windows Update Viewer" />
+                    </Hyperlink>
+                </TextBlock>
                 <!--#endregion-->
             </Grid>
         </ScrollViewer>
