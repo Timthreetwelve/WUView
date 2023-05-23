@@ -41,7 +41,7 @@ internal partial class MainViewModel : ObservableObject
         _log.Debug($"Read {count} Windows Update records in {sw.Elapsed.TotalMilliseconds:N2} milliseconds");
         sw.Restart();
         // Believe it or not, it's possible to not have any updates.
-        if (count > 1)
+        if (count >= 1)
         {
             Stopwatch gkbsw = new();
             Stopwatch updsw = new();
@@ -169,7 +169,19 @@ internal partial class MainViewModel : ObservableObject
             }
         }
         esw.Stop();
-        _log.Debug($"Removing excluded items took {esw.Elapsed.TotalMilliseconds:N2} milliseconds");
+        _log.Debug($"Removing {UpdatesFullList.Count - UpdatesWithoutExcludedItems.Count} " +
+                   $"excluded items took {esw.Elapsed.TotalMilliseconds:N2} milliseconds");
+
+        if (UpdatesFullList.Count > 0 && UpdatesWithoutExcludedItems.Count == 0)
+        {
+            new MDCustMsgBox("All displayable updates have been excluded.",
+                "Windows Update Viewer",
+                ButtonType.Ok,
+                false,
+                true,
+                Application.Current.MainWindow,
+                false).Show();
+        }
     }
     #endregion Remove excluded items and create list without excludes
 
