@@ -27,8 +27,8 @@ assignees: ''
 - e.g. Windows 11 22H2  build 22621.1702
 
 #### Log File: ####
-- Attach the log file (found in the *%Temp%\T_K directory*) that shows the error. 
-- The file name will look like *WUView.*date*.log*.
+- *Important:* Go to Settings and make sure that "Include debug level messages in log file" is checked. If it wasn't, turn it on then reproduce the error.
+- Attach the log file (found in the *%Temp%\T_K directory*) that shows the error. The file name will look like *WUView.*date*.log*.
 
 #### Installation Error: ####
 - If the error occurred during installation, attach the setup log (found in the %Temp% directory). 
