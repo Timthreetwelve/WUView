@@ -26,6 +26,7 @@
         <convert:ItemsSourceConverter x:Key="itemsSource" />
         <convert:SpacingConverter x:Key="Spacing" />
         <convert:ResultsConverter x:Key="results" />
+        <viewmodels:NavigationViewModel x:Key="NavVM" />
     </UserControl.Resources>
 
     <UserControl.DataContext>
@@ -137,10 +138,16 @@
                    Margin="0,0,10,6"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
+                   Cursor="Hand"
                    FontSize="14">
             <Run Text="{Binding ElementName=dataGrid, Path=Items.Count, Mode=OneWay}" />
             <Run Text="/" />
             <Run Text="{Binding UpdatesFullList.Count, Mode=OneWay}" />
+            <TextBlock.InputBindings>
+                <MouseBinding Command="{Binding ToggleExcludedCommand,
+                                                Source={StaticResource NavVM}}"
+                              MouseAction="LeftClick" />
+            </TextBlock.InputBindings>
         </TextBlock>
         <!--#endregion-->
         <!--#endregion-->
