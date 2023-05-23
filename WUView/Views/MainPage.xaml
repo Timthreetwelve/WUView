@@ -133,13 +133,15 @@
 
         <!--#region Item counter-->
         <TextBlock Grid.Row="0"
-                   Width="40"
-                   Margin="0,0,0,6"
+                   Width="auto"
+                   Margin="0,0,10,6"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
-                   FontSize="14"
-                   Text="{Binding ElementName=dataGrid,
-                                  Path=Items.Count}" />
+                   FontSize="14">
+            <Run Text="{Binding ElementName=dataGrid, Path=Items.Count, Mode=OneWay}" />
+            <Run Text="/" />
+            <Run Text="{Binding UpdatesFullList.Count, Mode=OneWay}" />
+        </TextBlock>
         <!--#endregion-->
         <!--#endregion-->
 
