@@ -164,20 +164,19 @@ internal static class MainWindowHelpers
     /// </summary>
     internal static void LogStartup()
     {
-        #region Write to log
         // Set NLog configuration
         NLogHelpers.NLogConfig(false);
 
         // Log the version, build date and commit id
         _log.Info($"{AppInfo.AppName} ({AppInfo.AppProduct}) {AppInfo.AppVersion} is starting up");
         _log.Info($"{AppInfo.AppName} {AppInfo.AppCopyright}");
+        _log.Debug($"{AppInfo.AppName} was started from {AppInfo.AppPath}");
         _log.Debug($"{AppInfo.AppName} Build date: {BuildInfo.BuildDateString} (UTC)");
         _log.Debug($"{AppInfo.AppName} Commit ID: {BuildInfo.CommitIDString} ");
 
         // Log the .NET version and OS platform
         _log.Debug($"Operating System version: {AppInfo.OsPlatform}");
         _log.Debug($".NET version: {AppInfo.RuntimeVersion.Replace(".NET", "")}");
-        #endregion Write to log
     }
     #endregion Log Startup
 
