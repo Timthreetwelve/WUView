@@ -80,7 +80,8 @@
 
                     <!--#region Copy menu-->
                     <MenuItem Header="_Copy" ToolTip="Copy Menu">
-                        <MenuItem Header="Copy Grid to Clipboard" />
+                        <MenuItem Command="{Binding CopyClipboardCommand}"
+                                  Header="Copy Grid to Clipboard" />
                     </MenuItem>
                     <!--#endregion-->
 
@@ -138,8 +139,7 @@
                    Margin="0,0,10,6"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
-                   Cursor="Hand"
-                   FontSize="14">
+                   Cursor="Hand" FontSize="14">
             <Run Text="{Binding ElementName=dataGrid, Path=Items.Count, Mode=OneWay}" />
             <Run Text="/" />
             <Run Text="{Binding UpdatesFullList.Count, Mode=OneWay}" />
