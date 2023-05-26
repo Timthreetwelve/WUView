@@ -32,6 +32,9 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private bool _keepOnTop;
 
     [ObservableProperty]
+    private MaxUpdates _maxUpdates = MaxUpdates.All;
+
+    [ObservableProperty]
     private AccentColor _primaryColor = AccentColor.Blue;
 
     [ObservableProperty]

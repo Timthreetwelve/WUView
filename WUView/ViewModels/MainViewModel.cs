@@ -45,7 +45,34 @@ internal partial class MainViewModel : ObservableObject
         {
             Stopwatch gkbsw = new();
             Stopwatch updsw = new();
-            foreach (IUpdateHistoryEntry hist in updateSearcher.QueryHistory(0, count))
+            int maxUpdates;
+            switch (UserSettings.Setting.MaxUpdates)
+            {
+                case MaxUpdates.All:
+                    maxUpdates = count;
+                    break;
+                case MaxUpdates.Max50:
+                    maxUpdates = 50;
+                    break;
+                case MaxUpdates.Max100:
+                    maxUpdates = 100;
+                    break;
+                case MaxUpdates.Max250:
+                    maxUpdates = 250;
+                    break;
+                case MaxUpdates.Max500:
+                    maxUpdates = 500;
+                    break;
+                default:
+                    maxUpdates = count;
+                    break;
+            }
+            if (maxUpdates > count)
+            {
+                maxUpdates = count;
+            }
+            _log.Debug($"Using {maxUpdates} update records");
+            foreach (IUpdateHistoryEntry hist in updateSearcher.QueryHistory(0, maxUpdates))
             {
                 gkbsw.Start();
                 string kbNum = GetKB(hist.Title);

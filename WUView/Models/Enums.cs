@@ -73,11 +73,28 @@ public enum AccentColor
 }
 
 /// <summary>
-/// Space between rows in the datagrid
+/// Space between rows in the DataGrid
 /// </summary>
 public enum Spacing
 {
     Compact = 0,
     Comfortable = 1,
     Wide = 2
+}
+
+/// <summary>
+/// Maximum number of updates to get
+/// </summary>
+public enum MaxUpdates
+{
+    [Description("All Updates")]
+    All = 0,
+    [Description("50 Most Recent")]
+    Max50 = 1,
+    [Description("100 Most Recent")]
+    Max100 = 2,
+    [Description("250 Most Recent")]
+    Max250 = 3,
+    [Description("500 Most Recent")]
+    Max500 = 4
 }

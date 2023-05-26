@@ -2,7 +2,6 @@
 
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:WUView"
                     xmlns:models="clr-namespace:WUView.Models"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
@@ -36,6 +35,14 @@
                         ObjectType="{x:Type system:Enum}">
         <ObjectDataProvider.MethodParameters>
             <x:Type TypeName="models:Spacing" />
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <ObjectDataProvider x:Key="enumMaxUpdates"
+                        MethodName="GetValues"
+                        ObjectType="{x:Type system:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="models:MaxUpdates" />
         </ObjectDataProvider.MethodParameters>
     </ObjectDataProvider>
     <!--#endregion-->

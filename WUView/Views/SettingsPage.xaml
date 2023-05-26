@@ -88,13 +88,14 @@
                                        Text="Application Settings" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="Date Format, Excluded Items, Details, &amp; more" />
+                                       Text="Number of Updates, Date Format, Excluded Items, Details, &amp; more" />
                         </Grid>
                     </Expander.Header>
                     <Grid Margin="35,10,0,20">
                         <!--#region Row & Column definitions-->
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="40" />
+                            <RowDefinition Height="38" />
+                            <RowDefinition Height="38" />
                             <RowDefinition Height="31" />
                             <RowDefinition Height="31" />
                             <RowDefinition Height="31" />
@@ -108,11 +109,44 @@
                         <!--#endregion-->
                         <StackPanel Grid.Row="0" Grid.Column="1"
                                     Orientation="Horizontal">
-                            <Label Width="100"
+                            <Label Width="150"
                                    VerticalAlignment="Center"
-                                   Content="Date Format" />
-                            <ComboBox Width="190"
-                                      Margin="0,3,0,0"
+                                   Content="Number of Updates" />
+                            <ComboBox Width="165"
+                                      Margin="0,3,0,0" Padding="2,0,0,3"
+                                      HorizontalAlignment="Left"
+                                      ItemsSource="{Binding Source={StaticResource enumMaxUpdates}}"
+                                      SelectedItem="{Binding Setting.MaxUpdates,
+                                                             Source={StaticResource config}}"
+                                      Style="{StaticResource MaterialDesignComboBox}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource descConvert}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <TextBlock Margin="15,12,0,0"
+                                       ToolTipService.InitialShowDelay="300"
+                                       ToolTipService.Placement="Top">
+                                <materialDesign:PackIcon Width="20" Height="20"
+                                                         Kind="InfoOutline" />
+                                <TextBlock.ToolTip>
+                                    <TextBlock LineHeight="18">
+                                        <Run Text="This is the maximum number of updates to process before any updates are excluded." />
+                                        <LineBreak />
+                                        <Run Text="Setting this to a lower value may improve performance." />
+                                    </TextBlock>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="1"
+                                    Margin="0,0,0,2"
+                                    Orientation="Horizontal">
+                            <Label Width="130"
+                                   VerticalAlignment="Center"
+                                   Content="Grid Date Format" />
+                            <ComboBox Width="185"
+                                      Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
                                       SelectedIndex="{Binding Setting.DateFormat,
                                                               Source={StaticResource config}}"
@@ -131,23 +165,23 @@
                                 </ComboBox.Items>
                             </ComboBox>
                         </StackPanel>
-                        <CheckBox Grid.Row="1" Grid.Column="1"
+                        <CheckBox Grid.Row="2" Grid.Column="1"
                                   Content="Hide Excluded Items"
                                   IsChecked="{Binding Setting.HideExcluded,
                                                       Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="2" Grid.Column="1"
+                        <CheckBox Grid.Row="3" Grid.Column="1"
                                   Content="Show Details Panel"
                                   IsChecked="{Binding Setting.ShowDetails,
                                                       Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="3" Grid.Column="1"
+                        <CheckBox Grid.Row="4" Grid.Column="1"
                                   Content="Keep on top of other windows"
                                   IsChecked="{Binding Setting.KeepOnTop,
                                                       Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="4" Grid.Column="1"
+                        <CheckBox Grid.Row="5" Grid.Column="1"
                                   Content="Show updates with current date in bold"
                                   IsChecked="{Binding Setting.BoldToday,
                                                       Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="5" Grid.Column="1"
+                        <CheckBox Grid.Row="6" Grid.Column="1"
                                   Content="Include debug level messages in log file"
                                   IsChecked="{Binding Setting.IncludeDebug,
                                                       Source={StaticResource config}}" />
@@ -191,10 +225,10 @@
                     <Grid Margin="35,10,0,20">
                         <!--#region Row & Column definitions-->
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="40" />
+                            <RowDefinition Height="38" />
+                            <RowDefinition Height="38" />
+                            <RowDefinition Height="38" />
+                            <RowDefinition Height="38" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="45" />
@@ -209,7 +243,7 @@
                                    Content="Theme" />
                             <ComboBox x:Name="cbxMode"
                                       Width="110"
-                                      Margin="0,3,0,0"
+                                      Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
                                       ItemsSource="{Binding Source={StaticResource enumThemeType}}"
                                       SelectedItem="{Binding Path=Setting.UITheme,
@@ -231,7 +265,7 @@
                                    Content="UI Size" />
                             <ComboBox x:Name="cbxSize"
                                       Width="110"
-                                      Margin="0,3,0,0"
+                                      Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
                                       ItemsSource="{Binding Source={StaticResource enumUISize}}"
                                       SelectedItem="{Binding Setting.UISize,
@@ -246,7 +280,7 @@
                                    Content="Accent Color" />
                             <ComboBox x:Name="cbxColor"
                                       Width="110"
-                                      Margin="0,3,0,0"
+                                      Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
                                       ItemsSource="{Binding Source={StaticResource enumAccentColors}}"
                                       MaxDropDownHeight="300"
@@ -267,7 +301,7 @@
                                    VerticalAlignment="Center"
                                    Content="Row Height" />
                             <ComboBox Width="110"
-                                      Margin="0,3,0,0"
+                                      Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
                                       ItemsSource="{Binding Source={StaticResource enumRowSpacing}}"
                                       SelectedItem="{Binding Setting.RowSpacing,
