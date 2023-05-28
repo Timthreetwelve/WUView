@@ -34,6 +34,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="170" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="50" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="26" />
@@ -52,9 +53,18 @@
 
                 <!--#region Icon in upper right-->
                 <Image Grid.Row="0" Grid.RowSpan="2"
-                       Grid.Column="1"
-                       Margin="5" HorizontalAlignment="Right"
-                       Source="/Images/UV.png" />
+                       Grid.Column="2">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="\Images\UV.png" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="\Images\TK.png" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
                 <!--#endregion-->
 
                 <!--#region  TextBlocks with relevant info-->
