@@ -82,13 +82,13 @@
                 <TextBlock Grid.Row="2" Grid.Column="0"
                            Text="Created by " />
                 <TextBlock Grid.Row="2" Grid.Column="1"
-                           ToolTip="https://github.com/Timthreetwelve"
-                           ToolTipService.Placement="Top" >
-                             <Hyperlink Command="{Binding GoToGitHubCommand}"
-                    CommandParameter="https://github.com/Timthreetwelve"
-                    Foreground="{DynamicResource MaterialDesignBody}">
-             <TextBlock Text="Tim Kennedy" />
-         </Hyperlink>
+                           ToolTip="See Tim's other work at https://github.com/Timthreetwelve"
+                           ToolTipService.Placement="Top">
+                    <Hyperlink Command="{Binding GoToGitHubCommand}"
+                               CommandParameter="https://github.com/Timthreetwelve"
+                               Foreground="{DynamicResource MaterialDesignBody}">
+                        <TextBlock Text="Tim Kennedy" />
+                    </Hyperlink>
                 </TextBlock>
 
                 <TextBlock Grid.Row="3" Grid.Column="0"
@@ -116,8 +116,16 @@
                            Text="Commit ID" />
                 <TextBlock Grid.Row="6" Grid.Column="1"
                            Text="{x:Static buildinfo:BuildInfo.CommitIDString}"
-                           ToolTip="{x:Static buildinfo:BuildInfo.CommitIDFullString}"
-                           ToolTipService.Placement="Top" />
+                           ToolTipService.Placement="Top">
+                    <TextBlock.ToolTip>
+                        <ToolTip>
+                            <TextBlock>
+                                <Run Text="Full Commit ID: " />
+                                <Run Text="{x:Static buildinfo:BuildInfo.CommitIDFullString}" />
+                            </TextBlock>
+                        </ToolTip>
+                    </TextBlock.ToolTip>
+                </TextBlock>
 
                 <TextBlock Grid.Row="7" Grid.Column="0"
                            Text="GitHub" />
@@ -150,7 +158,7 @@
                 </TextBlock>
                 <!--#endregion-->
 
-                <!--#region Check for new release -->
+                <!--#region Check for new release-->
                 <TextBlock Grid.Row="9" Grid.Column="0"
                            Text="Update WUView" />
                 <TextBlock Grid.Row="9" Grid.Column="1">
