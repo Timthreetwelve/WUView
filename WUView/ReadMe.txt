@@ -32,6 +32,12 @@ see the updates for the malicious software remover tool, then type "malicious" i
 box. The grid will update as you type. To see all of the updates, simply clear the filter text box.
 The filter will be reset each time Windows Update Viewer is started.
 
+As of version 0.5.10, starting the filter text with a "!" (exclamation mark or bang) will invert the
+filter. The filter will then act as an exclusionary filter. The bang itself along with any spaces
+between the bang and the first non-space character are discarded. If you wanted to quickly filter
+for updates that didn't have "succeeded" as the result, you could enter "!succeeded" in the filter
+box. The Escape key will clear any text from the filter box.
+
 
 The Exclude List
 ================
@@ -77,6 +83,7 @@ These keyboard shortcuts are available:
 
 	F1 = Go to the About screen
     F5 = Check for new updates and refresh the grid
+    ESC = Removes any filter (while on the viewer page)
     Ctrl + D = Toggle the Details pane
     Ctrl + E = Toggle display of excluded items
 	Ctrl + L = Open the Excludes Editor
