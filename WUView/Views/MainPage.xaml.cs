@@ -74,7 +74,7 @@ public partial class MainPage : UserControl
     /// <summary>
     /// Filters the grid.
     /// </summary>
-    private void FilterTheGrid()
+    public void FilterTheGrid()
     {
         string filter = tbxSearch.Text;
 
@@ -86,13 +86,28 @@ public partial class MainPage : UserControl
         }
         else
         {
-            cv.Filter = o =>
+            if (filter?.StartsWith("!") == true)
             {
-                WUpdate wu = o as WUpdate;
-                return wu.Title.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-                       wu.ResultCode.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-                       wu.KBNum.Contains(filter, StringComparison.OrdinalIgnoreCase);
-            };
+                filter = filter[1..].TrimStart(' ');
+                cv.Filter = o =>
+                {
+                    WUpdate wu = o as WUpdate;
+                    return !wu.Title.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
+                           !wu.ResultCode.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
+                           !wu.KBNum.Contains(filter, StringComparison.OrdinalIgnoreCase);
+                };
+            }
+            else
+            {
+                cv.Filter = o =>
+                {
+                    WUpdate wu = o as WUpdate;
+                    return wu.Title.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
+                           wu.ResultCode.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
+                           wu.KBNum.Contains(filter, StringComparison.OrdinalIgnoreCase);
+                };
+            }
+
             if (dataGrid.Items.Count == 1)
             {
                 SnackbarMsg.ClearAndQueueMessage("1 row shown", 2000);

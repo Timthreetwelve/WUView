@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
@@ -161,6 +161,7 @@ public partial class NavigationViewModel : ObservableObject
     public static void ToggleExcluded()
     {
         UserSettings.Setting.HideExcluded = !UserSettings.Setting.HideExcluded;
+        MainPage.Instance.FilterTheGrid();
     }
     #endregion Toggle excluded
 
@@ -288,7 +289,7 @@ public partial class NavigationViewModel : ObservableObject
             }
             if (e.Key == Key.E)
             {
-                UserSettings.Setting.HideExcluded = !UserSettings.Setting.HideExcluded;
+                ToggleExcluded();
             }
             if (e.Key == Key.F)
             {
