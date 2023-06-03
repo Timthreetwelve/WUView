@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
@@ -256,6 +256,14 @@ public partial class NavigationViewModel : ObservableObject
         if (e.Key == Key.F5)
         {
             MainPage.RefreshAll();
+        }
+        if (e.Key == Key.Escape)
+        {
+            if (CurrentViewModel.GetType() == typeof(MainViewModel))
+            {
+                MainPage.Instance.tbxSearch.Clear();
+            }
+            e.Handled = true;
         }
         #endregion Keys without modifiers
 
