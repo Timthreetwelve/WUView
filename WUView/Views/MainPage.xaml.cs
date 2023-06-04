@@ -82,7 +82,7 @@ public partial class MainPage : UserControl
         if (filter?.Length == 0)
         {
             cv.Filter = null;
-            SnackbarMsg.ClearAndQueueMessage("Showing all rows", 2000);
+            SnackbarMsg.ClearAndQueueMessage("Filter removed", 2000);
         }
         else
         {
