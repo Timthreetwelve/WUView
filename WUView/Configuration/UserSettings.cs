@@ -44,6 +44,9 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private bool _showDetails = true;
 
     [ObservableProperty]
+    private bool _startCentered = true;
+
+    [ObservableProperty]
     private MySize _uISize = MySize.Default;
 
     [ObservableProperty]

@@ -30,6 +30,11 @@ internal static class MainWindowHelpers
         mainWindow.Left = UserSettings.Setting.WindowLeft;
         mainWindow.Top = UserSettings.Setting.WindowTop;
         mainWindow.Width = UserSettings.Setting.WindowWidth;
+
+        if (UserSettings.Setting.StartCentered)
+        {
+            mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        }
     }
 
     /// <summary>
