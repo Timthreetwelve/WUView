@@ -28,6 +28,8 @@ public static class ConfigHelpers
             SaveSettings();
         }
         ConfigManager<UserSettings>.Setting = ReadConfiguration();
+
+        ConfigManager<TempSettings>.Setting = new TempSettings();
     }
     #endregion Initialize settings
 

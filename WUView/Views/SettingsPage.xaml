@@ -15,13 +15,14 @@
              FontFamily="Segoe UI" FontSize="14"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}">
 
-    <!--#region DataContext-->
+    <!--#region DataContext & Resources-->
     <UserControl.DataContext>
         <viewmodels:SettingsViewModel />
     </UserControl.DataContext>
 
     <UserControl.Resources>
         <config:UserSettings x:Key="config" />
+        <config:TempSettings x:Key="tempconfig" />
         <convert:EnumDescConverter x:Key="descConvert" />
         <viewmodels:NavigationViewModel x:Key="command" />
     </UserControl.Resources>
@@ -63,7 +64,7 @@
                 <!--#region Application Settings-->
                 <Expander Grid.Row="2"
                           IsExpanded="{Binding Setting.AppExpanderOpen,
-                                               Source={StaticResource config}}">
+                                               Source={StaticResource tempconfig}}">
                     <Expander.Header>
                         <Grid>
                             <!--#region Row definitions-->
@@ -188,7 +189,7 @@
                 <Expander x:Name="UIExpander"
                           Grid.Row="4"
                           IsExpanded="{Binding Setting.UIExpanderOpen,
-                                               Source={StaticResource config}}">
+                                               Source={StaticResource tempconfig}}">
                     <Expander.Header>
                         <Grid>
                             <!--#region Row definitions-->
@@ -213,7 +214,7 @@
                                        Text="UI Settings" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="Theme, Accent Color, UI Size, &amp; Row Height" />
+                                       Text="Theme, Accent Color, UI Size, Row Height, Start Position &amp; more" />
                         </Grid>
                     </Expander.Header>
 

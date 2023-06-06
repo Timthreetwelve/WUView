@@ -102,6 +102,7 @@ internal static class MainWindowHelpers
 
         // Settings change event
         UserSettings.Setting.PropertyChanged += SettingChange.UserSettingChanged;
+        TempSettings.Setting.PropertyChanged += SettingChange.TempSettingChanged;
 
         // Content rendered
         _mainWindow.ContentRendered += MainWindow_ContentRendered;

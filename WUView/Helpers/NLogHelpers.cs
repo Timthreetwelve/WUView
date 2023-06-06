@@ -56,7 +56,7 @@ internal static class NLogHelpers
         config.AddTarget(debugger);
 
         // add the rule
-        LoggingRule bug = new("*", LogLevel.Debug, debugger);
+        LoggingRule bug = new("*", LogLevel.Trace, debugger);
         config.LoggingRules.Add(bug);
 
         // add the configuration to NLog

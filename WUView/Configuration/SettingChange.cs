@@ -47,5 +47,15 @@ public static class SettingChange
                 break;
         }
     }
+
+    /// <summary>
+    /// Handle changes in TempSettings
+    /// </summary>
+    internal static void TempSettingChanged(object sender, PropertyChangedEventArgs e)
+    {
+        object newValue = MainWindowHelpers.GetPropertyValue(sender, e);
+        // Write to trace level to avoid unnecessary message in log file
+        _log.Trace($"Temp Setting change: {e.PropertyName} New Value: {newValue}");
+    }
     #endregion Setting change
 }

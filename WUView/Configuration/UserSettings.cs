@@ -5,14 +5,7 @@ namespace WUView.Configuration;
 [INotifyPropertyChanged]
 public partial class UserSettings : ConfigManager<UserSettings>
 {
-    #region Observable Collections
-    // place any observable collections here
-    #endregion Observable Collections
-
     #region Properties
-    [ObservableProperty]
-    private static bool _appExpanderOpen;
-
     [ObservableProperty]
     private static bool _boldToday = true;
 
@@ -48,9 +41,6 @@ public partial class UserSettings : ConfigManager<UserSettings>
 
     [ObservableProperty]
     private MySize _uISize = MySize.Default;
-
-    [ObservableProperty]
-    private static bool _uIExpanderOpen;
 
     [ObservableProperty]
     private ThemeType _uITheme = ThemeType.System;
