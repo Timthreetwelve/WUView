@@ -1,5 +1,5 @@
-name: Bug Report
-description: File a bug report
+name: Bug Report 🐛
+description: Find a bug? File a bug report!
 title: "Bug Report:"
 labels: ["bug", "needs triage"]
 assignees: Timthreetwelve
