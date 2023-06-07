@@ -1,0 +1,30 @@
+name: Enhancement / New Feature Request 💡
+description: Suggest an enhancement or new feature
+title: "Enhancement Request"
+labels: ["enhancement", "needs triage"]
+assignees: Timthreetwelve
+body:
+  - type: markdown
+    attributes:
+      value: "### If you have an idea for a feature or enhancement that would make the app better, tell me about it ###"
+  - type: input
+    id: summary
+    attributes:
+      label: Brief summary of your request
+      description: Enter a short description
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: Request details
+      description: Tell me what you would like to see. Feel free to attach an image file if it helps describe your idea.
+    validations:
+      required: true
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: Anything else?
+      description: Is there an example that you can point me to? Provide a link here.
+    validations:
+      required: false
