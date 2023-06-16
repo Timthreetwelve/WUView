@@ -1,4 +1,4 @@
-﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.MainPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -115,7 +115,7 @@
                 <!--#region Filter box-->
                 <TextBox x:Name="tbxSearch"
                          Width="300" Height="35"
-                         Margin="20,0" Padding="10,8"
+                         Margin="20,0" Padding="10,6"
                          VerticalContentAlignment="Top"
                          materialDesign:HintAssist.Hint="Filter"
                          materialDesign:TextFieldAssist.HasClearButton="True"
