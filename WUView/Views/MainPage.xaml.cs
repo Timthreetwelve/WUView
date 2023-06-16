@@ -82,7 +82,7 @@ public partial class MainPage : UserControl
         if (filter?.Length == 0)
         {
             cv.Filter = null;
-            SnackbarMsg.ClearAndQueueMessage("Filter removed", 2000);
+            //SnackbarMsg.ClearAndQueueMessage("Filter removed", 2000);
         }
         else
         {
@@ -107,15 +107,14 @@ public partial class MainPage : UserControl
                            wu.KBNum.Contains(filter, StringComparison.OrdinalIgnoreCase);
                 };
             }
-
-            if (dataGrid.Items.Count == 1)
-            {
-                SnackbarMsg.ClearAndQueueMessage("1 row shown", 2000);
-            }
-            else
-            {
-                SnackbarMsg.ClearAndQueueMessage($"{dataGrid.Items.Count} rows shown", 2000);
-            }
+        }
+        if (dataGrid.Items.Count == 1)
+        {
+            SnackbarMsg.ClearAndQueueMessage("1 row shown", 2000);
+        }
+        else
+        {
+            SnackbarMsg.ClearAndQueueMessage($"{dataGrid.Items.Count} rows shown", 2000);
         }
     }
     #endregion Filter the datagrid
@@ -223,4 +222,16 @@ public partial class MainPage : UserControl
         SnackbarMsg.ClearAndQueueMessage("List Refreshed", 2000);
     }
     #endregion Refresh everything
+
+    #region Unloaded event
+    /// <summary>
+    /// Nullify any DataGrid filter on the unloaded event
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+    private void UserControl_Unloaded(object sender, RoutedEventArgs e)
+    {
+        dataGrid.Items.Filter = null;
+    }
+    #endregion Unloaded event
 }
