@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Configuration;
 
@@ -56,5 +56,17 @@ public partial class UserSettings : ConfigManager<UserSettings>
 
     [ObservableProperty]
     private double _windowWidth = 1200;
+
+    [ObservableProperty]
+    private int _columnDate = 1;
+
+    [ObservableProperty]
+    private static int _columnKB;
+
+    [ObservableProperty]
+    private int _columnResult = 3;
+
+    [ObservableProperty]
+    private int _columnTitle = 2;
     #endregion Properties
 }

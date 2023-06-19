@@ -1,4 +1,4 @@
-﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.MainPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -17,6 +17,7 @@
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
              TextOptions.TextFormattingMode="Ideal"
              TextOptions.TextRenderingMode="Auto"
+             Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
 
     <!--#region Resources & DataContext-->
@@ -163,6 +164,7 @@
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
+                  ColumnReordered="ColumnReorderEvent"
                   FontFamily="Segue UI" FontSize="14"
                   HeadersVisibility="Column"
                   IsReadOnly="True" IsTabStop="False"

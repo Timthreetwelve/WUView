@@ -177,7 +177,7 @@ public partial class MainPage : UserControl
 
     #region Update the grid
     /// <summary>
-    /// Update the datagrid after changes have occurred
+    /// Update the DataGrid after changes have occurred
     /// </summary>
     public void UpdateGrid()
     {
@@ -234,4 +234,76 @@ public partial class MainPage : UserControl
         dataGrid.Items.Filter = null;
     }
     #endregion Unloaded event
+
+    #region Loaded event
+    /// <summary>
+    /// Set the order of the DataGrid columns
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void UserControl_Loaded(object sender, RoutedEventArgs e)
+    {
+        SetColumnOrder(dataGrid);
+    }
+    #endregion Loaded event
+
+    #region DataGrid column reorder
+    /// <summary>
+    /// Column reorder event
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ColumnReorderEvent(object sender, DataGridColumnEventArgs e)
+    {
+        SaveColumnOrder(sender as DataGrid);
+    }
+    #endregion DataGrid column reorder
+
+    #region Save order of columns in the DataGrid
+    /// <summary>
+    /// Save DataGrid column order
+    /// </summary>
+    /// <param name="grid">The DataGrid</param>
+    private static void SaveColumnOrder(DataGrid grid)
+    {
+        UserSettings.Setting.ColumnKB = grid.Columns[0].DisplayIndex;
+        UserSettings.Setting.ColumnDate = grid.Columns[1].DisplayIndex;
+        UserSettings.Setting.ColumnTitle = grid.Columns[2].DisplayIndex;
+        UserSettings.Setting.ColumnResult = grid.Columns[3].DisplayIndex;
+    }
+    #endregion Save order of columns in the DataGrid
+
+    #region Set order of columns in the DataGrid
+    /// <summary>
+    /// Set DataGrid column order
+    /// </summary>
+    /// <param name="grid">The DataGrid</param>
+    private static void SetColumnOrder(DataGrid grid)
+    {
+        try
+        {
+            Dictionary<int, int> columns = new()
+            {
+                { UserSettings.Setting.ColumnKB, 0 },
+                { UserSettings.Setting.ColumnDate, 1 },
+                { UserSettings.Setting.ColumnTitle, 2 },
+                { UserSettings.Setting.ColumnResult, 3 }
+            };
+
+            foreach (KeyValuePair<int, int> pair in columns.OrderBy(k => k.Key))
+            {
+                grid.Columns[pair.Value].DisplayIndex = pair.Key;
+            }
+        }
+        catch (Exception ex)
+        {
+            _log.Error(ex, "Error setting data grid column order.");
+            for (int i = 0; i < grid.Columns.Count; i++)
+            {
+                grid.Columns[i].DisplayIndex = i;
+            }
+            _log.Error(ex, "Data grid column order has been reset.");
+        }
+    }
+    #endregion Set order of columns in the DataGrid
 }
