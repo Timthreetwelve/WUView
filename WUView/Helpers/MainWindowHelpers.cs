@@ -119,6 +119,11 @@ internal static class MainWindowHelpers
         MainViewModel.GatherInfo();
 
         MainWindowUIHelpers.ToggleDetails(UserSettings.Setting.ShowDetails);
+
+        if (UserSettings.Setting.AutoSelectFirstRow && MainPage.Instance.dataGrid.Items.Count > 0)
+        {
+            MainPage.Instance.dataGrid.SelectedIndex = 0;
+        }
     }
 
     public static void MainWindow_Closing(object sender, CancelEventArgs e)

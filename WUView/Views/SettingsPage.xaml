@@ -101,6 +101,7 @@
                             <RowDefinition Height="31" />
                             <RowDefinition Height="31" />
                             <RowDefinition Height="31" />
+                            <RowDefinition Height="31" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="45" />
@@ -178,6 +179,10 @@
                                   IsChecked="{Binding Setting.BoldToday,
                                                       Source={StaticResource config}}" />
                         <CheckBox Grid.Row="5" Grid.Column="1"
+                                  Content="Select first row on start"
+                                  IsChecked="{Binding Setting.AutoSelectFirstRow,
+                                                      Source={StaticResource config}}" />
+                        <CheckBox Grid.Row="6" Grid.Column="1"
                                   Content="Include debug level messages in log file"
                                   IsChecked="{Binding Setting.IncludeDebug,
                                                       Source={StaticResource config}}" />
