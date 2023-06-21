@@ -1,4 +1,4 @@
-<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.MainPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -12,12 +12,13 @@
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800"
+             KeyboardNavigation.TabNavigation="Local"
+             Loaded="UserControl_Loaded"
              TextElement.FontSize="14"
              TextElement.FontWeight="Regular"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
              TextOptions.TextFormattingMode="Ideal"
              TextOptions.TextRenderingMode="Auto"
-             Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded">
 
     <!--#region Resources & DataContext-->
@@ -56,7 +57,8 @@
                 <Menu x:Name="mnuMain"
                       Margin="0,0"
                       materialDesign:MenuAssist.TopLevelMenuItemHeight="35"
-                      DockPanel.Dock="Top">
+                      DockPanel.Dock="Top" IsTabStop="True"
+                      TabIndex="1">
                     <Menu.DataContext>
                         <viewmodels:NavigationViewModel />
                     </Menu.DataContext>
@@ -123,13 +125,14 @@
                          materialDesign:TextFieldAssist.HasClearButton="True"
                          FontSize="14" IsTabStop="True"
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                         Tag="Filter Text"
+                         TabIndex="2" Tag="Filter Text"
                          TextChanged="TbxSearch_TextChanged" />
                 <!--#endregion-->
 
                 <!--#region Refresh button-->
                 <Button Click="Refresh_Click"
-                        Style="{StaticResource RefreshButton}" />
+                        Style="{StaticResource RefreshButton}"
+                        TabIndex="3" />
                 <!--#endregion-->
 
             </StackPanel>
@@ -165,14 +168,14 @@
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
                   ColumnReordered="ColumnReorderEvent"
-                  FontFamily="Segue UI" FontSize="14"
-                  HeadersVisibility="Column"
-                  IsReadOnly="True" IsTabStop="False"
+                  Focusable="True" FontFamily="Segue UI"
+                  FontSize="14" HeadersVisibility="Column"
+                  IsReadOnly="True" IsTabStop="True"
                   ItemsSource="{Binding Setting.HideExcluded,
                                         Converter={StaticResource itemsSource},
                                         Source={StaticResource config}}"
                   KeyboardNavigation.DirectionalNavigation="Contained"
-                  KeyboardNavigation.TabNavigation="Continue"
+                  KeyboardNavigation.TabNavigation="Once"
                   RowStyle="{StaticResource HiliteTodayStyle}"
                   ScrollViewer.CanContentScroll="True"
                   SelectionMode="Single"
@@ -207,7 +210,8 @@
         <!--#endregion-->
 
         <!--#region Details area-->
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="3"
+              KeyboardNavigation.TabNavigation="None">
             <ScrollViewer VerticalAlignment="Top"
                           DataContext="{Binding SelectedItem,
                                                 ElementName=dataGrid}"
@@ -290,7 +294,8 @@
                                Width="100"
                                HorizontalAlignment="Left"
                                PreviewMouseDown="HResult_PreviewMouseDown">
-                        <Hyperlink x:Name="hypHResult">
+                        <Hyperlink x:Name="hypHResult"
+                                   Focusable="False">
                             <Hyperlink.Inlines>
                                 <Run Text="{Binding HResult, Converter={StaticResource results}, ConverterParameter='HResult'}" />
                             </Hyperlink.Inlines>
@@ -307,7 +312,8 @@
                                Text="Support URL:" />
                     <TextBlock Grid.Row="9" Grid.Column="2"
                                Margin="0,1">
-                        <Hyperlink NavigateUri="{Binding SupportURL}"
+                        <Hyperlink Focusable="False"
+                                   NavigateUri="{Binding SupportURL}"
                                    RequestNavigate="Hyperlink_RequestNavigate">
                             <Hyperlink.Inlines>
                                 <Run Text="{Binding Path=SupportURL}" />

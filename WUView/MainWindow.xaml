@@ -45,7 +45,8 @@
     <materialDesign:DialogHost x:Name="MainDH"
                                CloseOnClickAway="False"
                                DialogTheme="Inherit"
-                               Identifier="MainDialogHost">
+                               Identifier="MainDialogHost"
+                               IsTabStop="False">
         <Grid x:Name="MainGrid">
             <!--#region Row definitions for the main grid-->
             <Grid.RowDefinitions>
@@ -86,6 +87,7 @@
                                          VerticalAlignment="Top"
                                          Background="{DynamicResource MaterialDesignPaper}"
                                          Foreground="{DynamicResource MaterialDesignBody}"
+                                         IsTabStop="False"
                                          MessageQueue="{materialDesign:MessageQueue}" />
                 <!--#endregion-->
 
@@ -94,6 +96,7 @@
                         Width="45"
                         Padding="0" HorizontalAlignment="Center"
                         Foreground="{DynamicResource MaterialDesignBody}"
+                        KeyboardNavigation.TabNavigation="None"
                         IsDefault="False" IsTabStop="False"
                         Style="{StaticResource MaterialDesignFlatButton}">
                     <materialDesign:PopupBox Padding="0" HorizontalAlignment="Right"

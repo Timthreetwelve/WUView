@@ -6,14 +6,15 @@
 
     <convert:TodayConverter x:Key="TodayConv" />
 
-    <!--#region DataGrid cell style -->
+    <!--#region DataGrid cell style-->
     <Style TargetType="DataGridCell"
            BasedOn="{StaticResource MaterialDesignDataGridCell}">
-        <Setter Property="Focusable" Value="False" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
     </Style>
     <!--#endregion-->
 
-    <!--#region DataGrid row style -->
+    <!--#region DataGrid row style-->
     <Style TargetType="DataGridRow"
            x:Key="HiliteTodayStyle"
            BasedOn="{StaticResource MaterialDesignDataGridRow}">
