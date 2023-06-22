@@ -4,7 +4,6 @@
 [![NET6win](https://img.shields.io/badge/.NET-6.0--Windows-blueviolet?style=plastic)](https://dotnet.microsoft.com/en-us/download) 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Timthreetwelve/WUView?style=plastic)](https://github.com/Timthreetwelve/WUView/releases/latest) 
 [![GitHub Release Date](https://img.shields.io/github/release-date/timthreetwelve/WUView?style=plastic&color=orange)](https://github.com/Timthreetwelve/WUView/releases/latest) 
-[![GitHub last commit](https://img.shields.io/github/last-commit/timthreetwelve/WUView?style=plastic)](https://github.com/Timthreetwelve/WUView/commits/main)
 [![GitHub all releases](https://img.shields.io/github/downloads/Timthreetwelve/WUView/total?style=plastic&label=total%20downloads&color=teal)](https://github.com/Timthreetwelve/WUView/releases) 
 [![GitHub release (by tag)](https://img.shields.io/github/downloads/timthreetwelve/wuview/latest/total?style=plastic&color=2196F3)](https://github.com/Timthreetwelve/WUView/releases/latest) 
 
