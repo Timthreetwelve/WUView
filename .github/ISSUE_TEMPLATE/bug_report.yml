@@ -6,6 +6,9 @@ assignees: Timthreetwelve
 body:
   - type: markdown
     attributes:
+      value: "*Feel free to change the issue title above*"
+  - type: markdown
+    attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
   - type: markdown
