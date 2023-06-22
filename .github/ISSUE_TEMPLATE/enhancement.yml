@@ -1,7 +1,6 @@
 name: Enhancement / New Feature Request 💡
 description: Suggest an enhancement or new feature
 title: "Enhancement Request"
-  placeholder: Feel free to change the title
 labels: ["enhancement", "needs triage"]
 assignees: Timthreetwelve
 body:
