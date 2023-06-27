@@ -317,7 +317,7 @@
                                       IsChecked="{Binding StartCentered,
                                                           Source={x:Static config:UserSettings.Setting}}" />
                         <CheckBox Grid.Row="5" Grid.Column="1"
-                                      Content="Keep TimVer on top of other windows"
+                                      Content="Keep Windows Update Viewer on top of other windows"
                                       IsChecked="{Binding KeepOnTop,
                                                           Source={x:Static config:UserSettings.Setting}}" />
                     </Grid>
