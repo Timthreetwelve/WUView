@@ -20,7 +20,7 @@ body:
       label: Is there an existing issue for this?
       description: Please search to see if an issue already exists for the bug you encountered.
       options:
-        - label: I have searched the existing issues
+        - label: I have searched the existing issues and have read the Known Issues and Troubleshooting topics in the Wiki
           required: true
   - type: textarea
     id: what-happened
