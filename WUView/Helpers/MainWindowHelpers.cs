@@ -188,6 +188,9 @@ internal static class MainWindowHelpers
         // Log the .NET version and OS platform
         _log.Debug($"Operating System version: {AppInfo.OsPlatform}");
         _log.Debug($".NET version: {AppInfo.RuntimeVersion.Replace(".NET", "")}");
+
+        // log WUA info
+        WUApiHelpers.LogWUAInfo();
     }
     #endregion Log Startup
 
