@@ -32,14 +32,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
     <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
-    <PackageReference Include="NLog" Version="5.2.0" />
-    <PackageReference Include="Octokit" Version="6.1.0" />
+    <PackageReference Include="NLog" Version="5.2.2" />
+    <PackageReference Include="Octokit" Version="6.2.1" />
   </ItemGroup>
 
   <ItemGroup>
