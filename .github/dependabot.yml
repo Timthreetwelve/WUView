@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "saturday"
+    open-pull-requests-limit: 5
+  - package-ecosystem: "nuget"
+    directory: "/WUView"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 25
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
