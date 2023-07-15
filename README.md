@@ -18,9 +18,11 @@ If you are using Windows 10 please see [Known Issues](https://github.com/Timthre
 
 See the [Wiki](https://github.com/Timthreetwelve/WUView/wiki) for additional information.
 
-### Download Windows Update Viewer
+### Get Windows Update Viewer via winget 🥳
+Windows update viewer is now available through Windows Package Manager (a.k.a. winget)! Many thanks to [@ottnorml](https://github.com/ottnorml) for making this happen!👏 Using winget, the name is `"Windows Update Viewer"` (use double quotes since the name has spaces). The ID is `Timthreetwelve.WUView`.
 
-You can download the latest release from the [releases page](https://github.com/Timthreetwelve/WUView/releases). Note that a "portable" release (the one with "NonInstall.zip" in the file name) is provided as well as the traditional installer.
+### Download Windows Update Viewer
+You can always download the latest release from the [releases page](https://github.com/Timthreetwelve/WUView/releases). Note that a "portable" release (the one with "NonInstall.zip" in the file name) is provided as well as the traditional installer.
 
 ### Features
 * View details for each update.
