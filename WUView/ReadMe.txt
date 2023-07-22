@@ -66,7 +66,8 @@ Other options on the navigation bar include the Settings dialog. You can select 
 Material Dark, Darker and System themes. You can select the accent color and you can choose from seven
 size options for the app. You can choose from three options for row spacing in the grid. You can also
 control the visibility of the Details pane and to show or hide updated that match items on the exclude
-list. You can choose to have updates with the current date shown in bold. There are also options to
+list. You can also choose if the exclude process looks at the KB Number and Result fields as well as the
+Title. You can choose to have updates with the current date shown in bold. There are also options to
 have WUView stay on top of other windows and you can control the detail level of the log file.
 
 
@@ -81,20 +82,20 @@ Keyboard Shortcuts
 ==================
 These keyboard shortcuts are available:
 
-	F1 = Go to the About screen
-    F5 = Check for new updates and refresh the grid
-    ESC = Removes any filter (while on the viewer page)
-    Ctrl + D = Toggle the Details pane
-    Ctrl + E = Toggle display of excluded items
-	Ctrl + L = Open the Excludes Editor
-	Ctrl + R = Reset column sort
-	Ctrl + T = Change the date & time format
-	Ctrl + U = Navigate to the Updates page
-    Ctrl + Comma = Go to Settings
-	Ctrl + Numpad Plus = Increase size
-	Ctrl + Numpad Minus = Decrease size
-    Ctrl + Shift + C = Change the accent Color
-    Ctrl + Shift + T = Change the Theme
+  F1 = Go to the About screen
+  F5 = Check for new updates and refresh the grid
+  ESC = Removes any filter (while on the viewer page)
+  Ctrl + D = Toggle the Details pane
+  Ctrl + E = Toggle display of excluded items
+  Ctrl + L = Open the Excludes Editor
+  Ctrl + R = Reset column sort
+  Ctrl + T = Change the date & time format
+  Ctrl + U = Navigate to the Updates page
+  Ctrl + Comma = Go to Settings
+  Ctrl + Numpad Plus = Increase size
+  Ctrl + Numpad Minus = Decrease size
+  Ctrl + Shift + C = Change the Accent Color
+  Ctrl + Shift + T = Change the Theme
 
 
 Uninstalling

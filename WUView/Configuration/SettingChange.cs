@@ -45,6 +45,10 @@ public static class SettingChange
             case nameof(UserSettings.Setting.MaxUpdates):
                 MainPage.RefreshAll();
                 break;
+
+            case nameof(UserSettings.Setting.ExcludeKBandResult):
+                MainPage.RefreshAll();
+                break;
         }
     }
 

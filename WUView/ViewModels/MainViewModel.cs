@@ -185,9 +185,25 @@ internal partial class MainViewModel : ObservableObject
             bool skip = false;
             foreach (ExcludedItems exc in ExcludedItems.ExcludedStrings)
             {
-                if (upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase) && !skip)
+                if (skip)
                 {
-                    skip = true;
+                    break;
+                }
+                if (UserSettings.Setting.ExcludeKBandResult)
+                {
+                    if ((upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)) ||
+                        (upd.KBNum.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)) ||
+                        (upd.ResultCode.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        skip = true;
+                    }
+                }
+                else
+                {
+                    if (upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase) && !skip)
+                    {
+                        skip = true;
+                    }
                 }
             }
             if (!skip)
