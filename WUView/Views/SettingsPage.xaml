@@ -102,6 +102,7 @@
                             <RowDefinition Height="31" />
                             <RowDefinition Height="31" />
                             <RowDefinition Height="31" />
+                            <RowDefinition Height="31" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="45" />
@@ -171,18 +172,22 @@
                                   IsChecked="{Binding Setting.HideExcluded,
                                                       Source={StaticResource config}}" />
                         <CheckBox Grid.Row="3" Grid.Column="1"
+                                  Content="Excluding items parses the KB Number &amp; Result in addition to the update Title"
+                                  IsChecked="{Binding Setting.ExcludeKBandResult,
+                                                      Source={StaticResource config}}" />
+                        <CheckBox Grid.Row="4" Grid.Column="1"
                                   Content="Show Details Panel"
                                   IsChecked="{Binding Setting.ShowDetails,
                                                       Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="4" Grid.Column="1"
+                        <CheckBox Grid.Row="5" Grid.Column="1"
                                   Content="Show updates with current date in bold"
                                   IsChecked="{Binding Setting.BoldToday,
                                                       Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="5" Grid.Column="1"
+                        <CheckBox Grid.Row="6" Grid.Column="1"
                                   Content="Select first row on start"
                                   IsChecked="{Binding Setting.AutoSelectFirstRow,
                                                       Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="6" Grid.Column="1"
+                        <CheckBox Grid.Row="7" Grid.Column="1"
                                   Content="Include debug level messages in log file"
                                   IsChecked="{Binding Setting.IncludeDebug,
                                                       Source={StaticResource config}}" />
@@ -313,13 +318,13 @@
                         </StackPanel>
 
                         <CheckBox Grid.Row="4" Grid.Column="1"
-                                      Content=" Start with window centered on screen"
-                                      IsChecked="{Binding StartCentered,
-                                                          Source={x:Static config:UserSettings.Setting}}" />
+                                  Content=" Start with window centered on screen"
+                                  IsChecked="{Binding StartCentered,
+                                                      Source={x:Static config:UserSettings.Setting}}" />
                         <CheckBox Grid.Row="5" Grid.Column="1"
-                                      Content="Keep Windows Update Viewer on top of other windows"
-                                      IsChecked="{Binding KeepOnTop,
-                                                          Source={x:Static config:UserSettings.Setting}}" />
+                                  Content="Keep Windows Update Viewer on top of other windows"
+                                  IsChecked="{Binding KeepOnTop,
+                                                      Source={x:Static config:UserSettings.Setting}}" />
                     </Grid>
 
                 </Expander>
