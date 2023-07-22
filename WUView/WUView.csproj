@@ -39,7 +39,7 @@
     </PackageReference>
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
     <PackageReference Include="NLog" Version="5.2.2" />
-    <PackageReference Include="Octokit" Version="6.2.1" />
+    <PackageReference Include="Octokit" Version="7.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,12 +56,12 @@
     <Exec Command="powershell -NoProfile -File &quot;$(ProjectDir)Powershell\GenBuildInfo.ps1&quot; -assemblyName $(AssemblyName) -assemblyVersion $(AssemblyVersion)" />
   </Target>
 
-  <Target Name="PublishZip" AfterTargets="Publish" >
+  <Target Name="PublishZip" AfterTargets="Publish">
       <PropertyGroup>
-          <PowerShellScript>-File &quot;D:\Visual Studio\Source\PowerShell\PublishZip\PubZip.ps1&quot;</PowerShellScript>
-          <Name>-name &quot;Windows Update Viewer&quot;</Name>
+          <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishZip\PubZip.ps1"</PowerShellScript>
+          <Name>-name "Windows Update Viewer"</Name>
           <Version>-version $(AssemblyVersion)</Version>
-          <Path>-path &quot;$(ProjectDir)&quot;</Path>
+          <Path>-path "$(ProjectDir)"</Path>
       </PropertyGroup>
       <Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name) $(Version) $(Path)" />
   </Target>
