@@ -78,26 +78,35 @@ internal partial class MainViewModel : ObservableObject
                 string kbNum = GetKB(hist.Title);
                 gkbStopwatch.Stop();
                 updStopwatch.Start();
-                WUpdate update = new()
+                try
                 {
-                    Title = hist.Title,
-                    KBNum = kbNum,
-                    Date = hist.Date.ToLocalTime(),
-                    ResultCode = hist.ResultCode.ToString(),
-                    HResult = hist.HResult.ToString(),
-                    Operation = hist.Operation.ToString(),
-                    UpdateID = hist.UpdateIdentity.UpdateID,
-                    Description = hist.Description,
-                    SupportURL = hist.SupportUrl ?? string.Empty,
-                    ELDescription = FindEventLogs(kbNum)
-                };
-                UpdatesFullList.Add(update);
-                updStopwatch.Stop();
-                if (hist.HResult != 0)
+                    WUpdate update = new()
+                    {
+                        Title = hist.Title,
+                        KBNum = kbNum,
+                        Date = hist.Date.ToLocalTime(),
+                        ResultCode = hist.ResultCode.ToString(),
+                        HResult = hist.HResult.ToString(),
+                        Operation = hist.Operation.ToString(),
+                        UpdateID = hist.UpdateIdentity.UpdateID,
+                        Description = hist.Description,
+                        SupportURL = hist.SupportUrl ?? string.Empty,
+                        ELDescription = FindEventLogs(kbNum)
+                    };
+                    UpdatesFullList.Add(update);
+                    updStopwatch.Stop();
+                    if (hist.HResult != 0)
+                    {
+                        string operation = update.Operation.Replace("uo", "");
+                        string HResultHex = string.Format($"0x{int.Parse(update.HResult):X8}");
+                        _log.Warn($"KB: {update.KBNum,-10} Date: {update.Date,-23} HResult: {HResultHex,-10} " +
+                                 $" Operation: {operation,-12}  UpdateID: {update.UpdateID}");
+                    }
+                }
+                catch (Exception ex)
                 {
-                    string HResultHex = string.Format($"0x{int.Parse(update.HResult):X8}");
-                    _log.Warn($"KB: {update.KBNum,-10} Date: {update.Date,-23} HResult: {HResultHex,-10} " +
-                             $" Operation: {update.Operation,-12}  UpdateID: {update.UpdateID}");
+                    _log.Error(ex, "Error while parsing Windows Update records.");
+                    updStopwatch.Stop();
                 }
             }
             _log.Debug($"Extracting KB numbers from update titles took {gkbStopwatch.Elapsed.TotalMilliseconds:N2} milliseconds");
@@ -126,6 +135,11 @@ internal partial class MainViewModel : ObservableObject
     /// <returns>Returns either the KB number or n/a</returns>
     private static string GetKB(string title)
     {
+        if (title == null)
+        {
+            _log.Error("Null title found while parsing Windows Update records.");
+            return "n/a";
+        }
         title = title.Replace("(", "").Replace(")", "");
         int pos = title.IndexOf("KB");
         if (pos > -1)
