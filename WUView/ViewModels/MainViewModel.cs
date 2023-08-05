@@ -43,8 +43,8 @@ internal partial class MainViewModel : ObservableObject
         // Believe it or not, it's possible to not have any updates.
         if (count >= 1)
         {
-            Stopwatch gkbsw = new();
-            Stopwatch updsw = new();
+            Stopwatch gkbStopwatch = new();
+            Stopwatch updStopwatch = new();
             int maxUpdates;
             switch (UserSettings.Setting.MaxUpdates)
             {
@@ -74,10 +74,10 @@ internal partial class MainViewModel : ObservableObject
             _log.Debug($"Using {maxUpdates} update records");
             foreach (IUpdateHistoryEntry hist in updateSearcher.QueryHistory(0, maxUpdates))
             {
-                gkbsw.Start();
+                gkbStopwatch.Start();
                 string kbNum = GetKB(hist.Title);
-                gkbsw.Stop();
-                updsw.Start();
+                gkbStopwatch.Stop();
+                updStopwatch.Start();
                 WUpdate update = new()
                 {
                     Title = hist.Title,
@@ -92,7 +92,7 @@ internal partial class MainViewModel : ObservableObject
                     ELDescription = FindEventLogs(kbNum)
                 };
                 UpdatesFullList.Add(update);
-                updsw.Stop();
+                updStopwatch.Stop();
                 if (hist.HResult != 0)
                 {
                     string HResultHex = string.Format($"0x{int.Parse(update.HResult):X8}");
@@ -100,8 +100,8 @@ internal partial class MainViewModel : ObservableObject
                              $" Operation: {update.Operation,-12}  UpdateID: {update.UpdateID}");
                 }
             }
-            _log.Debug($"Extracting KB numbers from update titles took {gkbsw.Elapsed.TotalMilliseconds:N2} milliseconds");
-            _log.Debug($"Building WUpdate object took {updsw.Elapsed.TotalMilliseconds:N2} milliseconds");
+            _log.Debug($"Extracting KB numbers from update titles took {gkbStopwatch.Elapsed.TotalMilliseconds:N2} milliseconds");
+            _log.Debug($"Building WUpdate object took {updStopwatch.Elapsed.TotalMilliseconds:N2} milliseconds");
         }
         else
         {
@@ -130,10 +130,10 @@ internal partial class MainViewModel : ObservableObject
         int pos = title.IndexOf("KB");
         if (pos > -1)
         {
-            int endpos = title.IndexOf(" ", pos);
-            if (endpos > -1)
+            int endPosition = title.IndexOf(" ", pos);
+            if (endPosition > -1)
             {
-                return title[pos..endpos];
+                return title[pos..endPosition];
             }
             return title[pos..];
         }
@@ -242,11 +242,11 @@ internal partial class MainViewModel : ObservableObject
         try
         {
             EventLogReader logReader = new(eventsQuery);
-            for (EventRecord eventdetail = logReader.ReadEvent(); eventdetail != null; eventdetail = logReader.ReadEvent())
+            for (EventRecord eventDetail = logReader.ReadEvent(); eventDetail != null; eventDetail = logReader.ReadEvent())
             {
-                if (eventdetail.FormatDescription().Contains("KB"))
+                if (eventDetail.FormatDescription().Contains("KB"))
                 {
-                    EventLogRecords.Add(eventdetail);
+                    EventLogRecords.Add(eventDetail);
                 }
             }
         }
@@ -288,7 +288,7 @@ internal partial class MainViewModel : ObservableObject
 
     #region Display update count
     /// <summary>
-    /// Displays the count of updates in a snackbar message
+    /// Displays the count of updates in a snack bar message
     /// </summary>
     internal static void DisplayCount()
     {
