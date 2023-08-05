@@ -9,6 +9,7 @@
              xmlns:local="clr-namespace:WUView.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:strings="clr-namespace:WUView.Strings"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800"
@@ -185,13 +186,13 @@
                   VerticalScrollBarVisibility="Auto">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding KBNum}"
-                                    Header="KB Number" />
+                                    Header="{x:Static strings:Resource.DGColKBNum}" />
                 <DataGridTextColumn Binding="{Binding Date, Converter={StaticResource dateFormat}}"
-                                    Header="Date" />
+                                    Header="{x:Static strings:Resource.DGColDate}" />
                 <DataGridTextColumn Binding="{Binding Title}"
-                                    Header="Title" />
+                                    Header="{x:Static strings:Resource.DGColTitle}" />
                 <DataGridTextColumn Binding="{Binding ResultCode, Converter={StaticResource results}, ConverterParameter='ResultCode'}"
-                                    Header="Result" />
+                                    Header="{x:Static strings:Resource.DGColResult}" />
             </DataGrid.Columns>
         </DataGrid>
         <!--#endregion-->

@@ -32,33 +32,33 @@ public partial class NavigationViewModel : ObservableObject
             {
                 new NavigationItem
                 {
-                    Name="Updates",
+                    Name = Resource.NavItemUpdates,
                     NavPage = NavPage.Viewer,
-                    ViewModelType= typeof(MainViewModel),
-                    IconKind=PackIconKind.ViewList,
-                    PageTitle="Windows Update Viewer"
+                    ViewModelType = typeof(MainViewModel),
+                    IconKind = PackIconKind.ViewList,
+                    PageTitle = Resource.NavTitleUpdates
                 },
                  new NavigationItem
                 {
-                    Name="Settings",
-                    NavPage=NavPage.Settings,
-                    ViewModelType= typeof(SettingsViewModel),
-                    IconKind=PackIconKind.SettingsOutline,
-                    PageTitle = "Settings"
+                    Name = Resource.NavItemSettings,
+                    NavPage = NavPage.Settings,
+                    ViewModelType = typeof(SettingsViewModel),
+                    IconKind = PackIconKind.SettingsOutline,
+                    PageTitle = Resource.NavTitleSettings
                 },
                 new NavigationItem
                 {
-                    Name="About",
-                    NavPage=NavPage.About,
-                    ViewModelType= typeof(AboutViewModel),
-                    IconKind=PackIconKind.AboutCircleOutline,
-                    PageTitle = "About Windows Update Viewer"
+                    Name = Resource.NavItemAbout,
+                    NavPage = NavPage.About,
+                    ViewModelType = typeof(AboutViewModel),
+                    IconKind = PackIconKind.AboutCircleOutline,
+                    PageTitle = Resource.NavTitleAbout
                 },
                 new NavigationItem
                 {
-                    Name="Exit",
-                    IconKind=PackIconKind.ExitToApp,
-                    IsExit=true
+                    Name = Resource.NavItemExit,
+                    IconKind = PackIconKind.ExitToApp,
+                    IsExit = true
                 }
             }
         );

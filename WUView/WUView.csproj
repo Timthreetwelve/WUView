@@ -1,5 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
@@ -11,6 +11,7 @@
     <Company>T_K</Company>
     <Product>Windows Update Viewer</Product>
     <ApplicationIcon>Images\UV.ico</ApplicationIcon>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
@@ -41,7 +42,19 @@
     <PackageReference Include="NLog" Version="5.2.2" />
     <PackageReference Include="Octokit" Version="7.0.1" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Compile Update="Strings\Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Strings\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Update="LICENSE.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -57,13 +70,13 @@
   </Target>
 
   <Target Name="PublishZip" AfterTargets="Publish">
-      <PropertyGroup>
-          <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishZip\PubZip.ps1"</PowerShellScript>
-          <Name>-name "Windows Update Viewer"</Name>
-          <Version>-version $(AssemblyVersion)</Version>
-          <Path>-path "$(ProjectDir)"</Path>
-      </PropertyGroup>
-      <Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name) $(Version) $(Path)" />
+    <PropertyGroup>
+      <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishZip\PubZip.ps1"</PowerShellScript>
+      <Name>-name "Windows Update Viewer"</Name>
+      <Version>-version $(AssemblyVersion)</Version>
+      <Path>-path "$(ProjectDir)"</Path>
+    </PropertyGroup>
+	<Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name) $(Version) $(Path)" />
   </Target>
 
 </Project>
