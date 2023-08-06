@@ -79,4 +79,11 @@
 	<Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name) $(Version) $(Path)" />
   </Target>
 
+  <Target Name="CompileSetup" AfterTargets="PublishZip">
+    <PropertyGroup>
+      <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishInnoSetup\PubSetup.ps1"</PowerShellScript>
+      <ScriptName>-issScript "D:\InnoSetup\WUView.iss"</ScriptName>
+    </PropertyGroup>
+    <Exec Command="pwsh -NoProfile $(PowerShellScript) $(ScriptName)" />
+  </Target>
 </Project>
