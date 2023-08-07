@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Helpers;
 
@@ -161,7 +161,7 @@ internal static class MainWindowHelpers
         }
         _log.Error(e.StackTrace);
 
-        _ = MessageBox.Show("An error has occurred. See the log file",
+        _ = MessageBox.Show($"An error has occurred.\n{e.Message}\n\nSee the log file. ",
             "ERROR",
             MessageBoxButton.OK,
             MessageBoxImage.Error);
