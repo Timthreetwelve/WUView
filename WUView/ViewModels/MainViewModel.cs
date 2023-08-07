@@ -82,14 +82,14 @@ internal partial class MainViewModel : ObservableObject
                 {
                     WUpdate update = new()
                     {
-                        Title = hist.Title,
+                        Title = hist.Title ?? "null",
                         KBNum = kbNum,
                         Date = hist.Date.ToLocalTime(),
                         ResultCode = hist.ResultCode.ToString(),
                         HResult = hist.HResult.ToString(),
                         Operation = hist.Operation.ToString(),
-                        UpdateID = hist.UpdateIdentity.UpdateID,
-                        Description = hist.Description,
+                        UpdateID = hist.UpdateIdentity.UpdateID ?? string.Empty,
+                        Description = hist.Description ?? string.Empty,
                         SupportURL = hist.SupportUrl ?? string.Empty,
                         ELDescription = FindEventLogs(kbNum)
                     };
@@ -157,7 +157,7 @@ internal partial class MainViewModel : ObservableObject
 
     #region Match event logs to update items
     /// <summary>
-    /// Matches up any Event Log records with a Windows Update bases on KB number
+    /// Matches up any Event Log records with a Windows Update based on KB number
     /// </summary>
     /// <param name="kb"></param>
     /// <returns>Returns a string containing relevant Event Log records or a message saying that none could be found</returns>
@@ -196,33 +196,40 @@ internal partial class MainViewModel : ObservableObject
         UpdatesWithoutExcludedItems.Clear();
         foreach (WUpdate upd in UpdatesFullList)
         {
-            bool skip = false;
-            foreach (ExcludedItems exc in ExcludedItems.ExcludedStrings)
+            try
             {
-                if (skip)
+                bool skip = false;
+                foreach (ExcludedItems exc in ExcludedItems.ExcludedStrings)
                 {
-                    break;
-                }
-                if (UserSettings.Setting.ExcludeKBandResult)
-                {
-                    if ((upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)) ||
-                        (upd.KBNum.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)) ||
-                        (upd.ResultCode.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)))
+                    if (skip)
                     {
-                        skip = true;
+                        break;
+                    }
+                    if (UserSettings.Setting.ExcludeKBandResult)
+                    {
+                        if ((upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)) ||
+                            (upd.KBNum.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)) ||
+                            (upd.ResultCode.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)))
+                        {
+                            skip = true;
+                        }
+                    }
+                    else
+                    {
+                        if (upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase) && !skip)
+                        {
+                            skip = true;
+                        }
                     }
                 }
-                else
+                if (!skip)
                 {
-                    if (upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase) && !skip)
-                    {
-                        skip = true;
-                    }
+                    UpdatesWithoutExcludedItems.Add(upd.GetClone());
                 }
             }
-            if (!skip)
+            catch (Exception ex)
             {
-                UpdatesWithoutExcludedItems.Add(upd.GetClone());
+                _log.Error(ex, "Error building Exclude list.");
             }
         }
         esw.Stop();
