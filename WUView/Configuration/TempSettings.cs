@@ -13,4 +13,7 @@ internal partial class TempSettings : ConfigManager<TempSettings>
 
     [ObservableProperty]
     private static bool _uIExpanderOpen;
+
+    [ObservableProperty]
+    private static bool _langExpanderOpen;
 }

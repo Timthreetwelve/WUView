@@ -55,16 +55,17 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="190" />
+                <ColumnDefinition Name="NavColumn"
+                                  Width="auto" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <!--#endregion-->
 
             <!--#region Title Row-->
-            <Grid Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid Grid.Column="1" Grid.ColumnSpan="2">
                 <!--#region Column definitions for the title row-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="185" />
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="60" />
@@ -73,8 +74,8 @@
 
                 <!--#region Page title label-->
                 <Label x:Name="PageTitle"
-                       Grid.Column="1" Grid.ColumnSpan="2"
-                       Margin="20,0" HorizontalAlignment="Left"
+                       Grid.Column="0" Grid.ColumnSpan="2"
+                       Margin="0" HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        Content="{Binding PageTitle}"
                        FontSize="22" FontWeight="SemiBold" />
@@ -96,8 +97,8 @@
                         Width="45"
                         Padding="0" HorizontalAlignment="Center"
                         Foreground="{DynamicResource MaterialDesignBody}"
-                        KeyboardNavigation.TabNavigation="None"
                         IsDefault="False" IsTabStop="False"
+                        KeyboardNavigation.TabNavigation="None"
                         Style="{StaticResource MaterialDesignFlatButton}">
                     <materialDesign:PopupBox Padding="0" HorizontalAlignment="Right"
                                              Focusable="False"

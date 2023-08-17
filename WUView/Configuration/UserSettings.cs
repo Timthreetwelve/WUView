@@ -58,10 +58,16 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private bool _startCentered = true;
 
     [ObservableProperty]
+    private string _uILanguage;
+
+    [ObservableProperty]
     private MySize _uISize = MySize.Default;
 
     [ObservableProperty]
     private ThemeType _uITheme = ThemeType.System;
+
+    [ObservableProperty]
+    private bool _useOSLanguage;
 
     [ObservableProperty]
     private double _windowHeight = 650;

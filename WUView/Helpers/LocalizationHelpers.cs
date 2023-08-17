@@ -24,4 +24,26 @@ internal static class LocalizationHelpers
     {
         return CultureInfo.CurrentUICulture.Name;
     }
+
+    /// <summary>
+    /// Saves settings and restarts the application. Invoked when language is changed.
+    /// </summary>
+    public static void SaveAndRestart()
+    {
+        ConfigHelpers.SaveSettings();
+        using Process p = new();
+        p.StartInfo.FileName = AppInfo.AppPath;
+        p.StartInfo.UseShellExecute = true;
+        _ = p.Start();
+        Application.Current.Shutdown();
+    }
+
+    /// <summary>
+    /// Gets the index of the selected language.
+    /// </summary>
+    /// <returns>The index as int.</returns>
+    public static int GetLanguageIndex()
+    {
+        return UILanguage.DefinedLanguages.FindIndex(x => x.LanguageCode == UserSettings.Setting.UILanguage);
+    }
 }

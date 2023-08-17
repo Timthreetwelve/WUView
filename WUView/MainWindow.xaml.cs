@@ -8,8 +8,6 @@ public partial class MainWindow : Window
     {
         SingleInstance.Create(AppInfo.AppName);
 
-        ConfigHelpers.InitializeSettings();
-
         InitializeComponent();
 
         MainWindowHelpers.LogStartup();

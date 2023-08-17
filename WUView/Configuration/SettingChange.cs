@@ -43,11 +43,12 @@ public static class SettingChange
                 break;
 
             case nameof(UserSettings.Setting.MaxUpdates):
+            case nameof(UserSettings.Setting.ExcludeKBandResult):
                 MainPage.RefreshAll();
                 break;
 
-            case nameof(UserSettings.Setting.ExcludeKBandResult):
-                MainPage.RefreshAll();
+            case nameof(UserSettings.Setting.UILanguage):
+                LocalizationHelpers.SaveAndRestart();
                 break;
         }
     }

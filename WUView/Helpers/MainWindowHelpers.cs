@@ -136,7 +136,7 @@ internal static class MainWindowHelpers
         LogManager.Shutdown();
 
         // Save settings
-        MainWindowHelpers.SaveWindowPosition();
+        SaveWindowPosition();
         ConfigHelpers.SaveSettings();
     }
     #endregion Window Events

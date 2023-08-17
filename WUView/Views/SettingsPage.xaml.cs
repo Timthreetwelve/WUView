@@ -10,4 +10,12 @@ public partial class SettingsPage : UserControl
     {
         InitializeComponent();
     }
+
+    /// <summary>
+    /// Handles the Loaded event of the language ComboBox.
+    /// </summary>
+    private void CbxLanguage_Loaded(object sender, RoutedEventArgs e)
+    {
+        cbxLanguage.SelectedIndex = LocalizationHelpers.GetLanguageIndex();
+    }
 }

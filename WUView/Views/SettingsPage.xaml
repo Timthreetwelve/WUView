@@ -9,6 +9,7 @@
              xmlns:local="clr-namespace:WUView.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:WUView.Models"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800"
@@ -24,6 +25,8 @@
         <config:UserSettings x:Key="config" />
         <config:TempSettings x:Key="tempconfig" />
         <convert:EnumDescConverter x:Key="descConvert" />
+        <convert:BooleanInverter x:Key="boolInverter" />
+        <convert:LanguageConverter x:Key="langConverter" />
         <viewmodels:NavigationViewModel x:Key="command" />
     </UserControl.Resources>
     <!--#endregion-->
@@ -35,6 +38,8 @@
             <Grid>
                 <!--#region Row definitions-->
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="10" />
                     <RowDefinition Height="auto" />
@@ -326,7 +331,92 @@
                                   IsChecked="{Binding KeepOnTop,
                                                       Source={x:Static config:UserSettings.Setting}}" />
                     </Grid>
+                </Expander>
+                <!--#endregion-->
 
+                <!--#region Language-->
+                <Expander x:Name="LangExpander"
+                          Grid.Row="6"
+                          IsExpanded="{Binding Setting.LangExpanderOpen,
+                                               Source={StaticResource tempconfig}}">
+                    <Expander.Header>
+                        <Grid>
+                            <!--#region Row definitions-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="5" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="55" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <!--#endregion-->
+                            <materialDesign:PackIcon Grid.RowSpan="3"
+                                                     Width="28" Height="28"
+                                                     Margin="0,5,0,0"
+                                                     VerticalAlignment="Center"
+                                                     Foreground="{DynamicResource PrimaryHueMidBrush}"
+                                                     Kind="Language" />
+                            <TextBlock Grid.Row="0" Grid.Column="1"
+                                       FontSize="16" FontWeight="SemiBold">
+                                <Run Text="Language" />
+
+                            </TextBlock>
+                            <TextBlock Grid.Row="2" Grid.Column="1"
+                                       FontSize="12"
+                                       Text="Bear with me, this is a work in progress" />
+                        </Grid>
+                    </Expander.Header>
+
+                    <Grid Margin="35,10,0,20">
+                        <Grid.DataContext>
+                            <models:UILanguage />
+                        </Grid.DataContext>
+                        <!--#region Row & Column definitions-->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="31" />
+                            <RowDefinition Height="38" />
+                            <RowDefinition Height="38" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <!--#endregion-->
+
+                        <CheckBox Grid.Row="0" Grid.Column="1"
+                                  VerticalContentAlignment="Center"
+                                  Content=" Use Windows Display Language"
+                                  IsChecked="{Binding UseOSLanguage,
+                                                      Source={x:Static config:UserSettings.Setting}}" />
+
+                        <StackPanel Grid.Row="1" Grid.Column="1"
+                                    Orientation="Horizontal">
+                            <Label Width="80"
+                                   VerticalAlignment="Center"
+                                   Content="Language:" />
+                            <ComboBox x:Name="cbxLanguage"
+                                      Width="200"
+                                      Margin="0,3,0,0" Padding="2,0,0,3"
+                                      HorizontalAlignment="Left"
+                                      DisplayMemberPath="Language"
+                                      IsEnabled="{Binding Path=Setting.UseOSLanguage,
+                                                          Source={StaticResource config},
+                                                          Converter={StaticResource boolInverter}}"
+                                      ItemsSource="{Binding DefinedLanguages}"
+                                      Loaded="CbxLanguage_Loaded"
+                                      SelectedItem="{Binding Path=Setting.UILanguage,
+                                                             Source={StaticResource config},
+                                                             Converter={StaticResource langConverter}}"
+                                      Style="{StaticResource MaterialDesignComboBox}" />
+                        </StackPanel>
+
+                        <Label Grid.Row="2" Grid.Column="1"
+                               VerticalAlignment="Center"
+                               Content="Changing Language will cause application to restart!"
+                               Foreground="OrangeRed" />
+                    </Grid>
                 </Expander>
                 <!--#endregion-->
             </Grid>
