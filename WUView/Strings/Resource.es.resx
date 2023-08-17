@@ -127,15 +127,27 @@
     <value>Configuración</value>
   </data>
   <data name="NavItemAbout" xml:space="preserve">
-    <value>Acera de...</value>
+    <value>Información</value>
   </data>
   <data name="NavItemUpdates" xml:space="preserve">
     <value>Actualizaciones</value>
   </data>
   <data name="NavTitleAbout" xml:space="preserve">
-    <value>Acerca de Windows Update Viewer</value>
+    <value>Información</value>
   </data>
   <data name="NavTitleUpdates" xml:space="preserve">
     <value>Windows Update Viewer</value>
+  </data>
+  <data name="DGColKBNum" xml:space="preserve">
+    <value>Número KB</value>
+  </data>
+  <data name="DGColDate" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="DGColResult" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="DGColTitle" xml:space="preserve">
+    <value>Título</value>
   </data>
 </root>
