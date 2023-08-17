@@ -34,4 +34,17 @@ internal static class WUApiHelpers
             ["Minor Version"] = updateAgentInfo.GetInfo("ApiMinorVersion").ToString()
         };
     }
+
+    // to enable the following, change <EmbedInteropTypes>true</EmbedInteropTypes> to false in .csproj
+
+    //public static bool IsWUEnabled()
+    //{
+    //    AutomaticUpdatesClass automaticUpdatesClass = new();
+    //    return automaticUpdatesClass.ServiceEnabled;
+    //}
+
+    //public static void LogWUEnabled()
+    //{
+    //    _log.Debug($"Windows Update service enabled: {IsWUEnabled()}");
+    //}
 }
