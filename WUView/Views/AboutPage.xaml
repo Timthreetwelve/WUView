@@ -9,6 +9,7 @@
              xmlns:local="clr-namespace:WUView.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:strings="clr-namespace:WUView.Strings"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800"
@@ -71,18 +72,18 @@
                 <TextBlock Grid.Row="0" Grid.Column="0"
                            Text="{x:Static helpers:AppInfo.AppProduct}" />
                 <TextBlock Grid.Row="0" Grid.Column="1"
-                           Text="A list of Windows Updates on this device"
+                           Text="{x:Static strings:Resource.AboutDescription}"
                            TextTrimming="CharacterEllipsis" />
 
                 <TextBlock Grid.Row="1" Grid.Column="0"
-                           Text="Version" />
+                           Text="{x:Static strings:Resource.AboutVersion}" />
                 <TextBlock Grid.Row="1" Grid.Column="1"
                            Text="{x:Static helpers:AppInfo.AppFileVersion}" />
 
                 <TextBlock Grid.Row="2" Grid.Column="0"
-                           Text="Created by " />
+                           Text="{x:Static strings:Resource.AboutCreatedBy}" />
                 <TextBlock Grid.Row="2" Grid.Column="1"
-                           ToolTip="See Tim's other work at https://github.com/Timthreetwelve"
+                           ToolTip="{x:Static strings:Resource.AboutCreatedByToolTip}"
                            ToolTipService.Placement="Top">
                     <Hyperlink Command="{Binding GoToGitHubCommand}"
                                CommandParameter="https://github.com/Timthreetwelve"
@@ -92,35 +93,35 @@
                 </TextBlock>
 
                 <TextBlock Grid.Row="3" Grid.Column="0"
-                           Text="Copyright " />
+                           Text="{x:Static strings:Resource.AboutCopyright}" />
                 <TextBlock Grid.Row="3" Grid.Column="1"
                            Text="{x:Static helpers:AppInfo.AppCopyright}" />
 
                 <TextBlock Grid.Row="4" Grid.Column="0"
-                           Text="License" />
+                           Text="{x:Static strings:Resource.AboutLicense}" />
                 <TextBlock Grid.Row="4" Grid.Column="1">
                     <Hyperlink Command="{Binding ViewLicenseCommand}"
                                Foreground="{DynamicResource MaterialDesignBody}"
-                               ToolTip="View the license document"
+                               ToolTip="{x:Static strings:Resource.AboutLicenseToolTip}"
                                ToolTipService.Placement="Top">
-                        <TextBlock Text="This project is licensed under the terms of the MIT license." />
+                        <TextBlock Text="{x:Static strings:Resource.AboutLicenseText}" />
                     </Hyperlink>
                 </TextBlock>
 
                 <TextBlock Grid.Row="5" Grid.Column="0"
-                           Text="Build Date" />
+                           Text="{x:Static strings:Resource.AboutBuildDate}" />
                 <TextBlock x:Name="txtBuildDate"
                            Grid.Row="5" Grid.Column="1" />
 
                 <TextBlock Grid.Row="6" Grid.Column="0"
-                           Text="Commit ID" />
+                           Text="{x:Static strings:Resource.AboutCommitID}" />
                 <TextBlock Grid.Row="6" Grid.Column="1"
                            Text="{x:Static buildinfo:BuildInfo.CommitIDString}"
                            ToolTipService.Placement="Top">
                     <TextBlock.ToolTip>
                         <ToolTip>
                             <TextBlock>
-                                <Run Text="Full Commit ID: " />
+                                <Run Text="{x:Static strings:Resource.AboutCommitIDToolTip}" />
                                 <Run Text="{x:Static buildinfo:BuildInfo.CommitIDFullString}" />
                             </TextBlock>
                         </ToolTip>
@@ -139,7 +140,7 @@
                                CommandParameter="{Binding Path=Text,
                                                           ElementName=tbxGithub}"
                                Foreground="{DynamicResource MaterialDesignBody}"
-                               ToolTip="Visit the WUView page on GitHub"
+                               ToolTip="{x:Static strings:Resource.AboutGitHubToolTip}"
                                ToolTipService.Placement="Top">
                         <TextBlock x:Name="tbxGithub"
                                    Text="https://github.com/Timthreetwelve/WUView" />
@@ -147,26 +148,26 @@
                 </TextBlock>
 
                 <TextBlock Grid.Row="8" Grid.Column="0"
-                           Text="Documentation" />
+                           Text="{x:Static strings:Resource.AboutDocumentation}" />
                 <TextBlock Grid.Row="8" Grid.Column="1">
                     <Hyperlink Command="{Binding ViewReadMeCommand}"
                                Foreground="{DynamicResource MaterialDesignBody}"
-                               ToolTip="View the ReadMe file"
+                               ToolTip="{x:Static strings:Resource.AboutDocumentationToolTip}"
                                ToolTipService.Placement="Top">
-                        <TextBlock Text="Open the read me file" />
+                        <TextBlock Text="{x:Static strings:Resource.AboutDocumentionText}" />
                     </Hyperlink>
                 </TextBlock>
                 <!--#endregion-->
 
                 <!--#region Check for new release-->
                 <TextBlock Grid.Row="9" Grid.Column="0"
-                           Text="Update WUView" />
+                           Text="{x:Static strings:Resource.AboutUpdateWU}" />
                 <TextBlock Grid.Row="9" Grid.Column="1">
                     <Hyperlink Command="{Binding CheckReleaseCommand}"
                                Foreground="{DynamicResource MaterialDesignBody}"
-                               ToolTip="Check GitHub for a newer release"
+                               ToolTip="{x:Static strings:Resource.AboutUpdateWUToolTip}"
                                ToolTipService.Placement="Top">
-                        <TextBlock Text="Check for new release of Windows Update Viewer" />
+                        <TextBlock Text="{x:Static strings:Resource.AboutUpdateWUText}" />
                     </Hyperlink>
                 </TextBlock>
                 <!--#endregion-->

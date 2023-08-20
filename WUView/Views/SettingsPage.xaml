@@ -10,9 +10,10 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:models="clr-namespace:WUView.Models"
+             xmlns:strings="clr-namespace:WUView.Strings"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="450" d:DesignWidth="700"
              FontFamily="Segoe UI" FontSize="14"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}">
 
@@ -55,14 +56,15 @@
                         Padding="20,0"
                         Background="{DynamicResource MaterialDesignPaper}">
                     <Button Grid.Row="0"
-                            Width="150"
+                            Width="auto"
+                            Padding="10,0"
                             HorizontalAlignment="Left"
                             Command="{Binding EditExcludeCommand,
                                               Source={StaticResource command}}"
-                            Content="Edit Exclude List"
+                            Content="{x:Static strings:Resource.MenuItemEditExclude}"
                             FontSize="16"
                             Style="{StaticResource PlainOutlinedButton}"
-                            ToolTip="Shift-Click to open file with default application" />
+                            ToolTip="{x:Static strings:Resource.SettingsPageEditExcludeToolTip}" />
                 </Border>
                 <!--#endregion-->
 
@@ -91,10 +93,10 @@
                                                      Kind="Wrench" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold"
-                                       Text="Application Settings" />
+                                       Text="{x:Static strings:Resource.SettingsSectionAppSettings}" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="Number of Updates, Date Format, Excluded Items, Details, &amp; more" />
+                                       Text="{x:Static strings:Resource.SettingsSubHeadAppSettings}" />
                         </Grid>
                     </Expander.Header>
                     <Grid Margin="35,10,0,20">
@@ -118,7 +120,7 @@
                                     Orientation="Horizontal">
                             <Label Width="150"
                                    VerticalAlignment="Center"
-                                   Content="Number of Updates" />
+                                   Content="{x:Static strings:Resource.SettingsPageNumberOfUpdates}" />
                             <ComboBox Width="165"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
@@ -226,10 +228,10 @@
                                                      Kind="Monitor" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold"
-                                       Text="UI Settings" />
+                                       Text="{x:Static strings:Resource.SettingsSectionUISettings}" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="Theme, Accent Color, UI Size, Row Height, Start Position &amp; more" />
+                                       Text="{x:Static strings:Resource.SettingsSubHeadUISettings}" />
                         </Grid>
                     </Expander.Header>
 
@@ -360,12 +362,12 @@
                                                      Kind="Language" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold">
-                                <Run Text="Language" />
+                                <Run Text="{x:Static strings:Resource.SettingsSectionLanguage}" />
 
                             </TextBlock>
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="Bear with me, this is a work in progress" />
+                                       Text="{x:Static strings:Resource.SettingsSubHeadLanguage}" />
                         </Grid>
                     </Expander.Header>
 
@@ -387,7 +389,7 @@
 
                         <CheckBox Grid.Row="0" Grid.Column="1"
                                   VerticalContentAlignment="Center"
-                                  Content=" Use Windows Display Language"
+                                   Content="{x:Static strings:Resource.SettingsPageUseOSLanguageCheckBox}"
                                   IsChecked="{Binding UseOSLanguage,
                                                       Source={x:Static config:UserSettings.Setting}}" />
 
@@ -395,7 +397,7 @@
                                     Orientation="Horizontal">
                             <Label Width="80"
                                    VerticalAlignment="Center"
-                                   Content="Language:" />
+                                   Content="{x:Static strings:Resource.SettingsPageLanguage}" />
                             <ComboBox x:Name="cbxLanguage"
                                       Width="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
@@ -414,7 +416,7 @@
 
                         <Label Grid.Row="2" Grid.Column="1"
                                VerticalAlignment="Center"
-                               Content="Changing Language will cause application to restart!"
+                               Content="{x:Static strings:Resource.SettingsPageChangingLanguageWarning}"
                                Foreground="OrangeRed" />
                     </Grid>
                 </Expander>

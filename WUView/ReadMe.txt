@@ -121,6 +121,7 @@ Windows Update Viewer uses the following packages:
 
     * Inno Setup was used to create the installer. https://jrsoftware.org/isinfo.php
 
+    * ResX Resource Manager was used for localization. https://github.com/dotnet/ResXResourceManager
 
 
 MIT License

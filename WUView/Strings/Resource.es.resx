@@ -117,17 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DGColDate" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="DGColKBNum" xml:space="preserve">
+    <value>Número KB</value>
+  </data>
+  <data name="DGColResult" xml:space="preserve">
+    <value>Resultado</value>
+  </data>
+  <data name="DGColTitle" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="MenuCopy" xml:space="preserve">
+    <value>_Copiar</value>
+  </data>
+  <data name="MenuFile" xml:space="preserve">
+    <value>_Archivo</value>
+  </data>
+  <data name="MenuItemExit" xml:space="preserve">
+    <value>_Salir</value>
+  </data>
+  <data name="MenuView" xml:space="preserve">
+    <value>_Ver</value>
+  </data>
+  <data name="NavItemAbout" xml:space="preserve">
+    <value>Información</value>
+  </data>
   <data name="NavItemExit" xml:space="preserve">
     <value>Salir</value>
   </data>
   <data name="NavItemSettings" xml:space="preserve">
     <value>Configuración</value>
-  </data>
-  <data name="NavTitleSettings" xml:space="preserve">
-    <value>Configuración</value>
-  </data>
-  <data name="NavItemAbout" xml:space="preserve">
-    <value>Información</value>
   </data>
   <data name="NavItemUpdates" xml:space="preserve">
     <value>Actualizaciones</value>
@@ -135,19 +156,181 @@
   <data name="NavTitleAbout" xml:space="preserve">
     <value>Información</value>
   </data>
+  <data name="NavTitleSettings" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
   <data name="NavTitleUpdates" xml:space="preserve">
-    <value>Windows Update Viewer</value>
+    <value>Visor de Windows Update</value>
   </data>
-  <data name="DGColKBNum" xml:space="preserve">
-    <value>Número KB</value>
+  <data name="DetailsTitle" xml:space="preserve">
+    <value>Titulo:</value>
   </data>
-  <data name="DGColDate" xml:space="preserve">
-    <value>Fecha</value>
+  <data name="DetailsDate" xml:space="preserve">
+    <value>Fecha:</value>
   </data>
-  <data name="DGColResult" xml:space="preserve">
-    <value>Resultado</value>
+  <data name="DetailsKBNum" xml:space="preserve">
+    <value>Número KB:</value>
   </data>
-  <data name="DGColTitle" xml:space="preserve">
-    <value>Título</value>
+  <data name="DetailsDescription" xml:space="preserve">
+    <value>Descripción:</value>
+  </data>
+  <data name="DetailsOperation" xml:space="preserve">
+    <value>Actividad:</value>
+  </data>
+  <data name="DetailsResultCode" xml:space="preserve">
+    <value>Código de resultado:</value>
+  </data>
+  <data name="DetailsUpdateID" xml:space="preserve">
+    <value>Actualizar ID:</value>
+  </data>
+  <data name="DetailsSupportURL" xml:space="preserve">
+    <value>URL de apoyo:</value>
+  </data>
+  <data name="DetailsHeadingEventLog" xml:space="preserve">
+    <value>Detalles del registro de eventos:</value>
+  </data>
+  <data name="DetailsHeadingUpdate" xml:space="preserve">
+    <value>Detalles de Windows Update:</value>
+  </data>
+  <data name="SettingsSectionAppSettings" xml:space="preserve">
+    <value>Configuración de la aplicación</value>
+  </data>
+  <data name="SettingsSectionLanguage" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="SettingsSectionUISettings" xml:space="preserve">
+    <value>Configuración de la interfaz de usuario</value>
+  </data>
+  <data name="MenuItemEditExclude" xml:space="preserve">
+    <value>Editar lista de exclusión</value>
+  </data>
+  <data name="MenuItemToggleExcluded" xml:space="preserve">
+    <value>Alternar elementos excluidos</value>
+  </data>
+  <data name="MenuItemToggleDetails" xml:space="preserve">
+    <value>Alternar panel de detalles</value>
+  </data>
+  <data name="MenuItemSmaller" xml:space="preserve">
+    <value>Ver más pequeño</value>
+  </data>
+  <data name="MenuItemLarger" xml:space="preserve">
+    <value>Ver más grande</value>
+  </data>
+  <data name="FilterHint" xml:space="preserve">
+    <value>Filtrar</value>
+  </data>
+  <data name="MenuItemCopyToClipboard" xml:space="preserve">
+    <value>Copiar cuadrícula al portapapeles</value>
+  </data>
+  <data name="MenuItemSaveCSV" xml:space="preserve">
+    <value>Guardar cuadrícula en archivo CSV</value>
+  </data>
+  <data name="MenuItemSaveTXT" xml:space="preserve">
+    <value>Guardar detalles en un archivo de texto</value>
+  </data>
+  <data name="DetailsTitleFallback" xml:space="preserve">
+    <value>Seleccione una actualización de arriba y los detalles aparecerán aquí.</value>
+  </data>
+  <data name="MenuItemRemoveSort" xml:space="preserve">
+    <value>Eliminar ordenación por columnas</value>
+  </data>
+  <data name="MenuItemRefresh" xml:space="preserve">
+    <value>Actualizaciones de refresco</value>
+  </data>
+  <data name="MenuItemOpenWindowsUpdate" xml:space="preserve">
+    <value>Iniciar Windows Update</value>
+  </data>
+  <data name="DetailsHResult" xml:space="preserve">
+    <value>HResultado:</value>
+  </data>
+  <data name="SettingsSubHeadAppSettings" xml:space="preserve">
+    <value>Número de actualizaciones, formato de fecha, elementos excluidos, detalles</value>
+  </data>
+  <data name="SettingsSubHeadUISettings" xml:space="preserve">
+    <value>Tema, color acentuado, tamaño de la interfaz, altura de la fila, posición inicial</value>
+  </data>
+  <data name="SettingsSubHeadLanguage" xml:space="preserve">
+    <value>Ajustes de idioma (trabajo en curso)</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Una lista de las actualizaciones de Windows en este dispositivo</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Versión</value>
+  </data>
+  <data name="AboutCreatedBy" xml:space="preserve">
+    <value>Creado por</value>
+  </data>
+  <data name="AboutCopyright" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
+  <data name="AboutCreatedByToolTip" xml:space="preserve">
+    <value>Consulte otros trabajos de Tim en https://github.com/Timthreetwelve</value>
+  </data>
+  <data name="AboutLicense" xml:space="preserve">
+    <value>Licencia</value>
+  </data>
+  <data name="AboutLicenseToolTip" xml:space="preserve">
+    <value>Ver el documento de licencia</value>
+  </data>
+  <data name="AboutLicenseText" xml:space="preserve">
+    <value>Este proyecto está bajo los términos de la licencia MIT.</value>
+  </data>
+  <data name="AboutBuildDate" xml:space="preserve">
+    <value>Fecha de construcción</value>
+  </data>
+  <data name="AboutCommitID" xml:space="preserve">
+    <value>ID de compromiso</value>
+  </data>
+  <data name="AboutCommitIDToolTip" xml:space="preserve">
+    <value>Identificación de compromiso total:</value>
+  </data>
+  <data name="AboutGitHubToolTip" xml:space="preserve">
+    <value>Visita la página de WUView en GitHub</value>
+  </data>
+  <data name="AboutDocumentation" xml:space="preserve">
+    <value>Documentación</value>
+  </data>
+  <data name="AboutDocumentationToolTip" xml:space="preserve">
+    <value>Ver el archivo Léame</value>
+  </data>
+  <data name="AboutDocumentionText" xml:space="preserve">
+    <value>Abrir el archivo Léame</value>
+  </data>
+  <data name="AboutUpdateWU" xml:space="preserve">
+    <value>Actualizar WUView</value>
+  </data>
+  <data name="AboutUpdateWUText" xml:space="preserve">
+    <value>Compruebe si hay una nueva versión de Windows Update Viewer</value>
+  </data>
+  <data name="AboutUpdateWUToolTip" xml:space="preserve">
+    <value>Consulte GitHub para una versión más reciente</value>
+  </data>
+  <data name="SettingsPageChangingLanguageWarning" xml:space="preserve">
+    <value>El cambio de idioma hará que la aplicación se reinicie!</value>
+  </data>
+  <data name="SettingsPageLanguage" xml:space="preserve">
+    <value>Idioma:</value>
+  </data>
+  <data name="SettingsPageUseOSLanguageCheckBox" xml:space="preserve">
+    <value>Utilizar el idioma de visualización de Windows</value>
+  </data>
+  <data name="SettingsPageEditExcludeToolTip" xml:space="preserve">
+    <value>Mayús-Clic para abrir el archivo con la aplicación por defecto</value>
+  </data>
+  <data name="SettingsPageNumberOfUpdates" xml:space="preserve">
+    <value>Número de actualizaciones</value>
+  </data>
+  <data name="ExcludesEditorTextLine1" xml:space="preserve">
+    <value>Introduzca las cadenas que desea excluir (una por línea)</value>
+  </data>
+  <data name="ExcludesEditorTextLine2" xml:space="preserve">
+    <value>Las comparaciones no distinguen entre mayúsculas y minúsculas</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="ButtonOK" xml:space="preserve">
+    <value>OK</value>
   </data>
 </root>

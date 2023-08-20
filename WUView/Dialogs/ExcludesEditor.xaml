@@ -8,9 +8,11 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:models="clr-namespace:WUView.Models"
+             xmlns:strings="clr-namespace:WUView.Strings"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
-             Width="400" Height="300"
+             Width="Auto" Height="300"
+             MinWidth="400"
              FontSize="16"
              Loaded="UserControl_Loaded"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -33,19 +35,20 @@
                 <RowDefinition Height="10" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="20" />
                 <ColumnDefinition />
-                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
             <!--#endregion-->
 
             <!--#region Title and TextBox-->
             <TextBlock Grid.Row="1" Grid.Column="1"
                        HorizontalAlignment="Center"
+                       Margin="7,0"
                        FontSize="16" FontWeight="Regular">
-                <Run Text="Enter strings to exclude (one per line)" />
+                <Run Text="{x:Static strings:Resource.ExcludesEditorTextLine1}" />
                 <LineBreak />
-                <Run Text="Comparisons are not case sensitive" />
+                <Run Text="{x:Static strings:Resource.ExcludesEditorTextLine2}" />
             </TextBlock>
 
             <TextBox x:Name="tb1"
@@ -77,7 +80,7 @@
                 <Button x:Name="btnOK"
                         Width="90"
                         Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
-                        Content="OK"
+                        Content="{x:Static strings:Resource.ButtonOK}"
                         Style="{StaticResource PlainOutlinedButton}">
                     <Button.CommandParameter>
                         <system:Boolean>True</system:Boolean>
@@ -87,7 +90,7 @@
                 <Button x:Name="btnCancel"
                         Width="90"
                         Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
-                        Content="Cancel"
+                        Content="{x:Static strings:Resource.ButtonCancel}"
                         Style="{StaticResource PlainOutlinedButton}">
                     <Button.CommandParameter>
                         <system:Boolean>False</system:Boolean>
