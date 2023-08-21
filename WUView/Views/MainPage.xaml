@@ -9,7 +9,7 @@
              xmlns:local="clr-namespace:WUView.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:strings="clr-namespace:WUView.Strings"
+             xmlns:props="clr-namespace:WUView.Properties"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800"
@@ -66,54 +66,54 @@
                         <viewmodels:NavigationViewModel />
                     </Menu.DataContext>
                     <!--#region File menu-->
-                    <MenuItem Header="{x:Static strings:Resource.MenuFile}">
+                    <MenuItem Header="{x:Static props:Strings.MenuFile}">
                         <MenuItem Command="{Binding SaveCSVCommand}"
-                                  Header="{x:Static strings:Resource.MenuItemSaveCSV}" />
+                                  Header="{x:Static props:Strings.MenuItemSaveCSV}" />
                         <MenuItem Command="{Binding SaveTextCommand}"
-                                  Header="{x:Static strings:Resource.MenuItemSaveTXT}" />
+                                  Header="{x:Static props:Strings.MenuItemSaveTXT}" />
                         <Separator />
                         <MenuItem Command="{Binding EditExcludeCommand}"
-                                  Header="{x:Static strings:Resource.MenuItemEditExclude}"
+                                  Header="{x:Static props:Strings.MenuItemEditExclude}"
                                   InputGestureText="Ctrl + L" />
                         <Separator />
                         <MenuItem Command="{Binding OpenWindowsUpdateCommand}"
-                                  Header="{x:Static strings:Resource.MenuItemOpenWindowsUpdate}" />
+                                  Header="{x:Static props:Strings.MenuItemOpenWindowsUpdate}" />
                         <Separator />
                         <MenuItem Command="{Binding ExitCommand}"
-                                  Header="{x:Static strings:Resource.MenuItemExit}"
+                                  Header="{x:Static props:Strings.MenuItemExit}"
                                   InputGestureText="Alt + F4" />
                     </MenuItem>
                     <!--#endregion-->
 
                     <!--#region Copy menu-->
-                    <MenuItem Header="{x:Static strings:Resource.MenuCopy}">
+                    <MenuItem Header="{x:Static props:Strings.MenuCopy}">
                         <MenuItem Command="{Binding CopyClipboardCommand}"
-                                  Header="{x:Static strings:Resource.MenuItemCopyToClipboard}" />
+                                  Header="{x:Static props:Strings.MenuItemCopyToClipboard}" />
                     </MenuItem>
                     <!--#endregion-->
 
                     <!--#region View menu-->
-                    <MenuItem Header="{x:Static strings:Resource.MenuView}">
+                    <MenuItem Header="{x:Static props:Strings.MenuView}">
                         <MenuItem Click="Refresh_Click"
-                                  Header="{x:Static strings:Resource.MenuItemRefresh}"
+                                  Header="{x:Static props:Strings.MenuItemRefresh}"
                                   InputGestureText="F5" />
                         <Separator />
                         <MenuItem Command="{Binding UILargerCommand}"
-                                  Header="{x:Static strings:Resource.MenuItemLarger}"
+                                  Header="{x:Static props:Strings.MenuItemLarger}"
                                   InputGestureText="Ctrl + Numpad Plus" />
                         <MenuItem Command="{Binding UISmallerCommand}"
-                                  Header="{x:Static strings:Resource.MenuItemSmaller}"
+                                  Header="{x:Static props:Strings.MenuItemSmaller}"
                                   InputGestureText="Ctrl + Numpad Minus" />
                         <Separator />
                         <MenuItem Command="{Binding ToggleDetailsCommand}"
-                                  Header="{x:Static strings:Resource.MenuItemToggleDetails}"
+                                  Header="{x:Static props:Strings.MenuItemToggleDetails}"
                                   InputGestureText="Ctrl + D" />
                         <MenuItem Command="{Binding ToggleExcludedCommand}"
-                                  Header="{x:Static strings:Resource.MenuItemToggleExcluded}"
+                                  Header="{x:Static props:Strings.MenuItemToggleExcluded}"
                                   InputGestureText="Ctrl + E" />
                         <Separator />
                         <MenuItem Command="{Binding RemoveSortCommand}"
-                                  Header="{x:Static strings:Resource.MenuItemRemoveSort}"
+                                  Header="{x:Static props:Strings.MenuItemRemoveSort}"
                                   InputGestureText="Ctrl + R" />
                     </MenuItem>
                     <!--#endregion-->
@@ -124,7 +124,7 @@
                          Width="300" Height="35"
                          Margin="20,0" Padding="10,6"
                          VerticalContentAlignment="Top"
-                         materialDesign:HintAssist.Hint="{x:Static strings:Resource.FilterHint}"
+                         materialDesign:HintAssist.Hint="{x:Static props:Strings.FilterHint}"
                          materialDesign:TextFieldAssist.HasClearButton="True"
                          FontSize="14" IsTabStop="True"
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -188,13 +188,13 @@
                   VerticalScrollBarVisibility="Auto">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding KBNum}"
-                                    Header="{x:Static strings:Resource.DGColKBNum}" />
+                                    Header="{x:Static props:Strings.DGColKBNum}" />
                 <DataGridTextColumn Binding="{Binding Date, Converter={StaticResource dateFormat}}"
-                                    Header="{x:Static strings:Resource.DGColDate}" />
+                                    Header="{x:Static props:Strings.DGColDate}" />
                 <DataGridTextColumn Binding="{Binding Title}"
-                                    Header="{x:Static strings:Resource.DGColTitle}" />
+                                    Header="{x:Static props:Strings.DGColTitle}" />
                 <DataGridTextColumn Binding="{Binding ResultCode, Converter={StaticResource results}, ConverterParameter='ResultCode'}"
-                                    Header="{x:Static strings:Resource.DGColResult}" />
+                                    Header="{x:Static props:Strings.DGColResult}" />
             </DataGrid.Columns>
         </DataGrid>
         <!--#endregion-->
@@ -248,36 +248,36 @@
                                Grid.ColumnSpan="3"
                                Margin="0,10"
                                FontSize="15" FontWeight="SemiBold"
-                               Text="{x:Static strings:Resource.DetailsHeadingUpdate}" />
+                               Text="{x:Static props:Strings.DetailsHeadingUpdate}" />
                     <TextBlock Grid.Row="1" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static strings:Resource.DetailsTitle}" />
+                               Text="{x:Static props:Strings.DetailsTitle}" />
                     <TextBox Grid.Row="1" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding Title,
-                                            FallbackValue={x:Static strings:Resource.DetailsTitleFallback}}" />
+                                            FallbackValue={x:Static props:Strings.DetailsTitleFallback}}" />
                     <TextBlock Grid.Row="2" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static strings:Resource.DetailsKBNum}" />
+                               Text="{x:Static props:Strings.DetailsKBNum}" />
                     <TextBox Grid.Row="2" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding KBNum}" />
                     <TextBlock Grid.Row="3" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static strings:Resource.DetailsDate}" />
+                               Text="{x:Static props:Strings.DetailsDate}" />
                     <TextBox Grid.Row="3" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding Date,
                                             Converter={StaticResource dateFormat}}" />
                     <TextBlock Grid.Row="4" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Top"
-                               Text="{x:Static strings:Resource.DetailsDescription}" />
+                               Text="{x:Static props:Strings.DetailsDescription}" />
                     <TextBox Grid.Row="4" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding Description}" />
                     <TextBlock Grid.Row="5" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static strings:Resource.DetailsOperation}" />
+                               Text="{x:Static props:Strings.DetailsOperation}" />
                     <TextBox Grid.Row="5" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding Operation,
@@ -285,7 +285,7 @@
                                             ConverterParameter='Operation'}" />
                     <TextBlock Grid.Row="6" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static strings:Resource.DetailsResultCode}" />
+                               Text="{x:Static props:Strings.DetailsResultCode}" />
                     <TextBox Grid.Row="6" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding ResultCode,
@@ -293,7 +293,7 @@
                                             ConverterParameter='ResultCode'}" />
                     <TextBlock Grid.Row="7" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static strings:Resource.DetailsHResult}" />
+                               Text="{x:Static props:Strings.DetailsHResult}" />
                     <TextBlock Grid.Row="7" Grid.Column="3"
                                Width="100"
                                HorizontalAlignment="Left"
@@ -307,13 +307,13 @@
                     </TextBlock>
                     <TextBlock Grid.Row="8" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static strings:Resource.DetailsUpdateID}" />
+                               Text="{x:Static props:Strings.DetailsUpdateID}" />
                     <TextBox Grid.Row="8" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding UpdateID}" />
                     <TextBlock Grid.Row="9" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static strings:Resource.DetailsSupportURL}" />
+                               Text="{x:Static props:Strings.DetailsSupportURL}" />
                     <TextBlock Grid.Row="9" Grid.Column="3"
                                Margin="0,1">
                         <Hyperlink Focusable="False"
@@ -328,7 +328,7 @@
                                Grid.ColumnSpan="3"
                                Margin="0,15,0,10"
                                FontSize="15" FontWeight="SemiBold"
-                               Text="{x:Static strings:Resource.DetailsHeadingEventLog}" />
+                               Text="{x:Static props:Strings.DetailsHeadingEventLog}" />
                     <TextBox Grid.Row="11" Grid.Column="1"
                              Grid.ColumnSpan="3"
                              Margin="10,0"

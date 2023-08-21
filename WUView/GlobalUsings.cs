@@ -46,6 +46,6 @@ global using WUView.Constants;
 global using WUView.Dialogs;
 global using WUView.Helpers;
 global using WUView.Models;
-global using WUView.Strings;
+global using WUView.Properties;
 global using WUView.ViewModels;
 global using WUView.Views;

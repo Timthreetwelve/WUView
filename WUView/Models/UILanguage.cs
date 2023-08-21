@@ -34,7 +34,5 @@ internal partial class UILanguage : ObservableObject
     public static List<UILanguage> DefinedLanguages { get; set; } = new()
     {
         new UILanguage {Language = "English  (en-US)", LanguageCode = "en-US"},
-        new UILanguage {Language = "English  (en-GB)", LanguageCode = "en-GB"},
-        new UILanguage {Language = "Spanish  (es-ES)", LanguageCode = "es-ES"},
     };
 }

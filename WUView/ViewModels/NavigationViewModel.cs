@@ -32,31 +32,31 @@ public partial class NavigationViewModel : ObservableObject
             {
                 new NavigationItem
                 {
-                    Name = Resource.NavItemUpdates,
+                    Name = Strings.NavItemUpdates,
                     NavPage = NavPage.Viewer,
                     ViewModelType = typeof(MainViewModel),
                     IconKind = PackIconKind.ViewList,
-                    PageTitle = Resource.NavTitleUpdates
+                    PageTitle = Strings.NavTitleUpdates
                 },
                  new NavigationItem
                 {
-                    Name = Resource.NavItemSettings,
+                    Name = Strings.NavItemSettings,
                     NavPage = NavPage.Settings,
                     ViewModelType = typeof(SettingsViewModel),
                     IconKind = PackIconKind.SettingsOutline,
-                    PageTitle = Resource.NavTitleSettings
+                    PageTitle = Strings.NavTitleSettings
                 },
                 new NavigationItem
                 {
-                    Name = Resource.NavItemAbout,
+                    Name = Strings.NavItemAbout,
                     NavPage = NavPage.About,
                     ViewModelType = typeof(AboutViewModel),
                     IconKind = PackIconKind.AboutCircleOutline,
-                    PageTitle = Resource.NavTitleAbout
+                    PageTitle = Strings.NavTitleAbout
                 },
                 new NavigationItem
                 {
-                    Name = Resource.NavItemExit,
+                    Name = Strings.NavItemExit,
                     IconKind = PackIconKind.ExitToApp,
                     IsExit = true
                 }

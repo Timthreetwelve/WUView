@@ -10,7 +10,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:models="clr-namespace:WUView.Models"
-             xmlns:strings="clr-namespace:WUView.Strings"
+             xmlns:props="clr-namespace:WUView.Properties"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="700"
@@ -61,10 +61,10 @@
                             HorizontalAlignment="Left"
                             Command="{Binding EditExcludeCommand,
                                               Source={StaticResource command}}"
-                            Content="{x:Static strings:Resource.MenuItemEditExclude}"
+                            Content="{x:Static props:Strings.MenuItemEditExclude}"
                             FontSize="16"
                             Style="{StaticResource PlainOutlinedButton}"
-                            ToolTip="{x:Static strings:Resource.SettingsPageEditExcludeToolTip}" />
+                            ToolTip="{x:Static props:Strings.SettingsPageEditExcludeToolTip}" />
                 </Border>
                 <!--#endregion-->
 
@@ -93,10 +93,10 @@
                                                      Kind="Wrench" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold"
-                                       Text="{x:Static strings:Resource.SettingsSectionAppSettings}" />
+                                       Text="{x:Static props:Strings.SettingsSectionAppSettings}" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="{x:Static strings:Resource.SettingsSubHeadAppSettings}" />
+                                       Text="{x:Static props:Strings.SettingsSubHeadAppSettings}" />
                         </Grid>
                     </Expander.Header>
                     <Grid Margin="35,10,0,20">
@@ -120,7 +120,7 @@
                                     Orientation="Horizontal">
                             <Label Width="150"
                                    VerticalAlignment="Center"
-                                   Content="{x:Static strings:Resource.SettingsPageNumberOfUpdates}" />
+                                   Content="{x:Static props:Strings.SettingsPageNumberOfUpdates}" />
                             <ComboBox Width="165"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
@@ -228,10 +228,10 @@
                                                      Kind="Monitor" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold"
-                                       Text="{x:Static strings:Resource.SettingsSectionUISettings}" />
+                                       Text="{x:Static props:Strings.SettingsSectionUISettings}" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="{x:Static strings:Resource.SettingsSubHeadUISettings}" />
+                                       Text="{x:Static props:Strings.SettingsSubHeadUISettings}" />
                         </Grid>
                     </Expander.Header>
 
@@ -362,12 +362,12 @@
                                                      Kind="Language" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold">
-                                <Run Text="{x:Static strings:Resource.SettingsSectionLanguage}" />
+                                <Run Text="{x:Static props:Strings.SettingsSectionLanguage}" />
 
                             </TextBlock>
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="{x:Static strings:Resource.SettingsSubHeadLanguage}" />
+                                       Text="{x:Static props:Strings.SettingsSubHeadLanguage}" />
                         </Grid>
                     </Expander.Header>
 
@@ -389,7 +389,7 @@
 
                         <CheckBox Grid.Row="0" Grid.Column="1"
                                   VerticalContentAlignment="Center"
-                                   Content="{x:Static strings:Resource.SettingsPageUseOSLanguageCheckBox}"
+                                   Content="{x:Static props:Strings.SettingsPageUseOSLanguageCheckBox}"
                                   IsChecked="{Binding UseOSLanguage,
                                                       Source={x:Static config:UserSettings.Setting}}" />
 
@@ -397,7 +397,7 @@
                                     Orientation="Horizontal">
                             <Label Width="80"
                                    VerticalAlignment="Center"
-                                   Content="{x:Static strings:Resource.SettingsPageLanguage}" />
+                                   Content="{x:Static props:Strings.SettingsPageLanguage}" />
                             <ComboBox x:Name="cbxLanguage"
                                       Width="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
@@ -416,7 +416,7 @@
 
                         <Label Grid.Row="2" Grid.Column="1"
                                VerticalAlignment="Center"
-                               Content="{x:Static strings:Resource.SettingsPageChangingLanguageWarning}"
+                               Content="{x:Static props:Strings.SettingsPageChangingLanguageWarning}"
                                Foreground="OrangeRed" />
                     </Grid>
                 </Expander>

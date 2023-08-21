@@ -82,7 +82,7 @@ public static class FileHelpers
         string fname = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".csv";
         SaveFileDialog dialog = new()
         {
-            Title = Resource.MenuItemSaveCSV,
+            Title = Strings.MenuItemSaveCSV,
             Filter = "CSV File|*.csv",
             InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
             FileName = fname
@@ -107,7 +107,7 @@ public static class FileHelpers
         string fname = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".txt";
         SaveFileDialog dialog = new()
         {
-            Title = Resource.MenuItemSaveTXT,
+            Title = Strings.MenuItemSaveTXT,
             Filter = "Text File|*.txt",
             InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
             FileName = fname

@@ -8,7 +8,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:models="clr-namespace:WUView.Models"
-             xmlns:strings="clr-namespace:WUView.Strings"
+             xmlns:props="clr-namespace:WUView.Properties"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
              Width="Auto" Height="300"
@@ -46,9 +46,9 @@
                        HorizontalAlignment="Center"
                        Margin="7,0"
                        FontSize="16" FontWeight="Regular">
-                <Run Text="{x:Static strings:Resource.ExcludesEditorTextLine1}" />
+                <Run Text="{x:Static props:Strings.ExcludesEditorTextLine1}" />
                 <LineBreak />
-                <Run Text="{x:Static strings:Resource.ExcludesEditorTextLine2}" />
+                <Run Text="{x:Static props:Strings.ExcludesEditorTextLine2}" />
             </TextBlock>
 
             <TextBox x:Name="tb1"
@@ -80,7 +80,7 @@
                 <Button x:Name="btnOK"
                         Width="90"
                         Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
-                        Content="{x:Static strings:Resource.ButtonOK}"
+                        Content="{x:Static props:Strings.ButtonOK}"
                         Style="{StaticResource PlainOutlinedButton}">
                     <Button.CommandParameter>
                         <system:Boolean>True</system:Boolean>
@@ -90,7 +90,7 @@
                 <Button x:Name="btnCancel"
                         Width="90"
                         Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
-                        Content="{x:Static strings:Resource.ButtonCancel}"
+                        Content="{x:Static props:Strings.ButtonCancel}"
                         Style="{StaticResource PlainOutlinedButton}">
                     <Button.CommandParameter>
                         <system:Boolean>False</system:Boolean>

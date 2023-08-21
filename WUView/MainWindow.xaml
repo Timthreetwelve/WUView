@@ -9,7 +9,7 @@
         xmlns:helpers="clr-namespace:WUView.Helpers"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:strings="clr-namespace:WUView.Strings"
+        xmlns:props="clr-namespace:WUView.Properties"
         xmlns:viewmodels="clr-namespace:WUView.ViewModels"
         mc:Ignorable="d"
         d:DesignHeight="350" d:DesignWidth="800"
@@ -132,7 +132,7 @@
                                                Background="{DynamicResource MaterialDesignDivider}" />
                                     <Button Height="35"
                                             Padding="15,1,0,22"
-                                            Content="{x:Static strings:Resource.ButtonCancel}"/>
+                                            Content="{x:Static props:Strings.ButtonCancel}"/>
                                 </StackPanel>
                             </Grid>
                         </Border>

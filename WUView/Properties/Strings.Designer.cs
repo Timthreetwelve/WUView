@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WUView.Strings {
+namespace WUView.Properties {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace WUView.Strings {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resource {
+    public class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resource() {
+        internal Strings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace WUView.Strings {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WUView.Strings.Resource", typeof(Resource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WUView.Properties.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -133,20 +133,20 @@ namespace WUView.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open the ReadMe file.
+        /// </summary>
+        public static string AboutDocumentationText {
+            get {
+                return ResourceManager.GetString("AboutDocumentationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View the ReadMe file.
         /// </summary>
         public static string AboutDocumentationToolTip {
             get {
                 return ResourceManager.GetString("AboutDocumentationToolTip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Open the ReadMe file.
-        /// </summary>
-        public static string AboutDocumentionText {
-            get {
-                return ResourceManager.GetString("AboutDocumentionText", resourceCulture);
             }
         }
         

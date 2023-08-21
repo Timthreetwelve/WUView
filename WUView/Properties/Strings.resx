@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,220 +117,292 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DGColDate" xml:space="preserve">
-    <value>Fecha</value>
+<data name="DGColDate" xml:space="preserve">
+    <value>Date</value>
+    <comment>DataGrid Column</comment>
   </data>
   <data name="DGColKBNum" xml:space="preserve">
-    <value>Número KB</value>
+    <value>KB Number</value>
+    <comment>DataGrid Column</comment>
   </data>
   <data name="DGColResult" xml:space="preserve">
-    <value>Resultado</value>
+    <value>Result</value>
+    <comment>DataGrid Column</comment>
   </data>
   <data name="DGColTitle" xml:space="preserve">
-    <value>Título</value>
-  </data>
-  <data name="MenuCopy" xml:space="preserve">
-    <value>_Copiar</value>
-  </data>
-  <data name="MenuFile" xml:space="preserve">
-    <value>_Archivo</value>
-  </data>
-  <data name="MenuItemExit" xml:space="preserve">
-    <value>_Salir</value>
-  </data>
-  <data name="MenuView" xml:space="preserve">
-    <value>_Ver</value>
-  </data>
-  <data name="NavItemAbout" xml:space="preserve">
-    <value>Información</value>
-  </data>
-  <data name="NavItemExit" xml:space="preserve">
-    <value>Salir</value>
-  </data>
-  <data name="NavItemSettings" xml:space="preserve">
-    <value>Configuración</value>
-  </data>
-  <data name="NavItemUpdates" xml:space="preserve">
-    <value>Actualizaciones</value>
-  </data>
-  <data name="NavTitleAbout" xml:space="preserve">
-    <value>Información</value>
-  </data>
-  <data name="NavTitleSettings" xml:space="preserve">
-    <value>Configuración</value>
-  </data>
-  <data name="NavTitleUpdates" xml:space="preserve">
-    <value>Visor de Windows Update</value>
-  </data>
-  <data name="DetailsTitle" xml:space="preserve">
-    <value>Titulo:</value>
-  </data>
-  <data name="DetailsDate" xml:space="preserve">
-    <value>Fecha:</value>
-  </data>
-  <data name="DetailsKBNum" xml:space="preserve">
-    <value>Número KB:</value>
-  </data>
-  <data name="DetailsDescription" xml:space="preserve">
-    <value>Descripción:</value>
-  </data>
-  <data name="DetailsOperation" xml:space="preserve">
-    <value>Actividad:</value>
-  </data>
-  <data name="DetailsResultCode" xml:space="preserve">
-    <value>Código de resultado:</value>
-  </data>
-  <data name="DetailsUpdateID" xml:space="preserve">
-    <value>Actualizar ID:</value>
-  </data>
-  <data name="DetailsSupportURL" xml:space="preserve">
-    <value>URL de apoyo:</value>
-  </data>
-  <data name="DetailsHeadingEventLog" xml:space="preserve">
-    <value>Detalles del registro de eventos:</value>
-  </data>
-  <data name="DetailsHeadingUpdate" xml:space="preserve">
-    <value>Detalles de Windows Update:</value>
-  </data>
-  <data name="SettingsSectionAppSettings" xml:space="preserve">
-    <value>Configuración de la aplicación</value>
-  </data>
-  <data name="SettingsSectionLanguage" xml:space="preserve">
-    <value>Idioma</value>
-  </data>
-  <data name="SettingsSectionUISettings" xml:space="preserve">
-    <value>Configuración de la interfaz de usuario</value>
-  </data>
-  <data name="MenuItemEditExclude" xml:space="preserve">
-    <value>Editar lista de exclusión</value>
-  </data>
-  <data name="MenuItemToggleExcluded" xml:space="preserve">
-    <value>Alternar elementos excluidos</value>
-  </data>
-  <data name="MenuItemToggleDetails" xml:space="preserve">
-    <value>Alternar panel de detalles</value>
-  </data>
-  <data name="MenuItemSmaller" xml:space="preserve">
-    <value>Ver más pequeño</value>
-  </data>
-  <data name="MenuItemLarger" xml:space="preserve">
-    <value>Ver más grande</value>
+    <value>Title</value>
+    <comment>DataGrid Column</comment>
   </data>
   <data name="FilterHint" xml:space="preserve">
-    <value>Filtrar</value>
+    <value>Filter</value>
+    <comment>Filter Box</comment>
+  </data>
+  <data name="MenuCopy" xml:space="preserve">
+    <value>_Copy</value>
+    <comment>Main Menu</comment>
+  </data>
+  <data name="MenuFile" xml:space="preserve">
+    <value>_File</value>
+    <comment>Main Menu</comment>
   </data>
   <data name="MenuItemCopyToClipboard" xml:space="preserve">
-    <value>Copiar cuadrícula al portapapeles</value>
+    <value>Copy Grid to Clipboard</value>
+    <comment>Main Menu Item</comment>
   </data>
-  <data name="MenuItemSaveCSV" xml:space="preserve">
-    <value>Guardar cuadrícula en archivo CSV</value>
+  <data name="MenuItemEditExclude" xml:space="preserve">
+    <value>Edit Exclude List</value>
+    <comment>Main Menu Item</comment>
   </data>
-  <data name="MenuItemSaveTXT" xml:space="preserve">
-    <value>Guardar detalles en un archivo de texto</value>
+  <data name="MenuItemExit" xml:space="preserve">
+    <value>Exit</value>
+    <comment>Main Menu Item</comment>
   </data>
-  <data name="DetailsTitleFallback" xml:space="preserve">
-    <value>Seleccione una actualización de arriba y los detalles aparecerán aquí.</value>
-  </data>
-  <data name="MenuItemRemoveSort" xml:space="preserve">
-    <value>Eliminar ordenación por columnas</value>
-  </data>
-  <data name="MenuItemRefresh" xml:space="preserve">
-    <value>Actualizaciones de refresco</value>
+  <data name="MenuItemLarger" xml:space="preserve">
+    <value>Larger View</value>
+    <comment>Main Menu Item</comment>
   </data>
   <data name="MenuItemOpenWindowsUpdate" xml:space="preserve">
-    <value>Iniciar Windows Update</value>
+    <value>Open Windows Update</value>
+    <comment>Main Menu Item</comment>
+  </data>
+  <data name="MenuItemRefresh" xml:space="preserve">
+    <value>Refresh Updates</value>
+    <comment>Main Menu Item</comment>
+  </data>
+  <data name="MenuItemRemoveSort" xml:space="preserve">
+    <value>Remove Column Sort</value>
+    <comment>Main Menu Item</comment>
+  </data>
+  <data name="MenuItemSaveCSV" xml:space="preserve">
+    <value>Save Grid to CSV File</value>
+    <comment>Main Menu Item</comment>
+  </data>
+  <data name="MenuItemSaveTXT" xml:space="preserve">
+    <value>Save Details to Text File</value>
+    <comment>Main Menu Item</comment>
+  </data>
+  <data name="MenuItemSmaller" xml:space="preserve">
+    <value>Smaller View</value>
+    <comment>Main Menu Item</comment>
+  </data>
+  <data name="MenuItemToggleDetails" xml:space="preserve">
+    <value>Toggle Details Pane</value>
+    <comment>Main Menu Item</comment>
+  </data>
+  <data name="MenuItemToggleExcluded" xml:space="preserve">
+    <value>Toggle Excluded Items</value>
+    <comment>Main Menu Item</comment>
+  </data>
+  <data name="MenuView" xml:space="preserve">
+    <value>_View</value>
+    <comment>Main Menu</comment>
+  </data>
+  <data name="NavItemAbout" xml:space="preserve">
+    <value>About</value>
+    <comment>Navigation ListBox</comment>
+  </data>
+  <data name="NavItemExit" xml:space="preserve">
+    <value>Exit</value>
+    <comment>Navigation ListBox</comment>
+  </data>
+  <data name="NavItemSettings" xml:space="preserve">
+    <value>Settings</value>
+    <comment>Navigation ListBox</comment>
+  </data>
+  <data name="NavItemUpdates" xml:space="preserve">
+    <value>Updates</value>
+    <comment>Navigation ListBox</comment>
+  </data>
+  <data name="NavTitleAbout" xml:space="preserve">
+    <value>About Windows Update Viewer</value>
+    <comment>Navigation ListBox</comment>
+  </data>
+  <data name="NavTitleSettings" xml:space="preserve">
+    <value>Settings</value>
+    <comment>Navigation ListBox</comment>
+  </data>
+  <data name="NavTitleUpdates" xml:space="preserve">
+    <value>Windows Update Viewer</value>
+    <comment>Navigation ListBox</comment>
+  </data>
+  <data name="DetailsTitle" xml:space="preserve">
+    <value>Title:</value>
+    <comment>Details Pane</comment>
+  </data>
+  <data name="DetailsHeadingUpdate" xml:space="preserve">
+    <value>Windows Update details:</value>
+    <comment>Details Pane</comment>
+  </data>
+  <data name="DetailsHeadingEventLog" xml:space="preserve">
+    <value>Windows Event Log details:</value>
+    <comment>Details Pane</comment>
+  </data>
+  <data name="DetailsDate" xml:space="preserve">
+    <value>Date:</value>
+    <comment>Details Pane</comment>
+  </data>
+  <data name="DetailsKBNum" xml:space="preserve">
+    <value>KB Number:</value>
+    <comment>Details Pane</comment>
+  </data>
+  <data name="DetailsTitleFallback" xml:space="preserve">
+    <value>Select an update from above and the details will appear here.</value>
+    <comment>Details Pane</comment>
+  </data>
+  <data name="DetailsDescription" xml:space="preserve">
+    <value>Description:</value>
+    <comment>Details Pane</comment>
+  </data>
+  <data name="DetailsOperation" xml:space="preserve">
+    <value>Operation:</value>
+    <comment>Details Pane</comment>
+  </data>
+  <data name="DetailsResultCode" xml:space="preserve">
+    <value>Result Code:</value>
+    <comment>Details Pane</comment>
+  </data>
+  <data name="DetailsUpdateID" xml:space="preserve">
+    <value>Update ID:</value>
+    <comment>Details Pane</comment>
+  </data>
+  <data name="DetailsSupportURL" xml:space="preserve">
+    <value>Support URL:</value>
+    <comment>Details Pane</comment>
   </data>
   <data name="DetailsHResult" xml:space="preserve">
-    <value>HResultado:</value>
+    <value>HResult:</value>
+    <comment>Details Pane</comment>
+  </data>
+  <data name="SettingsSectionAppSettings" xml:space="preserve">
+    <value>Application Settings</value>
+    <comment>Settings Section</comment>
+  </data>
+  <data name="SettingsSectionUISettings" xml:space="preserve">
+    <value>UI Settings</value>
+    <comment>Settings Section</comment>
+  </data>
+  <data name="SettingsSectionLanguage" xml:space="preserve">
+    <value>Language</value>
+    <comment>Settings Section</comment>
   </data>
   <data name="SettingsSubHeadAppSettings" xml:space="preserve">
-    <value>Número de actualizaciones, formato de fecha, elementos excluidos, detalles</value>
+    <value>Number of Updates, Date Format, Excluded Items, Details, &amp; more</value>
+    <comment>Settings Section</comment>
   </data>
   <data name="SettingsSubHeadUISettings" xml:space="preserve">
-    <value>Tema, color acentuado, tamaño de la interfaz, altura de la fila, posición inicial</value>
+    <value>Theme, Accent Color, UI Size, Row Height, Start Position &amp; more</value>
+    <comment>Settings Section</comment>
   </data>
   <data name="SettingsSubHeadLanguage" xml:space="preserve">
-    <value>Ajustes de idioma (trabajo en curso)</value>
+    <value>Language Settings (Work in Progress)</value>
+    <comment>Settings Section</comment>
   </data>
   <data name="AboutDescription" xml:space="preserve">
-    <value>Una lista de las actualizaciones de Windows en este dispositivo</value>
+    <value>A list of Windows Updates on this device</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutVersion" xml:space="preserve">
-    <value>Versión</value>
+    <value>Version</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutCreatedBy" xml:space="preserve">
-    <value>Creado por</value>
+    <value>Created by</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutCopyright" xml:space="preserve">
     <value>Copyright</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutCreatedByToolTip" xml:space="preserve">
-    <value>Consulte otros trabajos de Tim en https://github.com/Timthreetwelve</value>
+    <value>See Tim's other work at https://github.com/Timthreetwelve</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutLicense" xml:space="preserve">
-    <value>Licencia</value>
+    <value>License</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutLicenseToolTip" xml:space="preserve">
-    <value>Ver el documento de licencia</value>
+    <value>View the license document</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutLicenseText" xml:space="preserve">
-    <value>Este proyecto está bajo los términos de la licencia MIT.</value>
+    <value>This project is licensed under the terms of the MIT license.</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutBuildDate" xml:space="preserve">
-    <value>Fecha de construcción</value>
+    <value>Build Date</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutCommitID" xml:space="preserve">
-    <value>ID de compromiso</value>
+    <value>Commit ID</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutCommitIDToolTip" xml:space="preserve">
-    <value>Identificación de compromiso total:</value>
+    <value>Full Commit ID:</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutGitHubToolTip" xml:space="preserve">
-    <value>Visita la página de WUView en GitHub</value>
+    <value>Visit the WUView page on GitHub</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutDocumentation" xml:space="preserve">
-    <value>Documentación</value>
+    <value>Documentation</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutDocumentationToolTip" xml:space="preserve">
-    <value>Ver el archivo Léame</value>
+    <value>View the ReadMe file</value>
+    <comment>About Page</comment>
   </data>
-  <data name="AboutDocumentionText" xml:space="preserve">
-    <value>Abrir el archivo Léame</value>
+  <data name="AboutDocumentationText" xml:space="preserve">
+    <value>Open the ReadMe file</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutUpdateWU" xml:space="preserve">
-    <value>Actualizar WUView</value>
+    <value>Update WUView</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutUpdateWUText" xml:space="preserve">
-    <value>Compruebe si hay una nueva versión de Windows Update Viewer</value>
+    <value>Check for new release of Windows Update Viewer</value>
+    <comment>About Page</comment>
   </data>
   <data name="AboutUpdateWUToolTip" xml:space="preserve">
-    <value>Consulte GitHub para una versión más reciente</value>
+    <value>Check GitHub for a newer release</value>
+    <comment>About Page</comment>
   </data>
   <data name="SettingsPageChangingLanguageWarning" xml:space="preserve">
-    <value>El cambio de idioma hará que la aplicación se reinicie!</value>
+    <value>Changing Language will cause application to restart!</value>
+    <comment>Settings Language</comment>
   </data>
   <data name="SettingsPageLanguage" xml:space="preserve">
-    <value>Idioma:</value>
+    <value>Language:</value>
+    <comment>Settings Language</comment>
   </data>
   <data name="SettingsPageUseOSLanguageCheckBox" xml:space="preserve">
-    <value>Utilizar el idioma de visualización de Windows</value>
+    <value>Use Windows Display Language</value>
+    <comment>Settings Language</comment>
   </data>
   <data name="SettingsPageEditExcludeToolTip" xml:space="preserve">
-    <value>Mayús-Clic para abrir el archivo con la aplicación por defecto</value>
+    <value>Shift-Click to open file with default application</value>
+    <comment>Settings Edit Exclude</comment>
   </data>
   <data name="SettingsPageNumberOfUpdates" xml:space="preserve">
-    <value>Número de actualizaciones</value>
+    <value>Number of Updates</value>
+    <comment>Settings Application</comment>
   </data>
   <data name="ExcludesEditorTextLine1" xml:space="preserve">
-    <value>Introduzca las cadenas que desea excluir (una por línea)</value>
+    <value>Enter strings to exclude (one per line)</value>
+    <comment>Exclude Editor</comment>
   </data>
   <data name="ExcludesEditorTextLine2" xml:space="preserve">
-    <value>Las comparaciones no distinguen entre mayúsculas y minúsculas</value>
+    <value>Comparisons are not case sensitive</value>
+    <comment>Exclude Editor</comment>
   </data>
   <data name="ButtonCancel" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>Cancel</value>
+    <comment>Button</comment>
   </data>
   <data name="ButtonOK" xml:space="preserve">
     <value>OK</value>
+    <comment>Button@Invariant</comment>
   </data>
 </root>
