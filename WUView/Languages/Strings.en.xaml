@@ -1,0 +1,97 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--  About Page  -->
+    <sys:String x:Key="About_BuildDate">Build Date</sys:String>
+    <sys:String x:Key="About_CommitID">Commit ID</sys:String>
+    <sys:String x:Key="About_CommitIDToolTip">Full Commit ID:</sys:String>
+    <sys:String x:Key="About_Copyright">Copyright</sys:String>
+    <sys:String x:Key="About_CreatedBy">Created by</sys:String>
+    <sys:String x:Key="About_CreatedByToolTip">See Tim's other work at https://github.com/Timthreetwelve</sys:String>
+    <sys:String x:Key="About_Description">A list of Windows Updates on this device</sys:String>
+    <sys:String x:Key="About_Documentation">Documentation</sys:String>
+    <sys:String x:Key="About_DocumentationText">Open the ReadMe file</sys:String>
+    <sys:String x:Key="About_DocumentationToolTip">View the ReadMe file</sys:String>
+    <sys:String x:Key="About_GitHubToolTip">Visit the WUView page on GitHub</sys:String>
+    <sys:String x:Key="About_License">License</sys:String>
+    <sys:String x:Key="About_LicenseText">This project is licensed under the terms of the MIT license.</sys:String>
+    <sys:String x:Key="About_LicenseToolTip">View the license document</sys:String>
+    <sys:String x:Key="About_UpdateWU">Update WUView</sys:String>
+    <sys:String x:Key="About_UpdateWUText">Check for new release of Windows Update Viewer</sys:String>
+    <sys:String x:Key="About_UpdateWUToolTip">Check GitHub for a newer release</sys:String>
+    <sys:String x:Key="About_Version">Version</sys:String>
+    <!--  Button Text  -->
+    <sys:String x:Key="Button_Cancel">Cancel</sys:String>
+    <sys:String x:Key="Button_OK">OK</sys:String>
+    <sys:String x:Key="Button_OpenLogFile">View Log File</sys:String>
+    <sys:String x:Key="Button_OpenLogFileToolTip">Open the log file in the default application.</sys:String>
+    <!--  Details Pane  -->
+    <sys:String x:Key="Details_Date">Date:</sys:String>
+    <sys:String x:Key="Details_Description">Description:</sys:String>
+    <sys:String x:Key="Details_HeadingEventLog">Windows Event Log details:</sys:String>
+    <sys:String x:Key="Details_HeadingUpdate">Windows Update details:</sys:String>
+    <sys:String x:Key="Details_HResult">HResult:</sys:String>
+    <sys:String x:Key="Details_KBNum">KB Number:</sys:String>
+    <sys:String x:Key="Details_Operation">Operation:</sys:String>
+    <sys:String x:Key="Details_ResultCode">Result Code:</sys:String>
+    <sys:String x:Key="Details_SupportURL">Support URL:</sys:String>
+    <sys:String x:Key="Details_Title">Title:</sys:String>
+    <sys:String x:Key="Details_TitleFallback">Select an update from above and the details will appear here.</sys:String>
+    <sys:String x:Key="Details_UpdateID">Update ID:</sys:String>
+    <!--  DataGrid Column Headers  -->
+    <sys:String x:Key="GridColumn_Date">Date</sys:String>
+    <sys:String x:Key="GridColumn_KBNum">KB Number</sys:String>
+    <sys:String x:Key="GridColumn_Result">Result</sys:String>
+    <sys:String x:Key="GridColumn_Title">Title</sys:String>
+    <!--  Exclude List Editor  -->
+    <sys:String x:Key="ExcludesEditor_TextLine1">Enter strings to exclude (one per line)</sys:String>
+    <sys:String x:Key="ExcludesEditor_TextLine2">Comparisons are not case sensitive</sys:String>
+    <!--  Filter Box Hint Text  -->
+    <sys:String x:Key="FilterHint">Filter</sys:String>
+    <!--  Menu Items  -->
+    <sys:String x:Key="Menu_Copy">_Copy</sys:String>
+    <sys:String x:Key="Menu_File">_File</sys:String>
+    <sys:String x:Key="Menu_View">_View</sys:String>
+    <sys:String x:Key="MenuItem_CopyToClipboard">Copy Grid to Clipboard</sys:String>
+    <sys:String x:Key="MenuItem_EditExclude">Edit Exclude List</sys:String>
+    <sys:String x:Key="MenuItem_Exit">Exit</sys:String>
+    <sys:String x:Key="MenuItem_Larger">Larger View</sys:String>
+    <sys:String x:Key="MenuItem_OpenWindowsUpdate">Open Windows Update</sys:String>
+    <sys:String x:Key="MenuItem_Refresh">Refresh Updates</sys:String>
+    <sys:String x:Key="MenuItem_RemoveSort">Remove Column Sort</sys:String>
+    <sys:String x:Key="MenuItem_SaveCSV">Save Grid to CSV File</sys:String>
+    <sys:String x:Key="MenuItem_SaveTXT">Save Details to Text File</sys:String>
+    <sys:String x:Key="MenuItem_Smaller">Smaller View</sys:String>
+    <sys:String x:Key="MenuItem_ToggleDetails">Toggle Details Pane</sys:String>
+    <sys:String x:Key="MenuItem_ToggleExcluded">Toggle Excluded Items</sys:String>
+    <!-- Text found in messages (log, message box, status bar, etc.) -->
+    <sys:String x:Key="MsgText_OSVersion">Operating System version</sys:String>
+    <sys:String x:Key="MsgText_DotNetVersion">.Net version</sys:String>
+    <sys:String x:Key="MsgText_Culture">Culture</sys:String>
+    <sys:String x:Key="MsgText_ApplicationStarting">is starting up</sys:String>
+    <sys:String x:Key="MsgText_ApplicationShutdown">is shutting down</sys:String>
+    <sys:String x:Key="MsgText_ElapsedTime">Elapsed time</sys:String>
+    <!--  Navigation Items  -->
+    <sys:String x:Key="NavItem_About">About</sys:String>
+    <sys:String x:Key="NavItem_Exit">Exit</sys:String>
+    <sys:String x:Key="NavItem_Settings">Settings</sys:String>
+    <sys:String x:Key="NavItem_Updates">Updates</sys:String>
+    <sys:String x:Key="NavTitle_About">About Windows Update Viewer</sys:String>
+    <sys:String x:Key="NavTitle_Settings">Settings</sys:String>
+    <sys:String x:Key="NavTitle_Updates">Windows Update Viewer</sys:String>
+    <!--  Settings Page  -->
+    <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Changing Language will cause application to restart!</sys:String>
+    <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-Click to open file with default application</sys:String>
+    <sys:String x:Key="SettingsItem_DateFormat">Grid Date Format</sys:String>
+    <sys:String x:Key="SettingsItem_Language">Language:</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdates">Number of Updates</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Use Windows Display Language</sys:String>
+    <sys:String x:Key="SettingsSection_AppSettings">Application Settings</sys:String>
+    <sys:String x:Key="SettingsSection_Language">Language</sys:String>
+    <sys:String x:Key="SettingsSection_UISettings">UI Settings</sys:String>
+    <sys:String x:Key="SettingsSubHead_AppSettings">Number of Updates, Date Format, Excluded Items, Details, and more</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Language Settings (Work in Progress)</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">Theme, Accent Color, UI Size, Row Height, Start Position and more</sys:String>
+
+</ResourceDictionary>
