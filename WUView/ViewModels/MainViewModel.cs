@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
@@ -207,9 +207,10 @@ internal partial class MainViewModel : ObservableObject
                     }
                     if (UserSettings.Setting.ExcludeKBandResult)
                     {
-                        if ((upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)) ||
-                            (upd.KBNum.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)) ||
-                            (upd.ResultCode.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase)))
+                        if (upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase) ||
+                            upd.KBNum.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase) ||
+                            upd.ResultCode.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase) ||
+                            upd.UpdateID.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase))
                         {
                             skip = true;
                         }
