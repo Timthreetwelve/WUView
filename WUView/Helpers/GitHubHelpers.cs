@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 using Octokit;
 
@@ -25,7 +25,7 @@ internal static class GitHubHelpers
     {
         try
         {
-            SnackbarMsg.ClearAndQueueMessage("Checking for updates");
+            SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_AppUpdateChecking"));
             Release release = await GetLatestReleaseAsync(AppConstString.RepoOwner, AppConstString.RepoName);
             if (release == null)
             {
@@ -56,8 +56,9 @@ internal static class GitHubHelpers
 
             if (latestVersion <= AppInfo.AppVersionVer)
             {
-                _log.Debug("No newer releases were found.");
-                _ = new MDCustMsgBox("No newer releases were found.",
+                string msg = GetStringResource("MsgText_AppUpdateNoneFound");
+                _log.Debug(msg);
+                _ = new MDCustMsgBox(msg,
                     "Windows Update Viewer",
                     ButtonType.Ok,
                     false,
@@ -67,9 +68,9 @@ internal static class GitHubHelpers
             }
             else
             {
-                _log.Debug($"A newer release ({latestVersion}) has been found.");
-                _ = new MDCustMsgBox($"A newer release ({latestVersion}) has been found.\n\n" +
-                                 "Do you want to go to the release page?\n",
+                string msg = string.Format(GetStringResource("MsgText_AppUpdateNewerFound"), latestVersion);
+                _log.Debug(msg);
+                _ = new MDCustMsgBox($"{ msg }\n\n{GetStringResource("MsgText_AppUpdateGoToRelease")}\n",
                     "Windows Update Viewer",
                     ButtonType.YesNo,
                     false,
@@ -79,7 +80,8 @@ internal static class GitHubHelpers
 
                 if (MDCustMsgBox.CustResult == CustResultType.Yes)
                 {
-                    _log.Debug($"Opening {release.HtmlUrl}");
+                    string opening = GetStringResource("MsgText_Opening");
+                    _log.Debug($"{opening} {release.HtmlUrl}");
                     string url = release.HtmlUrl;
                     Process p = new();
                     p.StartInfo.FileName = url;
@@ -126,7 +128,7 @@ internal static class GitHubHelpers
     /// </summary>
     internal static void CheckFailed()
     {
-        _ = new MDCustMsgBox("Check for update failed.\nSee the log for more information.",
+        _ = new MDCustMsgBox(GetStringResource("MsgText_AppUpdateCheckFailed"),
             "Windows Update Viewer",
             ButtonType.Ok,
             false,

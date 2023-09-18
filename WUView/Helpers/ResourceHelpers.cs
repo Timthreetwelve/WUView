@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Helpers;
 
@@ -9,16 +9,28 @@ internal static class ResourceHelpers
     /// </summary>
     /// <param name="key">The key.</param>
     /// <returns>String</returns>
+    /// <remarks>
+    /// Want to throw here so that missing resource doesn't make it into a release.
+    /// </remarks>
     public static string GetStringResource(string key)
     {
+        object description;
         try
         {
-            return Application.Current.TryFindResource(key).ToString();
+            description = Application.Current.TryFindResource(key);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            _log.Error(ex, $"Resource not found: {key}");
-            return $"Resource not found: {key}";
+            _log.Error($"Resource not found: {key}");
+            throw new Exception("Resource not found");
         }
+
+        if (description is null)
+        {
+            _log.Error($"Resource not found: {key}");
+            throw new Exception("Resource not found");
+        }
+
+        return description.ToString();
     }
 }

@@ -1,10 +1,9 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
 internal partial class MainViewModel : ObservableObject
 {
-
     #region Event record and WUpdate Lists
     public static List<EventRecord> EventLogRecords { get; set; } = new();
     public static ObservableCollection<WUpdate> UpdatesFullList { get; set; } = new();
@@ -112,7 +111,7 @@ internal partial class MainViewModel : ObservableObject
         else
         {
             _log.Info($"No updates found! IUpdateSearcher.GetTotalHistoryCount returned {count}.");
-            new MDCustMsgBox("No updates were found.",
+            new MDCustMsgBox(GetStringResource("MsgText_NoUpdatesFound"),
                     "Windows Update Viewer",
                     ButtonType.Ok,
                     false,
@@ -162,13 +161,12 @@ internal partial class MainViewModel : ObservableObject
     {
         if (kb == "n/a")
         {
-            return "No Event Logs records were found for this update.";
+            return GetStringResource("MsgText_EventLogNA");
         }
         StringBuilder sbEventLog = new();
         foreach (EventRecord item in EventLogRecords)
         {
             if (item.Properties[0].Value.ToString().Contains(kb))
-            //if (item.FormatDescription().Contains(kb))  This took forever
             {
                 string tc = string.Format($"{item.TimeCreated} - {item.FormatDescription()}  Event ID: {item.Id}.");
                 _ = sbEventLog.AppendLine(tc);
@@ -176,7 +174,8 @@ internal partial class MainViewModel : ObservableObject
         }
         if (sbEventLog.Length == 0)
         {
-            _ = sbEventLog.Append("No Event Log records containing \"").Append(kb).AppendLine("\" were found.");
+            string message = string.Format(GetStringResource("MsgText_EventLogNoRecords"), kb);
+            _ = sbEventLog.AppendLine(message);
         }
         return sbEventLog.ToString();
     }
@@ -236,7 +235,7 @@ internal partial class MainViewModel : ObservableObject
 
         if (UpdatesFullList.Count > 0 && UpdatesWithoutExcludedItems.Count == 0)
         {
-            new MDCustMsgBox("All displayable updates have been excluded.",
+            new MDCustMsgBox(GetStringResource("MsgText_AllUpdatesExcluded"),
                 "Windows Update Viewer",
                 ButtonType.Ok,
                 false,
@@ -313,7 +312,8 @@ internal partial class MainViewModel : ObservableObject
     {
         int total = UpdatesFullList.Count;
         int displayed = MainPage.Instance.dataGrid.Items.Count;
-        SnackbarMsg.ClearAndQueueMessage($"Displaying {displayed} of {total} updates");
+        string message = string.Format(GetStringResource("MsgText_DisplayedUpdates"), displayed, total);
+        SnackbarMsg.ClearAndQueueMessage(message);
     }
     #endregion Display update count
 

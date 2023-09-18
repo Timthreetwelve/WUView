@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--
+    ===============================================================================================================================
+
+        Language name here: English (en-GB)
+
+        Translation contributed by: Timthreetwelve
+
+    ===============================================================================================================================
+    -->
+
+    <!--  Text found in messages (log, message box, status bar, details area, etc.)  -->
+    <sys:String x:Key="MsgText_UIColorSet">Accent colour set to {0}</sys:String>
+    <!--  Settings Page Expander Headings  -->
+    <sys:String x:Key="SettingsSubHead_UISettings">Theme, Accent Colour, UI Size, Row Height, Start Position and more</sys:String>
+    <!--  Settings Page Items  -->
+    <sys:String x:Key="SettingsItem_AccentColor">Accent Colour</sys:String>
+    <sys:String x:Key="SettingsItem_StartCentered">Start with window centred on screen</sys:String>
+    <!--  Enums for Combo Boxes on the Settings Page  -->
+    <sys:String x:Key="SettingsEnum_AccentColor_BlueGray">Blue Grey</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Gray">Grey</sys:String>
+
+</ResourceDictionary>

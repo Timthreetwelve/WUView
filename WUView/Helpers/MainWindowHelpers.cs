@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Helpers;
 
@@ -69,9 +69,8 @@ internal static class MainWindowHelpers
         // Set the windows title
         if (IsAdministrator())
         {
-            return AppInfo.ToolTipVersion + " - (Administrator)";
+            return $"{AppInfo.ToolTipVersion} - ({GetStringResource("MsgText_WindowTitleAdministrator")})";
         }
-
         return AppInfo.ToolTipVersion;
     }
     #endregion Window Title
@@ -114,8 +113,6 @@ internal static class MainWindowHelpers
     {
         MainViewModel.GatherInfo();
 
-        MainWindowUIHelpers.ToggleDetails(UserSettings.Setting.ShowDetails);
-
         if (UserSettings.Setting.AutoSelectFirstRow && MainPage.Instance.dataGrid.Items.Count > 0)
         {
             MainPage.Instance.dataGrid.SelectedIndex = 0;
@@ -126,7 +123,8 @@ internal static class MainWindowHelpers
     {
         // Stop the stopwatch and record elapsed time
         _stopwatch.Stop();
-        _log.Info($"{AppInfo.AppName} is shutting down.  Elapsed time: {_stopwatch.Elapsed:h\\:mm\\:ss\\.ff}");
+        _log.Info($"{AppInfo.AppName} {GetStringResource("MsgText_ApplicationShutdown")}.  " +
+            $"{GetStringResource("MsgText_ElapsedTime")}: {_stopwatch.Elapsed:h\\:mm\\:ss\\.ff}");
 
         // Shut down NLog
         LogManager.Shutdown();
@@ -175,7 +173,7 @@ internal static class MainWindowHelpers
         NLogHelpers.NLogConfig(false);
 
         // Log the version, build date and commit id
-        _log.Info($"{AppInfo.AppName} ({AppInfo.AppProduct}) {AppInfo.AppVersion} is starting up");
+        _log.Info($"{AppInfo.AppName} ({AppInfo.AppProduct}) {AppInfo.AppVersion} {GetStringResource("MsgText_ApplicationStarting")}");
         _log.Info($"{AppInfo.AppName} {AppInfo.AppCopyright}");
         _log.Debug($"{AppInfo.AppName} was started from {AppInfo.AppPath}");
         _log.Debug($"{AppInfo.AppName} Build date: {BuildInfo.BuildDateUtc:f} (UTC)");
@@ -183,11 +181,10 @@ internal static class MainWindowHelpers
 
         // Log the .NET version and OS platform
         _log.Debug($"Operating System version: {AppInfo.OsPlatform}");
-        _log.Debug($".NET version: {AppInfo.RuntimeVersion.Replace(".NET", "")}");
+        _log.Debug($".Net version: {AppInfo.RuntimeVersion.Replace(".NET", "")}");
 
         // Log the current culture
-        _log.Debug($"Current culture: {LocalizationHelpers.GetCurrentCulture()}");
-        _log.Debug($"Current UI culture: {LocalizationHelpers.GetCurrentUICulture()}");
+        _log.Debug($"Current culture: {LocalizationHelpers.GetCurrentCulture()}  UI: {LocalizationHelpers.GetCurrentUICulture()}");
 
         // log WUA info
         WUApiHelpers.LogWUAInfo();

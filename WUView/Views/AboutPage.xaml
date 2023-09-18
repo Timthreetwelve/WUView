@@ -9,7 +9,7 @@
              xmlns:local="clr-namespace:WUView.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:props="clr-namespace:WUView.Properties"
+             xmlns:models="clr-namespace:WUView.Models"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800"
@@ -48,6 +48,7 @@
                     <RowDefinition Height="26" />
                     <RowDefinition Height="26" />
                     <RowDefinition Height="26" />
+                    <RowDefinition Height="26" />
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <!--#endregion-->
@@ -72,18 +73,18 @@
                 <TextBlock Grid.Row="0" Grid.Column="0"
                            Text="{x:Static helpers:AppInfo.AppProduct}" />
                 <TextBlock Grid.Row="0" Grid.Column="1"
-                           Text="{x:Static props:Strings.AboutDescription}"
+                           Text="{DynamicResource About_Description}"
                            TextTrimming="CharacterEllipsis" />
 
                 <TextBlock Grid.Row="1" Grid.Column="0"
-                           Text="{x:Static props:Strings.AboutVersion}" />
+                           Text="{DynamicResource About_Version}" />
                 <TextBlock Grid.Row="1" Grid.Column="1"
                            Text="{x:Static helpers:AppInfo.AppFileVersion}" />
 
                 <TextBlock Grid.Row="2" Grid.Column="0"
-                           Text="{x:Static props:Strings.AboutCreatedBy}" />
+                           Text="{DynamicResource About_CreatedBy}" />
                 <TextBlock Grid.Row="2" Grid.Column="1"
-                           ToolTip="{x:Static props:Strings.AboutCreatedByToolTip}"
+                           ToolTip="{DynamicResource About_CreatedByToolTip}"
                            ToolTipService.Placement="Top">
                     <Hyperlink Command="{Binding GoToGitHubCommand}"
                                CommandParameter="https://github.com/Timthreetwelve"
@@ -93,35 +94,35 @@
                 </TextBlock>
 
                 <TextBlock Grid.Row="3" Grid.Column="0"
-                           Text="{x:Static props:Strings.AboutCopyright}" />
+                           Text="{DynamicResource About_Copyright}" />
                 <TextBlock Grid.Row="3" Grid.Column="1"
                            Text="{x:Static helpers:AppInfo.AppCopyright}" />
 
                 <TextBlock Grid.Row="4" Grid.Column="0"
-                           Text="{x:Static props:Strings.AboutLicense}" />
+                           Text="{DynamicResource About_License}" />
                 <TextBlock Grid.Row="4" Grid.Column="1">
                     <Hyperlink Command="{Binding ViewLicenseCommand}"
                                Foreground="{DynamicResource MaterialDesignBody}"
-                               ToolTip="{x:Static props:Strings.AboutLicenseToolTip}"
+                               ToolTip="{DynamicResource About_LicenseToolTip}"
                                ToolTipService.Placement="Top">
-                        <TextBlock Text="{x:Static props:Strings.AboutLicenseText}" />
+                        <TextBlock Text="{DynamicResource About_LicenseText}" />
                     </Hyperlink>
                 </TextBlock>
 
                 <TextBlock Grid.Row="5" Grid.Column="0"
-                           Text="{x:Static props:Strings.AboutBuildDate}" />
+                           Text="{DynamicResource About_BuildDate}" />
                 <TextBlock x:Name="txtBuildDate"
                            Grid.Row="5" Grid.Column="1" />
 
                 <TextBlock Grid.Row="6" Grid.Column="0"
-                           Text="{x:Static props:Strings.AboutCommitID}" />
+                           Text="{DynamicResource About_CommitID}" />
                 <TextBlock Grid.Row="6" Grid.Column="1"
                            Text="{x:Static buildinfo:BuildInfo.CommitIDString}"
                            ToolTipService.Placement="Top">
                     <TextBlock.ToolTip>
                         <ToolTip>
                             <TextBlock>
-                                <Run Text="{x:Static props:Strings.AboutCommitIDToolTip}" />
+                                <Run Text="{DynamicResource About_CommitIDToolTip}" />
                                 <Run Text="{x:Static buildinfo:BuildInfo.CommitIDFullString}" />
                             </TextBlock>
                         </ToolTip>
@@ -140,7 +141,7 @@
                                CommandParameter="{Binding Path=Text,
                                                           ElementName=tbxGithub}"
                                Foreground="{DynamicResource MaterialDesignBody}"
-                               ToolTip="{x:Static props:Strings.AboutGitHubToolTip}"
+                               ToolTip="{DynamicResource About_GitHubToolTip}"
                                ToolTipService.Placement="Top">
                         <TextBlock x:Name="tbxGithub"
                                    Text="https://github.com/Timthreetwelve/WUView" />
@@ -148,29 +149,66 @@
                 </TextBlock>
 
                 <TextBlock Grid.Row="8" Grid.Column="0"
-                           Text="{x:Static props:Strings.AboutDocumentation}" />
+                           Text="{DynamicResource About_Documentation}" />
                 <TextBlock Grid.Row="8" Grid.Column="1">
                     <Hyperlink Command="{Binding ViewReadMeCommand}"
                                Foreground="{DynamicResource MaterialDesignBody}"
-                               ToolTip="{x:Static props:Strings.AboutDocumentationToolTip}"
+                               ToolTip="{DynamicResource About_DocumentationToolTip}"
                                ToolTipService.Placement="Top">
-                        <TextBlock Text="{x:Static props:Strings.AboutDocumentationText}" />
+                        <TextBlock Text="{DynamicResource About_DocumentationText}" />
                     </Hyperlink>
                 </TextBlock>
                 <!--#endregion-->
 
                 <!--#region Check for new release-->
                 <TextBlock Grid.Row="9" Grid.Column="0"
-                           Text="{x:Static props:Strings.AboutUpdateWU}" />
+                           Text="{DynamicResource About_UpdateWU}" />
                 <TextBlock Grid.Row="9" Grid.Column="1">
                     <Hyperlink Command="{Binding CheckReleaseCommand}"
                                Foreground="{DynamicResource MaterialDesignBody}"
-                               ToolTip="{x:Static props:Strings.AboutUpdateWUToolTip}"
+                               ToolTip="{DynamicResource About_UpdateWUToolTip}"
                                ToolTipService.Placement="Top">
-                        <TextBlock Text="{x:Static props:Strings.AboutUpdateWUText}" />
+                        <TextBlock Text="{DynamicResource About_UpdateWUText}" />
                     </Hyperlink>
                 </TextBlock>
                 <!--#endregion-->
+
+                <!--#region Translations-->
+                <Label Grid.Row="11"
+                       Content="{DynamicResource About_Translations}" />
+
+                <Border Grid.Row="11" Grid.Column="1"
+                        Margin="0,0,20,0"
+                        BorderBrush="{DynamicResource MaterialDesignDivider}"
+                        BorderThickness="1,0,1,0">
+                    <ListView Grid.Row="11" Grid.Column="1"
+                              PreviewMouseDown="ListView_PreviewMouseDown"
+                              MaxHeight="200"
+                              materialDesign:ListViewAssist.ListViewItemPadding="0,5"
+                              ItemsSource="{x:Static models:TranslationContributors.Contributors}"
+                              ScrollViewer.HorizontalScrollBarVisibility="auto"
+                              ScrollViewer.VerticalScrollBarVisibility="auto">
+                        <ListView.Resources>
+                            <Style TargetType="GridViewColumnHeader">
+                                <Setter Property="Template" Value="{x:Null}" />
+                            </Style>
+                        </ListView.Resources>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Language}" MinWidth="150" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Contributor}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Border>
+                <!--#endregion-->
+
             </Grid>
         </ScrollViewer>
     </Grid>

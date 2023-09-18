@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Views;
 
@@ -7,7 +7,6 @@ namespace WUView.Views;
 /// </summary>
 public partial class MainPage : UserControl
 {
-
     #region MainPage Instance
     public static MainPage Instance { get; set; }
     #endregion MainPage Instance
@@ -27,14 +26,15 @@ public partial class MainPage : UserControl
         if (hypHResult.Inlines.FirstInline is Run run)
         {
             Clipboard.SetText(run.Text);
+            SnackbarMsg.ClearAndQueueMessage(string.Format(
+                GetStringResource("MsgText_HResultCopiedToClipboard"), run.Text), 3000);
         }
-        _log.Debug($"Opening {AppConstUri.ResultCodeUrl}");
+        _log.Debug($"{GetStringResource("MsgText_Opening")} {AppConstUri.ResultCodeUrl}");
         Process p = new();
         p.StartInfo.FileName = AppConstUri.ResultCodeUrl.AbsoluteUri;
         p.StartInfo.UseShellExecute = true;
         p.Start();
         e.Handled = true;
-        SnackbarMsg.ClearAndQueueMessage($"Opening {AppConstUri.ResultCodeUrl}", 2000);
     }
     #endregion HResult click event
 
@@ -44,7 +44,7 @@ public partial class MainPage : UserControl
     /// </summary>
     private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
     {
-        _log.Debug($"Opening {e.Uri.AbsoluteUri}");
+        _log.Debug($"{GetStringResource("MsgText_Opening")} {e.Uri.AbsoluteUri}");
         if (!string.IsNullOrWhiteSpace(e.Uri.AbsoluteUri))
         {
             Process p = new();
@@ -52,7 +52,7 @@ public partial class MainPage : UserControl
             p.StartInfo.UseShellExecute = true;
             p.Start();
             e.Handled = true;
-            SnackbarMsg.ClearAndQueueMessage($"Opening {e.Uri.AbsoluteUri}", 2000);
+            SnackbarMsg.ClearAndQueueMessage($"{GetStringResource("MsgText_Opening")} {e.Uri.AbsoluteUri}", 2000);
         }
     }
     #endregion URL click event
@@ -71,7 +71,8 @@ public partial class MainPage : UserControl
     /// <summary>
     /// Filters the grid.
     /// </summary>
-    public void FilterTheGrid()
+    /// <param name="exit">If true, will return if filter length is 0.</param>
+    public void FilterTheGrid(bool exit = false)
     {
         string filter = tbxSearch.Text;
 
@@ -79,7 +80,10 @@ public partial class MainPage : UserControl
         if (filter?.Length == 0)
         {
             cv.Filter = null;
-            //SnackbarMsg.ClearAndQueueMessage("Filter removed", 2000);
+            if (exit)
+            {
+                return;
+            }
         }
         else
         {
@@ -107,11 +111,12 @@ public partial class MainPage : UserControl
         }
         if (dataGrid.Items.Count == 1)
         {
-            SnackbarMsg.ClearAndQueueMessage("1 row shown", 2000);
+            SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_FilterOneRowShown"), 2000);
         }
         else
         {
-            SnackbarMsg.ClearAndQueueMessage($"{dataGrid.Items.Count} rows shown", 2000);
+            SnackbarMsg.ClearAndQueueMessage(string.Format(
+                GetStringResource("MsgText_FilterRowsShown"), dataGrid.Items.Count), 2000);
         }
     }
     #endregion Filter the datagrid
@@ -128,7 +133,7 @@ public partial class MainPage : UserControl
         }
         dataGrid.Items.SortDescriptions.Clear();
 
-        SnackbarMsg.ClearAndQueueMessage("Column sort cleared");
+        SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_ColumnSortCleared"));
     }
     #endregion Clear column sort
 
@@ -167,7 +172,7 @@ public partial class MainPage : UserControl
 
         if (msg)
         {
-            SnackbarMsg.ClearAndQueueMessage("Copied to clipboard", 1000);
+            SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_CopiedToClipboard"), 2000);
         }
     }
     #endregion Copy to clipboard
@@ -216,7 +221,7 @@ public partial class MainPage : UserControl
         MainViewModel.ClearLists();
         MainViewModel.GatherInfo();
         Instance.UpdateGrid();
-        SnackbarMsg.ClearAndQueueMessage("List Refreshed", 2000);
+        SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_ListRefreshed"), 2000);
     }
     #endregion Refresh everything
 

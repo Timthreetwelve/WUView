@@ -17,7 +17,8 @@ internal class ItemsSourceConverter : IValueConverter
         {
             if (MainPage.Instance is not null)
             {
-                SnackbarMsg.ClearAndQueueMessage($"Displaying {withoutCount} of {fullCount} updates");
+                SnackbarMsg.ClearAndQueueMessage(string.Format(
+                    GetStringResource("MsgText_DisplayedUpdates"), withoutCount, fullCount));
             }
             return MainViewModel.UpdatesWithoutExcludedItems;
         }
@@ -25,7 +26,8 @@ internal class ItemsSourceConverter : IValueConverter
         {
             if (MainPage.Instance is not null)
             {
-                SnackbarMsg.ClearAndQueueMessage($"Displaying all {fullCount} updates");
+                SnackbarMsg.ClearAndQueueMessage(string.Format(
+                    GetStringResource("MsgText_DisplayedAllUpdates"), fullCount));
             }
             return MainViewModel.UpdatesFullList;
         }

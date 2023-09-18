@@ -32,31 +32,31 @@ public partial class NavigationViewModel : ObservableObject
             {
                 new NavigationItem
                 {
-                    Name = Strings.NavItemUpdates,
+                    Name = ResourceHelpers.GetStringResource("NavItem_Updates"),
                     NavPage = NavPage.Viewer,
                     ViewModelType = typeof(MainViewModel),
                     IconKind = PackIconKind.ViewList,
-                    PageTitle = Strings.NavTitleUpdates
+                    PageTitle = ResourceHelpers.GetStringResource("NavTitle_Updates")
                 },
                  new NavigationItem
                 {
-                    Name = Strings.NavItemSettings,
+                    Name = ResourceHelpers.GetStringResource("NavItem_Settings"),
                     NavPage = NavPage.Settings,
                     ViewModelType = typeof(SettingsViewModel),
                     IconKind = PackIconKind.SettingsOutline,
-                    PageTitle = Strings.NavTitleSettings
+                    PageTitle = ResourceHelpers.GetStringResource("NavTitle_Settings")
                 },
                 new NavigationItem
                 {
-                    Name = Strings.NavItemAbout,
+                    Name = ResourceHelpers.GetStringResource("NavItem_About"),
                     NavPage = NavPage.About,
                     ViewModelType = typeof(AboutViewModel),
                     IconKind = PackIconKind.AboutCircleOutline,
-                    PageTitle = Strings.NavTitleAbout
+                    PageTitle = ResourceHelpers.GetStringResource("NavTitle_About")
                 },
                 new NavigationItem
                 {
-                    Name = Strings.NavItemExit,
+                    Name = ResourceHelpers.GetStringResource("NavItem_Exit"),
                     IconKind = PackIconKind.ExitToApp,
                     IsExit = true
                 }
@@ -134,8 +134,8 @@ public partial class NavigationViewModel : ObservableObject
     [RelayCommand]
     public static void ViewLogFile()
     {
-        SnackbarMsg.ClearAndQueueMessage("Opening the Log File", 2000);
-        TextFileViewer.ViewTextFile(NLogHelpers.GetLogfileName());
+        SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_OpeningLogFile"), 2000);
+        TextFileViewer.ViewTextFile(GetLogfileName());
     }
     #endregion View log file
 
@@ -143,7 +143,7 @@ public partial class NavigationViewModel : ObservableObject
     [RelayCommand]
     public static void ViewReadMeFile()
     {
-        SnackbarMsg.ClearAndQueueMessage("Opening the ReadMe Document", 2000);
+        SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_OpeningReadMeFile"), 2000);
         TextFileViewer.ViewTextFile(Path.Combine(AppInfo.AppDirectory, "readme.txt"));
     }
     #endregion View readme file
@@ -161,7 +161,7 @@ public partial class NavigationViewModel : ObservableObject
     public static void ToggleExcluded()
     {
         UserSettings.Setting.HideExcluded = !UserSettings.Setting.HideExcluded;
-        MainPage.Instance.FilterTheGrid();
+        MainPage.Instance.FilterTheGrid(true);
     }
     #endregion Toggle excluded
 
@@ -178,14 +178,12 @@ public partial class NavigationViewModel : ObservableObject
     public static void UILarger()
     {
         MainWindowUIHelpers.EverythingLarger();
-        SnackbarMsg.ClearAndQueueMessage($"Size set to {UserSettings.Setting.UISize}");
     }
 
     [RelayCommand]
     public static void UISmaller()
     {
         MainWindowUIHelpers.EverythingSmaller();
-        SnackbarMsg.ClearAndQueueMessage($"Size set to {UserSettings.Setting.UISize}");
     }
     #endregion UI Smaller and Larger
 
@@ -201,7 +199,7 @@ public partial class NavigationViewModel : ObservableObject
     [RelayCommand]
     public static void OpenWindowsUpdate()
     {
-        SnackbarMsg.ClearAndQueueMessage("Opening Windows Update");
+        SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_OpeningWindowsUpdate"));
         using Process procWU = new();
         procWU.StartInfo.FileName = "ms-settings:windowsupdate";
         procWU.StartInfo.UseShellExecute = true;
@@ -310,17 +308,21 @@ public partial class NavigationViewModel : ObservableObject
                     UserSettings.Setting.DateFormat++;
                 }
                 MainPage.Instance.UpdateGrid();
-                SnackbarMsg.ClearAndQueueMessage("Date format changed", 2000);
+                SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_DateFormatChange"), 2000);
             }
             if (e.Key == Key.Add)
             {
                 MainWindowUIHelpers.EverythingLarger();
-                SnackbarMsg.ClearAndQueueMessage($"Size set to {UserSettings.Setting.UISize}", 2000);
+                string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting.UISize);
+                string message = string.Format(GetStringResource("MsgText_UISizeSet"), size);
+                SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
             if (e.Key == Key.Subtract)
             {
                 MainWindowUIHelpers.EverythingSmaller();
-                SnackbarMsg.ClearAndQueueMessage($"Size set to {UserSettings.Setting.UISize}", 2000);
+                string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting.UISize);
+                string message = string.Format(GetStringResource("MsgText_UISizeSet"), size);
+                SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
         }
         #endregion Keys with Ctrl
@@ -345,8 +347,9 @@ public partial class NavigationViewModel : ObservableObject
                         UserSettings.Setting.UITheme = ThemeType.Light;
                         break;
                 }
-                string theme = Converters.EnumDescConverter.GetEnumDescription(UserSettings.Setting.UITheme);
-                SnackbarMsg.ClearAndQueueMessage($"Theme set to {theme}", 2000);
+                string theme = EnumDescConverter.GetEnumDescription(UserSettings.Setting.UITheme);
+                string message = string.Format(GetStringResource("MsgText_UIThemeSet"), theme);
+                SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
             if (e.Key == Key.C)
             {
@@ -358,13 +361,13 @@ public partial class NavigationViewModel : ObservableObject
                 {
                     UserSettings.Setting.PrimaryColor++;
                 }
-                string color = Converters.EnumDescConverter.GetEnumDescription(UserSettings.Setting.PrimaryColor);
-                SnackbarMsg.ClearAndQueueMessage($"Accent color set to {color}");
+                string color = EnumDescConverter.GetEnumDescription(UserSettings.Setting.PrimaryColor);
+                string message = string.Format(GetStringResource("MsgText_UIColorSet"), color);
+                SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
             if (e.Key == Key.S)
             {
                 TextFileViewer.ViewTextFile(ConfigHelpers.SettingsFileName);
-                SnackbarMsg.ClearAndQueueMessage("Opening settings file", 2000);
             }
         }
         #endregion

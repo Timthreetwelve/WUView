@@ -9,10 +9,10 @@
         xmlns:helpers="clr-namespace:WUView.Helpers"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:props="clr-namespace:WUView.Properties"
         xmlns:viewmodels="clr-namespace:WUView.ViewModels"
         mc:Ignorable="d"
         d:DesignHeight="350" d:DesignWidth="800"
+        MinWidth="200" MinHeight="250"
         Title="{x:Static helpers:AppInfo.AppName}"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="Segoe UI" FontSize="12"
@@ -84,7 +84,7 @@
 
                 <!--#region SnackBar-->
                 <materialDesign:Snackbar x:Name="SnackBar1"
-                                         Grid.Row="0" Grid.Column="2"
+                                         Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
                                          HorizontalAlignment="Right"
                                          VerticalAlignment="Top"
                                          Background="{DynamicResource MaterialDesignPaper}"
@@ -121,18 +121,18 @@
                                     <Button Height="35"
                                             Padding="15,1,0,22"
                                             Command="{Binding ViewLogFileCommand}"
-                                            Content="View Log File"
-                                            ToolTip="Open the application log file in the default application." />
+                                            Content="{DynamicResource Button_OpenLogFile}"
+                                            ToolTip="{DynamicResource Button_OpenLogFileToolTip}" />
                                     <Button Height="35"
                                             Padding="15,1,0,22"
                                             Command="{Binding ViewReadMeFileCommand}"
-                                            Content="View ReadMe File"
-                                            ToolTip="Open the ReadMe file in the default application." />
+                                            Content="{DynamicResource About_DocumentationText}"
+                                            ToolTip="{DynamicResource About_DocumentationToolTip}" />
                                     <Separator Margin="0" Padding="1"
                                                Background="{DynamicResource MaterialDesignDivider}" />
                                     <Button Height="35"
                                             Padding="15,1,0,22"
-                                            Content="{x:Static props:Strings.ButtonCancel}"/>
+                                            Content="{DynamicResource Button_Cancel}"/>
                                 </StackPanel>
                             </Grid>
                         </Border>

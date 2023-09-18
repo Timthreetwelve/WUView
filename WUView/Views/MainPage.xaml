@@ -1,4 +1,4 @@
-<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.MainPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -9,7 +9,6 @@
              xmlns:local="clr-namespace:WUView.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:props="clr-namespace:WUView.Properties"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800"
@@ -94,54 +93,54 @@
                         <viewmodels:NavigationViewModel />
                     </Menu.DataContext>
                     <!--#region File menu-->
-                    <MenuItem Header="{x:Static props:Strings.MenuFile}">
+                    <MenuItem Header="{DynamicResource Menu_File}">
                         <MenuItem Command="{Binding SaveCSVCommand}"
-                                  Header="{x:Static props:Strings.MenuItemSaveCSV}" />
+                                  Header="{DynamicResource MenuItem_SaveCSV}" />
                         <MenuItem Command="{Binding SaveTextCommand}"
-                                  Header="{x:Static props:Strings.MenuItemSaveTXT}" />
+                                  Header="{DynamicResource MenuItem_SaveTXT}" />
                         <Separator />
                         <MenuItem Command="{Binding EditExcludeCommand}"
-                                  Header="{x:Static props:Strings.MenuItemEditExclude}"
+                                  Header="{DynamicResource MenuItem_EditExclude}"
                                   InputGestureText="Ctrl + L" />
                         <Separator />
                         <MenuItem Command="{Binding OpenWindowsUpdateCommand}"
-                                  Header="{x:Static props:Strings.MenuItemOpenWindowsUpdate}" />
+                                  Header="{DynamicResource MenuItem_OpenWindowsUpdate}" />
                         <Separator />
                         <MenuItem Command="{Binding ExitCommand}"
-                                  Header="{x:Static props:Strings.MenuItemExit}"
+                                  Header="{DynamicResource MenuItem_Exit}"
                                   InputGestureText="Alt + F4" />
                     </MenuItem>
                     <!--#endregion-->
 
                     <!--#region Copy menu-->
-                    <MenuItem Header="{x:Static props:Strings.MenuCopy}">
+                    <MenuItem Header="{DynamicResource Menu_Copy}">
                         <MenuItem Command="{Binding CopyClipboardCommand}"
-                                  Header="{x:Static props:Strings.MenuItemCopyToClipboard}" />
+                                  Header="{DynamicResource MenuItem_CopyToClipboard}" />
                     </MenuItem>
                     <!--#endregion-->
 
                     <!--#region View menu-->
-                    <MenuItem Header="{x:Static props:Strings.MenuView}">
+                    <MenuItem Header="{DynamicResource Menu_View}">
                         <MenuItem Click="Refresh_Click"
-                                  Header="{x:Static props:Strings.MenuItemRefresh}"
+                                  Header="{DynamicResource MenuItem_Refresh}"
                                   InputGestureText="F5" />
                         <Separator />
                         <MenuItem Command="{Binding UILargerCommand}"
-                                  Header="{x:Static props:Strings.MenuItemLarger}"
+                                  Header="{DynamicResource MenuItem_Larger}"
                                   InputGestureText="Ctrl + Numpad Plus" />
                         <MenuItem Command="{Binding UISmallerCommand}"
-                                  Header="{x:Static props:Strings.MenuItemSmaller}"
+                                  Header="{DynamicResource MenuItem_Smaller}"
                                   InputGestureText="Ctrl + Numpad Minus" />
                         <Separator />
                         <MenuItem Command="{Binding ToggleDetailsCommand}"
-                                  Header="{x:Static props:Strings.MenuItemToggleDetails}"
+                                  Header="{DynamicResource MenuItem_ToggleDetails}"
                                   InputGestureText="Ctrl + D" />
                         <MenuItem Command="{Binding ToggleExcludedCommand}"
-                                  Header="{x:Static props:Strings.MenuItemToggleExcluded}"
+                                  Header="{DynamicResource MenuItem_ToggleExcluded}"
                                   InputGestureText="Ctrl + E" />
                         <Separator />
                         <MenuItem Command="{Binding RemoveSortCommand}"
-                                  Header="{x:Static props:Strings.MenuItemRemoveSort}"
+                                  Header="{DynamicResource MenuItem_RemoveSort}"
                                   InputGestureText="Ctrl + R" />
                     </MenuItem>
                     <!--#endregion-->
@@ -152,7 +151,7 @@
                          Width="300" Height="35"
                          Margin="20,0" Padding="10,6"
                          VerticalContentAlignment="Top"
-                         materialDesign:HintAssist.Hint="{x:Static props:Strings.FilterHint}"
+                         materialDesign:HintAssist.Hint="{DynamicResource FilterHint}"
                          materialDesign:TextFieldAssist.HasClearButton="True"
                          FontSize="14" IsTabStop="True"
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -216,18 +215,19 @@
                   VerticalScrollBarVisibility="Auto">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding KBNum}"
-                                    Header="{x:Static props:Strings.DGColKBNum}" />
+                                    Header="{DynamicResource GridColumn_KBNum}" />
                 <DataGridTextColumn Binding="{Binding Date, Converter={StaticResource dateFormat}}"
-                                    Header="{x:Static props:Strings.DGColDate}" />
+                                    Header="{DynamicResource GridColumn_Date}" />
                 <DataGridTextColumn Binding="{Binding Title}"
-                                    Header="{x:Static props:Strings.DGColTitle}" />
+                                    Header="{DynamicResource GridColumn_Title}" />
                 <DataGridTextColumn Binding="{Binding ResultCode, Converter={StaticResource results}, ConverterParameter='ResultCode'}"
-                                    Header="{x:Static props:Strings.DGColResult}" />
+                                    Header="{DynamicResource GridColumn_Result}" />
             </DataGrid.Columns>
         </DataGrid>
         <!--#endregion-->
 
         <!--#region GridSplitter-->
+        <!--  Grid Splitter can be hidden. See Style Trigger in Row Definition  -->
         <GridSplitter x:Name="DetailsSplitter"
                       Grid.Row="2"
                       Height="4"
@@ -241,6 +241,7 @@
         <!--#endregion-->
 
         <!--#region Details area-->
+        <!--  Details panel can be hidden. See Style Trigger in Row Definition  -->
         <Grid Grid.Row="3"
               KeyboardNavigation.TabNavigation="None">
             <ScrollViewer VerticalAlignment="Top"
@@ -276,36 +277,44 @@
                                Grid.ColumnSpan="3"
                                Margin="0,10"
                                FontSize="15" FontWeight="SemiBold"
-                               Text="{x:Static props:Strings.DetailsHeadingUpdate}" />
+                               Text="{DynamicResource Details_HeadingUpdate}" />
                     <TextBlock Grid.Row="1" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static props:Strings.DetailsTitle}" />
+                               Text="{DynamicResource Details_Title}" />
+                    <!--  https://stackoverflow.com/a/48733836  -->
                     <TextBox Grid.Row="1" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
-                             Text="{Binding Title,
-                                            FallbackValue={x:Static props:Strings.DetailsTitleFallback}}" />
+                             Tag="{DynamicResource Details_TitleFallback}">
+                        <TextBox.Text>
+                            <PriorityBinding>
+                                <Binding Path="Title" />
+                                <Binding Path="Tag"
+                                         RelativeSource="{RelativeSource Mode=Self}" />
+                            </PriorityBinding>
+                        </TextBox.Text>
+                    </TextBox>
                     <TextBlock Grid.Row="2" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static props:Strings.DetailsKBNum}" />
+                               Text="{DynamicResource Details_KBNum}" />
                     <TextBox Grid.Row="2" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding KBNum}" />
                     <TextBlock Grid.Row="3" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static props:Strings.DetailsDate}" />
+                               Text="{DynamicResource Details_Date}" />
                     <TextBox Grid.Row="3" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding Date,
                                             Converter={StaticResource dateFormat}}" />
                     <TextBlock Grid.Row="4" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Top"
-                               Text="{x:Static props:Strings.DetailsDescription}" />
+                               Text="{DynamicResource Details_Description}" />
                     <TextBox Grid.Row="4" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding Description}" />
                     <TextBlock Grid.Row="5" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static props:Strings.DetailsOperation}" />
+                               Text="{DynamicResource Details_Operation}" />
                     <TextBox Grid.Row="5" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding Operation,
@@ -313,7 +322,7 @@
                                             ConverterParameter='Operation'}" />
                     <TextBlock Grid.Row="6" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static props:Strings.DetailsResultCode}" />
+                               Text="{DynamicResource Details_ResultCode}" />
                     <TextBox Grid.Row="6" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding ResultCode,
@@ -321,7 +330,7 @@
                                             ConverterParameter='ResultCode'}" />
                     <TextBlock Grid.Row="7" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static props:Strings.DetailsHResult}" />
+                               Text="{DynamicResource Details_HResult}" />
                     <TextBlock Grid.Row="7" Grid.Column="3"
                                Width="100"
                                HorizontalAlignment="Left"
@@ -335,13 +344,13 @@
                     </TextBlock>
                     <TextBlock Grid.Row="8" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static props:Strings.DetailsUpdateID}" />
+                               Text="{DynamicResource Details_UpdateID}" />
                     <TextBox Grid.Row="8" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding UpdateID}" />
                     <TextBlock Grid.Row="9" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
-                               Text="{x:Static props:Strings.DetailsSupportURL}" />
+                               Text="{DynamicResource Details_SupportURL}" />
                     <TextBlock Grid.Row="9" Grid.Column="3"
                                Margin="0,1">
                         <Hyperlink Focusable="False"
@@ -356,7 +365,7 @@
                                Grid.ColumnSpan="3"
                                Margin="0,15,0,10"
                                FontSize="15" FontWeight="SemiBold"
-                               Text="{x:Static props:Strings.DetailsHeadingEventLog}" />
+                               Text="{DynamicResource Details_HeadingEventLog}" />
                     <TextBox Grid.Row="11" Grid.Column="1"
                              Grid.ColumnSpan="3"
                              Margin="10,0"

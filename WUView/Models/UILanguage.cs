@@ -14,6 +14,9 @@ internal partial class UILanguage : ObservableObject
     [ObservableProperty]
     private string _languageCode;
 
+    [ObservableProperty]
+    private string _languageNative;
+
     /// <summary>
     /// Overrides the ToString method.
     /// </summary>
@@ -33,6 +36,8 @@ internal partial class UILanguage : ObservableObject
     /// </remarks>
     public static List<UILanguage> DefinedLanguages { get; set; } = new()
     {
-        new UILanguage {Language = "English  (en-US)", LanguageCode = "en-US"},
+        new UILanguage {Language = "English", LanguageCode = "en-US", LanguageNative = "English (en-US)"},
+        new UILanguage {Language = "English", LanguageCode = "en-GB", LanguageNative = "English (en-GB)"},
+        new UILanguage {Language = "Spanish", LanguageCode = "es-ES", LanguageNative = "Español (es-ES)"},
     };
 }

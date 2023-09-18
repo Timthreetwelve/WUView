@@ -1,4 +1,4 @@
-<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.SettingsPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -10,7 +10,6 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:models="clr-namespace:WUView.Models"
-             xmlns:props="clr-namespace:WUView.Properties"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="700"
@@ -25,9 +24,9 @@
     <UserControl.Resources>
         <config:UserSettings x:Key="config" />
         <config:TempSettings x:Key="tempconfig" />
-        <convert:EnumDescConverter x:Key="descConvert" />
         <convert:BooleanInverter x:Key="boolInverter" />
         <convert:LanguageConverter x:Key="langConverter" />
+        <convert:EnumBindingSource x:Key="EnumBindingSource" />
         <viewmodels:NavigationViewModel x:Key="command" />
     </UserControl.Resources>
     <!--#endregion-->
@@ -61,10 +60,10 @@
                             HorizontalAlignment="Left"
                             Command="{Binding EditExcludeCommand,
                                               Source={StaticResource command}}"
-                            Content="{x:Static props:Strings.MenuItemEditExclude}"
+                            Content="{DynamicResource MenuItem_EditExclude}"
                             FontSize="16"
                             Style="{StaticResource PlainOutlinedButton}"
-                            ToolTip="{x:Static props:Strings.SettingsPageEditExcludeToolTip}" />
+                            ToolTip="{DynamicResource SettingsItem_EditExcludeToolTip}" />
                 </Border>
                 <!--#endregion-->
 
@@ -93,116 +92,124 @@
                                                      Kind="Wrench" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold"
-                                       Text="{x:Static props:Strings.SettingsSectionAppSettings}" />
+                                       Text="{DynamicResource SettingsSection_AppSettings}" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="{x:Static props:Strings.SettingsSubHeadAppSettings}" />
+                                       Text="{DynamicResource SettingsSubHead_AppSettings}" />
                         </Grid>
                     </Expander.Header>
-                    <Grid Margin="35,10,0,20">
+                    <Grid Margin="30,10,0,20">
                         <!--#region Row & Column definitions-->
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="38" />
-                            <RowDefinition Height="38" />
-                            <RowDefinition Height="31" />
-                            <RowDefinition Height="31" />
-                            <RowDefinition Height="31" />
-                            <RowDefinition Height="31" />
-                            <RowDefinition Height="31" />
-                            <RowDefinition Height="31" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="45" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <!--#endregion-->
-                        <StackPanel Grid.Row="0" Grid.Column="1"
-                                    Orientation="Horizontal">
-                            <Label Width="150"
+
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <!--#region Row & Column definitions-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="38" />
+                                <RowDefinition Height="38" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <!--#endregion-->
+
+                            <Label Grid.Row="0" Grid.Column="0"
                                    VerticalAlignment="Center"
-                                   Content="{x:Static props:Strings.SettingsPageNumberOfUpdates}" />
-                            <ComboBox Width="165"
+                                   Content="{DynamicResource SettingsItem_NumberOfUpdates}" />
+                            <StackPanel Grid.Row="0" Grid.Column="2"
+                                        Orientation="Horizontal">
+                                <ComboBox Grid.Row="0" Grid.Column="2"
+                                          Width="Auto" MinWidth="200"
+                                          Margin="0,3,0,0" Padding="2,0,0,3"
+                                          HorizontalAlignment="Left"
+                                          ItemsSource="{Binding Source={convert:EnumBindingSource {x:Type models:MaxUpdates}}}"
+                                          SelectedItem="{Binding Setting.MaxUpdates,
+                                                                 Source={StaticResource config}}"
+                                          Style="{StaticResource MaterialDesignComboBox}" />
+                                <TextBlock Margin="15,12,0,0"
+                                           ToolTipService.InitialShowDelay="300"
+                                           ToolTipService.Placement="Top">
+                                    <materialDesign:PackIcon Width="20" Height="20"
+                                                             Kind="InfoOutline" />
+                                    <TextBlock.ToolTip>
+                                        <TextBlock LineHeight="18">
+                                            <Run Text="{DynamicResource SettingsItem_NumberOfUpdatesToolTipLine1}" />
+                                            <LineBreak />
+                                            <Run Text="{DynamicResource SettingsItem_NumberOfUpdatesToolTipLine2}" />
+                                        </TextBlock>
+                                    </TextBlock.ToolTip>
+                                </TextBlock>
+                            </StackPanel>
+
+                            <Label Grid.Row="1" Grid.Column="0"
+                                   VerticalAlignment="Center"
+                                   Content="{DynamicResource SettingsItem_DateFormat}" />
+                            <ComboBox Grid.Row="1" Grid.Column="2"
+                                      Width="Auto" MinWidth="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
-                                      ItemsSource="{Binding Source={StaticResource enumMaxUpdates}}"
-                                      SelectedItem="{Binding Setting.MaxUpdates,
-                                                             Source={StaticResource config}}"
-                                      Style="{StaticResource MaterialDesignComboBox}">
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Converter={StaticResource descConvert}}" />
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                            <TextBlock Margin="15,12,0,0"
-                                       ToolTipService.InitialShowDelay="300"
-                                       ToolTipService.Placement="Top">
-                                <materialDesign:PackIcon Width="20" Height="20"
-                                                         Kind="InfoOutline" />
-                                <TextBlock.ToolTip>
-                                    <TextBlock LineHeight="18">
-                                        <Run Text="This is the maximum number of updates to process before any updates are excluded." />
-                                        <LineBreak />
-                                        <Run Text="Setting this to a lower value may improve performance." />
-                                    </TextBlock>
-                                </TextBlock.ToolTip>
-                            </TextBlock>
-                        </StackPanel>
-                        <StackPanel Grid.Row="1" Grid.Column="1"
-                                    Margin="0,0,0,2"
-                                    Orientation="Horizontal">
-                            <Label Width="130"
-                                   VerticalAlignment="Center"
-                                   Content="Grid Date Format" />
-                            <ComboBox Width="185"
-                                      Margin="0,3,0,0" Padding="2,0,0,3"
-                                      HorizontalAlignment="Left"
+                                      ItemsSource="{Binding Source={convert:EnumBindingSource {x:Type models:DateFormat}}}"
                                       SelectedIndex="{Binding Setting.DateFormat,
                                                               Source={StaticResource config}}"
                                       Style="{StaticResource MaterialDesignComboBox}">
-                                <ComboBox.Items>
-                                    <ComboBoxItem Content="MM/dd/yyyy" />
-                                    <ComboBoxItem Content="yyyy/MM/dd HH:mm" />
-                                    <ComboBoxItem Content="MM/dd/yyyy hh:mm tt" />
-                                    <ComboBoxItem Content="d-MMM-yyyy H:mm" />
-                                    <ComboBoxItem Content="yyyy-MM-dd HH:mm UTC" />
-                                    <ComboBoxItem Content="dd/MM/yyyy" />
-                                    <ComboBoxItem Content="dd/MM/yyyy HH:mm" />
-                                    <ComboBoxItem Content="yyyy/MM/dd" />
-                                    <ComboBoxItem Content="Regional: date only" />
-                                    <ComboBoxItem Content="Regional: date &amp; time" />
-                                </ComboBox.Items>
+
                             </ComboBox>
-                        </StackPanel>
-                        <CheckBox Grid.Row="2" Grid.Column="1"
-                                  Content="Hide Excluded Items"
-                                  IsChecked="{Binding Setting.HideExcluded,
-                                                      Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="3" Grid.Column="1"
-                                  Content="Excluding items parses the KB Number &amp; Result in addition to the update Title"
-                                  IsChecked="{Binding Setting.ExcludeKBandResult,
-                                                      Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="4" Grid.Column="1"
-                                  Content="Show Details Panel"
-                                  IsChecked="{Binding Setting.ShowDetails,
-                                                      Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="5" Grid.Column="1"
-                                  Content="Show updates with current date in bold"
-                                  IsChecked="{Binding Setting.BoldToday,
-                                                      Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="6" Grid.Column="1"
-                                  Content="Select first row on start"
-                                  IsChecked="{Binding Setting.AutoSelectFirstRow,
-                                                      Source={StaticResource config}}" />
-                        <CheckBox Grid.Row="7" Grid.Column="1"
-                                  Content="Include debug level messages in log file"
-                                  IsChecked="{Binding Setting.IncludeDebug,
-                                                      Source={StaticResource config}}" />
+                        </Grid>
+
+                        <!--#region CheckBoxes (bottom)-->
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="31" />
+                                <RowDefinition Height="31" />
+                                <RowDefinition Height="31" />
+                                <RowDefinition Height="31" />
+                                <RowDefinition Height="31" />
+                                <RowDefinition Height="31" />
+                                <RowDefinition Height="31" />
+                                <RowDefinition Height="31" />
+                            </Grid.RowDefinitions>
+                            <CheckBox Grid.Row="0"
+                                      Content="{DynamicResource SettingsItem_HideExcluded}"
+                                      IsChecked="{Binding Setting.HideExcluded,
+                                                          Source={StaticResource config}}" />
+                            <CheckBox Grid.Row="1"
+                                      Content="{DynamicResource SettingsItem_ParseAdditional}"
+                                      IsChecked="{Binding Setting.ExcludeKBandResult,
+                                                          Source={StaticResource config}}" />
+                            <CheckBox Grid.Row="2"
+                                      Content="{DynamicResource SettingsItem_ShowDetails}"
+                                      IsChecked="{Binding Setting.ShowDetails,
+                                                          Source={StaticResource config}}" />
+                            <CheckBox Grid.Row="3"
+                                      Content="{DynamicResource SettingsItem_ShowTodayInBold}"
+                                      IsChecked="{Binding Setting.BoldToday,
+                                                          Source={StaticResource config}}" />
+                            <CheckBox Grid.Row="4"
+                                      Content="{DynamicResource SettingsItem_SelectFirstRow}"
+                                      IsChecked="{Binding Setting.AutoSelectFirstRow,
+                                                          Source={StaticResource config}}" />
+                            <CheckBox Grid.Row="5"
+                                      Content="{DynamicResource SettingsItem_IncludeDebug}"
+                                      IsChecked="{Binding Setting.IncludeDebug,
+                                                          Source={StaticResource config}}" />
                             <CheckBox Grid.Row="6"
                                       Content="{DynamicResource SettingsItem_ShowLogWarnings}"
                                       IsChecked="{Binding Setting.ShowLogWarnings,
                                                           Source={StaticResource config}}" />
                         </Grid>
+                        <!--#endregion-->
+                    </Grid>
+
                 </Expander>
                 <!--#endregion-->
 
@@ -229,113 +236,111 @@
                                                      Margin="0,5,0,0"
                                                      VerticalAlignment="Center"
                                                      Foreground="{DynamicResource PrimaryHueMidBrush}"
-                                                     Kind="Monitor" />
+                                                     Kind="MonitorEdit" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold"
-                                       Text="{x:Static props:Strings.SettingsSectionUISettings}" />
+                                       Text="{DynamicResource SettingsSection_UISettings}" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="{x:Static props:Strings.SettingsSubHeadUISettings}" />
+                                       Text="{DynamicResource SettingsSubHead_UISettings}" />
                         </Grid>
                     </Expander.Header>
 
-                    <Grid Margin="35,10,0,20">
+                    <Grid Margin="30,10,0,20">
                         <!--#region Row & Column definitions-->
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="38" />
-                            <RowDefinition Height="38" />
-                            <RowDefinition Height="38" />
-                            <RowDefinition Height="38" />
-                            <RowDefinition Height="38" />
-                            <RowDefinition Height="31" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="45" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-
                         <!--#endregion-->
-                        <StackPanel Grid.Row="0" Grid.Column="1"
-                                    Orientation="Horizontal">
-                            <Label Width="110"
+
+                        <!--#region ComboBoxes (top)-->
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="38" />
+                                <RowDefinition Height="38" />
+                                <RowDefinition Height="38" />
+                                <RowDefinition Height="38" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" MinWidth="100" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0"
                                    VerticalAlignment="Center"
-                                   Content="Theme" />
-                            <ComboBox x:Name="cbxMode"
-                                      Width="110"
+                                   Content="{DynamicResource SettingsItem_Theme}" />
+                            <ComboBox Grid.Row="0" Grid.Column="2"
+                                      Width="Auto" MinWidth="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
-                                      ItemsSource="{Binding Source={StaticResource enumThemeType}}"
+                                      ItemsSource="{Binding Source={convert:EnumBindingSource {x:Type models:ThemeType}}}"
                                       SelectedItem="{Binding Path=Setting.UITheme,
                                                              Source={StaticResource config}}"
-                                      Style="{StaticResource MaterialDesignComboBox}">
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Converter={StaticResource descConvert}}" />
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                        </StackPanel>
+                                      Style="{StaticResource MaterialDesignComboBox}" />
 
-                        <StackPanel Grid.Row="1" Grid.Column="1"
-                                    HorizontalAlignment="Left"
-                                    Orientation="Horizontal">
-                            <Label Width="110"
+                            <Label Grid.Row="1" Grid.Column="0"
                                    VerticalAlignment="Center"
-                                   Content="UI Size" />
+                                   Content="{DynamicResource SettingsItem_UISize}" />
                             <ComboBox x:Name="cbxSize"
-                                      Width="110"
+                                      Grid.Row="1" Grid.Column="2"
+                                      Width="Auto" MinWidth="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
-                                      ItemsSource="{Binding Source={StaticResource enumUISize}}"
+                                      ItemsSource="{Binding Source={convert:EnumBindingSource {x:Type models:MySize}}}"
                                       SelectedItem="{Binding Setting.UISize,
                                                              Source={StaticResource config}}"
                                       Style="{StaticResource MaterialDesignComboBox}" />
-                        </StackPanel>
 
-                        <StackPanel Grid.Row="2" Grid.Column="1"
-                                    Orientation="Horizontal">
-                            <Label Width="110"
+                            <Label Grid.Row="2" Grid.Column="0"
                                    VerticalAlignment="Center"
-                                   Content="Accent Color" />
+                                   Content="{DynamicResource SettingsItem_AccentColor}" />
                             <ComboBox x:Name="cbxColor"
-                                      Width="110"
+                                      Grid.Row="2" Grid.Column="2"
+                                      Width="Auto" MinWidth="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
-                                      ItemsSource="{Binding Source={StaticResource enumAccentColors}}"
+                                      ItemsSource="{Binding Source={convert:EnumBindingSource {x:Type models:AccentColor}}}"
                                       MaxDropDownHeight="300"
                                       SelectedItem="{Binding Setting.PrimaryColor,
                                                              Source={StaticResource config}}"
-                                      Style="{StaticResource MaterialDesignComboBox}">
-                                <ComboBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Converter={StaticResource descConvert}}" />
-                                    </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
-                        </StackPanel>
+                                      Style="{StaticResource MaterialDesignComboBox}" />
 
-                        <StackPanel Grid.Row="3" Grid.Column="1"
-                                    Orientation="Horizontal">
-                            <Label Width="110"
+                            <Label Grid.Row="3" Grid.Column="0"
                                    VerticalAlignment="Center"
-                                   Content="Row Height" />
-                            <ComboBox Width="110"
+                                   Content="{DynamicResource SettingsItem_RowHeight}" />
+                            <ComboBox Grid.Row="3" Grid.Column="2"
+                                      Width="Auto" MinWidth="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
-                                      ItemsSource="{Binding Source={StaticResource enumRowSpacing}}"
+                                      ItemsSource="{Binding Source={convert:EnumBindingSource {x:Type models:Spacing}}}"
                                       SelectedItem="{Binding Setting.RowSpacing,
                                                              Source={StaticResource config}}"
                                       Style="{StaticResource MaterialDesignComboBox}" />
-                        </StackPanel>
+                        </Grid>
+                        <!--#endregion-->
 
-                        <CheckBox Grid.Row="4" Grid.Column="1"
-                                  Content=" Start with window centered on screen"
-                                  IsChecked="{Binding StartCentered,
-                                                      Source={x:Static config:UserSettings.Setting}}" />
-                        <CheckBox Grid.Row="5" Grid.Column="1"
-                                  Content="Keep Windows Update Viewer on top of other windows"
-                                  IsChecked="{Binding KeepOnTop,
-                                                      Source={x:Static config:UserSettings.Setting}}" />
+                        <!--#region CheckBoxes (bottom)-->
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="38" />
+                                <RowDefinition Height="31" />
+                            </Grid.RowDefinitions>
+                            <CheckBox Grid.Row="0"
+                                      Content="{DynamicResource SettingsItem_StartCentered}"
+                                      IsChecked="{Binding StartCentered,
+                                                          Source={x:Static config:UserSettings.Setting}}" />
+                            <CheckBox Grid.Row="1"
+                                      Content="{DynamicResource SettingsItem_KeepOnTop}"
+                                      IsChecked="{Binding KeepOnTop,
+                                                          Source={x:Static config:UserSettings.Setting}}" />
+                        </Grid>
+                        <!--#endregion-->
                     </Grid>
                 </Expander>
                 <!--#endregion-->
@@ -366,16 +371,16 @@
                                                      Kind="Language" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold">
-                                <Run Text="{x:Static props:Strings.SettingsSectionLanguage}" />
+                                <Run Text="{DynamicResource SettingsSection_Language}" />
 
                             </TextBlock>
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="{x:Static props:Strings.SettingsSubHeadLanguage}" />
+                                       Text="{DynamicResource SettingsSubHead_Language}" />
                         </Grid>
                     </Expander.Header>
 
-                    <Grid Margin="35,10,0,20">
+                    <Grid Margin="30,10,0,20">
                         <Grid.DataContext>
                             <models:UILanguage />
                         </Grid.DataContext>
@@ -391,22 +396,43 @@
                         </Grid.ColumnDefinitions>
                         <!--#endregion-->
 
-                        <CheckBox Grid.Row="0" Grid.Column="1"
-                                  VerticalContentAlignment="Center"
-                                   Content="{x:Static props:Strings.SettingsPageUseOSLanguageCheckBox}"
-                                  IsChecked="{Binding UseOSLanguage,
-                                                      Source={x:Static config:UserSettings.Setting}}" />
-
-                        <StackPanel Grid.Row="1" Grid.Column="1"
+                        <StackPanel Grid.Row="0" Grid.Column="1"
                                     Orientation="Horizontal">
-                            <Label Width="80"
+                            <CheckBox Grid.Row="0" Grid.Column="1"
+                                      VerticalContentAlignment="Center"
+                                      Content="{DynamicResource SettingsItem_UseOSLanguageCheckBox}"
+                                      IsChecked="{Binding UseOSLanguage,
+                                                          Source={x:Static config:UserSettings.Setting}}" />
+                            <TextBlock Margin="15,8,0,0"
+                                       ToolTipService.InitialShowDelay="300"
+                                       ToolTipService.Placement="Top">
+                                <materialDesign:PackIcon Width="20" Height="20"
+                                                         Kind="InfoOutline" />
+                                <TextBlock.ToolTip>
+                                    <TextBlock LineHeight="18">
+                                        <Run Text="{DynamicResource SettingsItem_UseOSLanguageToolTipLine1}" />
+                                        <LineBreak />
+                                        <Run Text="{DynamicResource SettingsItem_UseOSLanguageToolTipLine2}" />
+                                    </TextBlock>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </StackPanel>
+
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" MinWidth="100" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0"
                                    VerticalAlignment="Center"
-                                   Content="{x:Static props:Strings.SettingsPageLanguage}" />
+                                   Content="{DynamicResource SettingsItem_Language}" />
                             <ComboBox x:Name="cbxLanguage"
-                                      Width="200"
+                                      Grid.Row="1" Grid.Column="2"
+                                      Width="Auto" MinWidth="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
-                                      DisplayMemberPath="Language"
+                                      DisplayMemberPath="LanguageNative"
                                       IsEnabled="{Binding Path=Setting.UseOSLanguage,
                                                           Source={StaticResource config},
                                                           Converter={StaticResource boolInverter}}"
@@ -416,11 +442,11 @@
                                                              Source={StaticResource config},
                                                              Converter={StaticResource langConverter}}"
                                       Style="{StaticResource MaterialDesignComboBox}" />
-                        </StackPanel>
+                        </Grid>
 
                         <Label Grid.Row="2" Grid.Column="1"
                                VerticalAlignment="Center"
-                               Content="{x:Static props:Strings.SettingsPageChangingLanguageWarning}"
+                               Content="{DynamicResource SettingsItem_ChangingLanguageWarning}"
                                Foreground="OrangeRed" />
                     </Grid>
                 </Expander>

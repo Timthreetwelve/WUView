@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Helpers;
 
@@ -24,7 +24,7 @@ public static class FileHelpers
         {
             foreach (ExcludedItems item in ExcludedItems.ExcludedStrings)
             {
-                _log.Info($"Excluding updates containing: \"{item.ExcludedString}\"");
+                _log.Info($"{GetStringResource("MsgText_ExcludingContaining")} \"{item.ExcludedString}\"");
             }
         }
     }
@@ -78,7 +78,7 @@ public static class FileHelpers
         string fname = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".csv";
         SaveFileDialog dialog = new()
         {
-            Title = Strings.MenuItemSaveCSV,
+            Title = ResourceHelpers.GetStringResource("MenuItem_SaveCSV"),
             Filter = "CSV File|*.csv",
             InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
             FileName = fname
@@ -103,7 +103,7 @@ public static class FileHelpers
         string fname = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".txt";
         SaveFileDialog dialog = new()
         {
-            Title = Strings.MenuItemSaveTXT,
+            Title = ResourceHelpers.GetStringResource("MenuItem_SaveTXT"),
             Filter = "Text File|*.txt",
             InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
             FileName = fname

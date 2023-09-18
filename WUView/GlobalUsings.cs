@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 global using System;
 global using System.Collections.Generic;
@@ -26,6 +26,7 @@ global using System.Windows.Documents;
 global using System.Windows.Input;
 global using System.Windows.Media;
 global using System.Windows.Navigation;
+global using System.Windows.Markup;
 
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
@@ -43,11 +44,12 @@ global using WUApiLib;
 
 global using WUView.Configuration;
 global using WUView.Constants;
+global using WUView.Converters;
 global using WUView.Dialogs;
 global using WUView.Helpers;
 global using WUView.Models;
-global using WUView.Properties;
 global using WUView.ViewModels;
 global using WUView.Views;
 
 global using static WUView.Helpers.NLogHelpers;
+global using static WUView.Helpers.ResourceHelpers;
