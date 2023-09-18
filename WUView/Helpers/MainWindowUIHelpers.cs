@@ -159,22 +159,6 @@ internal static class MainWindowUIHelpers
     }
     #endregion UI size
 
-    #region Toggle Details pane
-    public static void ToggleDetails(bool show)
-    {
-        if (show)
-        {
-            MainPage.Instance.DetailsRow.Height = new GridLength(UserSettings.Setting.DetailsHeight);
-            MainPage.Instance.DetailsSplitter.Visibility = Visibility.Visible;
-        }
-        else
-        {
-            MainPage.Instance.DetailsRow.Height = new GridLength(1);
-            MainPage.Instance.DetailsSplitter.Visibility = Visibility.Collapsed;
-        }
-    }
-    #endregion Toggle Details pane
-
     #region Apply UI settings
     /// <summary>
     /// Single method called during startup to apply UI settings.

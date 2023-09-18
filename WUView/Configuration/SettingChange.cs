@@ -7,10 +7,6 @@ namespace WUView.Configuration;
 /// </summary>
 public static class SettingChange
 {
-    #region Private fields
-    private static readonly Logger _log = LogManager.GetLogger("logTemp");
-    #endregion Private fields
-
     #region Setting change
     /// <summary>
     /// Handle changes in UserSettings
@@ -36,10 +32,6 @@ public static class SettingChange
 
             case nameof(UserSettings.Setting.UISize):
                 MainWindowUIHelpers.UIScale(UserSettings.Setting.UISize);
-                break;
-
-            case nameof(UserSettings.Setting.ShowDetails):
-                MainWindowUIHelpers.ToggleDetails((bool)newValue);
                 break;
 
             case nameof(UserSettings.Setting.MaxUpdates):
