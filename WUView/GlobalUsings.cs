@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 global using System;
 global using System.Collections.Generic;
@@ -49,3 +49,5 @@ global using WUView.Models;
 global using WUView.Properties;
 global using WUView.ViewModels;
 global using WUView.Views;
+
+global using static WUView.Helpers.NLogHelpers;

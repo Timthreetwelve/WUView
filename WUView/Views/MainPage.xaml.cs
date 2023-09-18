@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Views;
 
@@ -7,9 +7,6 @@ namespace WUView.Views;
 /// </summary>
 public partial class MainPage : UserControl
 {
-    #region NLog Instance
-    private static readonly Logger _log = LogManager.GetLogger("logTemp");
-    #endregion NLog Instance
 
     #region MainPage Instance
     public static MainPage Instance { get; set; }

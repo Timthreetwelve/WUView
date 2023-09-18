@@ -7,6 +7,14 @@ namespace WUView.Helpers;
 /// </summary>
 internal static class NLogHelpers
 {
+    /// <summary>
+    /// Static instance for NLog Logger.
+    /// </summary>
+    /// <remarks>
+    /// Used with a "static using" in GlobalUsings.cs to avoid creating an instance in every class.
+    /// </remarks>
+    internal static readonly Logger _log = LogManager.GetLogger("logTemp");
+
     #region Create the NLog configuration
     /// <summary>
     /// Configure NLog

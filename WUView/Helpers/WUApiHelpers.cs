@@ -4,18 +4,13 @@ namespace WUView.Helpers;
 
 internal static class WUApiHelpers
 {
-    #region NLog Instance
-    private static readonly Logger _log = LogManager.GetLogger("logTemp");
-    #endregion NLog Instance
-
     public static void LogWUAInfo()
     {
         try
         {
-            foreach (KeyValuePair<string, string> item in GetWUAInfo())
-            {
-                _log.Debug($"Windows Update Agent {item.Key}: {item.Value}");
-            }
+            WindowsUpdateAgentInfo updateAgentInfo = new();
+            _log.Debug($"Windows Update Agent product version: {GetWUAInfo("ProductVersionString")}");
+            _log.Debug($"Windows Update Agent major version: {GetWUAInfo("ApiMajorVersion")} minor version: {GetWUAInfo("ApiMinorVersion")}");
         }
         catch (Exception ex)
         {
@@ -23,16 +18,11 @@ internal static class WUApiHelpers
         }
     }
 
-    private static Dictionary<string, string> GetWUAInfo()
+    private static string GetWUAInfo(string wuaObj)
     {
         WindowsUpdateAgentInfo updateAgentInfo = new();
-
-        return new()
-        {
-            ["Product Version"] = updateAgentInfo.GetInfo("ProductVersionString").ToString(),
-            ["Major Version"] = updateAgentInfo.GetInfo("ApiMajorVersion").ToString(),
-            ["Minor Version"] = updateAgentInfo.GetInfo("ApiMinorVersion").ToString()
-        };
+        string value = updateAgentInfo.GetInfo(wuaObj).ToString();
+        return value ?? string.Empty;
     }
 
     // to enable the following, change <EmbedInteropTypes>true</EmbedInteropTypes> to false in .csproj

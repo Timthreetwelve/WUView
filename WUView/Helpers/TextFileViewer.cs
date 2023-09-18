@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 // Comment out the following if MessageBox is not to be used
 #define messagebox
@@ -11,10 +11,6 @@ namespace WUView.Helpers;
 /// </summary>
 public static class TextFileViewer
 {
-    #region NLog
-    private static readonly Logger _log = LogManager.GetCurrentClassLogger();
-    #endregion NLog
-
     #region Text file viewer
     /// <summary>
     /// Opens specified text file

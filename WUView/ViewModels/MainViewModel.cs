@@ -4,9 +4,6 @@ namespace WUView.ViewModels;
 
 internal partial class MainViewModel : ObservableObject
 {
-    #region NLog Instance
-    private static readonly Logger _log = LogManager.GetLogger("logTemp");
-    #endregion NLog Instance
 
     #region Event record and WUpdate Lists
     public static List<EventRecord> EventLogRecords { get; set; } = new();

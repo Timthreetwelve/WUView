@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 using Octokit;
 
@@ -12,10 +12,6 @@ internal static class GitHubHelpers
     #region MainWindow Instance
     private static readonly MainWindow _mainWindow = System.Windows.Application.Current.MainWindow as MainWindow;
     #endregion MainWindow Instance
-
-    #region NLog Instance
-    private static readonly Logger _log = LogManager.GetLogger("logTemp");
-    #endregion NLog Instance
 
     #region Check for newer release
     /// <summary>
