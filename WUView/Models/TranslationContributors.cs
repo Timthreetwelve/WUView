@@ -15,8 +15,8 @@ namespace WUView.Models
 
         public static List<TranslationContributors> Contributors { get; set; } = new()
         {
-            new TranslationContributors {Language = "English (en-US)", Contributor = "Timthreetwelve", Note = "Default" },
-            new TranslationContributors {Language = "English (en-GB)", Contributor = "Timthreetwelve"},
+            new TranslationContributors {Language = "English (en-US)", Contributor = "@Timthreetwelve", Note = "Default" },
+            new TranslationContributors {Language = "English (en-GB)", Contributor = "@Timthreetwelve"},
             new TranslationContributors {Language = "Español (es-ES)", Contributor = "My AWESOME brother Steve"}
         };
     }
