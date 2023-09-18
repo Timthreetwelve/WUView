@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Configuration;
 
@@ -53,6 +53,9 @@ public partial class UserSettings : ConfigManager<UserSettings>
 
     [ObservableProperty]
     private bool _showDetails = true;
+
+    [ObservableProperty]
+    private bool _showLogWarnings = true;
 
     [ObservableProperty]
     private bool _startCentered = true;

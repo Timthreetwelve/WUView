@@ -1,4 +1,4 @@
-﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.SettingsPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -198,7 +198,11 @@
                                   Content="Include debug level messages in log file"
                                   IsChecked="{Binding Setting.IncludeDebug,
                                                       Source={StaticResource config}}" />
-                    </Grid>
+                            <CheckBox Grid.Row="6"
+                                      Content="{DynamicResource SettingsItem_ShowLogWarnings}"
+                                      IsChecked="{Binding Setting.ShowLogWarnings,
+                                                          Source={StaticResource config}}" />
+                        </Grid>
                 </Expander>
                 <!--#endregion-->
 

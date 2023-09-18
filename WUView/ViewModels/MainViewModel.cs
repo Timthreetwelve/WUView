@@ -92,7 +92,7 @@ internal partial class MainViewModel : ObservableObject
                     };
                     UpdatesFullList.Add(update);
                     updStopwatch.Stop();
-                    if (hist.HResult != 0)
+                    if (hist.HResult != 0 && UserSettings.Setting.ShowLogWarnings)
                     {
                         string operation = update.Operation.Replace("uo", "");
                         string HResultHex = string.Format($"0x{int.Parse(update.HResult):X8}");
