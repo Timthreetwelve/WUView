@@ -5,7 +5,7 @@ Introduction
 ============
 Windows Update Viewer is an application that consolidates information about Windows Updates.
 Windows Update Viewer uses the Windows Update API and event logs to display details of installed
-updated. Event log entries are associated with individual updates by using the "KB" number. If an
+updates. Event log entries are associated with individual updates by using the "KB" number. If an
 update does not use a KB number, or it isn't presented in a recognized format, no event log entries
 will be displayed.
 
@@ -35,7 +35,7 @@ The filter will be reset each time Windows Update Viewer is started.
 As of version 0.5.10, starting the filter text with a "!" (exclamation mark or bang) will invert the
 filter. The filter will then act as an exclusionary filter. The bang itself along with any spaces
 between the bang and the first non-space character are discarded. If you wanted to quickly filter
-for updates that didn't have "succeeded" as the result, you could enter "!succeeded" in the filter
+for updates that didn't have "succeeded" as a result, you could enter "!succeeded" in the filter
 box. The Escape key will clear any text from the filter box.
 
 
@@ -44,9 +44,9 @@ The Exclude List
 To exclude updates without the need to type a filter every time, there is an exclude list. To access
 it select Edit Exclude List from the Settings page or by pressing Ctrl + L. A small dialog will open.
 This window is where you can specify strings to be excluded. When you first open this window you will
-see that "Defender" has already been added. Consequently any update that has the word "Defender" in
+see that "Defender" has already been added. Consequently, any update that has the word "Defender" in
 the update title will be excluded. Feel free to add any other strings to this list. For example, if
-you don't want to see the malicious software remover tool you cold add "malicious" to the list. The
+you don't want to see the malicious software remover tool you could add "malicious" to the list. The
 words on this list are not case sensitive. Click OK to save any changes to the exclude list. The
 exclude list will be saved and reapplied the next time Windows Update Viewer is started.
 
