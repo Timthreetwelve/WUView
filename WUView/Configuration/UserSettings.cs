@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Configuration;
 
@@ -25,7 +25,7 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private int _columnTitle = 2;
 
     [ObservableProperty]
-    private int _dateFormat;
+    private int _dateFormat = 9;
 
     [ObservableProperty]
     private double _detailsHeight = 300;
@@ -61,7 +61,7 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private bool _startCentered = true;
 
     [ObservableProperty]
-    private string _uILanguage;
+    private string _uILanguage = "en-US";
 
     [ObservableProperty]
     private MySize _uISize = MySize.Default;
