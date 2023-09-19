@@ -16,7 +16,7 @@ body:
     id: problem
     attributes:
       label: Report a problem with a translation 
-      description: Tell me what is wrong or suggest a better translation
+      description: Tell me what is wrong, alert me to a missing translation or suggest a better translation
     validations:
       required: false
   - type: textarea
@@ -32,7 +32,7 @@ body:
     id: language
     attributes:
       label: If this is a contribution, enter the language name and code
-      description: For example, English (en-US)
+      description: For example, English (en-US). The code is important.
       placeholder: English (en-US)
     validations:
       required: false
