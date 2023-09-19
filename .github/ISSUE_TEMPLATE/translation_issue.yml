@@ -8,7 +8,7 @@ body:
       value: "*Please add the language name to the subject line above*"
   - type: markdown
     attributes:
-      value: "###Please refer to the Contribute a Translation page in the Wiki before contributing###"
+      value: "### Please refer to the Contribute a Translation page in the Wiki before contributing ###"
   - type: markdown
     attributes:
       value: "### Contribute a translation or report a problem ###"
