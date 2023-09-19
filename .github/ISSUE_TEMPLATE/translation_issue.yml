@@ -25,6 +25,7 @@ body:
       label: Contribute a translation
       description: Describe the translation and attach the file here
       placeholder: This is my translation of ...
+      render: shell
     validations:
       required: false
   - type: input
