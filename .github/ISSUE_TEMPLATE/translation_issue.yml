@@ -6,6 +6,9 @@ body:
   - type: markdown
     attributes:
       value: "*Please add the language name to the subject line above*"
+ - type: markdown
+    attributes:
+      value: "###Please refer to the Contribute a Translation page in the Wiki before contributing###"
   - type: markdown
     attributes:
       value: "### Contribute a translation or report a problem ###"
@@ -21,6 +24,7 @@ body:
     attributes:
       label: Contribute a translation
       description: Describe the translation and attach the file here
+      placeholder: This is my translation of ...
     validations:
       required: false
   - type: input
@@ -28,6 +32,7 @@ body:
     attributes:
       label: If this is a contribution, enter the language name and code
       description: For example, English (en-US)
+      placeholder: English (en-US)
     validations:
       required: false
   - type: input
