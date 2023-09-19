@@ -3,30 +3,14 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <!--
-    Notes to translators:
-    ===============================================================================================================================
+        Refer to the "Contribute a Translation" topic in the Wiki: https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
+        =================================================================================================================================
 
-        Do this
-        Then That
-         Something about {0} being replaced
-    ===============================================================================================================================
+        Language name here: Español (es-ES)
 
-        Specify the name of the language as it should appear in the language drop down on the settings page.
-        The language code should appear after the language name. For exanple: English (en-US)
+        Translation contributed by: My AWESOME brother Steve
 
-        Language name here:
-
-    ===============================================================================================================================
-
-        When translation is complete, save the file as 'Strings.xx-XX.xaml' where xx-XX is the language code.
-
-    ===============================================================================================================================
-
-        If you wish to be acknowleged, specify your GitHub user ID, or another way you wish to be identfied.
-
-        GitHub user or name:
-
-    ===============================================================================================================================
+        ==================================================================================================================================
     -->
 
     <!--  About Page  -->

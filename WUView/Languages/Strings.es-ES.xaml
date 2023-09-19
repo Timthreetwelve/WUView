@@ -3,30 +3,14 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <!--
-    Notes to translators:
-    ===============================================================================================================================
+        Refer to the "Contribute a Translation" topic in the Wiki: https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
+        =================================================================================================================================
 
-        Do this
-        Then That
-        Something about {0} being replaced
-    ===============================================================================================================================
+        Language name here: Español (es-ES)
 
-        Specify the name of the language as it should appear in the language drop down on the settings page.
-        The language code should appear after the language name. For exanple: English (en-US)
+        Translation contributed by: My AWESOME brother Steve
 
-        Language name here:
-
-    ===============================================================================================================================
-
-        When translation is complete, save the file as 'Strings.xx-XX.xaml' where xx-XX is the language code.
-
-    ===============================================================================================================================
-
-        If you wish to be acknowleged, specify your GitHub user ID, or another way you wish to be identfied.
-
-        GitHub user or name:
-
-    ===============================================================================================================================
+        ==================================================================================================================================
     -->
 
     <!--  About Page  -->
@@ -93,7 +77,7 @@
     <sys:String x:Key="MenuItem_Smaller">Ver más pequeño</sys:String>
     <sys:String x:Key="MenuItem_ToggleDetails">Alternar panel de detalles</sys:String>
     <sys:String x:Key="MenuItem_ToggleExcluded">Alternar elementos excluidos</sys:String>
-    <!-- Text found in messages (log, message box, status bar, etc.) -->
+    <!--  Text found in messages (log, message box, status bar, etc.)  -->
     <sys:String x:Key="MsgText_AllUpdatesExcluded">Se han excluido todas las actualizaciones visualizables.</sys:String>
     <sys:String x:Key="MsgText_ApplicationShutdown">apagando</sys:String>
     <sys:String x:Key="MsgText_ApplicationStarting">iniciando</sys:String>
@@ -132,14 +116,14 @@
     <sys:String x:Key="NavTitle_About">Información</sys:String>
     <sys:String x:Key="NavTitle_Settings">Configuración</sys:String>
     <sys:String x:Key="NavTitle_Updates">Visor de Windows Update</sys:String>
-    <!--  Settings Page Expander Headings -->
+    <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Configuración de la aplicación</sys:String>
     <sys:String x:Key="SettingsSection_Language">Idioma</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Configuración de la interfaz de usuario</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Número de actualizaciones, formato de fecha, elementos excluidos, detalles</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Ajustes de idioma (trabajo en curso)</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Tema, color acentuado, tamaño de la interfaz, altura de la fila, posición inicial</sys:String>
-    <!--  Settings Page Items -->
+    <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Color de acento</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">El cambio de idioma hará que la aplicación se reinicie</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formato de fecha de cuadrícula</sys:String>

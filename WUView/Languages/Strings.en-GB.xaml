@@ -3,13 +3,14 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <!--
-    ===============================================================================================================================
+        Refer to the "Contribute a Translation" topic in the Wiki: https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
+        =================================================================================================================================
 
         Language name here: English (en-GB)
 
         Translation contributed by: Timthreetwelve
 
-    ===============================================================================================================================
+        ==================================================================================================================================
     -->
 
     <!--  Text found in messages (log, message box, status bar, details area, etc.)  -->
