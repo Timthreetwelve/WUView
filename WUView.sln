@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.github\ISSUE_TEMPLATE\config.yml = .github\ISSUE_TEMPLATE\config.yml
 		.github\ISSUE_TEMPLATE\enhancement.yml = .github\ISSUE_TEMPLATE\enhancement.yml
 		README.md = README.md
+		.github\ISSUE_TEMPLATE\translation_issue.yml = .github\ISSUE_TEMPLATE\translation_issue.yml
 		..\..\..\..\InnoSetup\WUView.iss = ..\..\..\..\InnoSetup\WUView.iss
 	EndProjectSection
 EndProject
@@ -29,9 +30,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_ConfirmAddLanguageFile = True
-		RESX_AutoCreateNewLanguageFiles = True
-		RESX_RemoveEmptyEntries = False
 		SolutionGuid = {79767ED0-375D-4153-9F6A-DAE1A0B29ACF}
+		RESX_RemoveEmptyEntries = False
+		RESX_AutoCreateNewLanguageFiles = True
+		RESX_ConfirmAddLanguageFile = True
 	EndGlobalSection
 EndGlobal
