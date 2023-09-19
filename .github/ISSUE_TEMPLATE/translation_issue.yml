@@ -1,0 +1,39 @@
+name: Translation Issues
+description: Contribute a translation or report a problem
+title: "Translation: "
+assignees: Timthreetwelve
+body:
+  - type: markdown
+    attributes:
+      value: "*Please add the language name to the subject line above*"
+  - type: markdown
+    attributes:
+      value: "### Contribute a translation or report a problem ###"
+  - type: textarea
+    id: problem
+    attributes:
+      label: Report a problem with a translation 
+      description: Tell me what is wrong
+    validations:
+      required: false
+  - type: textarea
+    id: contribution
+    attributes:
+      label: Contribute a translation
+      description: Describe the translation and attach the file here
+    validations:
+      required: false
+  - type: input
+    id: language
+    attributes:
+      label: If this is a contribution, enter the language name and code
+      description: For example, English (en-US)
+    validations:
+      required: false
+  - type: input
+    id: acknowledge
+    attributes:
+      label: If you wish to have your contribution acknowledged
+      description: Enter your GitHub ID, a name or a short phrase that will appear on the About page
+    validations:
+      required: false
