@@ -5,7 +5,7 @@ assignees: Timthreetwelve
 body:
   - type: markdown
     attributes:
-      value: "#### Contribute a translation or report a problem ####"
+      value: "## Contribute a translation or report a problem ##"
   - type: markdown
     attributes:
       value: "*Please add the language name to the subject line above*"
