@@ -16,7 +16,7 @@ body:
     id: problem
     attributes:
       label: Report a problem with a translation 
-      description: Tell me what is wrong
+      description: Tell me what is wrong or suggest a better translation
     validations:
       required: false
   - type: textarea
