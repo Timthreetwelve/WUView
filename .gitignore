@@ -340,3 +340,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# BuildInfo
+WUView/BuildInfo.cs
