@@ -1,6 +1,7 @@
 name: Translation Issues ✏️
 description: Contribute a translation or report a problem
 title: "Translation: "
+labels: ["Translation"]
 assignees: Timthreetwelve
 body:
   - type: markdown
