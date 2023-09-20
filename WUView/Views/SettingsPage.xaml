@@ -176,7 +176,7 @@
                                 <RowDefinition Height="31" />
                                 <RowDefinition Height="31" />
                                 <RowDefinition Height="31" />
-                                <RowDefinition Height="31" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <CheckBox Grid.Row="0"
                                       Content="{DynamicResource SettingsItem_HideExcluded}"
@@ -420,7 +420,7 @@
 
                         <Grid Grid.Row="1" Grid.Column="1">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" MinWidth="100" />
+                                <ColumnDefinition Width="Auto"  />
                                 <ColumnDefinition Width="10" />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
