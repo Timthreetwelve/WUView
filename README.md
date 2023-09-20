@@ -7,6 +7,7 @@
 [![GitHub all releases](https://img.shields.io/github/downloads/Timthreetwelve/WUView/total?style=plastic&label=total%20downloads&color=teal)](https://github.com/Timthreetwelve/WUView/releases) 
 [![GitHub release (by tag)](https://img.shields.io/github/downloads/timthreetwelve/wuview/latest/total?style=plastic&color=2196F3)](https://github.com/Timthreetwelve/WUView/releases/latest) 
 
+#### WUView requires .Net 6.0
 
 Windows Update Viewer (WUView) is an application that displays Windows Update history. It is meant to be a lightweight application that is easy to use. There aren't any confusing categories; every update is listed in one place. Updates that you don't want to see can be permanently excluded or temporarily filtered.
 
@@ -18,8 +19,11 @@ If you are using Windows 10 please see [Known Issues](https://github.com/Timthre
 
 See the [Wiki](https://github.com/Timthreetwelve/WUView/wiki) for additional information.
 
+### Windows Update Viewer is multilingual! 🆕
+Languages are being added as of version 0.5.21. Please see [Contribute a Translation](https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation) topic in the Wiki if you would like to contribute a translation. 
+
 ### Get Windows Update Viewer via winget   [![Publish to WinGet](https://github.com/Timthreetwelve/WUView/actions/workflows/publish-to-winget.yml/badge.svg)](https://github.com/Timthreetwelve/WUView/actions/workflows/publish-to-winget.yml)
-Windows update viewer is now available through Windows Package Manager (a.k.a. winget)! Many thanks to [@ottnorml](https://github.com/ottnorml) for making this happen!👏 Using winget, the name is `"Windows Update Viewer"` (use double quotes since the name has spaces). The ID is `Timthreetwelve.WUView`.
+Windows update viewer is now available through Windows Package Manager (a.k.a. winget)! Many thanks to [@ottnorml](https://github.com/ottnorml) for making this happen!👏 Using winget, the name is `"Windows Update Viewer"` (use double quotes since the name has spaces). The ID is `Timthreetwelve.WUView`. Note that the winget version is typically available 12-36 hours after a release is published here.
 
 ### Download Windows Update Viewer
 You can always download the latest release from the [releases page](https://github.com/Timthreetwelve/WUView/releases). Note that a "portable" release (the one with "NonInstall.zip" in the file name) is provided as well as the traditional installer.
@@ -29,13 +33,12 @@ You can always download the latest release from the [releases page](https://gith
 * Easily exclude entries, such as Defender.
 * Link to the Support URL.
 * Link to HResult explanation (the HResult is placed in the clipboard).
-* Toggle the details pane.
+* Toggle the visibility of the details pane.
 * Save to a text or CSV file.
 * Open Windows Update from the app.
 * Choose accent color and one of three themes.
 * Adjust app size and row spacing. (Helpful for us users that don't see as well as we used to.)
-
-#### WUView requires up-to-date .Net 6.0
+* Select the interface language.
 
 ### The Main Window
 ![WUView screenshot](https://github.com/Timthreetwelve/WUView/blob/main/Images/WUView550.png)
