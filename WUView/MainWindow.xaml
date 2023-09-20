@@ -12,8 +12,8 @@
         xmlns:viewmodels="clr-namespace:WUView.ViewModels"
         mc:Ignorable="d"
         d:DesignHeight="350" d:DesignWidth="800"
-        MinWidth="200" MinHeight="250"
         Title="{x:Static helpers:AppInfo.AppName}"
+        MinWidth="200" MinHeight="250"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="Segoe UI" FontSize="12"
         Style="{StaticResource MaterialDesignWindow}"
@@ -66,7 +66,7 @@
             <Grid Grid.Column="1" Grid.ColumnSpan="2">
                 <!--#region Column definitions for the title row-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="60" />
@@ -84,7 +84,8 @@
 
                 <!--#region SnackBar-->
                 <materialDesign:Snackbar x:Name="SnackBar1"
-                                         Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                                         Grid.Row="0" Grid.Column="1"
+                                         Grid.ColumnSpan="2"
                                          HorizontalAlignment="Right"
                                          VerticalAlignment="Top"
                                          Background="{DynamicResource MaterialDesignPaper}"
@@ -105,7 +106,7 @@
                                              Focusable="False"
                                              PlacementMode="LeftAndAlignTopEdges"
                                              Style="{DynamicResource MaterialDesignPopupBox}"
-                                             ToolTip="Additional Actions">
+                                             ToolTip="{DynamicResource Button_ThreeDotToolTip}">
                         <materialDesign:PopupBox.ToggleContent>
                             <materialDesign:PackIcon Width="45" Height="28"
                                                      Foreground="{Binding ElementName=PageTitle,
@@ -132,7 +133,7 @@
                                                Background="{DynamicResource MaterialDesignDivider}" />
                                     <Button Height="35"
                                             Padding="15,1,0,22"
-                                            Content="{DynamicResource Button_Cancel}"/>
+                                            Content="{DynamicResource Button_Cancel}" />
                                 </StackPanel>
                             </Grid>
                         </Border>
