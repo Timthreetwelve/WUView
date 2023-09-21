@@ -6,10 +6,11 @@
         Refer to the "Contribute a Translation" topic in the Wiki: https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
         =================================================================================================================================
 
-        Language name here: 
+        Language name here:
 
-        Translation contributed by: 
+        Translation contributed by:
 
+        Date:
         ==================================================================================================================================
     -->
 
@@ -38,6 +39,7 @@
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenLogFile">View Log File</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Open the log file in the default application.</sys:String>
+    <sys:String x:Key="Button_ThreeDotToolTip">Additional Actions</sys:String>
     <!--  Details Pane  -->
     <sys:String x:Key="Details_Date">Date:</sys:String>
     <sys:String x:Key="Details_Description">Description:</sys:String>

@@ -10,6 +10,7 @@
 
         Translation contributed by: My AWESOME brother Steve
 
+        Date: 2023/9/15
         ==================================================================================================================================
     -->
 
@@ -38,6 +39,7 @@
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Ver archivo de registro</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Abrir el archivo de registro en la aplicación por defecto</sys:String>
+    <sys:String x:Key="Button_ThreeDotToolTip">Acciones adicionales</sys:String>
     <!--  Details Pane  -->
     <sys:String x:Key="Details_Date">Fecha:</sys:String>
     <sys:String x:Key="Details_Description">Descripción:</sys:String>
