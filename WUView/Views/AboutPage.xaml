@@ -179,13 +179,13 @@
 
                 <Border Grid.Row="11" Grid.Column="1"
                         Margin="0,0,20,0"
-                        BorderBrush="{DynamicResource MaterialDesignDivider}"
-                        BorderThickness="1,0,1,0">
-                    <ListView Grid.Row="11" Grid.Column="1"
-                              PreviewMouseDown="ListView_PreviewMouseDown"
-                              MaxHeight="200"
-                              materialDesign:ListViewAssist.ListViewItemPadding="0,5"
+                        BorderBrush="{DynamicResource MaterialDesignTextBoxBorder}"
+                        BorderThickness="1">
+                    <ListView MaxHeight="200"
+                              Margin="0,-1"
+                              materialDesign:ListViewAssist.ListViewItemPadding="10,5"
                               ItemsSource="{x:Static models:TranslationContributors.Contributors}"
+                              PreviewMouseDown="ListView_PreviewMouseDown"
                               ScrollViewer.HorizontalScrollBarVisibility="auto"
                               ScrollViewer.VerticalScrollBarVisibility="auto">
                         <ListView.Resources>
@@ -195,10 +195,19 @@
                         </ListView.Resources>
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn >
+                                <GridViewColumn>
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{Binding Language}" MinWidth="150" />
+                                            <TextBlock MinWidth="80"
+                                                       Text="{Binding Language}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn>
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock MinWidth="70"
+                                                       Text="{Binding LanguageCode}" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
