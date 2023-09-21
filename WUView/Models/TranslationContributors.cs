@@ -11,13 +11,20 @@ namespace WUView.Models
 
         public string Language { get; set; }
 
+        public string LanguageCode { get; set; }
+
         public string Note { get; set; } = string.Empty;
 
+        /// <summary>
+        /// Add language contributions to the bottom. List should appear in the order that they were added.
+        /// Note property is not currently being used but could be used for percent complete, etc.
+        /// </summary>
         public static List<TranslationContributors> Contributors { get; set; } = new()
         {
-            new TranslationContributors {Language = "English (en-US)", Contributor = "@Timthreetwelve", Note = "Default" },
-            new TranslationContributors {Language = "English (en-GB)", Contributor = "@Timthreetwelve"},
-            new TranslationContributors {Language = "Español (es-ES)", Contributor = "My AWESOME brother Steve"}
+            new TranslationContributors {Language = "English", LanguageCode = "en-US", Contributor = "@Timthreetwelve", Note = "Default" },
+            new TranslationContributors {Language = "English", LanguageCode = "en-GB", Contributor = "@Timthreetwelve"},
+            new TranslationContributors {Language = "Español", LanguageCode = "es-ES", Contributor = "My AWESOME brother Steve"},
+            new TranslationContributors {Language = "Dutch",  LanguageCode = "nl-NL", Contributor = "Tim" },
         };
     }
 }

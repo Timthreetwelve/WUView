@@ -1,0 +1,196 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--
+        Refer to the "Contribute a Translation" topic in the Wiki: https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
+        =================================================================================================================================
+
+        Language name here: Dutch (nl-NL)
+
+        Translation contributed by: Tim
+
+        Date: 20 september 2023
+	   ==================================================================================================================================
+    -->
+
+    <!--  About Page  -->
+    <sys:String x:Key="About_BuildDate">Build Datum</sys:String>
+    <sys:String x:Key="About_CommitID">Project ID</sys:String>
+    <sys:String x:Key="About_CommitIDToolTip">Volledig project ID:</sys:String>
+    <sys:String x:Key="About_Copyright">Copyright</sys:String>
+    <sys:String x:Key="About_CreatedBy">Ontwikkeld door</sys:String>
+    <sys:String x:Key="About_CreatedByToolTip">Bekijk Tim zijn projecten op https://github.com/Timthreetwelve</sys:String>
+    <sys:String x:Key="About_Description">A list of Windows Updates on this device</sys:String>
+    <sys:String x:Key="About_Documentation">Documentatie</sys:String>
+    <sys:String x:Key="About_DocumentationText">Open de ReadMe file</sys:String>
+    <sys:String x:Key="About_DocumentationToolTip">Bekijk de ReadMe file</sys:String>
+    <sys:String x:Key="About_GitHubToolTip">Bezoek de WUView pagina op GitHub</sys:String>
+    <sys:String x:Key="About_License">Licentie</sys:String>
+    <sys:String x:Key="About_LicenseText">Dit project is gelicensieerd onder de voorwaarden van MIT.</sys:String>
+    <sys:String x:Key="About_LicenseToolTip">Bekijk de licentie voorwaarden.</sys:String>
+    <sys:String x:Key="About_Translations">Vertalingen</sys:String>
+    <sys:String x:Key="About_UpdateWU">Update WUView</sys:String>
+    <sys:String x:Key="About_UpdateWUText">Controleren op updates</sys:String>
+    <sys:String x:Key="About_UpdateWUToolTip">Controleer GitHub op een nieuwe versie</sys:String>
+    <sys:String x:Key="About_Version">Versie</sys:String>
+    <!--  Button Text  -->
+    <sys:String x:Key="Button_Cancel">Annuleren</sys:String>
+    <sys:String x:Key="Button_OK">OK</sys:String>
+    <sys:String x:Key="Button_OpenLogFile">Bekijk Log File</sys:String>
+    <sys:String x:Key="Button_OpenLogFileToolTip">Open log file in standaard applicatie</sys:String>
+    <sys:String x:Key="Button_ThreeDotToolTip">Aanvullende acties</sys:String>
+    <!--  Details Pane  -->
+    <sys:String x:Key="Details_Date">Datum:</sys:String>
+    <sys:String x:Key="Details_Description">Omschrijving:</sys:String>
+    <sys:String x:Key="Details_HeadingEventLog">Windows Event Log details:</sys:String>
+    <sys:String x:Key="Details_HeadingUpdate">Windows Update details:</sys:String>
+    <sys:String x:Key="Details_HResult">HResult:</sys:String>
+    <sys:String x:Key="Details_KBNum">KB Nummer:</sys:String>
+    <sys:String x:Key="Details_Operation">Operation:</sys:String>
+    <sys:String x:Key="Details_ResultCode">Result Code:</sys:String>
+    <sys:String x:Key="Details_SupportURL">Support URL:</sys:String>
+    <sys:String x:Key="Details_Title">Titel:</sys:String>
+    <sys:String x:Key="Details_TitleFallback">Selecteer een update van hierboven en de details verschijnen hier.</sys:String>
+    <sys:String x:Key="Details_UpdateID">Update ID:</sys:String>
+    <!--  DataGrid Column Headers  -->
+    <sys:String x:Key="GridColumn_Date">Datum</sys:String>
+    <sys:String x:Key="GridColumn_KBNum">KB Number</sys:String>
+    <sys:String x:Key="GridColumn_Result">Resultaat</sys:String>
+    <sys:String x:Key="GridColumn_Title">Titel</sys:String>
+    <!--  Exclude List Editor  -->
+    <sys:String x:Key="ExcludesEditor_TextLine1">Uitsluitingen (maximaal 1 per regel)</sys:String>
+    <sys:String x:Key="ExcludesEditor_TextLine2">Vergelijkingen zijn niet hoofdletter gevoelig</sys:String>
+    <!--  Filter Box Hint Text  -->
+    <sys:String x:Key="FilterHint">Filter</sys:String>
+    <!--  Menu Items  -->
+    <sys:String x:Key="Menu_Copy">_Copy</sys:String>
+    <sys:String x:Key="Menu_File">_Bestand</sys:String>
+    <sys:String x:Key="Menu_View">_Bekijken</sys:String>
+    <sys:String x:Key="MenuItem_CopyToClipboard">Kopieer tabel naar klembordd</sys:String>
+    <sys:String x:Key="MenuItem_EditExclude">Bewerk uitzonderingen</sys:String>
+    <sys:String x:Key="MenuItem_Exit">Exit</sys:String>
+    <sys:String x:Key="MenuItem_Larger">Grotere weergave</sys:String>
+    <sys:String x:Key="MenuItem_OpenWindowsUpdate">Open Windows Update</sys:String>
+    <sys:String x:Key="MenuItem_Refresh">Ververs updates</sys:String>
+    <sys:String x:Key="MenuItem_RemoveSort">Verwijder kolom sortering</sys:String>
+    <sys:String x:Key="MenuItem_SaveCSV">Exporteer tabel als CSV bestand</sys:String>
+    <sys:String x:Key="MenuItem_SaveTXT">Bewaar details als txt bestand</sys:String>
+    <sys:String x:Key="MenuItem_Smaller">Kleinere weergave</sys:String>
+    <sys:String x:Key="MenuItem_ToggleDetails">Switch details venster</sys:String>
+    <sys:String x:Key="MenuItem_ToggleExcluded">Switch uitzonderingen venster</sys:String>
+    <!--  Text found in messages (log, message box, status bar, details area, etc.)  -->
+    <sys:String x:Key="MsgText_AllUpdatesExcluded">Alle toonbare updates zijn uitgezonderd</sys:String>
+    <sys:String x:Key="MsgText_ApplicationShutdown">is aan het afsluiten</sys:String>
+    <sys:String x:Key="MsgText_ApplicationStarting">is aan het opstarten</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCheckFailed">Fout bij controleren van updates. Raadpleeg het log bestand voor meer informatie.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateChecking">Controleren op updates.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateGoToRelease">Wil je naar de nieuwe release pagina?</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateNewerFound">Er is een nieuwe update: ({0}).</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateNoneFound">Er zijn geen nieuwe updates.</sys:String>
+    <sys:String x:Key="MsgText_ColumnSortCleared">Kolomsortering verwijderd</sys:String>
+    <sys:String x:Key="MsgText_CopiedToClipboard">Kopieren naar klembord</sys:String>
+    <sys:String x:Key="MsgText_DateFormatChange">Datum notering aangepast</sys:String>
+    <sys:String x:Key="MsgText_DisplayedAllUpdates">Alle updates {0} weergeven</sys:String>
+    <sys:String x:Key="MsgText_DisplayedUpdates">Weergeven {0} van {1} updates</sys:String>
+    <sys:String x:Key="MsgText_ElapsedTime">Verstreken tijd</sys:String>
+    <sys:String x:Key="MsgText_EventLogNA">Er zijn geen logboek vermeldingen voor deze update.</sys:String>
+    <sys:String x:Key="MsgText_EventLogNoRecords">Geen resultaten gevonden voor "{0}".</sys:String>
+    <sys:String x:Key="MsgText_ExcludingContaining">Uitgesloten updates:</sys:String>
+    <sys:String x:Key="MsgText_FilterOneRowShown">1 rij weergeven</sys:String>
+    <sys:String x:Key="MsgText_FilterRowsShown">{0} rijen weergeven</sys:String>
+    <sys:String x:Key="MsgText_HResultCopiedToClipboard">HResult {0} copied to clipboard</sys:String>
+    <sys:String x:Key="MsgText_ListRefreshed">List Refreshed</sys:String>
+    <sys:String x:Key="MsgText_NoUpdatesFound">No updates were found!</sys:String>
+    <sys:String x:Key="MsgText_Opening">Opening</sys:String>
+    <sys:String x:Key="MsgText_OpeningLogFile">Opening the log file</sys:String>
+    <sys:String x:Key="MsgText_OpeningReadMeFile">Opening the ReadMe file</sys:String>
+    <sys:String x:Key="MsgText_OpeningWindowsUpdate">Opening Windows Update</sys:String>
+    <sys:String x:Key="MsgText_UIColorSet">Accent kleur{0}</sys:String>
+    <sys:String x:Key="MsgText_UISizeSet">Formmaat {0}</sys:String>
+    <sys:String x:Key="MsgText_UIThemeSet">Theme {0}</sys:String>
+    <sys:String x:Key="MsgText_WindowTitleAdministrator">Administrator</sys:String>
+    <!--  Navigation Items  -->
+    <sys:String x:Key="NavItem_About">Over</sys:String>
+    <sys:String x:Key="NavItem_Exit">Afsluiten</sys:String>
+    <sys:String x:Key="NavItem_Settings">Instellingen</sys:String>
+    <sys:String x:Key="NavItem_Updates">Updates</sys:String>
+    <sys:String x:Key="NavTitle_About">Over Windows Update Viewer</sys:String>
+    <sys:String x:Key="NavTitle_Settings">Instellingen</sys:String>
+    <sys:String x:Key="NavTitle_Updates">Windows Update Viewer</sys:String>
+    <!--  Settings Page Expander Headings  -->
+    <sys:String x:Key="SettingsSection_AppSettings">Instellingen</sys:String>
+    <sys:String x:Key="SettingsSection_Language">Taal</sys:String>
+    <sys:String x:Key="SettingsSection_UISettings">UI instellingen</sys:String>
+    <sys:String x:Key="SettingsSubHead_AppSettings">Aantal updates, datum weergave, uitgezonderde items, details, overige</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Taal instellingen (onder constructie)</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">Thema, Accent kleur, venstergrootte, Regelhoogte, begin positie en overige</sys:String>
+    <!--  Settings Page Items  -->
+    <sys:String x:Key="SettingsItem_AccentColor">Accent kleur</sys:String>
+    <sys:String x:Key="SettingsItem_ChangingLanguageWarning">De applicatie dient opnieuw te worden gestart na wijzigingen.</sys:String>
+    <sys:String x:Key="SettingsItem_DateFormat">Tabel datum weergave</sys:String>
+    <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-klik om bestand te openen met standaard programman</sys:String>
+    <sys:String x:Key="SettingsItem_HideExcluded">Uitgesloten items verbergen</sys:String>
+    <sys:String x:Key="SettingsItem_IncludeDebug">Geef debug meldingen in logfile weer</sys:String>
+    <sys:String x:Key="SettingsItem_KeepOnTop">Venster altijd boven</sys:String>
+    <sys:String x:Key="SettingsItem_Language">Taal</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdates">Aantal updates</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">Dit is het maximale aantal updates voordat updates worden uitegsloten.</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">Een lagere waarde kan de snelheid verbeteren.</sys:String>
+    <sys:String x:Key="SettingsItem_ParseAdditional">Excluding items parses the KB Number, Result and Update ID in addition to the update Title</sys:String>
+    <sys:String x:Key="SettingsItem_RowHeight">Rij hoogte</sys:String>
+    <sys:String x:Key="SettingsItem_SelectFirstRow">Selecteer de eerste rij</sys:String>
+    <sys:String x:Key="SettingsItem_ShowDetails">Details weergeven</sys:String>
+    <sys:String x:Key="SettingsItem_ShowLogWarnings">Waarschuwing in log voor non-zero HResult waarden</sys:String>
+    <sys:String x:Key="SettingsItem_ShowTodayInBold">Geef nieuwe updates weergave in een bold lettertype</sys:String>
+    <sys:String x:Key="SettingsItem_StartCentered">Start programma in het midden van het scherm</sys:String>
+    <sys:String x:Key="SettingsItem_Theme">Thema</sys:String>
+    <sys:String x:Key="SettingsItem_UISize">Venstergrootte</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Gebruik Windows taalinstellingen</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Als deze instelling is gekozen wordt de standaard Windows systeemtaal gebruikt.</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">Het programma zal grotendeels in het Engels worden weergegeven (en-US).</sys:String>
+    <!--  Enums for Combo Boxes on the Settings Page  -->
+    <sys:String x:Key="SettingsEnum_AccentColor_Amber">Amber</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Black">Zwart</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Blue">Blauw</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_BlueGray">Blauw grijs</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Brown">Bruin</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Cyan">Cyaan</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_DeepOrange">Orange</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_DeepPurple">Paars</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Gray">Grijs</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Green">Groen</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Indigo">Indigo</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_LightBlue">Licht blauw</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_LightGreen">Licht groen</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Lime">Lime</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Orange">Oranje</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Pink">Roze</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Purple">Paars</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Red">Rood</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Teal">Teal</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_White">Wit</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Yellow">Geel</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 meest recente</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_100">100 meest recente</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_250">250 meest recente</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_500">500 meest recente</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_All">Alle updates</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Default">100%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Large">105%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Larger">110%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Largest">120%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Small">95%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Smaller">90%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Smallest">80%</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Comfortable">Comfortabel</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Compact">Compact</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Wide">Breedte</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Dark">Donker</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Darker">Donkerder</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Light">Licht</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_System">Systeem</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regionaal: atum</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regionaal: Datum en tijd</sys:String>
+
+</ResourceDictionary>

@@ -33,11 +33,13 @@ internal partial class UILanguage : ObservableObject
     /// </summary>
     /// <remarks>
     /// This is a list of languages that the user will be able to change to in the Settings page.
+    /// The list should be ordered by LanguageNative.
     /// </remarks>
     public static List<UILanguage> DefinedLanguages { get; set; } = new()
     {
         new UILanguage {Language = "English", LanguageCode = "en-US", LanguageNative = "English (en-US)"},
         new UILanguage {Language = "English", LanguageCode = "en-GB", LanguageNative = "English (en-GB)"},
-        new UILanguage {Language = "Spanish", LanguageCode = "es-ES", LanguageNative = "Español (es-ES)"},
+        new UILanguage {Language = "Spanish", LanguageCode = "es-ES", LanguageNative = "Español (es-ES) - Spanish"},
+        new UILanguage {Language = "Dutch",   LanguageCode = "nl-NL", LanguageNative = "Nederlands (nl-NL) - Dutch"},
     };
 }
