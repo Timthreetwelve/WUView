@@ -23,8 +23,9 @@ namespace WUView.Models
         {
             new TranslationContributors {Language = "English", LanguageCode = "en-US", Contributor = "@Timthreetwelve", Note = "Default" },
             new TranslationContributors {Language = "English", LanguageCode = "en-GB", Contributor = "@Timthreetwelve"},
-            new TranslationContributors {Language = "Español", LanguageCode = "es-ES", Contributor = "My AWESOME brother Steve"},
+            new TranslationContributors {Language = "Spanish", LanguageCode = "es-ES", Contributor = "My AWESOME brother Steve"},
             new TranslationContributors {Language = "Dutch",  LanguageCode = "nl-NL", Contributor = "Tim" },
+            new TranslationContributors {Language = "Italian",  LanguageCode = "it-IT", Contributor = "RB" },
         };
     }
 }
