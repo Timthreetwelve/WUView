@@ -116,23 +116,22 @@
                         <Border Padding="3"
                                 BorderBrush="{DynamicResource MaterialDesignDivider}"
                                 BorderThickness="2">
-                            <Grid Width="170"
-                                  Margin="0">
+                            <Grid Width="auto">
                                 <StackPanel Orientation="Vertical">
                                     <Button Height="35"
-                                            Padding="15,1,0,22"
+                                            Padding="15,1,15,22"
                                             Command="{Binding ViewLogFileCommand}"
                                             Content="{DynamicResource Button_OpenLogFile}"
                                             ToolTip="{DynamicResource Button_OpenLogFileToolTip}" />
                                     <Button Height="35"
-                                            Padding="15,1,0,22"
+                                            Padding="15,1,15,22"
                                             Command="{Binding ViewReadMeFileCommand}"
                                             Content="{DynamicResource About_DocumentationText}"
                                             ToolTip="{DynamicResource About_DocumentationToolTip}" />
                                     <Separator Margin="0" Padding="1"
                                                Background="{DynamicResource MaterialDesignDivider}" />
                                     <Button Height="35"
-                                            Padding="15,1,0,22"
+                                            Padding="15,1,15,22"
                                             Content="{DynamicResource Button_Cancel}" />
                                 </StackPanel>
                             </Grid>
