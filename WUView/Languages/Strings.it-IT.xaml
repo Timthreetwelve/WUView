@@ -1,0 +1,194 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--
+        Refer to the "Contribute a Translation" topic in the Wiki: https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
+        =================================================================================================================================
+
+        Language name here: Italian
+
+        Translation contributed by: RB
+
+        ==================================================================================================================================
+    -->
+
+    <!--  About Page  -->
+    <sys:String x:Key="About_BuildDate">Data build</sys:String>
+    <sys:String x:Key="About_CommitID">IF commit</sys:String>
+    <sys:String x:Key="About_CommitIDToolTip">IF full commit:</sys:String>
+    <sys:String x:Key="About_Copyright">Copyright</sys:String>
+    <sys:String x:Key="About_CreatedBy">Creato da</sys:String>
+    <sys:String x:Key="About_CreatedByToolTip">Vedi altri lavori di Tim su https://github.com/Timthreetwelve</sys:String>
+    <sys:String x:Key="About_Description">Un elenco degli aggiornamenti di Windows in questo dispositivo</sys:String>
+    <sys:String x:Key="About_Documentation">Documentazione</sys:String>
+    <sys:String x:Key="About_DocumentationText">Apri il file 'ReadMe'</sys:String>
+    <sys:String x:Key="About_DocumentationToolTip">Visualizza il file 'ReadMe'</sys:String>
+    <sys:String x:Key="About_GitHubToolTip">Visita la pagina di WUView in GitHub</sys:String>
+    <sys:String x:Key="About_License">Licenza</sys:String>
+    <sys:String x:Key="About_LicenseText">Questo progetto è concesso in licenza secondo i termini della licenza MIT.</sys:String>
+    <sys:String x:Key="About_LicenseToolTip">Visualizza il documento della licenza</sys:String>
+    <sys:String x:Key="About_Translations">Traduzioni</sys:String>
+    <sys:String x:Key="About_UpdateWU">Aggiorna WUView</sys:String>
+    <sys:String x:Key="About_UpdateWUText">Controlla disponibilità nuova versione di Windows Update Viewer</sys:String>
+    <sys:String x:Key="About_UpdateWUToolTip">Controlla disponibilità nuova versione su GitHub</sys:String>
+    <sys:String x:Key="About_Version">Versione</sys:String>
+    <!--  Button Text  -->
+    <sys:String x:Key="Button_Cancel">Annulla</sys:String>
+    <sys:String x:Key="Button_OK">OK</sys:String>
+    <sys:String x:Key="Button_OpenLogFile">Visualizza file registro eventi</sys:String>
+    <sys:String x:Key="Button_OpenLogFileToolTip">Apri file registro eventi nell'applicazione predefinita.</sys:String>
+    <!--  Details Pane  -->
+    <sys:String x:Key="Details_Date">Data:</sys:String>
+    <sys:String x:Key="Details_Description">Descrizione:</sys:String>
+    <sys:String x:Key="Details_HeadingEventLog">Dettagli registro eventi Windows:</sys:String>
+    <sys:String x:Key="Details_HeadingUpdate">Dettagli Windows Update:</sys:String>
+    <sys:String x:Key="Details_HResult">HResult:</sys:String>
+    <sys:String x:Key="Details_KBNum">Numero:</sys:String>
+    <sys:String x:Key="Details_Operation">Operazione:</sys:String>
+    <sys:String x:Key="Details_ResultCode">Codice risultato:</sys:String>
+    <sys:String x:Key="Details_SupportURL">URL supporto:</sys:String>
+    <sys:String x:Key="Details_Title">Titolo:</sys:String>
+    <sys:String x:Key="Details_TitleFallback">Seleziona un aggiornamento e i dettagli verranno visualizzati qui.</sys:String>
+    <sys:String x:Key="Details_UpdateID">ID aggiornamento:</sys:String>
+    <!--  DataGrid Column Headers  -->
+    <sys:String x:Key="GridColumn_Date">Date</sys:String>
+    <sys:String x:Key="GridColumn_KBNum">Numero KB</sys:String>
+    <sys:String x:Key="GridColumn_Result">Risultato</sys:String>
+    <sys:String x:Key="GridColumn_Title">Titolo</sys:String>
+    <!--  Exclude List Editor  -->
+    <sys:String x:Key="ExcludesEditor_TextLine1">Inserisci le stringhe da escludere (una per riga)</sys:String>
+    <sys:String x:Key="ExcludesEditor_TextLine2">I confronti non fanno distinzione tra maiuscole e minuscole</sys:String>
+    <!--  Filter Box Hint Text  -->
+    <sys:String x:Key="FilterHint">Filtro</sys:String>
+    <!--  Menu Items  -->
+    <sys:String x:Key="Menu_Copy">_Copia</sys:String>
+    <sys:String x:Key="Menu_File">_File</sys:String>
+    <sys:String x:Key="Menu_View">_Visualizza</sys:String>
+    <sys:String x:Key="MenuItem_CopyToClipboard">Copia la griglia negli appunti</sys:String>
+    <sys:String x:Key="MenuItem_EditExclude">Modifica elenco esclusioni</sys:String>
+    <sys:String x:Key="MenuItem_Exit">Esci</sys:String>
+    <sys:String x:Key="MenuItem_Larger">Visualizzazione più ampia</sys:String>
+    <sys:String x:Key="MenuItem_OpenWindowsUpdate">Apri Windows Update</sys:String>
+    <sys:String x:Key="MenuItem_Refresh">Aggiorna aggiornamenti</sys:String>
+    <sys:String x:Key="MenuItem_RemoveSort">Rimuovi ordinamento colonne</sys:String>
+    <sys:String x:Key="MenuItem_SaveCSV">Salva griglia in un file CSV</sys:String>
+    <sys:String x:Key="MenuItem_SaveTXT">Salva dettagli in un file di testo</sys:String>
+    <sys:String x:Key="MenuItem_Smaller">Vista più piccola</sys:String>
+    <sys:String x:Key="MenuItem_ToggleDetails">Visualizza/nascondi pannello dettagli</sys:String>
+    <sys:String x:Key="MenuItem_ToggleExcluded">Visualizza/nascondi elementi esclusi</sys:String>
+    <!--  Text found in messages (log, message box, status bar, details area, etc.)  -->
+    <sys:String x:Key="MsgText_AllUpdatesExcluded">Sono stati esclusi tutti gli aggiornamenti visualizzabili.</sys:String>
+    <sys:String x:Key="MsgText_ApplicationShutdown">si sta spegnendo</sys:String>
+    <sys:String x:Key="MsgText_ApplicationStarting">si sta avviando</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCheckFailed">Verifica aggiornamento non riuscita. Per ulteriori informazioni consulta il registro .</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateChecking">Controllo aggiornamenti.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateGoToRelease">Vuoi andare alla pagina web del programma?</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateNewerFound">È disponibile una nuova versione ({0}).</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateNoneFound">Questo programma èp aggiornato.</sys:String>
+    <sys:String x:Key="MsgText_ColumnSortCleared">Ordinamento colonne cancellato</sys:String>
+    <sys:String x:Key="MsgText_CopiedToClipboard">Copiato negli appunti</sys:String>
+    <sys:String x:Key="MsgText_DateFormatChange">Il formato della data è stato modificato</sys:String>
+    <sys:String x:Key="MsgText_DisplayedAllUpdates">Visualizzazione di tutti gli aggiornamenti {0}</sys:String>
+    <sys:String x:Key="MsgText_DisplayedUpdates">Visualizzazione dell'aggiornamento  {0} di {1}</sys:String>
+    <sys:String x:Key="MsgText_ElapsedTime">Tempo trascorso</sys:String>
+    <sys:String x:Key="MsgText_EventLogNA">Non è stato trovato alcun record del registro eventi per questo aggiornamento.</sys:String>
+    <sys:String x:Key="MsgText_EventLogNoRecords">Non è stato trovato alcun record del registro eventi contenente "{0}".</sys:String>
+    <sys:String x:Key="MsgText_ExcludingContaining">Escludi aggiornamenti contenenti:</sys:String>
+    <sys:String x:Key="MsgText_FilterOneRowShown">1 riga visualizzata</sys:String>
+    <sys:String x:Key="MsgText_FilterRowsShown">{0} righe visualizzate</sys:String>
+    <sys:String x:Key="MsgText_HResultCopiedToClipboard">HResult {0} copiato negli appunti</sys:String>
+    <sys:String x:Key="MsgText_ListRefreshed">Elenco aggiornato</sys:String>
+    <sys:String x:Key="MsgText_NoUpdatesFound">Nessun aggiornamento trovato!</sys:String>
+    <sys:String x:Key="MsgText_Opening">Apertura</sys:String>
+    <sys:String x:Key="MsgText_OpeningLogFile">Apertura file registro eventi</sys:String>
+    <sys:String x:Key="MsgText_OpeningReadMeFile">Apertura del file 'ReadMe'</sys:String>
+    <sys:String x:Key="MsgText_OpeningWindowsUpdate">Apertura Windows Update</sys:String>
+    <sys:String x:Key="MsgText_UIColorSet">Colore risalto impostato a {0}</sys:String>
+    <sys:String x:Key="MsgText_UISizeSet">Dimensione impostata {0}</sys:String>
+    <sys:String x:Key="MsgText_UIThemeSet">Tema impostato a {0}</sys:String>
+    <sys:String x:Key="MsgText_WindowTitleAdministrator">Amministratore</sys:String>
+    <!--  Navigation Items  -->
+    <sys:String x:Key="NavItem_About">Info programma</sys:String>
+    <sys:String x:Key="NavItem_Exit">Esci</sys:String>
+    <sys:String x:Key="NavItem_Settings">Impostazioni</sys:String>
+    <sys:String x:Key="NavItem_Updates">Aggiornamenti</sys:String>
+    <sys:String x:Key="NavTitle_About">Info su Windows Update Viewer</sys:String>
+    <sys:String x:Key="NavTitle_Settings">Impostazioni</sys:String>
+    <sys:String x:Key="NavTitle_Updates">Windows Update Viewer</sys:String>
+    <!--  Settings Page Expander Headings  -->
+    <sys:String x:Key="SettingsSection_AppSettings">Impostazioni applicazione</sys:String>
+    <sys:String x:Key="SettingsSection_Language">Lingua</sys:String>
+    <sys:String x:Key="SettingsSection_UISettings">Impostazioni UI</sys:String>
+    <sys:String x:Key="SettingsSubHead_AppSettings">Numero aggiornamenti, formato data, elementi esclusi, dettagli e altro</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Impostazioni lingua (lavori in corso)</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">Tema, colore risalto, dimensione interfaccia utente, altezza riga, posizione iniziale e altro ancora</sys:String>
+    <!--  Settings Page Items  -->
+    <sys:String x:Key="SettingsItem_AccentColor">Colore risalto</sys:String>
+    <sys:String x:Key="SettingsItem_ChangingLanguageWarning">La modifica della lingua provocherà il riavvio dell'applicazione!</sys:String>
+    <sys:String x:Key="SettingsItem_DateFormat">Formato data griglia</sys:String>
+    <sys:String x:Key="SettingsItem_EditExcludeToolTip">Maiusc-clic per aprire il file con l'applicazione predefinita</sys:String>
+    <sys:String x:Key="SettingsItem_HideExcluded">Nascondi elementi esclusi</sys:String>
+    <sys:String x:Key="SettingsItem_IncludeDebug">Includi nel file registro eventi i messaggi debug</sys:String>
+    <sys:String x:Key="SettingsItem_KeepOnTop">Mantieni sempre Windows Update Viewer in primo piano</sys:String>
+    <sys:String x:Key="SettingsItem_Language">Lingua</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdates">Numero aggiornamenti</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">Questo è il numero massimo di aggiornamenti da elaborare prima che eventuali aggiornamenti vengano esclusi.</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">L'impostazione di questo valore su un valore inferiore può migliorare le prestazioni.</sys:String>
+    <sys:String x:Key="SettingsItem_ParseAdditional">L'esclusione degli elementi analizza il numero KB, il risultato e l'ID aggiornamento oltre al titolo dell'aggiornamento</sys:String>
+    <sys:String x:Key="SettingsItem_RowHeight">Altezza riga</sys:String>
+    <sys:String x:Key="SettingsItem_SelectFirstRow">Seleziona la prima riga all'inizio</sys:String>
+    <sys:String x:Key="SettingsItem_ShowDetails">Visualizza pannello Dettagli</sys:String>
+    <sys:String x:Key="SettingsItem_ShowLogWarnings">Visualizza messaggi avviso nel registro per valori HResult diversi da zero</sys:String>
+    <sys:String x:Key="SettingsItem_ShowTodayInBold">Visualizza gli aggiornamenti con la data attuale in grassetto</sys:String>
+    <sys:String x:Key="SettingsItem_StartCentered">Avvia con la finestra centrata sullo schermo</sys:String>
+    <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
+    <sys:String x:Key="SettingsItem_UISize">Dimensione UI</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Usa lingua di sistema di Windows</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quando questa opzione è selezionata, verrà usata la lingua specificata nelle impostazioni di Windows.</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La maggior parte del testo della domanda rimarrà in inglese (en-US), ma i formati dei numeri cambieranno.</sys:String>
+    <!--  Enums for Combo Boxes on the Settings Page  -->
+    <sys:String x:Key="SettingsEnum_AccentColor_Amber">Ambra</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Black">Nero</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Blue">Blu</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_BlueGray">Blu grigio</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Brown">Marrone</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Cyan">Ciano</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_DeepOrange">Arancio profondo</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_DeepPurple">Viola profondo</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Gray">Grigio</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Green">Verde</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Indigo">Indaco</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_LightBlue">Azzurro</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_LightGreen">Verde chiaro</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Lime">Lime</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Orange">Arancio</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Pink">Rosa</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Purple">Viola</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Red">Rosso</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Teal">Verde acqua</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_White">Bianco</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Yellow">Giallo</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 più recenti</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_100">100 più recenti</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_250">250 più recenti</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_500">500 più recenti</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_All">Tutti gli aggiornamenti</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Default">100%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Large">105%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Larger">110%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Largest">120%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Small">95%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Smaller">90%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Smallest">80%</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Comfortable">Comoda</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Compact">Compatta</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Wide">Larga</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Dark">Materiale scuro</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Darker">Scuro</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Light">Chiaro</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regionale: solo data</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regionale: data e ora</sys:String>
+
+</ResourceDictionary>
