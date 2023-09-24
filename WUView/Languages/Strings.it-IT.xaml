@@ -10,7 +10,7 @@
 
         Translation contributed by: RB
 
-        Date: 2023/9/21
+        Date: 23.09.2023
         ==================================================================================================================================
     -->
 
@@ -38,7 +38,8 @@
     <sys:String x:Key="Button_Cancel">Annulla</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Visualizza file registro eventi</sys:String>
-    <sys:String x:Key="Button_OpenLogFileToolTip">Apri file registro eventi nell'applicazione predefinita.</sys:String>
+    <sys:String x:Key="Button_OpenLogFileToolTip">Open the log file in the default application.</sys:String>
+    <sys:String x:Key="Button_ThreeDotToolTip">Azioni aggiuntive</sys:String>
     <!--  Details Pane  -->
     <sys:String x:Key="Details_Date">Data:</sys:String>
     <sys:String x:Key="Details_Description">Descrizione:</sys:String>
@@ -86,7 +87,7 @@
     <sys:String x:Key="MsgText_AppUpdateChecking">Controllo aggiornamenti.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Vuoi andare alla pagina web del programma?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">È disponibile una nuova versione ({0}).</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateNoneFound">Questo programma èp aggiornato.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateNoneFound">Questo programma è aggiornato.</sys:String>
     <sys:String x:Key="MsgText_ColumnSortCleared">Ordinamento colonne cancellato</sys:String>
     <sys:String x:Key="MsgText_CopiedToClipboard">Copiato negli appunti</sys:String>
     <sys:String x:Key="MsgText_DateFormatChange">Il formato della data è stato modificato</sys:String>
@@ -105,7 +106,7 @@
     <sys:String x:Key="MsgText_OpeningLogFile">Apertura file registro eventi</sys:String>
     <sys:String x:Key="MsgText_OpeningReadMeFile">Apertura del file 'ReadMe'</sys:String>
     <sys:String x:Key="MsgText_OpeningWindowsUpdate">Apertura Windows Update</sys:String>
-    <sys:String x:Key="MsgText_UIColorSet">Colore risalto impostato a {0}</sys:String>
+    <sys:String x:Key="MsgText_UIColorSet">Colore evidenziazione impostato a {0}</sys:String>
     <sys:String x:Key="MsgText_UISizeSet">Dimensione impostata {0}</sys:String>
     <sys:String x:Key="MsgText_UIThemeSet">Tema impostato a {0}</sys:String>
     <sys:String x:Key="MsgText_WindowTitleAdministrator">Amministratore</sys:String>
@@ -123,10 +124,10 @@
     <sys:String x:Key="SettingsSection_UISettings">Impostazioni UI</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Numero aggiornamenti, formato data, elementi esclusi, dettagli e altro</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Impostazioni lingua (lavori in corso)</sys:String>
-    <sys:String x:Key="SettingsSubHead_UISettings">Tema, colore risalto, dimensione interfaccia utente, altezza riga, posizione iniziale e altro ancora</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">Tema, colore evidenziazione, dimensione interfaccia utente, altezza riga, posizione iniziale e altro ancora</sys:String>
     <!--  Settings Page Items  -->
-    <sys:String x:Key="SettingsItem_AccentColor">Colore risalto</sys:String>
-    <sys:String x:Key="SettingsItem_ChangingLanguageWarning">La modifica della lingua provocherà il riavvio dell'applicazione!</sys:String>
+    <sys:String x:Key="SettingsItem_AccentColor">Colore evidenziazione</sys:String>
+    <sys:String x:Key="SettingsItem_ChangingLanguageWarning">La modifica dell'impostazione lingua avrà effetto dopo il riavvio dell'applicazione!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formato data griglia</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Maiusc-clic per aprire il file con l'applicazione predefinita</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Nascondi elementi esclusi</sys:String>
