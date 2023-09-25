@@ -55,6 +55,9 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private bool _showDetails = true;
 
     [ObservableProperty]
+    private bool _showExitInNav = true;
+
+    [ObservableProperty]
     private bool _showLogWarnings = true;
 
     [ObservableProperty]

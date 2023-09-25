@@ -141,6 +141,7 @@
     <sys:String x:Key="SettingsItem_RowHeight">Altura de la fila</sys:String>
     <sys:String x:Key="SettingsItem_SelectFirstRow">Seleccionar la primera fila al inicio</sys:String>
     <sys:String x:Key="SettingsItem_ShowDetails">Mostrar panel de detalles</sys:String>
+    <sys:String x:Key="SettingsItem_ShowExit">Mostrar Salida en la barra de navegación</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Mostrar mensajes de advertencia en el registro para valores HResult distintos de cero</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Mostrar actualizaciones con la fecha actual en negrita</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Empezar con la ventana centrada en la pantalla</sys:String>

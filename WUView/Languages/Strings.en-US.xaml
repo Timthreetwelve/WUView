@@ -141,6 +141,7 @@
     <sys:String x:Key="SettingsItem_RowHeight">Row Height</sys:String>
     <sys:String x:Key="SettingsItem_SelectFirstRow">Select first row on start</sys:String>
     <sys:String x:Key="SettingsItem_ShowDetails">Show Details Panel</sys:String>
+    <sys:String x:Key="SettingsItem_ShowExit">Show Exit in Navigation bar</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Show warning messages in log for non-zero HResult values</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Show updates with current date in bold</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Start with window centered on screen</sys:String>
