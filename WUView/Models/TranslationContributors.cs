@@ -27,6 +27,7 @@ namespace WUView.Models
             new TranslationContributors {Language = "Dutch",  LanguageCode = "nl-NL", Contributor = "Tim" },
             new TranslationContributors {Language = "Italian",  LanguageCode = "it-IT", Contributor = "RB" },
             new TranslationContributors {Language = "German",  LanguageCode = "de-DE", Contributor = "@Timthreetwelve - using Google translate" },
+            new TranslationContributors {Language = "French",  LanguageCode = "fr-FR", Contributor = "@Timthreetwelve - using Google translate" },
         };
     }
 }
