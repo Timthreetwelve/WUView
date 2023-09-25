@@ -186,6 +186,8 @@ internal static class MainWindowHelpers
         // Log the current culture
         _log.Debug($"Current culture: {LocalizationHelpers.GetCurrentCulture()}  UI: {LocalizationHelpers.GetCurrentUICulture()}");
 
+        _log.Debug($"{App.LanguageStrings} strings loaded from {App.LanguageFile}");
+
         // log WUA info
         WUApiHelpers.LogWUAInfo();
     }

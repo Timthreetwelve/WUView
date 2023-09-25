@@ -7,6 +7,17 @@ namespace WUView;
 /// </summary>
 public partial class App : Application
 {
+    #region Properties
+    /// <summary>
+    /// Number of language strings in a resource dictionary
+    /// </summary>
+    public static int LanguageStrings { get; set; }
+    /// <summary>
+    /// Uri of the resource dictionary
+    /// </summary>
+    public static string LanguageFile { get; set; }
+    #endregion Properties
+
     /// <summary>
     /// Override the Startup Event.
     /// </summary>
@@ -23,17 +34,17 @@ public partial class App : Application
         // Resource dictionary for language
         ResourceDictionary resDict = new();
 
-        // If a language is defined in settings and it exists in the list of defined languages, attempt to set the current culture to it.
-        // If that fails, set culture to en-US.
         try
         {
             string currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
 
+            // If option to use OS language is true and it exists in the list of defined languages, use it but do not change current culture.
             if (UserSettings.Setting.UseOSLanguage &&
                 UILanguage.DefinedLanguages.Exists(x => x.LanguageCode == currentLanguage))
             {
                 resDict.Source = new Uri($"Languages/Strings.{currentLanguage}.xaml", UriKind.RelativeOrAbsolute);
             }
+            // If a language is defined in settings and it exists in the list of defined languages, set the current culture and language to it.
             else if (!UserSettings.Setting.UseOSLanguage &&
                      !string.IsNullOrEmpty(UserSettings.Setting.UILanguage) &&
                      UILanguage.DefinedLanguages.Exists(x => x.LanguageCode == UserSettings.Setting.UILanguage))
@@ -43,6 +54,7 @@ public partial class App : Application
                 resDict.Source = new Uri($"Languages/Strings.{UserSettings.Setting.UILanguage}.xaml", UriKind.RelativeOrAbsolute);
             }
         }
+        // If the above fails, set culture and language to en-US.
         catch (Exception)
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
@@ -51,5 +63,7 @@ public partial class App : Application
         }
 
         Resources.MergedDictionaries.Add(resDict);
+        LanguageStrings = resDict.Count;
+        LanguageFile = resDict.Source.OriginalString;
     }
 }
