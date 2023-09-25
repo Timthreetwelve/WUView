@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Models;
 
@@ -29,13 +29,9 @@ internal partial class UILanguage : ObservableObject
     }
 
     /// <summary>
-    /// List of defined languages
+    /// List of languages with language code
     /// </summary>
-    /// <remarks>
-    /// This is a list of languages that the user will be able to change to in the Settings page.
-    /// The list should be ordered by LanguageNative.
-    /// </remarks>
-    public static List<UILanguage> DefinedLanguages { get; set; } = new()
+    private static List<UILanguage> LanguageList { get; } = new()
     {
         new UILanguage {Language = "English", LanguageCode = "en-US", LanguageNative = "English (en-US)"},
         new UILanguage {Language = "English", LanguageCode = "en-GB", LanguageNative = "English (en-GB)"},
@@ -45,4 +41,10 @@ internal partial class UILanguage : ObservableObject
         new UILanguage {Language = "German",  LanguageCode = "de-DE", LanguageNative = "Deutsch (de-DE) - German"},
         new UILanguage {Language = "French",  LanguageCode = "fr-FR", LanguageNative = "Français (fr-FR) - French"},
     };
+
+    /// <summary>
+    /// List of defined languages ordered by LanguageNative.
+    /// </summary>
+    public static List<UILanguage> DefinedLanguages => LanguageList.OrderBy(x => x.LanguageNative).ToList();
+
 }
