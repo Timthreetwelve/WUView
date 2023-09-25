@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Models
 {
@@ -26,6 +26,7 @@ namespace WUView.Models
             new TranslationContributors {Language = "Spanish", LanguageCode = "es-ES", Contributor = "My AWESOME brother Steve"},
             new TranslationContributors {Language = "Dutch",  LanguageCode = "nl-NL", Contributor = "Tim" },
             new TranslationContributors {Language = "Italian",  LanguageCode = "it-IT", Contributor = "RB" },
+            new TranslationContributors {Language = "German",  LanguageCode = "de-DE", Contributor = "@Timthreetwelve - using Google translate" },
         };
     }
 }

@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Models;
 
@@ -42,5 +42,6 @@ internal partial class UILanguage : ObservableObject
         new UILanguage {Language = "Spanish", LanguageCode = "es-ES", LanguageNative = "Español (es-ES) - Spanish"},
         new UILanguage {Language = "Italian", LanguageCode = "it-IT", LanguageNative = "Italiano (it-IT) - Italian"},
         new UILanguage {Language = "Dutch",   LanguageCode = "nl-NL", LanguageNative = "Nederlands (nl-NL) - Dutch"},
+        new UILanguage {Language = "German",  LanguageCode = "de-DE", LanguageNative = "Deutsch (de-DE) - German"},
     };
 }
