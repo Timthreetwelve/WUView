@@ -184,7 +184,7 @@
                         Margin="0,0,20,0"
                         BorderBrush="{DynamicResource MaterialDesignTextBoxBorder}"
                         BorderThickness="1">
-                    <ListView Width="auto" MaxHeight="200"
+                    <ListView Width="auto" MaxHeight="148"
                               Margin="0,-1"
                               materialDesign:ListViewAssist.ListViewItemPadding="10,5"
                               ItemsSource="{x:Static models:TranslationContributors.Contributors}"
