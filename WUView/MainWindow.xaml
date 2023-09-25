@@ -40,6 +40,7 @@
 
     <Window.Resources>
         <config:UserSettings x:Key="config" />
+        <BooleanToVisibilityConverter x:Key="boolToVis" />
     </Window.Resources>
     <!--#endregion-->
 
@@ -164,6 +165,20 @@
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem"
+                           BasedOn="{StaticResource MaterialDesignListBoxItem}">
+                        <Style.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsExit}" Value="True" />
+                                    <Condition Binding="{Binding Source={x:Static config:UserSettings.Setting}, Path=ShowExitInNav}" Value="False" />
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </MultiDataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.ItemContainerStyle>
                 <bh:Interaction.Triggers>
                     <bh:EventTrigger EventName="SelectionChanged">
                         <bh:InvokeCommandAction Command="{Binding NavigateCommand}"
