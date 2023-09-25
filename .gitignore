@@ -343,3 +343,6 @@ healthchecksdb
 
 # BuildInfo
 WUView/BuildInfo.cs
+
+# Inno Setup backup
+*.~is
