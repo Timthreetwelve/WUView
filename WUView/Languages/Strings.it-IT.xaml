@@ -141,6 +141,7 @@
     <sys:String x:Key="SettingsItem_RowHeight">Altezza riga</sys:String>
     <sys:String x:Key="SettingsItem_SelectFirstRow">Seleziona la prima riga all'inizio</sys:String>
     <sys:String x:Key="SettingsItem_ShowDetails">Visualizza pannello Dettagli</sys:String>
+    <sys:String x:Key="SettingsItem_ShowExit">Visualizza 'Esci' nella barra navigazione</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Visualizza messaggi avviso nel registro per valori HResult diversi da zero</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Visualizza gli aggiornamenti con la data attuale in grassetto</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Avvia con la finestra centrata sullo schermo</sys:String>
