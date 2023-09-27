@@ -73,7 +73,7 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private ThemeType _uITheme = ThemeType.System;
 
     [ObservableProperty]
-    private bool _useOSLanguage;
+    private bool _useOSLanguage = true;
 
     [ObservableProperty]
     private double _windowHeight = 650;
