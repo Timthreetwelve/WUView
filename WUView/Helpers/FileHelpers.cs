@@ -112,8 +112,12 @@ public static class FileHelpers
         if (result == true)
         {
             StringBuilder sb = new();
-            _ = sb.Append("Windows Update details for ").Append(Environment.MachineName)
-                .Append(" - ").AppendFormat("{0:G}", DateTime.Now).AppendLine();
+            _ = sb.Append(GetStringResource("Details_HeadingUpdate"))
+                .Append(' ')
+                .Append(Environment.MachineName)
+                .Append(" - ")
+                .AppendFormat("{0:G}", DateTime.Now)
+                .AppendLine();
             string uscore = new('-', sb.Length - 2);
             _ = sb.Append(uscore).AppendLine("\r\n");
 
@@ -125,21 +129,21 @@ public static class FileHelpers
 
             for (int i = 0; i < listInUse.Count; i++)
             {
-                _ = sb.Append("Title:        ").AppendLine(listInUse[i].Title)
-                    .AppendFormat("Date:         {0:G}\n", listInUse[i].Date)
-                    .Append("KB Number:    ").AppendLine(listInUse[i].KBNum)
-                    .Append("Operation:    ").AppendLine(listInUse[i].Operation.Replace("uo", ""))
-                    .Append("Result Code:  ").AppendLine(listInUse[i].ResultCode.Replace("orc", ""))
-                    .AppendFormat($"HResult:      0x{int.Parse(listInUse[i].HResult):X8}\n")
-                    .Append("Update ID:    ").AppendLine(listInUse[i].UpdateID)
-                    .Append("Support URL:  ").AppendLine(listInUse[i].SupportURL)
-                    .Append("Description:  ").AppendLine(listInUse[i].Description);
+                _ = sb.Append(GetStringResource("Details_Title")).Append(' ').AppendLine(listInUse[i].Title)
+                    .Append(GetStringResource("Details_Date")).Append(' ').AppendLine(listInUse[i].Date.ToString())
+                    .Append(GetStringResource("Details_KBNum")).Append(' ').AppendLine(listInUse[i].KBNum)
+                    .Append(GetStringResource("Details_Operation")).Append(' ').AppendLine(listInUse[i].Operation.Replace("uo", ""))
+                    .Append(GetStringResource("Details_ResultCode")).Append(' ').AppendLine(listInUse[i].ResultCode.Replace("orc", ""))
+                    .Append(GetStringResource("Details_HResult")).Append(' ').AppendFormat($"0x{int.Parse(listInUse[i].HResult):X8}").AppendLine()
+                    .Append(GetStringResource("Details_UpdateID")).Append(' ').AppendLine(listInUse[i].UpdateID)
+                    .Append(GetStringResource("Details_SupportURL")).Append(' ').AppendLine(listInUse[i].SupportURL)
+                    .Append(GetStringResource("Details_Description")).Append(' ').AppendLine(listInUse[i].Description);
 
                 foreach (string line in Regex.Split(MainViewModel.FindEventLogs(listInUse[i].KBNum), "\r\n|\r|\n"))
                 {
                     if (!string.IsNullOrWhiteSpace(line))
                     {
-                        _ = sb.Append("Event Log:    ").AppendLine(line);
+                        _ = sb.Append(GetStringResource("Details_HeadingEventLog")).Append(' ').AppendLine(line);
                     }
                 }
                 _ = sb.AppendLine("\r\n");
