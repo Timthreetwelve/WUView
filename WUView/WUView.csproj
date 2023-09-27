@@ -70,7 +70,7 @@
   <Target Name="CompileSetup" AfterTargets="PublishZip">
     <PropertyGroup>
       <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishInnoSetup\PubSetup.ps1"</PowerShellScript>
-      <ScriptName>-issScript "D:\InnoSetup\WUView.iss"</ScriptName>
+      <ScriptName>-issScript &quot;$(ProjectDir)Inno_Setup\WUView.iss&quot;</ScriptName>
     </PropertyGroup>
     <Exec Command="pwsh -NoProfile $(PowerShellScript) $(ScriptName)" />
   </Target>
