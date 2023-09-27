@@ -40,7 +40,7 @@
     </PackageReference>
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
     <PackageReference Include="NLog" Version="5.2.4" />
-    <PackageReference Include="Octokit" Version="7.2.0" />
+    <PackageReference Include="Octokit" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -70,7 +70,7 @@
   <Target Name="CompileSetup" AfterTargets="PublishZip">
     <PropertyGroup>
       <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishInnoSetup\PubSetup.ps1"</PowerShellScript>
-      <ScriptName>-issScript &quot;$(ProjectDir)Inno_Setup\WUView.iss&quot;</ScriptName>
+      <ScriptName>-issScript "$(ProjectDir)Inno_Setup\WUView.iss"</ScriptName>
     </PropertyGroup>
     <Exec Command="pwsh -NoProfile $(PowerShellScript) $(ScriptName)" />
   </Target>
