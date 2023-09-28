@@ -13,7 +13,7 @@ jobs:
         run: |
           # Finding the version from release tag name
           $VERSION="${{ github.event.release.tag_name }}" -replace '^v?((?:\d+\.)+\d+)$','$1' -replace '^((?:\d+\.){2}\d+)$', '$1.0'
-          echo "::set-output name=version::$VERSION"
+          echo "version=$VERSION" >> $env:GITHUB_OUTPUT
         shell: pwsh
       - uses: vedantmgoyal2009/winget-releaser@v2
         with:
