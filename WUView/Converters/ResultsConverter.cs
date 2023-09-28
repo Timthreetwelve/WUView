@@ -22,9 +22,9 @@ class ResultsConverter : IValueConverter
                     string hr = (string)value;
                     return string.Format($"0x{int.Parse(hr):X8}");
 
-                case "ResultCode":
-                    string rc = (string)value;
-                    return rc.Replace("orc", "");
+                //case "ResultCode":
+                //    string rc = (string)value;
+                //    return rc.Replace("orc", "");
 
                 case "Operation":
                     string op = (string)value;

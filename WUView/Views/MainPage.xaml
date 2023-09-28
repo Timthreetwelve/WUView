@@ -220,7 +220,7 @@
                                     Header="{DynamicResource GridColumn_Date}" />
                 <DataGridTextColumn Binding="{Binding Title}"
                                     Header="{DynamicResource GridColumn_Title}" />
-                <DataGridTextColumn Binding="{Binding ResultCode, Converter={StaticResource results}, ConverterParameter='ResultCode'}"
+                <DataGridTextColumn Binding="{Binding ResultCode}"
                                     Header="{DynamicResource GridColumn_Result}" />
             </DataGrid.Columns>
         </DataGrid>
@@ -325,9 +325,7 @@
                                Text="{DynamicResource Details_ResultCode}" />
                     <TextBox Grid.Row="6" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
-                             Text="{Binding ResultCode,
-                                            Converter={StaticResource results},
-                                            ConverterParameter='ResultCode'}" />
+                             Text="{Binding ResultCode}" />
                     <TextBlock Grid.Row="7" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
                                Text="{DynamicResource Details_HResult}" />

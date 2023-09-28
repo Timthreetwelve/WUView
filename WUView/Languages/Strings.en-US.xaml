@@ -118,6 +118,13 @@
     <sys:String x:Key="NavTitle_About">About Windows Update Viewer</sys:String>
     <sys:String x:Key="NavTitle_Settings">Settings</sys:String>
     <sys:String x:Key="NavTitle_Updates">Windows Update Viewer</sys:String>
+    <!--  Result Codes  -->
+    <sys:String x:Key="ResultCode_Failed">Failed</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">In Progress</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">Not Started</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">Aborted</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Succeeded</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">Succeeded with Errors</sys:String>
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Application Settings</sys:String>
     <sys:String x:Key="SettingsSection_Language">Language</sys:String>

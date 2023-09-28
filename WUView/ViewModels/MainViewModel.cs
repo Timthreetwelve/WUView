@@ -81,7 +81,7 @@ internal partial class MainViewModel : ObservableObject
                         Title = hist.Title ?? "null",
                         KBNum = kbNum,
                         Date = hist.Date.ToLocalTime(),
-                        ResultCode = hist.ResultCode.ToString(),
+                        ResultCode = ResultCodeHelper.TranslateResultCode(hist.ResultCode),
                         HResult = hist.HResult.ToString(),
                         Operation = hist.Operation.ToString(),
                         UpdateID = hist.UpdateIdentity.UpdateID ?? string.Empty,
