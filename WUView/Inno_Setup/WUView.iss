@@ -7,7 +7,7 @@
 #define MyCompanyName "T_K"
 #define MyPublisherName "Tim Kennedy"
 #define CurrentYear GetDateTimeString('yyyy', '/', ':')
-#define MyCopyright "Copyright (C) " + CurrentYear + " Tim Kennedy"
+#define MyCopyright "(C) " + CurrentYear + " Tim Kennedy"
 #define MyAppNameNoSpaces StringChange(MyAppName, " ", "")
 #define MyDateTimeString GetDateTimeString('yyyy/mm/dd hh:nn:ss', '/', ':')
 
@@ -80,14 +80,7 @@ WelcomeFontSize=14
 WelcomeFontName="Segoe UI"
 
 [Messages]
-; Custom messages have been moved to the *.isl files
-;
-;WelcomeLabel1=[name] Setup
-;WelcomeLabel2=This will install [name/ver] on your computer. \
-%n%nIt is recommended that you close all other applications before continuing. \
-%n%n%nNote that [name] requires .NET 6.%n
-;FinishedHeadingLabel=Setup has Completed.
-;FinishedLabel=Setup has finished installing [name] on your computer.
+SetupWindowTitle = Setup - {#MyAppName} {#MyAppVersion}
 
 [Files]
 Source: "{#MySourceDir}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
