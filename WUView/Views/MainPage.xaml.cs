@@ -29,6 +29,23 @@ public partial class MainPage : UserControl
             SnackbarMsg.ClearAndQueueMessage(string.Format(
                 GetStringResource("MsgText_HResultCopiedToClipboard"), run.Text), 3000);
         }
+        _log.Debug($"{GetStringResource("MsgText_Opening")} {AppConstUri.HResultCodeUrl}");
+        Process p = new();
+        p.StartInfo.FileName = AppConstUri.HResultCodeUrl.AbsoluteUri;
+        p.StartInfo.UseShellExecute = true;
+        p.Start();
+        e.Handled = true;
+    }
+    #endregion HResult click event
+
+    #region Result Code click event
+    /// <summary>
+    /// Open the result code page in the wiki
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ResultCode_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+    {
         _log.Debug($"{GetStringResource("MsgText_Opening")} {AppConstUri.ResultCodeUrl}");
         Process p = new();
         p.StartInfo.FileName = AppConstUri.ResultCodeUrl.AbsoluteUri;
@@ -36,7 +53,7 @@ public partial class MainPage : UserControl
         p.Start();
         e.Handled = true;
     }
-    #endregion HResult click event
+    #endregion Result Code click event
 
     #region URL click event
     /// <summary>

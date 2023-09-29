@@ -323,9 +323,15 @@
                     <TextBlock Grid.Row="6" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
                                Text="{DynamicResource Details_ResultCode}" />
-                    <TextBox Grid.Row="6" Grid.Column="3"
-                             Style="{StaticResource ReadOnlyTextBox}"
-                             Text="{Binding ResultCode}" />
+                    <TextBlock Grid.Row="6" Grid.Column="3"
+                               PreviewMouseDown="ResultCode_PreviewMouseDown">
+                        <Hyperlink x:Name="hypResultCode"
+                                   Focusable="False">
+                            <Hyperlink.Inlines>
+                                <Run Text="{Binding ResultCode}" />
+                            </Hyperlink.Inlines>
+                        </Hyperlink>
+                    </TextBlock>
                     <TextBlock Grid.Row="7" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
                                Text="{DynamicResource Details_HResult}" />
