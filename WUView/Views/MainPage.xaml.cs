@@ -25,9 +25,18 @@ public partial class MainPage : UserControl
     {
         if (hypHResult.Inlines.FirstInline is Run run)
         {
-            Clipboard.SetText(run.Text);
-            SnackbarMsg.ClearAndQueueMessage(string.Format(
-                GetStringResource("MsgText_HResultCopiedToClipboard"), run.Text), 3000);
+            try
+            {
+                if (ClipboardHelper.CopyTextToClipboard(run.Text))
+                {
+                    SnackbarMsg.ClearAndQueueMessage(string.Format(
+                        GetStringResource("MsgText_HResultCopiedToClipboard"), run.Text), 3000);
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error(ex, "Could not open clipboard for HResult");
+            }
         }
         _log.Debug($"{GetStringResource("MsgText_Opening")} {AppConstUri.HResultCodeUrl}");
         Process p = new();
