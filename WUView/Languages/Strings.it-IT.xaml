@@ -10,7 +10,7 @@
 
         Translation contributed by: RB
 
-        Date: 23.09.2023
+        Date: 29.09.2023
         ==================================================================================================================================
     -->
 
@@ -118,6 +118,13 @@
     <sys:String x:Key="NavTitle_About">Info su Windows Update Viewer</sys:String>
     <sys:String x:Key="NavTitle_Settings">Impostazioni</sys:String>
     <sys:String x:Key="NavTitle_Updates">Windows Update Viewer</sys:String>
+    <!--  Result Codes  -->
+    <sys:String x:Key="ResultCode_Failed">Fallito</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">In corso</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">Non avviato</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">Interrotto</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Completato</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">Completato con errori</sys:String>
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Impostazioni applicazione</sys:String>
     <sys:String x:Key="SettingsSection_Language">Lingua</sys:String>
