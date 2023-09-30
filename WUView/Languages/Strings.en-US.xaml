@@ -158,8 +158,8 @@
     <sys:String x:Key="SettingsItem_Theme">Theme</sys:String>
     <sys:String x:Key="SettingsItem_UISize">UI Size</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Use Windows display language</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">When this option is selected, the language specified in the Windows settings will be used.</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">Most of the application text will remain in English (en-US), but the number formats will change.</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">When this option is selected, the language specified in the Windows settings will</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">be used if a translation is available, otherwise English (en-US) will be used.</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Amber</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Black</sys:String>
