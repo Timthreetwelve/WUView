@@ -41,6 +41,16 @@ body:
         4. See error...
     validations:
       required: false
+  - type: dropdown
+    id: installtype
+    attributes:
+      label: Installation Type
+      options:
+      - Installer (exe)
+      - Portable (zip)
+      - Winget
+    validations:
+      required: true
   - type: input
     id: version
     attributes:
