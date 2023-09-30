@@ -53,16 +53,19 @@
     <sys:String x:Key="Details_Title">Title:</sys:String>
     <sys:String x:Key="Details_TitleFallback">Select an update from above and the details will appear here.</sys:String>
     <sys:String x:Key="Details_UpdateID">Update ID:</sys:String>
-    <!--  DataGrid Column Headers  -->
-    <sys:String x:Key="GridColumn_Date">Date</sys:String>
-    <sys:String x:Key="GridColumn_KBNum">KB Number</sys:String>
-    <sys:String x:Key="GridColumn_Result">Result</sys:String>
-    <sys:String x:Key="GridColumn_Title">Title</sys:String>
     <!--  Exclude List Editor  -->
     <sys:String x:Key="ExcludesEditor_TextLine1">Enter strings to exclude (one per line)</sys:String>
     <sys:String x:Key="ExcludesEditor_TextLine2">Comparisons are not case sensitive</sys:String>
     <!--  Filter Box Hint Text  -->
     <sys:String x:Key="FilterHint">Filter</sys:String>
+    <!--  DataGrid Column Headers  -->
+    <sys:String x:Key="GridColumn_Date">Date</sys:String>
+    <sys:String x:Key="GridColumn_KBNum">KB Number</sys:String>
+    <sys:String x:Key="GridColumn_Result">Result</sys:String>
+    <sys:String x:Key="GridColumn_Title">Title</sys:String>
+    <!--  Update Operation Type  -->
+    <sys:String x:Key="OperationType_Installation">Installation</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Uninstallation</sys:String>
     <!--  Menu Items  -->
     <sys:String x:Key="Menu_Copy">_Copy</sys:String>
     <sys:String x:Key="Menu_File">_File</sys:String>

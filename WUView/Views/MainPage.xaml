@@ -317,9 +317,7 @@
                                Text="{DynamicResource Details_Operation}" />
                     <TextBox Grid.Row="5" Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
-                             Text="{Binding Operation,
-                                            Converter={StaticResource results},
-                                            ConverterParameter='Operation'}" />
+                             Text="{Binding Operation}" />
                     <TextBlock Grid.Row="6" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
                                Text="{DynamicResource Details_ResultCode}" />

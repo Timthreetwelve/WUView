@@ -26,9 +26,9 @@ class ResultsConverter : IValueConverter
                 //    string rc = (string)value;
                 //    return rc.Replace("orc", "");
 
-                case "Operation":
-                    string op = (string)value;
-                    return op.Replace("uo", "");
+                //case "Operation":
+                //    string op = (string)value;
+                //    return op.Replace("uo", "");
             }
         }
         return value.ToString();
