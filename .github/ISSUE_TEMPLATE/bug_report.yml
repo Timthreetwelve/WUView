@@ -44,7 +44,8 @@ body:
   - type: dropdown
     id: installtype
     attributes:
-      label: Installation Type
+      label: Installation or Update Method
+      description: How was the version that is the subject of this issue installed or updated?
       options:
       - Installer (exe)
       - Portable (zip)
