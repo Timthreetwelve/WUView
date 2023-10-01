@@ -53,16 +53,19 @@
     <sys:String x:Key="Details_Title">Titolo:</sys:String>
     <sys:String x:Key="Details_TitleFallback">Seleziona un aggiornamento e i dettagli verranno visualizzati qui.</sys:String>
     <sys:String x:Key="Details_UpdateID">ID aggiornamento:</sys:String>
-    <!--  DataGrid Column Headers  -->
-    <sys:String x:Key="GridColumn_Date">Date</sys:String>
-    <sys:String x:Key="GridColumn_KBNum">Numero KB</sys:String>
-    <sys:String x:Key="GridColumn_Result">Risultato</sys:String>
-    <sys:String x:Key="GridColumn_Title">Titolo</sys:String>
     <!--  Exclude List Editor  -->
     <sys:String x:Key="ExcludesEditor_TextLine1">Inserisci le stringhe da escludere (una per riga)</sys:String>
     <sys:String x:Key="ExcludesEditor_TextLine2">I confronti non fanno distinzione tra maiuscole e minuscole</sys:String>
     <!--  Filter Box Hint Text  -->
     <sys:String x:Key="FilterHint">Filtro</sys:String>
+    <!--  DataGrid Column Headers  -->
+    <sys:String x:Key="GridColumn_Date">Data</sys:String>
+    <sys:String x:Key="GridColumn_KBNum">Numero KB</sys:String>
+    <sys:String x:Key="GridColumn_Result">Risultato</sys:String>
+    <sys:String x:Key="GridColumn_Title">Titolo</sys:String>
+    <!--  Update Operation Type  -->
+    <sys:String x:Key="OperationType_Installation">Installazione</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Uninstallazione</sys:String>
     <!--  Menu Items  -->
     <sys:String x:Key="Menu_Copy">_Copia</sys:String>
     <sys:String x:Key="Menu_File">_File</sys:String>
