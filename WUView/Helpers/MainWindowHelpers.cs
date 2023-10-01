@@ -183,11 +183,19 @@ internal static class MainWindowHelpers
         _log.Debug($"Operating System version: {AppInfo.OsPlatform}");
         _log.Debug($".Net version: {AppInfo.RuntimeVersion.Replace(".NET", "")}");
 
-        // Log the current culture
+        // Log the startup & current culture
+        _log.Debug($"Startup culture: {App.StartupCulture.Name}  UI: {App.StartupUICulture.Name}");
         _log.Debug($"Current culture: {LocalizationHelpers.GetCurrentCulture()}  UI: {LocalizationHelpers.GetCurrentUICulture()}");
 
-        _log.Debug($"{App.LanguageStrings} strings loaded from {App.LanguageFile}");
-
+        // Log the language file and number of strings loaded
+        if (!App.LanguageFile.Equals("defaulted", StringComparison.OrdinalIgnoreCase))
+        {
+            _log.Debug($"{App.LanguageStrings} strings loaded from {App.LanguageFile}");
+        }
+        else
+        {
+            _log.Warn($"Language has defaulted to en-US. {App.LanguageStrings} string loaded.");
+        }
         // log WUA info
         WUApiHelpers.LogWUAInfo();
     }
