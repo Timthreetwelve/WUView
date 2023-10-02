@@ -1,11 +1,14 @@
 ## Windows Update Viewer
 
-[![GitHub](https://img.shields.io/github/license/Timthreetwelve/WUView?style=plastic)](https://github.com/Timthreetwelve/WUView/blob/main/LICENSE)
+[![GitHub](https://img.shields.io/github/license/Timthreetwelve/WUView?style=plastic&color=seagreen)](https://github.com/Timthreetwelve/WUView/blob/main/LICENSE)
 [![NET6win](https://img.shields.io/badge/.NET-6.0--Windows-blueviolet?style=plastic)](https://dotnet.microsoft.com/en-us/download) 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Timthreetwelve/WUView?style=plastic)](https://github.com/Timthreetwelve/WUView/releases/latest) 
 [![GitHub Release Date](https://img.shields.io/github/release-date/timthreetwelve/WUView?style=plastic&color=orange)](https://github.com/Timthreetwelve/WUView/releases/latest) 
+[![GitHub Stars](https://img.shields.io/github/stars/timthreetwelve/wuview?style=plastic&color=goldenrod)](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars)
 [![GitHub all releases](https://img.shields.io/github/downloads/Timthreetwelve/WUView/total?style=plastic&label=total%20downloads&color=teal)](https://github.com/Timthreetwelve/WUView/releases) 
-[![GitHub release (by tag)](https://img.shields.io/github/downloads/timthreetwelve/wuview/latest/total?style=plastic&color=2196F3)](https://github.com/Timthreetwelve/WUView/releases/latest) 
+[![GitHub release (by tag)](https://img.shields.io/github/downloads/timthreetwelve/wuview/latest/total?style=plastic&color=2196F3&label=downloads%20latest%20version)](https://github.com/Timthreetwelve/WUView/releases/latest)
+[![GitHub Issues](https://img.shields.io/github/issues/timthreetwelve/wuview?style=plastic&color=orangered)](https://github.com/Timthreetwelve/WUView/issues)
+[![GitHub Issues](https://img.shields.io/github/issues-closed/timthreetwelve/wuview?style=plastic&color=slateblue)](https://github.com/Timthreetwelve/WUView/issues)
 
 #### WUView requires .Net 6.0
 
@@ -29,8 +32,9 @@ Windows update viewer is now available through Windows Package Manager (a.k.a. w
 You can always download the latest release from the [releases page](https://github.com/Timthreetwelve/WUView/releases). Note that a "portable" release (the one with "NonInstall.zip" in the file name) is provided as well as the traditional installer.
 
 ### Features
-* View details for each update.
+* View details for each update, including Event Log entries, if available.
 * Easily exclude entries, such as Defender.
+* Temporarily filter entries.
 * Link to the Support URL.
 * Link to HResult explanation (the HResult is placed in the clipboard).
 * Toggle the visibility of the details pane.
