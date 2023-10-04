@@ -7,7 +7,9 @@ Windows Update Viewer is an application that consolidates information about Wind
 Windows Update Viewer uses the Windows Update API and event logs to display details of installed
 updates. Event log entries are associated with individual updates by using the "KB" number. If an
 update does not use a KB number, or it isn't presented in a recognized format, no event log entries
-will be displayed.
+will be displayed. Windows Update Viewer can view the updates on the machine it is running from.
+At the present time, it cannot connect to a remote machine. It cannot download, apply or remove
+updates. The built-in Windows Update client does a respectable job of that.
 
 
 Getting Started
@@ -21,7 +23,8 @@ splitter up or down.
 
 Navigation
 ==========
-Use the navigation bar on the left side of the application to go to the settings or about pages.
+Use the navigation bar on the left side of the application to go to the settings or about pages, or
+to exit the application.
 
 
 Filtering the Grid
@@ -68,14 +71,18 @@ size options for the app. You can choose from three options for row spacing in t
 control the visibility of the Details pane and to show or hide updated that match items on the exclude
 list. You can also choose if the exclude process looks at the KB Number and Result fields as well as the
 Title. You can choose to have updates with the current date shown in bold. There are also options to
-have WUView stay on top of other windows and you can control the detail level of the log file.
+have WUView stay on top of other windows and you can control the detail level of the log file. The bottom
+section of the settings page allows the language used in the user interface to be changed to one of the
+defined languages. Note that changing the language will cause WUView to restart immediately.
 
 
 About Page
 ==========
 Selecting About will display the About dialog which shows information about the app such as the version
 number and has a link to the GitHub repository. There is also a link to this read me file. You can also
-check for new releases of this application by clicking the link at the bottom of the About page.
+check for new releases of this application by clicking the link at the bottom of the About page. At the
+bottom of the About page there is a scrollable list of the people that contributed a language to help
+make Windows Update Viewer available to more users.
 
 
 Keyboard Shortcuts
@@ -121,7 +128,7 @@ Windows Update Viewer uses the following packages:
 
     * Inno Setup was used to create the installer. https://jrsoftware.org/isinfo.php
 
-    * ResX Resource Manager was used for localization. https://github.com/dotnet/ResXResourceManager
+    * ResX Resource Manager was used for localization in earlier versions. https://github.com/dotnet/ResXResourceManager
 
 
 MIT License
