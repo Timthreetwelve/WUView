@@ -10,7 +10,7 @@
 
         Translation contributed by: My AWESOME brother Steve
 
-        Date: 2023/9/15
+        Date: 2023/10/03
         ==================================================================================================================================
     -->
 
@@ -63,6 +63,9 @@
     <sys:String x:Key="ExcludesEditor_TextLine2">Las comparaciones no distinguen entre mayúsculas y minúsculas</sys:String>
     <!--  Filter Box Hint Text  -->
     <sys:String x:Key="FilterHint">Filtrar</sys:String>
+    <!--  Update Operation Type  -->
+    <sys:String x:Key="OperationType_Installation">Instalación</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Desinstalación</sys:String>
     <!--  Menu Items  -->
     <sys:String x:Key="Menu_Copy">_Copiar</sys:String>
     <sys:String x:Key="Menu_File">_Archivo</sys:String>
@@ -118,6 +121,13 @@
     <sys:String x:Key="NavTitle_About">Información</sys:String>
     <sys:String x:Key="NavTitle_Settings">Configuración</sys:String>
     <sys:String x:Key="NavTitle_Updates">Visor de Windows Update</sys:String>
+    <!--  Result Codes  -->
+    <sys:String x:Key="ResultCode_Failed">Fallido</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">En curso</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">No iniciado</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">Abortado</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Tuvo éxito</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">Tuvo éxito con errores</sys:String>
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Configuración de la aplicación</sys:String>
     <sys:String x:Key="SettingsSection_Language">Idioma</sys:String>
