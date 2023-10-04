@@ -161,9 +161,7 @@
                                       ItemsSource="{Binding Source={convert:EnumBindingSource {x:Type models:DateFormat}}}"
                                       SelectedIndex="{Binding Setting.DateFormat,
                                                               Source={StaticResource config}}"
-                                      Style="{StaticResource MaterialDesignComboBox}">
-
-                            </ComboBox>
+                                      Style="{StaticResource MaterialDesignComboBox}" />
                         </Grid>
 
                         <!--#region CheckBoxes (bottom)-->
@@ -425,7 +423,7 @@
 
                         <Grid Grid.Row="1" Grid.Column="1">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"  />
+                                <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="10" />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
@@ -437,7 +435,6 @@
                                       Width="Auto" MinWidth="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"
-                                      DisplayMemberPath="LanguageNative"
                                       IsEnabled="{Binding Path=Setting.UseOSLanguage,
                                                           Source={StaticResource config},
                                                           Converter={StaticResource boolInverter}}"
@@ -446,7 +443,24 @@
                                       SelectedItem="{Binding Path=Setting.UILanguage,
                                                              Source={StaticResource config},
                                                              Converter={StaticResource langConverter}}"
-                                      Style="{StaticResource MaterialDesignComboBox}" />
+                                      Style="{StaticResource MaterialDesignComboBox}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="15" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0"
+                                                       Text="{Binding LanguageNative}" />
+                                            <TextBlock Grid.Column="2"
+                                                       Text="{Binding LanguageCode,
+                                                                      StringFormat=({0})}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
                         </Grid>
 
                         <Label Grid.Row="2" Grid.Column="1"

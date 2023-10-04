@@ -33,7 +33,8 @@
             <Grid Margin="15">
                 <!--#region Row & Column definitions-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="170" />
+                    <ColumnDefinition Width="auto" MinWidth="150" />
+                    <ColumnDefinition Width="20" />
                     <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
@@ -55,7 +56,7 @@
 
                 <!--#region Icon in upper right-->
                 <Image Grid.Row="0" Grid.RowSpan="2"
-                       Grid.Column="2"
+                       Grid.Column="3"
                        Margin="10,0"
                        HorizontalAlignment="Right">
                     <Image.Style>
@@ -74,18 +75,18 @@
                 <!--#region  TextBlocks with relevant info-->
                 <TextBlock Grid.Row="0" Grid.Column="0"
                            Text="{x:Static helpers:AppInfo.AppProduct}" />
-                <TextBlock Grid.Row="0" Grid.Column="1"
+                <TextBlock Grid.Row="0" Grid.Column="2"
                            Text="{DynamicResource About_Description}"
                            TextTrimming="CharacterEllipsis" />
 
                 <TextBlock Grid.Row="1" Grid.Column="0"
                            Text="{DynamicResource About_Version}" />
-                <TextBlock Grid.Row="1" Grid.Column="1"
+                <TextBlock Grid.Row="1" Grid.Column="2"
                            Text="{x:Static helpers:AppInfo.AppFileVersion}" />
 
                 <TextBlock Grid.Row="2" Grid.Column="0"
                            Text="{DynamicResource About_CreatedBy}" />
-                <TextBlock Grid.Row="2" Grid.Column="1"
+                <TextBlock Grid.Row="2" Grid.Column="2"
                            ToolTip="{DynamicResource About_CreatedByToolTip}"
                            ToolTipService.Placement="Top">
                     <Hyperlink Command="{Binding GoToGitHubCommand}"
@@ -97,12 +98,12 @@
 
                 <TextBlock Grid.Row="3" Grid.Column="0"
                            Text="{DynamicResource About_Copyright}" />
-                <TextBlock Grid.Row="3" Grid.Column="1"
+                <TextBlock Grid.Row="3" Grid.Column="2"
                            Text="{x:Static helpers:AppInfo.AppCopyright}" />
 
                 <TextBlock Grid.Row="4" Grid.Column="0"
                            Text="{DynamicResource About_License}" />
-                <TextBlock Grid.Row="4" Grid.Column="1">
+                <TextBlock Grid.Row="4" Grid.Column="2">
                     <Hyperlink Command="{Binding ViewLicenseCommand}"
                                Foreground="{DynamicResource MaterialDesignBody}"
                                ToolTip="{DynamicResource About_LicenseToolTip}"
@@ -114,11 +115,11 @@
                 <TextBlock Grid.Row="5" Grid.Column="0"
                            Text="{DynamicResource About_BuildDate}" />
                 <TextBlock x:Name="txtBuildDate"
-                           Grid.Row="5" Grid.Column="1" />
+                           Grid.Row="5" Grid.Column="2" />
 
                 <TextBlock Grid.Row="6" Grid.Column="0"
                            Text="{DynamicResource About_CommitID}" />
-                <TextBlock Grid.Row="6" Grid.Column="1"
+                <TextBlock Grid.Row="6" Grid.Column="2"
                            Text="{x:Static buildinfo:BuildInfo.CommitIDString}"
                            ToolTipService.Placement="Top">
                     <TextBlock.ToolTip>
@@ -138,7 +139,7 @@
                     <materialDesign:PackIcon Width="20" Height="20"
                                              Kind="Github" />
                 </Grid>
-                <TextBlock Grid.Row="7" Grid.Column="1">
+                <TextBlock Grid.Row="7" Grid.Column="2">
                     <Hyperlink Command="{Binding GoToGitHubCommand}"
                                CommandParameter="{Binding Path=Text,
                                                           ElementName=tbxGithub}"
@@ -152,7 +153,7 @@
 
                 <TextBlock Grid.Row="8" Grid.Column="0"
                            Text="{DynamicResource About_Documentation}" />
-                <TextBlock Grid.Row="8" Grid.Column="1">
+                <TextBlock Grid.Row="8" Grid.Column="2">
                     <Hyperlink Command="{Binding ViewReadMeCommand}"
                                Foreground="{DynamicResource MaterialDesignBody}"
                                ToolTip="{DynamicResource About_DocumentationToolTip}"
@@ -165,7 +166,7 @@
                 <!--#region Check for new release-->
                 <TextBlock Grid.Row="9" Grid.Column="0"
                            Text="{DynamicResource About_UpdateWU}" />
-                <TextBlock Grid.Row="9" Grid.Column="1">
+                <TextBlock Grid.Row="9" Grid.Column="2">
                     <Hyperlink Command="{Binding CheckReleaseCommand}"
                                Foreground="{DynamicResource MaterialDesignBody}"
                                ToolTip="{DynamicResource About_UpdateWUToolTip}"
@@ -179,7 +180,7 @@
                 <Label Grid.Row="11"
                        Content="{DynamicResource About_Translations}" />
 
-                <Border Grid.Row="11" Grid.Column="1"
+                <Border Grid.Row="11" Grid.Column="2"
                         Width="auto"
                         Margin="0,0,20,0"
                         BorderBrush="{DynamicResource MaterialDesignTextBoxBorder}"
@@ -187,7 +188,7 @@
                     <ListView Width="auto" MaxHeight="148"
                               Margin="0,-1"
                               materialDesign:ListViewAssist.ListViewItemPadding="10,5"
-                              ItemsSource="{x:Static models:TranslationContributors.Contributors}"
+                              ItemsSource="{x:Static models:UILanguage.DefinedLanguages}"
                               PreviewMouseDown="ListView_PreviewMouseDown"
                               ScrollViewer.HorizontalScrollBarVisibility="auto"
                               ScrollViewer.VerticalScrollBarVisibility="auto">
@@ -202,7 +203,7 @@
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBlock MinWidth="80"
-                                                       Text="{Binding Language}" />
+                                                       Text="{Binding LanguageNative}" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
