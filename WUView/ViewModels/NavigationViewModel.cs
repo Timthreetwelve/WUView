@@ -207,6 +207,12 @@ public partial class NavigationViewModel : ObservableObject
     }
     #endregion Launch Windows Update
 
+    [RelayCommand]
+    public static void SaveJson()
+    {
+        FileHelpers.SaveAsJson();
+    }
+
     #region Save to CSV file
     [RelayCommand]
     public static void SaveCSV()

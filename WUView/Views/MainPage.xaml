@@ -98,6 +98,8 @@
                                   Header="{DynamicResource MenuItem_SaveCSV}" />
                         <MenuItem Command="{Binding SaveTextCommand}"
                                   Header="{DynamicResource MenuItem_SaveTXT}" />
+                        <MenuItem Command="{Binding SaveJsonCommand}"
+                                  Header="{DynamicResource MenuItem_SaveJSON}" />
                         <Separator />
                         <MenuItem Command="{Binding EditExcludeCommand}"
                                   Header="{DynamicResource MenuItem_EditExclude}"

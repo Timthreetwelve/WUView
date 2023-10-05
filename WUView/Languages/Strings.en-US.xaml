@@ -78,6 +78,7 @@
     <sys:String x:Key="MenuItem_Refresh">Refresh Updates</sys:String>
     <sys:String x:Key="MenuItem_RemoveSort">Remove Column Sort</sys:String>
     <sys:String x:Key="MenuItem_SaveCSV">Save Grid to CSV File</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">Export to JSON File</sys:String>
     <sys:String x:Key="MenuItem_SaveTXT">Save Details to Text File</sys:String>
     <sys:String x:Key="MenuItem_Smaller">Smaller View</sys:String>
     <sys:String x:Key="MenuItem_ToggleDetails">Toggle Details Pane</sys:String>

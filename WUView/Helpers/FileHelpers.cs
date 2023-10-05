@@ -154,4 +154,29 @@ public static class FileHelpers
         }
     }
     #endregion Save details to a text file
+
+    #region Save updates as JSON
+    /// <summary>
+    /// Save entire history as JSON file
+    /// </summary>
+    public static async void SaveAsJson()
+    {
+        string fname = "WUView_Export_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".json";
+        SaveFileDialog dialog = new()
+        {
+            Title = GetStringResource("MenuItem_SaveJSON"),
+            Filter = "JSON File|*.json",
+            InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+            FileName = fname
+        };
+        bool? result = dialog.ShowDialog();
+        if (result == true)
+        {
+            JsonSerializerOptions options = new() { WriteIndented = true };
+            string json = JsonSerializer.Serialize(MainViewModel.UpdatesFullList, options);
+            await File.WriteAllTextAsync(dialog.FileName, json);
+            _log.Debug($"History exported to {dialog.FileName}");
+        }
+    }
+    #endregion Save updates as JSON
 }
