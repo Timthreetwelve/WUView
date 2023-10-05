@@ -10,7 +10,7 @@
 
         Translation contributed by: FadeMind
 
-        Date: 2023/10/02
+        Date: 2023/10/05
         ==================================================================================================================================
     -->
 
@@ -35,7 +35,7 @@
     <sys:String x:Key="About_UpdateWUToolTip">Sprawdź GitHub w poszukiwaniu nowszej wersji</sys:String>
     <sys:String x:Key="About_Version">Wersja</sys:String>
     <!--  Button Text  -->
-    <sys:String x:Key="Button_Anuluj">Anuluj</sys:String>
+    <sys:String x:Key="Button_Cancel">Anuluj</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Przeglądaj dziennik</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Otwórz plik dziennika w domyślnej aplikacji</sys:String>
@@ -73,15 +73,15 @@
     <sys:String x:Key="MenuItem_CopyToClipboard">Kopiuj siatkę do schowka</sys:String>
     <sys:String x:Key="MenuItem_EditExclude">Edytuj listę wyjątków</sys:String>
     <sys:String x:Key="MenuItem_Exit">Wyjdź</sys:String>
-    <sys:String x:Key="MenuItem_Larger">Większy widok</sys:String>
+    <sys:String x:Key="MenuItem_Larger">Większy interfejs</sys:String>
     <sys:String x:Key="MenuItem_OpenWindowsUpdate">Otwórz Windows Update</sys:String>
     <sys:String x:Key="MenuItem_Refresh">Odśwież aktualizacje</sys:String>
     <sys:String x:Key="MenuItem_RemoveSort">Usuń sortowanie kolumn</sys:String>
     <sys:String x:Key="MenuItem_SaveCSV">Zapisz siatkę do pliku CSV</sys:String>
     <sys:String x:Key="MenuItem_SaveTXT">Zapisz szczegóły do pliku tekstowego</sys:String>
-    <sys:String x:Key="MenuItem_Smaller">Mniejszy widok</sys:String>
-    <sys:String x:Key="MenuItem_ToggleDetails">Przełącz panel szczegółów</sys:String>
-    <sys:String x:Key="MenuItem_ToggleExcluded">Przełącz wykluczonych elementów</sys:String>
+    <sys:String x:Key="MenuItem_Smaller">Mniejszy interfejs</sys:String>
+    <sys:String x:Key="MenuItem_ToggleDetails">Panel szczegółów</sys:String>
+    <sys:String x:Key="MenuItem_ToggleExcluded">Panel wykluczonych elementów</sys:String>
     <!--  Text found in messages (log, message box, status bar, details area, etc.)  -->
     <sys:String x:Key="MsgText_AllUpdatesExcluded">Wszystkie widoczne aktualizacje zostały wykluczone.</sys:String>
     <sys:String x:Key="MsgText_ApplicationShutdown">jest zamykany</sys:String>
@@ -131,7 +131,7 @@
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Ustawienia</sys:String>
     <sys:String x:Key="SettingsSection_Language">Język</sys:String>
-    <sys:String x:Key="SettingsSection_UISettings">Ustawienia UI</sys:String>
+    <sys:String x:Key="SettingsSection_UISettings">Interfejs</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Liczba aktualizacji, format daty, wykluczone elementy, szczegóły i inne.</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Ustawienia języka (Prace w toku)</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Motyw, kolor akcentu, rozmiar interfejsu użytkownika, wysokość wiersza, pozycja początkowa i wiele więcej</sys:String>
@@ -156,7 +156,7 @@
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Wyświetlaj aktualizacje z bieżącą datą pogrubioną czcionką</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Uruchamiaj z oknem wyśrodkowanym na ekranie</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Motyw</sys:String>
-    <sys:String x:Key="SettingsItem_UISize">Rozmiar UI</sys:String>
+    <sys:String x:Key="SettingsItem_UISize">Skala</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Użyj ustawień regionalnych systemu</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Po wybraniu tej opcji zostanie użyty język określony w ustawieniach systemu Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">jeśli dostępne jest tłumaczenie, w przeciwnym razie zostanie użyty język angielski (en-US).</sys:String>
@@ -194,9 +194,9 @@
     <sys:String x:Key="SettingsEnum_Size_Small">95%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Smaller">90%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Smallest">80%</sys:String>
-    <sys:String x:Key="SettingsEnum_Spacing_Comfortable">Comfortable</sys:String>
-    <sys:String x:Key="SettingsEnum_Spacing_Compact">Compact</sys:String>
-    <sys:String x:Key="SettingsEnum_Spacing_Wide">Wide</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Comfortable">Wygodny</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Compact">Kompaktowy</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Wide">Szeroki</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Dark">Material Dark</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Darker</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Light</sys:String>
