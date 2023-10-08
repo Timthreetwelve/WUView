@@ -73,8 +73,7 @@
                 <TextBlock x:Name="txtTitle"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
-                           FontSize="16"
-                           FontWeight="SemiBold"
+                           FontSize="16" FontWeight="SemiBold"
                            Style="{DynamicResource MaterialDesignTitleTextBlock}"
                            Text="Title Text"
                            TextTrimming="CharacterEllipsis" />
@@ -135,22 +134,22 @@
                 <Button x:Name="btnOk"
                         Grid.Column="1"
                         Command="{Binding OKButtonCommand}"
-                        Content="OK"
+                        Content="{DynamicResource Button_OK}"
                         Style="{StaticResource DialogButton}" />
                 <Button x:Name="btnYes"
                         Grid.Column="2"
                         Command="{Binding YesButtonCommand}"
-                        Content="Yes"
+                        Content="{DynamicResource Button_Yes}"
                         Style="{StaticResource DialogButton}" />
                 <Button x:Name="btnNo"
                         Grid.Column="3"
                         Command="{Binding NoButtonCommand}"
-                        Content="No"
+                        Content="{DynamicResource Button_No}"
                         Style="{StaticResource DialogButton}" />
                 <Button x:Name="btnCancel"
                         Grid.Column="4"
                         Command="{Binding CancelButtonCommand}"
-                        Content="Cancel"
+                        Content="{DynamicResource Button_Cancel}"
                         Style="{StaticResource DialogButton}" />
             </Grid>
         </Grid>
