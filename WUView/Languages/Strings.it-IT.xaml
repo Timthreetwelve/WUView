@@ -36,10 +36,12 @@
     <sys:String x:Key="About_Version">Versione</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Annulla</sys:String>
+    <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Visualizza file registro eventi</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Open the log file in the default application.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Azioni aggiuntive</sys:String>
+    <sys:String x:Key="Button_Yes">Sì</sys:String>
     <!--  Details Pane  -->
     <sys:String x:Key="Details_Date">Data:</sys:String>
     <sys:String x:Key="Details_Description">Descrizione:</sys:String>
@@ -78,6 +80,7 @@
     <sys:String x:Key="MenuItem_Refresh">Aggiorna aggiornamenti</sys:String>
     <sys:String x:Key="MenuItem_RemoveSort">Rimuovi ordinamento colonne</sys:String>
     <sys:String x:Key="MenuItem_SaveCSV">Salva griglia in un file CSV</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">Esporta in un file JSON</sys:String>
     <sys:String x:Key="MenuItem_SaveTXT">Salva dettagli in un file di testo</sys:String>
     <sys:String x:Key="MenuItem_Smaller">Vista più piccola</sys:String>
     <sys:String x:Key="MenuItem_ToggleDetails">Visualizza/nascondi pannello dettagli</sys:String>
