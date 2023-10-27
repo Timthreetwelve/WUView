@@ -2,29 +2,32 @@
 ; Windows Update Viewer (WUView)
 ; -----------------------------------------------------------------------------
 
-#define MyAppName "Windows Update Viewer"
-#define MyAppExeName "WUView.exe"
-#define MyCompanyName "T_K"
-#define MyPublisherName "Tim Kennedy"
-#define CurrentYear GetDateTimeString('yyyy', '/', ':')
-#define MyCopyright "(C) " + CurrentYear + " Tim Kennedy"
-#define MyAppNameNoSpaces StringChange(MyAppName, " ", "")
-#define MyDateTimeString GetDateTimeString('yyyy/mm/dd hh:nn:ss', '/', ':')
+#define MyAppName            "Windows Update Viewer"
+#define MyAppExeName         "WUView.exe"
+#define MyCompanyName        "T_K"
+#define MyPublisherName      "Tim Kennedy"
+#define CurrentYear          GetDateTimeString('yyyy', '/', ':')
+#define MyCopyright          "(C) " + CurrentYear + " Tim Kennedy"
+#define MyAppNameNoSpaces    StringChange(MyAppName, " ", "")
+#define MyDateTimeString     GetDateTimeString('yyyy/mm/dd hh:nn:ss', '/', ':')
 
-#define BaseDir "D:\Visual Studio\Source\Prod\WUView\WUView"
-#define MySourceDir BaseDir + "\bin\Publish"
-#define MySetupIcon BaseDir + "\Images\UV.ico"
-#define MyAppVersion GetStringFileInfo(MySourceDir + "\" + MyAppExeName, "FileVersion")
-#define MyInstallerFilename MyAppNameNoSpaces + "_" + MyAppVersion + "_Setup"
-#define MyOutputDir "D:\InnoSetup\Output"
-#define MyLargeImage "D:\InnoSetup\Images\WizardImageWUV2.bmp"
+#define BaseDir              "D:\Visual Studio\Source\Prod\WUView\WUView"
+#define MySourceDir          BaseDir + "\bin\Publish"
+#define MySetupIcon          BaseDir + "\Images\UV.ico"
+#define MyAppVersion         GetStringFileInfo(MySourceDir + "\" + MyAppExeName, "FileVersion")
+#define MyInstallerFilename  MyAppNameNoSpaces + "_" + MyAppVersion + "_Setup"
+#define MyOutputDir          "D:\InnoSetup\Output"
+#define MyLargeImage         "D:\InnoSetup\Images\WizardImageWUV2.bmp"
+
+#define MyAppID              "3A152885-8378-4FDE-AFCC-85D096B16A1D"
+#define MyAppSupportURL      "https://github.com/Timthreetwelve/WUView"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 ;---------------------------------------------
-AppId={{3A152885-8378-4FDE-AFCC-85D096B16A1D}
+AppId={{#MyAppID}
 
 ;---------------------------------------------
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
@@ -33,13 +36,27 @@ AppId={{3A152885-8378-4FDE-AFCC-85D096B16A1D}
 PrivilegesRequired=lowest
 ;---------------------------------------------
 
-AllowNoIcons=yes
-AppCopyright={#MyCopyright}
 AppName={#MyAppName}
-AppPublisher={#MyPublisherName}
-AppSupportURL=https://github.com/Timthreetwelve/WUView
 AppVerName={#MyAppName} {#MyAppVersion}
 AppVersion={#MyAppVersion}
+
+AppCopyright={#MyCopyright}
+AppPublisherURL={#MyAppSupportURL}
+AppSupportURL={#MyAppSupportURL}
+AppUpdatesURL={#MyAppSupportURL}
+
+VersionInfoDescription={#MyAppName} installer
+VersionInfoProductName={#MyAppName}
+VersionInfoVersion={#MyAppVersion}
+
+UninstallDisplayName={#MyAppName}
+UninstallDisplayIcon={app}\{#MyAppExeName}
+AppPublisher={#MyPublisherName}
+
+WizardStyle=modern
+ShowLanguageDialog=yes
+
+AllowNoIcons=yes
 Compression=lzma
 DefaultDirName={autopf}\{#MyCompanyName}\{#MyAppName}
 DefaultGroupName={#MyAppName}
@@ -53,24 +70,21 @@ OutputDir={#MyOutputDir}
 OutputManifestFile={#MyAppName}_{#MyAppVersion}_FileList.txt
 SetupIconFile={#MySetupIcon}
 SetupLogging=yes
-ShowLanguageDialog=yes
 SolidCompression=no
 SourceDir={#MySourceDir}
-UninstallDisplayIcon={app}\{#MyAppExeName}
 VersionInfoVersion={#MyAppVersion}
 WizardImageFile={#MyLargeImage}
 WizardSizePercent=100,100
-WizardStyle=modern
 
 [Languages]
 ; https://jrsoftware.org/ishelp/index.php?topic=languagessection
 Name: "en"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Catalan.isl"
-Name: "nl"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Default.isl"
-Name: "es"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Dutch.isl"
-Name: "it"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\French.isl"
-Name: "fr"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\German.isl"
-Name: "de"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Italian.isl"
 Name: "ca"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Spanish.isl"
+Name: "de"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Italian.isl"
+Name: "es"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Dutch.isl"
+Name: "fr"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\German.isl"
+Name: "it"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\French.isl"
+Name: "nl"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Default.isl"
 
 [LangOptions]
 ; https://jrsoftware.org/ishelp/index.php?topic=langoptionssection
@@ -80,7 +94,13 @@ WelcomeFontSize=14
 WelcomeFontName="Segoe UI"
 
 [Messages]
-SetupWindowTitle = Setup - {#MyAppName} {#MyAppVersion}
+;SetupWindowTitle = Setup - {#MyAppName} {#MyAppVersion}
+
+[CustomMessages]
+en.ViewReadme=View the ReadMe file
+it.ViewReadme=Visualizza file ReadMe
+;en.DeleteConfigFiles=
+;en.AppIsRunning=
 
 [Files]
 Source: "{#MySourceDir}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
