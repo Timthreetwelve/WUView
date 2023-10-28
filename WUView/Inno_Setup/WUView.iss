@@ -25,7 +25,7 @@
 ; -----------------------------------------------------
 ; Include the localization file. Thanks bovirus!
 ; -----------------------------------------------------
-#include "GetMyIPLocalization.iss"
+#include "WUViewLocalization.iss"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
