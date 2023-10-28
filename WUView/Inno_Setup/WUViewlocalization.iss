@@ -29,24 +29,24 @@ en.DeleteConfigFiles=Do you want to remove the settings files?%nSelect 'No' if y
 
 ca.ViewReadme=Veure el fitxer RadMe
 ca.AppIsRunning=s'està executant, tanqueu-lo per continuar amb la instal·lació.
-ca.DeleteConfigFiles=Voleu eliminar la configuració i excloure fitxers?%nSeleccioneu 'No' si teniu previst tornar a instal·lar.
+ca.DeleteConfigFiles=Voleu eliminar la configuració i excloure fitxers?%n5nSeleccioneu 'No' si teniu previst tornar a instal·lar.
 
 de.ViewReadme=Lesen Sie die ReadMe-Datei
 de.AppIsRunning=ausgeführt wird, schließen Sie es bitte, um mit der Installation fortzufahren.
-de.DeleteConfigFiles=Möchten Sie die Einstellungen und Ausschlussdateien entfernen?%n Wählen Sie 'Nein', wenn Sie eine Neuinstallation planen.
+de.DeleteConfigFiles=Möchten Sie die Einstellungen und Ausschlussdateien entfernen?%n%nWählen Sie 'Nein', wenn Sie eine Neuinstallation planen.
 
 es.ViewReadme=Abrir el archivo Léame
 es.AppIsRunning=se está ejecutando, por favor ciérrelo para continuar con la instalación.
-es.DeleteConfigFiles=¿Desea eliminar la configuración y excluir archivos?%nSeleccione 'No' si planea reinstalar.
+es.DeleteConfigFiles=¿Desea eliminar la configuración y excluir archivos?%n%nSeleccione 'No' si planea reinstalar.
 
 fr.ViewReadme=Voir le fichier ReadMe
 fr.AppIsRunning=est en cours d'exécution, veuillez le fermer pour poursuivre l'installation.
-fr.DeleteConfigFiles=Voulez-vous supprimer les paramètres et les fichiers d'exclusion ?%nSélectionnez 'Non' si vous prévoyez de réinstaller.
+fr.DeleteConfigFiles=Voulez-vous supprimer les paramètres et les fichiers d'exclusion ?%n%nSélectionnez 'Non' si vous prévoyez de réinstaller.
 
 it.ViewReadme=Visualizza file ReadMe
 it.AppIsRunning=è in esecuzione.%nChiudilo per continuare l'installazione.
-it.DeleteConfigFiles=Vuoi rimuovere le impostazioni e i file di esclusione?%nSeleziona 'No' se vuoi reinstallare il programma più avanti.
+it.DeleteConfigFiles=Vuoi rimuovere le impostazioni e i file di esclusione?%n%nSeleziona 'No' se vuoi reinstallare il programma più avanti.
 
 nl.ViewReadme=Open de ReadMe file
 nl.AppIsRunning=wordt uitgevoerd, sluit deze dan af om door te gaan met de installatie.
-nl.DeleteConfigFiles=Wil je de instellingen en uitsluitingsbestanden verwijderen? Selecteer 'Nee' als je van plan bent om opnieuw te installeren.
+nl.DeleteConfigFiles=Wil je de instellingen en uitsluitingsbestanden verwijderen?%n%nSelecteer 'Nee' als je van plan bent om opnieuw te installeren.
