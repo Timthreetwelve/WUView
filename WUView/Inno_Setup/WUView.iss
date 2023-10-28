@@ -22,6 +22,11 @@
 #define MyAppID              "3A152885-8378-4FDE-AFCC-85D096B16A1D"
 #define MyAppSupportURL      "https://github.com/Timthreetwelve/WUView"
 
+; -----------------------------------------------------
+; Include the localization file. Thanks bovirus!
+; -----------------------------------------------------
+#include "GetMyIPLocalization.iss"
+
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
@@ -75,32 +80,6 @@ SourceDir={#MySourceDir}
 VersionInfoVersion={#MyAppVersion}
 WizardImageFile={#MyLargeImage}
 WizardSizePercent=100,100
-
-[Languages]
-; https://jrsoftware.org/ishelp/index.php?topic=languagessection
-Name: "en"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Catalan.isl"
-Name: "ca"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Spanish.isl"
-Name: "de"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Italian.isl"
-Name: "es"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Dutch.isl"
-Name: "fr"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\German.isl"
-Name: "it"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\French.isl"
-Name: "nl"; MessagesFile: "d:\Visual Studio\Source\Prod\Installer_Languages\Default.isl"
-
-[LangOptions]
-; https://jrsoftware.org/ishelp/index.php?topic=langoptionssection
-DialogFontSize=9
-DialogFontName="Segoe UI"
-WelcomeFontSize=14
-WelcomeFontName="Segoe UI"
-
-[Messages]
-;SetupWindowTitle = Setup - {#MyAppName} {#MyAppVersion}
-
-[CustomMessages]
-en.ViewReadme=View the ReadMe file
-it.ViewReadme=Visualizza file ReadMe
-;en.DeleteConfigFiles=
-;en.AppIsRunning=
 
 [Files]
 Source: "{#MySourceDir}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
