@@ -25,7 +25,7 @@ See the [Wiki](https://github.com/Timthreetwelve/WUView/wiki) for additional inf
 ### Windows Update Viewer is multilingual! 🆕
 Languages are being added as of version 0.5.21. Please see [Contribute a Translation](https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation) topic in the Wiki if you would like to contribute a translation. 
 
-### Get Windows Update Viewer via winget   [![Publish to WinGet](https://github.com/Timthreetwelve/WUView/actions/workflows/publish-to-winget.yml/badge.svg)](https://github.com/Timthreetwelve/WUView/actions/workflows/publish-to-winget.yml)
+### Get Windows Update Viewer via winget 
 Windows update viewer is now available through Windows Package Manager (a.k.a. winget)! Many thanks to [@ottnorml](https://github.com/ottnorml) for making this happen!👏 Using winget, the name is `"Windows Update Viewer"` (use double quotes since the name has spaces). The ID is `Timthreetwelve.WUView`. Note that the winget version is typically available 12-36 hours after a release is published here.
 
 ### Download Windows Update Viewer
