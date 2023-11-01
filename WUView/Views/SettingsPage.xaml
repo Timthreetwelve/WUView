@@ -33,7 +33,7 @@
 
     <Grid>
         <ScrollViewer Margin="15,15,15,5"
-                      HorizontalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled"
                       VerticalScrollBarVisibility="Auto">
             <Grid>
                 <!--#region Row definitions-->
@@ -77,7 +77,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition />
                                 <RowDefinition Height="5" />
-                                <RowDefinition />
+                                <RowDefinition Height="auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="55" />
@@ -92,10 +92,12 @@
                                                      Kind="Wrench" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold"
-                                       Text="{DynamicResource SettingsSection_AppSettings}" />
+                                       Text="{DynamicResource SettingsSection_AppSettings}"
+                                       TextWrapping="Wrap" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="{DynamicResource SettingsSubHead_AppSettings}" />
+                                       Text="{DynamicResource SettingsSubHead_AppSettings}"
+                                       TextWrapping="Wrap" />
                         </Grid>
                     </Expander.Header>
                     <Grid Margin="30,10,0,20">
@@ -166,48 +168,84 @@
 
                         <!--#region CheckBoxes (bottom)-->
                         <Grid Grid.Row="1" Grid.Column="1">
+                            <!--#region Row Definitions-->
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="31" />
-                                <RowDefinition Height="31" />
-                                <RowDefinition Height="31" />
-                                <RowDefinition Height="31" />
-                                <RowDefinition Height="31" />
-                                <RowDefinition Height="31" />
-                                <RowDefinition Height="31" />
+                                <RowDefinition Height="auto" MinHeight="31" />
+                                <RowDefinition Height="auto" MinHeight="31" />
+                                <RowDefinition Height="auto" MinHeight="31" />
+                                <RowDefinition Height="auto" MinHeight="31" />
+                                <RowDefinition Height="auto" MinHeight="31" />
+                                <RowDefinition Height="auto" MinHeight="31" />
+                                <RowDefinition Height="auto" MinHeight="31" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
+                            <!--#endregion-->
                             <CheckBox Grid.Row="0"
-                                      Content="{DynamicResource SettingsItem_HideExcluded}"
+                                      Padding="10,0"
                                       IsChecked="{Binding Setting.HideExcluded,
-                                                          Source={StaticResource config}}" />
+                                                          Source={StaticResource config}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_HideExcluded}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
                             <CheckBox Grid.Row="1"
-                                      Content="{DynamicResource SettingsItem_ParseAdditional}"
+                                      Padding="10,0"
                                       IsChecked="{Binding Setting.ExcludeKBandResult,
-                                                          Source={StaticResource config}}" />
+                                                          Source={StaticResource config}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_ParseAdditional}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
                             <CheckBox Grid.Row="2"
-                                      Content="{DynamicResource SettingsItem_ShowDetails}"
+                                      Padding="10,0"
                                       IsChecked="{Binding Setting.ShowDetails,
-                                                          Source={StaticResource config}}" />
+                                                          Source={StaticResource config}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_ShowDetails}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
                             <CheckBox Grid.Row="3"
-                                      Content="{DynamicResource SettingsItem_ShowTodayInBold}"
+                                      Padding="10,0"
                                       IsChecked="{Binding Setting.BoldToday,
-                                                          Source={StaticResource config}}" />
+                                                          Source={StaticResource config}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_ShowTodayInBold}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
                             <CheckBox Grid.Row="4"
-                                      Content="{DynamicResource SettingsItem_SelectFirstRow}"
+                                      Padding="10,0"
                                       IsChecked="{Binding Setting.AutoSelectFirstRow,
-                                                          Source={StaticResource config}}" />
+                                                          Source={StaticResource config}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_SelectFirstRow}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
                             <CheckBox Grid.Row="5"
-                                      Content="{DynamicResource SettingsItem_IncludeDebug}"
+                                      Padding="10,0"
                                       IsChecked="{Binding Setting.IncludeDebug,
-                                                          Source={StaticResource config}}" />
+                                                          Source={StaticResource config}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_IncludeDebug}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
                             <CheckBox Grid.Row="6"
-                                      Content="{DynamicResource SettingsItem_ShowLogWarnings}"
+                                      Padding="10,0"
                                       IsChecked="{Binding Setting.ShowLogWarnings,
-                                                          Source={StaticResource config}}" />
+                                                          Source={StaticResource config}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_ShowLogWarnings}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
                         </Grid>
                         <!--#endregion-->
                     </Grid>
-
                 </Expander>
                 <!--#endregion-->
 
@@ -222,7 +260,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition />
                                 <RowDefinition Height="5" />
-                                <RowDefinition />
+                                <RowDefinition Height="auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="55" />
@@ -237,10 +275,12 @@
                                                      Kind="MonitorEdit" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold"
-                                       Text="{DynamicResource SettingsSection_UISettings}" />
+                                       Text="{DynamicResource SettingsSection_UISettings}"
+                                       TextWrapping="Wrap" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="{DynamicResource SettingsSubHead_UISettings}" />
+                                       Text="{DynamicResource SettingsSubHead_UISettings}"
+                                       TextWrapping="Wrap" />
                         </Grid>
                     </Expander.Header>
 
@@ -326,22 +366,37 @@
                         <!--#region CheckBoxes (bottom)-->
                         <Grid Grid.Row="1" Grid.Column="1">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="38" />
-                                <RowDefinition Height="31" />
-                                <RowDefinition Height="31" />
+                                <RowDefinition Height="auto" MinHeight="38" />
+                                <RowDefinition Height="auto" MinHeight="38" />
+                                <RowDefinition Height="auto" MinHeight="38" />
                             </Grid.RowDefinitions>
                             <CheckBox Grid.Row="0"
-                                      Content="{DynamicResource SettingsItem_StartCentered}"
+                                      Padding="10,0"
                                       IsChecked="{Binding StartCentered,
-                                                          Source={x:Static config:UserSettings.Setting}}" />
+                                                          Source={x:Static config:UserSettings.Setting}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_StartCentered}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
                             <CheckBox Grid.Row="1"
-                                      Content="{DynamicResource SettingsItem_KeepOnTop}"
+                                      Padding="10,0"
                                       IsChecked="{Binding KeepOnTop,
-                                                          Source={x:Static config:UserSettings.Setting}}" />
+                                                          Source={x:Static config:UserSettings.Setting}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_KeepOnTop}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
                             <CheckBox Grid.Row="2"
-                                      Content="{DynamicResource SettingsItem_ShowExit}"
+                                      Padding="10,0"
                                       IsChecked="{Binding ShowExitInNav,
-                                                          Source={x:Static config:UserSettings.Setting}}" />
+                                                          Source={x:Static config:UserSettings.Setting}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_ShowExit}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
                         </Grid>
                         <!--#endregion-->
                     </Grid>
@@ -359,7 +414,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition />
                                 <RowDefinition Height="5" />
-                                <RowDefinition />
+                                <RowDefinition Height="auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="55" />
@@ -373,13 +428,13 @@
                                                      Foreground="{DynamicResource PrimaryHueMidBrush}"
                                                      Kind="Language" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
-                                       FontSize="16" FontWeight="SemiBold">
-                                <Run Text="{DynamicResource SettingsSection_Language}" />
-
-                            </TextBlock>
+                                       FontSize="16" FontWeight="SemiBold"
+                                       Text="{DynamicResource SettingsSection_Language}"
+                                       TextWrapping="Wrap" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
                                        FontSize="12"
-                                       Text="{DynamicResource SettingsSubHead_Language}" />
+                                       Text="{DynamicResource SettingsSubHead_Language}"
+                                       TextWrapping="Wrap" />
                         </Grid>
                     </Expander.Header>
 
@@ -403,11 +458,12 @@
                         <StackPanel Grid.Row="0" Grid.Column="1"
                                     Orientation="Horizontal">
                             <CheckBox Grid.Row="0" Grid.Column="1"
+                                      Padding="10,0"
                                       VerticalContentAlignment="Center"
                                       Content="{DynamicResource SettingsItem_UseOSLanguageCheckBox}"
                                       IsChecked="{Binding UseOSLanguage,
                                                           Source={x:Static config:UserSettings.Setting}}" />
-                            <TextBlock Margin="15,8,0,0"
+                            <TextBlock Margin="5,8,0,0"
                                        ToolTipService.InitialShowDelay="300"
                                        ToolTipService.Placement="Top">
                                 <materialDesign:PackIcon Width="20" Height="20"
@@ -426,6 +482,8 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="30" />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <Label Grid.Row="0" Grid.Column="0"
@@ -463,19 +521,20 @@
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
                             <TextBlock Grid.Row="1" Grid.Column="4"
-                                   VerticalAlignment="Center"
-                                   FontSize="13" Opacity=".8">
-                            <Run Text="{Binding CurrentLanguageStringCount}" />
-                            <Run Text="/" />
-                            <Run Text="{Binding DefaultStringCount}" />
-                            <Run Text="{DynamicResource MsgText_Translated}" />
+                                       VerticalAlignment="Center"
+                                       FontSize="13" Opacity=".8">
+                                <Run Text="{Binding CurrentLanguageStringCount}" />
+                                <Run Text="/" />
+                                <Run Text="{Binding DefaultStringCount}" />
+                                <Run Text="{DynamicResource MsgText_Translated}" />
                             </TextBlock>
                         </Grid>
 
-                        <Label Grid.Row="2" Grid.Column="1"
-                               VerticalAlignment="Center"
-                               Content="{DynamicResource SettingsItem_ChangingLanguageWarning}"
-                               Foreground="OrangeRed" />
+                        <TextBlock Grid.Row="2" Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   Foreground="OrangeRed"
+                                   Text="{DynamicResource SettingsItem_ChangingLanguageWarning}"
+                                   TextWrapping="Wrap" />
 
                         <StackPanel Grid.Row="3" Grid.Column="1"
                                     Orientation="Horizontal">
