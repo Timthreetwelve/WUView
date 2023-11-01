@@ -19,7 +19,7 @@
 #define MyOutputDir          "D:\InnoSetup\Output"
 #define MyLargeImage         "D:\InnoSetup\Images\WizardImageWUV2.bmp"
 
-#define MyAppID              "3A152885-8378-4FDE-AFCC-85D096B16A1D"
+#define MyAppID              "{3A152885-8378-4FDE-AFCC-85D096B16A1D}"
 #define MyAppSupportURL      "https://github.com/Timthreetwelve/WUView"
 
 ; -----------------------------------------------------
@@ -87,6 +87,7 @@ Source: "{#MySourceDir}\*.dll"; DestDir: "{app}"; Flags: ignoreversion recursesu
 Source: "{#MySourceDir}\*.json"; Excludes: "usersettings.json"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#MySourceDir}\ReadMe.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#MySourceDir}\License.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MySourceDir}\Strings.test.xaml"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [InstallDelete]
