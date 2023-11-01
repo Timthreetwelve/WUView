@@ -40,6 +40,7 @@ public static class SettingChange
                 break;
 
             case nameof(UserSettings.Setting.UILanguage):
+            case nameof(UserSettings.Setting.LanguageTesting):
                 LocalizationHelpers.SaveAndRestart();
                 break;
         }

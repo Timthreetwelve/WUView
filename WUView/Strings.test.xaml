@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--
+     =============================================================================================================================
+      Use this file for language testing. Any number (or all) of the language strings for a single language can be in this file.
+      The application will need to be restarted after each change to this file.
+     =============================================================================================================================
+    -->
+
+    <sys:String x:Key="NavTitle_Settings">Settings - Language Test</sys:String>
+
+</ResourceDictionary>

@@ -38,6 +38,7 @@
     <sys:String x:Key="Button_Cancel">Cancel</sys:String>
     <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Open App Folder</sys:String>
     <sys:String x:Key="Button_OpenLogFile">View Log File</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Open the log file in the default application.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Additional Actions</sys:String>
@@ -100,6 +101,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Displaying all {0} updates</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Displaying {0} of {1} updates</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Elapsed time</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">No Event Logs records were found for this update.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">No Event Log records containing "{0}" were found.</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Excluding updates containing:</sys:String>
@@ -143,6 +145,7 @@
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Changing Language will cause application to restart!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Grid Date Format</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-Click to open file with default application</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Enable language testing</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Hide Excluded Items</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Include debug level messages in log file</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Keep Windows Update Viewer on top of other windows</sys:String>

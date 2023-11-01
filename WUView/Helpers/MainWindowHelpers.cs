@@ -196,6 +196,14 @@ internal static class MainWindowHelpers
         {
             _log.Warn($"Language has defaulted to en-US. {App.LanguageStrings} string loaded.");
         }
+
+        // Language testing
+        if (UserSettings.Setting.LanguageTesting)
+        {
+            _log.Info("Language testing enabled");
+            _log.Debug($"{App.TestLanguageStrings} strings loaded from {App.TestLanguageFile}");
+        }
+
         // log WUA info
         WUApiHelpers.LogWUAInfo();
     }

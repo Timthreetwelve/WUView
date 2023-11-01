@@ -27,6 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Strings.test.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\TK.png" />
     <Resource Include="Images\UV.ico" />
     <Resource Include="Images\UV.png" />

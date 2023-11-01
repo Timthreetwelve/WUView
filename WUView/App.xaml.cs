@@ -12,17 +12,33 @@ public partial class App : Application
     /// Number of language strings in a resource dictionary
     /// </summary>
     public static int LanguageStrings { get; set; }
+    
+    /// <summary>
+    /// Uri of the resource dictionary
+    /// </summary>
+    /// Number of language strings in the test resource dictionary
+    /// </summary>
+    public static int TestLanguageStrings { get; set; }
+
     /// <summary>
     /// Uri of the resource dictionary
     /// </summary>
     public static string LanguageFile { get; set; }
+
+    /// <summary>
+    /// Uri of the test resource dictionary
+    /// </summary>
+    public static string TestLanguageFile { get; set; }
+
     /// <summary>
     /// Culture at startup
     /// </summary>
     public static CultureInfo StartupCulture { get; set; }
+
     /// <summary>
     /// UI Culture at startup
     /// </summary>
+    
     public static CultureInfo StartupUICulture { get; set; }
     #endregion Properties
 
@@ -93,5 +109,35 @@ public partial class App : Application
             LanguageStrings = resDict.Count;
             LanguageFile = "defaulted";
         }
+
+        // Language testing
+        if (UserSettings.Setting.LanguageTesting)
+        {
+            ResourceDictionary testDict = new();
+            string testLanguageFile = Path.Combine(AppInfo.AppDirectory, "Strings.test.xaml");
+            if (File.Exists(testLanguageFile))
+            {
+                try
+                {
+                    testDict.Source = new Uri(testLanguageFile, UriKind.RelativeOrAbsolute);
+                    if (testDict.Source != null)
+                    {
+                        Resources.MergedDictionaries.Add(testDict);
+                        TestLanguageStrings = testDict.Count;
+                        TestLanguageFile = testDict.Source.OriginalString;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // No logging available at this point
+                    string msg = string.Format($"{GetStringResource("MsgText_Error_TestLanguage")}\n\n{ex.Message}\n\n{ex.InnerException}");
+                    MessageBox.Show(msg,
+                        "Get My IP ERROR",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                }
+            }
+        }
+
     }
 }

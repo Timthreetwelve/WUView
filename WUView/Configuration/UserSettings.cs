@@ -43,6 +43,9 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private bool _keepOnTop;
 
     [ObservableProperty]
+    private bool _languageTesting;
+
+    [ObservableProperty]
     private MaxUpdates _maxUpdates = MaxUpdates.All;
 
     [ObservableProperty]
