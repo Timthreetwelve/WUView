@@ -5,6 +5,19 @@ namespace WUView.Helpers;
 internal static class ResourceHelpers
 {
     /// <summary>
+    /// Gets the count of strings in the default resource dictionary.
+    /// </summary>
+    /// <returns>Count as int.</returns>
+    public static int GetTotalDefaultLanguageCount()
+    {
+        ResourceDictionary dictionary = new()
+        {
+            Source = new Uri("Languages/Strings.en-US.xaml", UriKind.RelativeOrAbsolute)
+        };
+        return dictionary.Count;
+    }
+
+    /// <summary>
     /// Gets the string resource for the key.
     /// </summary>
     /// <param name="key">The key.</param>

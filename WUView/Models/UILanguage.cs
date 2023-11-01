@@ -9,6 +9,12 @@ namespace WUView.Models;
 internal partial class UILanguage : ObservableObject
 {
     [ObservableProperty]
+    private int? _currentLanguageStringCount = App.LanguageStrings;
+
+    [ObservableProperty]
+    private int? _defaultStringCount = App.DefaultLanguageStrings;
+
+    [ObservableProperty]
     private string _language;
 
     [ObservableProperty]

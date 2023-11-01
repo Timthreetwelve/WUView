@@ -462,6 +462,14 @@
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
+                            <TextBlock Grid.Row="1" Grid.Column="4"
+                                   VerticalAlignment="Center"
+                                   FontSize="13" Opacity=".8">
+                            <Run Text="{Binding CurrentLanguageStringCount}" />
+                            <Run Text="/" />
+                            <Run Text="{Binding DefaultStringCount}" />
+                            <Run Text="{DynamicResource MsgText_Translated}" />
+                            </TextBlock>
                         </Grid>
 
                         <Label Grid.Row="2" Grid.Column="1"

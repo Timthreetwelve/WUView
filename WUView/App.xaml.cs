@@ -12,7 +12,7 @@ public partial class App : Application
     /// Number of language strings in a resource dictionary
     /// </summary>
     public static int LanguageStrings { get; set; }
-    
+
     /// <summary>
     /// Uri of the resource dictionary
     /// </summary>
@@ -38,8 +38,12 @@ public partial class App : Application
     /// <summary>
     /// UI Culture at startup
     /// </summary>
-    
     public static CultureInfo StartupUICulture { get; set; }
+
+    /// <summary>
+    /// Number of language strings in the default resource dictionary
+    /// </summary>
+    public static int DefaultLanguageStrings { get; set; }
     #endregion Properties
 
     /// <summary>
@@ -64,6 +68,8 @@ public partial class App : Application
 
         try
         {
+            DefaultLanguageStrings = ResourceHelpers.GetTotalDefaultLanguageCount();
+
             string currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
 
             // If option to use OS language is true and it exists in the list of defined languages, use it but do not change current culture.
@@ -138,6 +144,5 @@ public partial class App : Application
                 }
             }
         }
-
     }
 }
