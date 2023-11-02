@@ -3,15 +3,22 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <!--
-        Refer to the "Contribute a Translation" topic in the Wiki: https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
-        =================================================================================================================================
+        Refer to the "Contribute a Translation" topic in the Wiki:
 
-        Language name here: Polski (pl-PL)
+        https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
 
-        Translation contributed by: FadeMind
+        =======================================================================
 
-        Date: 2023/10/05
-        ==================================================================================================================================
+        Application name:            Windows Update Viewer
+
+        Language name:               Polski (pl-PL)
+
+        Translation contributed by:  FadeMind
+
+        Date last update:            2023/10/05
+
+        ========================================================================
+
     -->
 
     <!--  About Page  -->
