@@ -138,7 +138,7 @@ public partial class App : Application
                     // No logging available at this point
                     string msg = string.Format($"{GetStringResource("MsgText_Error_TestLanguage")}\n\n{ex.Message}\n\n{ex.InnerException}");
                     MessageBox.Show(msg,
-                        "Get My IP ERROR",
+                        "Windows Update Viewer ERROR",
                         MessageBoxButton.OK,
                         MessageBoxImage.Error);
                 }
