@@ -1,0 +1,220 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--
+        Refer to the "Contribute a Translation" topic in the Wiki:
+
+        https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
+        =================================================================================================================================
+
+        Application name:            Windows Update Viewer
+
+        Language name:               Slovak (sk-SK)
+
+        Translation contributed by:  VAIO
+
+        Date:                        02.11.2023
+
+        ==================================================================================================================================
+    -->
+
+    <!--  About Page  -->
+	<sys:String x:Key="About_BuildDate">Dátum zostavenia</sys:String>
+    <sys:String x:Key="About_CommitID">ID potvrdenia</sys:String>
+    <sys:String x:Key="About_CommitIDToolTip">Úplné ID záväzkov:</sys:String>
+    <sys:String x:Key="About_Contribute">Prispieť</sys:String>
+    <sys:String x:Key="About_ContributeToolTip">Ako prispieť prekladom</sys:String>
+    <sys:String x:Key="About_Copyright">Autorské práva</sys:String>
+    <sys:String x:Key="About_CreatedBy">Vytvoril</sys:String>
+    <sys:String x:Key="About_CreatedByToolTip">Pozrite si ďalšiu Timovu prácu na https://github.com/Timthreetwelve</sys:String>
+    <sys:String x:Key="About_Description">Zoznam aktualizácií systému Windows na tomto zariadení</sys:String>
+    <sys:String x:Key="About_Documentation">Dokumentácia</sys:String>
+    <sys:String x:Key="About_DocumentationText">Otvorte súbor ReadMe</sys:String>
+    <sys:String x:Key="About_DocumentationToolTip">Zobraziť súbor ReadMe</sys:String>
+    <sys:String x:Key="About_GitHubToolTip">Navštívte stránku WUView na GitHub</sys:String>
+    <sys:String x:Key="About_License">Licencia</sys:String>
+    <sys:String x:Key="About_LicenseText">Tento projekt je licencovaný podľa podmienok licencie MIT.</sys:String>
+    <sys:String x:Key="About_LicenseToolTip">Zobraziť licenčný dokument</sys:String>
+    <sys:String x:Key="About_Translations">Preklady</sys:String>
+    <sys:String x:Key="About_UpdateWU">Aktualizovať WUView</sys:String>
+    <sys:String x:Key="About_UpdateWUText">Vyhľadajte nové vydanie programu Windows Update Viewer</sys:String>
+    <sys:String x:Key="About_UpdateWUToolTip">Vyhľadajte na GitHub novšie vydanie</sys:String>
+    <sys:String x:Key="About_Version">Verzia</sys:String>
+    <!--  Button Text  -->
+    <sys:String x:Key="Button_Cancel">Zrušiť</sys:String>
+    <sys:String x:Key="Button_No">Nie</sys:String>
+    <sys:String x:Key="Button_OK">OK</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Otvoriť priečinok aplikácie</sys:String>
+    <sys:String x:Key="Button_OpenLogFile">Zobraziť súbor denníka</sys:String>
+    <sys:String x:Key="Button_OpenLogFileToolTip">Otvorte súbor denníka v predvolenej aplikácii.</sys:String>
+    <sys:String x:Key="Button_ThreeDotToolTip">Ďalšie akcie</sys:String>
+    <sys:String x:Key="Button_Yes">Áno</sys:String>
+    <!--  Details Pane  -->
+    <sys:String x:Key="Details_Date">Dátum:</sys:String>
+    <sys:String x:Key="Details_Description">Popis:</sys:String>
+    <sys:String x:Key="Details_HeadingEventLog">Podrobnosti denníka udalostí systému Windows:</sys:String>
+    <sys:String x:Key="Details_HeadingUpdate">Podrobnosti služby Windows Update:</sys:String>
+    <sys:String x:Key="Details_HResult">HResult:</sys:String>
+    <sys:String x:Key="Details_KBNum">Číslo kB:</sys:String>
+    <sys:String x:Key="Details_Operation">Operácia:</sys:String>
+    <sys:String x:Key="Details_ResultCode">Kód výsledku:</sys:String>
+    <sys:String x:Key="Details_SupportURL">Adresa URL podpory:</sys:String>
+    <sys:String x:Key="Details_Title">Názov:</sys:String>
+    <sys:String x:Key="Details_TitleFallback">Vyberte aktualizáciu vyššie a podrobnosti sa zobrazia tu.</sys:String>
+    <sys:String x:Key="Details_UpdateID">ID aktualizácie:</sys:String>
+    <!--  Exclude List Editor  -->
+    <sys:String x:Key="ExcludesEditor_TextLine1">Zadajte reťazce, ktoré chcete vylúčiť (jeden na riadok)</sys:String>
+    <sys:String x:Key="ExcludesEditor_TextLine2">V porovnaniach sa nerozlišujú veľké a malé písmená</sys:String>
+    <!--  Filter Box Hint Text  -->
+    <sys:String x:Key="FilterHint">Filter</sys:String>
+    <!--  DataGrid Column Headers  -->
+    <sys:String x:Key="GridColumn_Date">Dátum</sys:String>
+    <sys:String x:Key="GridColumn_KBNum">Číslo KB</sys:String>
+    <sys:String x:Key="GridColumn_Result">Výsledok</sys:String>
+    <sys:String x:Key="GridColumn_Title">Názov</sys:String>
+    <!--  Update Operation Type  -->
+    <sys:String x:Key="OperationType_Installation">Inštalácia</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Odinštalovanie</sys:String>
+    <!--  Menu Items  -->
+    <sys:String x:Key="Menu_Copy">_Copy</sys:String>
+    <sys:String x:Key="Menu_File">_Súbor</sys:String>
+    <sys:String x:Key="Menu_View">_View</sys:String>
+    <sys:String x:Key="MenuItem_CopyToClipboard">Kopírovať mriežku do schránky</sys:String>
+    <sys:String x:Key="MenuItem_EditExclude">Upraviť zoznam vylúčení</sys:String>
+    <sys:String x:Key="MenuItem_Exit">Ukončiť</sys:String>
+    <sys:String x:Key="MenuItem_Larger">Väčší pohľad</sys:String>
+    <sys:String x:Key="MenuItem_OpenWindowsUpdate">Otvoriť službu Windows Update</sys:String>
+    <sys:String x:Key="MenuItem_Refresh">Obnoviť aktualizácie</sys:String>
+    <sys:String x:Key="MenuItem_RemoveSort">Odstrániť zoradenie stĺpcov</sys:String>
+    <sys:String x:Key="MenuItem_SaveCSV">Uložiť mriežku do súboru CSV</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">Exportovať do súboru JSON</sys:String>
+    <sys:String x:Key="MenuItem_SaveTXT">Uložiť podrobnosti do textového súboru</sys:String>
+    <sys:String x:Key="MenuItem_Smaller">Menšie zobrazenie</sys:String>
+    <sys:String x:Key="MenuItem_ToggleDetails">Panel podrobností prepínania</sys:String>
+    <sys:String x:Key="MenuItem_ToggleExcluded">Prepínanie vylúčených položiek</sys:String>
+    <!--  Text found in messages (log, message box, status bar, details area, etc.)  -->
+    <sys:String x:Key="MsgText_AllUpdatesExcluded">Všetky zobrazené aktualizácie boli vylúčené.</sys:String>
+    <sys:String x:Key="MsgText_ApplicationShutdown">vypína sa</sys:String>
+    <sys:String x:Key="MsgText_ApplicationStarting">spúšťa sa</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCheckFailed">Kontrola aktualizácie zlyhala. Viac informácií nájdete v denníku.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateChecking">Kontroluje sa aktualizácia.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateGoToRelease">Chcete prejsť na stránku vydania?</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateNewerFound">Našlo sa novšie vydanie ({0}).</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateNoneFound">Nenašli sa žiadne novšie vydania.</sys:String>
+    <sys:String x:Key="MsgText_ColumnSortCleared">Zoraďovanie stĺpcov bolo vymazané</sys:String>
+    <sys:String x:Key="MsgText_CopiedToClipboard">Skopírované do schránky</sys:String>
+    <sys:String x:Key="MsgText_DateFormatChange">Zmenený formát dátumu</sys:String>
+    <sys:String x:Key="MsgText_DisplayedAllUpdates">Zobrazujú sa všetky aktualizácie {0}</sys:String>
+    <sys:String x:Key="MsgText_DisplayedUpdates">Zobrazuje sa {0} z {1} aktualizácií</sys:String>
+    <sys:String x:Key="MsgText_ElapsedTime">Uplynulý čas</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">Vyskytol sa problém s jazykovým súborom.</sys:String>
+    <sys:String x:Key="MsgText_EventLogNA">Pre túto aktualizáciu sa nenašli žiadne záznamy denníkov udalostí.</sys:String>
+    <sys:String x:Key="MsgText_EventLogNoRecords">Nenašli sa žiadne záznamy denníka udalostí obsahujúce „{0}“.</sys:String>
+    <sys:String x:Key="MsgText_ExcludingContaining">S výnimkou aktualizácií obsahujúcich:</sys:String>
+    <sys:String x:Key="MsgText_FilterOneRowShown">Zobrazuje sa 1 riadok</sys:String>
+    <sys:String x:Key="MsgText_FilterRowsShown">Zobrazené riadky: {0}</sys:String>
+    <sys:String x:Key="MsgText_HResultCopiedToClipboard">Výsledok HR {0} bol skopírovaný do schránky</sys:String>
+    <sys:String x:Key="MsgText_ListRefreshed">Obnovený zoznam</sys:String>
+    <sys:String x:Key="MsgText_NoUpdatesFound">Nenašli sa žiadne aktualizácie!</sys:String>
+    <sys:String x:Key="MsgText_Opening">Otváranie</sys:String>
+    <sys:String x:Key="MsgText_OpeningLogFile">Otváranie súboru denníka</sys:String>
+    <sys:String x:Key="MsgText_OpeningReadMeFile">Otvorenie súboru ReadMe</sys:String>
+    <sys:String x:Key="MsgText_OpeningWindowsUpdate">Otváranie služby Windows Update</sys:String>
+    <sys:String x:Key="MsgText_UIColorSet">Farba zvýraznenia nastavená na {0}</sys:String>
+    <sys:String x:Key="MsgText_UISizeSet">Veľkosť nastavená na {0}</sys:String>
+    <sys:String x:Key="MsgText_UIThemeSet">Motív nastavený na {0}</sys:String>
+    <sys:String x:Key="MsgText_WindowTitleAdministrator">Správca</sys:String>
+    <!--  Navigation Items  -->
+    <sys:String x:Key="NavItem_About">O programe</sys:String>
+    <sys:String x:Key="NavItem_Exit">Ukončiť</sys:String>
+    <sys:String x:Key="NavItem_Settings">Nastavenia</sys:String>
+    <sys:String x:Key="NavItem_Updates">Aktualizácie</sys:String>
+    <sys:String x:Key="NavTitle_About">O programe Windows Update Viewer</sys:String>
+    <sys:String x:Key="NavTitle_Settings">Nastavenia</sys:String>
+    <sys:String x:Key="NavTitle_Updates">Zobrazovač aktualizácií systému Windows</sys:String>
+    <!--  Result Codes  -->
+    <sys:String x:Key="ResultCode_Failed">Zlyhalo</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">Prebieha</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">Nespustené</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">Prerušené</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Úspešné</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">Úspešné s chybami</sys:String>
+    <!--  Settings Page Expander Headings  -->
+    <sys:String x:Key="SettingsSection_AppSettings">Nastavenia aplikácie</sys:String>
+    <sys:String x:Key="SettingsSection_Language">Jazyk</sys:String>
+    <sys:String x:Key="SettingsSection_UISettings">Nastavenia používateľského rozhrania</sys:String>
+    <sys:String x:Key="SettingsSubHead_AppSettings">Počet aktualizácií, formát dátumu, vylúčené položky, podrobnosti a ďalšie</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Nastavenia jazyka (prebieha spracovanie)</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">Motív, farba zvýraznenia, veľkosť používateľského rozhrania, výška riadku, počiatočná pozícia a ďalšie</sys:String>
+    <!--  Settings Page Items  -->
+    <sys:String x:Key="SettingsItem_AccentColor">Farba zvýraznenia</sys:String>
+    <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Zmena jazyka spôsobí reštart aplikácie!</sys:String>
+    <sys:String x:Key="SettingsItem_DateFormat">Formát dátumu mriežky</sys:String>
+    <sys:String x:Key="SettingsItem_EditExcludeToolTip">Ak chcete otvoriť súbor s predvolenou aplikáciou, kliknite so stlačeným klávesom Shift</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Povoliť testovanie jazyka</sys:String>
+    <sys:String x:Key="SettingsItem_HideExcluded">Skryť vylúčené položky</sys:String>
+    <sys:String x:Key="SettingsItem_IncludeDebug">Zahrnúť správy na úrovni ladenia do súboru denníka</sys:String>
+    <sys:String x:Key="SettingsItem_KeepOnTop">Uchovávajte Windows Update Viewer nad ostatnými oknami</sys:String>
+    <sys:String x:Key="SettingsItem_Language">Jazyk</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdates">Počet aktualizácií</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">Toto je maximálny počet aktualizácií, ktoré sa majú spracovať pred vylúčením akýchkoľvek aktualizácií.</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">Nastavenie na nižšiu hodnotu môže zlepšiť výkon.</sys:String>
+    <sys:String x:Key="SettingsItem_ParseAdditional">Vylúčením položiek sa okrem názvu aktualizácie analyzuje aj číslo KB, výsledok a ID aktualizácie</sys:String>
+    <sys:String x:Key="SettingsItem_RowHeight">Výška riadku</sys:String>
+    <sys:String x:Key="SettingsItem_SelectFirstRow">Vybrať prvý riadok na začiatku</sys:String>
+    <sys:String x:Key="SettingsItem_ShowDetails">Zobraziť panel podrobností</sys:String>
+    <sys:String x:Key="SettingsItem_ShowExit">Zobraziť ukončenie na navigačnom paneli</sys:String>
+    <sys:String x:Key="SettingsItem_ShowLogWarnings">Zobraziť v denníku varovné správy pre nenulové hodnoty HResult</sys:String>
+    <sys:String x:Key="SettingsItem_ShowTodayInBold">Zobraziť aktualizácie s aktuálnym dátumom tučným písmom</sys:String>
+    <sys:String x:Key="SettingsItem_StartCentered">Začnite s oknom vycentrovaným na obrazovke</sys:String>
+    <sys:String x:Key="SettingsItem_Theme">Motív</sys:String>
+    <sys:String x:Key="SettingsItem_UISize">Veľkosť používateľského rozhrania</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Použiť jazyk zobrazenia systému Windows</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Ak je vybratá táto možnosť, jazyk zadaný v nastaveniach systému Windows bude</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">použije sa, ak je dostupný preklad, inak sa použije angličtina (en-US).</sys:String>
+    <!--  Enums for Combo Boxes on the Settings Page  -->
+    <sys:String x:Key="SettingsEnum_AccentColor_Amber">jantárová</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Black">Čierna</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Blue">Modrá</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_BlueGray">Modrošedá</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Brown">Hnedá</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Cyan">Azúrová</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_DeepOrange">Sýto oranžová</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_DeepPurple">Sýtofialová</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Gray">Sivá</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Green">Zelená</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Indigo">Indigo</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_LightBlue">Svetlomodrá</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_LightGreen">Svetlozelená</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Lime">Limetka</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Orange">Oranžová</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Pink">Ružová</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Purple">Fialová</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Red">Červená</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Teal">Teal</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_White">Biela</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Yellow">Žltá</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 najnovších</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_100">100 najnovších</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_250">250 najnovších</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_500">500 najnovších</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_All">Všetky aktualizácie</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Default">100 %</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Large">105 %</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Larger">110 %</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Largest">120 %</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Small">95 %</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Smaller">90 %</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Smallest">80 %</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Comfortable">Pohodlné</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Compact">Kompaktné</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Wide">Široký</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Dark">Tmavý materiál</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Darker">Tmavšie</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Light">Svetlo</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_System">Systém</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regionálne: Iba dátum</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regionálne: Dátum a čas</sys:String>
+
+</ResourceDictionary>
