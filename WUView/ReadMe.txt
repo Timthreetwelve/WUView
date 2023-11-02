@@ -114,7 +114,7 @@ Notices and License
 ===================
 Windows Update Viewer was written by Tim Kennedy.
 
-Windows Update Viewer uses the following packages:
+Windows Update Viewer uses the following packages and applications:
 
     * Material Design in XAML Toolkit https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit
 
@@ -126,10 +126,17 @@ Windows Update Viewer uses the following packages:
 
     * GitVersion https://github.com/GitTools/GitVersion
 
-    * Inno Setup was used to create the installer. https://jrsoftware.org/isinfo.php
-
     * ResX Resource Manager was used for localization in earlier versions. https://github.com/dotnet/ResXResourceManager
 
+    * GitKraken was used for everything Git related. https://www.gitkraken.com/
+
+    * Inno Setup was used to create the installer. https://jrsoftware.org/isinfo.php
+
+    * Visual Studio Community was used throughout the development of Get My IP. https://visualstudio.microsoft.com/vs/community/
+
+    * XAML Styler is indispensable when working with XAML. https://github.com/Xavalon/XamlStyler
+
+    * And of course, the essential PowerToys https://github.com/microsoft/PowerToys
 
 MIT License
 Copyright (c) 2023 Tim Kennedy
