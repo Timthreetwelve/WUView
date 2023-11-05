@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 global using System;
+global using System.Collections;
 global using System.Collections.Generic;
 global using System.Collections.ObjectModel;
 global using System.ComponentModel;

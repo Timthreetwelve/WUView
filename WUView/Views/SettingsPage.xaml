@@ -447,6 +447,7 @@
                             <RowDefinition Height="31" />
                             <RowDefinition Height="38" />
                             <RowDefinition Height="38" />
+                            <RowDefinition Height="22" />
                             <RowDefinition Height="38" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -536,7 +537,13 @@
                                    Text="{DynamicResource SettingsItem_ChangingLanguageWarning}"
                                    TextWrapping="Wrap" />
 
-                        <StackPanel Grid.Row="3" Grid.Column="1"
+                        <Rectangle Grid.Row="3" Grid.Column="1"
+                                   Margin="0,5,60,10"
+                                   HorizontalAlignment="Stretch"
+                                   Fill="{DynamicResource MaterialDesignDivider}"
+                                   Height="2"/>
+
+                        <StackPanel Grid.Row="4" Grid.Column="1"
                                     Orientation="Horizontal">
                             <StackPanel.DataContext>
                                 <viewmodels:SettingsViewModel />

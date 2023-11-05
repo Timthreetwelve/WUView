@@ -371,6 +371,19 @@ public partial class NavigationViewModel : ObservableObject
                 string message = string.Format(GetStringResource("MsgText_UIColorSet"), color);
                 SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
+            if (e.Key == Key.F)
+            {
+                using Process p = new();
+                p.StartInfo.FileName = AppInfo.AppDirectory;
+                p.StartInfo.UseShellExecute = true;
+                p.StartInfo.ErrorDialog = false;
+                _ = p.Start();
+            }
+            if (e.Key == Key.K)
+            {
+                CompareLanguageDictionaries();
+                ViewLogFile();
+            }
             if (e.Key == Key.S)
             {
                 TextFileViewer.ViewTextFile(ConfigHelpers.SettingsFileName);
