@@ -1,4 +1,4 @@
-[Languages]
+﻿[Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "ca"; MessagesFile: "compiler:\Languages\Catalan.isl"
 Name: "de"; MessagesFile: "compiler:\Languages\German.isl"

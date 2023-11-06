@@ -1,15 +1,11 @@
-; -----------------------------------------------------------------------------
+﻿; -----------------------------------------------------------------------------
 ; Windows Update Viewer (WUView)
 ; -----------------------------------------------------------------------------
 
-#define MyAppName            "Windows Update Viewer"
-#define MyAppExeName         "WUView.exe"
-#define MyCompanyName        "T_K"
-#define MyPublisherName      "Tim Kennedy"
-#define CurrentYear          GetDateTimeString('yyyy', '/', ':')
-#define MyCopyright          "(C) " + CurrentYear + " Tim Kennedy"
-#define MyAppNameNoSpaces    StringChange(MyAppName, " ", "")
-#define MyDateTimeString     GetDateTimeString('yyyy/mm/dd hh:nn:ss', '/', ':')
+; -----------------------------------------------------
+; Include the localization file. Thanks bovirus!
+; -----------------------------------------------------
+#include "WUViewLocalization.iss"
 
 #define BaseDir              "D:\Visual Studio\Source\Prod\WUView\WUView"
 #define MySourceDir          BaseDir + "\bin\Publish"
@@ -20,12 +16,18 @@
 #define MyLargeImage         "D:\InnoSetup\Images\WizardImageWUV2.bmp"
 
 #define MyAppID              "{3A152885-8378-4FDE-AFCC-85D096B16A1D}"
+#define MyAppName            "Windows Update Viewer"
+#define MyAppVersion          GetVersionNumbersString(MySourceDir + "\" + MyAppExeName) 
+#define MyAppExeName         "WUView.exe"
+#define MyCompanyName        "T_K"
+#define MyPublisherName      "Tim Kennedy"
+#define StartCopyrightYear   "2019"
+#define CurrentYear          GetDateTimeString('yyyy', '/', ':')
+#define MyCopyright          "(c) " + StartCopyrightYear + "-" + CurrentYear + " Tim Kennedy"
+#define MyAppNameNoSpaces    StringChange(MyAppName, " ", "")
+#define MyDateTimeString     GetDateTimeString('yyyy/mm/dd hh:nn:ss', '/', ':')
 #define MyAppSupportURL      "https://github.com/Timthreetwelve/WUView"
 
-; -----------------------------------------------------
-; Include the localization file. Thanks bovirus!
-; -----------------------------------------------------
-#include "WUViewLocalization.iss"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
