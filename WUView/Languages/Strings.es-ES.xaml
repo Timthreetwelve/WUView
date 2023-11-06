@@ -15,7 +15,7 @@
 
         Translation contributed by:  My AWESOME brother Steve
 
-        Date last update:            2023/10/03
+        Date last update:            2023/11/06
 
         =======================================================================
 
@@ -60,19 +60,16 @@
     <sys:String x:Key="Details_Title">Titulo:</sys:String>
     <sys:String x:Key="Details_TitleFallback">Seleccionar una actualización de arriba y los detalles aparecerán aquí.</sys:String>
     <sys:String x:Key="Details_UpdateID">Actualizar ID:</sys:String>
-    <!--  DataGrid Column Headers  -->
-    <sys:String x:Key="GridColumn_Date">Fecha</sys:String>
-    <sys:String x:Key="GridColumn_KBNum">Número KB</sys:String>
-    <sys:String x:Key="GridColumn_Result">Resultado</sys:String>
-    <sys:String x:Key="GridColumn_Title">Título</sys:String>
     <!--  Exclude List Editor  -->
     <sys:String x:Key="ExcludesEditor_TextLine1">Introducir las cadenas que desea excluir (una por línea)</sys:String>
     <sys:String x:Key="ExcludesEditor_TextLine2">Las comparaciones no distinguen entre mayúsculas y minúsculas</sys:String>
     <!--  Filter Box Hint Text  -->
     <sys:String x:Key="FilterHint">Filtrar</sys:String>
-    <!--  Update Operation Type  -->
-    <sys:String x:Key="OperationType_Installation">Instalación</sys:String>
-    <sys:String x:Key="OperationType_Uninstallation">Desinstalación</sys:String>
+     <!--  DataGrid Column Headers  -->
+    <sys:String x:Key="GridColumn_Date">Fecha</sys:String>
+    <sys:String x:Key="GridColumn_KBNum">Número KB</sys:String>
+    <sys:String x:Key="GridColumn_Result">Resultado</sys:String>
+    <sys:String x:Key="GridColumn_Title">Título</sys:String>
     <!--  Menu Items  -->
     <sys:String x:Key="Menu_Copy">_Copiar</sys:String>
     <sys:String x:Key="Menu_File">_Archivo</sys:String>
@@ -128,20 +125,12 @@
     <sys:String x:Key="NavTitle_About">Información</sys:String>
     <sys:String x:Key="NavTitle_Settings">Configuración</sys:String>
     <sys:String x:Key="NavTitle_Updates">Visor de Windows Update</sys:String>
-    <!--  Result Codes  -->
-    <sys:String x:Key="ResultCode_Failed">Fallido</sys:String>
-    <sys:String x:Key="ResultCode_InProgress">En curso</sys:String>
-    <sys:String x:Key="ResultCode_NotStarted">No iniciado</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Abortado</sys:String>
-    <sys:String x:Key="ResultCode_Succeeded">Tuvo éxito</sys:String>
-    <sys:String x:Key="ResultCode_SucceededWithErrors">Tuvo éxito con errores</sys:String>
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Configuración de la aplicación</sys:String>
     <sys:String x:Key="SettingsSection_Language">Idioma</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Configuración de la interfaz de usuario</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Número de actualizaciones, formato de fecha, elementos excluidos, detalles</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Ajustes de idioma (trabajo en curso)</sys:String>
-    <sys:String x:Key="SettingsSubHead_UISettings">Tema, color acentuado, tamaño de la interfaz, altura de la fila, posición inicial</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Color de acento</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">El cambio de idioma hará que la aplicación se reinicie</sys:String>
@@ -165,14 +154,7 @@
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Tamaño de la IU</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Utilizar el idioma de visualización de Windows</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Cuando se selecciona esta opción, se utilizará el idioma especificado en la configuración de Windows.</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La mayor parte del texto de la aplicación permanecerá en inglés (en-US), pero cambiarán los formatos de los números.</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
-    <sys:String x:Key="SettingsEnum_MaxUpdates_All">Todas las actualizaciones</sys:String>
-    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 más recientes</sys:String>
-    <sys:String x:Key="SettingsEnum_MaxUpdates_100">100 más recientes</sys:String>
-    <sys:String x:Key="SettingsEnum_MaxUpdates_250">250 más recientes</sys:String>
-    <sys:String x:Key="SettingsEnum_MaxUpdates_500">500 más recientes</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Ámbar</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Negro</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Blue">Azul</sys:String>
@@ -194,6 +176,11 @@
     <sys:String x:Key="SettingsEnum_AccentColor_Teal">Verde azulado</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_White">Blanco</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Yellow">Amarillo</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 más recientes</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_100">100 más recientes</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_250">250 más recientes</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_500">500 más recientes</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_All">Todas las actualizaciones</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Default">100%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Large">105%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Larger">110%</sys:String>
@@ -204,11 +191,32 @@
     <sys:String x:Key="SettingsEnum_Spacing_Comfortable">Normal</sys:String>
     <sys:String x:Key="SettingsEnum_Spacing_Compact">Pequeño</sys:String>
     <sys:String x:Key="SettingsEnum_Spacing_Wide">Grande</sys:String>
-    <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Dark">Oscuro</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Más Oscuro</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Claro</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regional: Fecha sola</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regional: Fecha y hora</sys:String>
+    <!-- Recently added strings -->    
+    <sys:String x:Key="About_Contribute">Contribute</sys:String>
+    <sys:String x:Key="About_ContributeToolTip">How to contribute a translation</sys:String>
+    <sys:String x:Key="Button_No">No</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Open App Folder</sys:String>
+    <sys:String x:Key="Button_Yes">Yes</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">Export to JSON File</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
+    <sys:String x:Key="OperationType_Installation">Installation</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Uninstallation</sys:String>
+    <sys:String x:Key="ResultCode_Failed">Failed</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">In Progress</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">Not Started</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">Aborted</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Succeeded</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">Succeeded with Errors</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Enable language testing</sys:String>
+     <!-- Recently changed strings -->
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Cuando se selecciona esta opción, se utilizará el idioma especificado en la configuración de Windows.</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La mayor parte del texto de la aplicación permanecerá en inglés (en-US), pero cambiarán los formatos de los números.</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Language Settings and Testing</sys:String>
 
 </ResourceDictionary>

@@ -15,7 +15,7 @@
 
         Translation contributed by:  @Timthreetwelve & Google Translate
 
-        Date last update:            2023/09/26
+        Date last update:            2023/12/06
 
         ======================================================================
 
@@ -60,17 +60,17 @@
     <sys:String x:Key="Details_Title">Títol:</sys:String>
     <sys:String x:Key="Details_TitleFallback">Seleccioneu una actualització a dalt i els detalls apareixeran aquí.</sys:String>
     <sys:String x:Key="Details_UpdateID">Actualitza l'identificador:</sys:String>
-    <!--  DataGrid Column Headers  -->
-    <sys:String x:Key="GridColumn_Date">Data</sys:String>
-    <sys:String x:Key="GridColumn_KBNum">Número de KB</sys:String>
-    <sys:String x:Key="GridColumn_Result">Resultat</sys:String>
-    <sys:String x:Key="GridColumn_Title">Títol</sys:String>
     <!--  Exclude List Editor  -->
     <sys:String x:Key="ExcludesEditor_TextLine1">Introduïu cadenes per excloure (una per línia)</sys:String>
     <sys:String x:Key="ExcludesEditor_TextLine2">Les comparacions no distingeixen entre majúscules i minúscules</sys:String>
     <!--  Filter Box Hint Text  -->
     <sys:String x:Key="FilterHint">Filtre</sys:String>
-    <!--  Menu Items  -->
+   <!--  DataGrid Column Headers  -->
+    <sys:String x:Key="GridColumn_Date">Data</sys:String>
+    <sys:String x:Key="GridColumn_KBNum">Número de KB</sys:String>
+    <sys:String x:Key="GridColumn_Result">Resultat</sys:String>
+    <sys:String x:Key="GridColumn_Title">Títol</sys:String>
+     <!--  Menu Items  -->
     <sys:String x:Key="Menu_Copy">Còpia</sys:String>
     <sys:String x:Key="Menu_File">Dossier</sys:String>
     <sys:String x:Key="Menu_View">Veure</sys:String>
@@ -130,7 +130,6 @@
     <sys:String x:Key="SettingsSection_Language">Llenguatge</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Configuració de la IU</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Nombre d'actualitzacions, format de data, elements exclosos, detalls i molt més</sys:String>
-    <sys:String x:Key="SettingsSubHead_Language">Configuració d'idioma (treball en curs)</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Tema, color d'accent, mida de la IU, alçada de fila, posició inicial i molt més</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Color d'accent</sys:String>
@@ -155,8 +154,6 @@
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Mida de la IU</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Utilitzeu l'idioma de visualització de Windows</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quan se selecciona aquesta opció, s'utilitzarà l'idioma especificat a la configuració de Windows.</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La major part del text de l'aplicació es mantindrà en anglès (en-US), però els formats dels números canviaran.</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Ambre</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Negre</sys:String>
@@ -179,8 +176,6 @@
     <sys:String x:Key="SettingsEnum_AccentColor_Teal">Teal</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_White">Blanc</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Yellow">groc</sys:String>
-    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regional: només data</sys:String>
-    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regional: data i hora</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_100">100 més recents</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_250">250 més recents</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 més recents</sys:String>
@@ -200,5 +195,28 @@
     <sys:String x:Key="SettingsEnum_Theme_Darker">Més fosc</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Llum</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regional: només data</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regional: data i hora</sys:String>
+    <!-- Recently added strings -->
+     <sys:String x:Key="About_Contribute">Contribute</sys:String>
+    <sys:String x:Key="About_ContributeToolTip">How to contribute a translation</sys:String>
+    <sys:String x:Key="Button_No">No</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Open App Folder</sys:String>
+    <sys:String x:Key="Button_Yes">Yes</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">Export to JSON File</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
+    <sys:String x:Key="OperationType_Installation">Installation</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Uninstallation</sys:String>
+    <sys:String x:Key="ResultCode_Failed">Failed</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">In Progress</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">Not Started</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">Aborted</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Succeeded</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">Succeeded with Errors</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Enable language testing</sys:String>
+    <!-- Recently changed strings -->
+   <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quan se selecciona aquesta opció, s'utilitzarà l'idioma especificat a la configuració de Windows.</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La major part del text de l'aplicació es mantindrà en anglès (en-US), però els formats dels números canviaran.</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Configuració d'idioma (treball en curs)</sys:String>
 
 </ResourceDictionary>
