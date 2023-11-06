@@ -2,31 +2,33 @@
 ; Windows Update Viewer (WUView)
 ; -----------------------------------------------------------------------------
 
-; -----------------------------------------------------
-; Include the localization file. Thanks bovirus!
-; -----------------------------------------------------
-#include "WUViewLocalization.iss"
-
 #define BaseDir              "D:\Visual Studio\Source\Prod\WUView\WUView"
 #define MySourceDir          BaseDir + "\bin\Publish"
 #define MySetupIcon          BaseDir + "\Images\UV.ico"
-#define MyAppVersion         GetStringFileInfo(MySourceDir + "\" + MyAppExeName, "FileVersion")
-#define MyInstallerFilename  MyAppNameNoSpaces + "_" + MyAppVersion + "_Setup"
 #define MyOutputDir          "D:\InnoSetup\Output"
 #define MyLargeImage         "D:\InnoSetup\Images\WizardImageWUV2.bmp"
 
 #define MyAppID              "{3A152885-8378-4FDE-AFCC-85D096B16A1D}"
 #define MyAppName            "Windows Update Viewer"
-#define MyAppVersion          GetVersionNumbersString(MySourceDir + "\" + MyAppExeName) 
+#define MyAppNameNoSpaces    StringChange(MyAppName, " ", "")
 #define MyAppExeName         "WUView.exe"
+#define MyAppVersion         GetVersionNumbersString(MySourceDir + "\" + MyAppExeName) 
+#define MyInstallerFilename  MyAppNameNoSpaces + "_" + MyAppVersion + "_Setup"
 #define MyCompanyName        "T_K"
 #define MyPublisherName      "Tim Kennedy"
 #define StartCopyrightYear   "2019"
 #define CurrentYear          GetDateTimeString('yyyy', '/', ':')
 #define MyCopyright          "(c) " + StartCopyrightYear + "-" + CurrentYear + " Tim Kennedy"
-#define MyAppNameNoSpaces    StringChange(MyAppName, " ", "")
+#define MyLicFile            "D:\Visual Studio\Resources\License.rtf"
+#define MySmallImage         "D:\InnoSetup\Images\WizardSmallImage.bmp"
 #define MyDateTimeString     GetDateTimeString('yyyy/mm/dd hh:nn:ss', '/', ':')
 #define MyAppSupportURL      "https://github.com/Timthreetwelve/WUView"
+#define RunRegKey            "Software\Microsoft\Windows\CurrentVersion\Run" 
+
+; -----------------------------------------------------
+; Include the localization file. Thanks bovirus!
+; -----------------------------------------------------
+#include "WUViewLocalization.iss"
 
 
 [Setup]
@@ -65,6 +67,7 @@ UsePreviousLanguage=no
 WizardStyle=modern
 WizardSizePercent=100,100
 WizardImageFile={#MyLargeImage}
+WizardSmallImageFile={#MySmallImage}
 
 AllowNoIcons=yes
 Compression=lzma
@@ -73,7 +76,7 @@ DefaultGroupName={#MyAppName}
 DisableDirPage=yes
 DisableProgramGroupPage=yes
 DisableReadyMemo=no
-DisableStartupPrompt=Yes
+DisableStartupPrompt=yes
 DisableWelcomePage=no
 OutputBaseFilename={#MyInstallerFilename}
 OutputDir={#MyOutputDir}
