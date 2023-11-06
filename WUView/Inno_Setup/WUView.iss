@@ -44,8 +44,8 @@ PrivilegesRequired=lowest
 ;---------------------------------------------
 
 AppName={#MyAppName}
-AppVerName={#MyAppName} {#MyAppVersion}
 AppVersion={#MyAppVersion}
+AppVerName={#MyAppName} {#MyAppVersion}
 
 AppCopyright={#MyCopyright}
 AppPublisherURL={#MyAppSupportURL}
@@ -60,8 +60,11 @@ UninstallDisplayName={#MyAppName}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 AppPublisher={#MyPublisherName}
 
-WizardStyle=modern
 ShowLanguageDialog=yes
+UsePreviousLanguage=no
+WizardStyle=modern
+WizardSizePercent=100,100
+WizardImageFile={#MyLargeImage}
 
 AllowNoIcons=yes
 Compression=lzma
@@ -79,9 +82,7 @@ SetupIconFile={#MySetupIcon}
 SetupLogging=yes
 SolidCompression=no
 SourceDir={#MySourceDir}
-VersionInfoVersion={#MyAppVersion}
-WizardImageFile={#MyLargeImage}
-WizardSizePercent=100,100
+
 
 [Files]
 Source: "{#MySourceDir}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
