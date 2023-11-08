@@ -70,9 +70,6 @@
     <sys:String x:Key="GridColumn_KBNum">Numer KB</sys:String>
     <sys:String x:Key="GridColumn_Result">Wynik</sys:String>
     <sys:String x:Key="GridColumn_Title">Tytuł</sys:String>
-    <!--  Update Operation Type  -->
-    <sys:String x:Key="OperationType_Installation">Instalacja</sys:String>
-    <sys:String x:Key="OperationType_Uninstallation">Odinstalowanie</sys:String>
     <!--  Menu Items  -->
     <sys:String x:Key="Menu_Copy">_Kopiuj</sys:String>
     <sys:String x:Key="Menu_File">_Plik</sys:String>
@@ -128,20 +125,12 @@
     <sys:String x:Key="NavTitle_About">O Windows Update Viewer</sys:String>
     <sys:String x:Key="NavTitle_Settings">Ustawienia</sys:String>
     <sys:String x:Key="NavTitle_Updates">Windows Update Viewer</sys:String>
-    <!--  Result Codes  -->
-    <sys:String x:Key="ResultCode_Failed">Nie powiodło się</sys:String>
-    <sys:String x:Key="ResultCode_InProgress">W toku</sys:String>
-    <sys:String x:Key="ResultCode_NotStarted">Nie uruchomiono</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Przerwano</sys:String>
-    <sys:String x:Key="ResultCode_Succeeded">Powodzenie</sys:String>
-    <sys:String x:Key="ResultCode_SucceededWithErrors">Powodzenie z błędami</sys:String>
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Ustawienia</sys:String>
     <sys:String x:Key="SettingsSection_Language">Język</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Interfejs</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Liczba aktualizacji, format daty, wykluczone elementy, szczegóły i inne.</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Ustawienia języka (Prace w toku)</sys:String>
-    <sys:String x:Key="SettingsSubHead_UISettings">Motyw, kolor akcentu, rozmiar interfejsu użytkownika, wysokość wiersza, pozycja początkowa i wiele więcej</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Kolor akcentu</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Po zmianie języka wymagany jest restart aplikacji!</sys:String>
@@ -165,8 +154,6 @@
     <sys:String x:Key="SettingsItem_Theme">Motyw</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Skala</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Użyj ustawień regionalnych systemu</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Po wybraniu tej opcji zostanie użyty język określony w ustawieniach systemu Windows</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">jeśli dostępne jest tłumaczenie, w przeciwnym razie zostanie użyty język angielski (en-US).</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Amber</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Black</sys:String>
@@ -210,5 +197,26 @@
     <sys:String x:Key="SettingsEnum_Theme_System">System</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Region: Tylko data</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Region: Data i czas</sys:String>
+    <!-- Recently added strings -->
+   <sys:String x:Key="About_Contribute">Contribute</sys:String>
+    <sys:String x:Key="About_ContributeToolTip">How to contribute a translation</sys:String>
+    <sys:String x:Key="Button_No">No</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Open App Folder</sys:String>
+    <sys:String x:Key="Button_Yes">Yes</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">Export to JSON File</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
+    <sys:String x:Key="OperationType_Installation">Instalacja</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Odinstalowanie</sys:String>
+    <sys:String x:Key="ResultCode_Failed">Nie powiodło się</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">W toku</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">Nie uruchomiono</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">Przerwano</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Powodzenie</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">Powodzenie z błędami</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Enable language testing</sys:String>
+    <!-- Recently changed strings -->
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Po wybraniu tej opcji zostanie użyty język określony w ustawieniach systemu Windows</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">jeśli dostępne jest tłumaczenie, w przeciwnym razie zostanie użyty język angielski (en-US).</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Language Settings and Testing</sys:String>
 
 </ResourceDictionary>

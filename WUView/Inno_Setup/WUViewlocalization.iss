@@ -1,11 +1,12 @@
-[Languages]
+﻿[Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
-Name: "ca"; MessagesFile: "compiler:\Languages\Catalan.isl"
-Name: "de"; MessagesFile: "compiler:\Languages\German.isl"
-Name: "es"; MessagesFile: "compiler:\Languages\Spanish.isl"
-Name: "fr"; MessagesFile: "compiler:\Languages\French.isl"
-Name: "it"; MessagesFile: "compiler:\Languages\Italian.isl"
-Name: "nl"; MessagesFile: "compiler:\Languages\Dutch.isl"
+Name: "ca"; MessagesFile: "compiler:Languages\Catalan.isl"
+Name: "de"; MessagesFile: "compiler:Languages\German.isl"
+Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
+Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
+Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
+Name: "nl"; MessagesFile: "compiler:Languages\Dutch.isl"
+Name: "sk"; MessagesFile: "compiler:Languages\Slovak.isl"
 
 [LangOptions]
 DialogFontSize=9
@@ -21,6 +22,7 @@ es.WelcomeLabel2=Este programa instalará [name/ver] en su sistema.%n%nSe recomi
 fr.WelcomeLabel2=Cet assistant va vous guider dans l'installation de [name/ver] sur votre ordinateur.%n%nIl est recommandé de fermer toutes les applications actives avant de continuer.%n%nNotez que [name] nécessite .NET 6.
 it.WelcomeLabel2=[name/ver] sarà installato sul computer.%n%nPrima di procedere chiudi tutte le applicazioni attive.%n%nSi noti che [name] richiede .NET 6.
 nl.WelcomeLabel2=Hiermee wordt [name/ver] geïnstalleerd op deze computer.%n%nU wordt aanbevolen alle actieve programma's af te sluiten voordat u verder gaat.%n%n[name] nvereist .NET 6.
+sk.WelcomeLabel2=Týmto sa na váš počítač nainštaluje [name/ver].%n%nPred pokračovaním sa odporúča zatvoriť všetky ostatné aplikácie.%n%nVšimnite si, že [name] vyžaduje .NET 6.
 
 [CustomMessages]
 en.ViewReadme=View the ReadMe file

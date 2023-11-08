@@ -2,30 +2,34 @@
 ; Windows Update Viewer (WUView)
 ; -----------------------------------------------------------------------------
 
-#define MyAppName            "Windows Update Viewer"
-#define MyAppExeName         "WUView.exe"
-#define MyCompanyName        "T_K"
-#define MyPublisherName      "Tim Kennedy"
-#define CurrentYear          GetDateTimeString('yyyy', '/', ':')
-#define MyCopyright          "(C) " + CurrentYear + " Tim Kennedy"
-#define MyAppNameNoSpaces    StringChange(MyAppName, " ", "")
-#define MyDateTimeString     GetDateTimeString('yyyy/mm/dd hh:nn:ss', '/', ':')
-
 #define BaseDir              "D:\Visual Studio\Source\Prod\WUView\WUView"
 #define MySourceDir          BaseDir + "\bin\Publish"
 #define MySetupIcon          BaseDir + "\Images\UV.ico"
-#define MyAppVersion         GetStringFileInfo(MySourceDir + "\" + MyAppExeName, "FileVersion")
-#define MyInstallerFilename  MyAppNameNoSpaces + "_" + MyAppVersion + "_Setup"
 #define MyOutputDir          "D:\InnoSetup\Output"
 #define MyLargeImage         "D:\InnoSetup\Images\WizardImageWUV2.bmp"
 
 #define MyAppID              "{3A152885-8378-4FDE-AFCC-85D096B16A1D}"
+#define MyAppName            "Windows Update Viewer"
+#define MyAppNameNoSpaces    StringChange(MyAppName, " ", "")
+#define MyAppExeName         "WUView.exe"
+#define MyAppVersion         GetVersionNumbersString(MySourceDir + "\" + MyAppExeName) 
+#define MyInstallerFilename  MyAppNameNoSpaces + "_" + MyAppVersion + "_Setup"
+#define MyCompanyName        "T_K"
+#define MyPublisherName      "Tim Kennedy"
+#define StartCopyrightYear   "2019"
+#define CurrentYear          GetDateTimeString('yyyy', '/', ':')
+#define MyCopyright          "(c) " + StartCopyrightYear + "-" + CurrentYear + " Tim Kennedy"
+#define MyLicFile            "D:\Visual Studio\Resources\License.rtf"
+#define MySmallImage         "D:\InnoSetup\Images\WizardSmallImage.bmp"
+#define MyDateTimeString     GetDateTimeString('yyyy/mm/dd hh:nn:ss', '/', ':')
 #define MyAppSupportURL      "https://github.com/Timthreetwelve/WUView"
+#define RunRegKey            "Software\Microsoft\Windows\CurrentVersion\Run" 
 
 ; -----------------------------------------------------
 ; Include the localization file. Thanks bovirus!
 ; -----------------------------------------------------
 #include "WUViewLocalization.iss"
+
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -42,8 +46,8 @@ PrivilegesRequired=lowest
 ;---------------------------------------------
 
 AppName={#MyAppName}
-AppVerName={#MyAppName} {#MyAppVersion}
 AppVersion={#MyAppVersion}
+AppVerName={#MyAppName} {#MyAppVersion}
 
 AppCopyright={#MyCopyright}
 AppPublisherURL={#MyAppSupportURL}
@@ -58,8 +62,12 @@ UninstallDisplayName={#MyAppName}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 AppPublisher={#MyPublisherName}
 
-WizardStyle=modern
 ShowLanguageDialog=yes
+UsePreviousLanguage=no
+WizardStyle=modern
+WizardSizePercent=100,100
+WizardImageFile={#MyLargeImage}
+WizardSmallImageFile={#MySmallImage}
 
 AllowNoIcons=yes
 Compression=lzma
@@ -68,7 +76,7 @@ DefaultGroupName={#MyAppName}
 DisableDirPage=yes
 DisableProgramGroupPage=yes
 DisableReadyMemo=no
-DisableStartupPrompt=Yes
+DisableStartupPrompt=yes
 DisableWelcomePage=no
 OutputBaseFilename={#MyInstallerFilename}
 OutputDir={#MyOutputDir}
@@ -77,8 +85,10 @@ SetupIconFile={#MySetupIcon}
 SetupLogging=yes
 SolidCompression=no
 SourceDir={#MySourceDir}
+VersionInfoVersion={#MyAppVersion}
 WizardImageFile={#MyLargeImage}
 WizardSizePercent=100,100
+
 
 [Files]
 Source: "{#MySourceDir}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion

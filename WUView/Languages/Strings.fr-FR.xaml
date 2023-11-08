@@ -15,7 +15,7 @@
 
         Translation contributed by:  @Timthreetwelve & Google Translate
 
-        Date LAST UPDATE:            2023/09/24
+        Date LAST UPDATE:            2023/11/06
 
         ========================================================================
 
@@ -60,16 +60,16 @@
     <sys:String x:Key="Details_Title">Titre:</sys:String>
     <sys:String x:Key="Details_TitleFallback">Sélectionnez une mise à jour ci-dessus et les détails apparaîtront ici.</sys:String>
     <sys:String x:Key="Details_UpdateID">ID de mise à jour:</sys:String>
-    <!--  DataGrid Column Headers  -->
-    <sys:String x:Key="GridColumn_Date">Date</sys:String>
-    <sys:String x:Key="GridColumn_KBNum">Numéro de la base de connaissances</sys:String>
-    <sys:String x:Key="GridColumn_Result">Résultat</sys:String>
-    <sys:String x:Key="GridColumn_Title">Titre</sys:String>
     <!--  Exclude List Editor  -->
     <sys:String x:Key="ExcludesEditor_TextLine1">Saisissez les chaînes à exclure (une par ligne)</sys:String>
     <sys:String x:Key="ExcludesEditor_TextLine2">Les comparaisons ne sont pas sensibles à la casse</sys:String>
     <!--  Filter Box Hint Text  -->
     <sys:String x:Key="FilterHint">Filtre</sys:String>
+    <!--  DataGrid Column Headers  -->
+    <sys:String x:Key="GridColumn_Date">Date</sys:String>
+    <sys:String x:Key="GridColumn_KBNum">Numéro de la base de connaissances</sys:String>
+    <sys:String x:Key="GridColumn_Result">Résultat</sys:String>
+    <sys:String x:Key="GridColumn_Title">Titre</sys:String>
     <!--  Menu Items  -->
     <sys:String x:Key="Menu_Copy">Copie</sys:String>
     <sys:String x:Key="Menu_File">Déposer</sys:String>
@@ -131,7 +131,6 @@
     <sys:String x:Key="SettingsSection_UISettings">Paramètres de l'interface utilisateur</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Nombre de mises à jour, format de date, éléments exclus, détails, etc.</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Paramètres de langue (travail en cours)</sys:String>
-    <sys:String x:Key="SettingsSubHead_UISettings">Thème, couleur d'accentuation, taille de l'interface utilisateur, hauteur de ligne, position de départ et plus encore</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Couleur d'accentuation</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Changer la langue entraînera le redémarrage de l'application!</sys:String>
@@ -155,8 +154,6 @@
     <sys:String x:Key="SettingsItem_Theme">Thème</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Taille de l'interface utilisateur</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Utiliser la langue d'affichage de Windows</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Lorsque cette option est sélectionnée, la langue spécifiée dans les paramètres Windows sera utilisée.</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La plupart du texte de la candidature restera en anglais (en-US), mais les formats de chiffres changeront.</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Ambre</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Noir</sys:String>
@@ -179,11 +176,9 @@
     <sys:String x:Key="SettingsEnum_AccentColor_Teal">Sarcelle</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_White">Blanc</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Yellow">Jaune</sys:String>
-    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Régional: Date seulement</sys:String>
-    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Régional: Date et heure</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 plus récents</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_100">100 plus récents</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_250">250 plus récents</sys:String>
-    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 plus récents</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_500">500 plus récents</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_All">Toutes les mises à jour</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Default">100%</sys:String>
@@ -200,5 +195,28 @@
     <sys:String x:Key="SettingsEnum_Theme_Darker">Plus foncé</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Lumière</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Système</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Régional: Date seulement</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Régional: Date et heure</sys:String>
+    <!-- Recently added strings -->
+    <sys:String x:Key="About_Contribute">Contribute</sys:String>
+    <sys:String x:Key="About_ContributeToolTip">How to contribute a translation</sys:String>
+    <sys:String x:Key="Button_No">No</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Open App Folder</sys:String>
+    <sys:String x:Key="Button_Yes">Yes</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">Export to JSON File</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
+    <sys:String x:Key="OperationType_Installation">Installation</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Uninstallation</sys:String>
+    <sys:String x:Key="ResultCode_Failed">Failed</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">In Progress</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">Not Started</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">Aborted</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Succeeded</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">Succeeded with Errors</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Enable language testing</sys:String>
+    <!-- Recently changed strings -->
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Lorsque cette option est sélectionnée, la langue spécifiée dans les paramètres Windows sera utilisée.</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La plupart du texte de la candidature restera en anglais (en-US), mais les formats de chiffres changeront.</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Language Settings and Testing</sys:String>
 
 </ResourceDictionary>
