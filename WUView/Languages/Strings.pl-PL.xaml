@@ -130,7 +130,6 @@
     <sys:String x:Key="SettingsSection_Language">Język</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Interfejs</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Liczba aktualizacji, format daty, wykluczone elementy, szczegóły i inne.</sys:String>
-    <sys:String x:Key="SettingsSubHead_Language">Ustawienia języka (Prace w toku)</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Kolor akcentu</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Po zmianie języka wymagany jest restart aplikacji!</sys:String>

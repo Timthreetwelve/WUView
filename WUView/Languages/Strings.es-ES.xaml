@@ -3,7 +3,7 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <!--
-        Refer to the "Contribute a Translation" topic in the Wiki: 
+        Refer to the "Contribute a Translation" topic in the Wiki:
 
         https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
 
@@ -130,7 +130,7 @@
     <sys:String x:Key="SettingsSection_Language">Idioma</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Configuración de la interfaz de usuario</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Número de actualizaciones, formato de fecha, elementos excluidos, detalles</sys:String>
-    <sys:String x:Key="SettingsSubHead_Language">Ajustes de idioma (trabajo en curso)</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Ajustes de idioma</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Color de acento</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">El cambio de idioma hará que la aplicación se reinicie</sys:String>
@@ -197,7 +197,7 @@
     <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regional: Fecha sola</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regional: Fecha y hora</sys:String>
-    <!-- Recently added strings -->    
+    <!-- Recently added strings -->
     <sys:String x:Key="About_Contribute">Contribute</sys:String>
     <sys:String x:Key="About_ContributeToolTip">How to contribute a translation</sys:String>
     <sys:String x:Key="Button_No">No</sys:String>
@@ -217,6 +217,5 @@
      <!-- Recently changed strings -->
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Cuando se selecciona esta opción, se utilizará el idioma especificado en la configuración de Windows.</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La mayor parte del texto de la aplicación permanecerá en inglés (en-US), pero cambiarán los formatos de los números.</sys:String>
-    <sys:String x:Key="SettingsSubHead_Language">Language Settings and Testing</sys:String>
 
 </ResourceDictionary>
