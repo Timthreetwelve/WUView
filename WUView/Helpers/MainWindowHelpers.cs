@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Helpers;
 
@@ -21,15 +21,14 @@ internal static class MainWindowHelpers
     /// </summary>
     public static void SetWindowPosition()
     {
-        Window mainWindow = Application.Current.MainWindow;
-        mainWindow.Height = UserSettings.Setting.WindowHeight;
-        mainWindow.Left = UserSettings.Setting.WindowLeft;
-        mainWindow.Top = UserSettings.Setting.WindowTop;
-        mainWindow.Width = UserSettings.Setting.WindowWidth;
+        _mainWindow.Height = UserSettings.Setting.WindowHeight;
+        _mainWindow.Left = UserSettings.Setting.WindowLeft;
+        _mainWindow.Top = UserSettings.Setting.WindowTop;
+        _mainWindow.Width = UserSettings.Setting.WindowWidth;
 
         if (UserSettings.Setting.StartCentered)
         {
-            mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            _mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
     }
 
