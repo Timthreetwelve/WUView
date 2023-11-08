@@ -25,7 +25,6 @@
     <sys:String x:Key="About_BuildDate">Data build</sys:String>
     <sys:String x:Key="About_CommitID">IF commit</sys:String>
     <sys:String x:Key="About_CommitIDToolTip">IF full commit:</sys:String>
-    <sys:String x:Key="About_Contribute">Contribuisci</sys:String>
     <sys:String x:Key="About_ContributeToolTip">Come contribuire con una traduzione</sys:String>
     <sys:String x:Key="About_Copyright">Copyright</sys:String>
     <sys:String x:Key="About_CreatedBy">Creato da</sys:String>
@@ -218,5 +217,6 @@
     <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regionale: solo data</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regionale: data e ora</sys:String>
+    <sys:String x:Key="About_Contribute">Contribusci alla traduzione</sys:String>
 
 </ResourceDictionary>
