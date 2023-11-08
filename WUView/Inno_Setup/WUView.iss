@@ -77,7 +77,6 @@ SetupIconFile={#MySetupIcon}
 SetupLogging=yes
 SolidCompression=no
 SourceDir={#MySourceDir}
-VersionInfoVersion={#MyAppVersion}
 WizardImageFile={#MyLargeImage}
 WizardSizePercent=100,100
 
