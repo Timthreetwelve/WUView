@@ -12,7 +12,7 @@
 #define MyAppName            "Windows Update Viewer"
 #define MyAppNameNoSpaces    StringChange(MyAppName, " ", "")
 #define MyAppExeName         "WUView.exe"
-#define MyAppVersion         GetVersionNumbersString(MySourceDir + "\" + MyAppExeName) 
+#define MyAppVersion         GetVersionNumbersString(MySourceDir + "\" + MyAppExeName)
 #define MyInstallerFilename  MyAppNameNoSpaces + "_" + MyAppVersion + "_Setup"
 #define MyCompanyName        "T_K"
 #define MyPublisherName      "Tim Kennedy"
@@ -23,7 +23,7 @@
 #define MySmallImage         "D:\InnoSetup\Images\WizardSmallImage.bmp"
 #define MyDateTimeString     GetDateTimeString('yyyy/mm/dd hh:nn:ss', '/', ':')
 #define MyAppSupportURL      "https://github.com/Timthreetwelve/WUView"
-#define RunRegKey            "Software\Microsoft\Windows\CurrentVersion\Run" 
+#define RunRegKey            "Software\Microsoft\Windows\CurrentVersion\Run"
 
 ; -----------------------------------------------------
 ; Include the localization file. Thanks bovirus!
@@ -67,7 +67,6 @@ UsePreviousLanguage=no
 WizardStyle=modern
 WizardSizePercent=100,100
 WizardImageFile={#MyLargeImage}
-WizardSmallImageFile={#MySmallImage}
 
 AllowNoIcons=yes
 Compression=lzma
@@ -85,10 +84,6 @@ SetupIconFile={#MySetupIcon}
 SetupLogging=yes
 SolidCompression=no
 SourceDir={#MySourceDir}
-VersionInfoVersion={#MyAppVersion}
-WizardImageFile={#MyLargeImage}
-WizardSizePercent=100,100
-
 
 [Files]
 Source: "{#MySourceDir}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
