@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            02.11.2023
+        Date last update:            10.11.2023
 
         ========================================================================
 
@@ -199,7 +199,6 @@
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regionale: data e ora</sys:String>
     <!-- Recently added strings -->
     <sys:String x:Key="About_Contribute">Contribuisci</sys:String>
-    <sys:String x:Key="About_ContributeToolTip">Come contribuire con una traduzione</sys:String>
     <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Apri cartella app</sys:String>
     <sys:String x:Key="Button_Yes">Sì</sys:String>
@@ -218,5 +217,6 @@
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quando questa opzione è selezionata, verrà usata la lingua specificata nelle impostazioni di Windows.</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La maggior parte del testo della domanda rimarrà in inglese (en-US), ma i formati dei numeri cambieranno.</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Impostazioni lingua (lavori in corso)</sys:String>
+    <sys:String x:Key="About_Contribute">Contribuire ad una traduzione</sys:String>
 
 </ResourceDictionary>
