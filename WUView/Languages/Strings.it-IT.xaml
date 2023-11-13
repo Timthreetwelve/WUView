@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            10.11.2023
+        Date last update:            13.11.2023
 
         ========================================================================
 
@@ -25,7 +25,8 @@
     <sys:String x:Key="About_BuildDate">Data build</sys:String>
     <sys:String x:Key="About_CommitID">IF commit</sys:String>
     <sys:String x:Key="About_CommitIDToolTip">IF full commit:</sys:String>
-    <sys:String x:Key="About_Contribute">Contribusci alla traduzione</sys:String>
+    <sys:String x:Key="About_Contribute">Contribuisci alla traduzione</sys:String>
+    <sys:String x:Key="About_ContributeToolTip">Come contribuire ad una traduzione</sys:String>
     <sys:String x:Key="About_Copyright">Copyright</sys:String>
     <sys:String x:Key="About_CreatedBy">Creato da</sys:String>
     <sys:String x:Key="About_CreatedByToolTip">Vedi altri lavori di Tim su https://github.com/Timthreetwelve</sys:String>
@@ -33,6 +34,7 @@
     <sys:String x:Key="About_Documentation">Documentazione</sys:String>
     <sys:String x:Key="About_DocumentationText">Apri il file 'ReadMe'</sys:String>
     <sys:String x:Key="About_DocumentationToolTip">Visualizza il file 'ReadMe'</sys:String>
+    <sys:String x:Key="About_GitHub">Sito GitHub</sys:String>
     <sys:String x:Key="About_GitHubToolTip">Visita la pagina di WUView in GitHub</sys:String>
     <sys:String x:Key="About_License">Licenza</sys:String>
     <sys:String x:Key="About_LicenseText">Questo progetto è concesso in licenza secondo i termini della licenza MIT.</sys:String>
@@ -44,6 +46,7 @@
     <sys:String x:Key="About_Version">Versione</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Annulla</sys:String>
+    <sys:String x:Key="Button_Close">Chiudi menu</sys:String>
     <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Apri cartella app</sys:String>
@@ -236,9 +239,28 @@
        * = Comment not related to a single line
      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
+    <!-- Begin changes on 2023/11/05 @ 21:15 UTC -->
+    <!-- U | About_Contribute -->
+    <!-- A | About_ContributeToolTip -->
+    <!-- A | Button_No -->
+    <!-- A | Button_OpenAppFolder -->
+    <!-- A | Button_Yes -->
+    <!-- A | MenuItem_SaveJSON -->
+    <!-- A | OperationType_Installation -->
+    <!-- A | OperationType_Uninstallation -->
+    <!-- A | ResultCode_Failed -->
+    <!-- A | ResultCode_InProgress -->
+    <!-- A | ResultCode_NotStarted -->
+    <!-- A | ResultCode_ResultCode_Aborted -->
+    <!-- A | ResultCode_Succeeded -->
+    <!-- A | ResultCode_SucceededWithErrors -->
+    <!-- A | SettingsItem_EnableLanguageTesting -->
+    <!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
+    <!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
+    <!-- U | SettingsSubHead_Language -->
+    <!-- End of changes on 2023/11/05 -->
+
     <!-- Begin changes on 2023/11/13 @ 03:02 UTC -->
-    <!-- * | Updated comments in this file -->
-    <!-- * | Moved all items to appropriate sections above -->
     <!-- A | About_GitHub -->
     <!-- A | Button_Close -->
     <!-- End of changes on 2023/11/13 -->
