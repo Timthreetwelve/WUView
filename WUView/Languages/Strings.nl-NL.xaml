@@ -25,6 +25,8 @@
     <sys:String x:Key="About_BuildDate">Build Datum</sys:String>
     <sys:String x:Key="About_CommitID">Project ID</sys:String>
     <sys:String x:Key="About_CommitIDToolTip">Volledig project ID:</sys:String>
+    <sys:String x:Key="About_Contribute">Bijdrage</sys:String>
+    <sys:String x:Key="About_ContributeToolTip">Hoe kan ik een vertaling bijdragen?</sys:String>
     <sys:String x:Key="About_Copyright">Copyright</sys:String>
     <sys:String x:Key="About_CreatedBy">Ontwikkeld door</sys:String>
     <sys:String x:Key="About_CreatedByToolTip">Bekijk Tim zijn projecten op https://github.com/Timthreetwelve</sys:String>
@@ -43,10 +45,13 @@
     <sys:String x:Key="About_Version">Versie</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Annuleren</sys:String>
+    <sys:String x:Key="Button_No">Nee</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Open programma locatie</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Bekijk Log File</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Open log file in standaard applicatie</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Aanvullende acties</sys:String>
+    <sys:String x:Key="Button_Yes">Ja</sys:String>
     <!--  Details Pane  -->
     <sys:String x:Key="Details_Date">Datum:</sys:String>
     <sys:String x:Key="Details_Description">Omschrijving:</sys:String>
@@ -82,6 +87,7 @@
     <sys:String x:Key="MenuItem_Refresh">Bijwerken</sys:String>
     <sys:String x:Key="MenuItem_RemoveSort">Verwijder kolom sortering</sys:String>
     <sys:String x:Key="MenuItem_SaveCSV">Opslaan als CSV bestand</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">Export to JSON File</sys:String>
     <sys:String x:Key="MenuItem_SaveTXT">Opslaan als TXT bestand</sys:String>
     <sys:String x:Key="MenuItem_Smaller">Kleinere weergave</sys:String>
     <sys:String x:Key="MenuItem_ToggleDetails">Switch details venster</sys:String>
@@ -101,6 +107,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Alle updates {0} weergeven</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Weergeven {0} van {1} updates</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Verstreken tijd</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Er zijn geen logboek vermeldingen voor deze update.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Geen resultaten gevonden voor "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Uitgesloten updates:</sys:String>
@@ -125,16 +132,29 @@
     <sys:String x:Key="NavTitle_About">Over Windows Update Viewer</sys:String>
     <sys:String x:Key="NavTitle_Settings">Instellingen</sys:String>
     <sys:String x:Key="NavTitle_Updates">Windows Update Viewer</sys:String>
+    <!--  Operation Type  -->
+    <sys:String x:Key="OperationType_Installation">Installation</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Uninstallation</sys:String>
+    <!--  Result Code  -->
+    <sys:String x:Key="ResultCode_Failed">Failed</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">In Progress</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">Not Started</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">Aborted</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Succeeded</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">Succeeded with Errors</sys:String>
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Instellingen</sys:String>
     <sys:String x:Key="SettingsSection_Language">Taal</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">UI instellingen</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Aantal updates, datum weergave, uitgezonderde items, details, overige</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Taal instellingen en testen</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">Thema, accent kleur, Interface, kolomhoogte, beginpositie en meer</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Accent kleur</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">De applicatie dient opnieuw te worden gestart na wijzigingen.</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Tabel datum weergave</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-klik om bestand te openen met standaard programman</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Enable language testing</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Uitgesloten items verbergen</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Geef debug meldingen in logfile weer</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Venster altijd boven</sys:String>
@@ -153,6 +173,8 @@
     <sys:String x:Key="SettingsItem_Theme">Thema</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Venstergrootte</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Gebruik Windows taalinstellingen</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Als deze instelling is gekozen wordt de standaard Windows systeemtaal gebruikt.</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">Het programma zal grotendeels in het Engels worden weergegeven (en-US).</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Amber</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Zwart</sys:String>
@@ -175,9 +197,11 @@
     <sys:String x:Key="SettingsEnum_AccentColor_Teal">Teal</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_White">Wit</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Yellow">Geel</sys:String>
-    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 meest recente</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regionaal: atum</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regionaal: Datum en tijd</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_100">100 meest recente</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_250">250 meest recente</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 meest recente</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_500">500 meest recente</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_All">Alle updates</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Default">100%</sys:String>
@@ -194,28 +218,32 @@
     <sys:String x:Key="SettingsEnum_Theme_Darker">Donkerder</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Licht</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Systeem</sys:String>
-    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regionaal: atum</sys:String>
-    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regionaal: Datum en tijd</sys:String>
-    <!-- Recently added strings -->
-    <sys:String x:Key="About_Contribute">Contribute</sys:String>
-    <sys:String x:Key="About_ContributeToolTip">How to contribute a translation</sys:String>
-    <sys:String x:Key="Button_No">No</sys:String>
-    <sys:String x:Key="Button_OpenAppFolder">Open App Folder</sys:String>
-    <sys:String x:Key="Button_Yes">Yes</sys:String>
-    <sys:String x:Key="MenuItem_SaveJSON">Export to JSON File</sys:String>
-    <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
-    <sys:String x:Key="OperationType_Installation">Installation</sys:String>
-    <sys:String x:Key="OperationType_Uninstallation">Uninstallation</sys:String>
-    <sys:String x:Key="ResultCode_Failed">Failed</sys:String>
-    <sys:String x:Key="ResultCode_InProgress">In Progress</sys:String>
-    <sys:String x:Key="ResultCode_NotStarted">Not Started</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Aborted</sys:String>
-    <sys:String x:Key="ResultCode_Succeeded">Succeeded</sys:String>
-    <sys:String x:Key="ResultCode_SucceededWithErrors">Succeeded with Errors</sys:String>
-    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Enable language testing</sys:String>
-      <!-- Recently changed strings -->
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Als deze instelling is gekozen wordt de standaard Windows systeemtaal gebruikt.</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">Het programma zal grotendeels in het Engels worden weergegeven (en-US).</sys:String>
-    <sys:String x:Key="SettingsSubHead_Language">Language Settings and Testing</sys:String>
 
 </ResourceDictionary>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    LANGUAGE FILE UPDATES
+
+    Additions, Deletions and Updates will be made in the appropriate sections above. Each change will
+    be associated with a comment made below this block.
+
+    Comment Format:
+       There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
+       Modified lines will follow, one comment line per line changed.
+       Comment lines use this syntax:  Change Type | Key Name
+
+     Change type:
+       A = Added
+       D = Deleted
+       U = Updated
+       * = Comment not related to a single line
+     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<!-- Begin changes on 2023/11/13 @ 20:45 UTC -->
+<!-- * | Value for About_Contribute needs to be updated to "Contribute a Translation" -->
+<!-- * | The OperationType_* group needs to be translated -->
+<!-- * | The ResultCode_* group needs to be translated -->
+<!-- * | MenuItem_SaveJSON needs to be translated -->
+<!-- * | SettingsItem_EnableLanguageTesting needs to be translated -->
+<!-- A | About_GitHub needs to be added -->
+<!-- A | Button_Close needs to be added -->
+<!-- End of changes on 2023/11/13 -->
