@@ -133,7 +133,7 @@
                                                Background="{DynamicResource MaterialDesignDivider}" />
                                     <Button Height="35"
                                             Padding="15,1,15,22"
-                                            Content="{DynamicResource Button_Cancel}" />
+                                            Content="{DynamicResource Button_Close}" />
                                 </StackPanel>
                             </Grid>
                         </Border>

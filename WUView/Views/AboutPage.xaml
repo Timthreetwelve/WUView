@@ -139,7 +139,7 @@
                 </TextBlock>
 
                 <TextBlock Grid.Row="7" Grid.Column="0"
-                           Text="GitHub" />
+                           Text="{DynamicResource About_GitHub}" />
                 <Grid Grid.Row="7" Grid.Column="0"
                       Margin="50,-2,0,0">
                     <materialDesign:PackIcon Width="20" Height="20"

@@ -34,6 +34,7 @@
     <sys:String x:Key="About_Documentation">Documentation</sys:String>
     <sys:String x:Key="About_DocumentationText">Open the ReadMe file</sys:String>
     <sys:String x:Key="About_DocumentationToolTip">View the ReadMe file</sys:String>
+    <sys:String x:Key="About_GitHub">GitHub</sys:String>
     <sys:String x:Key="About_GitHubToolTip">Visit the WUView page on GitHub</sys:String>
     <sys:String x:Key="About_License">License</sys:String>
     <sys:String x:Key="About_LicenseText">This project is licensed under the terms of the MIT license.</sys:String>
@@ -45,6 +46,7 @@
     <sys:String x:Key="About_Version">Version</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Cancel</sys:String>
+    <sys:String x:Key="Button_Close">Close Menu</sys:String>
     <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Open App Folder</sys:String>
@@ -258,4 +260,8 @@
     <!-- U | SettingsSubHead_Language -->
     <!-- End of changes on 2023/11/05 -->
 
+    <!-- Begin changes on 2023/11/13 @ 00:00 UTC -->
+    <!-- A | Button_Close -->
+    <!-- A | About_GitHub -->
+    <!-- End of changes on 2023/11/13 -->
 </ResourceDictionary>
