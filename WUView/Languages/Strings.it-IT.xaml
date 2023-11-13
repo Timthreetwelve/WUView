@@ -25,6 +25,7 @@
     <sys:String x:Key="About_BuildDate">Data build</sys:String>
     <sys:String x:Key="About_CommitID">IF commit</sys:String>
     <sys:String x:Key="About_CommitIDToolTip">IF full commit:</sys:String>
+    <sys:String x:Key="About_Contribute">Contribusci alla traduzione</sys:String>
     <sys:String x:Key="About_Copyright">Copyright</sys:String>
     <sys:String x:Key="About_CreatedBy">Creato da</sys:String>
     <sys:String x:Key="About_CreatedByToolTip">Vedi altri lavori di Tim su https://github.com/Timthreetwelve</sys:String>
@@ -43,10 +44,13 @@
     <sys:String x:Key="About_Version">Versione</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Annulla</sys:String>
+    <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Apri cartella app</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Visualizza file registro eventi</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Open the log file in the default application.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Azioni aggiuntive</sys:String>
+    <sys:String x:Key="Button_Yes">Sì</sys:String>
     <!--  Details Pane  -->
     <sys:String x:Key="Details_Date">Data:</sys:String>
     <sys:String x:Key="Details_Description">Descrizione:</sys:String>
@@ -82,6 +86,7 @@
     <sys:String x:Key="MenuItem_Refresh">Aggiorna aggiornamenti</sys:String>
     <sys:String x:Key="MenuItem_RemoveSort">Rimuovi ordinamento colonne</sys:String>
     <sys:String x:Key="MenuItem_SaveCSV">Salva griglia in un file CSV</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">Salva come file JSON</sys:String>
     <sys:String x:Key="MenuItem_SaveTXT">Salva dettagli in un file di testo</sys:String>
     <sys:String x:Key="MenuItem_Smaller">Vista più piccola</sys:String>
     <sys:String x:Key="MenuItem_ToggleDetails">Visualizza/nascondi pannello dettagli</sys:String>
@@ -101,6 +106,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Visualizzazione di tutti gli aggiornamenti {0}</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Visualizzazione dell'aggiornamento  {0} di {1}</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Tempo trascorso</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">Si è verificato un problema con il file lingua GUI.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Non è stato trovato alcun record del registro eventi per questo aggiornamento.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Non è stato trovato alcun record del registro eventi contenente "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Escludi aggiornamenti contenenti:</sys:String>
@@ -125,17 +131,29 @@
     <sys:String x:Key="NavTitle_About">Info su Windows Update Viewer</sys:String>
     <sys:String x:Key="NavTitle_Settings">Impostazioni</sys:String>
     <sys:String x:Key="NavTitle_Updates">Windows Update Viewer</sys:String>
+    <!--  Operation Type  -->
+    <sys:String x:Key="OperationType_Installation">Installazione</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Uninstallazione</sys:String>
+    <!--  Result Code  -->
+    <sys:String x:Key="ResultCode_Failed">Fallito</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">In corso</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">Non avviato</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">Interrotto</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Completato</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">Completato con errori</sys:String>
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Impostazioni applicazione</sys:String>
     <sys:String x:Key="SettingsSection_Language">Lingua</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Impostazioni UI</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Numero aggiornamenti, formato data, elementi esclusi, dettagli e altro</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Impostazioni lingua (lavori in corso)</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Tema, colore evidenziazione, dimensione interfaccia utente, altezza riga, posizione iniziale e altro ancora</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Colore evidenziazione</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">La modifica dell'impostazione lingua avrà effetto dopo il riavvio dell'applicazione!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formato data griglia</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Maiusc-clic per aprire il file con l'applicazione predefinita</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Abilita test traduzione</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Nascondi elementi esclusi</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Includi nel file registro eventi i messaggi debug</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Mantieni sempre Windows Update Viewer in primo piano</sys:String>
@@ -154,6 +172,8 @@
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Dimensione UI</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Usa lingua di sistema di Windows</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quando questa opzione è selezionata, verrà usata la lingua specificata nelle impostazioni di Windows.</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La maggior parte del testo della domanda rimarrà in inglese (en-US), ma i formati dei numeri cambieranno.</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Ambra</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Nero</sys:String>
@@ -176,9 +196,11 @@
     <sys:String x:Key="SettingsEnum_AccentColor_Teal">Verde acqua</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_White">Bianco</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Yellow">Giallo</sys:String>
-    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 più recenti</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regionale: solo data</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regionale: data e ora</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_100">100 più recenti</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_250">250 più recenti</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 più recenti</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_500">500 più recenti</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_All">Tutti gli aggiornamenti</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Default">100%</sys:String>
@@ -195,28 +217,30 @@
     <sys:String x:Key="SettingsEnum_Theme_Darker">Scuro</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Chiaro</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
-    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regionale: solo data</sys:String>
-    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regionale: data e ora</sys:String>
-    <!-- Recently added strings -->
-    <sys:String x:Key="About_Contribute">Contribuisci</sys:String>
-    <sys:String x:Key="Button_No">No</sys:String>
-    <sys:String x:Key="Button_OpenAppFolder">Apri cartella app</sys:String>
-    <sys:String x:Key="Button_Yes">Sì</sys:String>
-    <sys:String x:Key="MenuItem_SaveJSON">Salva come file JSON</sys:String>
-    <sys:String x:Key="MsgText_Error_TestLanguage">Si è verificato un problema con il file lingua GUI.</sys:String>
-    <sys:String x:Key="OperationType_Installation">Installazione</sys:String>
-    <sys:String x:Key="OperationType_Uninstallation">Uninstallazione</sys:String>
-    <sys:String x:Key="ResultCode_Failed">Fallito</sys:String>
-    <sys:String x:Key="ResultCode_InProgress">In corso</sys:String>
-    <sys:String x:Key="ResultCode_NotStarted">Non avviato</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Interrotto</sys:String>
-    <sys:String x:Key="ResultCode_Succeeded">Completato</sys:String>
-    <sys:String x:Key="ResultCode_SucceededWithErrors">Completato con errori</sys:String>
-    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Abilita test traduzione</sys:String>
-    <!-- Recently changed strings -->
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quando questa opzione è selezionata, verrà usata la lingua specificata nelle impostazioni di Windows.</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La maggior parte del testo della domanda rimarrà in inglese (en-US), ma i formati dei numeri cambieranno.</sys:String>
-    <sys:String x:Key="SettingsSubHead_Language">Impostazioni lingua (lavori in corso)</sys:String>
-    <sys:String x:Key="About_Contribute">Contribuire ad una traduzione</sys:String>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    LANGUAGE FILE UPDATES
+
+    Additions, Deletions and Updates will be made in the appropriate sections above. Each change will
+    be associated with a comment made below this block.
+
+    Comment Format:
+       There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
+       Modified lines will follow, one comment line per line changed.
+       Comment lines use this syntax:  Change Type | Key Name
+
+     Change type:
+       A = Added
+       D = Deleted
+       U = Updated
+       * = Comment not related to a single line
+     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <!-- Begin changes on 2023/11/13 @ 03:02 UTC -->
+    <!-- * | Updated comments in this file -->
+    <!-- * | Moved all items to appropriate sections above -->
+    <!-- A | About_GitHub -->
+    <!-- A | Button_Close -->
+    <!-- End of changes on 2023/11/13 -->
 
 </ResourceDictionary>
