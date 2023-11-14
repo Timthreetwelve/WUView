@@ -20,7 +20,7 @@
     -->
 
     <!--  About Page  -->
-	<sys:String x:Key="About_BuildDate">Dátum zostavenia</sys:String>
+    <sys:String x:Key="About_BuildDate">Dátum zostavenia</sys:String>
     <sys:String x:Key="About_CommitID">ID potvrdenia</sys:String>
     <sys:String x:Key="About_CommitIDToolTip">Úplné ID záväzkov:</sys:String>
     <sys:String x:Key="About_Contribute">Prispieť</sys:String>
@@ -195,9 +195,11 @@
     <sys:String x:Key="SettingsEnum_AccentColor_Teal">Teal</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_White">Biela</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Yellow">Žltá</sys:String>
-    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 najnovších</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regionálne: Iba dátum</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regionálne: Dátum a čas</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_100">100 najnovších</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_250">250 najnovších</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_50">50 najnovších</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_500">500 najnovších</sys:String>
     <sys:String x:Key="SettingsEnum_MaxUpdates_All">Všetky aktualizácie</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Default">100 %</sys:String>
@@ -214,7 +216,28 @@
     <sys:String x:Key="SettingsEnum_Theme_Darker">Tmavšie</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Svetlo</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Systém</sys:String>
-    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regionálne: Iba dátum</sys:String>
-    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regionálne: Dátum a čas</sys:String>
 
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    LANGUAGE FILE UPDATES
+
+    Additions, Deletions and Updates will be made in the appropriate sections above. Each change will
+    be associated with a comment made below this block.
+
+    Comment Format:
+       There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
+       Modified lines will follow, one comment line per line changed.
+       Comment lines use this syntax:  Change Type | Key Name
+
+     Change type:
+       A = Added
+       D = Deleted
+       U = Updated
+       * = Comment not related to a single line
+     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <!-- Begin changes on 2023/11/14 @ 01:15 UTC -->
+    <!-- U | Value for About_Contribute needs to be updated to "Contribute a Translation" -->
+    <!-- A | About_GitHub needs to be added -->
+    <!-- A | Button_Close needs to be added -->
+    <!-- End of changes on 2023/11/14 -->
 </ResourceDictionary>
