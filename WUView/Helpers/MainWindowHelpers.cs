@@ -98,16 +98,23 @@ internal static class MainWindowHelpers
         UserSettings.Setting.PropertyChanged += SettingChange.UserSettingChanged;
         TempSettings.Setting.PropertyChanged += SettingChange.TempSettingChanged;
 
+        // Window Loaded
+        _mainWindow.Loaded += _mainWindow_Loaded;
+
         // Content rendered
         _mainWindow.ContentRendered += MainWindow_ContentRendered;
 
         // Window closing event
         _mainWindow.Closing += MainWindow_Closing;
     }
-
     #endregion Event handlers
 
     #region Window Events
+    private static void _mainWindow_Loaded(object sender, RoutedEventArgs e)
+    {
+        WUApiHelpers.LogWUAInfo();
+    }
+
     public static void MainWindow_ContentRendered(object sender, EventArgs e)
     {
         MainViewModel.GatherInfo();
@@ -181,30 +188,6 @@ internal static class MainWindowHelpers
         // Log the .NET version and OS platform
         _log.Debug($"Operating System version: {AppInfo.OsPlatform}");
         _log.Debug($".Net version: {AppInfo.RuntimeVersion.Replace(".NET", "")}");
-
-        // Log the startup & current culture
-        _log.Debug($"Startup culture: {App.StartupCulture.Name}  UI: {App.StartupUICulture.Name}");
-        _log.Debug($"Current culture: {LocalizationHelpers.GetCurrentCulture()}  UI: {LocalizationHelpers.GetCurrentUICulture()}");
-
-        // Log the language file and number of strings loaded
-        if (!App.LanguageFile.Equals("defaulted", StringComparison.OrdinalIgnoreCase))
-        {
-            _log.Debug($"{App.LanguageStrings} strings loaded from {App.LanguageFile}");
-        }
-        else
-        {
-            _log.Warn($"Language has defaulted to en-US. {App.LanguageStrings} string loaded.");
-        }
-
-        // Language testing
-        if (UserSettings.Setting.LanguageTesting)
-        {
-            _log.Info("Language testing enabled");
-            _log.Debug($"{App.TestLanguageStrings} strings loaded from {App.TestLanguageFile}");
-        }
-
-        // log WUA info
-        WUApiHelpers.LogWUAInfo();
     }
     #endregion Log Startup
 
