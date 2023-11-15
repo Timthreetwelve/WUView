@@ -32,6 +32,7 @@
     <sys:String x:Key="About_Documentation">Dokumentation</sys:String>
     <sys:String x:Key="About_DocumentationText">Öffnen Sie die ReadMe-Datei</sys:String>
     <sys:String x:Key="About_DocumentationToolTip">Lese die readme Datei</sys:String>
+    <sys:String x:Key="About_GitHub">GitHub</sys:String>
     <sys:String x:Key="About_GitHubToolTip">Besuchen Sie die WUView-Seite auf GitHub</sys:String>
     <sys:String x:Key="About_License">Lizenz</sys:String>
     <sys:String x:Key="About_LicenseText">Dieses Projekt ist unter den Bedingungen der MIT-Lizenz lizenziert.</sys:String>
@@ -43,6 +44,7 @@
     <sys:String x:Key="About_Version">Ausführung</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Stornieren</sys:String>
+    <sys:String x:Key="Button_Close">Stornieren</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Protokolldatei anzeigen</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Öffnen Sie die Protokolldatei in der Standardanwendung.</sys:String>
@@ -125,11 +127,23 @@
     <sys:String x:Key="NavTitle_About">Über den Windows Update Viewer</sys:String>
     <sys:String x:Key="NavTitle_Settings">Einstellungen</sys:String>
     <sys:String x:Key="NavTitle_Updates">Windows Update-Viewer</sys:String>
+    <!--  Operation Type  -->
+    <sys:String x:Key="OperationType_Installation">Installation</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Deinstallation</sys:String>
+    <!--  Result Code  -->
+    <sys:String x:Key="ResultCode_Failed">Scheitern</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">In der Arbeit</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">Nicht begonnen</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">abgebrochen</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Gelungen</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">Erfolgreich mit Fehlern</sys:String>
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Anwendungseinstellungen</sys:String>
     <sys:String x:Key="SettingsSection_Language">Sprache</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">UI-Einstellungen</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Anzahl der Aktualisierungen, Datumsformat, ausgeschlossene Elemente, Details und mehr</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Spracheinstellungen und -prüfungen</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">Thema, Akzentfarbe, UI-Größe, Zeilenhöhe, Startposition und mehr</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Akzentfarbe</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Wenn Sie die Sprache ändern, wird die Anwendung neu gestartet!</sys:String>
@@ -153,6 +167,8 @@
     <sys:String x:Key="SettingsItem_Theme">Thema</sys:String>
     <sys:String x:Key="SettingsItem_UISize">UI-Größe</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Verwenden Sie die Windows-Anzeigesprache</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Wenn diese Option ausgewählt ist, wird die in den Windows-Einstellungen angegebene Sprache verwendet.</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">Der Großteil des Bewerbungstextes bleibt in Englisch (en-US), die Zahlenformate ändern sich jedoch.</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Bernstein</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Schwarz</sys:String>
@@ -197,25 +213,56 @@
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regional: Nur Datum</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regional: Datum und Uhrzeit</sys:String>
     <!-- Recently added strings -->
-    <sys:String x:Key="About_Contribute">Contribute</sys:String>
-    <sys:String x:Key="About_ContributeToolTip">How to contribute a translation</sys:String>
-    <sys:String x:Key="Button_No">No</sys:String>
-    <sys:String x:Key="Button_OpenAppFolder">Open App Folder</sys:String>
-    <sys:String x:Key="Button_Yes">Yes</sys:String>
-    <sys:String x:Key="MenuItem_SaveJSON">Export to JSON File</sys:String>
-    <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
-    <sys:String x:Key="OperationType_Installation">Installation</sys:String>
-    <sys:String x:Key="OperationType_Uninstallation">Uninstallation</sys:String>
-    <sys:String x:Key="ResultCode_Failed">Failed</sys:String>
-    <sys:String x:Key="ResultCode_InProgress">In Progress</sys:String>
-    <sys:String x:Key="ResultCode_NotStarted">Not Started</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Aborted</sys:String>
-    <sys:String x:Key="ResultCode_Succeeded">Succeeded</sys:String>
-    <sys:String x:Key="ResultCode_SucceededWithErrors">Succeeded with Errors</sys:String>
-    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Enable language testing</sys:String>
-    <!-- Recently changed strings -->
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Wenn diese Option ausgewählt ist, wird die in den Windows-Einstellungen angegebene Sprache verwendet.</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">Der Großteil des Bewerbungstextes bleibt in Englisch (en-US), die Zahlenformate ändern sich jedoch.</sys:String>
-    <sys:String x:Key="SettingsSubHead_Language">Language Settings and Testing</sys:String>
+    <sys:String x:Key="About_Contribute">Eine Übersetzung beisteuern</sys:String>
+    <sys:String x:Key="About_ContributeToolTip">Wie man eine Übersetzung beisteuert</sys:String>
+    <sys:String x:Key="Button_No">Nein</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">App-Ordner öffnen</sys:String>
+    <sys:String x:Key="Button_Yes">Ja</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">>Exportieren in JSON-Datei</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">Es gibt ein Problem mit der Sprachdatei.</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Sprachtests ermöglichen</sys:String>
 
 </ResourceDictionary>
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    LANGUAGE FILE UPDATES
+
+    Additions, Deletions and Updates will be made in the appropriate sections above. Each change will
+    be associated with a comment made below this block.
+
+    Comment Format:
+       There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
+       Modified lines will follow, one comment line per line changed.
+       Comment lines use this syntax:  Change Type | Key Name
+
+     Change type:
+       A = Added
+       D = Deleted
+       U = Updated
+       * = Comment not related to a single line
+     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<!-- Begin changes on 2023/11/15 @ 17:56 UTC -->
+<!-- U | About_Contribute -->
+<!-- U | About_ContributeToolTip -->
+<!-- A | About_GitHub -->
+<!-- A | Button_Close -->
+<!-- U | Button_No -->
+<!-- U | Button_OpenAppFolder -->
+<!-- U | Button_Yes -->
+<!-- U | MenuItem_SaveJSON -->
+<!-- U | MsgText_Error_TestLanguage -->
+<!-- U | OperationType_Installation -->
+<!-- U | OperationType_Uninstallation -->
+<!-- U | ResultCode_Failed -->
+<!-- U | ResultCode_InProgress -->
+<!-- U | ResultCode_NotStarted -->
+<!-- U | ResultCode_ResultCode_Aborted -->
+<!-- U | ResultCode_Succeeded -->
+<!-- U | ResultCode_SucceededWithErrors -->
+<!-- U | SettingsItem_EnableLanguageTesting -->
+<!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
+<!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
+<!-- A | SettingsSubHead_Language -->
+<!-- End of changes on 2023/11/15 -->
