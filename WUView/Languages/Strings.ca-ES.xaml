@@ -3,7 +3,7 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <!--
-        Refer to the "Contribute a Translation" topic in the Wiki: 
+        Refer to the "Contribute a Translation" topic in the Wiki:
 
         https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
 
@@ -18,13 +18,14 @@
         Date last update:            2023/12/06
 
         ======================================================================
-
     -->
 
     <!--  About Page  -->
     <sys:String x:Key="About_BuildDate">Data de construcció</sys:String>
     <sys:String x:Key="About_CommitID">ID de compromís</sys:String>
     <sys:String x:Key="About_CommitIDToolTip">ID de compromís complet:</sys:String>
+    <sys:String x:Key="About_Contribute">Col·labora amb una traducció</sys:String>
+    <sys:String x:Key="About_ContributeToolTip">Com contribuir amb una traducció</sys:String>
     <sys:String x:Key="About_Copyright">Copyright</sys:String>
     <sys:String x:Key="About_CreatedBy">Creat per</sys:String>
     <sys:String x:Key="About_CreatedByToolTip">Vegeu l'altre treball de Tim a https://github.com/Timthreetwelve</sys:String>
@@ -32,6 +33,7 @@
     <sys:String x:Key="About_Documentation">Documentació</sys:String>
     <sys:String x:Key="About_DocumentationText">Obriu el fitxer ReadMe</sys:String>
     <sys:String x:Key="About_DocumentationToolTip">Mira l'arxiu README</sys:String>
+    <sys:String x:Key="About_GitHub">GitHub</sys:String>
     <sys:String x:Key="About_GitHubToolTip">Visiteu la pàgina WUView a GitHub</sys:String>
     <sys:String x:Key="About_License">llicència</sys:String>
     <sys:String x:Key="About_LicenseText">Aquest projecte té llicència sota els termes de la llicència MIT.</sys:String>
@@ -43,10 +45,14 @@
     <sys:String x:Key="About_Version">Versió</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Cancel·lar</sys:String>
+    <sys:String x:Key="Button_Close">Tanca aquest menú</sys:String>
+    <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">D'acord</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Obrir la carpeta d'aplicacions</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Veure fitxer de registre</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Obriu el fitxer de registre a l'aplicació predeterminada.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Accions addicionals</sys:String>
+    <sys:String x:Key="Button_Yes">Sí</sys:String>
     <!--  Details Pane  -->
     <sys:String x:Key="Details_Date">Data:</sys:String>
     <sys:String x:Key="Details_Description">Descripció:</sys:String>
@@ -65,12 +71,12 @@
     <sys:String x:Key="ExcludesEditor_TextLine2">Les comparacions no distingeixen entre majúscules i minúscules</sys:String>
     <!--  Filter Box Hint Text  -->
     <sys:String x:Key="FilterHint">Filtre</sys:String>
-   <!--  DataGrid Column Headers  -->
+    <!--  DataGrid Column Headers  -->
     <sys:String x:Key="GridColumn_Date">Data</sys:String>
     <sys:String x:Key="GridColumn_KBNum">Número de KB</sys:String>
     <sys:String x:Key="GridColumn_Result">Resultat</sys:String>
     <sys:String x:Key="GridColumn_Title">Títol</sys:String>
-     <!--  Menu Items  -->
+    <!--  Menu Items  -->
     <sys:String x:Key="Menu_Copy">Còpia</sys:String>
     <sys:String x:Key="Menu_File">Dossier</sys:String>
     <sys:String x:Key="Menu_View">Veure</sys:String>
@@ -82,6 +88,7 @@
     <sys:String x:Key="MenuItem_Refresh">Actualitza les actualitzacions</sys:String>
     <sys:String x:Key="MenuItem_RemoveSort">Elimina l'ordenació de columnes</sys:String>
     <sys:String x:Key="MenuItem_SaveCSV">Desa la graella al fitxer CSV</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">Exporta al fitxer JSON</sys:String>
     <sys:String x:Key="MenuItem_SaveTXT">Desa els detalls al fitxer de text</sys:String>
     <sys:String x:Key="MenuItem_Smaller">Vista més petita</sys:String>
     <sys:String x:Key="MenuItem_ToggleDetails">Commuta el panell de detalls</sys:String>
@@ -101,6 +108,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Es mostren totes les {0} actualitzacions</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Es mostren {0} de {1} actualitzacions</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Temps transcorregut</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">Hi ha un problema amb el fitxer d'idioma.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">No s'han trobat registres d'esdeveniments per a aquesta actualització.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">No s'ha trobat cap registre d'esdeveniments que contingui "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">S'exclouen les actualitzacions que continguin:</sys:String>
@@ -125,17 +133,29 @@
     <sys:String x:Key="NavTitle_About">Sobre Windows Update Viewer</sys:String>
     <sys:String x:Key="NavTitle_Settings">Configuració</sys:String>
     <sys:String x:Key="NavTitle_Updates">Visor de Windows Update</sys:String>
+    <!--  Operation Type  -->
+    <sys:String x:Key="OperationType_Installation">Instal·lació</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Desinstal·lació</sys:String>
+    <!--  Result Code  -->
+    <sys:String x:Key="ResultCode_Failed">Fracassat</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">En curs</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">No iniciat</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">Aborted</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">Succeït</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">S'ha encertat amb errors</sys:String>
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Configuració de l'aplicació</sys:String>
     <sys:String x:Key="SettingsSection_Language">Llenguatge</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Configuració de la IU</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Nombre d'actualitzacions, format de data, elements exclosos, detalls i molt més</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Tema, color d'accent, mida de la IU, alçada de fila, posició inicial i molt més</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Configuració d'idioma</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Color d'accent</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Si canvieu d'idioma, l'aplicació es reiniciarà!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Format de data de quadrícula</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Maj+Feu clic per obrir el fitxer amb l'aplicació predeterminada</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Habilitar les proves d'idioma</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Amaga els elements exclosos</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Inclou missatges de nivell de depuració al fitxer de registre</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Manteniu Windows Update Viewer a sobre d'altres finestres</sys:String>
@@ -154,6 +174,8 @@
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Mida de la IU</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Utilitzeu l'idioma de visualització de Windows</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quan se selecciona aquesta opció, s'utilitzarà l'idioma especificat a la configuració de Windows.</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La major part del text de l'aplicació es mantindrà en anglès (en-US), però els formats dels números canviaran.</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Ambre</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Negre</sys:String>
@@ -197,26 +219,47 @@
     <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regional: només data</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regional: data i hora</sys:String>
-    <!-- Recently added strings -->
-     <sys:String x:Key="About_Contribute">Contribute</sys:String>
-    <sys:String x:Key="About_ContributeToolTip">How to contribute a translation</sys:String>
-    <sys:String x:Key="Button_No">No</sys:String>
-    <sys:String x:Key="Button_OpenAppFolder">Open App Folder</sys:String>
-    <sys:String x:Key="Button_Yes">Yes</sys:String>
-    <sys:String x:Key="MenuItem_SaveJSON">Export to JSON File</sys:String>
-    <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
-    <sys:String x:Key="OperationType_Installation">Installation</sys:String>
-    <sys:String x:Key="OperationType_Uninstallation">Uninstallation</sys:String>
-    <sys:String x:Key="ResultCode_Failed">Failed</sys:String>
-    <sys:String x:Key="ResultCode_InProgress">In Progress</sys:String>
-    <sys:String x:Key="ResultCode_NotStarted">Not Started</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Aborted</sys:String>
-    <sys:String x:Key="ResultCode_Succeeded">Succeeded</sys:String>
-    <sys:String x:Key="ResultCode_SucceededWithErrors">Succeeded with Errors</sys:String>
-    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Enable language testing</sys:String>
-    <!-- Recently changed strings -->
-   <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quan se selecciona aquesta opció, s'utilitzarà l'idioma especificat a la configuració de Windows.</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La major part del text de l'aplicació es mantindrà en anglès (en-US), però els formats dels números canviaran.</sys:String>
-    <sys:String x:Key="SettingsSubHead_Language">Configuració d'idioma (treball en curs)</sys:String>
 
 </ResourceDictionary>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    LANGUAGE FILE UPDATES
+
+    Additions, Deletions and Updates will be made in the appropriate sections above. Each change will
+    be associated with a comment made below this block.
+
+    Comment Format:
+       There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
+       Modified lines will follow, one comment line per line changed.
+       Comment lines use this syntax:  Change Type | Key Name
+
+     Change type:
+       A = Added
+       D = Deleted
+       U = Updated
+       * = Comment not related to a single line
+     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <!-- Begin changes on 2023/11/15 @ 18:55 UTC -->
+    <!-- U | About_Contribute -->
+    <!-- U | About_ContributeToolTip -->
+    <!-- A | About_GitHub -->
+    <!-- A | Button_Close -->
+    <!-- U | Button_No -->
+    <!-- U | Button_OpenAppFolder -->
+    <!-- U | Button_Yes -->
+    <!-- U | MenuItem_SaveJSON -->
+    <!-- U | MsgText_Error_TestLanguage -->
+    <!-- U | OperationType_Installation -->
+    <!-- U | OperationType_Uninstallation -->
+    <!-- U | ResultCode_Failed -->
+    <!-- U | ResultCode_InProgress -->
+    <!-- U | ResultCode_NotStarted -->
+    <!-- U | ResultCode_ResultCode_Aborted -->
+    <!-- U | ResultCode_Succeeded -->
+    <!-- U | ResultCode_SucceededWithErrors -->
+    <!-- U | SettingsItem_EnableLanguageTesting -->
+    <!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
+    <!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
+    <!-- A | SettingsSubHead_Language -->
+    <!-- End of changes on 2023/11/15 -->
