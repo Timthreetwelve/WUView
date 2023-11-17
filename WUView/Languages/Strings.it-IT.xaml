@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            13.11.2023
+        Date last update:            17.11.2023
 
         ========================================================================
 
@@ -23,8 +23,8 @@
 
     <!--  About Page  -->
     <sys:String x:Key="About_BuildDate">Data build</sys:String>
-    <sys:String x:Key="About_CommitID">IF commit</sys:String>
-    <sys:String x:Key="About_CommitIDToolTip">IF full commit:</sys:String>
+    <sys:String x:Key="About_CommitID">ID commit</sys:String>
+    <sys:String x:Key="About_CommitIDToolTip">ID full commit:</sys:String>
     <sys:String x:Key="About_Contribute">Contribuisci alla traduzione</sys:String>
     <sys:String x:Key="About_ContributeToolTip">Come contribuire ad una traduzione</sys:String>
     <sys:String x:Key="About_Copyright">Copyright</sys:String>
