@@ -96,7 +96,7 @@
     <sys:String x:Key="MenuItem_ToggleExcluded">Ausgeschlossene Elemente umschalten</sys:String>
     <!--  Text found in messages (log, message box, status bar, details area, etc.)  -->
     <sys:String x:Key="MsgText_AllUpdatesExcluded">Alle anzeigbaren Updates wurden ausgeschlossen.</sys:String>
-    <sys:String x:Key="MsgText_ApplicationShutdown">Heruntergefahren …</sys:String>
+    <sys:String x:Key="MsgText_ApplicationShutdown">Herunterfahren …</sys:String>
     <sys:String x:Key="MsgText_ApplicationStarting">Starten …</sys:String>
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">Suche nach Updates ist fehlgeschlagen.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Suche nach Updates.</sys:String>
