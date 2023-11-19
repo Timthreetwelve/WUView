@@ -168,7 +168,7 @@
     <sys:String x:Key="SettingsItem_RowHeight">Zeilenhöhe</sys:String>
     <sys:String x:Key="SettingsItem_SelectFirstRow">Wählen Sie beim Start die erste Zeile aus</sys:String>
     <sys:String x:Key="SettingsItem_ShowDetails">Detailbereich anzeigen</sys:String>
-    <sys:String x:Key="SettingsItem_ShowExit">Exit in der Navigationsleiste anzeigen</sys:String>
+    <sys:String x:Key="SettingsItem_ShowExit">Beenden in der Navigationsleiste anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Warnmeldungen im Protokoll für HResult-Werte ungleich Null anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Aktualisierungen mit aktuellem Datum in Fettschrift anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Beginnen Sie mit einem zentrierten Fenster auf dem Bildschirm</sys:String>
@@ -181,10 +181,10 @@
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Bernstein</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Schwarz</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Blue">Blau</sys:String>
-    <sys:String x:Key="SettingsEnum_AccentColor_BlueGray">Blau grau</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_BlueGray">Blaugrau</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Brown">Braun</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Cyan">Cyan</sys:String>
-    <sys:String x:Key="SettingsEnum_AccentColor_DeepOrange">Tiefes Orange</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_DeepOrange">Dunkelorange</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_DeepPurple">Dunkellila</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Gray">Grau</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Green">Grün</sys:String>
@@ -196,7 +196,7 @@
     <sys:String x:Key="SettingsEnum_AccentColor_Pink">Rosa</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Purple">Lila</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Red">Rot</sys:String>
-    <sys:String x:Key="SettingsEnum_AccentColor_Teal">Blaugrün</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Teal">Türkisblau</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_White">Weiß</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Yellow">Gelb</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regional: nur Datum</sys:String>
