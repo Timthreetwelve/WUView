@@ -149,7 +149,7 @@
     <sys:String x:Key="SettingsSection_Language">Sprache</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">UI-Einstellungen</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Anzahl der Aktualisierungen, Datumsformat, ausgeschlossene Elemente, Details und mehr</sys:String>
-    <sys:String x:Key="SettingsSubHead_Language">Sprach- und Prüfungseneinstellungen</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">Sprach- und Prüfungseinstellungen</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Thema, Akzentfarbe, UI-Größe, Zeilenhöhe, Startposition und mehr</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Akzentfarbe</sys:String>
