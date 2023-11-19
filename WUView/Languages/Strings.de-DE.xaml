@@ -49,7 +49,7 @@
     <sys:String x:Key="Button_Close">Abbrechen</sys:String>
     <sys:String x:Key="Button_No">Nein</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
-    <sys:String x:Key="Button_OpenAppFolder">App-Ordner öffnen</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Anwendungsordner öffnen</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Protokolldatei anzeigen</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Öffnen Sie die Protokolldatei in der Standardanwendung.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Zusätzliche Aktionen</sys:String>
