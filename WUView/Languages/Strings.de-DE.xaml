@@ -64,7 +64,7 @@
     <sys:String x:Key="Details_Operation">Betrieb:</sys:String>
     <sys:String x:Key="Details_ResultCode">Ergebniscode:</sys:String>
     <sys:String x:Key="Details_SupportURL">Support-URL:</sys:String>
-    <sys:String x:Key="Details_Title">Titel:</sys:String>
+    <sys:String x:Key="Details_Title">Update-Name:</sys:String>
     <sys:String x:Key="Details_TitleFallback">Wählen Sie oben ein Update aus und die Details werden hier angezeigt.</sys:String>
     <sys:String x:Key="Details_UpdateID">Update-ID:</sys:String>
     <!--  Exclude List Editor  -->
@@ -76,7 +76,7 @@
     <sys:String x:Key="GridColumn_Date">Datum</sys:String>
     <sys:String x:Key="GridColumn_KBNum">KB-Nummer</sys:String>
     <sys:String x:Key="GridColumn_Result">Ergebnis</sys:String>
-    <sys:String x:Key="GridColumn_Title">Titel</sys:String>
+    <sys:String x:Key="GridColumn_Title">Update-Name</sys:String>
     <!--  Menu Items  -->
     <sys:String x:Key="Menu_Copy">Kopieren</sys:String>
     <sys:String x:Key="Menu_File">Datei</sys:String>
@@ -164,7 +164,7 @@
     <sys:String x:Key="SettingsItem_NumberOfUpdates">Anzahl der Updates</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">Dies ist die maximale Anzahl von Updates, die verarbeitet werden müssen, bevor Updates ausgeschlossen werden.</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">Wenn Sie diesen Wert auf einen niedrigeren Wert festlegen, kann die Leistung verbessert werden.</sys:String>
-    <sys:String x:Key="SettingsItem_ParseAdditional">Beim Ausschließen von Elementen werden zusätzlich zum Update-Titel auch die KB-Nummer, das Ergebnis und die Update-ID analysiert</sys:String>
+    <sys:String x:Key="SettingsItem_ParseAdditional">Beim Ausschließen von Elementen werden zusätzlich zum Update-Name auch die KB-Nummer, das Ergebnis und die Update-ID analysiert</sys:String>
     <sys:String x:Key="SettingsItem_RowHeight">Zeilenhöhe</sys:String>
     <sys:String x:Key="SettingsItem_SelectFirstRow">Wählen Sie beim Start die erste Zeile aus</sys:String>
     <sys:String x:Key="SettingsItem_ShowDetails">Detailbereich anzeigen</sys:String>
