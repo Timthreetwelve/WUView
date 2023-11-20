@@ -13,7 +13,7 @@
 
         Language name:               Deutsch (de-DE) German
 
-        Translation contributed by:  @Timthreetwelve with Google Translate & @Henry2o1o 
+        Translation contributed by:  @Timthreetwelve with Google Translate & @Henry2o1o
 
         Date last update:            2023/11/19
 
@@ -239,40 +239,40 @@
        * = Comment not related to a single line
      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- Begin changes on 2023/11/19 @ 15:48 UTC -->
-<!-- A | Button_No
-<!-- A | Button_OpenAppFolder
-<!-- A | Button_Yes
-<!-- A | MsgText_Error_TestLanguage
-<!-- A | SettingsEnum_DateFormat_RegionalDate
-<!-- A | SettingsEnum_DateFormat_RegionalDateTime
-<!-- A | SettingsItem_EnableLanguageTesting
-<!-- U | About_Contribute
-<!-- U | About_ContributeToolTip
-<!-- U | About_Copyright
-<!-- U | About_CreatedByToolTip
-<!-- U | About_DocumentationText
-<!-- U | About_DocumentationToolTip
-<!-- U | Button_Cancel
-<!-- U | Button_Close
-<!-- U | MenuItem_CopyToClipboard
-<!-- U | MenuItem_Exit
-<!-- U | MenuItem_Refresh
-<!-- U | Menu_View">Ansicht
-<!-- U | MsgText_ApplicationShutdown
-<!-- U | MsgText_CopiedToClipboard
-<!-- U | MsgText_HResultCopiedToClipboard
-<!-- U | MsgText_UIThemeSet
-<!-- U | NavItem_Exit
-<!-- U | NavItem_Updates
-<!-- U | NavTitle_About
-<!-- U | NavTitle_Updates
-<!-- U | ResultCode_Failed
-<!-- U | ResultCode_NotStarted
-<!-- U | ResultCode_ResultCode_Aborted
-<!-- U | ResultCode_Succeeded
-<!-- U | SettingsEnum_Theme_Light
-<!-- U | SettingsSubHead_Language
-<!-- End of changes on 2023/11/19 -->
+    <!-- A | Button_No  -->
+    <!-- A | Button_OpenAppFolder  -->
+    <!-- A | Button_Yes -->
+    <!-- A | MsgText_Error_TestLanguage -->
+    <!-- A | SettingsEnum_DateFormat_RegionalDate -->
+    <!-- A | SettingsEnum_DateFormat_RegionalDateTime -->
+    <!-- A | SettingsItem_EnableLanguageTesting -->
+    <!-- U | About_Contribute -->
+    <!-- U | About_ContributeToolTip -->
+    <!-- U | About_Copyright -->
+    <!-- U | About_CreatedByToolTip -->
+    <!-- U | About_DocumentationText -->
+    <!-- U | About_DocumentationToolTip -->
+    <!-- U | Button_Cancel -->
+    <!-- U | Button_Close -->
+    <!-- U | MenuItem_CopyToClipboard -->
+    <!-- U | MenuItem_Exit -->
+    <!-- U | MenuItem_Refresh -->
+    <!-- U | Menu_View -->
+    <!-- U | MsgText_ApplicationShutdown -->
+    <!-- U | MsgText_CopiedToClipboard -->
+    <!-- U | MsgText_HResultCopiedToClipboard -->
+    <!-- U | MsgText_UIThemeSet -->
+    <!-- U | NavItem_Exit -->
+    <!-- U | NavItem_Updates -->
+    <!-- U | NavTitle_About -->
+    <!-- U | NavTitle_Updates -->
+    <!-- U | ResultCode_Failed -->
+    <!-- U | ResultCode_NotStarted -->
+    <!-- U | ResultCode_ResultCode_Aborted -->
+    <!-- U | ResultCode_Succeeded -->
+    <!-- U | SettingsEnum_Theme_Light -->
+    <!-- U | SettingsSubHead_Language -->
+    <!-- End of changes on 2023/11/19 -->
 
 <!-- Begin changes on 2023/11/15 @ 17:56 UTC -->
 <!-- U | About_Contribute -->
