@@ -220,6 +220,7 @@
     <sys:String x:Key="SettingsEnum_Theme_Darker">Dunkler</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Hell</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">System</sys:String>
+</ResourceDictionary>
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     LANGUAGE FILE UPDATES
@@ -299,4 +300,4 @@
 <!-- A | About_GitHub -->
 <!-- A | Button_Close -->
 <!-- End of changes on 2023/11/13 -->
-</ResourceDictionary>
+
