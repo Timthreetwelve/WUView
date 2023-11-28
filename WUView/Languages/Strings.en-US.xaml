@@ -101,6 +101,7 @@
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">Check for update failed. See the log for more information.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Checking for update.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Do you want to go to the release page?</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCloseGetMyIP">Clicking 'Yes' will close Get My IP.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">A newer release ({0}) has been found.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">No newer releases were found.</sys:String>
     <sys:String x:Key="MsgText_ColumnSortCleared">Column sort cleared</sys:String>
@@ -264,5 +265,9 @@
     <!-- A | About_GitHub -->
     <!-- A | Button_Close -->
     <!-- End of changes on 2023/11/13 -->
+
+    <!-- Begin changes on 2023/11/28 @ 02:00 UTC -->
+    <!-- A | MsgText_AppUpdateCloseGetMyIP -->
+    <!-- End of changes on 2023/11/28 @ 02:00 UTC -->
 
 </ResourceDictionary>

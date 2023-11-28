@@ -68,9 +68,11 @@ internal static class GitHubHelpers
             }
             else
             {
+                _log.Debug($"A newer release ({latestVersion}) has been found.");
                 string msg = string.Format(GetStringResource("MsgText_AppUpdateNewerFound"), latestVersion);
-                _log.Debug(msg);
-                _ = new MDCustMsgBox($"{ msg }\n\n{GetStringResource("MsgText_AppUpdateGoToRelease")}\n",
+                _ = new MDCustMsgBox($"{msg}\n\n" +
+                                            $"{GetStringResource("MsgText_AppUpdateGoToRelease")}\n\n" +
+                                            $"{GetStringResource("MsgText_AppUpdateCloseGetMyIP")}",
                     "Windows Update Viewer",
                     ButtonType.YesNo,
                     false,
@@ -87,6 +89,7 @@ internal static class GitHubHelpers
                     p.StartInfo.FileName = url;
                     p.StartInfo.UseShellExecute = true;
                     p.Start();
+                    System.Windows.Application.Current.Shutdown();
                 }
             }
         }
