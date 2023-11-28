@@ -144,7 +144,6 @@ public partial class App : Application
                 }
                 catch (Exception ex)
                 {
-                    // No logging available at this point
                     _log.Error(ex, $"Error loading test language file {TestLanguageFile}");
                     string msg = string.Format($"{GetStringResource("MsgText_Error_TestLanguage")}\n\n{ex.Message}\n\n{ex.InnerException}");
                     MessageBox.Show(msg,
