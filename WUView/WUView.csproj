@@ -12,6 +12,9 @@
     <Product>Windows Update Viewer</Product>
     <ApplicationIcon>Images\UV.ico</ApplicationIcon>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <GenerateAssemblyFileVersionAttribute>False</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>False</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyVersionAttribute>False</GenerateAssemblyVersionAttribute>
   </PropertyGroup>
 
   <ItemGroup>
@@ -63,21 +66,58 @@
     <Exec Command="powershell -NoProfile -File &quot;$(ProjectDir)Powershell\GenBuildInfo.ps1&quot; -assemblyName $(AssemblyName) -assemblyVersion $(AssemblyVersion)" />
   </Target>
 
-  <Target Name="PublishZip" AfterTargets="Publish">
-    <PropertyGroup>
-      <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishZip\PubZip.ps1"</PowerShellScript>
-      <Name>-name "Windows Update Viewer"</Name>
-      <Version>-version $(AssemblyVersion)</Version>
-      <Path>-path "$(ProjectDir)"</Path>
-    </PropertyGroup>
-	<Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name) $(Version) $(Path)" />
-  </Target>
+    <!-- Publish to Zip file -->
+    <Target Name="PublishZip" AfterTargets="Publish">
+        <PropertyGroup >
+            <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishZip\PubZipEx.ps1"</PowerShellScript>
+            <Name>-name "Windows Update Viewer"</Name>
+            <Version>-version $(AssemblyVersion)</Version>
+            <Path>-path "$(ProjectDir)"</Path>
+            <PublishFolder>-pubDir $(PublishDir)</PublishFolder>
+        </PropertyGroup>
 
-  <Target Name="CompileSetup" AfterTargets="PublishZip">
-    <PropertyGroup>
-      <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishInnoSetup\PubSetup.ps1"</PowerShellScript>
-      <ScriptName>-issScript "$(ProjectDir)Inno_Setup\WUView.iss"</ScriptName>
-    </PropertyGroup>
-    <Exec Command="pwsh -NoProfile $(PowerShellScript) $(ScriptName)" />
-  </Target>
+        <!-- This is the framework dependent version -->
+        <PropertyGroup Condition="'$(PublishDir.Contains(`Framework_Dependent`))'">
+            <PubType>-pubType ""</PubType>
+        </PropertyGroup>
+
+        <!-- This is the x64 self contained version-->
+        <PropertyGroup Condition="'$(PublishDir.Contains(`Self_Contained_x64`))'">
+            <PubType>-pubType SC_x64</PubType>
+        </PropertyGroup>
+
+        <!-- This is the x86 self contained version-->
+        <PropertyGroup Condition="'$(PublishDir.Contains(`Self_Contained_x86`))'">
+            <PubType>-pubType SC_x86</PubType>
+        </PropertyGroup>
+
+        <!-- Execute the PowerShell script -->
+        <Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name) $(Version) $(PubType) $(PublishFolder) $(Path)"/>
+    </Target>
+
+    <!-- Publish to Inno Setup installer-->
+    <Target Name="CompileSetup" AfterTargets="PublishZip">
+        <PropertyGroup>
+            <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishInnoSetup\PubSetupEx.ps1"</PowerShellScript>
+            <ScriptName>-issScript "$(ProjectDir)Inno_Setup\WUViewEx.iss"</ScriptName>
+        </PropertyGroup>
+
+        <!-- This is the framework dependent version -->
+        <PropertyGroup Condition="'$(PublishDir.Contains(`Framework_Dependent`))'">
+            <PubType>-publishType ""</PubType>
+        </PropertyGroup>
+
+        <!-- This is the x64 self contained version-->
+        <PropertyGroup Condition="'$(PublishDir.Contains(`Self_Contained_x64`))'">
+            <PubType>-publishType SC_x64</PubType>
+        </PropertyGroup>
+
+        <!-- This is the x86 self contained version-->
+        <PropertyGroup Condition="'$(PublishDir.Contains(`Self_Contained_x86`))'">
+            <PubType>-publishType SC_x86</PubType>
+        </PropertyGroup>
+
+        <!-- Execute the PowerShell script -->
+        <Exec Command="pwsh -NoProfile $(PowerShellScript) $(ScriptName) $(PublishDir) $(PubType) " />
+    </Target>
 </Project>
