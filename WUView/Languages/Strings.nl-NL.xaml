@@ -13,9 +13,9 @@
 
         Language name:               Dutch
 
-        Translation contributed by:  Tim
+        Translation contributed by:  CMTRiX
 
-        Date last update:            24.09.2023 09:45
+        Date last update:            2023.12.15 12:20 UTC
 
         ========================================================================
 
@@ -218,6 +218,12 @@
     <sys:String x:Key="SettingsEnum_Theme_Darker">Donkerder</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Licht</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Systeem</sys:String>
+
+<!-- Begin changes on 2023/12/15 @ 12:20 UTC -->
+<sys:String x:Key="About_GitHub">Over GitHub</sys:String>
+<sys:String x:Key="Button_Close">Afsluiten</sys:String>
+<sys:String x:Key="MsgText_AppUpdateCloseGetMyIP">Klik op 'JA' om het programma af te sluiten</sys:String>
+
 
 </ResourceDictionary>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
