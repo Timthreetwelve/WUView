@@ -22,7 +22,7 @@ If you are using Windows 10 please see [Known Issues](https://github.com/Timthre
 
 See the [Wiki](https://github.com/Timthreetwelve/WUView/wiki) for additional information.
 
-### Windows Update Viewer is multilingual! 🆕
+### Windows Update Viewer is multilingual!
 Languages are being added as of version 0.5.21. Please see [Contribute a Translation](https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation) topic in the Wiki if you would like to contribute a translation. 
 
 ### Get Windows Update Viewer via winget 
