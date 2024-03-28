@@ -14,22 +14,10 @@ class ResultsConverter : IValueConverter
         {
             return string.Empty;
         }
-        else
+        else if ((parameter as string) == "HResult")
         {
-            switch (parameter)
-            {
-                case "HResult":
-                    string hr = (string)value;
-                    return string.Format($"0x{int.Parse(hr):X8}");
-
-                //case "ResultCode":
-                //    string rc = (string)value;
-                //    return rc.Replace("orc", "");
-
-                //case "Operation":
-                //    string op = (string)value;
-                //    return op.Replace("uo", "");
-            }
+            string hr = (string)value;
+            return string.Format($"0x{int.Parse(hr):X8}");
         }
         return value.ToString();
     }
