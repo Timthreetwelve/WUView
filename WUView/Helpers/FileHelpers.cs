@@ -5,21 +5,28 @@ namespace WUView.Helpers;
 /// <summary>
 /// Methods for reading and writing files
 /// </summary>
-public static class FileHelpers
+public static partial class FileHelpers
 {
+    #region JSON options
+    public static JsonSerializerOptions JsonOptions { get; } = new()
+    {
+        WriteIndented = true
+    };
+    #endregion JSON options
+
     #region Read the Exclude file
     /// <summary>
     ///  Read the JSON file containing the exclude items
     /// </summary>
     public static void GetExcludes()
     {
-        Stopwatch rxsw = Stopwatch.StartNew();
+        Stopwatch rxStopWatch = Stopwatch.StartNew();
         string json = File.ReadAllText(GetExcludesFile());
-        rxsw.Stop();
+        rxStopWatch.Stop();
         ExcludedItems.ExcludedStrings = JsonSerializer.Deserialize<ObservableCollection<ExcludedItems>>(json);
         int xCount = ExcludedItems.ExcludedStrings.Count;
         string xRecs = xCount == 1 ? "record" : "records";
-        _log.Debug($"Read {ExcludedItems.ExcludedStrings.Count} exclude {xRecs} from disk in {rxsw.Elapsed.TotalMilliseconds:N2} milliseconds");
+        _log.Debug($"Read {ExcludedItems.ExcludedStrings.Count} exclude {xRecs} from disk in {rxStopWatch.Elapsed.TotalMilliseconds:N2} milliseconds");
         if (xCount > 0)
         {
             foreach (ExcludedItems item in ExcludedItems.ExcludedStrings)
@@ -34,13 +41,9 @@ public static class FileHelpers
     /// <summary>
     ///  Save the JSON file containing the exclude items
     /// </summary>
-    public static async void SaveExcludeFile()
+    public static async Task SaveExcludeFile()
     {
-        JsonSerializerOptions opts = new()
-        {
-            WriteIndented = true
-        };
-        string json = JsonSerializer.Serialize(ExcludedItems.ExcludedStrings, opts);
+        string json = JsonSerializer.Serialize(ExcludedItems.ExcludedStrings, JsonOptions);
         await File.WriteAllTextAsync(GetExcludesFile(), json);
         _log.Info($"Saving {GetExcludesFile()}");
 
@@ -71,17 +74,17 @@ public static class FileHelpers
 
     #region Save grid to CSV file
     /// <summary>
-    ///  Save the contents of the datagrid to a CSV file
+    ///  Save the contents of the DataGrid to a CSV file
     /// </summary>
-    public static async void SaveToCSV()
+    public static async Task SaveToCSV()
     {
-        string fname = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".csv";
+        string filename = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".csv";
         SaveFileDialog dialog = new()
         {
             Title = ResourceHelpers.GetStringResource("MenuItem_SaveCSV"),
             Filter = "CSV File|*.csv",
             InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-            FileName = fname
+            FileName = filename
         };
         bool? result = dialog.ShowDialog();
         if (result == true)
@@ -98,15 +101,15 @@ public static class FileHelpers
     /// <summary>
     /// Saves details to a text file.
     /// </summary>
-    public static async void SaveToFile()
+    public static async Task SaveToFile()
     {
-        string fname = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".txt";
+        string filename = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".txt";
         SaveFileDialog dialog = new()
         {
             Title = ResourceHelpers.GetStringResource("MenuItem_SaveTXT"),
             Filter = "Text File|*.txt",
             InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-            FileName = fname
+            FileName = filename
         };
         bool? result = dialog.ShowDialog();
         if (result == true)
@@ -118,13 +121,13 @@ public static class FileHelpers
                 .Append(" - ")
                 .AppendFormat("{0:G}", DateTime.Now)
                 .AppendLine();
-            string uscore = new('-', sb.Length - 2);
-            _ = sb.Append(uscore).AppendLine("\r\n");
+            string underscore = new('-', sb.Length - 2);
+            _ = sb.Append(underscore).AppendLine("\r\n");
 
-            List<WUpdate> listInUse = MainViewModel.UpdatesFullList.ToList();
+            List<WUpdate> listInUse = [.. MainViewModel.UpdatesFullList];
             if (UserSettings.Setting.HideExcluded)
             {
-                listInUse = MainViewModel.UpdatesWithoutExcludedItems.ToList();
+                listInUse = [.. MainViewModel.UpdatesWithoutExcludedItems];
             }
 
             for (int i = 0; i < listInUse.Count; i++)
@@ -139,7 +142,7 @@ public static class FileHelpers
                     .Append(GetStringResource("Details_SupportURL")).Append(' ').AppendLine(listInUse[i].SupportURL)
                     .Append(GetStringResource("Details_Description")).Append(' ').AppendLine(listInUse[i].Description);
 
-                foreach (string line in Regex.Split(MainViewModel.FindEventLogs(listInUse[i].KBNum), "\r\n|\r|\n"))
+                foreach (string line in RemoveCarriageReturnLineFeed().Split(MainViewModel.FindEventLogs(listInUse[i].KBNum)))
                 {
                     if (!string.IsNullOrWhiteSpace(line))
                     {
@@ -153,27 +156,28 @@ public static class FileHelpers
             _log.Debug($"Details written to {dialog.FileName}");
         }
     }
+    [GeneratedRegex("\r\n|\r|\n")]
+    private static partial Regex RemoveCarriageReturnLineFeed();
     #endregion Save details to a text file
 
     #region Save updates as JSON
     /// <summary>
     /// Save entire history as JSON file
     /// </summary>
-    public static async void SaveAsJson()
+    public static async Task SaveAsJson()
     {
-        string fname = "WUView_Export_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".json";
+        string filename = "WUView_Export_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".json";
         SaveFileDialog dialog = new()
         {
             Title = GetStringResource("MenuItem_SaveJSON"),
             Filter = "JSON File|*.json",
             InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-            FileName = fname
+            FileName = filename
         };
         bool? result = dialog.ShowDialog();
         if (result == true)
         {
-            JsonSerializerOptions options = new() { WriteIndented = true };
-            string json = JsonSerializer.Serialize(MainViewModel.UpdatesFullList, options);
+            string json = JsonSerializer.Serialize(MainViewModel.UpdatesFullList, JsonOptions);
             await File.WriteAllTextAsync(dialog.FileName, json);
             _log.Debug($"History exported to {dialog.FileName}");
         }
