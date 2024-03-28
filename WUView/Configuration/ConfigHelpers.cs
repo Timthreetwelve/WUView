@@ -9,6 +9,11 @@ public static class ConfigHelpers
 {
     #region Properties
     public static string SettingsFileName { get; set; }
+
+    public static JsonSerializerOptions JsonOptions { get; } = new()
+    {
+        WriteIndented = true
+    };
     #endregion Properties
 
     #region Initialize settings
@@ -63,8 +68,7 @@ public static class ConfigHelpers
     {
         try
         {
-            JsonSerializerOptions options = new() { WriteIndented = true };
-            string json = JsonSerializer.Serialize(UserSettings.Setting, options);
+            string json = JsonSerializer.Serialize(UserSettings.Setting, JsonOptions);
             File.WriteAllText(SettingsFileName, json);
         }
         catch (Exception ex)
