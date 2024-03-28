@@ -296,7 +296,7 @@ internal partial class MainViewModel : ObservableObject
 
         if (result)
         {
-            FileHelpers.SaveExcludeFile();
+            await FileHelpers.SaveExcludeFile();
             PopulateExcludedList();
             MainPage.Instance.UpdateGrid();
             DisplayCount();

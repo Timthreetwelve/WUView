@@ -111,29 +111,26 @@ public partial class MainPage : UserControl
                 return;
             }
         }
+        else if (filter?.StartsWith('!') == true)
+        {
+            filter = filter[1..].TrimStart(' ');
+            cv.Filter = o =>
+            {
+                WUpdate wu = o as WUpdate;
+                return !wu.Title.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
+                       !wu.ResultCode.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
+                       !wu.KBNum.Contains(filter, StringComparison.OrdinalIgnoreCase);
+            };
+        }
         else
         {
-            if (filter?.StartsWith("!") == true)
+            cv.Filter = o =>
             {
-                filter = filter[1..].TrimStart(' ');
-                cv.Filter = o =>
-                {
-                    WUpdate wu = o as WUpdate;
-                    return !wu.Title.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
-                           !wu.ResultCode.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
-                           !wu.KBNum.Contains(filter, StringComparison.OrdinalIgnoreCase);
-                };
-            }
-            else
-            {
-                cv.Filter = o =>
-                {
-                    WUpdate wu = o as WUpdate;
-                    return wu.Title.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-                           wu.ResultCode.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-                           wu.KBNum.Contains(filter, StringComparison.OrdinalIgnoreCase);
-                };
-            }
+                WUpdate wu = o as WUpdate;
+                return wu.Title.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
+                       wu.ResultCode.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
+                       wu.KBNum.Contains(filter, StringComparison.OrdinalIgnoreCase);
+            };
         }
         if (dataGrid.Items.Count == 1)
         {

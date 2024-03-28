@@ -207,25 +207,27 @@ public partial class NavigationViewModel : ObservableObject
     }
     #endregion Launch Windows Update
 
+    #region Save as JSON file
     [RelayCommand]
-    public static void SaveJson()
+    public static async Task SaveJson()
     {
-        FileHelpers.SaveAsJson();
+        await FileHelpers.SaveAsJson();
     }
+    #endregion Save as JSON file
 
     #region Save to CSV file
     [RelayCommand]
-    public static void SaveCSV()
+    public static async Task SaveCSV()
     {
-        FileHelpers.SaveToCSV();
+        await FileHelpers.SaveToCSV();
     }
     #endregion Save to CSV file
 
     #region Save details to text file
     [RelayCommand]
-    public static void SaveText()
+    public static async Task SaveText()
     {
-        FileHelpers.SaveToFile();
+        await FileHelpers.SaveToFile();
     }
     #endregion Save details to text file
 
