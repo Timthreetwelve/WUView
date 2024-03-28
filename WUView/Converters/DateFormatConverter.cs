@@ -10,9 +10,9 @@ internal class DateFormatConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        if (value is not null and DateTime)
+        if (value is DateTime dateTime)
         {
-            DateTime item = (DateTime)value;
+            DateTime item = dateTime;
 
             CultureInfo cult = CultureInfo.CurrentCulture;
             switch (UserSettings.Setting.DateFormat)
