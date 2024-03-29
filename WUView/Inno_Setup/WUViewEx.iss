@@ -140,6 +140,21 @@ Type: files; Name: "{app}\*.txt"
 ; Code section follows
 ; -----------------------------------------------------------------------------
 [Code]
+// Change text on welcome page based on installation type
+procedure InitializeWizard;
+var
+  Text: String;
+begin
+  case ExpandConstant('{#InstallType}') of
+    'x64x86': Text := FmtMessage( CustomMessage('NotSelfContained'), [ExpandConstant('{#MyAppName}'), ExpandConstant('{#MyAppVersion}')]); 
+    'SC_x86': Text := FmtMessage( CustomMessage('SelfContainedx86'), [ExpandConstant('{#MyAppName}'), ExpandConstant('{#MyAppVersion}')]); 
+    'SC_x64': Text := FmtMessage( CustomMessage('SelfContainedx64'), [ExpandConstant('{#MyAppName}'), ExpandConstant('{#MyAppVersion}')]);
+  else
+      Text := WizardForm.WelcomeLabel2.Caption;
+  end;
+  WizardForm.WelcomeLabel2.Caption := Text;
+end;
+
 // function used to check if app is currently running
 function IsAppRunning(const FileName : string): Boolean;
 var
