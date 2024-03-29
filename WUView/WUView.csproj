@@ -51,7 +51,7 @@
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
     <PackageReference Include="NLog" Version="5.2.8" />
     <PackageReference Include="Octokit" Version="10.0.0" />
-    <PackageReference Include="Vanara.PInvoke.User32" Version="3.4.17" />
+    <PackageReference Include="Vanara.PInvoke.User32" Version="4.0.0"/>
   </ItemGroup>
 
   <ItemGroup>
@@ -65,7 +65,7 @@
 
   <Target Name="BuildInfo" AfterTargets="UpdateAssemblyInfo">
     <Message Importance="high" Text="Beginning GenBuildInfo for $(AssemblyName). Version is $(AssemblyVersion)" />
-    <Exec Command="powershell -NoProfile -File &quot;$(ProjectDir)Powershell\GenBuildInfo.ps1&quot; -assemblyName $(AssemblyName) -assemblyVersion $(AssemblyVersion)" />
+    <Exec Command="powershell -NoProfile -File &quot;$(ProjectDir)PowerShell\GenBuildInfo.ps1&quot; -assemblyName $(AssemblyName) -assemblyVersion $(AssemblyVersion)" />
   </Target>
 
   <!-- Publish to Zip file -->
