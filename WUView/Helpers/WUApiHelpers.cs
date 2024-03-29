@@ -8,7 +8,6 @@ internal static class WUApiHelpers
     {
         try
         {
-            WindowsUpdateAgentInfo updateAgentInfo = new();
             _log.Debug($"Windows Update Agent product version: {GetWUAInfo("ProductVersionString")}");
             _log.Debug($"Windows Update Agent major version: {GetWUAInfo("ApiMajorVersion")} minor version: {GetWUAInfo("ApiMinorVersion")}");
         }
@@ -25,16 +24,19 @@ internal static class WUApiHelpers
         return value ?? string.Empty;
     }
 
+#pragma warning disable S125 // Sections of code should not be commented out
     // to enable the following, change <EmbedInteropTypes>true</EmbedInteropTypes> to false in .csproj
 
     //public static bool IsWUEnabled()
-    //{
-    //    AutomaticUpdatesClass automaticUpdatesClass = new();
-    //    return automaticUpdatesClass.ServiceEnabled;
-    //}
+
+                            //{
+                            //    AutomaticUpdatesClass automaticUpdatesClass = new();
+                            //    return automaticUpdatesClass.ServiceEnabled;
+                            //}
 
     //public static void LogWUEnabled()
     //{
     //    _log.Debug($"Windows Update service enabled: {IsWUEnabled()}");
     //}
 }
+#pragma warning restore S125 // Sections of code should not be commented out
