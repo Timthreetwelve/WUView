@@ -12,7 +12,7 @@ internal class TodayConverter : IValueConverter
     {
         if (UserSettings.Setting.BoldToday)
         {
-            return value is not null and DateTime date && date.Date == DateTime.Today;
+            return value is DateTime date && date.Date == DateTime.Today;
         }
         return false;
     }
