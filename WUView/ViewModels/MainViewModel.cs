@@ -5,9 +5,9 @@ namespace WUView.ViewModels;
 internal partial class MainViewModel : ObservableObject
 {
     #region Event record and WUpdate Lists
-    public static List<EventRecord> EventLogRecords { get; set; } = new();
-    public static ObservableCollection<WUpdate> UpdatesFullList { get; set; } = new();
-    public static ObservableCollection<WUpdate> UpdatesWithoutExcludedItems { get; set; } = new();
+    public static List<EventRecord> EventLogRecords { get; set; } = [];
+    public static ObservableCollection<WUpdate> UpdatesFullList { get; set; } = [];
+    public static ObservableCollection<WUpdate> UpdatesWithoutExcludedItems { get; set; } = [];
     #endregion Event record and WUpdate Lists
 
     #region Kick off the process of gathering the information
@@ -140,7 +140,7 @@ internal partial class MainViewModel : ObservableObject
         int pos = title.IndexOf("KB");
         if (pos > -1)
         {
-            int endPosition = title.IndexOf(" ", pos);
+            int endPosition = title.IndexOf(' ', pos);
             if (endPosition > -1)
             {
                 return title[pos..endPosition];
@@ -164,14 +164,12 @@ internal partial class MainViewModel : ObservableObject
             return GetStringResource("MsgText_EventLogNA");
         }
         StringBuilder sbEventLog = new();
-        foreach (EventRecord item in EventLogRecords)
+        foreach (var item in EventLogRecords.Where(item => item.Properties[0].Value.ToString().Contains(kb)))
         {
-            if (item.Properties[0].Value.ToString().Contains(kb))
-            {
-                string tc = string.Format($"{item.TimeCreated} - {item.FormatDescription()}  Event ID: {item.Id}.");
-                _ = sbEventLog.AppendLine(tc);
-            }
+            string tc = string.Format($"{item.TimeCreated} - {item.FormatDescription()}  Event ID: {item.Id}.");
+            _ = sbEventLog.AppendLine(tc);
         }
+
         if (sbEventLog.Length == 0)
         {
             string message = string.Format(GetStringResource("MsgText_EventLogNoRecords"), kb);
@@ -190,13 +188,15 @@ internal partial class MainViewModel : ObservableObject
         Stopwatch esw = new();
         esw.Start();
         UpdatesWithoutExcludedItems.Clear();
-        foreach (WUpdate upd in UpdatesFullList)
+        for (int i = 0; i < UpdatesFullList.Count; i++)
         {
+            WUpdate upd = UpdatesFullList[i];
             try
             {
                 bool skip = false;
-                foreach (ExcludedItems exc in ExcludedItems.ExcludedStrings)
+                for (int j = 0; j < ExcludedItems.ExcludedStrings.Count; j++)
                 {
+                    ExcludedItems exc = ExcludedItems.ExcludedStrings[j];
                     if (skip)
                     {
                         break;
@@ -211,12 +211,9 @@ internal partial class MainViewModel : ObservableObject
                             skip = true;
                         }
                     }
-                    else
+                    else if (upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase))
                     {
-                        if (upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase) && !skip)
-                        {
-                            skip = true;
-                        }
+                        skip = true;
                     }
                 }
                 if (!skip)
@@ -281,7 +278,7 @@ internal partial class MainViewModel : ObservableObject
     /// <summary>
     /// Edit the exclude file
     /// </summary>
-    public static async void EditExcludes()
+    public static async Task EditExcludes()
     {
         bool result;
         if (!DialogHost.IsDialogOpen("MainDialogHost"))
