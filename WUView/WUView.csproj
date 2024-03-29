@@ -79,7 +79,7 @@
     </PropertyGroup>
     <!-- This is the framework dependent version -->
     <PropertyGroup Condition="'$(PublishDir.Contains(`Framework_Dependent`))'">
-      <PubType>-pubType ""</PubType>
+      <PubType>-pubType "x64x86"</PubType>
     </PropertyGroup>
     <!-- This is the x64 self contained version-->
     <PropertyGroup Condition="'$(PublishDir.Contains(`Self_Contained_x64`))'">
@@ -101,7 +101,7 @@
     </PropertyGroup>
     <!-- This is the framework dependent version -->
     <PropertyGroup Condition="'$(PublishDir.Contains(`Framework_Dependent`))'">
-      <PubType>-publishType ""</PubType>
+      <PubType>-publishType "x64x86"</PubType>
     </PropertyGroup>
     <!-- This is the x64 self contained version-->
     <PropertyGroup Condition="'$(PublishDir.Contains(`Self_Contained_x64`))'">
