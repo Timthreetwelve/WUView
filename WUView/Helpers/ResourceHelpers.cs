@@ -34,14 +34,28 @@ internal static class ResourceHelpers
         }
         catch (Exception)
         {
-            _log.Error($"Resource not found: {key}");
-            throw new Exception("Resource not found");
+            if (Debugger.IsAttached)
+            {
+                throw new ArgumentException($"Resource not found: {key}");
+            }
+            else
+            {
+                _log.Error($"Resource not found: {key}");
+                return $"Resource not found: {key}";
+            }
         }
 
         if (description is null)
         {
-            _log.Error($"Resource not found: {key}");
-            throw new Exception("Resource not found");
+            if (Debugger.IsAttached)
+            {
+                throw new ArgumentNullException($"Resource not found: {key}");
+            }
+            else
+            {
+                _log.Error($"Resource not found: {key}");
+                return $"Resource not found: {key}";
+            }
         }
 
         return description.ToString();
@@ -55,14 +69,14 @@ internal static class ResourceHelpers
         string currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
         string compareLang = $"Languages/Strings.{currentLanguage}.xaml";
 
-        ResourceDictionary dict1 = new();
-        ResourceDictionary dict2 = new();
+        ResourceDictionary dict1 = [];
+        ResourceDictionary dict2 = [];
 
         dict1.Source = new Uri("Languages/Strings.en-US.xaml", UriKind.RelativeOrAbsolute);
         dict2.Source = new Uri(compareLang, UriKind.RelativeOrAbsolute);
 
-        Dictionary<string, string> enUSDict = new();
-        Dictionary<string, string> compareDict = new();
+        Dictionary<string, string> enUSDict = [];
+        Dictionary<string, string> compareDict = [];
 
         foreach (DictionaryEntry kvp in dict1)
         {
