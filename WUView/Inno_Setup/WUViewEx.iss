@@ -13,7 +13,7 @@
 ;----------------------------------------------------------------------
 #include "D:\Temp\PubSetup.Temp.iss"
 
-#define BaseDir              "D:\Visual Studio\Source\Prod\WUView\WUView"
+#define BaseDir              "V:\Source\Repos\WUView\WUView"
 #define MySourceDir          BaseDir + PublishFolder
 #define MySetupIcon          BaseDir + "\Images\UV.ico"
 #define MyOutputDir          "D:\InnoSetup\Output"
