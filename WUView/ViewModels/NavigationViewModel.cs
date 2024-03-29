@@ -28,8 +28,8 @@ public partial class NavigationViewModel : ObservableObject
 
     #region List of navigation items
     public static List<NavigationItem> NavigationViewModelTypes { get; set; } = new List<NavigationItem>
-        (new List<NavigationItem>
-            {
+        (
+            [
                 new NavigationItem
                 {
                     Name = ResourceHelpers.GetStringResource("NavItem_Updates"),
@@ -60,7 +60,7 @@ public partial class NavigationViewModel : ObservableObject
                     IconKind = PackIconKind.ExitToApp,
                     IsExit = true
                 }
-            }
+            ]
         );
     #endregion List of navigation items
 
@@ -109,7 +109,7 @@ public partial class NavigationViewModel : ObservableObject
         }
         else
         {
-            MainViewModel.EditExcludes();
+            _ = MainViewModel.EditExcludes();
         }
     }
     #endregion Exit the exclude file
@@ -287,7 +287,7 @@ public partial class NavigationViewModel : ObservableObject
             }
             if (e.Key == Key.L)
             {
-                MainViewModel.EditExcludes();
+                _ = MainViewModel.EditExcludes();
             }
             if (e.Key == Key.D)
             {
