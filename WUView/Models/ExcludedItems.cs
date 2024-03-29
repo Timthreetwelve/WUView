@@ -21,5 +21,5 @@ public class ExcludedItems : ObservableObject
     /// <value>
     /// The excluded strings.
     /// </value>
-    public static ObservableCollection<ExcludedItems> ExcludedStrings { get; set; } = new();
+    public static ObservableCollection<ExcludedItems> ExcludedStrings { get; set; } = [];
 }
