@@ -12,7 +12,7 @@ internal static class MainWindowHelpers
     #endregion MainWindow Instance
 
     #region StopWatch
-    public static Stopwatch _stopwatch = Stopwatch.StartNew();
+    public static readonly Stopwatch _stopwatch = Stopwatch.StartNew();
     #endregion StopWatch
 
     #region Set and Save MainWindow position and size
@@ -99,7 +99,7 @@ internal static class MainWindowHelpers
         TempSettings.Setting.PropertyChanged += SettingChange.TempSettingChanged;
 
         // Window Loaded
-        _mainWindow.Loaded += _mainWindow_Loaded;
+        _mainWindow.Loaded += MainWindow_Loaded;
 
         // Content rendered
         _mainWindow.ContentRendered += MainWindow_ContentRendered;
@@ -110,7 +110,7 @@ internal static class MainWindowHelpers
     #endregion Event handlers
 
     #region Window Events
-    private static void _mainWindow_Loaded(object sender, RoutedEventArgs e)
+    private static void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
         WUApiHelpers.LogWUAInfo();
     }
