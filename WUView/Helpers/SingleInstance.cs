@@ -42,7 +42,7 @@ public static class SingleInstance
             eventName = $"{appName}-{uniqueID}";
         }
 
-        if (EventWaitHandle.TryOpenExisting(eventName, out EventWaitHandle eventWaitHandle))
+        if (EventWaitHandle.TryOpenExisting(eventName, out EventWaitHandle? eventWaitHandle))
         {
             ActivateFirstInstanceWindow(eventWaitHandle);
 
@@ -84,10 +84,10 @@ public static class SingleInstance
 
     #region Show the main window
     /// <summary>Shows the main window of the original instance</summary>
-    private static void WaitOrTimerCallback(object state, bool timedOut)
+    private static void WaitOrTimerCallback(object? state, bool timedOut)
     {
-        Application app = (Application)state;
-        _ = app.Dispatcher.BeginInvoke(new Action(() => MainWindowHelpers.ShowMainWindow()));
+        Application? app = (Application?)state;
+        _ = app!.Dispatcher.BeginInvoke(new Action(MainWindowHelpers.ShowMainWindow));
     }
     #endregion Show the main window
 }

@@ -89,7 +89,7 @@ public static partial class FileHelpers
         bool? result = dialog.ShowDialog();
         if (result == true)
         {
-            MainPage.Instance.Copy2Clipboard(false);
+            MainPage.Instance!.Copy2Clipboard(false);
             string gridData = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
             await File.WriteAllTextAsync(dialog.FileName, gridData, Encoding.UTF8);
             _log.Debug($"Details written to {dialog.FileName}");
@@ -135,14 +135,14 @@ public static partial class FileHelpers
                 _ = sb.Append(GetStringResource("Details_Title")).Append(' ').AppendLine(listInUse[i].Title)
                     .Append(GetStringResource("Details_Date")).Append(' ').AppendLine(listInUse[i].Date.ToString())
                     .Append(GetStringResource("Details_KBNum")).Append(' ').AppendLine(listInUse[i].KBNum)
-                    .Append(GetStringResource("Details_Operation")).Append(' ').AppendLine(listInUse[i].Operation.Replace("uo", ""))
-                    .Append(GetStringResource("Details_ResultCode")).Append(' ').AppendLine(listInUse[i].ResultCode.Replace("orc", ""))
-                    .Append(GetStringResource("Details_HResult")).Append(' ').AppendFormat($"0x{int.Parse(listInUse[i].HResult):X8}").AppendLine()
+                    .Append(GetStringResource("Details_Operation")).Append(' ').AppendLine(listInUse[i].Operation!.Replace("uo", ""))
+                    .Append(GetStringResource("Details_ResultCode")).Append(' ').AppendLine(listInUse[i].ResultCode!.Replace("orc", ""))
+                    .Append(GetStringResource("Details_HResult")).Append(' ').AppendFormat($"0x{int.Parse(listInUse[i].HResult!):X8}").AppendLine()
                     .Append(GetStringResource("Details_UpdateID")).Append(' ').AppendLine(listInUse[i].UpdateID)
                     .Append(GetStringResource("Details_SupportURL")).Append(' ').AppendLine(listInUse[i].SupportURL)
                     .Append(GetStringResource("Details_Description")).Append(' ').AppendLine(listInUse[i].Description);
 
-                foreach (string line in RemoveCarriageReturnLineFeed().Split(MainViewModel.FindEventLogs(listInUse[i].KBNum)))
+                foreach (string line in RemoveCarriageReturnLineFeed().Split(MainViewModel.FindEventLogs(listInUse[i].KBNum!)))
                 {
                     if (!string.IsNullOrWhiteSpace(line))
                     {

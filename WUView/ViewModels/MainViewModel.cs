@@ -42,7 +42,7 @@ internal partial class MainViewModel : ObservableObject
             Stopwatch gkbStopwatch = new();
             Stopwatch updStopwatch = new();
             int maxUpdates;
-            switch (UserSettings.Setting.MaxUpdates)
+            switch (UserSettings.Setting!.MaxUpdates)
             {
                 case MaxUpdates.All:
                     maxUpdates = count;
@@ -71,7 +71,7 @@ internal partial class MainViewModel : ObservableObject
             foreach (IUpdateHistoryEntry hist in updateSearcher.QueryHistory(0, maxUpdates))
             {
                 gkbStopwatch.Start();
-                string kbNum = GetKB(hist.Title);
+                string kbNum = GetKB(hist.Title!);
                 gkbStopwatch.Stop();
                 updStopwatch.Start();
                 try
@@ -164,7 +164,7 @@ internal partial class MainViewModel : ObservableObject
             return GetStringResource("MsgText_EventLogNA");
         }
         StringBuilder sbEventLog = new();
-        foreach (var item in EventLogRecords.Where(item => item.Properties[0].Value.ToString().Contains(kb)))
+        foreach (EventRecord? item in EventLogRecords.Where(item => item.Properties[0].Value.ToString()!.Contains(kb)))
         {
             string tc = string.Format($"{item.TimeCreated} - {item.FormatDescription()}  Event ID: {item.Id}.");
             _ = sbEventLog.AppendLine(tc);
@@ -201,17 +201,17 @@ internal partial class MainViewModel : ObservableObject
                     {
                         break;
                     }
-                    if (UserSettings.Setting.ExcludeKBandResult)
+                    if (UserSettings.Setting!.ExcludeKBandResult)
                     {
-                        if (upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase) ||
-                            upd.KBNum.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase) ||
-                            upd.ResultCode.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase) ||
-                            upd.UpdateID.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase))
+                        if (upd.Title!.Contains(exc.ExcludedString!, StringComparison.OrdinalIgnoreCase) ||
+                            upd.KBNum!.Contains(exc.ExcludedString!, StringComparison.OrdinalIgnoreCase) ||
+                            upd.ResultCode!.Contains(exc.ExcludedString!, StringComparison.OrdinalIgnoreCase) ||
+                            upd.UpdateID!.Contains(exc.ExcludedString!, StringComparison.OrdinalIgnoreCase))
                         {
                             skip = true;
                         }
                     }
-                    else if (upd.Title.Contains(exc.ExcludedString, StringComparison.OrdinalIgnoreCase))
+                    else if (upd.Title!.Contains(exc.ExcludedString!, StringComparison.OrdinalIgnoreCase))
                     {
                         skip = true;
                     }
@@ -295,7 +295,7 @@ internal partial class MainViewModel : ObservableObject
         {
             await FileHelpers.SaveExcludeFile();
             PopulateExcludedList();
-            MainPage.Instance.UpdateGrid();
+            MainPage.Instance!.UpdateGrid();
             DisplayCount();
         }
     }
@@ -308,7 +308,7 @@ internal partial class MainViewModel : ObservableObject
     internal static void DisplayCount()
     {
         int total = UpdatesFullList.Count;
-        int displayed = MainPage.Instance.dataGrid.Items.Count;
+        int displayed = MainPage.Instance!.dataGrid.Items.Count;
         string message = string.Format(GetStringResource("MsgText_DisplayedUpdates"), displayed, total);
         SnackbarMsg.ClearAndQueueMessage(message);
     }

@@ -19,8 +19,8 @@ internal static class NLogHelpers
     /// <summary>
     /// Configure NLog
     /// </summary>
-    /// <param name="newfile">True to start with new log file. False to append to current file.</param>
-    public static void NLogConfig(bool newfile)
+    /// <param name="newFile">True to start with new log file. False to append to current file.</param>
+    public static void NLogConfig(bool newFile)
     {
         // Throw exception if there are error in configuration
         LogManager.ThrowConfigExceptions = true;
@@ -32,7 +32,7 @@ internal static class NLogHelpers
         FileTarget logfile = new("logfile")
         {
             // new file on startup
-            DeleteOldFileOnStartup = newfile,
+            DeleteOldFileOnStartup = newFile,
 
             // create the file if needed
             FileName = CreateFilename(),
@@ -71,7 +71,7 @@ internal static class NLogHelpers
         LogManager.Configuration = config;
 
         // Lastly, set the logging level based on setting
-        SetLogLevel(UserSettings.Setting.IncludeDebug);
+        SetLogLevel(UserSettings.Setting!.IncludeDebug);
     }
     #endregion Create the NLog configuration
 
@@ -79,21 +79,21 @@ internal static class NLogHelpers
     private static string CreateFilename()
     {
         // create filename string
-        string myname = AppInfo.AppName;
+        string appName = AppInfo.AppName;
         string today = DateTime.Now.ToString("yyyyMMdd");
         string filename;
         if (Debugger.IsAttached)
         {
-            filename = $"{myname}.{today}.debug.log";
+            filename = $"{appName}.{today}.debug.log";
         }
         else
         {
-            filename = $"{myname}.{today}.log";
+            filename = $"{appName}.{today}.log";
         }
 
         // combine temp folder with filename
-        string tempdir = Path.GetTempPath();
-        return Path.Combine(tempdir, "T_K", filename);
+        string tempDir = Path.GetTempPath();
+        return Path.Combine(tempDir, "T_K", filename);
     }
     #endregion Create a filename in the temp folder
 
@@ -126,8 +126,8 @@ internal static class NLogHelpers
     /// <summary>
     /// Gets the filename for the NLog log fie
     /// </summary>
-    /// <returns></returns>
-    public static string GetLogfileName()
+    /// <returns>Name of the log file.</returns>
+    public static string? GetLogfileName()
     {
         LoggingConfiguration config = LogManager.Configuration;
         return (config.FindTargetByName("logfile")

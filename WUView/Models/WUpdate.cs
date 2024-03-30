@@ -10,42 +10,42 @@ public partial class WUpdate : ObservableObject
     #region Properties from WUApi
 
     [ObservableProperty]
-    private string _title;
+    private string? _title;
 
     [ObservableProperty]
-    private string _kBNum;
+    private string? _kBNum;
 
     [ObservableProperty]
-    private string _description;
+    private string? _description;
 
     [ObservableProperty]
-    private string _updateID;
+    private string? _updateID;
 
     [ObservableProperty]
     private DateTime _date;
 
     [ObservableProperty]
-    private string _resultCode;
+    private string? _resultCode;
 
     [ObservableProperty]
-    private string _hResult;
+    private string? _hResult;
 
     [ObservableProperty]
-    private string _operation;
+    private string? _operation;
 
     [ObservableProperty]
-    private string _supportURL;
+    private string? _supportURL;
     #endregion Properties from WUApi
 
     #region Properties from Event Log
     [ObservableProperty]
-    private int _eLEventID;
+    private int? _eLEventID;
 
     [ObservableProperty]
-    private string _eLDescription;
+    private string? _eLDescription;
 
     [ObservableProperty]
-    private string _eLProvider;
+    private string? _eLProvider;
 
     [ObservableProperty]
     private DateTime? _eLDate;

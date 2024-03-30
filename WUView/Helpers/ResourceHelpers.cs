@@ -58,7 +58,7 @@ internal static class ResourceHelpers
             }
         }
 
-        return description.ToString();
+        return description.ToString()!;
     }
 
     /// <summary>
@@ -80,11 +80,11 @@ internal static class ResourceHelpers
 
         foreach (DictionaryEntry kvp in dict1)
         {
-            enUSDict.Add(kvp.Key.ToString(), kvp.Value.ToString());
+            enUSDict.Add(kvp.Key.ToString()!, kvp.Value!.ToString()!);
         }
         foreach (DictionaryEntry kvp in dict2)
         {
-            compareDict.Add(kvp.Key.ToString(), kvp.Value.ToString());
+            compareDict.Add(kvp.Key.ToString()!, kvp.Value!.ToString()!);
         }
 
         bool same = enUSDict.Count == compareDict.Count && enUSDict.Keys.SequenceEqual(compareDict.Keys);

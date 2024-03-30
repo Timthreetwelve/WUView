@@ -15,19 +15,19 @@ internal partial class UILanguage : ObservableObject
     private int? _defaultStringCount = App.DefaultLanguageStrings;
 
     [ObservableProperty]
-    private string _language;
+    private string? _language;
 
     [ObservableProperty]
-    private string _languageCode;
+    private string? _languageCode;
 
     [ObservableProperty]
-    private string _languageNative;
+    private string? _languageNative;
 
     [ObservableProperty]
-    private string _contributor;
+    private string? _contributor;
 
     [ObservableProperty]
-    private string _note = string.Empty;
+    private string? _note = string.Empty;
 
     /// <summary>
     /// Overrides the ToString method.
@@ -35,10 +35,7 @@ internal partial class UILanguage : ObservableObject
     /// <returns>
     /// The language code as a string.
     /// </returns>
-    public override string ToString()
-    {
-        return LanguageCode;
-    }
+    public override string? ToString() => LanguageCode;
 
     /// <summary>
     /// List of languages with language code

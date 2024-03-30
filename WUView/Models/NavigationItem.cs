@@ -14,7 +14,7 @@ public partial class NavigationItem : ObservableObject
     private bool _isExit;
 
     [ObservableProperty]
-    private string _name;
+    private string? _name;
 
     [ObservableProperty]
     private NavPage _navPage;
@@ -23,5 +23,5 @@ public partial class NavigationItem : ObservableObject
     private string _pageTitle = "Page Title Goes Here";
 
     [ObservableProperty]
-    private object _viewModelType;
+    private object? _viewModelType;
 }

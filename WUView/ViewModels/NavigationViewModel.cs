@@ -5,7 +5,7 @@ namespace WUView.ViewModels;
 public partial class NavigationViewModel : ObservableObject
 {
     #region MainWindow Instance
-    private static readonly MainWindow _mainWindow = Application.Current.MainWindow as MainWindow;
+    private static readonly MainWindow? _mainWindow = Application.Current.MainWindow as MainWindow;
     #endregion MainWindow Instance
 
     #region Constructor
@@ -20,10 +20,10 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Properties
     [ObservableProperty]
-    private object _currentViewModel;
+    private object? _currentViewModel;
 
     [ObservableProperty]
-    private string _pageTitle;
+    private string? _pageTitle;
     #endregion Properties
 
     #region List of navigation items
@@ -72,7 +72,7 @@ public partial class NavigationViewModel : ObservableObject
 
     private static NavigationItem FindNavPage(NavPage page)
     {
-        return NavigationViewModelTypes.Find(x => x.NavPage == page);
+        return NavigationViewModelTypes.Find(x => x.NavPage == page)!;
     }
     #endregion Navigation Methods
 
@@ -152,7 +152,7 @@ public partial class NavigationViewModel : ObservableObject
     [RelayCommand]
     public static void ToggleDetails()
     {
-        UserSettings.Setting.ShowDetails = !UserSettings.Setting.ShowDetails;
+        UserSettings.Setting!.ShowDetails = !UserSettings.Setting.ShowDetails;
     }
     #endregion Toggle details
 
@@ -160,8 +160,8 @@ public partial class NavigationViewModel : ObservableObject
     [RelayCommand]
     public static void ToggleExcluded()
     {
-        UserSettings.Setting.HideExcluded = !UserSettings.Setting.HideExcluded;
-        MainPage.Instance.FilterTheGrid(true);
+        UserSettings.Setting!.HideExcluded = !UserSettings.Setting.HideExcluded;
+        MainPage.Instance!.FilterTheGrid(true);
     }
     #endregion Toggle excluded
 
@@ -169,7 +169,7 @@ public partial class NavigationViewModel : ObservableObject
     [RelayCommand]
     public static void RemoveSort()
     {
-        MainPage.Instance.ClearColumnSort();
+        MainPage.Instance!.ClearColumnSort();
     }
     #endregion Remove column sort
 
@@ -235,7 +235,7 @@ public partial class NavigationViewModel : ObservableObject
     [RelayCommand]
     internal static void CopyClipboard()
     {
-        MainPage.Instance.Copy2Clipboard(true);
+        MainPage.Instance!.Copy2Clipboard(true);
     }
     #endregion Copy to clipboard
 
@@ -258,7 +258,7 @@ public partial class NavigationViewModel : ObservableObject
         #region Keys without modifiers
         if (e.Key == Key.F1)
         {
-            _mainWindow.NavigationListBox.SelectedValue = FindNavPage(NavPage.About);
+            _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.About);
         }
         if (e.Key == Key.F5)
         {
@@ -266,9 +266,9 @@ public partial class NavigationViewModel : ObservableObject
         }
         if (e.Key == Key.Escape)
         {
-            if (CurrentViewModel.GetType() == typeof(MainViewModel))
+            if (CurrentViewModel!.GetType() == typeof(MainViewModel))
             {
-                MainPage.Instance.tbxSearch.Clear();
+                MainPage.Instance!.tbxSearch.Clear();
             }
             e.Handled = true;
         }
@@ -279,11 +279,11 @@ public partial class NavigationViewModel : ObservableObject
         {
             if (e.Key == Key.OemComma)
             {
-                _mainWindow.NavigationListBox.SelectedValue = FindNavPage(NavPage.Settings);
+                _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.Settings);
             }
             if (e.Key == Key.U)
             {
-                _mainWindow.NavigationListBox.SelectedValue = FindNavPage(NavPage.Viewer);
+                _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.Viewer);
             }
             if (e.Key == Key.L)
             {
@@ -291,7 +291,7 @@ public partial class NavigationViewModel : ObservableObject
             }
             if (e.Key == Key.D)
             {
-                UserSettings.Setting.ShowDetails = !UserSettings.Setting.ShowDetails;
+                UserSettings.Setting!.ShowDetails = !UserSettings.Setting.ShowDetails;
             }
             if (e.Key == Key.E)
             {
@@ -299,36 +299,36 @@ public partial class NavigationViewModel : ObservableObject
             }
             if (e.Key == Key.F)
             {
-                MainPage.Instance.tbxSearch.Focus();
+                MainPage.Instance!.tbxSearch.Focus();
             }
             if (e.Key == Key.R)
             {
-                MainPage.Instance.ClearColumnSort();
+                MainPage.Instance!.ClearColumnSort();
             }
             if (e.Key == Key.T)
             {
-                if (UserSettings.Setting.DateFormat >= 9)
+                if (UserSettings.Setting!.DateFormat >= 9)
                 {
-                    UserSettings.Setting.DateFormat = 0;
+                    UserSettings.Setting!.DateFormat = 0;
                 }
                 else
                 {
                     UserSettings.Setting.DateFormat++;
                 }
-                MainPage.Instance.UpdateGrid();
+                MainPage.Instance!.UpdateGrid();
                 SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_DateFormatChange"), 2000);
             }
             if (e.Key == Key.Add)
             {
                 MainWindowUIHelpers.EverythingLarger();
-                string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting.UISize);
+                string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
                 string message = string.Format(GetStringResource("MsgText_UISizeSet"), size);
                 SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
             if (e.Key == Key.Subtract)
             {
                 MainWindowUIHelpers.EverythingSmaller();
-                string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting.UISize);
+                string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
                 string message = string.Format(GetStringResource("MsgText_UISizeSet"), size);
                 SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
@@ -340,7 +340,7 @@ public partial class NavigationViewModel : ObservableObject
         {
             if (e.Key == Key.T)
             {
-                switch (UserSettings.Setting.UITheme)
+                switch (UserSettings.Setting!.UITheme)
                 {
                     case ThemeType.Light:
                         UserSettings.Setting.UITheme = ThemeType.Dark;
@@ -361,7 +361,7 @@ public partial class NavigationViewModel : ObservableObject
             }
             if (e.Key == Key.C)
             {
-                if (UserSettings.Setting.PrimaryColor >= AccentColor.White)
+                if (UserSettings.Setting!.PrimaryColor >= AccentColor.White)
                 {
                     UserSettings.Setting.PrimaryColor = AccentColor.Red;
                 }

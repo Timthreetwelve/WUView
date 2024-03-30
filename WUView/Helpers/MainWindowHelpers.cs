@@ -119,7 +119,7 @@ internal static class MainWindowHelpers
     {
         MainViewModel.GatherInfo();
 
-        if (UserSettings.Setting!.AutoSelectFirstRow && MainPage.Instance.dataGrid.Items.Count > 0)
+        if (UserSettings.Setting!.AutoSelectFirstRow && MainPage.Instance!.dataGrid.Items.Count > 0)
         {
             MainPage.Instance.dataGrid.SelectedIndex = 0;
         }

@@ -8,7 +8,7 @@ namespace WUView.Views;
 public partial class MainPage : UserControl
 {
     #region MainPage Instance
-    public static MainPage Instance { get; set; }
+    public static MainPage? Instance { get; set; }
     #endregion MainPage Instance
 
     public MainPage()
@@ -116,20 +116,20 @@ public partial class MainPage : UserControl
             filter = filter[1..].TrimStart(' ');
             cv.Filter = o =>
             {
-                WUpdate wu = o as WUpdate;
-                return !wu.Title.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
-                       !wu.ResultCode.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
-                       !wu.KBNum.Contains(filter, StringComparison.OrdinalIgnoreCase);
+                WUpdate? wu = o as WUpdate;
+                return !wu!.Title!.Contains(filter!, StringComparison.OrdinalIgnoreCase) &&
+                       !wu.ResultCode!.Contains(filter!, StringComparison.OrdinalIgnoreCase) &&
+                       !wu.KBNum!.Contains(filter!, StringComparison.OrdinalIgnoreCase);
             };
         }
         else
         {
             cv.Filter = o =>
             {
-                WUpdate wu = o as WUpdate;
-                return wu.Title.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-                       wu.ResultCode.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
-                       wu.KBNum.Contains(filter, StringComparison.OrdinalIgnoreCase);
+                WUpdate? wu = o as WUpdate;
+                return wu!.Title!.Contains(filter!, StringComparison.OrdinalIgnoreCase) ||
+                       wu.ResultCode!.Contains(filter!, StringComparison.OrdinalIgnoreCase) ||
+                       wu.KBNum!.Contains(filter!, StringComparison.OrdinalIgnoreCase);
             };
         }
         if (dataGrid.Items.Count == 1)
@@ -146,7 +146,7 @@ public partial class MainPage : UserControl
 
     #region Clear column sort
     /// <summary>
-    ///  Clears any sorts that may have been applied to columns in the datagrid
+    ///  Clears any sorts that may have been applied to columns in the DataGrid
     /// </summary>
     internal void ClearColumnSort()
     {
@@ -162,12 +162,12 @@ public partial class MainPage : UserControl
 
     #region Copy to clipboard
     /// <summary>
-    /// Copies the present contents of the datagrid to the clipboard
+    /// Copies the present contents of the DataGrid to the clipboard
     /// </summary>
     public void Copy2Clipboard(bool msg = false)
     {
         // Preserve the selected row
-        int selIndx = dataGrid.SelectedIndex;
+        int selIndex = dataGrid.SelectedIndex;
 
         // Clear the clipboard
         Clipboard.Clear();
@@ -191,7 +191,7 @@ public partial class MainPage : UserControl
         dataGrid.SelectionMode = DataGridSelectionMode.Single;
 
         // re-select the previous row
-        dataGrid.SelectedIndex = selIndx;
+        dataGrid.SelectedIndex = selIndex;
 
         if (msg)
         {
@@ -220,7 +220,7 @@ public partial class MainPage : UserControl
     /// <param name="e"></param>
     private void DetailsSplitter_DragCompleted(object sender, DragCompletedEventArgs e)
     {
-        UserSettings.Setting.DetailsHeight = DetailsRow.Height.Value;
+        UserSettings.Setting!.DetailsHeight = DetailsRow.Height.Value;
     }
     #endregion GridSplitter drag event
 
@@ -243,7 +243,7 @@ public partial class MainPage : UserControl
         _log.Debug("Refresh in progress");
         MainViewModel.ClearLists();
         MainViewModel.GatherInfo();
-        Instance.UpdateGrid();
+        Instance!.UpdateGrid();
         SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_ListRefreshed"), 2000);
     }
     #endregion Refresh everything
@@ -289,12 +289,12 @@ public partial class MainPage : UserControl
     /// Save DataGrid column order
     /// </summary>
     /// <param name="grid">The DataGrid</param>
-    private static void SaveColumnOrder(DataGrid grid)
+    private static void SaveColumnOrder(DataGrid? grid)
     {
-        UserSettings.Setting.ColumnKB = grid.Columns[0].DisplayIndex;
-        UserSettings.Setting.ColumnDate = grid.Columns[1].DisplayIndex;
-        UserSettings.Setting.ColumnTitle = grid.Columns[2].DisplayIndex;
-        UserSettings.Setting.ColumnResult = grid.Columns[3].DisplayIndex;
+        UserSettings.Setting!.ColumnKB = grid!.Columns[0].DisplayIndex;
+        UserSettings.Setting!.ColumnDate = grid!.Columns[1].DisplayIndex;
+        UserSettings.Setting!.ColumnTitle = grid!.Columns[2].DisplayIndex;
+        UserSettings.Setting!.ColumnResult = grid!.Columns[3].DisplayIndex;
     }
     #endregion Save order of columns in the DataGrid
 
@@ -309,10 +309,10 @@ public partial class MainPage : UserControl
         {
             Dictionary<int, int> columns = new()
             {
-                { UserSettings.Setting.ColumnKB, 0 },
-                { UserSettings.Setting.ColumnDate, 1 },
-                { UserSettings.Setting.ColumnTitle, 2 },
-                { UserSettings.Setting.ColumnResult, 3 }
+                { UserSettings.Setting!.ColumnKB, 0 },
+                { UserSettings.Setting!.ColumnDate, 1 },
+                { UserSettings.Setting!.ColumnTitle, 2 },
+                { UserSettings.Setting!.ColumnResult, 3 }
             };
 
             foreach (KeyValuePair<int, int> pair in columns.OrderBy(k => k.Key))

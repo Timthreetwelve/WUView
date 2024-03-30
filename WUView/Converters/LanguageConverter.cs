@@ -13,7 +13,7 @@ internal class LanguageConverter : IValueConverter
     {
         if (value is UILanguage language)
         {
-            return language.Language;
+            return language.Language!;
         }
         return "unknown";
     }
@@ -26,7 +26,7 @@ internal class LanguageConverter : IValueConverter
     {
         if (value is UILanguage language)
         {
-            return language.LanguageCode;
+            return language.LanguageCode!;
         }
         return "unknown";
     }
