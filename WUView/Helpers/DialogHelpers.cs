@@ -1,4 +1,4 @@
-﻿// Copyright(c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Helpers;
 
@@ -11,7 +11,7 @@ internal static class DialogHelpers
     internal static async Task<bool> ShowEditExcludesDialog()
     {
         ExcludesEditor ee = new();
-        object retval = await DialogHost.Show(ee, "MainDialogHost");
-        return retval != null && (bool)retval;
+        object? value = await DialogHost.Show(ee, "MainDialogHost");
+        return value != null && (bool)value;
     }
 }

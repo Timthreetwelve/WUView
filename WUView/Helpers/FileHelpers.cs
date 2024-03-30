@@ -21,10 +21,10 @@ public static partial class FileHelpers
     public static void GetExcludes()
     {
         Stopwatch rxStopWatch = Stopwatch.StartNew();
-        string json = File.ReadAllText(GetExcludesFile());
+        string? json = File.ReadAllText(GetExcludesFile());
         rxStopWatch.Stop();
-        ExcludedItems.ExcludedStrings = JsonSerializer.Deserialize<ObservableCollection<ExcludedItems>>(json);
-        int xCount = ExcludedItems.ExcludedStrings.Count;
+        ExcludedItems.ExcludedStrings = JsonSerializer.Deserialize<ObservableCollection<ExcludedItems>>(json)!;
+        int xCount = ExcludedItems.ExcludedStrings!.Count;
         string xRecs = xCount == 1 ? "record" : "records";
         _log.Debug($"Read {ExcludedItems.ExcludedStrings.Count} exclude {xRecs} from disk in {rxStopWatch.Elapsed.TotalMilliseconds:N2} milliseconds");
         if (xCount > 0)
@@ -125,7 +125,7 @@ public static partial class FileHelpers
             _ = sb.Append(underscore).AppendLine("\r\n");
 
             List<WUpdate> listInUse = [.. MainViewModel.UpdatesFullList];
-            if (UserSettings.Setting.HideExcluded)
+            if (UserSettings.Setting!.HideExcluded)
             {
                 listInUse = [.. MainViewModel.UpdatesWithoutExcludedItems];
             }

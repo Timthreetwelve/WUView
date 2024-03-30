@@ -45,6 +45,6 @@ internal static class LocalizationHelpers
     /// <returns>The index as int.</returns>
     public static int GetLanguageIndex()
     {
-        return UILanguage.DefinedLanguages.FindIndex(x => x.LanguageCode == UserSettings.Setting.UILanguage);
+        return UILanguage.DefinedLanguages.FindIndex(x => x.LanguageCode == UserSettings.Setting!.UILanguage);
     }
 }

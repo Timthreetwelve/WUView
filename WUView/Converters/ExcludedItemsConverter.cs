@@ -24,9 +24,9 @@ internal class ExcludedItemsConverter : IValueConverter
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        if (value != null)
+        if (value is not null)
         {
-            string[] items = value.ToString().Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            string[] items = value.ToString()!.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             ObservableCollection<ExcludedItems> excludedItems = [];
             foreach (string item in items)
             {
@@ -38,6 +38,6 @@ internal class ExcludedItemsConverter : IValueConverter
             }
             return excludedItems;
         }
-        return null;
+        return string.Empty;
     }
 }

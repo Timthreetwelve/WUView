@@ -23,22 +23,22 @@ public partial class App : Application
     /// <summary>
     /// Uri of the resource dictionary
     /// </summary>
-    public static string LanguageFile { get; set; }
+    public static string? LanguageFile { get; set; }
 
     /// <summary>
     /// Uri of the test resource dictionary
     /// </summary>
-    public static string TestLanguageFile { get; set; }
+    public static string? TestLanguageFile { get; set; }
 
     /// <summary>
     /// Culture at startup
     /// </summary>
-    public static CultureInfo StartupCulture { get; set; }
+    public static CultureInfo? StartupCulture { get; set; }
 
     /// <summary>
     /// UI Culture at startup
     /// </summary>
-    public static CultureInfo StartupUICulture { get; set; }
+    public static CultureInfo? StartupUICulture { get; set; }
 
     /// <summary>
     /// Number of language strings in the default resource dictionary
@@ -77,7 +77,7 @@ public partial class App : Application
             string currentLanguage = Thread.CurrentThread.CurrentCulture.Name;
 
             // If option to use OS language is true and it exists in the list of defined languages, use it but do not change current culture.
-            if (UserSettings.Setting.UseOSLanguage &&
+            if (UserSettings.Setting!.UseOSLanguage &&
                 UILanguage.DefinedLanguages.Exists(x => x.LanguageCode == currentLanguage))
             {
                 resDict.Source = new Uri($"Languages/Strings.{currentLanguage}.xaml", UriKind.RelativeOrAbsolute);
@@ -124,7 +124,7 @@ public partial class App : Application
         }
 
         // Language testing
-        if (UserSettings.Setting.LanguageTesting)
+        if (UserSettings.Setting!.LanguageTesting)
         {
             _log.Info("Language testing enabled");
             ResourceDictionary testDict = [];

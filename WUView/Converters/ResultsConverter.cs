@@ -8,22 +8,25 @@ namespace WUView.Converters;
 /// <seealso cref="System.Windows.Data.IValueConverter" />
 class ResultsConverter : IValueConverter
 {
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    public object? Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
         if (value == null || parameter == null)
         {
             return string.Empty;
         }
-        else if ((parameter as string) == "HResult")
+        else if (parameter is string paramString && paramString == "HResult")
         {
-            string hr = (string)value;
-            return string.Format($"0x{int.Parse(hr):X8}");
+            if (value is string hrString)
+            {
+                return string.Format($"0x{int.Parse(hrString):X8}");
+            }
+            return null; // Handle the case where value is not a string
         }
         return value.ToString();
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        throw new NotImplementedException();
+        return Binding.DoNothing;
     }
 }

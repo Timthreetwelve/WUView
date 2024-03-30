@@ -1,5 +1,5 @@
 ﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
-
+#nullable enable
 namespace WUView.Helpers;
 
 /// <summary>
@@ -15,7 +15,7 @@ public static class AppInfo
     /// <summary>
     /// Returns the framework name
     /// </summary>
-    public static string Framework => Assembly.GetEntryAssembly()?.GetCustomAttribute<TargetFrameworkAttribute>()?.FrameworkName;
+    public static string? Framework => Assembly.GetEntryAssembly()?.GetCustomAttribute<TargetFrameworkAttribute>()?.FrameworkName;
 
     /// <summary>
     /// Returns the framework description
@@ -25,125 +25,72 @@ public static class AppInfo
     /// <summary>
     ///  Returns the version number in Major.Minor.Build format
     /// </summary>
-    public static string TitleVersion
-    {
-        get
-        {
-            // Get the assembly version
-            Version version = Assembly.GetEntryAssembly().GetName().Version;
-
-            // Remove the release (last) node
-            return version.ToString().Remove(version.ToString().LastIndexOf('.'));
-        }
-    }
+    public static string TitleVersion => Assembly.GetEntryAssembly()!.GetName().Version!.ToString()!.Remove(Assembly.GetEntryAssembly()!.GetName().Version!.ToString().LastIndexOf('.'));
 
     /// <summary>
     /// Returns the file version
     /// </summary>
-    public static string AppFileVersion =>
-        Assembly.GetEntryAssembly().GetCustomAttribute<AssemblyFileVersionAttribute>().Version;
+    public static string AppFileVersion => (Assembly.GetEntryAssembly()!.GetCustomAttribute<AssemblyFileVersionAttribute>()?.Version) ?? "missing";
 
     /// <summary>
     /// Returns the full version number as String
     /// </summary>
-    public static string AppVersion =>
-            Assembly.GetEntryAssembly().GetName().Version.ToString();
+    public static string AppVersion => Assembly.GetEntryAssembly()!.GetName().Version!.ToString();
 
     /// <summary>
     /// Returns the full version number as Version
     /// </summary>
-    public static Version AppVersionVer =>
-            Assembly.GetEntryAssembly().GetName().Version;
+    public static Version AppVersionVer => Assembly.GetEntryAssembly()!.GetName().Version!;
 
     /// <summary>
     /// Returns the app's full path including the EXE name
     /// </summary>
-    public static string AppPath =>
-            Environment.ProcessPath;
+    public static string AppPath => Environment.ProcessPath!;
 
     /// <summary>
     /// Returns the app's full path excluding the EXE name
     /// </summary>
-    public static string AppDirectory =>
-            Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+    public static string AppDirectory => Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location) ?? "missing";
 
     /// <summary>
     /// Returns the app's name without the extension
     /// </summary>
-    public static string AppName =>
-            Assembly.GetEntryAssembly().GetName().Name;
+    public static string AppName => (Assembly.GetEntryAssembly()!.GetName().Name) ?? "missing";
 
     /// <summary>
     /// Returns the app's name with the extension
     /// </summary>
-    public static string AppExeName =>
-            Path.GetFileName(Assembly.GetEntryAssembly().Location);
+    public static string AppExeName => Path.GetFileName(AppPath);
 
     /// <summary>
     /// Returns the app's full name (name, version, culture, etc.)
     /// </summary>
-    public static string AppFullName =>
-            Assembly.GetEntryAssembly().GetName().FullName;
+    public static string AppFullName => Assembly.GetEntryAssembly()!.GetName().FullName ?? "missing";
 
     /// <summary>
     /// Returns the Company Name from the Assembly info
     /// </summary>
-    public static string AppCompany
-    {
-        get
-        {
-            var info = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location).CompanyName;
-            return !string.IsNullOrWhiteSpace(info) ? info : "missing";
-        }
-    }
+    public static string AppCompany => FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly()!.Location).CompanyName ?? "missing";
 
     /// <summary>
     /// Returns the Author from the Assembly info
     /// </summary>
-    public static string AppDescription
-    {
-        get
-        {
-            string info = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location).FileDescription;
-            return !string.IsNullOrWhiteSpace(info) ? info : "missing";
-        }
-    }
+    public static string AppDescription => FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly()!.Location).FileDescription ?? "missing";
 
     /// <summary>
     /// Returns the Copyright info from the Assembly info
     /// </summary>
-    public static string AppCopyright
-    {
-        get
-        {
-            var info = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location).LegalCopyright;
-            return !string.IsNullOrWhiteSpace(info) ? info : "missing";
-        }
-    }
+    public static string AppCopyright => FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly()!.Location).LegalCopyright ?? "missing";
 
     /// <summary>
     /// Returns the Product Name from the Assembly info
     /// </summary>
-    public static string AppProduct
-    {
-        get
-        {
-            string info = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location).ProductName;
-            return !string.IsNullOrWhiteSpace(info) ? info : "missing";
-        }
-    }
+    public static string AppProduct => FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly()!.Location).ProductName ?? "missing";
 
     /// <summary>
     /// Returns the File Name from the Assembly info
     /// </summary>
-    public static string AppFileName
-    {
-        get
-        {
-            string info = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location).FileName;
-            return !string.IsNullOrWhiteSpace(info) ? info : "missing";
-        }
-    }
+    public static string AppFileName => FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly()!.Location).FileName ?? "missing";
 
     /// <summary>
     /// Combines the product name with the title version.
@@ -156,29 +103,30 @@ public static class AppInfo
     /// <summary>
     /// Returns the Process Name
     /// </summary>
-    public static string AppProcessName =>
-            Process.GetCurrentProcess().ProcessName;
+    public static string AppProcessName => Process.GetCurrentProcess().ProcessName;
 
     /// <summary>
     /// Returns the Process ID as Int
     /// </summary>
-    public static int AppProcessID =>
-            Environment.ProcessId;
+    public static int AppProcessID =>  Environment.ProcessId;
 
     /// <summary>
     /// Returns the Process Start Time as DateTime
     /// </summary>
-    public static DateTime AppProcessStart =>
-            Process.GetCurrentProcess().StartTime;
+    public static DateTime AppProcessStart => Process.GetCurrentProcess().StartTime;
 
     /// <summary>
     /// Returns the Process MainModule
     /// </summary>
-    public static string AppProcessMainModule =>
-            Process.GetCurrentProcess().MainModule.ModuleName;
+    public static string AppProcessMainModule => Process.GetCurrentProcess().MainModule!.ModuleName;
 
     /// <summary>
     /// The CLR version
     /// </summary>
     public static string CLRVersion => Environment.Version.ToString();
+
+    /// <summary>
+    /// True if running as administrator
+    /// </summary>
+    public static bool IsAdmin => new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
 }

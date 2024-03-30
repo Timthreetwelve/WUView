@@ -32,7 +32,7 @@ internal class LocalizedDescriptionAttribute(string resourceKey) : DescriptionAt
                 return $"{_resourceKey} resource not found";
             }
 
-            return description.ToString();
+            return description.ToString() ?? string.Empty;
         }
     }
 }

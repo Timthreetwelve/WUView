@@ -10,11 +10,7 @@ internal class TodayConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        if (UserSettings.Setting.BoldToday)
-        {
-            return value is DateTime date && date.Date == DateTime.Today;
-        }
-        return false;
+        return UserSettings.Setting!.BoldToday ? value is DateTime date && date.Date == DateTime.Today : (object)false;
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

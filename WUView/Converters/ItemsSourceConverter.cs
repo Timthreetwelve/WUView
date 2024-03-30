@@ -13,7 +13,7 @@ internal class ItemsSourceConverter : IValueConverter
         int fullCount = MainViewModel.UpdatesFullList.Count;
         int withoutCount = MainViewModel.UpdatesWithoutExcludedItems.Count;
 
-        if (UserSettings.Setting.HideExcluded)
+        if (UserSettings.Setting!.HideExcluded)
         {
             if (MainPage.Instance is not null)
             {

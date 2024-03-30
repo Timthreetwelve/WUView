@@ -5,7 +5,7 @@ namespace WUView.Helpers;
 internal static class MainWindowUIHelpers
 {
     #region MainWindow instance
-    private static readonly MainWindow _mainWindow = Application.Current.MainWindow as MainWindow;
+    private static readonly MainWindow? _mainWindow = Application.Current.MainWindow as MainWindow;
     #endregion MainWindow instance
 
     #region Theme
@@ -13,7 +13,7 @@ internal static class MainWindowUIHelpers
     /// Gets the current MDIX theme
     /// </summary>
     /// <returns>Dark or Light</returns>
-    internal static string GetSystemTheme()
+    internal static string? GetSystemTheme()
     {
         BaseTheme? sysTheme = Theme.GetSystemTheme();
         return sysTheme != null ? sysTheme.ToString() : string.Empty;
@@ -31,7 +31,7 @@ internal static class MainWindowUIHelpers
 
         if (mode == ThemeType.System)
         {
-            mode = GetSystemTheme().Equals("light") ? ThemeType.Light : ThemeType.Darker;
+            mode = GetSystemTheme()!.Equals("light", StringComparison.Ordinal) ? ThemeType.Light : ThemeType.Darker;
         }
 
         switch (mode)
@@ -127,7 +127,7 @@ internal static class MainWindowUIHelpers
             MySize.Largest => 1.2,
             _ => 1.0,
         };
-        _mainWindow.MainGrid.LayoutTransform = new ScaleTransform(newSize, newSize);
+        _mainWindow!.MainGrid.LayoutTransform = new ScaleTransform(newSize, newSize);
     }
 
     /// <summary>
@@ -135,7 +135,7 @@ internal static class MainWindowUIHelpers
     /// </summary>
     public static void EverythingSmaller()
     {
-        MySize size = UserSettings.Setting.UISize;
+        MySize size = UserSettings.Setting!.UISize;
         if (size > 0)
         {
             size--;
@@ -149,7 +149,7 @@ internal static class MainWindowUIHelpers
     /// </summary>
     public static void EverythingLarger()
     {
-        MySize size = UserSettings.Setting.UISize;
+        MySize size = UserSettings.Setting!.UISize;
         if (size < MySize.Largest)
         {
             size++;
@@ -166,13 +166,13 @@ internal static class MainWindowUIHelpers
     public static void ApplyUISettings()
     {
         // Put version number in window title
-        _mainWindow.Title = MainWindowHelpers.WindowTitleVersionAdmin();
+        _mainWindow!.Title = MainWindowHelpers.WindowTitleVersionAdmin();
 
         // Window position
         MainWindowHelpers.SetWindowPosition();
 
         // Light or dark theme
-        SetBaseTheme(UserSettings.Setting.UITheme);
+        SetBaseTheme(UserSettings.Setting!.UITheme);
 
         // Primary accent color
         SetPrimaryColor(UserSettings.Setting.PrimaryColor);

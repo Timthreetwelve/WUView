@@ -28,7 +28,7 @@ public partial class MDCustMsgBox : Window
                         ButtonType Buttons,
                         bool HideClose = false,
                         bool OnTop = true,
-                        Window MsgBoxOwner = null,
+                        Window? MsgBoxOwner = null,
                         bool IsError = false)
     {
         InitializeComponent();

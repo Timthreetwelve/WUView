@@ -8,7 +8,7 @@ namespace WUView.Configuration;
 public static class ConfigHelpers
 {
     #region Properties
-    public static string SettingsFileName { get; set; }
+    public static string SettingsFileName { get; set; } = null!;
 
     public static JsonSerializerOptions JsonOptions { get; } = new()
     {
@@ -24,8 +24,8 @@ public static class ConfigHelpers
     /// <param name="settingsFile">Option name of settings file</param>
     public static void InitializeSettings(string settingsFile = "usersettings.json")
     {
-        string settingsDir = Path.GetDirectoryName(AppContext.BaseDirectory);
-        SettingsFileName = Path.Combine(settingsDir, settingsFile);
+        string? settingsDir = Path.GetDirectoryName(AppContext.BaseDirectory);
+        SettingsFileName = Path.Combine(settingsDir!, settingsFile);
 
         if (!File.Exists(SettingsFileName))
         {
@@ -47,7 +47,9 @@ public static class ConfigHelpers
     {
         try
         {
-            return JsonSerializer.Deserialize<UserSettings>(File.ReadAllText(SettingsFileName));
+            string json = File.ReadAllText(SettingsFileName);
+            UserSettings? settings = JsonSerializer.Deserialize<UserSettings>(json);
+            return settings!;
         }
         catch (Exception ex)
         {

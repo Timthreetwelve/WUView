@@ -13,25 +13,25 @@ public static class SettingChange
     /// </summary>
     public static void UserSettingChanged(object sender, PropertyChangedEventArgs e)
     {
-        object newValue = MainWindowHelpers.GetPropertyValue(sender, e);
+        object? newValue = MainWindowHelpers.GetPropertyValue(sender, e);
         _log.Debug($"Setting change: {e.PropertyName} New Value: {newValue}");
 
         switch (e.PropertyName)
         {
             case nameof(UserSettings.Setting.IncludeDebug):
-                NLogHelpers.SetLogLevel((bool)newValue);
+                NLogHelpers.SetLogLevel((bool)newValue!);
                 break;
 
             case nameof(UserSettings.Setting.UITheme):
-                MainWindowUIHelpers.SetBaseTheme((ThemeType)newValue);
+                MainWindowUIHelpers.SetBaseTheme((ThemeType)newValue!);
                 break;
 
             case nameof(UserSettings.Setting.PrimaryColor):
-                MainWindowUIHelpers.SetPrimaryColor((AccentColor)newValue);
+                MainWindowUIHelpers.SetPrimaryColor((AccentColor)newValue!);
                 break;
 
             case nameof(UserSettings.Setting.UISize):
-                MainWindowUIHelpers.UIScale(UserSettings.Setting.UISize);
+                MainWindowUIHelpers.UIScale(UserSettings.Setting!.UISize);
                 break;
 
             case nameof(UserSettings.Setting.MaxUpdates):
@@ -51,7 +51,7 @@ public static class SettingChange
     /// </summary>
     internal static void TempSettingChanged(object sender, PropertyChangedEventArgs e)
     {
-        object newValue = MainWindowHelpers.GetPropertyValue(sender, e);
+        object? newValue = MainWindowHelpers.GetPropertyValue(sender, e);
         // Write to trace level to avoid unnecessary message in log file
         _log.Trace($"Temp Setting change: {e.PropertyName} New Value: {newValue}");
     }

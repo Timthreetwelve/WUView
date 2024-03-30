@@ -15,7 +15,7 @@ internal class DateFormatConverter : IValueConverter
             DateTime item = dateTime;
 
             CultureInfo cult = CultureInfo.CurrentCulture;
-            switch (UserSettings.Setting.DateFormat)
+            switch (UserSettings.Setting!.DateFormat)
             {
                 case 1:
                     return item.ToString("yyyy/MM/dd  HH:mm");

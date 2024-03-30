@@ -10,7 +10,7 @@ namespace WUView.Helpers;
 internal static class GitHubHelpers
 {
     #region MainWindow Instance
-    private static readonly MainWindow _mainWindow = System.Windows.Application.Current.MainWindow as MainWindow;
+    private static readonly MainWindow? _mainWindow = System.Windows.Application.Current.MainWindow as MainWindow;
     #endregion MainWindow Instance
 
     #region Check for newer release
@@ -47,7 +47,7 @@ internal static class GitHubHelpers
 
             Version latestVersion = new(tag);
 
-            _log.Debug($"Latest version is {latestVersion} released on {release.PublishedAt.Value.UtcDateTime} UTC");
+            _log.Debug($"Latest version is {latestVersion} released on {release.PublishedAt!.Value.UtcDateTime} UTC");
 
             if (latestVersion <= AppInfo.AppVersionVer)
             {
@@ -115,7 +115,7 @@ internal static class GitHubHelpers
         catch (Exception ex)
         {
             _log.Error(ex, "Get latest release from GitHub failed.");
-            return null;
+            return null!;
         }
     }
     #endregion Get latest release

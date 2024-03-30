@@ -10,7 +10,7 @@ internal class SpacingConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        switch (UserSettings.Setting.RowSpacing)
+        switch (UserSettings.Setting!.RowSpacing)
         {
             case Spacing.Compact:
                 return new Thickness(15, 2, 15, 1);

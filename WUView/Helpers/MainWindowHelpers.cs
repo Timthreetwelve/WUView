@@ -8,7 +8,7 @@ namespace WUView.Helpers;
 internal static class MainWindowHelpers
 {
     #region MainWindow Instance
-    private static readonly MainWindow _mainWindow = Application.Current.MainWindow as MainWindow;
+    private static readonly MainWindow? _mainWindow = Application.Current.MainWindow as MainWindow;
     #endregion MainWindow Instance
 
     #region StopWatch
@@ -21,12 +21,12 @@ internal static class MainWindowHelpers
     /// </summary>
     public static void SetWindowPosition()
     {
-        _mainWindow.Height = UserSettings.Setting.WindowHeight;
-        _mainWindow.Left = UserSettings.Setting.WindowLeft;
-        _mainWindow.Top = UserSettings.Setting.WindowTop;
-        _mainWindow.Width = UserSettings.Setting.WindowWidth;
+        _mainWindow!.Height = UserSettings.Setting!.WindowHeight;
+        _mainWindow!.Left = UserSettings.Setting!.WindowLeft;
+        _mainWindow!.Top = UserSettings.Setting!.WindowTop;
+        _mainWindow!.Width = UserSettings.Setting!.WindowWidth;
 
-        if (UserSettings.Setting.StartCentered)
+        if (UserSettings.Setting!.StartCentered)
         {
             _mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
@@ -38,10 +38,10 @@ internal static class MainWindowHelpers
     public static void SaveWindowPosition()
     {
         Window mainWindow = Application.Current.MainWindow;
-        UserSettings.Setting.WindowHeight = Math.Floor(mainWindow.Height);
-        UserSettings.Setting.WindowLeft = Math.Floor(mainWindow.Left);
-        UserSettings.Setting.WindowTop = Math.Floor(mainWindow.Top);
-        UserSettings.Setting.WindowWidth = Math.Floor(mainWindow.Width);
+        UserSettings.Setting!.WindowHeight = Math.Floor(mainWindow.Height);
+        UserSettings.Setting!.WindowLeft = Math.Floor(mainWindow.Left);
+        UserSettings.Setting!.WindowTop = Math.Floor(mainWindow.Top);
+        UserSettings.Setting!.WindowWidth = Math.Floor(mainWindow.Width);
     }
     #endregion Set and Save MainWindow position and size
 
@@ -52,9 +52,9 @@ internal static class MainWindowHelpers
     /// <param name="sender"></param>
     /// <param name="e"></param>
     /// <returns>An object containing the value of the property</returns>
-    public static object GetPropertyValue(object sender, PropertyChangedEventArgs e)
+    public static object? GetPropertyValue(object sender, PropertyChangedEventArgs e)
     {
-        PropertyInfo prop = sender.GetType().GetProperty(e.PropertyName);
+        PropertyInfo? prop = sender.GetType().GetProperty(e.PropertyName!);
         return prop?.GetValue(sender, null);
     }
     #endregion Get property value
@@ -95,17 +95,17 @@ internal static class MainWindowHelpers
         AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
         // Settings change event
-        UserSettings.Setting.PropertyChanged += SettingChange.UserSettingChanged;
-        TempSettings.Setting.PropertyChanged += SettingChange.TempSettingChanged;
+        UserSettings.Setting!.PropertyChanged += SettingChange.UserSettingChanged!;
+        TempSettings.Setting!.PropertyChanged += SettingChange.TempSettingChanged!;
 
         // Window Loaded
-        _mainWindow.Loaded += MainWindow_Loaded;
+        _mainWindow!.Loaded += MainWindow_Loaded;
 
         // Content rendered
-        _mainWindow.ContentRendered += MainWindow_ContentRendered;
+        _mainWindow.ContentRendered += MainWindow_ContentRendered!;
 
         // Window closing event
-        _mainWindow.Closing += MainWindow_Closing;
+        _mainWindow.Closing += MainWindow_Closing!;
     }
     #endregion Event handlers
 
@@ -119,7 +119,7 @@ internal static class MainWindowHelpers
     {
         MainViewModel.GatherInfo();
 
-        if (UserSettings.Setting.AutoSelectFirstRow && MainPage.Instance.dataGrid.Items.Count > 0)
+        if (UserSettings.Setting!.AutoSelectFirstRow && MainPage.Instance.dataGrid.Items.Count > 0)
         {
             MainPage.Instance.dataGrid.SelectedIndex = 0;
         }
