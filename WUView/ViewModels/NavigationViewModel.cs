@@ -135,7 +135,7 @@ public partial class NavigationViewModel : ObservableObject
     public static void ViewLogFile()
     {
         SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_OpeningLogFile"), 2000);
-        TextFileViewer.ViewTextFile(GetLogfileName());
+        TextFileViewer.ViewTextFile(GetLogfileName()!);
     }
     #endregion View log file
 
