@@ -3,15 +3,16 @@
 <UserControl x:Class="WUView.Views.MainPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
              xmlns:config="clr-namespace:WUView.Configuration"
              xmlns:convert="clr-namespace:WUView.Converters"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WUView.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
-             mc:Ignorable="d"
-             d:DesignHeight="500" d:DesignWidth="800"
+             d:DesignHeight="500"
+             d:DesignWidth="800"
              KeyboardNavigation.TabNavigation="Local"
              Loaded="UserControl_Loaded"
              TextElement.FontSize="14"
@@ -41,16 +42,19 @@
         <!--#region Row definitions-->
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
-            <RowDefinition Height="*" MinHeight="85" />
+            <RowDefinition Height="*"
+                           MinHeight="85" />
             <RowDefinition x:Name="SpliiterRow">
                 <RowDefinition.Style>
                     <Style TargetType="RowDefinition">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding Setting.ShowDetails, Source={StaticResource config}}"
+                            <DataTrigger Binding="{Binding Setting.ShowDetails,
+                                                           Source={StaticResource config}}"
                                          Value="False">
                                 <Setter Property="Height" Value="0" />
                             </DataTrigger>
-                            <DataTrigger Binding="{Binding Setting.ShowDetails, Source={StaticResource config}}"
+                            <DataTrigger Binding="{Binding Setting.ShowDetails,
+                                                           Source={StaticResource config}}"
                                          Value="True">
                                 <Setter Property="Height" Value="Auto" />
                             </DataTrigger>
@@ -62,11 +66,13 @@
                 <RowDefinition.Style>
                     <Style TargetType="RowDefinition">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding Setting.ShowDetails, Source={StaticResource config}}"
+                            <DataTrigger Binding="{Binding Setting.ShowDetails,
+                                                           Source={StaticResource config}}"
                                          Value="False">
                                 <Setter Property="Height" Value="0" />
                             </DataTrigger>
-                            <DataTrigger Binding="{Binding Setting.ShowDetails, Source={StaticResource config}}"
+                            <DataTrigger Binding="{Binding Setting.ShowDetails,
+                                                           Source={StaticResource config}}"
                                          Value="True">
                                 <Setter Property="Height" Value="{Binding Setting.DetailsHeight, Source={StaticResource config}}" />
                             </DataTrigger>
@@ -86,8 +92,10 @@
                       Margin="0,0"
                       materialDesign:MenuAssist.TopLevelMenuItemHeight="35"
                       DockPanel.Dock="Top"
-                      FontFamily="Segoe UI" FontSize="14"
-                      FontWeight="Normal" IsTabStop="True"
+                      FontFamily="Segoe UI"
+                      FontSize="14"
+                      FontWeight="Normal"
+                      IsTabStop="True"
                       TabIndex="1">
                     <Menu.DataContext>
                         <viewmodels:NavigationViewModel />
@@ -150,14 +158,18 @@
 
                 <!--#region Filter box-->
                 <TextBox x:Name="tbxSearch"
-                         Width="300" Height="35"
-                         Margin="20,0" Padding="10,6"
+                         Width="300"
+                         Height="35"
+                         Margin="20,0"
+                         Padding="10,6"
                          VerticalContentAlignment="Top"
                          materialDesign:HintAssist.Hint="{DynamicResource FilterHint}"
                          materialDesign:TextFieldAssist.HasClearButton="True"
-                         FontSize="14" IsTabStop="True"
+                         FontSize="14"
+                         IsTabStop="True"
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                         TabIndex="2" Tag="Filter Text"
+                         TabIndex="2"
+                         Tag="Filter Text"
                          TextChanged="TbxSearch_TextChanged" />
                 <!--#endregion-->
 
@@ -176,7 +188,8 @@
                    Margin="0,0,10,6"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
-                   Cursor="Hand" FontSize="14">
+                   Cursor="Hand"
+                   FontSize="14">
             <Run Text="{Binding ElementName=dataGrid, Path=Items.Count, Mode=OneWay}" />
             <Run Text="/" />
             <Run Text="{Binding UpdatesFullList.Count, Mode=OneWay}" />
@@ -200,9 +213,12 @@
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
                   ColumnReordered="ColumnReorderEvent"
-                  Focusable="True" FontFamily="Segue UI"
-                  FontSize="14" HeadersVisibility="Column"
-                  IsReadOnly="True" IsTabStop="True"
+                  Focusable="True"
+                  FontFamily="Segue UI"
+                  FontSize="14"
+                  HeadersVisibility="Column"
+                  IsReadOnly="True"
+                  IsTabStop="True"
                   ItemsSource="{Binding Setting.HideExcluded,
                                         Converter={StaticResource itemsSource},
                                         Source={StaticResource config}}"
@@ -218,7 +234,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding KBNum}"
                                     Header="{DynamicResource GridColumn_KBNum}" />
-                <DataGridTextColumn Binding="{Binding Date, Converter={StaticResource dateFormat}}"
+                <DataGridTextColumn Binding="{Binding Date,
+                                                      Converter={StaticResource dateFormat}}"
                                     Header="{DynamicResource GridColumn_Date}" />
                 <DataGridTextColumn Binding="{Binding Title}"
                                     Header="{DynamicResource GridColumn_Title}" />
@@ -246,12 +263,48 @@
         <!--  Details panel can be hidden. See Style Trigger in Row Definition  -->
         <Grid Grid.Row="3"
               KeyboardNavigation.TabNavigation="None">
+            <!--#region Fallback text if selected rows != 1-->
+            <TextBlock Margin="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="24"
+                       FontWeight="SemiBold"
+                       Opacity=".4"
+                       Text="{DynamicResource Details_TitleFallback}"
+                       TextWrapping="Wrap">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Visibility" Value="Visible" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=dataGrid,
+                                                           Path=SelectedItems.Count}"
+                                         Value="1">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <!--#endregion-->
+
             <ScrollViewer VerticalAlignment="Top"
                           DataContext="{Binding SelectedItem,
                                                 ElementName=dataGrid}"
                           FontFamily="Segue UI"
                           VerticalScrollBarVisibility="Auto">
                 <Grid Margin="5,10">
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=dataGrid,
+                                                               Path=SelectedItems.Count}"
+                                             Value="1">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
                     <!--#region Row & Column definitions-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5" />
@@ -275,16 +328,21 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <!--#endregion-->
-                    <TextBlock Grid.Row="0" Grid.Column="1"
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="1"
                                Grid.ColumnSpan="3"
                                Margin="0,10"
-                               FontSize="15" FontWeight="SemiBold"
+                               FontSize="15"
+                               FontWeight="SemiBold"
                                Text="{DynamicResource Details_HeadingUpdate}" />
-                    <TextBlock Grid.Row="1" Grid.Column="1"
-                               Margin="10,0" VerticalAlignment="Center"
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="1"
+                               Margin="10,0"
+                               VerticalAlignment="Center"
                                Text="{DynamicResource Details_Title}" />
                     <!--  https://stackoverflow.com/a/48733836  -->
-                    <TextBox Grid.Row="1" Grid.Column="3"
+                    <TextBox Grid.Row="1"
+                             Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Tag="{DynamicResource Details_TitleFallback}">
                         <TextBox.Text>
@@ -295,35 +353,50 @@
                             </PriorityBinding>
                         </TextBox.Text>
                     </TextBox>
-                    <TextBlock Grid.Row="2" Grid.Column="1"
-                               Margin="10,0" VerticalAlignment="Center"
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="1"
+                               Margin="10,0"
+                               VerticalAlignment="Center"
                                Text="{DynamicResource Details_KBNum}" />
-                    <TextBox Grid.Row="2" Grid.Column="3"
+                    <TextBox Grid.Row="2"
+                             Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding KBNum}" />
-                    <TextBlock Grid.Row="3" Grid.Column="1"
-                               Margin="10,0" VerticalAlignment="Center"
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="1"
+                               Margin="10,0"
+                               VerticalAlignment="Center"
                                Text="{DynamicResource Details_Date}" />
-                    <TextBox Grid.Row="3" Grid.Column="3"
+                    <TextBox Grid.Row="3"
+                             Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding Date,
                                             Converter={StaticResource dateFormat}}" />
-                    <TextBlock Grid.Row="4" Grid.Column="1"
-                               Margin="10,0" VerticalAlignment="Top"
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="1"
+                               Margin="10,0"
+                               VerticalAlignment="Top"
                                Text="{DynamicResource Details_Description}" />
-                    <TextBox Grid.Row="4" Grid.Column="3"
+                    <TextBox Grid.Row="4"
+                             Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding Description}" />
-                    <TextBlock Grid.Row="5" Grid.Column="1"
-                               Margin="10,0" VerticalAlignment="Center"
+                    <TextBlock Grid.Row="5"
+                               Grid.Column="1"
+                               Margin="10,0"
+                               VerticalAlignment="Center"
                                Text="{DynamicResource Details_Operation}" />
-                    <TextBox Grid.Row="5" Grid.Column="3"
+                    <TextBox Grid.Row="5"
+                             Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding Operation}" />
-                    <TextBlock Grid.Row="6" Grid.Column="1"
-                               Margin="10,0" VerticalAlignment="Center"
+                    <TextBlock Grid.Row="6"
+                               Grid.Column="1"
+                               Margin="10,0"
+                               VerticalAlignment="Center"
                                Text="{DynamicResource Details_ResultCode}" />
-                    <TextBlock Grid.Row="6" Grid.Column="3"
+                    <TextBlock Grid.Row="6"
+                               Grid.Column="3"
                                PreviewMouseDown="ResultCode_PreviewMouseDown">
                         <Hyperlink x:Name="hypResultCode"
                                    Focusable="False">
@@ -332,10 +405,13 @@
                             </Hyperlink.Inlines>
                         </Hyperlink>
                     </TextBlock>
-                    <TextBlock Grid.Row="7" Grid.Column="1"
-                               Margin="10,0" VerticalAlignment="Center"
+                    <TextBlock Grid.Row="7"
+                               Grid.Column="1"
+                               Margin="10,0"
+                               VerticalAlignment="Center"
                                Text="{DynamicResource Details_HResult}" />
-                    <TextBlock Grid.Row="7" Grid.Column="3"
+                    <TextBlock Grid.Row="7"
+                               Grid.Column="3"
                                Width="100"
                                HorizontalAlignment="Left"
                                PreviewMouseDown="HResult_PreviewMouseDown">
@@ -346,16 +422,22 @@
                             </Hyperlink.Inlines>
                         </Hyperlink>
                     </TextBlock>
-                    <TextBlock Grid.Row="8" Grid.Column="1"
-                               Margin="10,0" VerticalAlignment="Center"
+                    <TextBlock Grid.Row="8"
+                               Grid.Column="1"
+                               Margin="10,0"
+                               VerticalAlignment="Center"
                                Text="{DynamicResource Details_UpdateID}" />
-                    <TextBox Grid.Row="8" Grid.Column="3"
+                    <TextBox Grid.Row="8"
+                             Grid.Column="3"
                              Style="{StaticResource ReadOnlyTextBox}"
                              Text="{Binding UpdateID}" />
-                    <TextBlock Grid.Row="9" Grid.Column="1"
-                               Margin="10,0" VerticalAlignment="Center"
+                    <TextBlock Grid.Row="9"
+                               Grid.Column="1"
+                               Margin="10,0"
+                               VerticalAlignment="Center"
                                Text="{DynamicResource Details_SupportURL}" />
-                    <TextBlock Grid.Row="9" Grid.Column="3"
+                    <TextBlock Grid.Row="9"
+                               Grid.Column="3"
                                Margin="0,1">
                         <Hyperlink Focusable="False"
                                    NavigateUri="{Binding SupportURL}"
@@ -365,12 +447,15 @@
                             </Hyperlink.Inlines>
                         </Hyperlink>
                     </TextBlock>
-                    <TextBlock Grid.Row="10" Grid.Column="1"
+                    <TextBlock Grid.Row="10"
+                               Grid.Column="1"
                                Grid.ColumnSpan="3"
                                Margin="0,15,0,10"
-                               FontSize="15" FontWeight="SemiBold"
+                               FontSize="15"
+                               FontWeight="SemiBold"
                                Text="{DynamicResource Details_HeadingEventLog}" />
-                    <TextBox Grid.Row="11" Grid.Column="1"
+                    <TextBox Grid.Row="11"
+                             Grid.Column="1"
                              Grid.ColumnSpan="3"
                              Margin="10,0"
                              Style="{StaticResource ReadOnlyTextBox}"
