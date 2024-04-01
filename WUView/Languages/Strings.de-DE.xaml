@@ -1,24 +1,24 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <!--
         Refer to the "Contribute a Translation" topic in the Wiki:
-
+        
         https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
-
+        
         ======================================================================
-
+        
         Application name:            Windows Update Viewer
-
+        
         Language name:               Deutsch (de-DE) German
-
+        
         Translation contributed by:  @Timthreetwelve with Google Translate & @Henry2o1o
-
+        
         Date last update:            2023/11/19
-
+        
         ======================================================================
-
     -->
 
     <!--  About Page  -->
@@ -222,82 +222,84 @@
     <sys:String x:Key="SettingsEnum_Theme_System">System</sys:String>
 </ResourceDictionary>
 
-    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+<!--
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     LANGUAGE FILE UPDATES
-
+    
     Additions, Deletions and Updates will be made in the appropriate sections above. Each change will
     be associated with a comment made below this block.
-
+    
     Comment Format:
-       There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
-       Modified lines will follow, one comment line per line changed.
-       Comment lines use this syntax:  Change Type | Key Name
+    There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
+    Modified lines will follow, one comment line per line changed.
+    Comment lines use this syntax:  Change Type | Key Name
+    
+    Change type:
+    A = Added
+    D = Deleted
+    U = Updated
+    * = Comment not related to a single line
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+<!--  Begin changes on 2023/11/19 @ 15:48 UTC  -->
+<!--  A | Button_No  -->
+<!--  A | Button_OpenAppFolder  -->
+<!--  A | Button_Yes  -->
+<!--  A | MsgText_Error_TestLanguage  -->
+<!--  A | SettingsEnum_DateFormat_RegionalDate  -->
+<!--  A | SettingsEnum_DateFormat_RegionalDateTime  -->
+<!--  A | SettingsItem_EnableLanguageTesting  -->
+<!--  U | About_Contribute  -->
+<!--  U | About_ContributeToolTip  -->
+<!--  U | About_Copyright  -->
+<!--  U | About_CreatedByToolTip  -->
+<!--  U | About_DocumentationText  -->
+<!--  U | About_DocumentationToolTip  -->
+<!--  U | Button_Cancel  -->
+<!--  U | Button_Close  -->
+<!--  U | MenuItem_CopyToClipboard  -->
+<!--  U | MenuItem_Exit  -->
+<!--  U | MenuItem_Refresh  -->
+<!--  U | Menu_View  -->
+<!--  U | MsgText_ApplicationShutdown  -->
+<!--  U | MsgText_CopiedToClipboard  -->
+<!--  U | MsgText_HResultCopiedToClipboard  -->
+<!--  U | MsgText_UIThemeSet  -->
+<!--  U | NavItem_Exit  -->
+<!--  U | NavItem_Updates  -->
+<!--  U | NavTitle_About  -->
+<!--  U | NavTitle_Updates  -->
+<!--  U | ResultCode_Failed  -->
+<!--  U | ResultCode_NotStarted  -->
+<!--  U | ResultCode_ResultCode_Aborted  -->
+<!--  U | ResultCode_Succeeded  -->
+<!--  U | SettingsEnum_Theme_Light  -->
+<!--  U | SettingsSubHead_Language  -->
+<!--  End of changes on 2023/11/19  -->
 
-     Change type:
-       A = Added
-       D = Deleted
-       U = Updated
-       * = Comment not related to a single line
-     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<!-- Begin changes on 2023/11/19 @ 15:48 UTC -->
-    <!-- A | Button_No  -->
-    <!-- A | Button_OpenAppFolder  -->
-    <!-- A | Button_Yes -->
-    <!-- A | MsgText_Error_TestLanguage -->
-    <!-- A | SettingsEnum_DateFormat_RegionalDate -->
-    <!-- A | SettingsEnum_DateFormat_RegionalDateTime -->
-    <!-- A | SettingsItem_EnableLanguageTesting -->
-    <!-- U | About_Contribute -->
-    <!-- U | About_ContributeToolTip -->
-    <!-- U | About_Copyright -->
-    <!-- U | About_CreatedByToolTip -->
-    <!-- U | About_DocumentationText -->
-    <!-- U | About_DocumentationToolTip -->
-    <!-- U | Button_Cancel -->
-    <!-- U | Button_Close -->
-    <!-- U | MenuItem_CopyToClipboard -->
-    <!-- U | MenuItem_Exit -->
-    <!-- U | MenuItem_Refresh -->
-    <!-- U | Menu_View -->
-    <!-- U | MsgText_ApplicationShutdown -->
-    <!-- U | MsgText_CopiedToClipboard -->
-    <!-- U | MsgText_HResultCopiedToClipboard -->
-    <!-- U | MsgText_UIThemeSet -->
-    <!-- U | NavItem_Exit -->
-    <!-- U | NavItem_Updates -->
-    <!-- U | NavTitle_About -->
-    <!-- U | NavTitle_Updates -->
-    <!-- U | ResultCode_Failed -->
-    <!-- U | ResultCode_NotStarted -->
-    <!-- U | ResultCode_ResultCode_Aborted -->
-    <!-- U | ResultCode_Succeeded -->
-    <!-- U | SettingsEnum_Theme_Light -->
-    <!-- U | SettingsSubHead_Language -->
-    <!-- End of changes on 2023/11/19 -->
+<!--  Begin changes on 2023/11/15 @ 17:56 UTC  -->
+<!--  U | About_Contribute  -->
+<!--  A | About_ContributeToolTip  -->
+<!--  A | Button_No  -->
+<!--  A | Button_OpenAppFolder  -->
+<!--  A | Button_Yes  -->
+<!--  A | MenuItem_SaveJSON  -->
+<!--  A | OperationType_Installation  -->
+<!--  A | OperationType_Uninstallation  -->
+<!--  A | ResultCode_Failed  -->
+<!--  A | ResultCode_InProgress  -->
+<!--  A | ResultCode_NotStarted  -->
+<!--  A | ResultCode_ResultCode_Aborted  -->
+<!--  A | ResultCode_Succeeded  -->
+<!--  A | ResultCode_SucceededWithErrors  -->
+<!--  A | SettingsItem_EnableLanguageTesting  -->
+<!--  U | SettingsItem_UseOSLanguageToolTipLine1  -->
+<!--  U | SettingsItem_UseOSLanguageToolTipLine1  -->
+<!--  A | SettingsSubHead_Language  -->
+<!--  End of changes on 2023/11/15  -->
 
-<!-- Begin changes on 2023/11/15 @ 17:56 UTC -->
-<!-- U | About_Contribute -->
-<!-- A | About_ContributeToolTip -->
-<!-- A | Button_No -->
-<!-- A | Button_OpenAppFolder -->
-<!-- A | Button_Yes -->
-<!-- A | MenuItem_SaveJSON -->
-<!-- A | OperationType_Installation -->
-<!-- A | OperationType_Uninstallation -->
-<!-- A | ResultCode_Failed -->
-<!-- A | ResultCode_InProgress -->
-<!-- A | ResultCode_NotStarted -->
-<!-- A | ResultCode_ResultCode_Aborted -->
-<!-- A | ResultCode_Succeeded -->
-<!-- A | ResultCode_SucceededWithErrors -->
-<!-- A | SettingsItem_EnableLanguageTesting -->
-<!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
-<!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
-<!-- A | SettingsSubHead_Language -->
-<!-- End of changes on 2023/11/15 -->
-
-<!-- Begin changes on 2023/11/13 @ 03:02 UTC -->
-<!-- A | About_GitHub -->
-<!-- A | Button_Close -->
-<!-- End of changes on 2023/11/13 -->
+<!--  Begin changes on 2023/11/13 @ 03:02 UTC  -->
+<!--  A | About_GitHub  -->
+<!--  A | Button_Close  -->
+<!--  End of changes on 2023/11/13  -->
 
