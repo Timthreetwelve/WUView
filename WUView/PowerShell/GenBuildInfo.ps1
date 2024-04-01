@@ -17,33 +17,35 @@ if ($commitIDFull.Length -lt 1 ) {
 }
 
 $class =
-"// Copyright(c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
-//
+"// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+
 // This file is generated during the pre-build event by GenBuildInfo.ps1.
 // Any edits to this file will be overwritten during the next build!
 
-namespace $assemblyName
+namespace $assemblyName;
+
+public static class BuildInfo
 {
-    public static class BuildInfo
-    {
-        public const string CommitIDString = `"$commitID`";
+    public const string CommitIDString = `"$commitID`";
 
-        public const string CommitIDFullString = `"$commitIDFull`";
+    public const string CommitIDFullString = `"$commitIDFull`";
 
-        public const string VersionString = `"$assemblyVersion`";
+    public const string VersionString = `"$assemblyVersion`";
 
-        public const string BuildDateString = `"$nowUTC`";
+    public const string BuildDateString = `"$nowUTC`";
 
-        public static readonly DateTime BuildDateUtc =
-            DateTime.SpecifyKind(
-                DateTime.ParseExact(BuildDateString, `"yyyy/MM/dd HH:mm:ss`", CultureInfo.InvariantCulture),
-                DateTimeKind.Utc);
+    public static readonly DateTime BuildDateUtc =
+        DateTime.SpecifyKind(
+            DateTime.ParseExact(BuildDateString, `"yyyy/MM/dd HH:mm:ss`", CultureInfo.InvariantCulture),
+            DateTimeKind.Utc);
 
-        public static readonly DateTime BuildDateLocal = BuildDateUtc.ToLocalTime();
-    }
+    public static readonly string BuildDateStringUtc = $`"{BuildDateUtc:f}  (UTC)`";
+
+    public static readonly DateTime BuildDateLocal = BuildDateUtc.ToLocalTime();
 }"
 
-Set-Content -Path $outputFile -Value $class
+$curPath = Get-Location
+$outputPath = Join-Path -Path $curPath.Path -ChildPath $outputFile
 
-$fullName = Get-Item $outputFile
-Write-Host "GenBuildInfo: Output written to $fullName"
+Write-Host "GenBuildInfo: Output written to $outputPath"
+Set-Content -Path "$outputPath" -Value $class
