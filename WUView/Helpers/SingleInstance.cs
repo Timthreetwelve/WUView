@@ -31,11 +31,17 @@ public static class SingleInstance
 
         Application app = Application.Current;
 
+        string debugger = string.Empty;
+        if (Debugger.IsAttached)
+        {
+            debugger = "-Debug";
+        }
+
         string eventName;
         const string uniqueID = "{ABFC758B-06B6-4379-A712-835EB42D230F}";
         if (uniquePerUser)
         {
-            eventName = $"{appName}-{uniqueID}-{Environment.UserName}";
+            eventName = $"{appName}-{uniqueID}-{Environment.UserName}{debugger}";
         }
         else
         {
