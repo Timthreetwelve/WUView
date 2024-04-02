@@ -83,7 +83,7 @@
                 <TextBlock Grid.Row="1" Grid.Column="0"
                            Text="{DynamicResource About_Version}" />
                 <TextBlock Grid.Row="1" Grid.Column="2"
-                           Text="{x:Static helpers:AppInfo.AppFileVersion}"
+                           Text="{x:Static helpers:AppInfo.AppProductVersion}"
                            TextWrapping="Wrap" />
 
                 <TextBlock Grid.Row="2" Grid.Column="0"
