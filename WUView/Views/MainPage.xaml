@@ -17,7 +17,7 @@
              Loaded="UserControl_Loaded"
              TextElement.FontSize="14"
              TextElement.FontWeight="Regular"
-             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
              TextOptions.TextFormattingMode="Ideal"
              TextOptions.TextRenderingMode="Auto"
              Unloaded="UserControl_Unloaded">
@@ -252,7 +252,7 @@
                       Height="4"
                       Margin="0,3"
                       HorizontalAlignment="Stretch"
-                      Background="{DynamicResource MaterialDesignBody}"
+                      Background="{DynamicResource MaterialDesign.Brush.Foreground}"
                       DragCompleted="DetailsSplitter_DragCompleted"
                       IsTabStop="False"
                       ResizeBehavior="PreviousAndNext"

@@ -14,11 +14,11 @@
         d:DesignHeight="350" d:DesignWidth="800"
         Title="{x:Static helpers:AppInfo.AppName}"
         MinWidth="830" MinHeight="350"
-        Background="{DynamicResource MaterialDesignPaper}"
+        Background="{DynamicResource MaterialDesign.Brush.Background}"
         FontFamily="Segoe UI" FontSize="12"
         Style="{StaticResource MaterialDesignWindow}"
         TextElement.FontWeight="Regular"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Topmost="{Binding KeepOnTop,
@@ -89,8 +89,8 @@
                                          Grid.ColumnSpan="2"
                                          HorizontalAlignment="Right"
                                          VerticalAlignment="Top"
-                                         Background="{DynamicResource MaterialDesignPaper}"
-                                         Foreground="{DynamicResource MaterialDesignBody}"
+                                         Background="{DynamicResource MaterialDesign.Brush.Background}"
+                                         Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                          IsTabStop="False"
                                          MessageQueue="{materialDesign:MessageQueue}" />
                 <!--#endregion-->
@@ -99,7 +99,7 @@
                 <Button Grid.Column="3"
                         Width="45"
                         Padding="0" HorizontalAlignment="Center"
-                        Foreground="{DynamicResource MaterialDesignBody}"
+                        Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                         IsDefault="False" IsTabStop="False"
                         KeyboardNavigation.TabNavigation="None"
                         Style="{StaticResource MaterialDesignFlatButton}">
@@ -115,7 +115,7 @@
                                                      Kind="DotsHorizontal" />
                         </materialDesign:PopupBox.ToggleContent>
                         <Border Padding="3"
-                                BorderBrush="{DynamicResource MaterialDesignDivider}"
+                                BorderBrush="{DynamicResource MaterialDesign.Brush.TextBox.HoverBackground}"
                                 BorderThickness="2">
                             <Grid Width="auto">
                                 <StackPanel Orientation="Vertical">
@@ -130,7 +130,7 @@
                                             Content="{DynamicResource About_DocumentationText}"
                                             ToolTip="{DynamicResource About_DocumentationToolTip}" />
                                     <Separator Margin="0" Padding="1"
-                                               Background="{DynamicResource MaterialDesignDivider}" />
+                                               Background="{DynamicResource MaterialDesign.Brush.TextBox.HoverBackground}" />
                                     <Button Height="35"
                                             Padding="15,1,15,22"
                                             Content="{DynamicResource Button_Close}" />
@@ -191,7 +191,7 @@
 
             <!--#region Content control for views-->
             <Grid Grid.Row="1" Grid.Column="1"
-                  Background="{DynamicResource MaterialDesignCardBackground}">
+                  Background="{DynamicResource MaterialDesign.Brush.Card.Background}">
                 <ContentControl Content="{Binding CurrentViewModel}" />
             </Grid>
             <!--#endregion-->

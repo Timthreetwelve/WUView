@@ -14,7 +14,7 @@
              MinWidth="400"
              FontSize="16"
              Loaded="UserControl_Loaded"
-             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
              TextOptions.TextFormattingMode="Ideal"
              TextOptions.TextRenderingMode="Auto">
 
@@ -22,7 +22,7 @@
         <convert:ExcludedItemsConverter x:Key="exclConv" />
     </UserControl.Resources>
 
-    <Border BorderBrush="{DynamicResource MaterialDesignDivider}"
+    <Border BorderBrush="{DynamicResource MaterialDesign.Brush.TextBox.HoverBackground}"
             BorderThickness="1" CornerRadius="3">
         <Grid>
             <!--#region Row & Column definitions-->
@@ -42,8 +42,8 @@
 
             <!--#region Title and TextBox-->
             <TextBlock Grid.Row="1" Grid.Column="1"
-                       HorizontalAlignment="Center"
                        Margin="7,0"
+                       HorizontalAlignment="Center"
                        FontSize="16" FontWeight="Regular">
                 <Run Text="{DynamicResource ExcludesEditor_TextLine1}" />
                 <LineBreak />

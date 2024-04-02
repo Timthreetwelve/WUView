@@ -48,7 +48,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
     <PackageReference Include="NLog" Version="5.2.8" />
     <PackageReference Include="Octokit" Version="10.0.0" />
     <PackageReference Include="Vanara.PInvoke.User32" Version="4.0.0" />

@@ -12,16 +12,18 @@
                 <materialDesign:BundledTheme BaseTheme="Dark"
                                              ColorAdjustment="{materialDesign:ColorAdjustment}"
                                              PrimaryColor="Blue" SecondaryColor="Red" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+                <!--  Data Templates  -->
+                <ResourceDictionary Source="Styles/DataTemplates.xaml" />
+                <!--  es-US will be the fallback source for localized strings  -->
+                <ResourceDictionary Source="Languages/Strings.en-US.xaml" />
+                <!--  Styles  -->
                 <ResourceDictionary Source="Styles/ButtonStyles.xaml" />
                 <ResourceDictionary Source="Styles/DataGridStyles.xaml" />
-                <ResourceDictionary Source="Styles/DataTemplates.xaml" />
                 <ResourceDictionary Source="Styles/NavigationStyles.xaml" />
                 <ResourceDictionary Source="Styles/ScrollBarStyle.xaml" />
                 <ResourceDictionary Source="Styles/SnackbarStyle.xaml" />
                 <ResourceDictionary Source="Styles/TextBoxStyles.xaml" />
-                <!--  es-US will be the fallback source for localized strings  -->
-                <ResourceDictionary Source="Languages/Strings.en-US.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -14,7 +14,7 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800"
              FontSize="14"
-             TextElement.Foreground="{DynamicResource MaterialDesignBody}">
+             TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}">
 
     <!--#region DataContext-->
     <UserControl.DataContext>
@@ -26,7 +26,7 @@
     </UserControl.Resources>
     <!--#endregion-->
 
-    <Grid Background="{DynamicResource MaterialDesignCardBackground}">
+    <Grid Background="{DynamicResource MaterialDesign.Brush.Card.Background}">
         <ScrollViewer Margin="5"
                       HorizontalScrollBarVisibility="Disabled"
                       VerticalScrollBarVisibility="Auto">
@@ -93,7 +93,7 @@
                            ToolTipService.Placement="Top">
                     <Hyperlink Command="{Binding GoToGitHubCommand}"
                                CommandParameter="https://github.com/Timthreetwelve"
-                               Foreground="{DynamicResource MaterialDesignBody}">
+                               Foreground="{DynamicResource MaterialDesign.Brush.Foreground}">
                         <TextBlock Text="Tim Kennedy" TextWrapping="Wrap" />
                     </Hyperlink>
                 </TextBlock>
@@ -108,7 +108,7 @@
                            Text="{DynamicResource About_License}" />
                 <TextBlock Grid.Row="4" Grid.Column="2">
                     <Hyperlink Command="{Binding ViewLicenseCommand}"
-                               Foreground="{DynamicResource MaterialDesignBody}"
+                               Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                ToolTip="{DynamicResource About_LicenseToolTip}"
                                ToolTipService.Placement="Top">
                         <TextBlock Text="{DynamicResource About_LicenseText}"
@@ -149,7 +149,7 @@
                     <Hyperlink Command="{Binding GoToGitHubCommand}"
                                CommandParameter="{Binding Path=Text,
                                                           ElementName=tbxGithub}"
-                               Foreground="{DynamicResource MaterialDesignBody}"
+                               Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                ToolTip="{DynamicResource About_GitHubToolTip}"
                                ToolTipService.Placement="Top">
                         <TextBlock x:Name="tbxGithub"
@@ -162,7 +162,7 @@
                            Text="{DynamicResource About_Documentation}" />
                 <TextBlock Grid.Row="8" Grid.Column="2">
                     <Hyperlink Command="{Binding ViewReadMeCommand}"
-                               Foreground="{DynamicResource MaterialDesignBody}"
+                               Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                ToolTip="{DynamicResource About_DocumentationToolTip}"
                                ToolTipService.Placement="Top">
                         <TextBlock Text="{DynamicResource About_DocumentationText}" />
@@ -175,7 +175,7 @@
                            Text="{DynamicResource About_UpdateWU}" />
                 <TextBlock Grid.Row="9" Grid.Column="2">
                     <Hyperlink Command="{Binding CheckReleaseCommand}"
-                               Foreground="{DynamicResource MaterialDesignBody}"
+                               Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                ToolTip="{DynamicResource About_UpdateWUToolTip}"
                                ToolTipService.Placement="Top">
                         <TextBlock Text="{DynamicResource About_UpdateWUText}" />
@@ -196,7 +196,7 @@
                     <TextBlock Grid.Row="1">
                         <Hyperlink Command="{Binding GoToGitHubCommand}"
                                    CommandParameter="https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation"
-                                   Foreground="{DynamicResource MaterialDesignBody}"
+                                   Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                    ToolTip="{DynamicResource About_ContributeToolTip}"
                                    ToolTipService.Placement="Top">
                             <TextBlock Text="{DynamicResource About_Contribute}" />
@@ -208,7 +208,7 @@
                         Width="auto"
                         Margin="0,0,20,0"
                         HorizontalAlignment="Left"
-                        BorderBrush="{DynamicResource MaterialDesignTextBoxBorder}"
+                        BorderBrush="{DynamicResource MaterialDesign.Brush.ForegroundLight}"
                         BorderThickness="1">
                     <ListView Width="auto" MinWidth="250"
                               MaxHeight="155"

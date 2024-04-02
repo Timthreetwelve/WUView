@@ -8,13 +8,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         MaxWidth="500" MaxHeight="700"
-        Background="{DynamicResource MaterialDesignPaper}"
-        BorderBrush="{DynamicResource PrimaryHueMidBrush}"
+        Background="{DynamicResource MaterialDesign.Brush.Background}"
+        BorderBrush="{DynamicResource MaterialDesign.Brush.Primary}"
         BorderThickness="1"
         ResizeMode="NoResize"
         SizeToContent="WidthAndHeight"
         SnapsToDevicePixels="True"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
         WindowStyle="None">
 
     <!--#region Window Resources-->
@@ -22,7 +22,7 @@
         <Style TargetType="Button"
                x:Key="DialogCloseButton"
                BasedOn="{StaticResource MaterialDesignFlatButton}">
-            <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource MaterialDesign.Brush.Primary.Foreground}" />
             <Setter Property="Height" Value="30" />
             <Setter Property="Padding" Value="0" />
             <Setter Property="ToolTip" Value="Close" />
@@ -31,13 +31,13 @@
         <Style TargetType="Button"
                x:Key="DialogButton"
                BasedOn="{StaticResource MaterialDesignOutlinedButton}">
-            <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignDivider}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.TextBox.HoverBackground}" />
             <Setter Property="BorderThickness" Value="1.5" />
-            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
+            <Setter Property="Foreground" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
             <Setter Property="Height" Value="32" />
             <Setter Property="Margin" Value="5" />
             <Setter Property="Width" Value="100" />
-            <Setter Property="materialDesign:RippleAssist.Feedback" Value="{DynamicResource MaterialDesignBody}" />
+            <Setter Property="materialDesign:RippleAssist.Feedback" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
         </Style>
     </Window.Resources>
     <!--#endregion-->
@@ -60,8 +60,8 @@
                              Height="35"
                              Padding="10,5,5,5"
                              materialDesign:ElevationAssist.Elevation="Dp5"
-                             Background="{DynamicResource PrimaryHueMidBrush}"
-                             Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
+                             Background="{DynamicResource MaterialDesign.Brush.Primary}"
+                             Foreground="{DynamicResource MaterialDesign.Brush.Primary.Foreground}"
                              MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"
                              UniformCornerRadius="0"
                              Visibility="Visible">

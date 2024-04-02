@@ -27,7 +27,7 @@ internal static class MainWindowUIHelpers
     {
         //Retrieve the app's existing theme
         PaletteHelper paletteHelper = new();
-        ITheme theme = paletteHelper.GetTheme();
+        Theme theme = paletteHelper.GetTheme();
 
         if (mode == ThemeType.System)
         {
@@ -37,20 +37,22 @@ internal static class MainWindowUIHelpers
         switch (mode)
         {
             case ThemeType.Light:
-                theme.SetBaseTheme(Theme.Light);
-                theme.Paper = Colors.WhiteSmoke;
+                theme.SetBaseTheme(BaseTheme.Light);
+                theme.Background = Colors.WhiteSmoke;
                 break;
             case ThemeType.Dark:
-                theme.SetBaseTheme(Theme.Dark);
+                theme.SetBaseTheme(BaseTheme.Dark);
                 break;
             case ThemeType.Darker:
                 // Set card and paper background colors a bit darker
-                theme.SetBaseTheme(Theme.Dark);
-                theme.CardBackground = (Color)ColorConverter.ConvertFromString("#FF141414");
-                theme.Paper = (Color)ColorConverter.ConvertFromString("#FF202020");
+                theme.SetBaseTheme(BaseTheme.Dark);
+                theme.Cards.Background = (Color)ColorConverter.ConvertFromString("#FF141414");
+                theme.Background = (Color)ColorConverter.ConvertFromString("#FF202020");
+                theme.DataGrids.Selected = (Color)ColorConverter.ConvertFromString("#FF303030");
+                theme.Foreground = (Color)ColorConverter.ConvertFromString("#E5F0F0F0");
                 break;
             default:
-                theme.SetBaseTheme(Theme.Light);
+                theme.SetBaseTheme(BaseTheme.Light);
                 break;
         }
 
@@ -67,7 +69,7 @@ internal static class MainWindowUIHelpers
     internal static void SetPrimaryColor(AccentColor color)
     {
         PaletteHelper paletteHelper = new();
-        ITheme theme = paletteHelper.GetTheme();
+        Theme theme = paletteHelper.GetTheme();
         PrimaryColor primary = color switch
         {
             AccentColor.Red => PrimaryColor.Red,

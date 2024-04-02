@@ -14,7 +14,7 @@
              mc:Ignorable="d"
              d:DesignHeight="650" d:DesignWidth="700"
              FontFamily="Segoe UI" FontSize="14"
-             TextElement.Foreground="{DynamicResource MaterialDesignBody}">
+             TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}">
 
     <!--#region DataContext & Resources-->
     <UserControl.DataContext>
@@ -53,7 +53,7 @@
                 <Border Grid.Row="0"
                         Height="69"
                         Padding="20,0"
-                        Background="{DynamicResource MaterialDesignPaper}">
+                        Background="{DynamicResource MaterialDesign.Brush.Background}">
                     <Button Grid.Row="0"
                             Width="auto"
                             Padding="10,0"
@@ -88,7 +88,7 @@
                                                      Width="28" Height="28"
                                                      Margin="0,5,0,0"
                                                      VerticalAlignment="Center"
-                                                     Foreground="{DynamicResource PrimaryHueMidBrush}"
+                                                     Foreground="{DynamicResource MaterialDesign.Brush.Primary}"
                                                      Kind="Wrench" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold"
@@ -271,7 +271,7 @@
                                                      Width="28" Height="28"
                                                      Margin="0,5,0,0"
                                                      VerticalAlignment="Center"
-                                                     Foreground="{DynamicResource PrimaryHueMidBrush}"
+                                                     Foreground="{DynamicResource MaterialDesign.Brush.Primary}"
                                                      Kind="MonitorEdit" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold"
@@ -425,7 +425,7 @@
                                                      Width="28" Height="28"
                                                      Margin="0,5,0,0"
                                                      VerticalAlignment="Center"
-                                                     Foreground="{DynamicResource PrimaryHueMidBrush}"
+                                                     Foreground="{DynamicResource MaterialDesign.Brush.Primary}"
                                                      Kind="Language" />
                             <TextBlock Grid.Row="0" Grid.Column="1"
                                        FontSize="16" FontWeight="SemiBold"
@@ -540,7 +540,7 @@
                         <Rectangle Grid.Row="3" Grid.Column="1"
                                    Margin="0,5,60,10"
                                    HorizontalAlignment="Stretch"
-                                   Fill="{DynamicResource MaterialDesignDivider}"
+                                   Fill="{DynamicResource MaterialDesign.Brush.TextBox.HoverBackground}"
                                    Height="2"/>
 
                         <StackPanel Grid.Row="4" Grid.Column="1"
