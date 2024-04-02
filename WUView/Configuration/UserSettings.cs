@@ -31,6 +31,9 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private double _detailsHeight = 300;
 
     [ObservableProperty]
+    private static double _dialogScale = 1;
+
+    [ObservableProperty]
     private bool _excludeKBandResult;
 
     [ObservableProperty]

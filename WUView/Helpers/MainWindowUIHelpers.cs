@@ -130,6 +130,7 @@ internal static class MainWindowUIHelpers
             _ => 1.0,
         };
         _mainWindow!.MainGrid.LayoutTransform = new ScaleTransform(newSize, newSize);
+        UserSettings.Setting!.DialogScale = newSize;
     }
 
     /// <summary>
