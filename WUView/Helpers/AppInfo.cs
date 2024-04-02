@@ -78,6 +78,11 @@ public static class AppInfo
     public static string AppDescription => FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly()!.Location).FileDescription ?? "missing";
 
     /// <summary>
+    /// Returns the product version from the Assembly info
+    /// </summary>
+    public static string AppProductVersion => FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly()!.Location).ProductVersion ?? "missing";
+
+    /// <summary>
     /// Returns the Copyright info from the Assembly info
     /// </summary>
     public static string AppCopyright => FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly()!.Location).LegalCopyright ?? "missing";
