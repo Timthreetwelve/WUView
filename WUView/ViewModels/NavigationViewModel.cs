@@ -318,14 +318,14 @@ public partial class NavigationViewModel : ObservableObject
                 MainPage.Instance!.UpdateGrid();
                 SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_DateFormatChange"), 2000);
             }
-            if (e.Key == Key.Add)
+            if (e.Key == Key.Add || e.Key == Key.OemPlus)
             {
                 MainWindowUIHelpers.EverythingLarger();
                 string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
                 string message = string.Format(GetStringResource("MsgText_UISizeSet"), size);
                 SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
-            if (e.Key == Key.Subtract)
+            if (e.Key == Key.Subtract || e.Key == Key.OemMinus)
             {
                 MainWindowUIHelpers.EverythingSmaller();
                 string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
