@@ -15,56 +15,53 @@ public static class TextFileViewer
     /// <summary>
     /// Opens specified text file
     /// </summary>
-    /// <param name="txtfile">Full path for text file</param>
+    /// <param name="textFile">Full path for text file</param>
     ///
-    public static void ViewTextFile(string txtfile)
+    public static void ViewTextFile(string textFile)
     {
-        if (File.Exists(txtfile))
+        try
         {
-            try
+            using Process p = new();
+            p.StartInfo.FileName = textFile;
+            p.StartInfo.UseShellExecute = true;
+            p.StartInfo.ErrorDialog = false;
+            _ = p.Start();
+        }
+        catch (Win32Exception ex)
+        {
+            if (ex.NativeErrorCode == 1155)
             {
                 using Process p = new();
-                p.StartInfo.FileName = txtfile;
+                p.StartInfo.FileName = "notepad.exe";
+                p.StartInfo.Arguments = textFile;
                 p.StartInfo.UseShellExecute = true;
                 p.StartInfo.ErrorDialog = false;
                 _ = p.Start();
+                _log.Debug($"Opening {textFile} in Notepad.exe");
             }
-            catch (Win32Exception ex)
-            {
-                if (ex.NativeErrorCode == 1155)
-                {
-                    using Process p = new();
-                    p.StartInfo.FileName = "notepad.exe";
-                    p.StartInfo.Arguments = txtfile;
-                    p.StartInfo.UseShellExecute = true;
-                    p.StartInfo.ErrorDialog = false;
-                    _ = p.Start();
-                    _log.Debug($"Opening {txtfile} in Notepad.exe");
-                }
-                else
-                {
-#if messagebox
-                    _ = MessageBox.Show($"Error reading file {txtfile}\n{ex.Message}", "Watcher Error",
-                        MessageBoxButton.OK, MessageBoxImage.Error);
-#endif
-                    _log.Error($"* Unable to open {txtfile}");
-                    _log.Error($"* {ex.Message}");
-                }
-            }
-            catch (Exception ex)
+            else
             {
 #if messagebox
-                _ = MessageBox.Show("Unable to start default application used to open" +
-                                    $" {txtfile}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                string msg = string.Format(GetStringResource("MsgText_ErrorReadingFile"), textFile);
+                _ = MessageBox.Show($"{msg}\n{ex.Message}",
+                                    GetStringResource("MsgText_ErrorCaption"),
+                                    MessageBoxButton.OK,
+                                    MessageBoxImage.Error);
 #endif
-                _log.Error($"* Unable to open {txtfile}");
-                _log.Error($"* {ex.Message}");
+                _log.Error(ex, $"Unable to open {textFile}");
             }
         }
-        else
+        catch (Exception ex)
         {
-            _log.Error($">>> File not found: {txtfile}");
+#if messagebox
+            string msg = string.Format(GetStringResource("MsgText_ErrorOpeningFile"), textFile);
+            _ = MessageBox.Show($"{msg}\n{ex.Message}",
+                                GetStringResource("MsgText_ErrorCaption"),
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
+#endif
+            _log.Error(ex, $"Unable to open {textFile}");
         }
     }
-    #endregion
+    #endregion Text file viewer
 }

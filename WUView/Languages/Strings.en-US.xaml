@@ -100,8 +100,8 @@
     <sys:String x:Key="MsgText_ApplicationStarting">is starting up</sys:String>
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">Check for update failed. See the log for more information.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Checking for update.</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateGoToRelease">Do you want to go to the release page?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateCloseGetMyIP">Clicking 'Yes' will close Get My IP.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateGoToRelease">Do you want to go to the release page?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">A newer release ({0}) has been found.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">No newer releases were found.</sys:String>
     <sys:String x:Key="MsgText_ColumnSortCleared">Column sort cleared</sys:String>
@@ -111,6 +111,9 @@
     <sys:String x:Key="MsgText_DisplayedUpdates">Displaying {0} of {1} updates</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Elapsed time</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
+    <sys:String x:Key="MsgText_ErrorCaption">ERROR</sys:String>
+    <sys:String x:Key="MsgText_ErrorOpeningFile">Error opening {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorReadingFile">Error reading {0}</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">No Event Logs records were found for this update.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">No Event Log records containing "{0}" were found.</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Excluding updates containing:</sys:String>
@@ -270,4 +273,9 @@
     <!-- A | MsgText_AppUpdateCloseGetMyIP -->
     <!-- End of changes on 2023/11/28 @ 02:00 UTC -->
 
+    <!-- Begin changes on 2024/04/03 @ 18:00 UTC -->
+    <!-- A | MsgText_ErrorCaption  -->
+    <!-- A | MsgText_ErrorOpeningFile  -->
+    <!-- A | MsgText_ErrorReadingFile  -->
+    <!-- End of changes on 2024/04/03 @ 18:00 UTC -->
 </ResourceDictionary>
