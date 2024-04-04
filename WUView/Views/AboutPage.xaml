@@ -138,13 +138,15 @@
                     </TextBlock.ToolTip>
                 </TextBlock>
 
+                <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal">
+                    
                 <TextBlock Grid.Row="7" Grid.Column="0"
                            Text="{DynamicResource About_GitHub}" />
-                <Grid Grid.Row="7" Grid.Column="0"
-                      Margin="50,-2,0,0">
-                    <materialDesign:PackIcon Width="20" Height="20"
+                    <materialDesign:PackIcon Width="20" Height="20" Margin="10,0,0,0"
                                              Kind="Github" />
-                </Grid>
+                </StackPanel>
+                
+                
                 <TextBlock Grid.Row="7" Grid.Column="2">
                     <Hyperlink Command="{Binding GoToGitHubCommand}"
                                CommandParameter="{Binding Path=Text,
