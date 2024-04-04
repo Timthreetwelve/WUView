@@ -1,7 +1,14 @@
-## Windows Update Viewer
+<p align="center">
+  <a target="_blank" rel="noopener noreferrer">
+    <img width="128" src="https://github.com/Timthreetwelve/WUView/blob/main/WUView/Images/UV.png" alt="Windows Updaet Viewer Logo">
+  </a>
+</p>
+<h1 align="center">
+  Windows Update Viewer
+</h1>
 
 [![GitHub](https://img.shields.io/github/license/Timthreetwelve/WUView?style=plastic&color=seagreen)](https://github.com/Timthreetwelve/WUView/blob/main/LICENSE)
-[![NET6win](https://img.shields.io/badge/.NET-6.0--Windows-blueviolet?style=plastic)](https://dotnet.microsoft.com/en-us/download) 
+[![NET6win](https://img.shields.io/badge/.NET-8.0--Windows-blueviolet?style=plastic)](https://dotnet.microsoft.com/en-us/download) 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Timthreetwelve/WUView?style=plastic)](https://github.com/Timthreetwelve/WUView/releases/latest) 
 [![GitHub Release Date](https://img.shields.io/github/release-date/timthreetwelve/WUView?style=plastic&color=orange)](https://github.com/Timthreetwelve/WUView/releases/latest) 
 [![GitHub Stars](https://img.shields.io/github/stars/timthreetwelve/wuview?style=plastic&color=goldenrod)](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars)
@@ -10,7 +17,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/timthreetwelve/wuview?style=plastic&color=orangered)](https://github.com/Timthreetwelve/WUView/issues)
 [![GitHub Issues](https://img.shields.io/github/issues-closed/timthreetwelve/wuview?style=plastic&color=slateblue)](https://github.com/Timthreetwelve/WUView/issues)
 
-#### WUView requires .Net 6.0
+#### Windows Update Viewer uses .NET 8
 
 Windows Update Viewer (WUView) is an application that displays Windows Update history. It is meant to be a lightweight application that is easy to use. There aren't any confusing categories; every update is listed in one place. Updates that you don't want to see can be permanently excluded or temporarily filtered.
 
