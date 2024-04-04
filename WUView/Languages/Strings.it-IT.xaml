@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            17.11.2023
+        Date last update:            04.04.2024
 
         ========================================================================
 
@@ -100,6 +100,7 @@
     <sys:String x:Key="MsgText_ApplicationStarting">si sta avviando</sys:String>
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">Verifica aggiornamento non riuscita. Per ulteriori informazioni consulta il registro .</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Controllo aggiornamenti.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCloseGetMyIP">Selezionando 'Sì' verrà chiuso Get My IP.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Vuoi andare alla pagina web del programma?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">È disponibile una nuova versione ({0}).</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">Questo programma è aggiornato.</sys:String>
@@ -110,6 +111,9 @@
     <sys:String x:Key="MsgText_DisplayedUpdates">Visualizzazione dell'aggiornamento  {0} di {1}</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Tempo trascorso</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Si è verificato un problema con il file lingua GUI.</sys:String>
+    <sys:String x:Key="MsgText_ErrorCaption">ERRORE</sys:String>
+    <sys:String x:Key="MsgText_ErrorOpeningFile">Error in apertura di {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorReadingFile">Error in lettura di {0}</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Non è stato trovato alcun record del registro eventi per questo aggiornamento.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Non è stato trovato alcun record del registro eventi contenente "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Escludi aggiornamenti contenenti:</sys:String>
@@ -265,4 +269,13 @@
     <!-- A | Button_Close -->
     <!-- End of changes on 2023/11/13 -->
 
+    <!-- Begin changes on 2023/11/28 @ 02:00 UTC -->
+    <!-- A | MsgText_AppUpdateCloseGetMyIP -->
+    <!-- End of changes on 2023/11/28 @ 02:00 UTC -->
+
+    <!-- Begin changes on 2024/04/03 @ 18:00 UTC -->
+    <!-- A | MsgText_ErrorCaption  -->
+    <!-- A | MsgText_ErrorOpeningFile  -->
+    <!-- A | MsgText_ErrorReadingFile  -->
+    <!-- End of changes on 2024/04/03 @ 18:00 UTC -->
 </ResourceDictionary>
