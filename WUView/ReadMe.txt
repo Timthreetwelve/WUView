@@ -132,7 +132,7 @@ Windows Update Viewer uses the following packages and applications:
 
     * Inno Setup was used to create the installer. https://jrsoftware.org/isinfo.php
 
-    * Visual Studio Community was used throughout the development of Get My IP. https://visualstudio.microsoft.com/vs/community/
+    * Visual Studio Community was used throughout the development of Windows Update Viewer. https://visualstudio.microsoft.com/vs/community/
 
     * XAML Styler is indispensable when working with XAML. https://github.com/Xavalon/XamlStyler
 

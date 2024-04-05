@@ -100,7 +100,7 @@
     <sys:String x:Key="MsgText_ApplicationStarting">si sta avviando</sys:String>
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">Verifica aggiornamento non riuscita. Per ulteriori informazioni consulta il registro .</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Controllo aggiornamenti.</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateCloseGetMyIP">Selezionando 'Sì' verrà chiuso Get My IP.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateClose">Selezionando 'Sì' verrà chiuso Windows Update Viewer.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Vuoi andare alla pagina web del programma?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">È disponibile una nuova versione ({0}).</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">Questo programma è aggiornato.</sys:String>

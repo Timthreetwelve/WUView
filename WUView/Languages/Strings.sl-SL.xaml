@@ -101,7 +101,7 @@
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">Preverjanje posodobitev ni uspelo. Za več informacij si oglejte dnevnik.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Preverjanje posodobitev.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Ali želite iti na stran za izdajo?</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateCloseGetMyIP">Klik na 'Da' bo zaprl 'Pridobi moj IP'.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateClose">Klik na 'Da' bo zaprl 'Pregledovalnik posodobitev Windows'.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">Najdena je bila novejša izdaja ({0}).</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">Novejših izdaj ni bilo mogoče najti.</sys:String>
     <sys:String x:Key="MsgText_ColumnSortCleared">Razvrščanje stolpca je počiščeno</sys:String>

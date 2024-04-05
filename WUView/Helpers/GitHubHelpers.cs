@@ -67,7 +67,7 @@ internal static class GitHubHelpers
                 string msg = string.Format(GetStringResource("MsgText_AppUpdateNewerFound"), latestVersion);
                 _ = new MDCustMsgBox($"{msg}\n\n" +
                                             $"{GetStringResource("MsgText_AppUpdateGoToRelease")}\n\n" +
-                                            $"{GetStringResource("MsgText_AppUpdateCloseGetMyIP")}",
+                                            $"{GetStringResource("MsgText_AppUpdateClose")}",
                     "Windows Update Viewer",
                     ButtonType.YesNo,
                     false,

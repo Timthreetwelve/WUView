@@ -28,7 +28,7 @@ public partial class SettingsViewModel : ObservableObject
         {
             _log.Error(ex, $"Error trying to open {filePath}: {ex.Message}");
             _ = new MDCustMsgBox(GetStringResource("MsgText_Error_FileExplorer"),
-                     "Get My IP ERROR",
+                     GetStringResource("MsgText_ErrorCaption"),
                      ButtonType.Ok,
                      false,
                      true,
