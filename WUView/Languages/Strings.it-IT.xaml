@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            04.04.2024
+        Date last update:            05.04.2024
 
         ========================================================================
 
@@ -278,4 +278,9 @@
     <!-- A | MsgText_ErrorOpeningFile  -->
     <!-- A | MsgText_ErrorReadingFile  -->
     <!-- End of changes on 2024/04/03 @ 18:00 UTC -->
+    
+    <!-- Begin changes on 2024/05/05 @ 17:30 UTC-->
+    <!-- D | MsgText_AppUpdateCloseGetMyIP -->
+    <!-- A | MsgText_AppUpdateClose -->
+    <!-- End of changes on 2024/05/05 @ 17:30 UTC-->
 </ResourceDictionary>
