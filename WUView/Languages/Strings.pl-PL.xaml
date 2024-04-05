@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
@@ -15,7 +15,7 @@
 
         Translation contributed by:  FadeMind
 
-        Date last update:            2023/10/05
+        Date last update:            2024/04/05
 
         ========================================================================
 
@@ -25,8 +25,8 @@
     <sys:String x:Key="About_BuildDate">Data kompilacji</sys:String>
     <sys:String x:Key="About_CommitID">Commit ID</sys:String>
     <sys:String x:Key="About_CommitIDToolTip">Full Commit ID:</sys:String>
-    <sys:String x:Key="About_Contribute">Contribute a Translation</sys:String>
-    <sys:String x:Key="About_ContributeToolTip">How to contribute a translation</sys:String>
+    <sys:String x:Key="About_Contribute">Współtwórz tłumaczenie</sys:String>
+    <sys:String x:Key="About_ContributeToolTip">Jak zgłosić tłumaczenie</sys:String>
     <sys:String x:Key="About_Copyright">Prawa autorskie</sys:String>
     <sys:String x:Key="About_CreatedBy">Stworzony przez</sys:String>
     <sys:String x:Key="About_CreatedByToolTip">Zobacz inne prace Tima na https://github.com/Timthreetwelve</sys:String>
@@ -34,6 +34,7 @@
     <sys:String x:Key="About_Documentation">Dokumentacja</sys:String>
     <sys:String x:Key="About_DocumentationText">Otwórz plik ReadMe</sys:String>
     <sys:String x:Key="About_DocumentationToolTip">Zobacz plik ReadMe</sys:String>
+    <sys:String x:Key="About_GitHub">GitHub</sys:String>
     <sys:String x:Key="About_GitHubToolTip">Odwiedź stronę WUView na GitHubie</sys:String>
     <sys:String x:Key="About_License">Licencja</sys:String>
     <sys:String x:Key="About_LicenseText">Ten projekt jest licencjonowany na warunkach licencji MIT.</sys:String>
@@ -45,13 +46,14 @@
     <sys:String x:Key="About_Version">Wersja</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Anuluj</sys:String>
-    <sys:String x:Key="Button_No">No</sys:String>
+    <sys:String x:Key="Button_Close">Zamknij Menu</sys:String>
+    <sys:String x:Key="Button_No">Nie</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
-    <sys:String x:Key="Button_OpenAppFolder">Open App Folder</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Otwórz folder aplikacji</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Przeglądaj dziennik</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Otwórz plik dziennika w domyślnej aplikacji</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Dodatkowe działania</sys:String>
-    <sys:String x:Key="Button_Yes">Yes</sys:String>
+    <sys:String x:Key="Button_Yes">Tak</sys:String>
     <!--  Details Pane  -->
     <sys:String x:Key="Details_Date">Data:</sys:String>
     <sys:String x:Key="Details_Description">Opis:</sys:String>
@@ -87,7 +89,7 @@
     <sys:String x:Key="MenuItem_Refresh">Odśwież aktualizacje</sys:String>
     <sys:String x:Key="MenuItem_RemoveSort">Usuń sortowanie kolumn</sys:String>
     <sys:String x:Key="MenuItem_SaveCSV">Zapisz siatkę do pliku CSV</sys:String>
-    <sys:String x:Key="MenuItem_SaveJSON">Export to JSON File</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">Eksportuj do pliku JSON</sys:String>
     <sys:String x:Key="MenuItem_SaveTXT">Zapisz szczegóły do pliku tekstowego</sys:String>
     <sys:String x:Key="MenuItem_Smaller">Mniejszy interfejs</sys:String>
     <sys:String x:Key="MenuItem_ToggleDetails">Panel szczegółów</sys:String>
@@ -107,7 +109,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Wyświetlanie wszystkich {0} aktualizacji</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Wyświetlanie {0} z {1} aktualizacji</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Upływ czasu</sys:String>
-    <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">Wystąpił błąd w pliku tłumaczenia.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Nie znaleziono zapisów dziennika zdarzeń dla tej aktualizacji.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Nie znaleziono rekordów Dziennika zdarzeń zawierających "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Z wyłączeniem aktualizacji zawierających:</sys:String>
@@ -153,7 +155,7 @@
     <sys:String x:Key="SettingsItem_AccentColor">Kolor akcentu</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Po zmianie języka wymagany jest restart aplikacji!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Format daty siatki</sys:String>
-    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Enable language testing</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Włącz testowanie języka</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-Click aby otworzyć plik za pomocą domyślnej aplikacji</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Ukryj wykluczone elementy</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Uwzględnij komunikaty poziomu debugowania w pliku dziennika</sys:String>
@@ -226,16 +228,26 @@
     be associated with a comment made below this block.
 
     Comment Format:
-       There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
-       Modified lines will follow, one comment line per line changed.
-       Comment lines use this syntax:  Change Type | Key Name
+    There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
+    Modified lines will follow, one comment line per line changed.
+    Comment lines use this syntax:  Change Type | Key Name
 
-     Change type:
-       A = Added
-       D = Deleted
-       U = Updated
-       * = Comment not related to a single line
+    Change type:
+      A = Added
+      D = Deleted
+      U = Updated
+      * = Comment not related to a single line
      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+     
+    <!-- Begin changes on 2024/04/05 @ 14:25 UTC -->
+    <!-- U | Translated About_Contribute-->
+    <!-- U | Translated About_ContributeToolTip-->
+    <!-- U | Translated Button_No-->
+    <!-- U | Translated Button_Yes-->
+    <!-- U | Translated MenuItem_SaveJSON-->
+    <!-- U | Translated MsgText_Error_TestLanguage-->
+    <!-- U | Translated SettingsItem_EnableLanguageTesting--> 
+    <!-- End of changes on 2024/04/05  -->
 
     <!-- Begin changes on 2023/11/14 @ 01:45 UTC -->
     <!-- * | Value for About_Contribute needs to be translated -->
