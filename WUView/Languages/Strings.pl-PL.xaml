@@ -100,6 +100,7 @@
     <sys:String x:Key="MsgText_ApplicationStarting">uruchamia się</sys:String>
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">Sprawdzanie aktualizacji nie powiodło się. Więcej informacji można znaleźć w dzienniku.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Sprawdzanie dostępności aktualizacji.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateClose">Kliknij 'TAK' aby zamknąć Windows Update Viewer.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Czy chcesz przejść do strony informacyjnej o wydaniu?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">Znaleziono nowszą wersję ({0}).</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">Nie znaleziono nowszych wersji.</sys:String>
@@ -110,6 +111,9 @@
     <sys:String x:Key="MsgText_DisplayedUpdates">Wyświetlanie {0} z {1} aktualizacji</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Upływ czasu</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Wystąpił błąd w pliku tłumaczenia.</sys:String>
+    <sys:String x:Key="MsgText_ErrorCaption">BŁĄD</sys:String>
+    <sys:String x:Key="MsgText_ErrorOpeningFile">Błąd otwierania {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorReadingFile">Błąd odczytu {0}</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Nie znaleziono zapisów dziennika zdarzeń dla tej aktualizacji.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Nie znaleziono rekordów Dziennika zdarzeń zawierających "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Z wyłączeniem aktualizacji zawierających:</sys:String>
@@ -238,7 +242,7 @@
       U = Updated
       * = Comment not related to a single line
      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-     
+
     <!-- Begin changes on 2024/04/05 @ 14:25 UTC -->
     <!-- U | Translated About_Contribute-->
     <!-- U | Translated About_ContributeToolTip-->
@@ -247,6 +251,10 @@
     <!-- U | Translated MenuItem_SaveJSON-->
     <!-- U | Translated MsgText_Error_TestLanguage-->
     <!-- U | Translated SettingsItem_EnableLanguageTesting--> 
+    <!-- * | Translated MsgText_AppUpdateClose -->
+    <!-- * | Translated MsgText_ErrorCaption -->
+    <!-- * | Translated MsgText_ErrorOpeningFile -->
+    <!-- * | Translated MsgText_ErrorReadingFile -->
     <!-- End of changes on 2024/04/05  -->
 
     <!-- Begin changes on 2023/11/14 @ 01:45 UTC -->
