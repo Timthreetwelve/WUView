@@ -34,7 +34,7 @@
     <sys:String x:Key="About_Documentation">Documentación</sys:String>
     <sys:String x:Key="About_DocumentationText">Abrir el archivo Léame</sys:String>
     <sys:String x:Key="About_DocumentationToolTip">Ver el archivo Léame</sys:String>
-    <sys:String x:Key="About_GitHub">GitHub</sys:String>
+    <sys:String x:Key="About_GitHub">Sitio web de GitHub</sys:String>
     <sys:String x:Key="About_GitHubToolTip">Visitar la página de WUView en GitHub</sys:String>
     <sys:String x:Key="About_License">Licencia</sys:String>
     <sys:String x:Key="About_LicenseText">Este proyecto está de acuerdo con los términos de la licencia MIT.</sys:String>
@@ -100,6 +100,7 @@
     <sys:String x:Key="MsgText_ApplicationStarting">iniciando</sys:String>
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">Error en comprobar las actualizaciones. Consulte el registro para obtener más información.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Comprobación de actualizaciones.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateClose">Al hacer clic en "Sí" se cerrará el Visor Windows Update.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">¿Ir a la página de lanzamiento?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">Se ha encontrado una versión más reciente ({0}).</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">No se encontraron versiones más recientes.</sys:String>
@@ -109,6 +110,9 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Mostrando las {0} actualizaciones</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Mostrando {0} de {1} actualizaciones</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Tiempo transcurrido</sys:String>
+    <sys:String x:Key="MsgText_ErrorCaption">ERROR</sys:String>
+    <sys:String x:Key="MsgText_ErrorOpeningFile">Error al abrir el archivo {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorReadingFile">Error de lectura del archivo {0}</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Hay un problema con el archivo de idioma.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">No se encontraron registros de eventos para esta actualización.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">No se encontraron registros de registro de eventos que contienen {0}.</sys:String>
