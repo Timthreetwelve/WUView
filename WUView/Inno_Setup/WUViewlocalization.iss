@@ -6,6 +6,7 @@ Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
 Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "nl"; MessagesFile: "compiler:Languages\Dutch.isl"
+Name: "pt"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "sk"; MessagesFile: "compiler:Languages\Slovak.isl"
 
 [LangOptions]
@@ -22,6 +23,7 @@ es.SetupWindowTitle = Instalar - {#MyAppName} {#MyAppVersion}
 fr.SetupWindowTitle = Installer - {#MyAppName} {#MyAppVersion}
 it.SetupWindowTitle = Installazione di {#MyAppName} {#MyAppVersion}
 nl.SetupWindowTitle = Setup - {#MyAppName} {#MyAppVersion}
+pt.SetupWindowTitle = Instalação do {#MyAppName} {#MyAppVersion}
 sk.SetupWindowTitle = Sprievodca inštaláciou - {#MyAppName} {#MyAppVersion}
 
 [CustomMessages]
@@ -73,6 +75,13 @@ nl.NotSelfContained=Hiermee wordt de standaardversie van %1 versie %2 geïnstall
 nl.SelfContainedx64= Hiermee wordt de portable x64 (64-bits) versie van %1 versie %2 geïnstalleerd.%n%n%nHet wordt aanbevolen om alle andere toepassingen te sluiten voordat u doorgaat.%n%nKlik op 'volgende' om door te gaan of op 'annuleren' om de installatie af te sluiten.
 nl.SelfContainedx86=Hiermee wordt de portable x86 (32-bits) versie van %1 versie %2 geïnstalleerd.%n%n%nHet wordt aanbevolen om alle andere toepassingen te sluiten voordat u doorgaat.%n%nKlik op 'volgende' om door te gaan of op 'annuleren' om de installatie af te sluiten.
 nl.ViewReadme=Open de ReadMe file
+
+pt.AppIsRunning=está em execução, feche-o para continuar com a instalação.
+pt.DeleteConfigFiles=Você deseja remover os arquivos de configurações?%n%nSelecione 'Não' se você planeja reinstalar.
+pt.NotSelfContained=Isto instalará a versão padrão do %1 versão %2.%n%nEsta versão necessita de uma instalação existente do .NET 8 Desktop Runtime que é compatível com sistemas de 32 e 64 bits.%n%nÉ recomendado que você feche todas os outros aplicativos antes de continuar.%n%nClique 'Avançar' para continuar ou 'Cancelar' para sair da instalação.
+pt.SelfContainedx64=Isto instalará aversão de 64 bits do %1 versão %2.%n%nÉ recomendado que você feche todas os outros aplicativos antes de continuar.%n%nClique 'Avançar' para continuar ou 'Cancelar' para sair da instalação.
+pt.SelfContainedx86=Isto instalará aversão de 32 bits do %1 versão %2.%n%nÉ recomendado que você feche todas os outros aplicativos antes de continuar.%n%nClique 'Avançar' para continuar ou 'Cancelar' para sair da instalação.
+pt.ViewReadme=Ver o arquivo leiame
 
 sk.AppIsRunning=beží, zatvorte ho, aby ste mohli pokračovať v inštalácii.
 sk.DeleteConfigFiles=Chcete odstrániť súbory nastavení?%n%nAk plánujete preinštalovať, vyberte 'Nie'.
