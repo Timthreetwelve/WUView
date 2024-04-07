@@ -230,7 +230,7 @@
                                 <GridViewColumn>
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock MinWidth="80"
+                                            <TextBlock MinWidth="120"
                                                        Text="{Binding LanguageNative}" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
