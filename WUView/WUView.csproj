@@ -77,7 +77,7 @@
   <!-- Publish to Zip file -->
   <Target Name="PublishZip" AfterTargets="Publish">
     <PropertyGroup>
-      <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishZip\PubZipEx.ps1"</PowerShellScript>
+      <PowerShellScript>-File "V:\Source\Repos\PublishZip\PubZipEx.ps1"</PowerShellScript>
       <Name>-name "Windows Update Viewer"</Name>
       <Version>-version $(AssemblyVersion)</Version>
       <Path>-path "$(ProjectDir)"</Path>
@@ -102,7 +102,7 @@
   <!-- Publish to Inno Setup installer-->
   <Target Name="CompileSetup" AfterTargets="PublishZip">
     <PropertyGroup>
-      <PowerShellScript>-File "D:\Visual Studio\Source\PowerShell\PublishInnoSetup\PubSetupEx.ps1"</PowerShellScript>
+      <PowerShellScript>-File "V:\Source\Repos\PublishInnoSetup\PubSetupEx.ps1"</PowerShellScript>
       <ScriptName>-issScript "$(ProjectDir)Inno_Setup\WUViewEx.iss"</ScriptName>
     </PropertyGroup>
     <!-- This is the framework dependent version -->
