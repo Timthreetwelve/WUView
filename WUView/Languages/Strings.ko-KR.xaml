@@ -1,0 +1,286 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--
+        Refer to the "Contribute a Translation" topic in the Wiki:
+
+        https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation
+
+        =======================================================================
+
+        Application name:            Windows Update Viewer
+
+        Language name:              Korean (ko-KR)
+
+        Translation contributed by: VenusGirl (비너스걸)
+
+        Date last update:              2024/04/05
+
+        ========================================================================
+
+    -->
+
+    <!--  About Page  -->
+    <sys:String x:Key="About_BuildDate">빌드 날짜</sys:String>
+    <sys:String x:Key="About_CommitID">커밋 ID</sys:String>
+    <sys:String x:Key="About_CommitIDToolTip">전체 커밋 ID:</sys:String>
+    <sys:String x:Key="About_Contribute">번역 기여</sys:String>
+    <sys:String x:Key="About_ContributeToolTip">번역에 기여하는 방법</sys:String>
+    <sys:String x:Key="About_Copyright">저작권</sys:String>
+    <sys:String x:Key="About_CreatedBy">제작자</sys:String>
+    <sys:String x:Key="About_CreatedByToolTip">https://github.com/Timthreetwelve에서 Tim의 기타 작업을 참조하세요</sys:String>
+    <sys:String x:Key="About_Description">이 장치의 Windows 업데이트 목록</sys:String>
+    <sys:String x:Key="About_Documentation">문서</sys:String>
+    <sys:String x:Key="About_DocumentationText">ReadMe 파일 열기</sys:String>
+    <sys:String x:Key="About_DocumentationToolTip">ReadMe 파일 보기</sys:String>
+    <sys:String x:Key="About_GitHub">GitHub</sys:String>
+    <sys:String x:Key="About_GitHubToolTip">GitHub의 WUView 페이지 방문</sys:String>
+    <sys:String x:Key="About_License">라이선스</sys:String>
+    <sys:String x:Key="About_LicenseText">이 프로젝트는 MIT 라이선스 조건에 따라 라이선스가 부여됩니다</sys:String>
+    <sys:String x:Key="About_LicenseToolTip">라이선스 문서 보기</sys:String>
+    <sys:String x:Key="About_Translations">번역</sys:String>
+    <sys:String x:Key="About_UpdateWU">WUView 업데이트</sys:String>
+    <sys:String x:Key="About_UpdateWUText">Windows Update Viewer의 새 릴리스 확인</sys:String>
+    <sys:String x:Key="About_UpdateWUToolTip">GitHub에서 최신 릴리스 확인</sys:String>
+    <sys:String x:Key="About_Version">버전</sys:String>
+    <!--  Button Text  -->
+    <sys:String x:Key="Button_Cancel">취소</sys:String>
+    <sys:String x:Key="Button_Close">메뉴 닫기</sys:String>
+    <sys:String x:Key="Button_No">아니오</sys:String>
+    <sys:String x:Key="Button_OK">확인</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">앱 폴더 열기</sys:String>
+    <sys:String x:Key="Button_OpenLogFile">로그 파일 보기</sys:String>
+    <sys:String x:Key="Button_OpenLogFileToolTip">기본 응용프로그램에서 로그 파일을 엽니다.</sys:String>
+    <sys:String x:Key="Button_ThreeDotToolTip">추가 작업</sys:String>
+    <sys:String x:Key="Button_Yes">예</sys:String>
+    <!--  Details Pane  -->
+    <sys:String x:Key="Details_Date">날짜:</sys:String>
+    <sys:String x:Key="Details_Description">설명:</sys:String>
+    <sys:String x:Key="Details_HeadingEventLog">Windows 이벤트 로그 세부 정보:</sys:String>
+    <sys:String x:Key="Details_HeadingUpdate">Windows 업데이트 세부 정보:</sys:String>
+    <sys:String x:Key="Details_HResult">HResult:</sys:String>
+    <sys:String x:Key="Details_KBNum">KB 번호:</sys:String>
+    <sys:String x:Key="Details_Operation">운영:</sys:String>
+    <sys:String x:Key="Details_ResultCode">결과 코드:</sys:String>
+    <sys:String x:Key="Details_SupportURL">지원 URL:</sys:String>
+    <sys:String x:Key="Details_Title">제목:</sys:String>
+    <sys:String x:Key="Details_TitleFallback">위에서 업데이트를 선택하면 자세한 내용이 여기에 표시됩니다.</sys:String>
+    <sys:String x:Key="Details_UpdateID">업데이트 ID:</sys:String>
+    <!--  Exclude List Editor  -->
+    <sys:String x:Key="ExcludesEditor_TextLine1">제외할 문자열 입력 (한 줄당 하나씩)</sys:String>
+    <sys:String x:Key="ExcludesEditor_TextLine2">비교는 대소문자를 구분하지 않습니다</sys:String>
+    <!--  Filter Box Hint Text  -->
+    <sys:String x:Key="FilterHint">필터</sys:String>
+    <!--  DataGrid Column Headers  -->
+    <sys:String x:Key="GridColumn_Date">날짜</sys:String>
+    <sys:String x:Key="GridColumn_KBNum">KB 번호</sys:String>
+    <sys:String x:Key="GridColumn_Result">결과</sys:String>
+    <sys:String x:Key="GridColumn_Title">제목</sys:String>
+    <!--  Menu Items  -->
+    <sys:String x:Key="Menu_Copy">복사(_C)</sys:String>
+    <sys:String x:Key="Menu_File">파일(_F)</sys:String>
+    <sys:String x:Key="Menu_View">보기(_V)</sys:String>
+    <sys:String x:Key="MenuItem_CopyToClipboard">격자를 클립보드로 복사</sys:String>
+    <sys:String x:Key="MenuItem_EditExclude">제외 목록 편집</sys:String>
+    <sys:String x:Key="MenuItem_Exit">종료</sys:String>
+    <sys:String x:Key="MenuItem_Larger">더 큰 보기</sys:String>
+    <sys:String x:Key="MenuItem_OpenWindowsUpdate">Windows 업데이트 열기</sys:String>
+    <sys:String x:Key="MenuItem_Refresh">업데이트 새로 고침</sys:String>
+    <sys:String x:Key="MenuItem_RemoveSort">열 정렬 제거</sys:String>
+    <sys:String x:Key="MenuItem_SaveCSV">격자를 CSV 파일에 저장</sys:String>
+    <sys:String x:Key="MenuItem_SaveJSON">JSON 파일로 내보내기</sys:String>
+    <sys:String x:Key="MenuItem_SaveTXT">텍스트 파일에 세부 정보 저장</sys:String>
+    <sys:String x:Key="MenuItem_Smaller">더 작은 보기</sys:String>
+    <sys:String x:Key="MenuItem_ToggleDetails">세부 정보 창 전환</sys:String>
+    <sys:String x:Key="MenuItem_ToggleExcluded">제외된 항목 전환</sys:String>
+    <!--  Text found in messages (log, message box, status bar, details area, etc.)  -->
+    <sys:String x:Key="MsgText_AllUpdatesExcluded">표시 가능한 모든 업데이트가 제외되었습니다.</sys:String>
+    <sys:String x:Key="MsgText_ApplicationShutdown">종료 중입니다</sys:String>
+    <sys:String x:Key="MsgText_ApplicationStarting">시작 중입니다</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCheckFailed">업데이트에 실패했는지 확인합니다. 자세한 내용은 로그를 참조하세요.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateChecking">업데이트 확인 중입니다.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateClose">'예'를 클릭하면 Windows Update Viewer가 닫힙니다.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateGoToRelease">릴리스 페이지로 이동하시겠습니까?</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateNewerFound">최신 릴리스 ({0})를 찾았습니다.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateNoneFound">최신 릴리스를 찾을 수 없습니다.</sys:String>
+    <sys:String x:Key="MsgText_ColumnSortCleared">열 정렬이 지워짐</sys:String>
+    <sys:String x:Key="MsgText_CopiedToClipboard">클립보드로 복사됨</sys:String>
+    <sys:String x:Key="MsgText_DateFormatChange">날짜 형식 변경</sys:String>
+    <sys:String x:Key="MsgText_DisplayedAllUpdates">모든 {0}개의 업데이트 표시</sys:String>
+    <sys:String x:Key="MsgText_DisplayedUpdates">{1}개의 업데이트 중 {0}개 표시</sys:String>
+    <sys:String x:Key="MsgText_ElapsedTime">경과 시간</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">언어 파일에 문제가 있습니다.</sys:String>
+    <sys:String x:Key="MsgText_ErrorCaption">오류</sys:String>
+    <sys:String x:Key="MsgText_ErrorOpeningFile">{0}을(를) 여는 중 오류 발생</sys:String>
+    <sys:String x:Key="MsgText_ErrorReadingFile">{0}을(를) 읽는 중 오류 발생</sys:String>
+    <sys:String x:Key="MsgText_EventLogNA">이 업데이트에 대한 이벤트 로그 레코드를 찾을 수 없습니다.</sys:String>
+    <sys:String x:Key="MsgText_EventLogNoRecords">"{0}"이(가) 포함된 이벤트 로그 레코드를 찾을 수 없습니다.</sys:String>
+    <sys:String x:Key="MsgText_ExcludingContaining">다음을 포함하는 업데이트 제외:</sys:String>
+    <sys:String x:Key="MsgText_FilterOneRowShown">1행 표시됨</sys:String>
+    <sys:String x:Key="MsgText_FilterRowsShown">{0}개의 행이 표시됨</sys:String>
+    <sys:String x:Key="MsgText_HResultCopiedToClipboard">HResult {0}이(가) 클립보드에 복사됨</sys:String>
+    <sys:String x:Key="MsgText_ListRefreshed">목록 새로 고침</sys:String>
+    <sys:String x:Key="MsgText_NoUpdatesFound">업데이트를 찾을 수 없습니다!</sys:String>
+    <sys:String x:Key="MsgText_Opening">열기</sys:String>
+    <sys:String x:Key="MsgText_OpeningLogFile">로그 파일 열기</sys:String>
+    <sys:String x:Key="MsgText_OpeningReadMeFile">ReadMe 파일 열기</sys:String>
+    <sys:String x:Key="MsgText_OpeningWindowsUpdate">Windows 업데이트 열기</sys:String>
+    <sys:String x:Key="MsgText_UIColorSet">강조 색상이 {0}(으)로 설정됨</sys:String>
+    <sys:String x:Key="MsgText_UISizeSet">크기가 {0}(으)로 설정됨</sys:String>
+    <sys:String x:Key="MsgText_UIThemeSet">테마가 {0}(으)로 설정됨</sys:String>
+    <sys:String x:Key="MsgText_WindowTitleAdministrator">관리자</sys:String>
+    <!--  Navigation Items  -->
+    <sys:String x:Key="NavItem_About">정보</sys:String>
+    <sys:String x:Key="NavItem_Exit">종료</sys:String>
+    <sys:String x:Key="NavItem_Settings">설정</sys:String>
+    <sys:String x:Key="NavItem_Updates">업데이트</sys:String>
+    <sys:String x:Key="NavTitle_About">Windows Update Viewer 정보</sys:String>
+    <sys:String x:Key="NavTitle_Settings">설정</sys:String>
+    <sys:String x:Key="NavTitle_Updates">Windows Update Viewer</sys:String>
+    <!--  Operation Type  -->
+    <sys:String x:Key="OperationType_Installation">설치</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">제거</sys:String>
+    <!--  Result Code  -->
+    <sys:String x:Key="ResultCode_Failed">실패</sys:String>
+    <sys:String x:Key="ResultCode_InProgress">진행 중</sys:String>
+    <sys:String x:Key="ResultCode_NotStarted">시작되지 않음</sys:String>
+    <sys:String x:Key="ResultCode_ResultCode_Aborted">중단됨</sys:String>
+    <sys:String x:Key="ResultCode_Succeeded">성공</sys:String>
+    <sys:String x:Key="ResultCode_SucceededWithErrors">오류와 함께 성공</sys:String>
+    <!--  Settings Page Expander Headings  -->
+    <sys:String x:Key="SettingsSection_AppSettings">응용 프로그램 설정</sys:String>
+    <sys:String x:Key="SettingsSection_Language">언어</sys:String>
+    <sys:String x:Key="SettingsSection_UISettings">UI 설정</sys:String>
+    <sys:String x:Key="SettingsSubHead_AppSettings">업데이트 번호, 날짜 형식, 제외 항목, 세부 정보 등</sys:String>
+    <sys:String x:Key="SettingsSubHead_Language">언어 설정 및 테스트</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">테마, 강조 색상, UI 크기, 행 높이, 시작 위치 등</sys:String>
+    <!--  Settings Page Items  -->
+    <sys:String x:Key="SettingsItem_AccentColor">강조 색상</sys:String>
+    <sys:String x:Key="SettingsItem_ChangingLanguageWarning">언어를 변경하면 응용 프로그램이 다시 시작됩니다!</sys:String>
+    <sys:String x:Key="SettingsItem_DateFormat">격자 날짜 형식</sys:String>
+    <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-클릭하여 기본 응용 프로그램으로 파일 열기</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">언어 테스트 사용</sys:String>
+    <sys:String x:Key="SettingsItem_HideExcluded">제외된 항목 숨기기</sys:String>
+    <sys:String x:Key="SettingsItem_IncludeDebug">로그 파일에 디버그 수준 메시지 포함</sys:String>
+    <sys:String x:Key="SettingsItem_KeepOnTop">Windows Update Viewer를 다른 창 위에 유지</sys:String>
+    <sys:String x:Key="SettingsItem_Language">언어</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdates">업데이트 번호</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">이는 업데이트가 제외되기 전에 처리할 최대 업데이트 수입니다.</sys:String>
+    <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">이 값을 더 낮게 설정하면 성능이 향상될 수 있습니다.</sys:String>
+    <sys:String x:Key="SettingsItem_ParseAdditional">항목 제외는 업데이트 제목 외에 KB 번호, 결과 및 업데이트 ID를 구문 분석</sys:String>
+    <sys:String x:Key="SettingsItem_RowHeight">행 높이</sys:String>
+    <sys:String x:Key="SettingsItem_SelectFirstRow">시작 시 첫 번째 행 선택</sys:String>
+    <sys:String x:Key="SettingsItem_ShowDetails">세부 정보 패널 표시</sys:String>
+    <sys:String x:Key="SettingsItem_ShowExit">탐색 표시줄에 종료 표시</sys:String>
+    <sys:String x:Key="SettingsItem_ShowLogWarnings">HResult 값이 0이 아닌 경우 로그에 경고 메시지 표시</sys:String>
+    <sys:String x:Key="SettingsItem_ShowTodayInBold">현재 날짜의 업데이트를 굵게 표시</sys:String>
+    <sys:String x:Key="SettingsItem_StartCentered">화면 중앙에 있는 창으로 시작</sys:String>
+    <sys:String x:Key="SettingsItem_Theme">테마</sys:String>
+    <sys:String x:Key="SettingsItem_UISize">UI 크기</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Windows 디스플레이 언어 사용</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">이 옵션을 선택하면 번역을 사용할 수 있는 경우 Windows 설정에 지정된</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">언어가 사용되고 그렇지 않으면 영어 (en-US)가 사용됩니다.</sys:String>
+    <!--  Enums for Combo Boxes on the Settings Page  -->
+    <sys:String x:Key="SettingsEnum_AccentColor_Amber">황색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Black">검정</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Blue">파랑</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_BlueGray">청회색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Brown">갈색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Cyan">청록색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_DeepOrange">진한 주황색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_DeepPurple">진한 보라색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Gray">회색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Green">녹색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Indigo">남색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_LightBlue">연한 파랑</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_LightGreen">연한 녹색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Lime">라임색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Orange">주황색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Pink">분홍색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Purple">보라색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Red">빨강</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Teal">청록색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_White">흰색</sys:String>
+    <sys:String x:Key="SettingsEnum_AccentColor_Yellow">노랑색</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">지역: 날짜만</sys:String>
+    <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">지역: 날짜 및 시간</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_100">가장 최근의 100개</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_250">가장 최근의 250개</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_50">가장 최근의 50개</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_500">가장 최근의 500개</sys:String>
+    <sys:String x:Key="SettingsEnum_MaxUpdates_All">모든 업데이트</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Default">100%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Large">105%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Larger">110%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Largest">120%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Small">95%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Smaller">90%</sys:String>
+    <sys:String x:Key="SettingsEnum_Size_Smallest">80%</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Comfortable">편안한</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Compact">촘촘한</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Wide">와이드</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Dark">어두운 소재</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Darker">어두운</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Light">밝은</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_System">시스템</sys:String>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    LANGUAGE FILE UPDATES
+
+    Additions, Deletions and Updates will be made in the appropriate sections above. Each change will
+    be associated with a comment made below this block.
+
+    Comment Format:
+       There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
+       Modified lines will follow, one comment line per line changed.
+       Comment lines use this syntax:  Change Type | Key Name
+
+     Change type:
+       A = Added
+       D = Deleted
+       U = Updated
+       * = Comment not related to a single line
+     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <!-- Begin changes on 2023/11/05 @ 21:15 UTC -->
+    <!-- U | About_Contribute -->
+    <!-- A | About_ContributeToolTip -->
+    <!-- A | Button_No -->
+    <!-- A | Button_OpenAppFolder -->
+    <!-- A | Button_Yes -->
+    <!-- A | MenuItem_SaveJSON -->
+    <!-- A | OperationType_Installation -->
+    <!-- A | OperationType_Uninstallation -->
+    <!-- A | ResultCode_Failed -->
+    <!-- A | ResultCode_InProgress -->
+    <!-- A | ResultCode_NotStarted -->
+    <!-- A | ResultCode_ResultCode_Aborted -->
+    <!-- A | ResultCode_Succeeded -->
+    <!-- A | ResultCode_SucceededWithErrors -->
+    <!-- A | SettingsItem_EnableLanguageTesting -->
+    <!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
+    <!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
+    <!-- U | SettingsSubHead_Language -->
+    <!-- End of changes on 2023/11/05 -->
+
+    <!-- Begin changes on 2023/11/13 @ 03:02 UTC -->
+    <!-- A | About_GitHub -->
+    <!-- A | Button_Close -->
+    <!-- End of changes on 2023/11/13 -->
+
+    <!-- Begin changes on 2023/11/28 @ 02:00 UTC -->
+    <!-- A | MsgText_AppUpdateCloseGetMyIP -->
+    <!-- End of changes on 2023/11/28 @ 02:00 UTC -->
+
+    <!-- Begin changes on 2024/04/03 @ 18:00 UTC -->
+    <!-- A | MsgText_ErrorCaption  -->
+    <!-- A | MsgText_ErrorOpeningFile  -->
+    <!-- A | MsgText_ErrorReadingFile  -->
+    <!-- End of changes on 2024/04/03 @ 18:00 UTC -->
+    
+    <!-- Begin changes on 2024/05/05 @ 17:30 UTC-->
+    <!-- D | MsgText_AppUpdateCloseGetMyIP -->
+    <!-- A | MsgText_AppUpdateClose -->
+    <!-- End of changes on 2024/05/05 @ 17:30 UTC-->
+</ResourceDictionary>
