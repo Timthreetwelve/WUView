@@ -1,5 +1,6 @@
-﻿[Languages]
+[Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
+Name: "ko"; MessagesFile: "compiler:Languages\Korean.isl"
 Name: "ca"; MessagesFile: "compiler:Languages\Catalan.isl"
 Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
@@ -33,6 +34,13 @@ en.NotSelfContained=This will install the standard version of %1 version %2.%n%n
 en.SelfContainedx64=This will install the self-contained x64 (64-bit) version of %1 version %2.%n%nIt Is recommended that you close all other applications before continuing.%n%nClick 'Next' to continue, or 'Cancel' to exit Setup.
 en.SelfContainedx86=This will install the self-contained x86 (32-bit) version of %1 version %2.%n%nIt Is recommended that you close all other applications before continuing.%n%nClick 'Next' to continue, or 'Cancel' to exit Setup.
 en.ViewReadme=View the ReadMe file
+
+ko.AppIsRunning=가 실행 중입니다. 설치를 계속하려면 닫으세요.
+ko.DeleteConfigFiles=설정 파일을 제거하시겠습니까?%n%n재설치할 계획인 경우 '아니오'를 선택하세요.
+ko.NotSelfContained=이렇게 하면 %1 버전 %2.%n%n의 표준 버전이 설치됩니다. 이 버전은 .NET 8 데스크탑 런타임의 기존 설치가 필요하며 x64 및 x86 시스템과 모두 호환됩니다.%n%n계속하기 전에 다른 모든 응용 프로그램을 닫는 것이 좋습니다.%n%n계속하려면 '다음'을 클릭하고 설치를 종료하려면 '취소'를 클릭하세요.
+ko.SelfContainedx64=이렇게 하면 %1 버전 %2.%n%n%n의 자체 포함 x64 (64비트) 버전이 설치됩니다.%n%n계속하기 전에 다른 모든 응용 프로그램을 닫는 것이 좋습니다.%n%n'다음'을 클릭하여 계속하거나 '취소'를 클릭하여 설치를 종료합니다.
+ko.SelfContainedx86=이렇게 하면 %1 버전 %2.%n%n%n의 자체 포함 x86 (32비트) 버전이 설치됩니다.%n%n계속하기 전에 다른 모든 응용 프로그램을 닫는 것이 좋습니다.%n%n'다음'을 클릭하여 계속하거나 '취소'를 클릭하여 설치를 종료합니다.
+ko.ViewReadme=ReadMe 파일 보기
 
 ca.AppIsRunning=s'està executant, tanqueu-lo per continuar amb la instal·lació.
 ca.DeleteConfigFiles=Voleu eliminar la configuració i excloure fitxers?%n%nSeleccioneu 'No' si teniu previst tornar a instal·lar.
