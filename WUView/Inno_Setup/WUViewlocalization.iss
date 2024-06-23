@@ -23,6 +23,7 @@ en.SetupWindowTitle = Setup - {#MyAppName} {#MyAppVersion}
 es.SetupWindowTitle = Instalar - {#MyAppName} {#MyAppVersion}
 fr.SetupWindowTitle = Installer - {#MyAppName} {#MyAppVersion}
 it.SetupWindowTitle = Installazione di {#MyAppName} {#MyAppVersion}
+ko.SetupWindowTitle = 설치 - {#MyAppName} {#MyAppVersion}
 nl.SetupWindowTitle = Setup - {#MyAppName} {#MyAppVersion}
 pt.SetupWindowTitle = Instalação do {#MyAppName} {#MyAppVersion}
 sk.SetupWindowTitle = Sprievodca inštaláciou - {#MyAppName} {#MyAppVersion}
