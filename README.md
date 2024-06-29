@@ -43,7 +43,7 @@ Languages are being added as of version 0.5.21. Please see [Contribute a Transla
 Windows update viewer is now available through Windows Package Manager (a.k.a. winget)! Many thanks to [@ottnorml](https://github.com/ottnorml) for making this happen!👏 Using winget, the name is `"Windows Update Viewer"` (use double quotes since the name has spaces). The ID is `Timthreetwelve.WUView`. Note that the winget version is typically available 12-36 hours after a release is published here.
 
 ### Download Windows Update Viewer
-You can always download the latest release from the [releases page](https://github.com/Timthreetwelve/WUView/releases). Note that a "portable" release (the one with "NonInstall.zip" in the file name) is provided as well as the traditional installer.
+You can always download the latest release from the [releases page](https://github.com/Timthreetwelve/WUView/releases). Note that "portable" releases are provided as well as the traditional installers.
 
 ### Features
 * View details for each update, including Event Log entries, if available.
