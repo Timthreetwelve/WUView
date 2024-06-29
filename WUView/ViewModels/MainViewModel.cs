@@ -252,9 +252,9 @@ internal partial class MainViewModel : ObservableObject
                 }
             }
         }
-        catch (EventLogNotFoundException e)
+        catch (EventLogNotFoundException ex)
         {
-            _log.Error($"Error while reading the event logs\n{e.Message}");
+            _log.Error(ex, $"Error while reading the event logs\n{ex.Message}");
         }
         swe.Stop();
         _log.Debug($"Read {EventLogRecords.Count} Setup event log records in {swe.Elapsed.TotalMilliseconds:N2} milliseconds");
