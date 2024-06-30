@@ -31,7 +31,7 @@ internal partial class MainViewModel : ObservableObject
     {
         Stopwatch sw = new();
         sw.Start();
-        UpdateSession updateSession = new();
+        IUpdateSession updateSession = new();
         IUpdateSearcher updateSearcher = updateSession.CreateUpdateSearcher();
         int count = updateSearcher.GetTotalHistoryCount();
         _log.Debug($"Read {count} Windows Update records in {sw.Elapsed.TotalMilliseconds:N2} milliseconds");

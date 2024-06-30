@@ -41,8 +41,6 @@ global using NLog;
 global using NLog.Config;
 global using NLog.Targets;
 
-global using WUApiLib;
-
 global using WUView.Configuration;
 global using WUView.Constants;
 global using WUView.Converters;
@@ -54,3 +52,5 @@ global using WUView.Views;
 
 global using static WUView.Helpers.NLogHelpers;
 global using static WUView.Helpers.ResourceHelpers;
+
+global using static Vanara.PInvoke.WUApi;

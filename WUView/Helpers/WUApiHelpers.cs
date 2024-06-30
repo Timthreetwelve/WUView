@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Helpers;
 
@@ -19,8 +19,8 @@ internal static class WUApiHelpers
 
     private static string GetWUAInfo(string wuaObj)
     {
-        WindowsUpdateAgentInfo updateAgentInfo = new();
-        string value = updateAgentInfo.GetInfo(wuaObj).ToString();
+        IWindowsUpdateAgentInfo updateAgentInfo = new();
+        string value = updateAgentInfo.GetInfo(wuaObj).ToString()!;
         return value ?? string.Empty;
     }
 

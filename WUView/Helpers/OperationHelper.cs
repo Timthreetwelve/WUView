@@ -11,12 +11,12 @@ public static class OperationHelper
     /// </summary>
     /// <param name="operation">Operation type from update history.</param>
     /// <returns>Operation type as localized string.</returns>
-    public static string TranslateOperation(tagUpdateOperation operation)
+    public static string TranslateOperation(UpdateOperation operation)
     {
         return operation switch
         {
-            tagUpdateOperation.uoInstallation => GetStringResource("OperationType_Installation"),
-            tagUpdateOperation.uoUninstallation => GetStringResource("OperationType_Uninstallation"),
+            UpdateOperation.uoInstallation => GetStringResource("OperationType_Installation"),
+            UpdateOperation.uoUninstallation => GetStringResource("OperationType_Uninstallation"),
             _ => "unknown",
         };
     }
