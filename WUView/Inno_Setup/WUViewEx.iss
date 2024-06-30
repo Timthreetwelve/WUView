@@ -17,7 +17,7 @@
 #define MySourceDir          BaseDir + PublishFolder
 #define MySetupIcon          BaseDir + "\Images\UV.ico"
 #define MyOutputDir          "D:\InnoSetup\Output"
-#define MyLargeImage         "D:\InnoSetup\Images\WizardImageWUV2.bmp"
+#define MyLargeImage         "D:\InnoSetup\Images\WizardImageWUV.bmp"
 #define MySmallImage         "D:\InnoSetup\Images\WizardSmallImage.bmp"
 
 #define MyAppID              "{3A152885-8378-4FDE-AFCC-85D096B16A1D}"
