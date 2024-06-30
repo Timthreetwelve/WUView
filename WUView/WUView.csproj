@@ -105,6 +105,8 @@
     <PropertyGroup>
       <PowerShellScript>-File "V:\Source\Repos\PublishInnoSetup\PubSetupEx.ps1"</PowerShellScript>
       <ScriptName>-issScript "$(ProjectDir)Inno_Setup\WUViewEx.iss"</ScriptName>
+      <Name>-name $(AssemblyName)</Name>
+      <Version>-version $(AssemblyVersion)</Version>
     </PropertyGroup>
     <!-- This is the framework dependent version -->
     <PropertyGroup Condition="'$(PublishDir.Contains(`Framework_Dependent`))'">
@@ -119,7 +121,7 @@
       <PubType>-publishType SC_x86</PubType>
     </PropertyGroup>
     <!-- Execute the PowerShell script -->
-    <Exec Command="pwsh -NoProfile $(PowerShellScript) $(ScriptName) $(PublishDir) $(PubType) " />
+    <Exec Command="pwsh -NoProfile $(PowerShellScript) $(ScriptName) $(PublishDir) $(PubType) $(version) $(Name)" />
   </Target>
 
   <!-- Remove obj folder after Clean -->
