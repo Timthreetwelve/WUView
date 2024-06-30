@@ -111,6 +111,7 @@ internal static class MainWindowHelpers
     private static void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
         WUApiHelpers.LogWUAInfo();
+        WUApiHelpers.LogWUEnabled();
     }
 
     public static void MainWindow_ContentRendered(object sender, EventArgs e)
