@@ -19,8 +19,6 @@
     <GenerateAssemblyVersionAttribute>False</GenerateAssemblyVersionAttribute>
   </PropertyGroup>
 
-
-
   <ItemGroup>
     <Content Include="Strings.test.xaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -96,7 +94,7 @@
     <PropertyGroup>
       <PowerShellScript>-File "V:\Source\Repos\PublishInnoSetup\PubSetupEx.ps1"</PowerShellScript>
       <ScriptName>-issScript "$(ProjectDir)Inno_Setup\WUViewEx.iss"</ScriptName>
-      <Name>-name $(AssemblyName)</Name>
+      <Name>-name "Windows Update Viewer"</Name>
       <Version>-version $(AssemblyVersion)</Version>
     </PropertyGroup>
     <!-- This is the framework dependent version -->
