@@ -12,5 +12,4 @@ updates:
       interval: "daily"
     open-pull-requests-limit: 25
     ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
+      - dependency-name: "GitVersion.MsBuild"
