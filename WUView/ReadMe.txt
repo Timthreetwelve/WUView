@@ -124,7 +124,7 @@ Windows Update Viewer uses the following packages and applications:
 
     * OctoKit https://github.com/octokit/octokit.net
 
-    * GitVersion https://github.com/GitTools/GitVersion
+
 
     * ResX Resource Manager was used for localization in earlier versions. https://github.com/dotnet/ResXResourceManager
 

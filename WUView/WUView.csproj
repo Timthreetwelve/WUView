@@ -14,9 +14,6 @@
     <Product>Windows Update Viewer</Product>
     <ApplicationIcon>Images\UV.ico</ApplicationIcon>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <GenerateAssemblyFileVersionAttribute>False</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyInformationalVersionAttribute>False</GenerateAssemblyInformationalVersionAttribute>
-    <GenerateAssemblyVersionAttribute>False</GenerateAssemblyVersionAttribute>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,10 +30,6 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
-    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
     <PackageReference Include="NLog" Version="5.3.4" />
     <PackageReference Include="Octokit" Version="13.0.1" />
