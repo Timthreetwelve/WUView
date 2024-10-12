@@ -31,6 +31,7 @@
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
     <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.143" PrivateAssets="all" />
     <PackageReference Include="NLog" Version="5.3.4" />
     <PackageReference Include="Octokit" Version="13.0.1" />
     <PackageReference Include="Vanara.PInvoke.User32" Version="4.0.4" />
