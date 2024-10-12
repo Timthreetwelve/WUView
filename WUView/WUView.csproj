@@ -48,14 +48,18 @@
   </ItemGroup>
 
   <!-- Generate BuildInfo.cs-->
-  <Target Name="BuildInfo" AfterTargets="UpdateAssemblyInfo">
-    <Message Importance="high" Text="Beginning GenBuildInfo for $(AssemblyName). Version is $(AssemblyVersion)" />
+  <Target Name="BuildInfo" AfterTargets="BeforeBuild">
+    <Message Importance="high" Text="Generating BuildInfo for $(AssemblyName)." />
     <PropertyGroup>
       <PowerShellScript>-File "$(ProjectDir)PowerShell\GenBuildInfo.ps1"</PowerShellScript>
       <Name>-assemblyName $(AssemblyName)</Name>
-      <Version>-assemblyVersion $(AssemblyVersion)</Version>
     </PropertyGroup>
-    <Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name) $(Version)" />
+    <Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name)" />
+  </Target>
+
+  <!-- Build complete message -->
+  <Target Name="VersionMessage" AfterTargets="AfterBuild">
+    <Message Importance="high" Text="Build complete for $(AssemblyName). Assembly Version is $(AssemblyVersion)." />
   </Target>
 
   <!-- Remove obj folder after Clean -->
