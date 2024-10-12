@@ -91,7 +91,7 @@ DisableStartupPrompt=yes
 DisableWelcomePage=no
 OutputBaseFilename={#MyInstallerFilename}
 OutputDir={#MyOutputDir}
-OutputManifestFile={#MyAppName}_{#MyAppVersion}_{#InstallType}_FileList.txt
+;OutputManifestFile={#MyAppName}_{#MyAppVersion}_{#InstallType}_FileList.txt
 SetupIconFile={#MySetupIcon}
 SetupLogging=yes
 SolidCompression=no
@@ -127,7 +127,7 @@ Root: HKCU; Subkey: "Software\{#MyCompanyName}\{#MyAppName}"; ValueType: string;
 Root: HKCU; Subkey: "Software\{#MyCompanyName}\{#MyAppName}"; ValueType: none; ValueName: "Edition"; Flags: uninsdeletekey deletevalue
 
 [Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent unchecked shellexec
+Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent shellexec
 Filename: "{app}\ReadMe.txt"; Description: "{cm:ViewReadme}"; Flags: nowait postinstall skipifsilent unchecked shellexec
 
 [UninstallRun]
