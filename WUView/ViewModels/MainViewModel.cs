@@ -124,7 +124,7 @@ internal sealed partial class MainViewModel : ObservableObject
             return "n/a";
         }
         title = title.Replace("(", "").Replace(")", "");
-        int pos = title.IndexOf("KB");
+        int pos = title.IndexOf("KB", StringComparison.InvariantCulture);
         if (pos > -1)
         {
             int endPosition = title.IndexOf(' ', pos);
