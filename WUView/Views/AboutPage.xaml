@@ -6,13 +6,14 @@
              xmlns:buildinfo="clr-namespace:WUView"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:helpers="clr-namespace:WUView.Helpers"
+             xmlns:global="clr-namespace:System.Globalization;assembly=mscorlib"
              xmlns:local="clr-namespace:WUView.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:models="clr-namespace:WUView.Models"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="650" d:DesignWidth="800"
              FontSize="14"
              TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}">
 
@@ -58,8 +59,9 @@
                 <Image Grid.Row="0" Grid.RowSpan="2"
                        Grid.Column="2"
                        Width="50"
-                       Margin="10,0" Panel.ZIndex="1"
-                       HorizontalAlignment="Right">
+                       Margin="10,0"
+                       HorizontalAlignment="Right"
+                       Panel.ZIndex="1">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
                             <Setter Property="Source" Value="\Images\UV.png" />
@@ -120,9 +122,12 @@
 
                 <TextBlock Grid.Row="5" Grid.Column="0"
                            Text="{DynamicResource About_BuildDate}" />
-                <TextBlock x:Name="txtBuildDate"
-                           Grid.Row="5" Grid.Column="2"
-                           TextWrapping="Wrap" />
+                <StackPanel Grid.Row="5" Grid.Column="2"
+                            Orientation="Horizontal">
+                    <TextBlock Text="{Binding Source={x:Static buildinfo:BuildInfo.BuildDateUtc}, StringFormat=f, ConverterCulture={x:Static global:CultureInfo.CurrentUICulture}}" />
+                    <TextBlock Margin="10,0"
+                               Text="(UTC)" />
+                </StackPanel>
 
                 <TextBlock Grid.Row="6" Grid.Column="0"
                            Text="{DynamicResource About_CommitID}" />
@@ -189,6 +194,13 @@
                 </TextBlock>
                 <!--#endregion-->
 
+                <!--#region Separator-->
+                <Separator Grid.Row="10" Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                           Margin="0,0,0,7"
+                           Background="{DynamicResource MaterialDesign.Brush.TextBox.HoverBackground}" />
+                <!--#endregion-->
+
                 <!--#region Translations-->
                 <Grid Grid.Row="11" Grid.Column="0">
                     <Grid.RowDefinitions>
@@ -197,6 +209,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0"
+                               FontWeight="SemiBold"
                                Text="{DynamicResource About_Translations}" />
 
                     <TextBlock Grid.Row="1">
@@ -210,48 +223,26 @@
                     </TextBlock>
                 </Grid>
 
-                <Border Grid.Row="11" Grid.Column="2"
-                        Width="auto"
-                        Margin="0,0,20,0"
-                        HorizontalAlignment="Left"
-                        BorderBrush="{DynamicResource MaterialDesign.Brush.ForegroundLight}"
-                        BorderThickness="1">
-                    <ListView Width="auto" MinWidth="250"
-                              MaxHeight="155"
-                              Margin="0,-1"
-                              materialDesign:ListViewAssist.ListViewItemPadding="10,5,30,8"
-                              ItemsSource="{x:Static models:UILanguage.DefinedLanguages}"
-                              PreviewMouseDown="ListView_PreviewMouseDown"
-                              ScrollViewer.HorizontalScrollBarVisibility="auto"
-                              ScrollViewer.VerticalScrollBarVisibility="auto">
-                        <ListView.Resources>
-                            <Style TargetType="GridViewColumnHeader">
-                                <Setter Property="Template" Value="{x:Null}" />
-                            </Style>
-                        </ListView.Resources>
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn>
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <TextBlock MinWidth="120"
-                                                       Text="{Binding LanguageNative}" />
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                                <GridViewColumn>
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <TextBlock MinWidth="70"
-                                                       Text="{Binding LanguageCode}" />
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Contributor}" />
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </Border>
+                <DataGrid Grid.Row="11" Grid.Column="2"
+                          HorizontalAlignment="Left"
+                          materialDesign:DataGridAssist.CellPadding="3,3,3,3"
+                          AutoGenerateColumns="False"
+                          Background="{DynamicResource MaterialDesign.Brush.Card.Background}"
+                          BorderThickness="1"
+                          CellStyle="{StaticResource DisplayOnly}"
+                          HeadersVisibility="None"
+                          IsReadOnly="True"
+                          ItemsSource="{x:Static models:UILanguage.DefinedLanguages}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding LanguageNative}"
+                                            MinWidth="110" />
+                        <DataGridTextColumn MinWidth="10" />
+                        <DataGridTextColumn Binding="{Binding LanguageCode}"
+                                            MinWidth="90" />
+                        <DataGridTextColumn Binding="{Binding Contributor}"
+                                            MinWidth="200" />
+                    </DataGrid.Columns>
+                </DataGrid>
                 <!--#endregion-->
 
             </Grid>

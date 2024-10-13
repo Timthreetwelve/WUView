@@ -9,12 +9,5 @@ public partial class AboutPage : UserControl
     public AboutPage()
     {
         InitializeComponent();
-
-        txtBuildDate.Text = $"{BuildInfo.BuildDateUtc:f}  (UTC)";
-    }
-
-    private void ListView_PreviewMouseDown(object sender, MouseButtonEventArgs e)
-    {
-        e.Handled = true;
     }
 }

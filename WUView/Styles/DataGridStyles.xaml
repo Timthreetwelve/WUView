@@ -14,6 +14,14 @@
     </Style>
     <!--#endregion-->
 
+    <!--#region Cell style-->
+    <Style TargetType="DataGridCell"
+           x:Key="DisplayOnly"
+           BasedOn="{StaticResource {x:Type DataGridCell}}">
+        <Setter Property="Focusable" Value="False" />
+    </Style>
+    <!--#endregion-->
+
     <!--#region DataGrid row style-->
     <Style TargetType="DataGridRow"
            x:Key="HiliteTodayStyle"
