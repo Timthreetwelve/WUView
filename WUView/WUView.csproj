@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\TK.png" />
+    <Resource Include="Images\InvertedUV.png" />
     <Resource Include="Images\UV.ico" />
     <Resource Include="Images\UV.png" />
   </ItemGroup>

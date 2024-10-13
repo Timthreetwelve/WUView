@@ -58,14 +58,14 @@
                 <Image Grid.Row="0" Grid.RowSpan="2"
                        Grid.Column="2"
                        Width="50"
-                       Margin="10,0"
+                       Margin="10,0" Panel.ZIndex="1"
                        HorizontalAlignment="Right">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
                             <Setter Property="Source" Value="\Images\UV.png" />
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Source" Value="\Images\TK.png" />
+                                    <Setter Property="Source" Value="\Images\InvertedUV.png" />
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
