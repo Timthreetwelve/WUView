@@ -14,8 +14,6 @@ public partial class App : Application
     public static int LanguageStrings { get; set; }
 
     /// <summary>
-    /// Uri of the resource dictionary
-    /// </summary>
     /// Number of language strings in the test resource dictionary
     /// </summary>
     public static int TestLanguageStrings { get; set; }
