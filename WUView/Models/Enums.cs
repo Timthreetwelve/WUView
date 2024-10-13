@@ -64,13 +64,13 @@ public enum AccentColor
     [LocalizedDescription("SettingsEnum_AccentColor_Purple")]
     Purple = 2,
     [LocalizedDescription("SettingsEnum_AccentColor_DeepPurple")]
-    Deep_Purple = 3,
+    DeepPurple = 3,
     [LocalizedDescription("SettingsEnum_AccentColor_Indigo")]
     Indigo = 4,
     [LocalizedDescription("SettingsEnum_AccentColor_Blue")]
     Blue = 5,
     [LocalizedDescription("SettingsEnum_AccentColor_LightBlue")]
-    Light_Blue = 6,
+    LightBlue = 6,
     [LocalizedDescription("SettingsEnum_AccentColor_Cyan")]
     Cyan = 7,
     [LocalizedDescription("SettingsEnum_AccentColor_Teal")]
@@ -78,7 +78,7 @@ public enum AccentColor
     [LocalizedDescription("SettingsEnum_AccentColor_Green")]
     Green = 9,
     [LocalizedDescription("SettingsEnum_AccentColor_LightGreen")]
-    Light_Green = 10,
+    LightGreen = 10,
     [LocalizedDescription("SettingsEnum_AccentColor_Lime")]
     Lime = 11,
     [LocalizedDescription("SettingsEnum_AccentColor_Yellow")]
@@ -88,13 +88,13 @@ public enum AccentColor
     [LocalizedDescription("SettingsEnum_AccentColor_Orange")]
     Orange = 14,
     [LocalizedDescription("SettingsEnum_AccentColor_DeepOrange")]
-    Deep_Orange = 15,
+    DeepOrange = 15,
     [LocalizedDescription("SettingsEnum_AccentColor_Brown")]
     Brown = 16,
     [LocalizedDescription("SettingsEnum_AccentColor_Gray")]
     Gray = 17,
     [LocalizedDescription("SettingsEnum_AccentColor_BlueGray")]
-    Blue_Gray = 18,
+    BlueGray = 18,
     [LocalizedDescription("SettingsEnum_AccentColor_Black")]
     Black = 19,
     [LocalizedDescription("SettingsEnum_AccentColor_White")]
