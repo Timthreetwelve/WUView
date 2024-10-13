@@ -9,7 +9,7 @@ namespace WUView.Converters;
 /// Based on https://brianlagunas.com/a-better-way-to-data-bind-enums-in-wpf/
 /// </remarks>
 /// <seealso cref="System.Windows.Markup.MarkupExtension" />
-internal class EnumBindingSourceExtension : MarkupExtension
+internal sealed class EnumBindingSourceExtension : MarkupExtension
 {
     private Type _enumType;
     public Type EnumType

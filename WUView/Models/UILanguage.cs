@@ -6,7 +6,7 @@ namespace WUView.Models;
 /// Class for language properties.
 /// </summary>
 /// <seealso cref="CommunityToolkit.Mvvm.ComponentModel.ObservableObject" />
-internal partial class UILanguage : ObservableObject
+internal sealed partial class UILanguage : ObservableObject
 {
     #region Properties
     /// <summary>

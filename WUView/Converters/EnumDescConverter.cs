@@ -8,7 +8,7 @@ namespace WUView.Converters;
 /// <remarks>
 /// Allows use of "Light Blue" instead of LightBlue or Light_Blue.
 /// </remarks>
-internal class EnumDescConverter : IValueConverter
+internal sealed class EnumDescConverter : IValueConverter
 {
     /// <summary>
     /// Converts a value.

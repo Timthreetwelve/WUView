@@ -2,7 +2,7 @@
 
 namespace WUView.ViewModels;
 
-internal partial class MainViewModel : ObservableObject
+internal sealed partial class MainViewModel : ObservableObject
 {
     #region Event record and WUpdate Lists
     public static List<EventRecord> EventLogRecords { get; set; } = [];

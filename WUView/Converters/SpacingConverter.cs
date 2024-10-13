@@ -6,7 +6,7 @@ namespace WUView.Converters;
 /// Converter that changes Spacing to Thickness
 /// </summary>
 /// <seealso cref="System.Windows.Data.IValueConverter" />
-internal class SpacingConverter : IValueConverter
+internal sealed class SpacingConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

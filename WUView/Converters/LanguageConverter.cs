@@ -2,7 +2,7 @@
 
 namespace WUView.Converters;
 
-internal class LanguageConverter : IValueConverter
+internal sealed class LanguageConverter : IValueConverter
 {
     /// <summary>
     /// Convert the UILanguage object.

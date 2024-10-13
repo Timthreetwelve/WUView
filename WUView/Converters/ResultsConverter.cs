@@ -6,7 +6,7 @@ namespace WUView.Converters;
 /// Updates strings to the desired format.
 /// </summary>
 /// <seealso cref="System.Windows.Data.IValueConverter" />
-class ResultsConverter : IValueConverter
+internal sealed class ResultsConverter : IValueConverter
 {
     public object? Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

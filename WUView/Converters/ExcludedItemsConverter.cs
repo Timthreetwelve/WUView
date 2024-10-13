@@ -6,7 +6,7 @@ namespace WUView.Converters;
 /// Converts excluded items in the observable collection to strings for use in a textbox
 /// </summary>
 /// <seealso cref="System.Windows.Data.IValueConverter" />
-internal class ExcludedItemsConverter : IValueConverter
+internal sealed class ExcludedItemsConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

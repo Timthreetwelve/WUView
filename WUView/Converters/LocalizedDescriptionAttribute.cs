@@ -9,7 +9,7 @@ namespace WUView.Converters;
 /// Based on https://brianlagunas.com/localize-enum-descriptions-in-wpf/
 /// </remarks>
 /// <seealso cref="System.ComponentModel.DescriptionAttribute" />
-internal class LocalizedDescriptionAttribute(string resourceKey) : DescriptionAttribute
+internal sealed class LocalizedDescriptionAttribute(string resourceKey) : DescriptionAttribute
 {
     readonly string _resourceKey = resourceKey;
 

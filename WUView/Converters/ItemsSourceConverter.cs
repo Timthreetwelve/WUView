@@ -6,7 +6,7 @@ namespace WUView.Converters;
 /// Sets the desired of updates.
 /// </summary>
 /// <seealso cref="System.Windows.Data.IValueConverter" />
-internal class ItemsSourceConverter : IValueConverter
+internal sealed class ItemsSourceConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

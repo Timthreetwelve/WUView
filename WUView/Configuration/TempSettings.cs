@@ -6,7 +6,7 @@ namespace WUView.Configuration;
 /// Class for non-persistent settings.
 /// </summary>
 [INotifyPropertyChanged]
-internal partial class TempSettings : ConfigManager<TempSettings>
+internal sealed partial class TempSettings : ConfigManager<TempSettings>
 {
     [ObservableProperty]
     private static bool _appExpanderOpen;
