@@ -141,7 +141,7 @@
     <sys:String x:Key="ResultCode_Failed">Fehlgeschlagen</sys:String>
     <sys:String x:Key="ResultCode_InProgress">In der Arbeit</sys:String>
     <sys:String x:Key="ResultCode_NotStarted">Nicht gestarted</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Abgebrochen</sys:String>
+    <sys:String x:Key="ResultCode_Aborted">Abgebrochen</sys:String>
     <sys:String x:Key="ResultCode_Succeeded">Erfolgreich</sys:String>
     <sys:String x:Key="ResultCode_SucceededWithErrors">Erfolgreich mit Fehlern</sys:String>
     <!--  Settings Page Expander Headings  -->
@@ -271,7 +271,7 @@
 <!--  U | NavTitle_Updates  -->
 <!--  U | ResultCode_Failed  -->
 <!--  U | ResultCode_NotStarted  -->
-<!--  U | ResultCode_ResultCode_Aborted  -->
+<!--  U | ResultCode_Aborted  -->
 <!--  U | ResultCode_Succeeded  -->
 <!--  U | SettingsEnum_Theme_Light  -->
 <!--  U | SettingsSubHead_Language  -->
@@ -289,7 +289,7 @@
 <!--  A | ResultCode_Failed  -->
 <!--  A | ResultCode_InProgress  -->
 <!--  A | ResultCode_NotStarted  -->
-<!--  A | ResultCode_ResultCode_Aborted  -->
+<!--  A | ResultCode_Aborted  -->
 <!--  A | ResultCode_Succeeded  -->
 <!--  A | ResultCode_SucceededWithErrors  -->
 <!--  A | SettingsItem_EnableLanguageTesting  -->

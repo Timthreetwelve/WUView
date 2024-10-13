@@ -142,7 +142,7 @@
     <sys:String x:Key="ResultCode_Failed">Ni uspela</sys:String>
     <sys:String x:Key="ResultCode_InProgress">Se izvaja</sys:String>
     <sys:String x:Key="ResultCode_NotStarted">Ni začeta</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Prekinjena</sys:String>
+    <sys:String x:Key="ResultCode_Aborted">Prekinjena</sys:String>
     <sys:String x:Key="ResultCode_Succeeded">Uspešna</sys:String>
     <sys:String x:Key="ResultCode_SucceededWithErrors">Uspešna z napakami</sys:String>
     <!--  Settings Page Expander Headings  -->
@@ -252,7 +252,7 @@
     <!-- A | ResultCode_Failed -->
     <!-- A | ResultCode_InProgress -->
     <!-- A | ResultCode_NotStarted -->
-    <!-- A | ResultCode_ResultCode_Aborted -->
+    <!-- A | ResultCode_Aborted -->
     <!-- A | ResultCode_Succeeded -->
     <!-- A | ResultCode_SucceededWithErrors -->
     <!-- A | SettingsItem_EnableLanguageTesting -->

@@ -145,7 +145,7 @@
     <sys:String x:Key="ResultCode_Failed">Nie powiodło się</sys:String>
     <sys:String x:Key="ResultCode_InProgress">W toku</sys:String>
     <sys:String x:Key="ResultCode_NotStarted">Nie uruchomiono</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Przerwano</sys:String>
+    <sys:String x:Key="ResultCode_Aborted">Przerwano</sys:String>
     <sys:String x:Key="ResultCode_Succeeded">Powodzenie</sys:String>
     <sys:String x:Key="ResultCode_SucceededWithErrors">Powodzenie z błędami</sys:String>
     <!--  Settings Page Expander Headings  -->

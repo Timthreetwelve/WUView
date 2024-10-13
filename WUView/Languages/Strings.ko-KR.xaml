@@ -145,7 +145,7 @@
     <sys:String x:Key="ResultCode_Failed">실패</sys:String>
     <sys:String x:Key="ResultCode_InProgress">진행 중</sys:String>
     <sys:String x:Key="ResultCode_NotStarted">시작되지 않음</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">중단됨</sys:String>
+    <sys:String x:Key="ResultCode_Aborted">중단됨</sys:String>
     <sys:String x:Key="ResultCode_Succeeded">성공</sys:String>
     <sys:String x:Key="ResultCode_SucceededWithErrors">오류와 함께 성공</sys:String>
     <!--  Settings Page Expander Headings  -->
@@ -255,7 +255,7 @@
     <!-- A | ResultCode_Failed -->
     <!-- A | ResultCode_InProgress -->
     <!-- A | ResultCode_NotStarted -->
-    <!-- A | ResultCode_ResultCode_Aborted -->
+    <!-- A | ResultCode_Aborted -->
     <!-- A | ResultCode_Succeeded -->
     <!-- A | ResultCode_SucceededWithErrors -->
     <!-- A | SettingsItem_EnableLanguageTesting -->

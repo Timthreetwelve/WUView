@@ -145,7 +145,7 @@
     <sys:String x:Key="ResultCode_Failed">Failed</sys:String>
     <sys:String x:Key="ResultCode_InProgress">In Progress</sys:String>
     <sys:String x:Key="ResultCode_NotStarted">Not Started</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Aborted</sys:String>
+    <sys:String x:Key="ResultCode_Aborted">Aborted</sys:String>
     <sys:String x:Key="ResultCode_Succeeded">Succeeded</sys:String>
     <sys:String x:Key="ResultCode_SucceededWithErrors">Succeeded with Errors</sys:String>
     <!--  Settings Page Expander Headings  -->
@@ -255,7 +255,7 @@
     <!-- A | ResultCode_Failed -->
     <!-- A | ResultCode_InProgress -->
     <!-- A | ResultCode_NotStarted -->
-    <!-- A | ResultCode_ResultCode_Aborted -->
+    <!-- A | ResultCode_Aborted -->
     <!-- A | ResultCode_Succeeded -->
     <!-- A | ResultCode_SucceededWithErrors -->
     <!-- A | SettingsItem_EnableLanguageTesting -->
@@ -283,4 +283,9 @@
     <!-- D | MsgText_AppUpdateCloseGetMyIP -->
     <!-- A | MsgText_AppUpdateClose -->
     <!-- End of changes on 2024/05/05 @ 17:30 UTC-->
+
+    <!-- Begin changes on 2024/10/13 @ 00:05 UTC-->
+    <!-- U | Corrected key ResultCode_ResultCode_Aborted to ResultCode_Aborted in 12 language files. -->
+    <!-- U | No additional action from translators should be needed. -->
+    <!-- End of changes on 2024/10/13 @ 00:05 UTC-->
 </ResourceDictionary>

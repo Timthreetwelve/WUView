@@ -141,7 +141,7 @@
     <sys:String x:Key="ResultCode_Failed">Échoué</sys:String>
     <sys:String x:Key="ResultCode_InProgress">En cours</sys:String>
     <sys:String x:Key="ResultCode_NotStarted">Pas commencé</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Avorté</sys:String>
+    <sys:String x:Key="ResultCode_Aborted">Avorté</sys:String>
     <sys:String x:Key="ResultCode_Succeeded">Réussi</sys:String>
     <sys:String x:Key="ResultCode_SucceededWithErrors">Réussi avec des erreurs</sys:String>
     <!--  Settings Page Expander Headings  -->
@@ -255,7 +255,7 @@
 <!-- A | ResultCode_Failed -->
 <!-- A | ResultCode_InProgress -->
 <!-- A | ResultCode_NotStarted -->
-<!-- A | ResultCode_ResultCode_Aborted -->
+<!-- A | ResultCode_Aborted -->
 <!-- A | ResultCode_Succeeded -->
 <!-- A | ResultCode_SucceededWithErrors -->
 <!-- U | SettingsSubHead_Language -->

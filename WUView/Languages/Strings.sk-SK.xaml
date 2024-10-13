@@ -137,7 +137,7 @@
     <sys:String x:Key="ResultCode_Failed">Zlyhalo</sys:String>
     <sys:String x:Key="ResultCode_InProgress">Prebieha</sys:String>
     <sys:String x:Key="ResultCode_NotStarted">Nespustené</sys:String>
-    <sys:String x:Key="ResultCode_ResultCode_Aborted">Prerušené</sys:String>
+    <sys:String x:Key="ResultCode_Aborted">Prerušené</sys:String>
     <sys:String x:Key="ResultCode_Succeeded">Úspešné</sys:String>
     <sys:String x:Key="ResultCode_SucceededWithErrors">Úspešné s chybami</sys:String>
     <!--  Settings Page Expander Headings  -->
