@@ -42,7 +42,7 @@ public static class TextFileViewer
             else
             {
 #if messagebox
-                string msg = string.Format(GetStringResource("MsgText_ErrorReadingFile"), textFile);
+                string msg = string.Format(CultureInfo.InvariantCulture, GetStringResource("MsgText_ErrorReadingFile"), textFile);
                 _ = MessageBox.Show($"{msg}\n{ex.Message}",
                                     GetStringResource("MsgText_ErrorCaption"),
                                     MessageBoxButton.OK,
@@ -54,7 +54,7 @@ public static class TextFileViewer
         catch (Exception ex)
         {
 #if messagebox
-            string msg = string.Format(GetStringResource("MsgText_ErrorOpeningFile"), textFile);
+            string msg = string.Format(CultureInfo.InvariantCulture, GetStringResource("MsgText_ErrorOpeningFile"), textFile);
             _ = MessageBox.Show($"{msg}\n{ex.Message}",
                                 GetStringResource("MsgText_ErrorCaption"),
                                 MessageBoxButton.OK,

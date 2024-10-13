@@ -13,7 +13,7 @@ public partial class SettingsViewModel : ObservableObject
             filePath = Path.Combine(AppInfo.AppDirectory, "Strings.test.xaml");
             if (File.Exists(filePath))
             {
-                _ = Process.Start("explorer.exe", string.Format("/select,\"{0}\"", filePath));
+                _ = Process.Start("explorer.exe", string.Format(CultureInfo.InvariantCulture, "/select,\"{0}\"", filePath));
             }
             else
             {

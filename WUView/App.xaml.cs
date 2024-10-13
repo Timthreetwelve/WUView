@@ -145,9 +145,10 @@ public partial class App : Application
                 catch (Exception ex)
                 {
                     _log.Error(ex, $"Error loading test language file {TestLanguageFile}");
-                    string msg = string.Format($"{GetStringResource("MsgText_Error_TestLanguage")}\n\n{ex.Message}\n\n{ex.InnerException}");
-                    MessageBox.Show(msg,
-                        "Windows Update Viewer ERROR",
+                    string msg = string.Format(CultureInfo.CurrentCulture,
+                                               $"{GetStringResource("MsgText_Error_TestLanguage")}\n\n{ex.Message}\n\n{ex.InnerException}");
+                    _ = MessageBox.Show(msg,
+                        GetStringResource("MsgText_ErrorCaption"),
                         MessageBoxButton.OK,
                         MessageBoxImage.Error);
                 }

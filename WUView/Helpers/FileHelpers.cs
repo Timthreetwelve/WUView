@@ -78,7 +78,7 @@ public static partial class FileHelpers
     /// </summary>
     public static async Task SaveToCSV()
     {
-        string filename = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".csv";
+        string filename = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + ".csv";
         SaveFileDialog dialog = new()
         {
             Title = ResourceHelpers.GetStringResource("MenuItem_SaveCSV"),
@@ -103,10 +103,10 @@ public static partial class FileHelpers
     /// </summary>
     public static async Task SaveToFile()
     {
-        string filename = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".txt";
+        string filename = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + ".txt";
         SaveFileDialog dialog = new()
         {
-            Title = ResourceHelpers.GetStringResource("MenuItem_SaveTXT"),
+            Title = GetStringResource("MenuItem_SaveTXT"),
             Filter = "Text File|*.txt",
             InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
             FileName = filename
@@ -119,7 +119,7 @@ public static partial class FileHelpers
                 .Append(' ')
                 .Append(Environment.MachineName)
                 .Append(" - ")
-                .AppendFormat("{0:G}", DateTime.Now)
+                .AppendFormat(CultureInfo.InvariantCulture, "{0:G}", DateTime.Now)
                 .AppendLine();
             string underscore = new('-', sb.Length - 2);
             _ = sb.Append(underscore).AppendLine("\r\n");
@@ -132,15 +132,34 @@ public static partial class FileHelpers
 
             for (int i = 0; i < listInUse.Count; i++)
             {
-                _ = sb.Append(GetStringResource("Details_Title")).Append(' ').AppendLine(listInUse[i].Title)
-                    .Append(GetStringResource("Details_Date")).Append(' ').AppendLine(listInUse[i].Date.ToString())
-                    .Append(GetStringResource("Details_KBNum")).Append(' ').AppendLine(listInUse[i].KBNum)
-                    .Append(GetStringResource("Details_Operation")).Append(' ').AppendLine(listInUse[i].Operation!.Replace("uo", ""))
-                    .Append(GetStringResource("Details_ResultCode")).Append(' ').AppendLine(listInUse[i].ResultCode!.Replace("orc", ""))
-                    .Append(GetStringResource("Details_HResult")).Append(' ').AppendFormat($"0x{int.Parse(listInUse[i].HResult!):X8}").AppendLine()
-                    .Append(GetStringResource("Details_UpdateID")).Append(' ').AppendLine(listInUse[i].UpdateID)
-                    .Append(GetStringResource("Details_SupportURL")).Append(' ').AppendLine(listInUse[i].SupportURL)
-                    .Append(GetStringResource("Details_Description")).Append(' ').AppendLine(listInUse[i].Description);
+                _ = sb.Append(GetStringResource("Details_Title"))
+                      .Append(' ')
+                      .AppendLine(listInUse[i].Title)
+                      .Append(GetStringResource("Details_Date"))
+                      .Append(' ')
+                      .AppendLine(listInUse[i].Date.ToString(CultureInfo.InvariantCulture))
+                      .Append(GetStringResource("Details_KBNum"))
+                      .Append(' ')
+                      .AppendLine(listInUse[i].KBNum)
+                      .Append(GetStringResource("Details_Operation"))
+                      .Append(' ')
+                      .AppendLine(listInUse[i].Operation!.Replace("uo", ""))
+                      .Append(GetStringResource("Details_ResultCode"))
+                      .Append(' ')
+                      .AppendLine(listInUse[i].ResultCode!.Replace("orc", ""))
+                      .Append(GetStringResource("Details_HResult"))
+                      .Append(' ')
+                      .AppendFormat(CultureInfo.InvariantCulture, $"0x{int.Parse(listInUse[i].HResult!, CultureInfo.InvariantCulture):X8}")
+                      .AppendLine()
+                      .Append(GetStringResource("Details_UpdateID"))
+                      .Append(' ')
+                      .AppendLine(listInUse[i].UpdateID)
+                      .Append(GetStringResource("Details_SupportURL"))
+                      .Append(' ')
+                      .AppendLine(listInUse[i].SupportURL)
+                      .Append(GetStringResource("Details_Description"))
+                      .Append(' ')
+                      .AppendLine(listInUse[i].Description);
 
                 foreach (string line in RemoveCarriageReturnLineFeed().Split(MainViewModel.FindEventLogs(listInUse[i].KBNum!)))
                 {
@@ -166,7 +185,7 @@ public static partial class FileHelpers
     /// </summary>
     public static async Task SaveAsJson()
     {
-        string filename = "WUView_Export_" + DateTime.Now.Date.ToString("yyyy-MM-dd") + ".json";
+        string filename = "WUView_Export_" + DateTime.Now.Date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + ".json";
         SaveFileDialog dialog = new()
         {
             Title = GetStringResource("MenuItem_SaveJSON"),

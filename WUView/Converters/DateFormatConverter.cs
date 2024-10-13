@@ -18,29 +18,29 @@ internal sealed class DateFormatConverter : IValueConverter
             switch (UserSettings.Setting!.DateFormat)
             {
                 case 1:
-                    return item.ToString("yyyy/MM/dd  HH:mm");
+                    return item.ToString("yyyy/MM/dd  HH:mm", CultureInfo.InvariantCulture);
                 case 2:
-                    return item.ToString("MM/dd/yyyy  hh:mm tt");
+                    return item.ToString("MM/dd/yyyy  hh:mm tt", CultureInfo.InvariantCulture);
                 case 3:
-                    return item.ToString("dd-MMM-yyyy  HH:mm");
+                    return item.ToString("dd-MMM-yyyy  HH:mm", CultureInfo.InvariantCulture);
                 case 4:
-                    return item.ToUniversalTime().ToString("yyyy-MM-dd  HH:mm  UTC");
+                    return item.ToUniversalTime().ToString("yyyy-MM-dd  HH:mm  UTC", CultureInfo.InvariantCulture);
                 case 5:
-                    return item.ToString("dd/MM/yyyy");
+                    return item.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
                 case 6:
-                    return item.ToString("dd/MM/yyyy  HH:mm");
+                    return item.ToString("dd/MM/yyyy  HH:mm", CultureInfo.InvariantCulture);
                 case 7:
-                    return item.ToString("yyyy/MM/dd");
+                    return item.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
                 case 8:
                     string cultDateOnly = cult.DateTimeFormat.ShortDatePattern;
-                    return item.ToString(cultDateOnly);
+                    return item.ToString(cultDateOnly, CultureInfo.CurrentCulture);
                 case 9:
                     string cultDate = cult.DateTimeFormat.ShortDatePattern;
                     string cultTime = cult.DateTimeFormat.ShortTimePattern;
-                    return item.ToString($"{cultDate}  {cultTime}");
+                    return item.ToString($"{cultDate}  {cultTime}", CultureInfo.CurrentCulture);
 
                 default:
-                    return item.ToString("MM/dd/yyyy");
+                    return item.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
             }
         }
         return string.Empty;

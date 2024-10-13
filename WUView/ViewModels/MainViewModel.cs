@@ -69,7 +69,7 @@ internal sealed partial class MainViewModel : ObservableObject
                         KBNum = kbNum,
                         Date = hist.Date.ToLocalTime(),
                         ResultCode = ResultCodeHelper.TranslateResultCode(hist.ResultCode),
-                        HResult = hist.HResult.ToString(),
+                        HResult = hist.HResult.ToString(CultureInfo.InvariantCulture),
                         Operation = OperationHelper.TranslateOperation(hist.Operation),
                         UpdateID = hist.UpdateIdentity.UpdateID ?? string.Empty,
                         Description = hist.Description ?? string.Empty,
@@ -81,7 +81,7 @@ internal sealed partial class MainViewModel : ObservableObject
                     if (hist.HResult != 0 && UserSettings.Setting.ShowLogWarnings)
                     {
                         string operation = update.Operation.Replace("uo", "");
-                        string HResultHex = string.Format($"0x{int.Parse(update.HResult):X8}");
+                        string HResultHex = string.Format(CultureInfo.InvariantCulture, $"0x{int.Parse(update.HResult, CultureInfo.InvariantCulture):X8}");
                         _log.Warn($"KB: {update.KBNum,-10} Date: {update.Date,-23} HResult: {HResultHex,-10} " +
                                  $" Operation: {operation,-12}  UpdateID: {update.UpdateID}");
                     }
@@ -153,13 +153,13 @@ internal sealed partial class MainViewModel : ObservableObject
         StringBuilder sbEventLog = new();
         foreach (EventRecord? item in EventLogRecords.Where(item => item.Properties[0].Value.ToString()!.Contains(kb)))
         {
-            string tc = string.Format($"{item.TimeCreated} - {item.FormatDescription()}  Event ID: {item.Id}.");
+            string tc = string.Format(CultureInfo.InvariantCulture, $"{item.TimeCreated} - {item.FormatDescription()}  Event ID: {item.Id}.");
             _ = sbEventLog.AppendLine(tc);
         }
 
         if (sbEventLog.Length == 0)
         {
-            string message = string.Format(GetStringResource("MsgText_EventLogNoRecords"), kb);
+            string message = string.Format(CultureInfo.InvariantCulture, GetStringResource("MsgText_EventLogNoRecords"), kb);
             _ = sbEventLog.AppendLine(message);
         }
         return sbEventLog.ToString();
@@ -296,7 +296,7 @@ internal sealed partial class MainViewModel : ObservableObject
     {
         int total = UpdatesFullList.Count;
         int displayed = MainPage.Instance!.dataGrid.Items.Count;
-        string message = string.Format(GetStringResource("MsgText_DisplayedUpdates"), displayed, total);
+        string message = string.Format(CultureInfo.InvariantCulture, GetStringResource("MsgText_DisplayedUpdates"), displayed, total);
         SnackbarMsg.ClearAndQueueMessage(message);
     }
     #endregion Display update count

@@ -80,7 +80,7 @@ internal static class NLogHelpers
     {
         // create filename string
         string appName = AppInfo.AppName;
-        string today = DateTime.Now.ToString("yyyyMMdd");
+        string today = DateTime.Now.ToString("yyyyMMdd", CultureInfo.InvariantCulture);
         string filename;
         if (Debugger.IsAttached)
         {

@@ -18,7 +18,7 @@ internal sealed class ResultsConverter : IValueConverter
         {
             if (value is string hrString)
             {
-                return string.Format($"0x{int.Parse(hrString):X8}");
+                return string.Format(CultureInfo.InvariantCulture, $"0x{int.Parse(hrString, CultureInfo.InvariantCulture):X8}");
             }
             return null; // Handle the case where value is not a string
         }

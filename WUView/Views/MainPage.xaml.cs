@@ -29,7 +29,7 @@ public partial class MainPage : UserControl
             {
                 if (ClipboardHelper.CopyTextToClipboard(run.Text))
                 {
-                    SnackbarMsg.ClearAndQueueMessage(string.Format(
+                    SnackbarMsg.ClearAndQueueMessage(string.Format(CultureInfo.InvariantCulture,
                         GetStringResource("MsgText_HResultCopiedToClipboard"), run.Text), 3000);
                 }
             }
@@ -138,7 +138,7 @@ public partial class MainPage : UserControl
         }
         else
         {
-            SnackbarMsg.ClearAndQueueMessage(string.Format(
+            SnackbarMsg.ClearAndQueueMessage(string.Format(CultureInfo.InvariantCulture,
                 GetStringResource("MsgText_FilterRowsShown"), dataGrid.Items.Count), 2000);
         }
     }
