@@ -99,7 +99,7 @@ internal static class ResourceHelpers
             {
                 _log.Debug(new string('-', 68));
                 _log.Debug($"[{AppInfo.AppName}] {dict2.Source} is missing the following keys");
-                foreach (string item in enUSDict.Keys.Except(compareDict.Keys).OrderBy(s => s))
+                foreach (string item in enUSDict.Keys.Except(compareDict.Keys).Order())
                 {
                     _log.Debug($"Key: {item}    Value: \"{GetStringResource(item)}\"");
                 }
@@ -109,7 +109,7 @@ internal static class ResourceHelpers
             if (compareDict.Keys.Except(enUSDict.Keys).Any())
             {
                 _log.Debug($"[{AppInfo.AppName}] {dict1.Source} is missing the following keys");
-                foreach (string item in compareDict.Keys.Except(enUSDict.Keys).OrderBy(s => s))
+                foreach (string item in compareDict.Keys.Except(enUSDict.Keys).Order())
                 {
                     _log.Debug($"Key: {item}    Value: \"{GetStringResource(item)}\"");
                 }
