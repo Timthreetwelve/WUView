@@ -126,9 +126,20 @@
                                             ToolTip="{DynamicResource Button_OpenLogFileToolTip}" />
                                     <Button Height="35"
                                             Padding="15,1,15,22"
+                                            Command="{Binding OpenAppFolderCommand}"
+                                            Content="{DynamicResource Button_OpenAppFolder}" />
+                                    <Separator Margin="0" Padding="1"
+                                               Background="{DynamicResource MaterialDesign.Brush.TextBox.HoverBackground}" />
+                                    <Button Height="35"
+                                            Padding="15,1,15,22"
                                             Command="{Binding ViewReadMeFileCommand}"
                                             Content="{DynamicResource About_DocumentationText}"
                                             ToolTip="{DynamicResource About_DocumentationToolTip}" />
+                                    <Button Height="35"
+                                            Padding="15,1,15,22"
+                                            Command="{Binding CheckReleaseCommand}"
+                                            Content="{DynamicResource Button_CheckUpdate}"
+                                            ToolTip="{DynamicResource About_UpdateWUToolTip}" />
                                     <Separator Margin="0" Padding="1"
                                                Background="{DynamicResource MaterialDesign.Brush.TextBox.HoverBackground}" />
                                     <Button Height="35"

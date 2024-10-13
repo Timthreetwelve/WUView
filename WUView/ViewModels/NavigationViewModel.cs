@@ -247,6 +247,18 @@ public partial class NavigationViewModel : ObservableObject
     }
     #endregion Check for new release
 
+    #region Open the app folder
+    [RelayCommand]
+    private static void OpenAppFolder()
+    {
+        using Process process = new();
+        process.StartInfo.UseShellExecute = false;
+        process.StartInfo.FileName = "Explorer.exe";
+        process.StartInfo.Arguments = AppInfo.AppDirectory;
+        _ = process.Start();
+    }
+    #endregion Open the app folder
+
     #endregion Relay Commands
 
     #region Key down events

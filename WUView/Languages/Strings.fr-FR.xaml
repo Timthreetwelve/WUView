@@ -15,7 +15,7 @@
 
         Translation contributed by:  @Timthreetwelve & Google Translate
 
-        Date LAST UPDATE:            2023/11/06
+        Date LAST UPDATE:            2024/10/13
 
         ========================================================================
 
@@ -46,6 +46,7 @@
     <sys:String x:Key="About_Version">Version</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Annuler</sys:String>
+    <sys:String x:Key="Button_CheckUpdate">Vérifier mise à jour</sys:String>
     <sys:String x:Key="Button_Close">Fermer le menu</sys:String>
     <sys:String x:Key="Button_OK">D'accord</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Afficher le fichier journal</sys:String>

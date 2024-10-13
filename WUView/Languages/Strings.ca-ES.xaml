@@ -15,7 +15,7 @@
 
         Translation contributed by:  @Timthreetwelve & Google Translate
 
-        Date last update:            2023/12/06
+        Date last update:            2024/10/13
 
         ======================================================================
     -->
@@ -45,6 +45,7 @@
     <sys:String x:Key="About_Version">Versió</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Cancel·lar</sys:String>
+    <sys:String x:Key="Button_CheckUpdate">Comprova si hi ha actualitzacions</sys:String>
     <sys:String x:Key="Button_Close">Tanca aquest menú</sys:String>
     <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">D'acord</sys:String>
