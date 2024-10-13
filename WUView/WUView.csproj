@@ -14,8 +14,15 @@
     <Product>Windows Update Viewer</Product>
     <ApplicationIcon>Images\UV.ico</ApplicationIcon>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <CsWinRTAotOptimizerEnabled>false</CsWinRTAotOptimizerEnabled>
   </PropertyGroup>
 
+  <!-- Analyzers -->
+  <PropertyGroup>
+    <AnalysisMode>Recommended</AnalysisMode>
+    <AnalysisLevel>8.0</AnalysisLevel>
+  </PropertyGroup>
+  
   <ItemGroup>
     <Content Include="Strings.test.xaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
