@@ -72,17 +72,6 @@ internal static class MainWindowHelpers
     }
     #endregion Window Title
 
-    #region Running as Administrator?
-    /// <summary>
-    /// Determines if running as administrator (elevated)
-    /// </summary>
-    /// <returns>True if running elevated</returns>
-    public static bool IsAdministrator()
-    {
-        return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
-    }
-    #endregion Running as Administrator?
-
     #region Event handlers
     /// <summary>
     /// Event handlers.
