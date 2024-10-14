@@ -71,19 +71,19 @@ internal sealed partial class UILanguage : ObservableObject
     /// </remarks>
     private static List<UILanguage> LanguageList { get; } =
     [
-        new UILanguage {Language = "English",             LanguageCode = "en-US", LanguageNative = "English",            Contributor = "Timthreetwelve", Note="Default"},
-        new UILanguage {Language = "English",             LanguageCode = "en-GB", LanguageNative = "English",            Contributor = "Timthreetwelve"},
-        new UILanguage {Language = "Spanish",             LanguageCode = "es-ES", LanguageNative = "Español",            Contributor = "My AWESOME brother Steve"},
-        new UILanguage {Language = "Italian",             LanguageCode = "it-IT", LanguageNative = "Italiano",           Contributor = "RB"},
-        new UILanguage {Language = "Dutch",               LanguageCode = "nl-NL", LanguageNative = "Nederlands",         Contributor = "Tim"},
-        new UILanguage {Language = "German",              LanguageCode = "de-DE", LanguageNative = "Deutsch",            Contributor = "Timthreetwelve & Henry2o1o"},
-        new UILanguage {Language = "French",              LanguageCode = "fr-FR", LanguageNative = "Français",           Contributor = "Timthreetwelve"},
-        new UILanguage {Language = "Catalan",             LanguageCode = "ca-ES", LanguageNative = "Català",             Contributor = "Timthreetwelve"},
-        new UILanguage {Language = "Polish",              LanguageCode = "pl-PL", LanguageNative = "Polski",             Contributor = "FadeMind"},
-        new UILanguage {Language = "Slovak",              LanguageCode = "sk-SK", LanguageNative = "Slovenčina",         Contributor = "VAIO"},
-        new UILanguage {Language = "Slovenian",           LanguageCode = "sl-SL", LanguageNative = "Slovenščina",        Contributor = "Jadran Rudec"},
-        new UILanguage {Language = "Portuguese (Brazil)", LanguageCode = "pt-BR", LanguageNative = "Português (Brasil)", Contributor = "igorruckert"},
-        new UILanguage {Language = "Korean",              LanguageCode = "ko-KR", LanguageNative = "한국어",              Contributor = "VenusGirl💗 (비너스걸)"},
+        new () {Language = "English",             LanguageCode = "en-US", LanguageNative = "English",            Contributor = "Timthreetwelve", Note="Default"},
+        new () {Language = "English",             LanguageCode = "en-GB", LanguageNative = "English",            Contributor = "Timthreetwelve"},
+        new () {Language = "Spanish",             LanguageCode = "es-ES", LanguageNative = "Español",            Contributor = "My AWESOME brother Steve"},
+        new () {Language = "Italian",             LanguageCode = "it-IT", LanguageNative = "Italiano",           Contributor = "RB"},
+        new () {Language = "Dutch",               LanguageCode = "nl-NL", LanguageNative = "Nederlands",         Contributor = "Tim"},
+        new () {Language = "German",              LanguageCode = "de-DE", LanguageNative = "Deutsch",            Contributor = "Timthreetwelve & Henry2o1o"},
+        new () {Language = "French",              LanguageCode = "fr-FR", LanguageNative = "Français",           Contributor = "Timthreetwelve"},
+        new () {Language = "Catalan",             LanguageCode = "ca-ES", LanguageNative = "Català",             Contributor = "Timthreetwelve"},
+        new () {Language = "Polish",              LanguageCode = "pl-PL", LanguageNative = "Polski",             Contributor = "FadeMind"},
+        new () {Language = "Slovak",              LanguageCode = "sk-SK", LanguageNative = "Slovenčina",         Contributor = "VAIO"},
+        new () {Language = "Slovenian",           LanguageCode = "sl-SL", LanguageNative = "Slovenščina",        Contributor = "Jadran Rudec"},
+        new () {Language = "Portuguese (Brazil)", LanguageCode = "pt-BR", LanguageNative = "Português (Brasil)", Contributor = "igorruckert"},
+        new () {Language = "Korean",              LanguageCode = "ko-KR", LanguageNative = "한국어",              Contributor = "VenusGirl💗 (비너스걸)"},
     ];
 
     /// <summary>
