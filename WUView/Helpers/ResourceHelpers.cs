@@ -5,17 +5,17 @@ namespace WUView.Helpers;
 internal static class ResourceHelpers
 {
     #region Composite format properties
-    internal static CompositeFormat MsgTextDisplayedUpdates { get; } = GetCompositeResource("MsgText_DisplayedUpdates");
-    internal static CompositeFormat MsgTextDisplayedAllUpdates { get; } = GetCompositeResource("MsgText_DisplayedAllUpdates");
     internal static CompositeFormat MsgTextAppUpdateNewerFound { get; } = GetCompositeResource("MsgText_AppUpdateNewerFound");
-    internal static CompositeFormat MsgTextErrorReadingFile { get; } = GetCompositeResource("MsgText_ErrorReadingFile");
+    internal static CompositeFormat MsgTextDisplayedAllUpdates { get; } = GetCompositeResource("MsgText_DisplayedAllUpdates");
+    internal static CompositeFormat MsgTextDisplayedUpdates { get; } = GetCompositeResource("MsgText_DisplayedUpdates");
     internal static CompositeFormat MsgTextErrorOpeningFile { get; } = GetCompositeResource("MsgText_ErrorOpeningFile");
+    internal static CompositeFormat MsgTextErrorReadingFile { get; } = GetCompositeResource("MsgText_ErrorReadingFile");
     internal static CompositeFormat MsgTextEventLogNoRecords { get; } = GetCompositeResource("MsgText_EventLogNoRecords");
+    internal static CompositeFormat MsgTextFilterRowsShown { get; } = GetCompositeResource("MsgText_FilterRowsShown");
+    internal static CompositeFormat MsgTextHResultCopiedToClipboard { get; } = GetCompositeResource("MsgText_HResultCopiedToClipboard");
+    internal static CompositeFormat MsgTextUIColorSet { get; } = GetCompositeResource("MsgText_UIColorSet");
     internal static CompositeFormat MsgTextUISizeSet { get; } = GetCompositeResource("MsgText_UISizeSet");
     internal static CompositeFormat MsgTextUIThemeSet { get; } = GetCompositeResource("MsgText_UIThemeSet");
-    internal static CompositeFormat MsgTextUIColorSet { get; } = GetCompositeResource("MsgText_UIColorSet");
-    internal static CompositeFormat MsgTextHResultCopiedToClipboard { get; } = GetCompositeResource("MsgText_HResultCopiedToClipboard");
-    internal static CompositeFormat MsgTextFilterRowsShown { get; } = GetCompositeResource("MsgText_FilterRowsShown");
     #endregion Composite format properties
 
     #region Get a string resource
