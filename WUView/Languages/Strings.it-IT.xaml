@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            05.04.2024
+        Date last update:            14.10.2024
 
         ========================================================================
 
@@ -46,6 +46,7 @@
     <sys:String x:Key="About_Version">Versione</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Annulla</sys:String>
+    <sys:String x:Key="Button_CheckUpdate">Controlla aggiornamenti</sys:String>
     <sys:String x:Key="Button_Close">Chiudi menu</sys:String>
     <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
@@ -283,4 +284,13 @@
     <!-- D | MsgText_AppUpdateCloseGetMyIP -->
     <!-- A | MsgText_AppUpdateClose -->
     <!-- End of changes on 2024/05/05 @ 17:30 UTC-->
+
+    <!-- Begin changes on 2024/10/13 @ 00:05 UTC-->
+    <!-- U | Corrected key ResultCode_ResultCode_Aborted to ResultCode_Aborted in 12 language files. -->
+    <!-- U | No additional action from translators should be needed. -->
+    <!-- End of changes on 2024/10/13 @ 00:05 UTC-->
+
+    <!-- Begin changes on 2024/10/13 @ 17:40 UTC-->
+    <!-- A | Button_CheckUpdate -->
+    <!-- End of changes on 2024/10/13 @ 17:40 UTC-->
 </ResourceDictionary>
