@@ -12,7 +12,7 @@ internal static class MainWindowHelpers
     #endregion MainWindow Instance
 
     #region StopWatch
-    public static readonly Stopwatch _stopwatch = Stopwatch.StartNew();
+    private static readonly Stopwatch _stopwatch = Stopwatch.StartNew();
     #endregion StopWatch
 
     #region Set and Save MainWindow position and size
@@ -35,7 +35,7 @@ internal static class MainWindowHelpers
     /// <summary>
     /// Saves the MainWindow position and size.
     /// </summary>
-    public static void SaveWindowPosition()
+    private static void SaveWindowPosition()
     {
         Window mainWindow = Application.Current.MainWindow;
         UserSettings.Setting!.WindowHeight = Math.Floor(mainWindow.Height);
@@ -114,7 +114,7 @@ internal static class MainWindowHelpers
         WUApiHelpers.LogWUEnabled();
     }
 
-    public static void MainWindow_ContentRendered(object sender, EventArgs e)
+    private static void MainWindow_ContentRendered(object sender, EventArgs e)
     {
         MainViewModel.GatherInfo();
 
@@ -124,7 +124,7 @@ internal static class MainWindowHelpers
         }
     }
 
-    public static void MainWindow_Closing(object sender, CancelEventArgs e)
+    private static void MainWindow_Closing(object sender, CancelEventArgs e)
     {
         // Stop the stopwatch and record elapsed time
         _stopwatch.Stop();
@@ -149,7 +149,7 @@ internal static class MainWindowHelpers
     /// <remarks>
     /// This uses default message box.
     /// </remarks>
-    internal static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs args)
+    private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs args)
     {
         _log.Error("Unhandled Exception");
         Exception e = (Exception)args.ExceptionObject;

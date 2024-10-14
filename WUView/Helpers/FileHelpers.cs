@@ -8,7 +8,7 @@ namespace WUView.Helpers;
 public static partial class FileHelpers
 {
     #region JSON options
-    public static JsonSerializerOptions JsonOptions { get; } = new()
+    private static JsonSerializerOptions JsonOptions { get; } = new()
     {
         WriteIndented = true
     };

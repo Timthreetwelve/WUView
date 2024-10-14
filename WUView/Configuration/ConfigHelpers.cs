@@ -8,9 +8,9 @@ namespace WUView.Configuration;
 public static class ConfigHelpers
 {
     #region Properties
-    public static string SettingsFileName { get; set; } = null!;
+    public static string SettingsFileName { get; private set; } = null!;
 
-    public static JsonSerializerOptions JsonOptions { get; } = new()
+    private static JsonSerializerOptions JsonOptions { get; } = new()
     {
         WriteIndented = true
     };
@@ -43,7 +43,7 @@ public static class ConfigHelpers
     /// Read settings from JSON file.
     /// </summary>
     /// <returns>UserSettings</returns>
-    public static UserSettings ReadConfiguration()
+    private static UserSettings ReadConfiguration()
     {
         try
         {

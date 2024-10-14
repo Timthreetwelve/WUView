@@ -13,7 +13,7 @@ internal static class MainWindowUIHelpers
     /// Gets the current MDIX theme
     /// </summary>
     /// <returns>Dark or Light</returns>
-    internal static string? GetSystemTheme()
+    private static string? GetSystemTheme()
     {
         BaseTheme? sysTheme = Theme.GetSystemTheme();
         return sysTheme != null ? sysTheme.ToString() : string.Empty;

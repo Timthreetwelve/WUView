@@ -65,7 +65,7 @@ public partial class NavigationViewModel : ObservableObject
     #endregion List of navigation items
 
     #region Navigation Methods
-    public void NavigateToPage(NavPage page)
+    private void NavigateToPage(NavPage page)
     {
         Navigate(FindNavPage(page));
     }
@@ -81,7 +81,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Navigate Command
     [RelayCommand]
-    internal void Navigate(object param)
+    private void Navigate(object param)
     {
         if (param is NavigationItem item)
         {
@@ -101,7 +101,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Edit the exclude file
     [RelayCommand]
-    public static void EditExclude()
+    private static void EditExclude()
     {
         if (Keyboard.Modifiers == ModifierKeys.Shift)
         {
@@ -116,7 +116,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Open the About page
     [RelayCommand]
-    public void OpenAbout()
+    private void OpenAbout()
     {
         NavigateToPage(NavPage.About);
     }
@@ -124,7 +124,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Open the Settings page
     [RelayCommand]
-    public void OpenSettings()
+    private void OpenSettings()
     {
         NavigateToPage(NavPage.Settings);
     }
@@ -132,7 +132,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region View log file
     [RelayCommand]
-    public static void ViewLogFile()
+    private static void ViewLogFile()
     {
         SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_OpeningLogFile"), 2000);
         TextFileViewer.ViewTextFile(GetLogfileName()!);
@@ -141,7 +141,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region View readme file
     [RelayCommand]
-    public static void ViewReadMeFile()
+    private static void ViewReadMeFile()
     {
         SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_OpeningReadMeFile"), 2000);
         TextFileViewer.ViewTextFile(Path.Combine(AppInfo.AppDirectory, "readme.txt"));
@@ -150,7 +150,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Toggle details
     [RelayCommand]
-    public static void ToggleDetails()
+    private static void ToggleDetails()
     {
         UserSettings.Setting!.ShowDetails = !UserSettings.Setting.ShowDetails;
     }
@@ -158,7 +158,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Toggle excluded
     [RelayCommand]
-    public static void ToggleExcluded()
+    private static void ToggleExcluded()
     {
         UserSettings.Setting!.HideExcluded = !UserSettings.Setting.HideExcluded;
         MainPage.Instance!.FilterTheGrid(true);
@@ -167,7 +167,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Remove column sort
     [RelayCommand]
-    public static void RemoveSort()
+    private static void RemoveSort()
     {
         MainPage.Instance!.ClearColumnSort();
     }
@@ -175,13 +175,13 @@ public partial class NavigationViewModel : ObservableObject
 
     #region UI Smaller and Larger
     [RelayCommand]
-    public static void UILarger()
+    private static void UILarger()
     {
         MainWindowUIHelpers.EverythingLarger();
     }
 
     [RelayCommand]
-    public static void UISmaller()
+    private static void UISmaller()
     {
         MainWindowUIHelpers.EverythingSmaller();
     }
@@ -189,7 +189,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Application Shutdown
     [RelayCommand]
-    public static void Exit()
+    private static void Exit()
     {
         Application.Current.Shutdown();
     }
@@ -197,7 +197,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Launch Windows Update
     [RelayCommand]
-    public static void OpenWindowsUpdate()
+    private static void OpenWindowsUpdate()
     {
         SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_OpeningWindowsUpdate"));
         using Process procWU = new();
@@ -209,7 +209,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Save as JSON file
     [RelayCommand]
-    public static async Task SaveJson()
+    private static async Task SaveJson()
     {
         await FileHelpers.SaveAsJson();
     }
@@ -217,7 +217,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Save to CSV file
     [RelayCommand]
-    public static async Task SaveCSV()
+    private static async Task SaveCSV()
     {
         await FileHelpers.SaveToCSV();
     }
@@ -225,7 +225,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Save details to text file
     [RelayCommand]
-    public static async Task SaveText()
+    private static async Task SaveText()
     {
         await FileHelpers.SaveToFile();
     }
@@ -233,7 +233,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Copy to clipboard
     [RelayCommand]
-    internal static void CopyClipboard()
+    private static void CopyClipboard()
     {
         MainPage.Instance!.Copy2Clipboard(true);
     }
@@ -241,7 +241,7 @@ public partial class NavigationViewModel : ObservableObject
 
     #region Check for new release
     [RelayCommand]
-    public static async Task CheckReleaseAsync()
+    private static async Task CheckReleaseAsync()
     {
         await GitHubHelpers.CheckRelease();
     }

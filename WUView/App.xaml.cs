@@ -11,37 +11,37 @@ public partial class App : Application
     /// <summary>
     /// Number of language strings in a resource dictionary
     /// </summary>
-    public static int LanguageStrings { get; set; }
+    public static int LanguageStrings { get; private set; }
 
     /// <summary>
     /// Number of language strings in the test resource dictionary
     /// </summary>
-    public static int TestLanguageStrings { get; set; }
+    private static int TestLanguageStrings { get; set; }
 
     /// <summary>
     /// Uri of the resource dictionary
     /// </summary>
-    public static string? LanguageFile { get; set; }
+    private static string? LanguageFile { get; set; }
 
     /// <summary>
     /// Uri of the test resource dictionary
     /// </summary>
-    public static string? TestLanguageFile { get; set; }
+    private static string? TestLanguageFile { get; set; }
 
     /// <summary>
     /// Culture at startup
     /// </summary>
-    public static CultureInfo? StartupCulture { get; set; }
+    private static CultureInfo? StartupCulture { get; set; }
 
     /// <summary>
     /// UI Culture at startup
     /// </summary>
-    public static CultureInfo? StartupUICulture { get; set; }
+    private static CultureInfo? StartupUICulture { get; set; }
 
     /// <summary>
     /// Number of language strings in the default resource dictionary
     /// </summary>
-    public static int DefaultLanguageStrings { get; set; }
+    public static int DefaultLanguageStrings { get; private set; }
     #endregion Properties
 
     /// <summary>

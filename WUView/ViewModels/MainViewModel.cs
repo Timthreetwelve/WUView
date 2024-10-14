@@ -5,7 +5,7 @@ namespace WUView.ViewModels;
 internal sealed partial class MainViewModel : ObservableObject
 {
     #region Event record and WUpdate Lists
-    public static List<EventRecord> EventLogRecords { get; set; } = [];
+    private static List<EventRecord> EventLogRecords { get; set; } = [];
     public static ObservableCollection<WUpdate> UpdatesFullList { get; set; } = [];
     public static ObservableCollection<WUpdate> UpdatesWithoutExcludedItems { get; set; } = [];
     #endregion Event record and WUpdate Lists
@@ -27,7 +27,7 @@ internal sealed partial class MainViewModel : ObservableObject
     /// <summary>
     /// Gets list of Windows Updates
     /// </summary>
-    public static void GetListOfUpdates()
+    private static void GetListOfUpdates()
     {
         Stopwatch sw = new();
         sw.Start();
@@ -170,7 +170,7 @@ internal sealed partial class MainViewModel : ObservableObject
     /// <summary>
     /// Creates a List that doesn't include any records on the exclude list
     /// </summary>
-    public static void PopulateExcludedList()
+    private static void PopulateExcludedList()
     {
         Stopwatch esw = new();
         esw.Start();
@@ -234,7 +234,7 @@ internal sealed partial class MainViewModel : ObservableObject
     /// <summary>
     /// Gets all "Setup" records from the Event Log
     /// </summary>
-    public static void GetEventLog()
+    private static void GetEventLog()
     {
         Stopwatch swe = new();
         swe.Start();
@@ -292,7 +292,7 @@ internal sealed partial class MainViewModel : ObservableObject
     /// <summary>
     /// Displays the count of updates in a snack bar message
     /// </summary>
-    internal static void DisplayCount()
+    private static void DisplayCount()
     {
         int total = UpdatesFullList.Count;
         int displayed = MainPage.Instance!.dataGrid.Items.Count;

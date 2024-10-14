@@ -10,7 +10,7 @@ namespace WUView.Dialogs;
 public partial class MDCustMsgBox : Window
 {
     #region Public Property
-    public static CustResultType CustResult { get; set; }
+    public static CustResultType CustResult { get; private set; }
     #endregion
 
     /// <summary>
@@ -129,28 +129,28 @@ public partial class MDCustMsgBox : Window
 
     #region Button commands
     [RelayCommand]
-    internal void CancelButton()
+    private void CancelButton()
     {
         Close();
         CustResult = CustResultType.Cancel;
     }
 
     [RelayCommand]
-    internal void OKButton()
+    private void OKButton()
     {
         Close();
         CustResult = CustResultType.Ok;
     }
 
     [RelayCommand]
-    internal void YesButton()
+    private void YesButton()
     {
         Close();
         CustResult = CustResultType.Yes;
     }
 
     [RelayCommand]
-    internal void NoButton()
+    private void NoButton()
     {
         Close();
         CustResult = CustResultType.No;

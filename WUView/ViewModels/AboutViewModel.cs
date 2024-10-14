@@ -6,21 +6,21 @@ public partial class AboutViewModel
 {
     #region Relay Commands
     [RelayCommand]
-    public static void ViewLicense()
+    private static void ViewLicense()
     {
         string dir = AppInfo.AppDirectory;
         TextFileViewer.ViewTextFile(Path.Combine(dir, "License.txt"));
     }
 
     [RelayCommand]
-    public static void ViewReadMe()
+    private static void ViewReadMe()
     {
         string dir = AppInfo.AppDirectory;
         TextFileViewer.ViewTextFile(Path.Combine(dir, "ReadMe.txt"));
     }
 
     [RelayCommand]
-    public static void GoToGitHub(string url)
+    private static void GoToGitHub(string url)
     {
         Process p = new();
         p.StartInfo.FileName = url;
@@ -29,7 +29,7 @@ public partial class AboutViewModel
     }
 
     [RelayCommand]
-    public static async Task CheckReleaseAsync()
+    private static async Task CheckReleaseAsync()
     {
         await GitHubHelpers.CheckRelease();
     }

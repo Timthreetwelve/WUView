@@ -8,7 +8,7 @@ namespace WUView.Views;
 public partial class MainPage : UserControl
 {
     #region MainPage Instance
-    public static MainPage? Instance { get; set; }
+    public static MainPage? Instance { get; private set; }
     #endregion MainPage Instance
 
     public MainPage()
