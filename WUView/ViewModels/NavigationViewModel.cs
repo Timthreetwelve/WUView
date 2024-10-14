@@ -334,14 +334,14 @@ public partial class NavigationViewModel : ObservableObject
             {
                 MainWindowUIHelpers.EverythingLarger();
                 string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
-                string message = string.Format(CultureInfo.InvariantCulture, GetStringResource("MsgText_UISizeSet"), size);
+                string message = string.Format(CultureInfo.InvariantCulture, MsgTextUISizeSet, size);
                 SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
             if (e.Key == Key.Subtract || e.Key == Key.OemMinus)
             {
                 MainWindowUIHelpers.EverythingSmaller();
                 string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
-                string message = string.Format(CultureInfo.InvariantCulture, GetStringResource("MsgText_UISizeSet"), size);
+                string message = string.Format(CultureInfo.InvariantCulture, MsgTextUISizeSet, size);
                 SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
         }
@@ -368,7 +368,7 @@ public partial class NavigationViewModel : ObservableObject
                         break;
                 }
                 string theme = EnumDescConverter.GetEnumDescription(UserSettings.Setting.UITheme);
-                string message = string.Format(CultureInfo.InvariantCulture, GetStringResource("MsgText_UIThemeSet"), theme);
+                string message = string.Format(CultureInfo.InvariantCulture, MsgTextUIThemeSet, theme);
                 SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
             if (e.Key == Key.C)
@@ -382,7 +382,7 @@ public partial class NavigationViewModel : ObservableObject
                     UserSettings.Setting.PrimaryColor++;
                 }
                 string color = EnumDescConverter.GetEnumDescription(UserSettings.Setting.PrimaryColor);
-                string message = string.Format(CultureInfo.InvariantCulture, GetStringResource("MsgText_UIColorSet"), color);
+                string message = string.Format(CultureInfo.InvariantCulture, MsgTextUIColorSet, color);
                 SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
             if (e.Key == Key.F)

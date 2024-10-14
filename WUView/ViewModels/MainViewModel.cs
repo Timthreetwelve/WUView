@@ -159,7 +159,7 @@ internal sealed partial class MainViewModel : ObservableObject
 
         if (sbEventLog.Length == 0)
         {
-            string message = string.Format(CultureInfo.InvariantCulture, GetStringResource("MsgText_EventLogNoRecords"), kb);
+            string message = string.Format(CultureInfo.InvariantCulture, MsgTextEventLogNoRecords, kb);
             _ = sbEventLog.AppendLine(message);
         }
         return sbEventLog.ToString();
@@ -296,7 +296,7 @@ internal sealed partial class MainViewModel : ObservableObject
     {
         int total = UpdatesFullList.Count;
         int displayed = MainPage.Instance!.dataGrid.Items.Count;
-        string message = string.Format(CultureInfo.InvariantCulture, GetStringResource("MsgText_DisplayedUpdates"), displayed, total);
+        string message = string.Format(CultureInfo.InvariantCulture, MsgTextDisplayedUpdates, displayed, total);
         SnackbarMsg.ClearAndQueueMessage(message);
     }
     #endregion Display update count

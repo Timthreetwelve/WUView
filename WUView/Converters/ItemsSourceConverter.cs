@@ -18,7 +18,7 @@ internal sealed class ItemsSourceConverter : IValueConverter
             if (MainPage.Instance is not null)
             {
                 SnackbarMsg.ClearAndQueueMessage(string.Format(CultureInfo.InvariantCulture,
-                    GetStringResource("MsgText_DisplayedUpdates"), withoutCount, fullCount));
+                    MsgTextDisplayedUpdates, withoutCount, fullCount));
             }
             return MainViewModel.UpdatesWithoutExcludedItems;
         }
@@ -27,7 +27,7 @@ internal sealed class ItemsSourceConverter : IValueConverter
             if (MainPage.Instance is not null)
             {
                 SnackbarMsg.ClearAndQueueMessage(string.Format(CultureInfo.InvariantCulture,
-                    GetStringResource("MsgText_DisplayedAllUpdates"), fullCount));
+                    MsgTextDisplayedAllUpdates, fullCount));
             }
             return MainViewModel.UpdatesFullList;
         }

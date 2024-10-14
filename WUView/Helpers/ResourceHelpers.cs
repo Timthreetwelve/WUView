@@ -4,19 +4,21 @@ namespace WUView.Helpers;
 
 internal static class ResourceHelpers
 {
-    /// <summary>
-    /// Gets the count of strings in the default resource dictionary.
-    /// </summary>
-    /// <returns>Count as int.</returns>
-    public static int GetTotalDefaultLanguageCount()
-    {
-        ResourceDictionary dictionary = new()
-        {
-            Source = new Uri("Languages/Strings.en-US.xaml", UriKind.RelativeOrAbsolute)
-        };
-        return dictionary.Count;
-    }
+    #region Composite format properties
+    internal static CompositeFormat MsgTextDisplayedUpdates { get; } = GetCompositeResource("MsgText_DisplayedUpdates");
+    internal static CompositeFormat MsgTextDisplayedAllUpdates { get; } = GetCompositeResource("MsgText_DisplayedAllUpdates");
+    internal static CompositeFormat MsgTextAppUpdateNewerFound { get; } = GetCompositeResource("MsgText_AppUpdateNewerFound");
+    internal static CompositeFormat MsgTextErrorReadingFile { get; } = GetCompositeResource("MsgText_ErrorReadingFile");
+    internal static CompositeFormat MsgTextErrorOpeningFile { get; } = GetCompositeResource("MsgText_ErrorOpeningFile");
+    internal static CompositeFormat MsgTextEventLogNoRecords { get; } = GetCompositeResource("MsgText_EventLogNoRecords");
+    internal static CompositeFormat MsgTextUISizeSet { get; } = GetCompositeResource("MsgText_UISizeSet");
+    internal static CompositeFormat MsgTextUIThemeSet { get; } = GetCompositeResource("MsgText_UIThemeSet");
+    internal static CompositeFormat MsgTextUIColorSet { get; } = GetCompositeResource("MsgText_UIColorSet");
+    internal static CompositeFormat MsgTextHResultCopiedToClipboard { get; } = GetCompositeResource("MsgText_HResultCopiedToClipboard");
+    internal static CompositeFormat MsgTextFilterRowsShown { get; } = GetCompositeResource("MsgText_FilterRowsShown");
+    #endregion Composite format properties
 
+    #region Get a string resource
     /// <summary>
     /// Gets the string resource for the key.
     /// </summary>
@@ -60,7 +62,31 @@ internal static class ResourceHelpers
 
         return description.ToString()!;
     }
+    #endregion Get a string resource
 
+    #region Get composite format for a resource string
+    private static CompositeFormat GetCompositeResource(string key)
+    {
+        return CompositeFormat.Parse(GetStringResource(key));
+    }
+    #endregion Get composite format for a resource string
+
+    #region Count default (en-US) strings
+    /// <summary>
+    /// Gets the count of strings in the default resource dictionary.
+    /// </summary>
+    /// <returns>Count as int.</returns>
+    public static int GetTotalDefaultLanguageCount()
+    {
+        ResourceDictionary dictionary = new()
+        {
+            Source = new Uri("Languages/Strings.en-US.xaml", UriKind.RelativeOrAbsolute)
+        };
+        return dictionary.Count;
+    }
+    #endregion Count default (en-US) strings
+
+    #region Compare language dictionaries
     /// <summary>
     /// Compares language resource dictionaries to find missing keys
     /// </summary>
@@ -117,4 +143,5 @@ internal static class ResourceHelpers
             }
         }
     }
+    #endregion Compare language dictionaries
 }
