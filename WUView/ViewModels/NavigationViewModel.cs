@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
@@ -264,7 +264,8 @@ public partial class NavigationViewModel : ObservableObject
     /// <summary>
     /// Keyboard events
     /// </summary>
-    public void KeyDown(object sender, KeyEventArgs e)
+    [RelayCommand]
+    private void KeyDown(KeyEventArgs e)
     {
         #region Keys without modifiers
         if (e.Key == Key.F1)
@@ -320,7 +321,7 @@ public partial class NavigationViewModel : ObservableObject
             {
                 if (UserSettings.Setting!.DateFormat >= 9)
                 {
-                    UserSettings.Setting!.DateFormat = 0;
+                    UserSettings.Setting.DateFormat = 0;
                 }
                 else
                 {

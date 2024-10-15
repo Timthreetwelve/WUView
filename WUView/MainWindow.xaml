@@ -27,8 +27,8 @@
     <!--#region Interaction Triggers-->
     <bh:Interaction.Triggers>
         <bh:EventTrigger EventName="KeyDown">
-            <bh:CallMethodAction MethodName="KeyDown"
-                                 TargetObject="{Binding}" />
+            <bh:InvokeCommandAction Command="{Binding KeyDownCommand}"
+                                    PassEventArgsToCommand="True" />
         </bh:EventTrigger>
     </bh:Interaction.Triggers>
     <!--#endregion-->
