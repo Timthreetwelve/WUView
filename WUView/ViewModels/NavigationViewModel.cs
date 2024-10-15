@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
@@ -27,41 +27,40 @@ public partial class NavigationViewModel : ObservableObject
     #endregion Properties
 
     #region List of navigation items
-    public static List<NavigationItem> NavigationViewModelTypes { get; set; } = new List<NavigationItem>
-        (
-            [
-                new NavigationItem
-                {
-                    Name = ResourceHelpers.GetStringResource("NavItem_Updates"),
-                    NavPage = NavPage.Viewer,
-                    ViewModelType = typeof(MainViewModel),
-                    IconKind = PackIconKind.ViewList,
-                    PageTitle = ResourceHelpers.GetStringResource("NavTitle_Updates")
-                },
-                 new NavigationItem
-                {
-                    Name = ResourceHelpers.GetStringResource("NavItem_Settings"),
-                    NavPage = NavPage.Settings,
-                    ViewModelType = typeof(SettingsViewModel),
-                    IconKind = PackIconKind.SettingsOutline,
-                    PageTitle = ResourceHelpers.GetStringResource("NavTitle_Settings")
-                },
-                new NavigationItem
-                {
-                    Name = ResourceHelpers.GetStringResource("NavItem_About"),
-                    NavPage = NavPage.About,
-                    ViewModelType = typeof(AboutViewModel),
-                    IconKind = PackIconKind.AboutCircleOutline,
-                    PageTitle = ResourceHelpers.GetStringResource("NavTitle_About")
-                },
-                new NavigationItem
-                {
-                    Name = ResourceHelpers.GetStringResource("NavItem_Exit"),
-                    IconKind = PackIconKind.ExitToApp,
-                    IsExit = true
-                }
-            ]
-        );
+    public static List<NavigationItem> NavigationViewModelTypes { get; set; } =
+    [
+        new ()
+        {
+            Name = GetStringResource("NavItem_Updates"),
+            NavPage = NavPage.Viewer,
+            ViewModelType = typeof(MainViewModel),
+            IconKind = PackIconKind.ViewList,
+            PageTitle = GetStringResource("NavTitle_Updates")
+        },
+            new ()
+        {
+            Name = GetStringResource("NavItem_Settings"),
+            NavPage = NavPage.Settings,
+            ViewModelType = typeof(SettingsViewModel),
+            IconKind = PackIconKind.SettingsOutline,
+            PageTitle = GetStringResource("NavTitle_Settings")
+        },
+        new ()
+        {
+            Name = GetStringResource("NavItem_About"),
+            NavPage = NavPage.About,
+            ViewModelType = typeof(AboutViewModel),
+            IconKind = PackIconKind.AboutCircleOutline,
+            PageTitle = GetStringResource("NavTitle_About")
+        },
+        new ()
+        {
+            Name = GetStringResource("NavItem_Exit"),
+            IconKind = PackIconKind.ExitToApp,
+            IsExit = true
+        }
+    ];
+
     #endregion List of navigation items
 
     #region Navigation Methods
