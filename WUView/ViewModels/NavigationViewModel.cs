@@ -278,7 +278,7 @@ public partial class NavigationViewModel : ObservableObject
         }
         if (e.Key == Key.Escape)
         {
-            if (CurrentViewModel!.GetType() == typeof(MainViewModel))
+            if (CurrentViewModel is MainViewModel)
             {
                 MainPage.Instance!.tbxSearch.Clear();
             }
