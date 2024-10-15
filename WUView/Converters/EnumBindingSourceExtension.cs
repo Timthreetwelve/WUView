@@ -14,7 +14,7 @@ internal sealed class EnumBindingSourceExtension : MarkupExtension
     private Type _enumType;
     public Type EnumType
     {
-        get { return _enumType; }
+        get => _enumType;
         set
         {
             if (value != _enumType)
