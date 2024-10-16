@@ -30,14 +30,9 @@ internal static class WUApiHelpers
         try
         {
             IAutomaticUpdates automaticUpdates = new();
-            if (automaticUpdates.ServiceEnabled)
-            {
-                msg = "Windows Update service is enabled.";
-            }
-            else
-            {
-                msg = "Windows Update service is not enabled.";
-            }
+            msg = automaticUpdates.ServiceEnabled
+                ? "Windows Update service is enabled."
+                : "Windows Update service is not enabled.";
         }
         catch (Exception ex)
         {
