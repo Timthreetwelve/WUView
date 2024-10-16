@@ -39,14 +39,7 @@ public static class SingleInstance
 
         string eventName;
         const string uniqueID = "{ABFC758B-06B6-4379-A712-835EB42D230F}";
-        if (uniquePerUser)
-        {
-            eventName = $"{appName}-{uniqueID}-{Environment.UserName}{debugger}";
-        }
-        else
-        {
-            eventName = $"{appName}-{uniqueID}";
-        }
+        eventName = uniquePerUser ? $"{appName}-{uniqueID}-{Environment.UserName}{debugger}" : $"{appName}-{uniqueID}";
 
         if (EventWaitHandle.TryOpenExisting(eventName, out EventWaitHandle? eventWaitHandle))
         {
