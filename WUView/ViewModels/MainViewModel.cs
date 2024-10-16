@@ -5,9 +5,9 @@ namespace WUView.ViewModels;
 internal sealed partial class MainViewModel : ObservableObject
 {
     #region Event record and WUpdate Lists
-    private static List<EventRecord> EventLogRecords { get; set; } = [];
-    public static ObservableCollection<WUpdate> UpdatesFullList { get; set; } = [];
-    public static ObservableCollection<WUpdate> UpdatesWithoutExcludedItems { get; set; } = [];
+    private static List<EventRecord> EventLogRecords { get; } = [];
+    public static ObservableCollection<WUpdate> UpdatesFullList { get; } = [];
+    public static ObservableCollection<WUpdate> UpdatesWithoutExcludedItems { get; } = [];
     #endregion Event record and WUpdate Lists
 
     #region Kick off the process of gathering the information
