@@ -13,7 +13,7 @@ public class ExcludedItems : ObservableObject
     /// <value>
     /// The excluded string.
     /// </value>
-    public string? ExcludedString { get; set; }
+    public string? ExcludedString { get; init; }
 
     /// <summary>
     /// Collection of excluded strings
