@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
@@ -399,6 +399,17 @@ public partial class NavigationViewModel : ObservableObject
             {
                 CompareLanguageDictionaries();
                 ViewLogFile();
+            }
+            if (e.Key == Key.R)
+            {
+                if (UserSettings.Setting?.RowSpacing >= Spacing.Wide)
+                {
+                    UserSettings.Setting.RowSpacing = Spacing.Compact;
+                }
+                else
+                {
+                    UserSettings.Setting!.RowSpacing++;
+                }
             }
             if (e.Key == Key.S)
             {
