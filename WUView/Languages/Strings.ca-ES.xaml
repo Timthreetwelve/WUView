@@ -15,7 +15,7 @@
 
         Translation contributed by:  @Timthreetwelve & Google Translate
 
-        Date last update:            2024/10/13
+        Date last update:            2024/10/20
 
         ======================================================================
     -->
@@ -100,6 +100,7 @@
     <sys:String x:Key="MsgText_ApplicationStarting">està en marxa</sys:String>
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">No s'ha pogut comprovar l'actualització.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">S'està comprovant l'actualització.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateClose">Si feu clic a "Sí", es tancarà el visor de Windows Update.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Vols anar a la pàgina de llançament?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">S'ha trobat una versió més recent ({0}).</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">No s'han trobat versions més recents.</sys:String>
@@ -110,6 +111,9 @@
     <sys:String x:Key="MsgText_DisplayedUpdates">Es mostren {0} de {1} actualitzacions</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Temps transcorregut</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Hi ha un problema amb el fitxer d'idioma.</sys:String>
+    <sys:String x:Key="MsgText_ErrorCaption">ERROR</sys:String>
+    <sys:String x:Key="MsgText_ErrorOpeningFile">S'ha produït un error en obrir {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorReadingFile">S'ha produït un error en llegir {0}</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">No s'han trobat registres d'esdeveniments per a aquesta actualització.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">No s'ha trobat cap registre d'esdeveniments que contingui "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">S'exclouen les actualitzacions que continguin:</sys:String>
