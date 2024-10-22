@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 #nullable disable
 namespace WUView.Converters;
 
@@ -14,7 +14,6 @@ internal sealed class EnumBindingSourceExtension : MarkupExtension
     private Type _enumType;
     public Type EnumType
     {
-        get => _enumType;
         set
         {
             if (value != _enumType)
@@ -30,8 +29,6 @@ internal sealed class EnumBindingSourceExtension : MarkupExtension
             }
         }
     }
-
-    public EnumBindingSourceExtension() { }
 
     public EnumBindingSourceExtension(Type enumType)
     {
