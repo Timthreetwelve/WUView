@@ -152,6 +152,7 @@ public partial class NavigationViewModel : ObservableObject
     private static void ToggleDetails()
     {
         UserSettings.Setting!.ShowDetails = !UserSettings.Setting.ShowDetails;
+        MainPage.Instance!.SetDetailsHeight();
     }
     #endregion Toggle details
 
@@ -304,6 +305,7 @@ public partial class NavigationViewModel : ObservableObject
             if (e.Key == Key.D)
             {
                 UserSettings.Setting!.ShowDetails = !UserSettings.Setting.ShowDetails;
+                MainPage.Instance!.SetDetailsHeight();
             }
             if (e.Key == Key.E)
             {

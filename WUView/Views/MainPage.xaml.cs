@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Views;
 
@@ -15,7 +15,21 @@ public partial class MainPage : UserControl
     {
         InitializeComponent();
         Instance = this;
+
+        SetDetailsHeight();
     }
+
+    #region Set height of details pane
+    /// <summary>
+    /// Set the details pane height
+    /// </summary>
+    public void SetDetailsHeight()
+    {
+        DetailsRow.Height = !UserSettings.Setting!.ShowDetails
+            ? new GridLength(1)
+            : new GridLength(UserSettings.Setting.DetailsHeight);
+    }
+    #endregion Set height of details pane
 
     #region HResult click event
     /// <summary>
@@ -103,7 +117,7 @@ public partial class MainPage : UserControl
         string filter = TbxSearch.Text;
 
         ICollectionView cv = CollectionViewSource.GetDefaultView(DataGrid.ItemsSource);
-        if (filter?.Length == 0)
+        if (filter.Length == 0)
         {
             cv.Filter = null;
             if (exit)
@@ -111,15 +125,15 @@ public partial class MainPage : UserControl
                 return;
             }
         }
-        else if (filter?.StartsWith('!') == true)
+        else if (filter.StartsWith('!'))
         {
             filter = filter[1..].TrimStart(' ');
             cv.Filter = o =>
             {
                 WUpdate? wu = o as WUpdate;
-                return !wu!.Title!.Contains(filter!, StringComparison.OrdinalIgnoreCase) &&
-                       !wu.ResultCode!.Contains(filter!, StringComparison.OrdinalIgnoreCase) &&
-                       !wu.KBNum!.Contains(filter!, StringComparison.OrdinalIgnoreCase);
+                return !wu!.Title!.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
+                       !wu.ResultCode!.Contains(filter, StringComparison.OrdinalIgnoreCase) &&
+                       !wu.KBNum!.Contains(filter, StringComparison.OrdinalIgnoreCase);
             };
         }
         else
@@ -127,9 +141,9 @@ public partial class MainPage : UserControl
             cv.Filter = o =>
             {
                 WUpdate? wu = o as WUpdate;
-                return wu!.Title!.Contains(filter!, StringComparison.OrdinalIgnoreCase) ||
-                       wu.ResultCode!.Contains(filter!, StringComparison.OrdinalIgnoreCase) ||
-                       wu.KBNum!.Contains(filter!, StringComparison.OrdinalIgnoreCase);
+                return wu!.Title!.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
+                       wu.ResultCode!.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
+                       wu.KBNum!.Contains(filter, StringComparison.OrdinalIgnoreCase);
             };
         }
         if (DataGrid.Items.Count == 1)
@@ -292,9 +306,9 @@ public partial class MainPage : UserControl
     private static void SaveColumnOrder(DataGrid? grid)
     {
         UserSettings.Setting!.ColumnKB = grid!.Columns[0].DisplayIndex;
-        UserSettings.Setting!.ColumnDate = grid!.Columns[1].DisplayIndex;
-        UserSettings.Setting!.ColumnTitle = grid!.Columns[2].DisplayIndex;
-        UserSettings.Setting!.ColumnResult = grid!.Columns[3].DisplayIndex;
+        UserSettings.Setting.ColumnDate = grid.Columns[1].DisplayIndex;
+        UserSettings.Setting.ColumnTitle = grid.Columns[2].DisplayIndex;
+        UserSettings.Setting.ColumnResult = grid.Columns[3].DisplayIndex;
     }
     #endregion Save order of columns in the DataGrid
 
@@ -310,9 +324,9 @@ public partial class MainPage : UserControl
             Dictionary<int, int> columns = new()
             {
                 { UserSettings.Setting!.ColumnKB, 0 },
-                { UserSettings.Setting!.ColumnDate, 1 },
-                { UserSettings.Setting!.ColumnTitle, 2 },
-                { UserSettings.Setting!.ColumnResult, 3 }
+                { UserSettings.Setting.ColumnDate, 1 },
+                { UserSettings.Setting.ColumnTitle, 2 },
+                { UserSettings.Setting.ColumnResult, 3 }
             };
 
             foreach (KeyValuePair<int, int> pair in columns.OrderBy(k => k.Key))

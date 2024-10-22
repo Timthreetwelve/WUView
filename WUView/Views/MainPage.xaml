@@ -41,44 +41,11 @@
         <!--#region Row definitions-->
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
-            <RowDefinition Height="*"
-                           MinHeight="85" />
-            <RowDefinition x:Name="SpliiterRow">
-                <RowDefinition.Style>
-                    <Style TargetType="RowDefinition">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Setting.ShowDetails,
-                                                           Source={StaticResource config}}"
-                                         Value="False">
-                                <Setter Property="Height" Value="0" />
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding Setting.ShowDetails,
-                                                           Source={StaticResource config}}"
-                                         Value="True">
-                                <Setter Property="Height" Value="Auto" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </RowDefinition.Style>
-            </RowDefinition>
-            <RowDefinition x:Name="DetailsRow">
-                <RowDefinition.Style>
-                    <Style TargetType="RowDefinition">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Setting.ShowDetails,
-                                                           Source={StaticResource config}}"
-                                         Value="False">
-                                <Setter Property="Height" Value="0" />
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding Setting.ShowDetails,
-                                                           Source={StaticResource config}}"
-                                         Value="True">
-                                <Setter Property="Height" Value="{Binding Setting.DetailsHeight, Source={StaticResource config}}" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </RowDefinition.Style>
-            </RowDefinition>
+            <RowDefinition Height="*" MinHeight="85" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition x:Name="DetailsRow"
+                           Height="450" />
+
         </Grid.RowDefinitions>
         <!--#endregion-->
 
@@ -239,9 +206,7 @@
         <!--#endregion-->
 
         <!--#region GridSplitter-->
-        <!--  Grid Splitter can be hidden. See Style Trigger in Row Definition  -->
-        <GridSplitter x:Name="DetailsSplitter"
-                      Grid.Row="2"
+        <GridSplitter Grid.Row="2"
                       Height="4"
                       Margin="0,3"
                       HorizontalAlignment="Stretch"
@@ -249,19 +214,18 @@
                       DragCompleted="DetailsSplitter_DragCompleted"
                       IsTabStop="False"
                       ResizeBehavior="PreviousAndNext"
-                      Style="{DynamicResource MaterialDesignGridSplitter}" />
+                      Style="{DynamicResource MaterialDesignGridSplitter}"
+                      Visibility="{Binding ShowDetails,
+                                           Source={x:Static config:UserSettings.Setting},
+                                           Converter={StaticResource BoolVisConverter}}" />
         <!--#endregion-->
 
         <!--#region Details area-->
-        <!--  Details panel can be hidden. See Style Trigger in Row Definition  -->
         <Grid Grid.Row="3"
               KeyboardNavigation.TabNavigation="None">
             <!--#region Fallback text if selected rows != 1-->
-            <TextBlock Margin="1"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="24"
-                       FontWeight="SemiBold"
+            <TextBlock Margin="20" HorizontalAlignment="Center"
+                       FontSize="24" FontWeight="SemiBold"
                        Opacity=".4"
                        Text="{DynamicResource Details_TitleFallback}"
                        TextWrapping="Wrap">
