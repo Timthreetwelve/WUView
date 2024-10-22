@@ -4,6 +4,7 @@ namespace WUView.Helpers;
 
 internal static class WUApiHelpers
 {
+    #region Log Windows Update Agent info
     public static void LogWUAInfo()
     {
         try
@@ -16,31 +17,35 @@ internal static class WUApiHelpers
             _log.Error(ex, $"Error attempting to get Windows Update Agent info. {ex.Message}");
         }
     }
+    #endregion Log Windows Update Agent info
 
+    #region Get Windows Update Agent info
     private static string GetWUAInfo(string wuaObj)
     {
         IWindowsUpdateAgentInfo updateAgentInfo = new();
-        string value = updateAgentInfo.GetInfo(wuaObj).ToString()!;
-        return value ?? string.Empty;
+        return updateAgentInfo.GetInfo(wuaObj).ToString()!;
     }
+    #endregion Get Windows Update Agent info
 
+    #region Log Windows Update Service status
     public static void LogWUEnabled()
     {
-        string msg = string.Empty;
         try
         {
             IAutomaticUpdates automaticUpdates = new();
-            msg = automaticUpdates.ServiceEnabled
-                ? "Windows Update service is enabled."
-                : "Windows Update service is not enabled.";
+            if (automaticUpdates.ServiceEnabled)
+            {
+                _log.Info("Windows Update Service is enabled.");
+            }
+            else
+            {
+                _log.Warn("Windows Update Service is not enabled.");
+            }
         }
         catch (Exception ex)
         {
-            msg = ex.Message;
-        }
-        finally
-        {
-            _log.Debug(msg);
+            _log.Error(ex, "Error checking Windows Update service status");
         }
     }
+    #endregion Log Windows Update Service status
 }

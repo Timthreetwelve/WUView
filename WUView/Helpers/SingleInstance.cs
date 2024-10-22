@@ -37,9 +37,8 @@ public static class SingleInstance
             debugger = "-Debug";
         }
 
-        string eventName;
         const string uniqueID = "{ABFC758B-06B6-4379-A712-835EB42D230F}";
-        eventName = uniquePerUser ? $"{appName}-{uniqueID}-{Environment.UserName}{debugger}" : $"{appName}-{uniqueID}";
+        string eventName = uniquePerUser ? $"{appName}-{uniqueID}-{Environment.UserName}{debugger}" : $"{appName}-{uniqueID}";
 
         if (EventWaitHandle.TryOpenExisting(eventName, out EventWaitHandle? eventWaitHandle))
         {
