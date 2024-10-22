@@ -1,13 +1,14 @@
-<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.AboutPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:buildinfo="clr-namespace:WUView"
+             xmlns:config="clr-namespace:WUView.Configuration"
+             xmlns:convert="clr-namespace:WUView.Converters"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:helpers="clr-namespace:WUView.Helpers"
              xmlns:global="clr-namespace:System.Globalization;assembly=mscorlib"
-             xmlns:local="clr-namespace:WUView.Views"
+             xmlns:helpers="clr-namespace:WUView.Helpers"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
@@ -93,7 +94,9 @@
                     <Hyperlink Command="{Binding GoToGitHubCommand}"
                                CommandParameter="https://github.com/Timthreetwelve"
                                Foreground="{DynamicResource MaterialDesign.Brush.Foreground}">
-                        <TextBlock Text="Tim Kennedy" TextWrapping="Wrap" />
+                        <InlineUIContainer>
+                            <TextBlock Text="Tim Kennedy" TextWrapping="Wrap" />
+                        </InlineUIContainer>
                     </Hyperlink>
                 </TextBlock>
 
@@ -105,21 +108,21 @@
 
                 <TextBlock Grid.Row="4" Grid.Column="0"
                            Text="{DynamicResource About_License}" />
-                <TextBlock Grid.Row="4" Grid.Column="2">
-                    <Hyperlink Command="{Binding ViewLicenseCommand}"
+                <TextBlock Grid.Row="4" Grid.Column="2"><Hyperlink Command="{Binding ViewLicenseCommand}"
                                Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                ToolTip="{DynamicResource About_LicenseToolTip}"
                                ToolTipService.Placement="Top">
-                        <TextBlock Text="{DynamicResource About_LicenseText}"
-                                   TextWrapping="Wrap" />
-                    </Hyperlink>
-                </TextBlock>
+                        <InlineUIContainer>
+                            <TextBlock Text="{DynamicResource About_LicenseText}"
+                                       TextWrapping="Wrap" />
+                        </InlineUIContainer>
+                    </Hyperlink></TextBlock>
 
                 <TextBlock Grid.Row="5" Grid.Column="0"
                            Text="{DynamicResource About_BuildDate}" />
                 <StackPanel Grid.Row="5" Grid.Column="2"
                             Orientation="Horizontal">
-                    <TextBlock Text="{Binding Source={x:Static buildinfo:BuildInfo.BuildDateUtc}, StringFormat=f, ConverterCulture={x:Static global:CultureInfo.CurrentUICulture}}" />
+                    <TextBlock Text="{Binding ConverterCulture={x:Static global:CultureInfo.CurrentUICulture}, StringFormat=f, Source={x:Static buildinfo:BuildInfo.BuildDateUtc}}" />
                     <TextBlock Margin="10,0"
                                Text="(UTC)" />
                 </StackPanel>
@@ -132,8 +135,8 @@
                            ToolTipService.Placement="Top">
                     <TextBlock.ToolTip>
                         <ToolTip>
-                            <TextBlock>
-                                <Run Text="{DynamicResource About_CommitIDToolTip}" />
+                            <TextBlock><Run Text="{DynamicResource About_CommitIDToolTip}" />
+                                <Run Text=" " />
                                 <Run Text="{x:Static buildinfo:BuildInfo.CommitIDFullString}" />
                             </TextBlock>
                         </ToolTip>
@@ -142,19 +145,16 @@
 
                 <StackPanel Grid.Row="7" Grid.Column="0"
                             Orientation="Horizontal">
-
-                    <TextBlock Grid.Row="7" Grid.Column="0"
-                               Text="{DynamicResource About_GitHub}" />
+                    <TextBlock Text="{DynamicResource About_GitHub}" />
                     <materialDesign:PackIcon Width="20" Height="20"
                                              Margin="10,0,0,0"
                                              Kind="Github" />
                 </StackPanel>
 
-
                 <TextBlock Grid.Row="7" Grid.Column="2">
                     <Hyperlink Command="{Binding GoToGitHubCommand}"
-                               CommandParameter="{Binding Path=Text,
-                                                          ElementName=tbxGithub}"
+                               CommandParameter="{Binding Text,
+                                                          ElementName=TbxGithub}"
                                Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                ToolTip="{DynamicResource About_GitHubToolTip}"
                                ToolTipService.Placement="Top">
@@ -163,16 +163,18 @@
                                        Text="https://github.com/Timthreetwelve/WUView"
                                        TextWrapping="Wrap" />
                         </InlineUIContainer>
-                    </Hyperlink></TextBlock>
+                    </Hyperlink>
+                </TextBlock>
 
                 <TextBlock Grid.Row="8" Grid.Column="0"
                            Text="{DynamicResource About_Documentation}" />
-                <TextBlock Grid.Row="8" Grid.Column="2">
-                    <Hyperlink Command="{Binding ViewReadMeCommand}"
+                <TextBlock Grid.Row="8" Grid.Column="2"><Hyperlink Command="{Binding ViewReadMeCommand}"
                                Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                ToolTip="{DynamicResource About_DocumentationToolTip}"
                                ToolTipService.Placement="Top">
-                        <TextBlock Text="{DynamicResource About_DocumentationText}" />
+                        <InlineUIContainer>
+                            <TextBlock Text="{DynamicResource About_DocumentationText}" />
+                        </InlineUIContainer>
                     </Hyperlink>
                 </TextBlock>
                 <!--#endregion-->
@@ -180,12 +182,13 @@
                 <!--#region Check for new release-->
                 <TextBlock Grid.Row="9" Grid.Column="0"
                            Text="{DynamicResource About_UpdateWU}" />
-                <TextBlock Grid.Row="9" Grid.Column="2">
-                    <Hyperlink Command="{Binding CheckReleaseCommand}"
+                <TextBlock Grid.Row="9" Grid.Column="2"><Hyperlink Command="{Binding CheckReleaseCommand}"
                                Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                ToolTip="{DynamicResource About_UpdateWUToolTip}"
                                ToolTipService.Placement="Top">
-                        <TextBlock Text="{DynamicResource About_UpdateWUText}" />
+                        <InlineUIContainer>
+                            <TextBlock Text="{DynamicResource About_UpdateWUText}" />
+                        </InlineUIContainer>
                     </Hyperlink>
                 </TextBlock>
                 <!--#endregion-->
@@ -208,15 +211,15 @@
                                FontWeight="SemiBold"
                                Text="{DynamicResource About_Translations}" />
 
-                    <TextBlock Grid.Row="1">
-                        <Hyperlink Command="{Binding GoToGitHubCommand}"
+                    <TextBlock Grid.Row="1"><Hyperlink Command="{Binding GoToGitHubCommand}"
                                    CommandParameter="https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation"
                                    Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                    ToolTip="{DynamicResource About_ContributeToolTip}"
                                    ToolTipService.Placement="Top">
-                            <TextBlock Text="{DynamicResource About_Contribute}" />
-                        </Hyperlink>
-                    </TextBlock>
+                            <InlineUIContainer>
+                                <TextBlock Text="{DynamicResource About_Contribute}" />
+                            </InlineUIContainer>
+                        </Hyperlink></TextBlock>
                 </Grid>
 
                 <DataGrid Grid.Row="11" Grid.Column="2"
