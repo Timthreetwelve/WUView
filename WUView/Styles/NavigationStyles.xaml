@@ -21,16 +21,12 @@
         <Setter Property="Background" Value="{DynamicResource MaterialDesign.Brush.Primary}" />
         <Setter Property="CornerRadius" Value="2" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Height" Value="20" />
+        <Setter Property="Height" Value="22" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="Margin" Value="-4,0,8,0" />
         <Setter Property="Visibility" Value="Hidden" />
-        <Setter Property="Width" Value="3" />
+        <Setter Property="Width" Value="4" />
         <Style.Triggers>
-            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBoxItem}}"
-                         Value="True">
-                <Setter Property="Visibility" Value="Visible" />
-            </DataTrigger>
             <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListBoxItem}}"
                          Value="True">
                 <Setter Property="Visibility" Value="Visible" />
