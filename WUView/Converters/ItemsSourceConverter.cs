@@ -8,7 +8,7 @@ namespace WUView.Converters;
 /// <seealso cref="System.Windows.Data.IValueConverter" />
 internal sealed class ItemsSourceConverter : IValueConverter
 {
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         int fullCount = MainViewModel.UpdatesFullList.Count;
         int withoutCount = MainViewModel.UpdatesWithoutExcludedItems.Count;
@@ -33,7 +33,7 @@ internal sealed class ItemsSourceConverter : IValueConverter
         }
     }
 
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         return Binding.DoNothing;
     }

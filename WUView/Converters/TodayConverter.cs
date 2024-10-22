@@ -8,12 +8,12 @@ namespace WUView.Converters;
 /// <remarks>Returns <see langword="true"/> if date is today.</remarks>
 internal sealed class TodayConverter : IValueConverter
 {
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         return UserSettings.Setting!.BoldToday ? value is DateTime date && date.Date == DateTime.Today : (object)false;
     }
 
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         return Binding.DoNothing;
     }

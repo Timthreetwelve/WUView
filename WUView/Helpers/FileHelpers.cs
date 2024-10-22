@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Helpers;
 
@@ -21,7 +21,7 @@ public static partial class FileHelpers
     public static void GetExcludes()
     {
         Stopwatch rxStopWatch = Stopwatch.StartNew();
-        string? json = File.ReadAllText(GetExcludesFile());
+        string json = File.ReadAllText(GetExcludesFile());
         rxStopWatch.Stop();
         ExcludedItems.ExcludedStrings = JsonSerializer.Deserialize<ObservableCollection<ExcludedItems>>(json)!;
         int xCount = ExcludedItems.ExcludedStrings!.Count;

@@ -20,7 +20,7 @@ internal sealed class EnumDescConverter : IValueConverter
     /// <returns>
     /// A converted value. If the method returns <see langword="null" />, the valid null value is used.
     /// </returns>
-    public object? Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         if (value is not Enum myEnum)
         {
@@ -41,10 +41,6 @@ internal sealed class EnumDescConverter : IValueConverter
     /// <returns>The description</returns>
     public static string GetEnumDescription(Enum enumObj)
     {
-        if (enumObj == null)
-        {
-            return string.Empty;
-        }
         FieldInfo? field = enumObj.GetType().GetField(enumObj.ToString());
         object[] attrArray = field!.GetCustomAttributes(false);
 
@@ -62,7 +58,7 @@ internal sealed class EnumDescConverter : IValueConverter
     /// <summary>
     /// Not used.
     /// </summary>
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         return string.Empty;
     }

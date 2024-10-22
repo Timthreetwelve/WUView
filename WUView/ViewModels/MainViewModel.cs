@@ -58,20 +58,20 @@ internal sealed partial class MainViewModel : ObservableObject
             foreach (IUpdateHistoryEntry hist in updateSearcher.QueryHistory(0, maxUpdates))
             {
                 gkbStopwatch.Start();
-                string kbNum = GetKB(hist.Title!);
+                string kbNum = GetKB(hist.Title);
                 gkbStopwatch.Stop();
                 updStopwatch.Start();
                 try
                 {
                     WUpdate update = new()
                     {
-                        Title = hist.Title ?? "null",
+                        Title = hist.Title,
                         KBNum = kbNum,
                         Date = hist.Date.ToLocalTime(),
                         ResultCode = ResultCodeHelper.TranslateResultCode(hist.ResultCode),
                         HResult = hist.HResult.ToString(CultureInfo.InvariantCulture),
                         Operation = OperationHelper.TranslateOperation(hist.Operation),
-                        UpdateID = hist.UpdateIdentity.UpdateID ?? string.Empty,
+                        UpdateID = hist.UpdateIdentity.UpdateID,
                         Description = hist.Description ?? string.Empty,
                         SupportURL = hist.SupportUrl ?? string.Empty,
                         ELDescription = FindEventLogs(kbNum)
@@ -112,7 +112,7 @@ internal sealed partial class MainViewModel : ObservableObject
     /// </summary>
     /// <param name="title">Update title</param>
     /// <returns>Returns either the KB number or n/a</returns>
-    private static string GetKB(string title)
+    private static string GetKB(string? title)
     {
         if (title == null)
         {

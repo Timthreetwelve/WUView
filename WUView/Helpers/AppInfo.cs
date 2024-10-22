@@ -25,7 +25,7 @@ public static class AppInfo
     /// <summary>
     ///  Returns the version number in Major.Minor.Build format
     /// </summary>
-    public static string TitleVersion => Assembly.GetEntryAssembly()!.GetName().Version!.ToString()!.Remove(Assembly.GetEntryAssembly()!.GetName().Version!.ToString().LastIndexOf('.'));
+    public static string TitleVersion => Assembly.GetEntryAssembly()!.GetName().Version!.ToString().Remove(Assembly.GetEntryAssembly()!.GetName().Version!.ToString().LastIndexOf('.'));
 
     /// <summary>
     /// Returns the file version
@@ -65,7 +65,7 @@ public static class AppInfo
     /// <summary>
     /// Returns the app's full name (name, version, culture, etc.)
     /// </summary>
-    public static string AppFullName => Assembly.GetEntryAssembly()!.GetName().FullName ?? "missing";
+    public static string AppFullName => Assembly.GetEntryAssembly()!.GetName().FullName;
 
     /// <summary>
     /// Returns the Company Name from the Assembly info
@@ -95,7 +95,7 @@ public static class AppInfo
     /// <summary>
     /// Returns the File Name from the Assembly info
     /// </summary>
-    public static string AppFileName => FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly()!.Location).FileName ?? "missing";
+    public static string AppFileName => FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly()!.Location).FileName;
 
     /// <summary>
     /// Combines the product name with the title version.
