@@ -221,13 +221,17 @@
 
                 <DataGrid Grid.Row="11" Grid.Column="2"
                           HorizontalAlignment="Left"
-                          materialDesign:DataGridAssist.CellPadding="3,3,3,3"
+                          materialDesign:DataGridAssist.CellPadding="{Binding RowSpacing,
+                                                                              Converter={StaticResource Spacing},
+                                                                              Source={x:Static config:UserSettings.Setting}}"
+                          materialDesign:DataGridAssist.SelectedCellBorderBrush="Transparent"
                           AutoGenerateColumns="False"
                           Background="{DynamicResource MaterialDesign.Brush.Card.Background}"
                           BorderThickness="1"
                           HeadersVisibility="None"
                           IsReadOnly="True"
-                          ItemsSource="{x:Static models:UILanguage.DefinedLanguages}">
+                          ItemsSource="{Binding AnnotatedLanguageList,
+                                                Mode=OneWay}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding LanguageNative}"
                                             MinWidth="110" />
@@ -236,6 +240,9 @@
                                             MinWidth="90" />
                         <DataGridTextColumn Binding="{Binding Contributor}"
                                             MinWidth="200" />
+                        <DataGridTextColumn Binding="{Binding Note}"
+                                            MinWidth="90"
+                                            CellStyle="{StaticResource AlignRight}" />
                     </DataGrid.Columns>
                 </DataGrid>
                 <!--#endregion-->
