@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Helpers;
 
@@ -89,7 +89,7 @@ public static partial class FileHelpers
         bool? result = dialog.ShowDialog();
         if (result == true)
         {
-            MainPage.Instance!.Copy2Clipboard(false);
+            MainPage.Instance!.Copy2Clipboard();
             string gridData = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
             await File.WriteAllTextAsync(dialog.FileName, gridData, Encoding.UTF8);
             _log.Debug($"Details written to {dialog.FileName}");

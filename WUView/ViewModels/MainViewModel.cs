@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
@@ -100,11 +100,7 @@ internal sealed partial class MainViewModel : ObservableObject
             _log.Info($"No updates found! IUpdateSearcher.GetTotalHistoryCount returned {count}.");
             new MDCustMsgBox(GetStringResource("MsgText_NoUpdatesFound"),
                     "Windows Update Viewer",
-                    ButtonType.Ok,
-                    false,
-                    true,
-                    null,
-                    false).Show();
+                    ButtonType.Ok).Show();
         }
         _log.Debug($"Building the list of updates took {sw.Elapsed.TotalMilliseconds:N2} milliseconds");
     }
@@ -224,8 +220,7 @@ internal sealed partial class MainViewModel : ObservableObject
                 ButtonType.Ok,
                 false,
                 true,
-                Application.Current.MainWindow,
-                false).Show();
+                Application.Current.MainWindow).Show();
         }
     }
     #endregion Remove excluded items and create list without excludes

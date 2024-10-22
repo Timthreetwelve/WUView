@@ -58,8 +58,7 @@ internal static class GitHubHelpers
                     ButtonType.Ok,
                     false,
                     true,
-                    _mainWindow,
-                    false).ShowDialog();
+                    _mainWindow).ShowDialog();
             }
             else
             {
@@ -72,8 +71,7 @@ internal static class GitHubHelpers
                     ButtonType.YesNo,
                     false,
                     true,
-                    _mainWindow,
-                    false).ShowDialog();
+                    _mainWindow).ShowDialog();
 
                 if (MDCustMsgBox.CustResult == CustResultType.Yes)
                 {
