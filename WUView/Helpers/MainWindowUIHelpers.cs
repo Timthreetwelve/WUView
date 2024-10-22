@@ -39,9 +39,11 @@ internal static class MainWindowUIHelpers
             case ThemeType.Light:
                 theme.SetBaseTheme(BaseTheme.Light);
                 theme.Background = Colors.WhiteSmoke;
+                theme.SetSecondaryColor(Colors.RoyalBlue);
                 break;
             case ThemeType.Dark:
                 theme.SetBaseTheme(BaseTheme.Dark);
+                theme.SetSecondaryColor(Colors.DeepSkyBlue);
                 break;
             case ThemeType.Darker:
                 // Set card and paper background colors a bit darker
@@ -50,6 +52,7 @@ internal static class MainWindowUIHelpers
                 theme.Background = (Color)ColorConverter.ConvertFromString("#FF202020");
                 theme.DataGrids.Selected = (Color)ColorConverter.ConvertFromString("#FF303030");
                 theme.Foreground = (Color)ColorConverter.ConvertFromString("#E5F0F0F0");
+                theme.SetSecondaryColor(Colors.DodgerBlue);
                 break;
             default:
                 theme.SetBaseTheme(BaseTheme.Light);

@@ -1,4 +1,4 @@
-<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <Application x:Class="WUView.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -12,13 +12,14 @@
             <ResourceDictionary.MergedDictionaries>
                 <materialDesign:BundledTheme BaseTheme="Dark"
                                              ColorAdjustment="{materialDesign:ColorAdjustment}"
-                                             PrimaryColor="Blue" SecondaryColor="Red" />
+                                             PrimaryColor="Blue" SecondaryColor="LightBlue" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
                 <!--  en-US will be the fallback source for localized strings  -->
                 <ResourceDictionary Source="Languages/Strings.en-US.xaml" />
                 <!--  Styles  -->
                 <ResourceDictionary Source="Styles/ButtonStyles.xaml" />
                 <ResourceDictionary Source="Styles/DataGridStyles.xaml" />
+                <ResourceDictionary Source="Styles/HyperlinkStyles.xaml" />
                 <ResourceDictionary Source="Styles/NavigationStyles.xaml" />
                 <ResourceDictionary Source="Styles/ScrollBarStyle.xaml" />
                 <ResourceDictionary Source="Styles/SnackbarStyle.xaml" />
