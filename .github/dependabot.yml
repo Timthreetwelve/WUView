@@ -10,6 +10,4 @@ updates:
     directory: "/WUView"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 25
-    ignore:
-      - dependency-name: "GitVersion.MsBuild"
+    open-pull-requests-limit: 5
