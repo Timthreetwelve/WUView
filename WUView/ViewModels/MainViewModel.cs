@@ -1,8 +1,8 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
-internal sealed partial class MainViewModel : ObservableObject
+internal sealed class MainViewModel : ObservableObject
 {
     #region Event record and WUpdate Lists
     private static List<EventRecord> EventLogRecords { get; } = [];

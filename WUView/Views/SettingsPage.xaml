@@ -7,7 +7,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:config="clr-namespace:WUView.Configuration"
              xmlns:convert="clr-namespace:WUView.Converters"
-             xmlns:local="clr-namespace:WUView.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:models="clr-namespace:WUView.Models"
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
@@ -51,8 +50,7 @@
                         Height="69"
                         Padding="20,0"
                         Background="{DynamicResource MaterialDesign.Brush.Background}">
-                    <Button Grid.Row="0"
-                            Width="auto"
+                    <Button Width="auto"
                             Padding="10,0"
                             HorizontalAlignment="Left"
                             Command="{Binding EditExcludeCommand,
@@ -128,8 +126,7 @@
                                    Content="{DynamicResource SettingsItem_NumberOfUpdates}" />
                             <StackPanel Grid.Row="0" Grid.Column="2"
                                         Orientation="Horizontal">
-                                <ComboBox Grid.Row="0" Grid.Column="2"
-                                          Width="Auto" MinWidth="200"
+                                <ComboBox Width="Auto" MinWidth="200"
                                           Margin="0,3,0,0" Padding="2,0,0,3"
                                           HorizontalAlignment="Left"
                                           ItemsSource="{Binding Source={convert:EnumBindingSource {x:Type models:MaxUpdates}}}"
@@ -248,8 +245,7 @@
                 <!--#endregion-->
 
                 <!--#region UI Settings-->
-                <Expander x:Name="UIExpander"
-                          Grid.Row="4"
+                <Expander Grid.Row="4"
                           materialDesign:ExpanderAssist.HorizontalHeaderPadding="10"
                           IsExpanded="{Binding Setting.UIExpanderOpen,
                                                Source={StaticResource tempconfig}}">
@@ -403,8 +399,7 @@
                 <!--#endregion-->
 
                 <!--#region Language-->
-                <Expander x:Name="LangExpander"
-                          materialDesign:ExpanderAssist.HorizontalHeaderPadding="10"
+                <Expander materialDesign:ExpanderAssist.HorizontalHeaderPadding="10"
                           Grid.Row="6"
                           IsExpanded="{Binding Setting.LangExpanderOpen,
                                                Source={StaticResource tempconfig}}">
@@ -458,8 +453,7 @@
 
                         <StackPanel Grid.Row="0" Grid.Column="1"
                                     Orientation="Horizontal">
-                            <CheckBox Grid.Row="0" Grid.Column="1"
-                                      Padding="10,0"
+                            <CheckBox Padding="10,0"
                                       VerticalContentAlignment="Center"
                                       Content="{DynamicResource SettingsItem_UseOSLanguageCheckBox}"
                                       IsChecked="{Binding UseOSLanguage,
@@ -521,7 +515,7 @@
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
-                            <TextBlock Grid.Row="1" Grid.Column="4"
+                            <TextBlock Grid.Column="4"
                                        VerticalAlignment="Center"
                                        FontSize="13" Opacity=".8">
                                 <Run Text="{Binding CurrentLanguageStringCount}" />
@@ -548,8 +542,7 @@
                             <StackPanel.DataContext>
                                 <viewmodels:SettingsViewModel />
                             </StackPanel.DataContext>
-                            <CheckBox Grid.Row="0" Grid.Column="1"
-                                      Padding="10,0"
+                            <CheckBox Padding="10,0"
                                       VerticalContentAlignment="Center"
                                       Content="{DynamicResource SettingsItem_EnableLanguageTesting}"
                                       IsChecked="{Binding LanguageTesting,

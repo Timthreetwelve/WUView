@@ -37,15 +37,9 @@
     <Window.DataContext>
         <viewmodels:NavigationViewModel />
     </Window.DataContext>
-
-    <Window.Resources>
-        <config:UserSettings x:Key="config" />
-        <BooleanToVisibilityConverter x:Key="boolToVis" />
-    </Window.Resources>
     <!--#endregion-->
 
-    <materialDesign:DialogHost x:Name="MainDH"
-                               CloseOnClickAway="False"
+    <materialDesign:DialogHost CloseOnClickAway="False"
                                DialogTheme="Inherit"
                                Identifier="MainDialogHost"
                                IsTabStop="False">
@@ -57,14 +51,13 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Name="NavColumn"
-                                  Width="auto" />
+                <ColumnDefinition Width="auto" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <!--#endregion-->
 
             <!--#region Title Row-->
-            <Grid Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid Grid.Column="1" >
                 <!--#region Column definitions for the title row-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />

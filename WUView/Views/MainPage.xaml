@@ -54,8 +54,7 @@
                    LastChildFill="False">
             <StackPanel Margin="0,0,0,5"
                         Orientation="Horizontal">
-                <Menu x:Name="mnuMain"
-                      Margin="0,0"
+                <Menu Margin="0,0"
                       materialDesign:MenuAssist.TopLevelMenuItemHeight="35"
                       DockPanel.Dock="Top"
                       FontFamily="Segoe UI"
