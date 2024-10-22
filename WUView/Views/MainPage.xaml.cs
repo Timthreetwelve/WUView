@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Views;
 
@@ -23,7 +23,7 @@ public partial class MainPage : UserControl
     /// </summary>
     private void HResult_PreviewMouseDown(object sender, MouseButtonEventArgs e)
     {
-        if (hypHResult.Inlines.FirstInline is Run run)
+        if (HypHResult.Inlines.FirstInline is Run run)
         {
             try
             {
@@ -100,9 +100,9 @@ public partial class MainPage : UserControl
     /// <param name="exit">If true, will return if filter length is 0.</param>
     public void FilterTheGrid(bool exit = false)
     {
-        string filter = tbxSearch.Text;
+        string filter = TbxSearch.Text;
 
-        ICollectionView cv = CollectionViewSource.GetDefaultView(dataGrid.ItemsSource);
+        ICollectionView cv = CollectionViewSource.GetDefaultView(DataGrid.ItemsSource);
         if (filter?.Length == 0)
         {
             cv.Filter = null;
@@ -132,14 +132,14 @@ public partial class MainPage : UserControl
                        wu.KBNum!.Contains(filter!, StringComparison.OrdinalIgnoreCase);
             };
         }
-        if (dataGrid.Items.Count == 1)
+        if (DataGrid.Items.Count == 1)
         {
             SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_FilterOneRowShown"), 2000);
         }
         else
         {
             SnackbarMsg.ClearAndQueueMessage(string.Format(CultureInfo.InvariantCulture,
-                MsgTextFilterRowsShown, dataGrid.Items.Count), 2000);
+                MsgTextFilterRowsShown, DataGrid.Items.Count), 2000);
         }
     }
     #endregion Filter the datagrid
@@ -150,11 +150,11 @@ public partial class MainPage : UserControl
     /// </summary>
     internal void ClearColumnSort()
     {
-        foreach (DataGridColumn column in dataGrid.Columns)
+        foreach (DataGridColumn column in DataGrid.Columns)
         {
             column.SortDirection = null;
         }
-        dataGrid.Items.SortDescriptions.Clear();
+        DataGrid.Items.SortDescriptions.Clear();
 
         SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_ColumnSortCleared"));
     }
@@ -167,31 +167,31 @@ public partial class MainPage : UserControl
     public void Copy2Clipboard(bool msg = false)
     {
         // Preserve the selected row
-        int selIndex = dataGrid.SelectedIndex;
+        int selIndex = DataGrid.SelectedIndex;
 
         // Clear the clipboard
         Clipboard.Clear();
 
         // Include the header row
-        dataGrid.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
+        DataGrid.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
 
         // Temporarily set selection mode to all rows
-        dataGrid.SelectionMode = DataGridSelectionMode.Extended;
+        DataGrid.SelectionMode = DataGridSelectionMode.Extended;
 
         // Select all the cells
-        dataGrid.SelectAllCells();
+        DataGrid.SelectAllCells();
 
         // Execute the copy
-        ApplicationCommands.Copy.Execute(null, dataGrid);
+        ApplicationCommands.Copy.Execute(null, DataGrid);
 
         // Unselect the cells
-        dataGrid.UnselectAllCells();
+        DataGrid.UnselectAllCells();
 
         // Set selection mode back to one row
-        dataGrid.SelectionMode = DataGridSelectionMode.Single;
+        DataGrid.SelectionMode = DataGridSelectionMode.Single;
 
         // re-select the previous row
-        dataGrid.SelectedIndex = selIndex;
+        DataGrid.SelectedIndex = selIndex;
 
         if (msg)
         {
@@ -207,7 +207,7 @@ public partial class MainPage : UserControl
     public void UpdateGrid()
     {
         Mouse.OverrideCursor = Cursors.Wait;
-        dataGrid.Items.Refresh();
+        DataGrid.Items.Refresh();
         Mouse.OverrideCursor = null;
     }
     #endregion Update the grid
@@ -256,7 +256,7 @@ public partial class MainPage : UserControl
     /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
     private void UserControl_Unloaded(object sender, RoutedEventArgs e)
     {
-        dataGrid.Items.Filter = null;
+        DataGrid.Items.Filter = null;
     }
     #endregion Unloaded event
 
@@ -268,7 +268,7 @@ public partial class MainPage : UserControl
     /// <param name="e"></param>
     private void UserControl_Loaded(object sender, RoutedEventArgs e)
     {
-        SetColumnOrder(dataGrid);
+        SetColumnOrder(DataGrid);
     }
     #endregion Loaded event
 

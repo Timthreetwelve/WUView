@@ -14,6 +14,6 @@ public partial class ExcludesEditor : UserControl
 
     private void UserControl_Loaded(object sender, RoutedEventArgs e)
     {
-        tb1.CaretIndex = tb1.Text.Length;
+        TextBox1.CaretIndex = TextBox1.Text.Length;
     }
 }

@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 // Inspired by https://stackoverflow.com/a/60302166
 
@@ -43,7 +43,7 @@ public partial class MDCustMsgBox : Window
         #endregion
 
         #region Message text
-        txtMessage.Text = Message;
+        TxtMessage.Text = Message;
         #endregion Message text
 
         #region Message box title
@@ -61,32 +61,32 @@ public partial class MDCustMsgBox : Window
         switch (Buttons)
         {
             case ButtonType.Ok:
-                btnCancel.Visibility = Visibility.Collapsed;
-                btnYes.Visibility = Visibility.Collapsed;
-                btnNo.Visibility = Visibility.Collapsed;
-                _ = btnOk.Focus();
+                BtnCancel.Visibility = Visibility.Collapsed;
+                BtnYes.Visibility = Visibility.Collapsed;
+                BtnNo.Visibility = Visibility.Collapsed;
+                _ = BtnOk.Focus();
                 break;
 
             case ButtonType.OkCancel:
-                btnYes.Visibility = Visibility.Collapsed;
-                btnNo.Visibility = Visibility.Collapsed;
-                _ = btnOk.Focus();
+                BtnYes.Visibility = Visibility.Collapsed;
+                BtnNo.Visibility = Visibility.Collapsed;
+                _ = BtnOk.Focus();
                 break;
 
             case ButtonType.YesNo:
-                btnOk.Visibility = Visibility.Collapsed;
-                btnCancel.Visibility = Visibility.Collapsed;
-                _ = btnYes.Focus();
+                BtnOk.Visibility = Visibility.Collapsed;
+                BtnCancel.Visibility = Visibility.Collapsed;
+                _ = BtnYes.Focus();
                 break;
 
             case ButtonType.YesNoCancel:
-                btnOk.Visibility = Visibility.Collapsed;
-                _ = btnYes.Focus();
+                BtnOk.Visibility = Visibility.Collapsed;
+                _ = BtnYes.Focus();
                 break;
         }
         if (HideClose)
         {
-            btnClose.Visibility = Visibility.Collapsed;
+            BtnClose.Visibility = Visibility.Collapsed;
         }
         #endregion Button visibility
 
@@ -114,8 +114,8 @@ public partial class MDCustMsgBox : Window
         {
             BorderBrush = System.Windows.Media.Brushes.OrangeRed;
             BorderThickness = new Thickness(2);
-            cardHeader.Background = BorderBrush;
-            cardHeader.FontWeight = FontWeights.Bold;
+            CardHeader.Background = BorderBrush;
+            CardHeader.FontWeight = FontWeights.Bold;
         }
         #endregion Error message
     }

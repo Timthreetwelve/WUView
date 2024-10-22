@@ -1,4 +1,4 @@
-﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.AboutPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -163,11 +163,12 @@
                                Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                ToolTip="{DynamicResource About_GitHubToolTip}"
                                ToolTipService.Placement="Top">
-                        <TextBlock x:Name="tbxGithub"
-                                   Text="https://github.com/Timthreetwelve/WUView"
-                                   TextWrapping="Wrap" />
-                    </Hyperlink>
-                </TextBlock>
+                        <InlineUIContainer>
+                            <TextBlock x:Name="TbxGithub"
+                                       Text="https://github.com/Timthreetwelve/WUView"
+                                       TextWrapping="Wrap" />
+                        </InlineUIContainer>
+                    </Hyperlink></TextBlock>
 
                 <TextBlock Grid.Row="8" Grid.Column="0"
                            Text="{DynamicResource About_Documentation}" />

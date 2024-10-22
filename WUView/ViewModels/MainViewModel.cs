@@ -290,7 +290,7 @@ internal sealed partial class MainViewModel : ObservableObject
     private static void DisplayCount()
     {
         int total = UpdatesFullList.Count;
-        int displayed = MainPage.Instance!.dataGrid.Items.Count;
+        int displayed = MainPage.Instance!.DataGrid.Items.Count;
         string message = string.Format(CultureInfo.InvariantCulture, MsgTextDisplayedUpdates, displayed, total);
         SnackbarMsg.ClearAndQueueMessage(message);
     }

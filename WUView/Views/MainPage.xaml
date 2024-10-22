@@ -1,4 +1,4 @@
-﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.MainPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -24,13 +24,12 @@
 
     <!--#region Resources & DataContext-->
     <UserControl.Resources>
-        <BooleanToVisibilityConverter x:Key="boolToVis" />
-        <config:UserSettings x:Key="config" />
-        <convert:DateFormatConverter x:Key="dateFormat" />
-        <convert:ItemsSourceConverter x:Key="itemsSource" />
+        <BooleanToVisibilityConverter x:Key="BoolVisConverter" />
+        <convert:DateFormatConverter x:Key="DateFormat" />
+        <convert:ItemsSourceConverter x:Key="ItemsConverter" />
         <convert:SpacingConverter x:Key="Spacing" />
-        <convert:ResultsConverter x:Key="results" />
-        <viewmodels:NavigationViewModel x:Key="NavVM" />
+        <convert:ResultsConverter x:Key="Results" />
+        <viewmodels:NavigationViewModel x:Key="NavVm" />
     </UserControl.Resources>
 
     <UserControl.DataContext>
@@ -157,19 +156,15 @@
                 </Menu>
 
                 <!--#region Filter box-->
-                <TextBox x:Name="tbxSearch"
-                         Width="300"
-                         Height="35"
-                         Margin="20,0"
-                         Padding="10,6"
+                <TextBox x:Name="TbxSearch"
+                         Width="300" Height="35"
+                         Margin="20,0" Padding="10,6"
                          VerticalContentAlignment="Top"
                          materialDesign:HintAssist.Hint="{DynamicResource FilterHint}"
                          materialDesign:TextFieldAssist.HasClearButton="True"
-                         FontSize="14"
-                         IsTabStop="True"
+                         FontSize="14" IsTabStop="True"
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                         TabIndex="2"
-                         Tag="Filter Text"
+                         TabIndex="2" Tag="Filter Text"
                          TextChanged="TbxSearch_TextChanged" />
                 <!--#endregion-->
 
@@ -188,14 +183,13 @@
                    Margin="0,0,10,6"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
-                   Cursor="Hand"
-                   FontSize="14">
-            <Run Text="{Binding ElementName=dataGrid, Path=Items.Count, Mode=OneWay}" />
+                   Cursor="Hand" FontSize="14">
+            <Run Text="{Binding ElementName=DataGrid, Path=Items.Count, Mode=OneWay}" />
             <Run Text="/" />
             <Run Text="{Binding UpdatesFullList.Count, Mode=OneWay}" />
             <TextBlock.InputBindings>
                 <MouseBinding Command="{Binding ToggleExcludedCommand,
-                                                Source={StaticResource NavVM}}"
+                                                Source={StaticResource NavVm}}"
                               MouseAction="LeftClick" />
             </TextBlock.InputBindings>
         </TextBlock>
@@ -203,11 +197,11 @@
         <!--#endregion-->
 
         <!--#region DataGrid-->
-        <DataGrid x:Name="dataGrid"
+        <DataGrid x:Name="DataGrid"
                   Grid.Row="1"
                   HorizontalAlignment="Stretch"
                   VerticalAlignment="Stretch"
-                  d:ItemsSource="{d:SampleData ItemCount=3}"
+                  materialDesign:DataGridAssist.CellPadding="{Binding RowSpacing,
                   materialDesign:DataGridAssist.CellPadding="{Binding Converter={StaticResource Spacing}}"
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
@@ -234,8 +228,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding KBNum}"
                                     Header="{DynamicResource GridColumn_KBNum}" />
-                <DataGridTextColumn Binding="{Binding Date,
-                                                      Converter={StaticResource dateFormat}}"
+                <DataGridTextColumn Binding="{Binding Date, Converter={StaticResource DateFormat}}"
                                     Header="{DynamicResource GridColumn_Date}" />
                 <DataGridTextColumn Binding="{Binding Title}"
                                     Header="{DynamicResource GridColumn_Title}" />
@@ -276,8 +269,7 @@
                     <Style TargetType="TextBlock">
                         <Setter Property="Visibility" Value="Visible" />
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=dataGrid,
-                                                           Path=SelectedItems.Count}"
+                            <DataTrigger Binding="{Binding ElementName=DataGrid, Path=SelectedItems.Count}"
                                          Value="1">
                                 <Setter Property="Visibility" Value="Collapsed" />
                             </DataTrigger>
@@ -289,7 +281,7 @@
 
             <ScrollViewer VerticalAlignment="Top"
                           DataContext="{Binding SelectedItem,
-                                                ElementName=dataGrid}"
+                                                ElementName=DataGrid}"
                           FontFamily="Segue UI"
                           VerticalScrollBarVisibility="Auto">
                 <Grid Margin="5,10">
@@ -297,8 +289,7 @@
                         <Style TargetType="Grid">
                             <Setter Property="Visibility" Value="Collapsed" />
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding ElementName=dataGrid,
-                                                               Path=SelectedItems.Count}"
+                                <DataTrigger Binding="{Binding ElementName=DataGrid, Path=SelectedItems.Count}"
                                              Value="1">
                                     <Setter Property="Visibility" Value="Visible" />
                                 </DataTrigger>
@@ -415,10 +406,10 @@
                                Width="100"
                                HorizontalAlignment="Left"
                                PreviewMouseDown="HResult_PreviewMouseDown">
-                        <Hyperlink x:Name="hypHResult"
+                        <Hyperlink x:Name="HypHResult"
                                    Focusable="False">
                             <Hyperlink.Inlines>
-                                <Run Text="{Binding HResult, Converter={StaticResource results}, ConverterParameter='HResult'}" />
+                                <Run Text="{Binding HResult, Converter={StaticResource Results}, ConverterParameter='HResult'}" />
                             </Hyperlink.Inlines>
                         </Hyperlink>
                     </TextBlock>

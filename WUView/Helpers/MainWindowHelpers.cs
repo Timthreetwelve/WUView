@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Helpers;
 
@@ -107,9 +107,9 @@ internal static class MainWindowHelpers
     {
         MainViewModel.GatherInfo();
 
-        if (UserSettings.Setting!.AutoSelectFirstRow && MainPage.Instance!.dataGrid.Items.Count > 0)
+        if (UserSettings.Setting!.AutoSelectFirstRow && MainPage.Instance!.DataGrid.Items.Count > 0)
         {
-            MainPage.Instance.dataGrid.SelectedIndex = 0;
+            MainPage.Instance.DataGrid.SelectedIndex = 0;
         }
     }
 

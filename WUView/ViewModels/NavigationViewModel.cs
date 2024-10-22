@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
@@ -280,7 +280,7 @@ public partial class NavigationViewModel : ObservableObject
         {
             if (CurrentViewModel is MainViewModel)
             {
-                MainPage.Instance!.tbxSearch.Clear();
+                MainPage.Instance!.TbxSearch.Clear();
             }
             e.Handled = true;
         }
@@ -311,7 +311,7 @@ public partial class NavigationViewModel : ObservableObject
             }
             if (e.Key == Key.F)
             {
-                MainPage.Instance!.tbxSearch.Focus();
+                MainPage.Instance!.TbxSearch.Focus();
             }
             if (e.Key == Key.R)
             {

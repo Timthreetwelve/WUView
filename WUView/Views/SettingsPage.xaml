@@ -1,4 +1,4 @@
-﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.SettingsPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -22,12 +22,9 @@
     </UserControl.DataContext>
 
     <UserControl.Resources>
-        <config:UserSettings x:Key="config" />
-        <config:TempSettings x:Key="tempconfig" />
-        <convert:BooleanInverter x:Key="boolInverter" />
-        <convert:LanguageConverter x:Key="langConverter" />
-        <convert:EnumBindingSource x:Key="EnumBindingSource" />
-        <viewmodels:NavigationViewModel x:Key="command" />
+        <convert:BooleanInverter x:Key="BoolInverter" />
+        <convert:LanguageConverter x:Key="LangConverter" />
+        <viewmodels:NavigationViewModel x:Key="NavVm" />
     </UserControl.Resources>
     <!--#endregion-->
 
@@ -59,7 +56,7 @@
                             Padding="10,0"
                             HorizontalAlignment="Left"
                             Command="{Binding EditExcludeCommand,
-                                              Source={StaticResource command}}"
+                                              Source={StaticResource NavVm}}"
                             Content="{DynamicResource MenuItem_EditExclude}"
                             FontSize="16"
                             Style="{StaticResource PlainOutlinedButton}"
@@ -493,8 +490,8 @@
                             <Label Grid.Row="0" Grid.Column="0"
                                    VerticalAlignment="Center"
                                    Content="{DynamicResource SettingsItem_Language}" />
-                            <ComboBox x:Name="cbxLanguage"
-                                      Grid.Row="1" Grid.Column="2"
+                            <ComboBox x:Name="CbxLanguage"
+                                      Grid.Column="2"
                                       Width="Auto" MinWidth="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"

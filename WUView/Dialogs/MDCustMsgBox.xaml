@@ -55,7 +55,7 @@
         <!--#endregion-->
 
         <!--#region Title bar and Close button-->
-        <materialDesign:Card x:Name="cardHeader"
+        <materialDesign:Card x:Name="CardHeader"
                              Grid.Row="0" Grid.ColumnSpan="2"
                              Height="35"
                              Padding="10,5,5,5"
@@ -70,14 +70,14 @@
                     <ColumnDefinition />
                     <ColumnDefinition Width="38" />
                 </Grid.ColumnDefinitions>
-                <TextBlock x:Name="txtTitle"
+                <TextBlock x:Name="TxtTitle"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            FontSize="16" FontWeight="SemiBold"
                            Style="{DynamicResource MaterialDesignTitleTextBlock}"
                            Text="Title Text"
                            TextTrimming="CharacterEllipsis" />
-                <Button x:Name="btnClose"
+                <Button x:Name="BtnClose"
                         Grid.Column="1"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
@@ -90,7 +90,8 @@
         </materialDesign:Card>
         <!--#endregion-->
 
-        <Grid Grid.Row="1" Grid.ColumnSpan="2"
+        <Grid Grid.Row="1" Grid.Column="0"
+              Grid.ColumnSpan="2"
               MinWidth="250"
               Margin="15">
             <!--#region Row Definitions-->
@@ -108,8 +109,7 @@
                     <Style TargetType="ScrollBar"
                            BasedOn="{StaticResource MaterialDesignScrollBarMinimal}" />
                 </ScrollViewer.Resources>
-                <TextBlock x:Name="txtMessage"
-                           Grid.Row="0"
+                <TextBlock x:Name="TxtMessage"
                            Margin="5" HorizontalAlignment="Center"
                            FontSize="16"
                            Style="{StaticResource MaterialDesignTextBlock}"
@@ -131,22 +131,22 @@
                 </Grid.ColumnDefinitions>
                 <!--#endregion-->
 
-                <Button x:Name="btnOk"
+                <Button x:Name="BtnOk"
                         Grid.Column="1"
                         Command="{Binding OKButtonCommand}"
                         Content="{DynamicResource Button_OK}"
                         Style="{StaticResource DialogButton}" />
-                <Button x:Name="btnYes"
+                <Button x:Name="BtnYes"
                         Grid.Column="2"
                         Command="{Binding YesButtonCommand}"
                         Content="{DynamicResource Button_Yes}"
                         Style="{StaticResource DialogButton}" />
-                <Button x:Name="btnNo"
+                <Button x:Name="BtnNo"
                         Grid.Column="3"
                         Command="{Binding NoButtonCommand}"
                         Content="{DynamicResource Button_No}"
                         Style="{StaticResource DialogButton}" />
-                <Button x:Name="btnCancel"
+                <Button x:Name="BtnCancel"
                         Grid.Column="4"
                         Command="{Binding CancelButtonCommand}"
                         Content="{DynamicResource Button_Cancel}"

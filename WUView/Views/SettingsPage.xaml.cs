@@ -16,6 +16,6 @@ public partial class SettingsPage : UserControl
     /// </summary>
     private void CbxLanguage_Loaded(object sender, RoutedEventArgs e)
     {
-        cbxLanguage.SelectedIndex = LocalizationHelpers.GetLanguageIndex();
+        CbxLanguage.SelectedIndex = LocalizationHelpers.GetLanguageIndex();
     }
 }

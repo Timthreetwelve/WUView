@@ -21,7 +21,7 @@
 
     <!--#region Resources-->
     <UserControl.Resources>
-        <convert:ExcludedItemsConverter x:Key="exclConv" />
+        <convert:ExcludedItemsConverter x:Key="ExclConv" />
         <ScaleTransform x:Key="DialogScale" ScaleX="{Binding Path=DialogScale, Source={x:Static config:UserSettings.Setting}}" ScaleY="{Binding Path=DialogScale, Source={x:Static config:UserSettings.Setting}}" />
     </UserControl.Resources>
     <!--#endregion-->
@@ -55,7 +55,7 @@
                     <Run Text="{DynamicResource ExcludesEditor_TextLine2}" />
                 </TextBlock>
 
-                <TextBox x:Name="tb1"
+                <TextBox x:Name="TextBox1"
                          Grid.Row="2" Grid.Column="1"
                          Margin="5" Padding="10"
                          VerticalContentAlignment="Top"
@@ -65,7 +65,7 @@
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"
                          Text="{Binding ExcludedStrings,
                                         Mode=TwoWay,
-                                        Converter={StaticResource exclConv},
+                                        Converter={StaticResource ExclConv},
                                         UpdateSourceTrigger=LostFocus}"
                          TextAlignment="left"
                          TextBlock.LineHeight="24"
@@ -81,8 +81,7 @@
                             Margin="0,10,0,0"
                             HorizontalAlignment="Center"
                             Orientation="Horizontal">
-                    <Button x:Name="btnOK"
-                            Width="90"
+                    <Button Width="90"
                             Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
                             Content="{DynamicResource Button_OK}"
                             Style="{StaticResource PlainOutlinedButton}">
@@ -91,8 +90,7 @@
                         </Button.CommandParameter>
                     </Button>
 
-                    <Button x:Name="btnCancel"
-                            Width="90"
+                    <Button Width="90"
                             Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
                             Content="{DynamicResource Button_Cancel}"
                             Style="{StaticResource PlainOutlinedButton}">
