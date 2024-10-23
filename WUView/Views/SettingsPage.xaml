@@ -297,6 +297,7 @@
                                 <RowDefinition Height="38" />
                                 <RowDefinition Height="38" />
                                 <RowDefinition Height="38" />
+                                <RowDefinition Height="38" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto" MinWidth="100" />
@@ -342,9 +343,22 @@
                                       Style="{StaticResource MaterialDesignComboBox}" />
 
                             <Label Grid.Row="3" Grid.Column="0"
+                               VerticalAlignment="Center"
+                               Content="{DynamicResource SettingsItem_DisplayFont}" />
+                            <ComboBox Grid.Row="3" Grid.Column="2"
+                                  Width="Auto" MinWidth="200"
+                                  Margin="0,3,0,0" Padding="3,0,0,3"
+                                  HorizontalAlignment="Left"
+                                  ItemsSource="{Binding FontList}"
+                                  SelectedValue="{Binding SelectedFont,
+                                                          Source={x:Static config:UserSettings.Setting}}"
+                                  SelectedValuePath="Source"
+                                  Style="{StaticResource MaterialDesignComboBox}" />
+
+                            <Label Grid.Row="4" Grid.Column="0"
                                    VerticalAlignment="Center"
                                    Content="{DynamicResource SettingsItem_RowHeight}" />
-                            <ComboBox Grid.Row="3" Grid.Column="2"
+                            <ComboBox Grid.Row="4" Grid.Column="2"
                                       Width="Auto" MinWidth="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"

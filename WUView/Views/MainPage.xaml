@@ -170,7 +170,9 @@
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
                   ColumnReordered="ColumnReorderEvent"
-                  Focusable="True" FontFamily="Segue UI"
+                  Focusable="True"
+                  FontFamily="{Binding SelectedFont,
+                                       Source={x:Static config:UserSettings.Setting}}"
                   FontSize="14" HeadersVisibility="Column"
                   IsReadOnly="True" IsTabStop="True"
                   ItemsSource="{Binding HideExcluded,
@@ -239,7 +241,8 @@
             <ScrollViewer VerticalAlignment="Top"
                           DataContext="{Binding SelectedItem,
                                                 ElementName=DataGrid}"
-                          FontFamily="Segue UI"
+                          FontFamily="{Binding SelectedFont,
+                                               Source={x:Static config:UserSettings.Setting}}"
                           VerticalScrollBarVisibility="Auto">
                 <Grid Margin="5,10">
                     <Grid.Style>

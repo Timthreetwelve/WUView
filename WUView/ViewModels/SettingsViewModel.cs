@@ -4,6 +4,18 @@ namespace WUView.ViewModels;
 
 public partial class SettingsViewModel : ObservableObject
 {
+    #region Properties
+    public static List<FontFamily>? FontList { get; private set; }
+    #endregion Properties
+
+    #region Constructor
+    public SettingsViewModel()
+    {
+        FontList ??= [.. Fonts.SystemFontFamilies.OrderBy(x => x.Source)];
+    }
+    #endregion Constructor
+
+    #region Relay commands
     [RelayCommand]
     private static void OpenAppFolder()
     {
@@ -36,4 +48,5 @@ public partial class SettingsViewModel : ObservableObject
                      true).ShowDialog();
         }
     }
+    #endregion Relay commands
 }

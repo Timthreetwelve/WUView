@@ -160,6 +160,7 @@
     <sys:String x:Key="SettingsItem_AccentColor">Couleur d'accentuation</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Changer la langue entraînera le redémarrage de l'application!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Format de date de grille</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFont">Fonte</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Maj-Clic pour ouvrir le fichier avec l'application par défaut</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Permettre les tests linguistiques</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Masquer les éléments exclus</sys:String>

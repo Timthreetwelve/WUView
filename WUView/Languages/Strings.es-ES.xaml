@@ -160,6 +160,7 @@
     <sys:String x:Key="SettingsItem_AccentColor">Color de acento</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">El cambio de idioma hará que la aplicación se reinicie</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formato de fecha de cuadrícula</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFont">Fuente</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-Clic para abrir el archivo con la aplicación por defecto</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Habilitar las pruebas de idioma</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Ocultar elementos excluidos</sys:String>

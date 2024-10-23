@@ -159,6 +159,7 @@
     <sys:String x:Key="SettingsItem_AccentColor">Color d'accent</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Si canvieu d'idioma, l'aplicació es reiniciarà!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Format de data de quadrícula</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFont">Tipus de lletra</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Maj+Feu clic per obrir el fitxer amb l'aplicació predeterminada</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Habilitar les proves d'idioma</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Amaga els elements exclosos</sys:String>

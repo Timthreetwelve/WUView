@@ -57,6 +57,12 @@ public partial class UserSettings : ConfigManager<UserSettings>
     [ObservableProperty]
     private Spacing _rowSpacing = Spacing.Comfortable;
 
+    /// <summary>
+    /// Font used in datagrids.
+    /// </summary>
+    [ObservableProperty]
+    private string? _selectedFont = "Segoe UI";
+
     [ObservableProperty]
     private bool _showDetails = true;
 
