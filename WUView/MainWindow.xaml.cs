@@ -10,8 +10,6 @@ public partial class MainWindow : Window
 
         InitializeComponent();
 
-        MainWindowHelpers.EventHandlers();
-
-        MainWindowHelpers.ApplyUISettings();
+        MainWindowHelpers.WUVStartup();
     }
 }

@@ -7,6 +7,16 @@ namespace WUView.Helpers;
 /// </summary>
 internal static class MainWindowHelpers
 {
+    #region Startup
+    internal static void WUVStartup()
+    {
+        EventHandlers();
+        ApplyUISettings();
+        WUApiHelpers.LogWUAInfo();
+        WUApiHelpers.LogWUEnabled();
+    }
+    #endregion Startup
+
     #region MainWindow Instance
     private static readonly MainWindow? _mainWindow = Application.Current.MainWindow as MainWindow;
     #endregion MainWindow Instance
@@ -62,17 +72,14 @@ internal static class MainWindowHelpers
     /// <summary>
     /// Event handlers.
     /// </summary>
-    internal static void EventHandlers()
+    private static void EventHandlers()
     {
         // Settings change event
         UserSettings.Setting!.PropertyChanged += SettingChange.UserSettingChanged!;
         TempSettings.Setting!.PropertyChanged += SettingChange.TempSettingChanged!;
 
-        // Window Loaded
-        _mainWindow!.Loaded += MainWindow_Loaded;
-
         // Content rendered
-        _mainWindow.ContentRendered += MainWindow_ContentRendered!;
+        _mainWindow!.ContentRendered += MainWindow_ContentRendered!;
 
         // Window closing event
         _mainWindow.Closing += MainWindow_Closing!;
@@ -80,20 +87,9 @@ internal static class MainWindowHelpers
     #endregion Event handlers
 
     #region Window Events
-    private static void MainWindow_Loaded(object sender, RoutedEventArgs e)
-    {
-        WUApiHelpers.LogWUAInfo();
-        WUApiHelpers.LogWUEnabled();
-    }
-
     private static void MainWindow_ContentRendered(object sender, EventArgs e)
     {
         MainViewModel.GatherInfo();
-
-        if (UserSettings.Setting!.AutoSelectFirstRow && MainPage.Instance!.DataGrid.Items.Count > 0)
-        {
-            MainPage.Instance.DataGrid.SelectedIndex = 0;
-        }
     }
 
     private static void MainWindow_Closing(object sender, CancelEventArgs e)
@@ -309,13 +305,13 @@ internal static class MainWindowHelpers
     /// <summary>
     /// Single method called during startup to apply UI settings.
     /// </summary>
-    public static void ApplyUISettings()
+    private static void ApplyUISettings()
     {
         // Put version number in window title
-        _mainWindow!.Title = MainWindowHelpers.WindowTitleVersionAdmin();
+        _mainWindow!.Title = WindowTitleVersionAdmin();
 
         // Window position
-        MainWindowHelpers.SetWindowPosition();
+        SetWindowPosition();
 
         // Light or dark theme
         SetBaseTheme(UserSettings.Setting!.UITheme);

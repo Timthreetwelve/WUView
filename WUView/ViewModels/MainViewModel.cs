@@ -20,6 +20,10 @@ internal sealed class MainViewModel : ObservableObject
         PopulateExcludedList();
         Mouse.OverrideCursor = null;
         DisplayCount();
+        if (UserSettings.Setting!.AutoSelectFirstRow && MainPage.Instance!.DataGrid.Items.Count > 0)
+        {
+            MainPage.Instance.DataGrid.SelectedIndex = 0;
+        }
     }
     #endregion Kick off the process of gathering the information
 
