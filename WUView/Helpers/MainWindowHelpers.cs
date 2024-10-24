@@ -45,20 +45,6 @@ internal static class MainWindowHelpers
     }
     #endregion Set and Save MainWindow position and size
 
-    #region Get property value
-    /// <summary>
-    /// Gets the value of the property
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    /// <returns>An object containing the value of the property</returns>
-    public static object? GetPropertyValue(object sender, PropertyChangedEventArgs e)
-    {
-        PropertyInfo? prop = sender.GetType().GetProperty(e.PropertyName!);
-        return prop?.GetValue(sender, null);
-    }
-    #endregion Get property value
-
     #region Window Title
     /// <summary>
     /// Puts the version number in the title bar as well as Administrator if running elevated
