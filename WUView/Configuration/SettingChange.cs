@@ -23,15 +23,15 @@ public static class SettingChange
                 break;
 
             case nameof(UserSettings.Setting.UITheme):
-                MainWindowUIHelpers.SetBaseTheme((ThemeType)newValue!);
+                MainWindowHelpers.SetBaseTheme((ThemeType)newValue!);
                 break;
 
             case nameof(UserSettings.Setting.PrimaryColor):
-                MainWindowUIHelpers.SetPrimaryColor((AccentColor)newValue!);
+                MainWindowHelpers.SetPrimaryColor((AccentColor)newValue!);
                 break;
 
             case nameof(UserSettings.Setting.UISize):
-                MainWindowUIHelpers.UIScale(UserSettings.Setting!.UISize);
+                MainWindowHelpers.UIScale(UserSettings.Setting!.UISize);
                 break;
 
             case nameof(UserSettings.Setting.MaxUpdates):

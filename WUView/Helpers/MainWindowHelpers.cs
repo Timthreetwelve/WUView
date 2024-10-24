@@ -19,7 +19,7 @@ internal static class MainWindowHelpers
     /// <summary>
     /// Sets the MainWindow position and size.
     /// </summary>
-    public static void SetWindowPosition()
+    private static void SetWindowPosition()
     {
         _mainWindow!.Height = UserSettings.Setting!.WindowHeight;
         _mainWindow.Left = UserSettings.Setting.WindowLeft;
@@ -63,7 +63,7 @@ internal static class MainWindowHelpers
     /// <summary>
     /// Puts the version number in the title bar as well as Administrator if running elevated
     /// </summary>
-    public static string WindowTitleVersionAdmin()
+    private static string WindowTitleVersionAdmin()
     {
         // Set the windows title
         return AppInfo.IsAdmin
@@ -192,4 +192,184 @@ internal static class MainWindowHelpers
         _ = Application.Current.MainWindow.Activate();
     }
     #endregion Show MainWindow
+
+    #region Theme
+    /// <summary>
+    /// Gets the current MDIX theme
+    /// </summary>
+    /// <returns>Dark or Light</returns>
+    private static string? GetSystemTheme()
+    {
+        BaseTheme? sysTheme = Theme.GetSystemTheme();
+        return sysTheme != null ? sysTheme.ToString() : string.Empty;
+    }
+
+    /// <summary>
+    /// Sets the theme
+    /// </summary>
+    /// <param name="mode">Light, Dark, Darker or System</param>
+    internal static void SetBaseTheme(ThemeType mode)
+    {
+        //Retrieve the app's existing theme
+        PaletteHelper paletteHelper = new();
+        Theme theme = paletteHelper.GetTheme();
+
+        if (mode == ThemeType.System)
+        {
+            mode = GetSystemTheme()!.Equals("light", StringComparison.Ordinal) ? ThemeType.Light : ThemeType.Darker;
+        }
+
+        switch (mode)
+        {
+            case ThemeType.Light:
+                theme.SetBaseTheme(BaseTheme.Light);
+                theme.Background = Colors.WhiteSmoke;
+                theme.SetSecondaryColor(Colors.RoyalBlue);
+                break;
+            case ThemeType.Dark:
+                theme.SetBaseTheme(BaseTheme.Dark);
+                theme.SetSecondaryColor(Colors.DeepSkyBlue);
+                break;
+            case ThemeType.Darker:
+                // Set card and paper background colors a bit darker
+                theme.SetBaseTheme(BaseTheme.Dark);
+                theme.Cards.Background = (Color)ColorConverter.ConvertFromString("#FF141414");
+                theme.Background = (Color)ColorConverter.ConvertFromString("#FF202020");
+                theme.DataGrids.Selected = (Color)ColorConverter.ConvertFromString("#FF303030");
+                theme.Foreground = (Color)ColorConverter.ConvertFromString("#E5F0F0F0");
+                theme.SetSecondaryColor(Colors.DodgerBlue);
+                break;
+            default:
+                theme.SetBaseTheme(BaseTheme.Light);
+                break;
+        }
+
+        //Change the app's current theme
+        paletteHelper.SetTheme(theme);
+    }
+    #endregion Theme
+
+    #region Accent Color
+    /// <summary>
+    /// Sets the MDIX primary accent color
+    /// </summary>
+    /// <param name="color">One of the 18 MDIX color values plus Black and White</param>
+    internal static void SetPrimaryColor(AccentColor color)
+    {
+        PaletteHelper paletteHelper = new();
+        Theme theme = paletteHelper.GetTheme();
+        PrimaryColor primary = color switch
+        {
+            AccentColor.Red => PrimaryColor.Red,
+            AccentColor.Pink => PrimaryColor.Pink,
+            AccentColor.Purple => PrimaryColor.Purple,
+            AccentColor.DeepPurple => PrimaryColor.DeepPurple,
+            AccentColor.Indigo => PrimaryColor.Indigo,
+            AccentColor.Blue => PrimaryColor.Blue,
+            AccentColor.LightBlue => PrimaryColor.LightBlue,
+            AccentColor.Cyan => PrimaryColor.Cyan,
+            AccentColor.Teal => PrimaryColor.Teal,
+            AccentColor.Green => PrimaryColor.Green,
+            AccentColor.LightGreen => PrimaryColor.LightGreen,
+            AccentColor.Lime => PrimaryColor.Lime,
+            AccentColor.Yellow => PrimaryColor.Yellow,
+            AccentColor.Amber => PrimaryColor.Amber,
+            AccentColor.Orange => PrimaryColor.Orange,
+            AccentColor.DeepOrange => PrimaryColor.DeepOrange,
+            AccentColor.Brown => PrimaryColor.Brown,
+            AccentColor.Gray => PrimaryColor.Grey,
+            AccentColor.BlueGray => PrimaryColor.BlueGrey,
+            _ => PrimaryColor.Blue,
+        };
+        if (color == AccentColor.Black)
+        {
+            theme.SetPrimaryColor(Colors.Black);
+        }
+        else if (color == AccentColor.White)
+        {
+            theme.SetPrimaryColor(Colors.White);
+        }
+        else
+        {
+            Color primaryColor = SwatchHelper.Lookup[(MaterialDesignColor)primary];
+            theme.SetPrimaryColor(primaryColor);
+        }
+        paletteHelper.SetTheme(theme);
+    }
+    #endregion Accent Color
+
+    #region UI size
+    /// <summary>
+    /// Sets the value for UI scaling
+    /// </summary>
+    /// <param name="size">One of 7 values</param>
+    /// <returns>Scaling multiplier</returns>
+    internal static void UIScale(MySize size)
+    {
+        double newSize = size switch
+        {
+            MySize.Smallest => 0.8,
+            MySize.Smaller => 0.9,
+            MySize.Small => 0.95,
+            MySize.Default => 1.0,
+            MySize.Large => 1.05,
+            MySize.Larger => 1.1,
+            MySize.Largest => 1.2,
+            _ => 1.0,
+        };
+        _mainWindow!.MainGrid.LayoutTransform = new ScaleTransform(newSize, newSize);
+        UserSettings.Setting!.DialogScale = newSize;
+    }
+
+    /// <summary>
+    /// Decreases the size of the UI
+    /// </summary>
+    public static void EverythingSmaller()
+    {
+        MySize size = UserSettings.Setting!.UISize;
+        if (size > 0)
+        {
+            size--;
+            UserSettings.Setting.UISize = size;
+            UIScale(UserSettings.Setting.UISize);
+        }
+    }
+
+    /// <summary>
+    /// Increases the size of the UI
+    /// </summary>
+    public static void EverythingLarger()
+    {
+        MySize size = UserSettings.Setting!.UISize;
+        if (size < MySize.Largest)
+        {
+            size++;
+            UserSettings.Setting.UISize = size;
+            UIScale(UserSettings.Setting.UISize);
+        }
+    }
+    #endregion UI size
+
+    #region Apply UI settings
+    /// <summary>
+    /// Single method called during startup to apply UI settings.
+    /// </summary>
+    public static void ApplyUISettings()
+    {
+        // Put version number in window title
+        _mainWindow!.Title = MainWindowHelpers.WindowTitleVersionAdmin();
+
+        // Window position
+        MainWindowHelpers.SetWindowPosition();
+
+        // Light or dark theme
+        SetBaseTheme(UserSettings.Setting!.UITheme);
+
+        // Primary accent color
+        SetPrimaryColor(UserSettings.Setting.PrimaryColor);
+
+        // UI size
+        UIScale(UserSettings.Setting.UISize);
+    }
+    #endregion Apply UI settings
 }

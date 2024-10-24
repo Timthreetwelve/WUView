@@ -177,13 +177,13 @@ public partial class NavigationViewModel : ObservableObject
     [RelayCommand]
     private static void UILarger()
     {
-        MainWindowUIHelpers.EverythingLarger();
+        MainWindowHelpers.EverythingLarger();
     }
 
     [RelayCommand]
     private static void UISmaller()
     {
-        MainWindowUIHelpers.EverythingSmaller();
+        MainWindowHelpers.EverythingSmaller();
     }
     #endregion UI Smaller and Larger
 
@@ -334,14 +334,14 @@ public partial class NavigationViewModel : ObservableObject
             }
             if (e.Key == Key.Add || e.Key == Key.OemPlus)
             {
-                MainWindowUIHelpers.EverythingLarger();
+                MainWindowHelpers.EverythingLarger();
                 string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
                 string message = string.Format(CultureInfo.InvariantCulture, MsgTextUISizeSet, size);
                 SnackbarMsg.ClearAndQueueMessage(message, 2000);
             }
             if (e.Key == Key.Subtract || e.Key == Key.OemMinus)
             {
-                MainWindowUIHelpers.EverythingSmaller();
+                MainWindowHelpers.EverythingSmaller();
                 string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
                 string message = string.Format(CultureInfo.InvariantCulture, MsgTextUISizeSet, size);
                 SnackbarMsg.ClearAndQueueMessage(message, 2000);
