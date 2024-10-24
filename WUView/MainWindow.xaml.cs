@@ -12,6 +12,6 @@ public partial class MainWindow : Window
 
         MainWindowHelpers.EventHandlers();
 
-        MainWindowUIHelpers.ApplyUISettings();
+        MainWindowHelpers.ApplyUISettings();
     }
 }
