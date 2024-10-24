@@ -10,7 +10,7 @@ internal sealed class ExcludedItemsConverter : IValueConverter
 {
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value != null)
+        if (value is not null)
         {
             StringBuilder sb = new();
             foreach (ExcludedItems item in (ObservableCollection<ExcludedItems>)value)
