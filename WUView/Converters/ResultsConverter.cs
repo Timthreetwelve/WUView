@@ -10,14 +10,14 @@ internal sealed class ResultsConverter : IValueConverter
 {
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value == null || parameter == null)
+        if (value is null || parameter is null)
         {
             return string.Empty;
         }
 
         return parameter is string paramString && paramString == "HResult" && value is string hrString
             ? $"0x{int.Parse(hrString, CultureInfo.InvariantCulture):X8}"
-            : (object?)value.ToString();
+            : value.ToString();
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
