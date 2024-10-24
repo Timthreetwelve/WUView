@@ -108,7 +108,7 @@ internal static class MainWindowHelpers
     }
     #endregion Window Events
 
-    #region Log Startup
+    #region Log Startup messages
     /// <summary>
     /// Initializes NLog and writes startup messages to the log.
     /// </summary>
@@ -130,21 +130,7 @@ internal static class MainWindowHelpers
     }
     #endregion Log Startup
 
-    #region Show MainWindow
-    /// <summary>
-    /// Show the main window and set it's state to normal
-    /// </summary>
-    public static void ShowMainWindow()
-    {
-        Application.Current.MainWindow!.Show();
-        Application.Current.MainWindow.Visibility = Visibility.Visible;
-        Application.Current.MainWindow.WindowState = WindowState.Normal;
-        Application.Current.MainWindow.ShowInTaskbar = true;
-        _ = Application.Current.MainWindow.Activate();
-    }
-    #endregion Show MainWindow
-
-    #region Theme
+    #region Set Theme
     /// <summary>
     /// Gets the current MDIX theme
     /// </summary>
@@ -198,7 +184,7 @@ internal static class MainWindowHelpers
         //Change the app's current theme
         paletteHelper.SetTheme(theme);
     }
-    #endregion Theme
+    #endregion Set Theme
 
     #region Accent Color
     /// <summary>
@@ -249,7 +235,7 @@ internal static class MainWindowHelpers
     }
     #endregion Accent Color
 
-    #region UI size
+    #region Set UI size
     /// <summary>
     /// Sets the value for UI scaling
     /// </summary>
@@ -299,7 +285,7 @@ internal static class MainWindowHelpers
             UIScale(UserSettings.Setting.UISize);
         }
     }
-    #endregion UI size
+    #endregion Set UI size
 
     #region Apply UI settings
     /// <summary>
@@ -323,4 +309,18 @@ internal static class MainWindowHelpers
         UIScale(UserSettings.Setting.UISize);
     }
     #endregion Apply UI settings
+
+    #region Show MainWindow
+    /// <summary>
+    /// Show the main window and set it's state to normal
+    /// </summary>
+    public static void ShowMainWindow()
+    {
+        Application.Current.MainWindow!.Show();
+        Application.Current.MainWindow.Visibility = Visibility.Visible;
+        Application.Current.MainWindow.WindowState = WindowState.Normal;
+        Application.Current.MainWindow.ShowInTaskbar = true;
+        _ = Application.Current.MainWindow.Activate();
+    }
+    #endregion Show MainWindow
 }
