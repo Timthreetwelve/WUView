@@ -180,7 +180,7 @@ public partial class App : Application
         _log.Error(e.StackTrace);
 
         _ = MessageBox.Show($"An error has occurred.\n{e.Message}\n\nSee the log file. ",
-            "ERROR",
+            GetStringResource("MsgText_ErrorCaption"),
             MessageBoxButton.OK,
             MessageBoxImage.Error);
     }
