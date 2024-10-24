@@ -51,6 +51,9 @@ public partial class App : Application
     {
         base.OnStartup(e);
 
+        // Unhandled exception handler
+        AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
         // Only allows a single instance of the application to run.
         SingleInstance.Create(AppInfo.AppName);
 
@@ -157,4 +160,29 @@ public partial class App : Application
             }
         }
     }
+
+    #region Unhandled Exception Handler
+    /// <summary>
+    /// Handles any exceptions that weren't caught by a try-catch statement.
+    /// </summary>
+    /// <remarks>
+    /// This uses default message box.
+    /// </remarks>
+    private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs args)
+    {
+        _log.Error("Unhandled Exception");
+        Exception e = (Exception)args.ExceptionObject;
+        _log.Error(e.Message);
+        if (e.InnerException != null)
+        {
+            _log.Error(e.InnerException.ToString());
+        }
+        _log.Error(e.StackTrace);
+
+        _ = MessageBox.Show($"An error has occurred.\n{e.Message}\n\nSee the log file. ",
+            "ERROR",
+            MessageBoxButton.OK,
+            MessageBoxImage.Error);
+    }
+    #endregion Unhandled Exception Handler
 }
