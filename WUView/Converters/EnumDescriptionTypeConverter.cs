@@ -16,7 +16,7 @@ internal sealed class EnumDescriptionTypeConverter(Type type) : EnumConverter(ty
         {
             if (value != null)
             {
-                FieldInfo fi = value.GetType().GetField(value.ToString());
+                FieldInfo fi = value.GetType().GetField(value.ToString()!);
                 if (fi != null)
                 {
                     DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
