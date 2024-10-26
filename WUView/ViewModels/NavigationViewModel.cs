@@ -269,82 +269,88 @@ public partial class NavigationViewModel : ObservableObject
     private void KeyDown(KeyEventArgs e)
     {
         #region Keys without modifiers
-        if (e.Key == Key.F1)
+        if (e.KeyboardDevice.Modifiers == ModifierKeys.None)
         {
-            _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.About);
-        }
-        if (e.Key == Key.F5)
-        {
-            MainPage.RefreshAll();
-        }
-        if (e.Key == Key.Escape)
-        {
-            if (CurrentViewModel is MainViewModel)
+            switch (e.Key)
             {
-                MainPage.Instance!.TbxSearch.Clear();
+                case Key.F1:
+                    _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.About);
+                    break;
+                case Key.F5:
+                    MainPage.RefreshAll();
+                    break;
+                case Key.Escape:
+                    {
+                        if (CurrentViewModel is MainViewModel)
+                        {
+                            MainPage.Instance!.TbxSearch.Clear();
+                        }
+                        e.Handled = true;
+                        break;
+                    }
             }
-            e.Handled = true;
         }
         #endregion Keys without modifiers
 
         #region Keys with Ctrl
         if (e.KeyboardDevice.Modifiers == ModifierKeys.Control)
         {
-            if (e.Key == Key.OemComma)
+            switch (e.Key)
             {
-                _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.Settings);
-            }
-            if (e.Key == Key.U)
-            {
-                _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.Viewer);
-            }
-            if (e.Key == Key.L)
-            {
-                _ = MainViewModel.EditExcludes();
-            }
-            if (e.Key == Key.D)
-            {
-                UserSettings.Setting!.ShowDetails = !UserSettings.Setting.ShowDetails;
-                MainPage.Instance!.SetDetailsHeight();
-            }
-            if (e.Key == Key.E)
-            {
-                ToggleExcluded();
-            }
-            if (e.Key == Key.F)
-            {
-                MainPage.Instance!.TbxSearch.Focus();
-            }
-            if (e.Key == Key.R)
-            {
-                MainPage.Instance!.ClearColumnSort();
-            }
-            if (e.Key == Key.T)
-            {
-                if (UserSettings.Setting!.DateFormat >= 9)
-                {
-                    UserSettings.Setting.DateFormat = 0;
-                }
-                else
-                {
-                    UserSettings.Setting.DateFormat++;
-                }
-                MainPage.Instance!.UpdateGrid();
-                SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_DateFormatChange"), 2000);
-            }
-            if (e.Key == Key.Add || e.Key == Key.OemPlus)
-            {
-                MainWindowHelpers.EverythingLarger();
-                string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
-                string message = string.Format(CultureInfo.InvariantCulture, MsgTextUISizeSet, size);
-                SnackbarMsg.ClearAndQueueMessage(message, 2000);
-            }
-            if (e.Key == Key.Subtract || e.Key == Key.OemMinus)
-            {
-                MainWindowHelpers.EverythingSmaller();
-                string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
-                string message = string.Format(CultureInfo.InvariantCulture, MsgTextUISizeSet, size);
-                SnackbarMsg.ClearAndQueueMessage(message, 2000);
+                case Key.OemComma:
+                    _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.Settings);
+                    break;
+                case Key.U:
+                    _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.Viewer);
+                    break;
+                case Key.L:
+                    _ = MainViewModel.EditExcludes();
+                    break;
+                case Key.D:
+                    UserSettings.Setting!.ShowDetails = !UserSettings.Setting.ShowDetails;
+                    MainPage.Instance!.SetDetailsHeight();
+                    break;
+                case Key.E:
+                    ToggleExcluded();
+                    break;
+                case Key.F:
+                    MainPage.Instance!.TbxSearch.Focus();
+                    break;
+                case Key.R:
+                    MainPage.Instance!.ClearColumnSort();
+                    break;
+                case Key.T:
+                    {
+                        if (UserSettings.Setting!.DateFormat >= 9)
+                        {
+                            UserSettings.Setting.DateFormat = 0;
+                        }
+                        else
+                        {
+                            UserSettings.Setting.DateFormat++;
+                        }
+                        MainPage.Instance!.UpdateGrid();
+                        SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_DateFormatChange"), 2000);
+                        break;
+                    }
+                case Key.Add:
+                case Key.OemPlus:
+                    {
+                        MainWindowHelpers.EverythingLarger();
+                        string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
+                        string message = string.Format(CultureInfo.InvariantCulture, MsgTextUISizeSet, size);
+                        SnackbarMsg.ClearAndQueueMessage(message, 2000);
+                        break;
+                    }
+                case Key.Subtract:
+                case Key.OemMinus:
+                    {
+                        MainWindowHelpers.EverythingSmaller();
+                        string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
+                        string message = string.Format(CultureInfo.InvariantCulture, MsgTextUISizeSet, size);
+                        SnackbarMsg.ClearAndQueueMessage(message, 2000);
+                        break;
+                    }
             }
         }
         #endregion Keys with Ctrl
@@ -352,71 +358,70 @@ public partial class NavigationViewModel : ObservableObject
         #region Keys with Ctrl and Shift
         if (e.KeyboardDevice.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift))
         {
-            if (e.Key == Key.T)
+            switch (e.Key)
             {
-                switch (UserSettings.Setting!.UITheme)
-                {
-                    case ThemeType.Light:
-                        UserSettings.Setting.UITheme = ThemeType.Dark;
+                case Key.T:
+                    {
+                        switch (UserSettings.Setting!.UITheme)
+                        {
+                            case ThemeType.Light:
+                                UserSettings.Setting.UITheme = ThemeType.Dark;
+                                break;
+                            case ThemeType.Dark:
+                                UserSettings.Setting.UITheme = ThemeType.Darker;
+                                break;
+                            case ThemeType.Darker:
+                                UserSettings.Setting.UITheme = ThemeType.System;
+                                break;
+                            case ThemeType.System:
+                                UserSettings.Setting.UITheme = ThemeType.Light;
+                                break;
+                        }
+                        string theme = EnumDescConverter.GetEnumDescription(UserSettings.Setting.UITheme);
+                        string message = string.Format(CultureInfo.InvariantCulture, MsgTextUIThemeSet, theme);
+                        SnackbarMsg.ClearAndQueueMessage(message, 2000);
                         break;
-                    case ThemeType.Dark:
-                        UserSettings.Setting.UITheme = ThemeType.Darker;
+                    }
+                case Key.C:
+                    {
+                        if (UserSettings.Setting!.PrimaryColor >= AccentColor.White)
+                        {
+                            UserSettings.Setting.PrimaryColor = AccentColor.Red;
+                        }
+                        else
+                        {
+                            UserSettings.Setting.PrimaryColor++;
+                        }
+                        string color = EnumDescConverter.GetEnumDescription(UserSettings.Setting.PrimaryColor);
+                        string message = string.Format(CultureInfo.InvariantCulture, MsgTextUIColorSet, color);
+                        SnackbarMsg.ClearAndQueueMessage(message, 2000);
                         break;
-                    case ThemeType.Darker:
-                        UserSettings.Setting.UITheme = ThemeType.System;
+                    }
+                case Key.F:
+                    {
+                        using Process p = new();
+                        p.StartInfo.FileName = AppInfo.AppDirectory;
+                        p.StartInfo.UseShellExecute = true;
+                        p.StartInfo.ErrorDialog = false;
+                        _ = p.Start();
                         break;
-                    case ThemeType.System:
-                        UserSettings.Setting.UITheme = ThemeType.Light;
-                        break;
-                }
-                string theme = EnumDescConverter.GetEnumDescription(UserSettings.Setting.UITheme);
-                string message = string.Format(CultureInfo.InvariantCulture, MsgTextUIThemeSet, theme);
-                SnackbarMsg.ClearAndQueueMessage(message, 2000);
-            }
-            if (e.Key == Key.C)
-            {
-                if (UserSettings.Setting!.PrimaryColor >= AccentColor.White)
-                {
-                    UserSettings.Setting.PrimaryColor = AccentColor.Red;
-                }
-                else
-                {
-                    UserSettings.Setting.PrimaryColor++;
-                }
-                string color = EnumDescConverter.GetEnumDescription(UserSettings.Setting.PrimaryColor);
-                string message = string.Format(CultureInfo.InvariantCulture, MsgTextUIColorSet, color);
-                SnackbarMsg.ClearAndQueueMessage(message, 2000);
-            }
-            if (e.Key == Key.F)
-            {
-                using Process p = new();
-                p.StartInfo.FileName = AppInfo.AppDirectory;
-                p.StartInfo.UseShellExecute = true;
-                p.StartInfo.ErrorDialog = false;
-                _ = p.Start();
-            }
-            if (e.Key == Key.K)
-            {
-                CompareLanguageDictionaries();
-                ViewLogFile();
-            }
-            if (e.Key == Key.R)
-            {
-                if (UserSettings.Setting?.RowSpacing >= Spacing.Wide)
-                {
+                    }
+                case Key.K:
+                    CompareLanguageDictionaries();
+                    ViewLogFile();
+                    break;
+                case Key.R when UserSettings.Setting?.RowSpacing >= Spacing.Wide:
                     UserSettings.Setting.RowSpacing = Spacing.Compact;
-                }
-                else
-                {
+                    break;
+                case Key.R:
                     UserSettings.Setting!.RowSpacing++;
-                }
-            }
-            if (e.Key == Key.S)
-            {
-                TextFileViewer.ViewTextFile(ConfigHelpers.SettingsFileName);
+                    break;
+                case Key.S:
+                    TextFileViewer.ViewTextFile(ConfigHelpers.SettingsFileName);
+                    break;
             }
         }
-        #endregion
+        #endregion Keys with Ctrl and Shift
     }
     #endregion Key down events
 }
