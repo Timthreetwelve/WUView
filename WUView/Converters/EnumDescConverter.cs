@@ -8,7 +8,7 @@ namespace WUView.Converters;
 /// <remarks>
 /// Allows use of "Light Blue" instead of LightBlue or Light_Blue.
 /// </remarks>
-internal sealed class EnumDescConverter : IValueConverter
+internal abstract class EnumDescConverter : IValueConverter
 {
     /// <summary>
     /// Converts a value.
@@ -27,11 +27,7 @@ internal sealed class EnumDescConverter : IValueConverter
             return null;
         }
         string description = GetEnumDescription(myEnum);
-        if (!string.IsNullOrEmpty(description))
-        {
-            return description;
-        }
-        return myEnum.ToString();
+        return !string.IsNullOrEmpty(description) ? description : myEnum.ToString();
     }
 
     /// <summary>
