@@ -44,6 +44,7 @@ public partial class App : Application
     public static int DefaultLanguageStrings { get; private set; }
     #endregion Properties
 
+    #region On startup event
     /// <summary>
     /// Override the Startup Event.
     /// </summary>
@@ -63,6 +64,17 @@ public partial class App : Application
         // Log startup messages
         MainWindowHelpers.LogStartup();
 
+        // Change language if needed.
+        SetLanguage();
+
+        // Enable language testing if requested.
+        CheckLanguageTesting();
+    }
+    #endregion On startup event
+
+    #region Set the UI language
+    private void SetLanguage()
+    {
         // Resource dictionary for language
         ResourceDictionary resDict = [];
 
@@ -123,8 +135,12 @@ public partial class App : Application
             LanguageFile = "defaulted";
             _log.Warn($"Language has defaulted to en-US. {LanguageStrings} string loaded.");
         }
+    }
+    #endregion Set the UI language
 
-        // Language testing
+    #region Language testing
+    private void CheckLanguageTesting()
+    {
         if (UserSettings.Setting!.LanguageTesting)
         {
             _log.Info("Language testing enabled");
@@ -160,6 +176,7 @@ public partial class App : Application
             }
         }
     }
+    #endregion Language testing
 
     #region Unhandled Exception Handler
     /// <summary>
