@@ -64,7 +64,7 @@ public static class SettingChange
     /// Gets the value of the property
     /// </summary>
     /// <returns>An object containing the value of the property</returns>
-    public static object? GetPropertyValue(object sender, PropertyChangedEventArgs e)
+    private static object? GetPropertyValue(object sender, PropertyChangedEventArgs e)
     {
         PropertyInfo? prop = sender.GetType().GetProperty(e.PropertyName!);
         return prop?.GetValue(sender, null);
