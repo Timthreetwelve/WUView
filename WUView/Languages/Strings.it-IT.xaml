@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            14.10.2024
+        Date last update:            26.10.2024
 
         ========================================================================
 
@@ -159,6 +159,7 @@
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Colore evidenziazione</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">La modifica dell'impostazione lingua avrà effetto dopo il riavvio dell'applicazione!</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFont">Font</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formato data griglia</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Maiusc-clic per aprire il file con l'applicazione predefinita</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Abilita test traduzione</sys:String>
