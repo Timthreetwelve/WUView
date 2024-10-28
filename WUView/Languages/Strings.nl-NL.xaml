@@ -15,7 +15,7 @@
 
         Translation contributed by:  CMTRiX
 
-        Date last update:            2023.12.15 12:20 UTC
+        Date last update:            2024.10.28 14:00 UTC
 
         ========================================================================
 
@@ -219,11 +219,27 @@
     <sys:String x:Key="SettingsEnum_Theme_Light">Licht</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Systeem</sys:String>
 
-<!-- Begin changes on 2023/12/15 @ 12:20 UTC -->
-<sys:String x:Key="About_GitHub">Over GitHub</sys:String>
-<sys:String x:Key="Button_Close">Afsluiten</sys:String>
-<sys:String x:Key="MsgText_AppUpdateClose">Klik op 'JA' om het programma af te sluiten</sys:String>
-
+    <!-- Begin changes on 2023/11/13 @ 20:45 UTC -->
+    <!-- * | Value for About_Contribute needs to be updated to "Contribute a Translation" -->
+    <!-- * | The OperationType_* group needs to be translated -->
+    <!-- * | The ResultCode_* group needs to be translated -->
+    <!-- * | MenuItem_SaveJSON needs to be translated -->
+    <!-- * | SettingsItem_EnableLanguageTesting needs to be translated -->
+    <!-- A | About_GitHub needs to be added -->
+    <!-- A | Button_Close needs to be added -->
+    <!-- End of changes on 2023/11/13 -->
+    
+    <!-- Begin changes on 2023/12/15 @ 12:20 UTC -->
+    <sys:String x:Key="About_GitHub">Over GitHub</sys:String>
+    <sys:String x:Key="Button_Close">Afsluiten</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateClose">Klik op 'JA' om het programma af te sluiten</sys:String>
+    
+    <!-- Begin changes on 2024/10/28 @ 14:00 UTC -->
+    <sys:String x:Key="Button_CheckUpdate">Controleer op updates</sys:String>
+    <sys:String x:Key="MsgText_ErrorCaption">FOUT</sys:String>
+    <sys:String x:Key="MsgText_ErrorOpeningFile">Fout bij het openen (0)</sys:String>
+    <sys:String x:Key="MsgText_ErrorReadingFile">Fout bij het lezen (0)</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFont">Font</sys:String>
 
 </ResourceDictionary>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -243,13 +259,3 @@
        U = Updated
        * = Comment not related to a single line
      - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-
-<!-- Begin changes on 2023/11/13 @ 20:45 UTC -->
-<!-- * | Value for About_Contribute needs to be updated to "Contribute a Translation" -->
-<!-- * | The OperationType_* group needs to be translated -->
-<!-- * | The ResultCode_* group needs to be translated -->
-<!-- * | MenuItem_SaveJSON needs to be translated -->
-<!-- * | SettingsItem_EnableLanguageTesting needs to be translated -->
-<!-- A | About_GitHub needs to be added -->
-<!-- A | Button_Close needs to be added -->
-<!-- End of changes on 2023/11/13 -->
