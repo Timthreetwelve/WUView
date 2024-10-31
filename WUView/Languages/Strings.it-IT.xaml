@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            26.10.2024
+        Date last update:            31.10.2024
 
         ========================================================================
 
@@ -52,7 +52,7 @@
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Apri cartella app</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Visualizza file registro eventi</sys:String>
-    <sys:String x:Key="Button_OpenLogFileToolTip">Open the log file in the default application.</sys:String>
+    <sys:String x:Key="Button_OpenLogFileToolTip">Apri file registro eventi nell'applicazione predefinita.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Azioni aggiuntive</sys:String>
     <sys:String x:Key="Button_Yes">Sì</sys:String>
     <!--  Details Pane  -->
@@ -141,7 +141,7 @@
     <sys:String x:Key="NavTitle_Updates">Windows Update Viewer</sys:String>
     <!--  Operation Type  -->
     <sys:String x:Key="OperationType_Installation">Installazione</sys:String>
-    <sys:String x:Key="OperationType_Uninstallation">Uninstallazione</sys:String>
+    <sys:String x:Key="OperationType_Uninstallation">Disinstallazione</sys:String>
     <!--  Result Code  -->
     <sys:String x:Key="ResultCode_Failed">Fallito</sys:String>
     <sys:String x:Key="ResultCode_InProgress">In corso</sys:String>
