@@ -33,7 +33,7 @@
 
     <!--#region DataGrid row style-->
     <Style TargetType="DataGridRow"
-           x:Key="HiliteTodayStyle"
+           x:Key="HighlightTodayStyle"
            BasedOn="{StaticResource MaterialDesignDataGridRow}">
         <Style.Triggers>
             <DataTrigger Binding="{Binding Date, Converter={StaticResource TodayConv}}"

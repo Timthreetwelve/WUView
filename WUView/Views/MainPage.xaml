@@ -1,4 +1,4 @@
-﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.MainPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -180,7 +180,7 @@
                                         Source={x:Static config:UserSettings.Setting}}"
                   KeyboardNavigation.DirectionalNavigation="Contained"
                   KeyboardNavigation.TabNavigation="Once"
-                  RowStyle="{StaticResource HiliteTodayStyle}"
+                  RowStyle="{StaticResource HighlightTodayStyle}"
                   ScrollViewer.CanContentScroll="True"
                   SelectionMode="Single"
                   SelectionUnit="FullRow"
