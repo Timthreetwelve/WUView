@@ -27,7 +27,7 @@ internal sealed class ExcludedItemsConverter : IValueConverter
         if (value is not null)
         {
             ObservableCollection<ExcludedItems> excludedItems = [];
-            foreach (string item in value.ToString()!.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries))
+            foreach (string item in value.ToString()!.Split([Environment.NewLine], StringSplitOptions.RemoveEmptyEntries))
             {
                 ExcludedItems excluded = new()
                 {
