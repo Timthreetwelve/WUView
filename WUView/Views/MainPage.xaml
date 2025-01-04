@@ -189,12 +189,16 @@
                   TabIndex="0"
                   VerticalScrollBarVisibility="Auto">
             <DataGrid.Columns>
+                <!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->
                 <DataGridTextColumn Binding="{Binding KBNum}"
                                     Header="{DynamicResource GridColumn_KBNum}" />
+                <!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->
                 <DataGridTextColumn Binding="{Binding Date, Converter={StaticResource DateFormat}}"
                                     Header="{DynamicResource GridColumn_Date}" />
+                <!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->
                 <DataGridTextColumn Binding="{Binding Title}"
                                     Header="{DynamicResource GridColumn_Title}" />
+                <!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->
                 <DataGridTextColumn Binding="{Binding ResultCode}"
                                     Header="{DynamicResource GridColumn_Result}" />
             </DataGrid.Columns>
