@@ -73,7 +73,9 @@
 
                 <!--#region  TextBlocks with relevant info-->
                 <TextBlock Grid.Row="0" Grid.Column="0"
-                           Text="{x:Static helpers:AppInfo.AppProduct}" />
+                           Text="{x:Static helpers:AppInfo.AppProduct}"
+                           ToolTip="{x:Static helpers:AppInfo.AppPath}"
+                           ToolTipService.Placement="Top" />
                 <TextBlock Grid.Row="0" Grid.Column="2"
                            Text="{DynamicResource About_Description}"
                            TextWrapping="Wrap" />
