@@ -26,7 +26,7 @@ internal static class GitHubHelpers
         try
         {
             SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_AppUpdateChecking"));
-            Release release = await GetLatestReleaseAsync(AppConstString.RepoOwner, AppConstString.RepoName);
+            Release? release = await GetLatestReleaseAsync(AppConstString.RepoOwner, AppConstString.RepoName);
             if (release == null)
             {
                 CheckFailed();
@@ -101,7 +101,7 @@ internal static class GitHubHelpers
     /// <param name="repoOwner">The repository owner.</param>
     /// <param name="repoName">Name of the repository.</param>
     /// <returns>Release object</returns>
-    private static async Task<Release> GetLatestReleaseAsync(string repoOwner, string repoName)
+    private static async Task<Release?> GetLatestReleaseAsync(string repoOwner, string repoName)
     {
         try
         {
