@@ -223,6 +223,7 @@
     <sys:String x:Key="SettingsEnum_Spacing_Compact">Compatta</sys:String>
     <sys:String x:Key="SettingsEnum_Spacing_Wide">Larga</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Dark">Materiale scuro</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Blu notte</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Scuro</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Chiaro</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
@@ -294,4 +295,8 @@
     <!-- Begin changes on 2024/10/13 @ 17:40 UTC-->
     <!-- A | Button_CheckUpdate -->
     <!-- End of changes on 2024/10/13 @ 17:40 UTC-->
+
+    <!-- Begin changes on 2025/01/06 @ 14:540 UTC-->
+    <!-- A | SettingsEnum_Theme_DarkBlue -->
+    <!-- End of changes on 2025/01/06 @ 14:50 UTC-->
 </ResourceDictionary>

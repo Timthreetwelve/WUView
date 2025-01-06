@@ -26,7 +26,9 @@ public enum ThemeType
     [LocalizedDescription("SettingsEnum_Theme_Darker")]
     Darker = 2,
     [LocalizedDescription("SettingsEnum_Theme_System")]
-    System = 3
+    System = 3,
+    [LocalizedDescription("SettingsEnum_Theme_DarkBlue")]
+    DarkBlue = 4
 }
 
 /// <summary>

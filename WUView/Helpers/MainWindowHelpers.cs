@@ -176,6 +176,17 @@ internal static class MainWindowHelpers
                 theme.Foreground = (Color)ColorConverter.ConvertFromString("#E5F0F0F0");
                 theme.SetSecondaryColor(Colors.DodgerBlue);
                 break;
+            case ThemeType.DarkBlue:
+                theme.SetBaseTheme(BaseTheme.Dark);
+                theme.Background = (Color)ColorConverter.ConvertFromString("#FF000F25");
+                theme.Cards.Background = (Color)ColorConverter.ConvertFromString("#FF011636");
+                theme.DataGrids.Selected = (Color)ColorConverter.ConvertFromString("#FF274470");
+                theme.Foreground = (Color)ColorConverter.ConvertFromString("#FFD3D3E3");
+                theme.GridSplitters.Background = (Color)ColorConverter.ConvertFromString("#46516A");
+                theme.Separators.Background = (Color)ColorConverter.ConvertFromString("#FF003C85");
+                theme.ToolTips.Background = (Color)ColorConverter.ConvertFromString("#FF63afff");
+                theme.SetSecondaryColor(Colors.DodgerBlue);
+                break;
             default:
                 theme.SetBaseTheme(BaseTheme.Light);
                 break;

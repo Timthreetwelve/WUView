@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
@@ -222,6 +222,7 @@
     <sys:String x:Key="SettingsEnum_Spacing_Compact">촘촘한</sys:String>
     <sys:String x:Key="SettingsEnum_Spacing_Wide">와이드</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Dark">어두운 소재</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_DarkBlue">미드나잇 블루</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">어두운</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">밝은</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">시스템</sys:String>
@@ -293,4 +294,8 @@
     <!-- Begin changes on 2024/10/13 @ 17:40 UTC-->
     <!-- A | Button_CheckUpdate -->
     <!-- End of changes on 2024/10/13 @ 17:40 UTC-->
+
+    <!-- Begin changes on 2025/01/06 @ 14:540 UTC-->
+    <!-- A | SettingsEnum_Theme_DarkBlue -->
+    <!-- End of changes on 2025/01/06 @ 14:50 UTC-->
 </ResourceDictionary>

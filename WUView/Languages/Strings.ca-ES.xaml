@@ -220,6 +220,7 @@
     <sys:String x:Key="SettingsEnum_Spacing_Compact">Compacte</sys:String>
     <sys:String x:Key="SettingsEnum_Spacing_Wide">Ample</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Dark">Material fosc</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Blau Mitjanit</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Més fosc</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Llum</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>

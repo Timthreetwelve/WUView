@@ -221,6 +221,7 @@
     <sys:String x:Key="SettingsEnum_Spacing_Compact">Compact</sys:String>
     <sys:String x:Key="SettingsEnum_Spacing_Wide">Large</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Dark">Matériau foncé</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Bleu nuit</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Plus foncé</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Lumière</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Système</sys:String>
