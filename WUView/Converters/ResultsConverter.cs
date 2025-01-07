@@ -15,7 +15,7 @@ internal sealed class ResultsConverter : IValueConverter
             return string.Empty;
         }
 
-        return parameter is string paramString && paramString == "HResult" && value is string hrString
+        return parameter is "HResult" && value is string hrString
             ? $"0x{int.Parse(hrString, CultureInfo.InvariantCulture):X8}"
             : value.ToString();
     }
