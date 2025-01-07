@@ -25,7 +25,7 @@ public static class AppInfo
     /// <summary>
     ///  Returns the version number in Major.Minor.Build format
     /// </summary>
-    public static string TitleVersion => Assembly.GetEntryAssembly()!.GetName().Version!.ToString().Remove(Assembly.GetEntryAssembly()!.GetName().Version!.ToString().LastIndexOf('.'));
+    private static string TitleVersion => Assembly.GetEntryAssembly()!.GetName().Version!.ToString().Remove(Assembly.GetEntryAssembly()!.GetName().Version!.ToString().LastIndexOf('.'));
 
     /// <summary>
     /// Returns the file version
