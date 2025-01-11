@@ -46,7 +46,7 @@
         <Grid x:Name="MainGrid">
             <!--#region Row definitions for the main grid-->
             <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
+                <RowDefinition Height="54" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
@@ -82,8 +82,6 @@
                                          Grid.ColumnSpan="2"
                                          HorizontalAlignment="Right"
                                          VerticalAlignment="Top"
-                                         Background="{DynamicResource MaterialDesign.Brush.Background}"
-                                         Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                          IsTabStop="False"
                                          MessageQueue="{materialDesign:MessageQueue}" />
                 <!--#endregion-->

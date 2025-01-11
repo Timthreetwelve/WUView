@@ -33,6 +33,7 @@
     <sys:String x:Key="SettingsSubHead_UISettings">Theme, Accent Colour, UI Size, Row Height, Start Position and more</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Accent Colour</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Use accent colour for message background</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Start with window centred on screen</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_BlueGray">Blue Grey</sys:String>

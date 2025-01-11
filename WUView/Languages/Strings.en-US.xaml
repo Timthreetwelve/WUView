@@ -48,11 +48,21 @@
     <sys:String x:Key="Button_Cancel">Cancel</sys:String>
     <sys:String x:Key="Button_CheckUpdate">Check for Update</sys:String>
     <sys:String x:Key="Button_Close">Close Menu</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip">Click to compare current language to the default (en-US). Results are written to the log file.</sys:String>
+    <sys:String x:Key="Button_ExportSettings">Export Settings</sys:String>
+    <sys:String x:Key="Button_ExportSettingsToolTip">Export current settings to a file.</sys:String>
+    <sys:String x:Key="Button_ImportSettings">Import Settings</sys:String>
+    <sys:String x:Key="Button_ImportSettingsToolTip">Import settings from a file.</sys:String>
+    <sys:String x:Key="Button_ListSettings">List Settings</sys:String>
+    <sys:String x:Key="Button_ListSettingsTooltip">List (write) settings to the log file.</sys:String>
     <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Open App Folder</sys:String>
+    <sys:String x:Key="Button_OpenAppFolderToolTip">Open this application's folder in File Explorer.</sys:String>
     <sys:String x:Key="Button_OpenLogFile">View Log File</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Open the log file in the default application.</sys:String>
+    <sys:String x:Key="Button_OpenSettings">Open Settings</sys:String>
+    <sys:String x:Key="Button_OpenSettingsToolTip">Open the Settings file.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Additional Actions</sys:String>
     <sys:String x:Key="Button_Yes">Yes</sys:String>
     <!--  Details Pane  -->
@@ -113,14 +123,18 @@
     <sys:String x:Key="MsgText_ElapsedTime">Elapsed time</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">ERROR</sys:String>
+    <sys:String x:Key="MsgText_ErrorExportingSettings">Error exporting settings file.</sys:String>
+    <sys:String x:Key="MsgText_ErrorImportingSettings">Error importing settings file.</sys:String>
     <sys:String x:Key="MsgText_ErrorOpeningFile">Error opening {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorReadingFile">Error reading {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorSavingSettings">Error saving settings file.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">No Event Logs records were found for this update.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">No Event Log records containing "{0}" were found.</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Excluding updates containing:</sys:String>
     <sys:String x:Key="MsgText_FilterOneRowShown">1 row shown</sys:String>
     <sys:String x:Key="MsgText_FilterRowsShown">{0} rows shown</sys:String>
     <sys:String x:Key="MsgText_HResultCopiedToClipboard">HResult {0} copied to clipboard</sys:String>
+    <sys:String x:Key="MsgText_ImportSettingsRestart">Please restart Windows Update Viewer to use the imported settings.</sys:String>
     <sys:String x:Key="MsgText_ListRefreshed">List Refreshed</sys:String>
     <sys:String x:Key="MsgText_NoUpdatesFound">No updates were found!</sys:String>
     <sys:String x:Key="MsgText_Opening">Opening</sys:String>
@@ -152,9 +166,11 @@
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Application Settings</sys:String>
     <sys:String x:Key="SettingsSection_Language">Language</sys:String>
+    <sys:String x:Key="SettingsSection_SettingsFile">Settings File</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">UI Settings</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Number of Updates, Date Format, Excluded Items, Details, and more</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Language Settings and Testing</sys:String>
+    <sys:String x:Key="SettingsSubHead_SettingsFile">Import, Export, Open, and List application settings</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Theme, Accent Color, UI Size, Row Height, Start Position and more</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Accent Color</sys:String>
@@ -162,6 +178,7 @@
     <sys:String x:Key="SettingsItem_DisplayFont">Font</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Grid Date Format</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-Click to open file with default application</sys:String>
+    <sys:String x:Key="SettingsItem_EditSettingsWarning">Any changes made to the settings file while the app is running will be overwritten!</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Enable language testing</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Hide Excluded Items</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Include debug level messages in log file</sys:String>
@@ -177,8 +194,11 @@
     <sys:String x:Key="SettingsItem_ShowExit">Show Exit in Navigation bar</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Show warning messages in log for non-zero HResult values</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Show updates with current date in bold</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Use accent color for message background</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Start with window centered on screen</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Theme</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Represents the number of strings in the current language compared to the default (en-US).</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Press Ctrl+Shift+K or click compare button to compare language files. Results are written to the log file.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">UI Size</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Use Windows display language</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">When this option is selected, the language specified in the Windows settings will</sys:String>
@@ -296,7 +316,26 @@
     <!-- A | Button_CheckUpdate -->
     <!-- End of changes on 2024/10/13 @ 17:40 UTC-->
 
-    <!-- Begin changes on 2025/01/06 @ 14:540 UTC-->
+    <!-- Begin changes on 2025/01/06 @ 14:50 UTC-->
     <!-- A | MSettingsEnum_Theme_DarkBlue -->
     <!-- End of changes on 2025/01/06 @ 14:50 UTC-->
+
+    <!-- Begin changes on 2025/01/07 @ 02:50 UTC-->
+    <!-- A | Button_ExportSettings -->
+    <!-- A | Button_ExportSettingsToolTip -->
+    <!-- A | Button_ImportSettings -->
+    <!-- A | Button_ImportSettingsToolTip -->
+    <!-- A | Button_ListSettings -->
+    <!-- A | Button_ListSettingsTooltip -->
+    <!-- A | Button_OpenAppFolderToolTip -->
+    <!-- A | Button_OpenSettings -->
+    <!-- A | Button_OpenSettingsToolTip -->
+    <!-- A | MsgText_ErrorExportingSettings -->
+    <!-- A | MsgText_ErrorImportingSettings -->
+    <!-- A | MsgText_ErrorSavingSettings -->
+    <!-- A | MsgText_ImportSettingsRestart -->
+    <!-- A | SettingsSection_SettingsFile -->
+    <!-- A | SettingsSubHead_SettingsFile -->
+    <!-- A | SettingsItem_EditSettingsWarning -->
+    <!-- End changes on 2025/01/07 @ 02:50 UTC-->
 </ResourceDictionary>

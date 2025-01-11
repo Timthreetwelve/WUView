@@ -396,6 +396,15 @@
                             </CheckBox>
                             <CheckBox Grid.Row="2"
                                       Padding="10,0"
+                                      IsChecked="{Binding UseAccentColorOnSnackbar,
+                                                          Source={x:Static config:UserSettings.Setting}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_SnackbarAccentColor}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
+                            <CheckBox Grid.Row="3"
+                                      Padding="10,0"
                                       IsChecked="{Binding ShowExitInNav,
                                                           Source={x:Static config:UserSettings.Setting}}">
                                 <TextBlock>
