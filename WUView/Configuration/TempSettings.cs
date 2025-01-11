@@ -16,4 +16,7 @@ internal sealed partial class TempSettings : ConfigManager<TempSettings>
 
     [ObservableProperty]
     private static bool _langExpanderOpen;
+
+    [ObservableProperty]
+    private static bool _backupExpanderOpen;
 }
