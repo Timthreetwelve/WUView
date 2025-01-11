@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            31.10.2024
+        Date last update:            11.01.2025
 
         ========================================================================
 
@@ -48,11 +48,21 @@
     <sys:String x:Key="Button_Cancel">Annulla</sys:String>
     <sys:String x:Key="Button_CheckUpdate">Controlla aggiornamenti</sys:String>
     <sys:String x:Key="Button_Close">Chiudi menu</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip">Fai clic per confrontare la lingua attuale con quella predefinita (en-US). I risultati verranno scritti nel file registro.</sys:String>
+    <sys:String x:Key="Button_ExportSettings">Esporta impostazioni</sys:String>
+    <sys:String x:Key="Button_ExportSettingsToolTip">Esporta le impostazioni attuali in un file.</sys:String>
+    <sys:String x:Key="Button_ImportSettings">Importa impostazioni</sys:String>
+    <sys:String x:Key="Button_ImportSettingsToolTip">Importa le impostazioni da un file.</sys:String>
+    <sys:String x:Key="Button_ListSettings">Elenco impostazioni</sys:String>
+    <sys:String x:Key="Button_ListSettingsTooltip">Elenca (scrivi) le impostazioni nel file registro.</sys:String>
     <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Apri cartella app</sys:String>
+    <sys:String x:Key="Button_OpenAppFolderToolTip">Apri la cartella di questa applicazione in Esplora file.</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Visualizza file registro eventi</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Apri file registro eventi nell'applicazione predefinita.</sys:String>
+    <sys:String x:Key="Button_OpenSettings">Apri impostazioni</sys:String>
+    <sys:String x:Key="Button_OpenSettingsToolTip">Apri il file impostazioni.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Azioni aggiuntive</sys:String>
     <sys:String x:Key="Button_Yes">Sì</sys:String>
     <!--  Details Pane  -->
@@ -61,7 +71,7 @@
     <sys:String x:Key="Details_HeadingEventLog">Dettagli registro eventi Windows:</sys:String>
     <sys:String x:Key="Details_HeadingUpdate">Dettagli Windows Update:</sys:String>
     <sys:String x:Key="Details_HResult">HResult:</sys:String>
-    <sys:String x:Key="Details_KBNum">Numero:</sys:String>
+    <sys:String x:Key="Details_KBNum">Numero KB:</sys:String>
     <sys:String x:Key="Details_Operation">Operazione:</sys:String>
     <sys:String x:Key="Details_ResultCode">Codice risultato:</sys:String>
     <sys:String x:Key="Details_SupportURL">URL supporto:</sys:String>
@@ -113,14 +123,18 @@
     <sys:String x:Key="MsgText_ElapsedTime">Tempo trascorso</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Si è verificato un problema con il file lingua GUI.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">ERRORE</sys:String>
+    <sys:String x:Key="MsgText_ErrorExportingSettings">Errore durante l'esportazione del file impostazioni.</sys:String>
+    <sys:String x:Key="MsgText_ErrorImportingSettings">Errore durante l'importazione del file impostazioni.</sys:String>
     <sys:String x:Key="MsgText_ErrorOpeningFile">Error in apertura di {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorReadingFile">Error in lettura di {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorSavingSettings">Errore durante il salvataggio del file impostazioni.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Non è stato trovato alcun record del registro eventi per questo aggiornamento.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Non è stato trovato alcun record del registro eventi contenente "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Escludi aggiornamenti contenenti:</sys:String>
     <sys:String x:Key="MsgText_FilterOneRowShown">1 riga visualizzata</sys:String>
     <sys:String x:Key="MsgText_FilterRowsShown">{0} righe visualizzate</sys:String>
     <sys:String x:Key="MsgText_HResultCopiedToClipboard">HResult {0} copiato negli appunti</sys:String>
+    <sys:String x:Key="MsgText_ImportSettingsRestart">Per usare le impostazioni importate.riavvia Windows Update Viewer </sys:String>
     <sys:String x:Key="MsgText_ListRefreshed">Elenco aggiornato</sys:String>
     <sys:String x:Key="MsgText_NoUpdatesFound">Nessun aggiornamento trovato!</sys:String>
     <sys:String x:Key="MsgText_Opening">Apertura</sys:String>
@@ -156,12 +170,15 @@
     <sys:String x:Key="SettingsSubHead_AppSettings">Numero aggiornamenti, formato data, elementi esclusi, dettagli e altro</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Impostazioni lingua (lavori in corso)</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Tema, colore evidenziazione, dimensione interfaccia utente, altezza riga, posizione iniziale e altro ancora</sys:String>
+    <sys:String x:Key="SettingsSubHead_SettingsFile">Importa, esporta, apri ed elenca le impostazioni applicazione</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">Tema, colore evidenziazione, dimensione UI, altezza riga, posizione iniziale e altro</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Colore evidenziazione</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">La modifica dell'impostazione lingua avrà effetto dopo il riavvio dell'applicazione!</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Font</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formato data griglia</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Maiusc-clic per aprire il file con l'applicazione predefinita</sys:String>
+    <sys:String x:Key="SettingsItem_EditSettingsWarning">Qualsiasi modifica apportata al file delle impostazioni mentre l'app è in esecuzione verrà sovrascritta!</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Abilita test traduzione</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Nascondi elementi esclusi</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Includi nel file registro eventi i messaggi debug</sys:String>
@@ -177,8 +194,11 @@
     <sys:String x:Key="SettingsItem_ShowExit">Visualizza 'Esci' nella barra navigazione</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Visualizza messaggi avviso nel registro per valori HResult diversi da zero</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Visualizza gli aggiornamenti con la data attuale in grassetto</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Usa il colore principale per lo sfondo del messaggio</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Avvia con la finestra centrata sullo schermo</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Indica il numero di stringhe della lingua attuale rispetto a quella predefinita (en-US).</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Premi Ctrl+Maiusc+K o fai clic sul pulsante Confronta per confrontare i file lingua. I risultati verranno scritti nel file registro.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Dimensione UI</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Usa lingua di sistema di Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quando questa opzione è selezionata, verrà usata la lingua specificata nelle impostazioni di Windows.</sys:String>
@@ -296,7 +316,26 @@
     <!-- A | Button_CheckUpdate -->
     <!-- End of changes on 2024/10/13 @ 17:40 UTC-->
 
-    <!-- Begin changes on 2025/01/06 @ 14:540 UTC-->
-    <!-- A | SettingsEnum_Theme_DarkBlue -->
+    <!-- Begin changes on 2025/01/06 @ 14:50 UTC-->
+    <!-- A | MSettingsEnum_Theme_DarkBlue -->
     <!-- End of changes on 2025/01/06 @ 14:50 UTC-->
+
+    <!-- Begin changes on 2025/01/07 @ 02:50 UTC-->
+    <!-- A | Button_ExportSettings -->
+    <!-- A | Button_ExportSettingsToolTip -->
+    <!-- A | Button_ImportSettings -->
+    <!-- A | Button_ImportSettingsToolTip -->
+    <!-- A | Button_ListSettings -->
+    <!-- A | Button_ListSettingsTooltip -->
+    <!-- A | Button_OpenAppFolderToolTip -->
+    <!-- A | Button_OpenSettings -->
+    <!-- A | Button_OpenSettingsToolTip -->
+    <!-- A | MsgText_ErrorExportingSettings -->
+    <!-- A | MsgText_ErrorImportingSettings -->
+    <!-- A | MsgText_ErrorSavingSettings -->
+    <!-- A | MsgText_ImportSettingsRestart -->
+    <!-- A | SettingsSection_SettingsFile -->
+    <!-- A | SettingsSubHead_SettingsFile -->
+    <!-- A | SettingsItem_EditSettingsWarning -->
+    <!-- End changes on 2025/01/07 @ 02:50 UTC-->
 </ResourceDictionary>
