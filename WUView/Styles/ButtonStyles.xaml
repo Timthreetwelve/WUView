@@ -41,5 +41,24 @@
         <Setter Property="materialDesign:RippleAssist.Feedback" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
     </Style>
     <!--#endregion-->
-
+    
+    <!--#region Check button style-->
+    <Style TargetType="Button"
+           x:Key="CheckButton"
+           BasedOn="{StaticResource MaterialDesignOutlinedButton}">
+        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesign.Brush.Separator.Background}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Content">
+            <Setter.Value>
+                <materialDesign:PackIcon Width="25" Height="25"
+                                         Kind="CompareHorizontal" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
+        <Setter Property="Height" Value="27" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Width" Value="40" />
+        <Setter Property="materialDesign:RippleAssist.Feedback" Value="{DynamicResource MaterialDesign.Brush.Foreground}" />
+    </Style>
+    <!--#endregion-->
 </ResourceDictionary>

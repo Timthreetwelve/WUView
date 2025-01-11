@@ -1,4 +1,4 @@
-<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.SettingsPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -27,12 +27,14 @@
     <!--#endregion-->
 
     <Grid>
-        <ScrollViewer Margin="15,15,15,5"
+        <ScrollViewer Margin="15,15,10,15"
                       HorizontalScrollBarVisibility="Disabled"
                       VerticalScrollBarVisibility="Auto">
             <Grid>
                 <!--#region Row definitions-->
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="10" />
                     <RowDefinition Height="auto" />
@@ -63,7 +65,6 @@
 
                 <!--#region Application Settings-->
                 <Expander Grid.Row="2"
-                          materialDesign:ExpanderAssist.HorizontalHeaderPadding="10"
                           IsExpanded="{Binding AppExpanderOpen,
                                                Source={x:Static config:TempSettings.Setting}}">
                     <Expander.Header>
@@ -90,12 +91,14 @@
                                        Text="{DynamicResource SettingsSection_AppSettings}"
                                        TextWrapping="Wrap" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
                                        FontSize="12"
                                        Text="{DynamicResource SettingsSubHead_AppSettings}"
                                        TextWrapping="Wrap" />
                         </Grid>
                     </Expander.Header>
-                    <Grid Margin="17,10">
+                    <Grid Margin="30,10,0,20">
                         <!--#region Row & Column definitions-->
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -107,6 +110,7 @@
                         </Grid.ColumnDefinitions>
                         <!--#endregion-->
 
+                        <!--#region ComboBoxes (top)-->
                         <Grid Grid.Row="0" Grid.Column="1">
                             <!--#region Row & Column definitions-->
                             <Grid.RowDefinitions>
@@ -159,6 +163,7 @@
                                                               Source={x:Static config:UserSettings.Setting}}"
                                       Style="{StaticResource MaterialDesignComboBox}" />
                         </Grid>
+                        <!--#endregion-->
 
                         <!--#region CheckBoxes (bottom)-->
                         <Grid Grid.Row="1" Grid.Column="1">
@@ -245,7 +250,6 @@
 
                 <!--#region UI Settings-->
                 <Expander Grid.Row="4"
-                          materialDesign:ExpanderAssist.HorizontalHeaderPadding="10"
                           IsExpanded="{Binding UIExpanderOpen,
                                                Source={x:Static config:TempSettings.Setting}}">
                     <Expander.Header>
@@ -272,13 +276,15 @@
                                        Text="{DynamicResource SettingsSection_UISettings}"
                                        TextWrapping="Wrap" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
                                        FontSize="12"
                                        Text="{DynamicResource SettingsSubHead_UISettings}"
                                        TextWrapping="Wrap" />
                         </Grid>
                     </Expander.Header>
 
-                    <Grid Margin="17,10">
+                    <Grid Margin="30,10,0,20">
                         <!--#region Row & Column definitions-->
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -343,17 +349,17 @@
                                       Style="{StaticResource MaterialDesignComboBox}" />
 
                             <Label Grid.Row="3" Grid.Column="0"
-                               VerticalAlignment="Center"
-                               Content="{DynamicResource SettingsItem_DisplayFont}" />
+                                   VerticalAlignment="Center"
+                                   Content="{DynamicResource SettingsItem_DisplayFont}" />
                             <ComboBox Grid.Row="3" Grid.Column="2"
-                                  Width="Auto" MinWidth="200"
-                                  Margin="0,3,0,0" Padding="3,0,0,3"
-                                  HorizontalAlignment="Left"
-                                  ItemsSource="{Binding FontList}"
-                                  SelectedValue="{Binding SelectedFont,
-                                                          Source={x:Static config:UserSettings.Setting}}"
-                                  SelectedValuePath="Source"
-                                  Style="{StaticResource MaterialDesignComboBox}" />
+                                      Width="Auto" MinWidth="200"
+                                      Margin="0,3,0,0" Padding="3,0,0,3"
+                                      HorizontalAlignment="Left"
+                                      ItemsSource="{Binding FontList}"
+                                      SelectedValue="{Binding SelectedFont,
+                                                              Source={x:Static config:UserSettings.Setting}}"
+                                      SelectedValuePath="Source"
+                                      Style="{StaticResource MaterialDesignComboBox}" />
 
                             <Label Grid.Row="4" Grid.Column="0"
                                    VerticalAlignment="Center"
@@ -372,6 +378,7 @@
                         <!--#region CheckBoxes (bottom)-->
                         <Grid Grid.Row="1" Grid.Column="1">
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" MinHeight="38" />
                                 <RowDefinition Height="auto" MinHeight="38" />
                                 <RowDefinition Height="auto" MinHeight="38" />
                                 <RowDefinition Height="auto" MinHeight="38" />
@@ -420,7 +427,6 @@
 
                 <!--#region Language-->
                 <Expander Grid.Row="6"
-                          materialDesign:ExpanderAssist.HorizontalHeaderPadding="10"
                           IsExpanded="{Binding LangExpanderOpen,
                                                Source={x:Static config:TempSettings.Setting}}">
                     <Expander.Header>
@@ -447,13 +453,15 @@
                                        Text="{DynamicResource SettingsSection_Language}"
                                        TextWrapping="Wrap" />
                             <TextBlock Grid.Row="2" Grid.Column="1"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
                                        FontSize="12"
                                        Text="{DynamicResource SettingsSubHead_Language}"
                                        TextWrapping="Wrap" />
                         </Grid>
                     </Expander.Header>
 
-                    <Grid Margin="17,10">
+                    <Grid Margin="30,10,0,20">
                         <Grid.DataContext>
                             <models:UILanguage />
                         </Grid.DataContext>
@@ -494,12 +502,13 @@
                         </StackPanel>
 
                         <Grid Grid.Row="1" Grid.Column="1">
-                            <!--#region Column definitions -->
+                            <!--#region Column definitions-->
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="10" />
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <!--#endregion-->
@@ -521,7 +530,7 @@
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
-                                            <!--#region Column definitions -->
+                                            <!--#region Column definitions-->
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="auto" />
                                                 <ColumnDefinition Width="15" />
@@ -537,18 +546,47 @@
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
-                            <TextBlock Grid.Column="4"
-                                       VerticalAlignment="Center"
-                                       FontSize="13" Opacity=".8">
-                                <Run Text="{Binding CurrentLanguageStringCount}" />
-                                <Run Text="/" />
-                                <Run Text="{Binding DefaultStringCount}" />
-                                <Run Text="{DynamicResource MsgText_Translated}" />
-                            </TextBlock>
+                            <StackPanel Grid.Column="4"
+                                        Orientation="Horizontal"
+                                        ToolTipService.HorizontalOffset="-200"
+                                        ToolTipService.InitialShowDelay="300"
+                                        ToolTipService.Placement="Top">
+                                <TextBlock VerticalAlignment="Center"
+                                           FontSize="13" Opacity=".8">
+                                    <Run Text="{Binding CurrentLanguageStringCount}" />
+                                    <Run Text="/" />
+                                    <Run Text="{Binding DefaultStringCount}" />
+                                </TextBlock>
+                                <TextBlock Width="24"
+                                           Margin="10,8,0,0"
+                                           HorizontalAlignment="Left"
+                                           FontWeight="SemiBold">
+                                    <materialDesign:PackIcon Width="20" Height="20"
+                                                             Kind="InfoOutline" />
+                                </TextBlock>
+                                <StackPanel.ToolTip>
+                                    <TextBlock LineHeight="18">
+                                        <Run Text="{DynamicResource SettingsItem_TranslationToolTipLine1}" />
+                                        <LineBreak />
+                                        <Run Text="{DynamicResource SettingsItem_TranslationToolTipLine2}" />
+                                    </TextBlock>
+                                </StackPanel.ToolTip>
+                            </StackPanel>
+                            <Grid Grid.Column="5">
+                                <Grid.DataContext>
+                                    <viewmodels:SettingsViewModel />
+                                </Grid.DataContext>
+                                <Button Margin="10,0" HorizontalAlignment="Left"
+                                        Command="{Binding CompareLanguageKeysCommand}"
+                                        Style="{StaticResource CheckButton}"
+                                        ToolTip="{DynamicResource Button_CompareLanguageToolTip}"
+                                        ToolTipService.InitialShowDelay="300"
+                                        ToolTipService.Placement="Top" />
+                            </Grid>
                         </Grid>
 
                         <TextBlock Grid.Row="2" Grid.Column="1"
-                                   VerticalAlignment="Center"
+                                   Margin="3,0" VerticalAlignment="Center"
                                    Foreground="OrangeRed"
                                    Text="{DynamicResource SettingsItem_ChangingLanguageWarning}"
                                    TextWrapping="Wrap" />
