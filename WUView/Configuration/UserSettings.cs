@@ -166,7 +166,7 @@ public partial class UserSettings : ConfigManager<UserSettings>
     /// Use the operating system language (if one has been provided).
     /// </summary>
     [ObservableProperty]
-    private bool _useOSLanguage;
+    private bool _useOSLanguage = true;
 
     /// <summary>
     /// Height of the window.
