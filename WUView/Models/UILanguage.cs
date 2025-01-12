@@ -19,7 +19,7 @@ public partial class UILanguage : ObservableObject
     /// Total number of strings in the language resource dictionary.
     /// </summary>
     [ObservableProperty]
-    private int? _currentLanguageStringCount = App.LanguageStrings;
+    private int? _currentLanguageStringCount = LocalizationHelpers.LanguageStrings;
 
     /// <summary>
     /// Total number of strings in the (en-US) language resource dictionary.
