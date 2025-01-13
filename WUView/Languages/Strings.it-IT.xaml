@@ -166,10 +166,10 @@
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Impostazioni applicazione</sys:String>
     <sys:String x:Key="SettingsSection_Language">Lingua</sys:String>
+    <sys:String x:Key="SettingsSection_SettingsFile">File impostazioni</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Impostazioni UI</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Numero aggiornamenti, formato data, elementi esclusi, dettagli e altro</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Impostazioni lingua (lavori in corso)</sys:String>
-    <sys:String x:Key="SettingsSubHead_UISettings">Tema, colore evidenziazione, dimensione interfaccia utente, altezza riga, posizione iniziale e altro ancora</sys:String>
     <sys:String x:Key="SettingsSubHead_SettingsFile">Importa, esporta, apri ed elenca le impostazioni applicazione</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Tema, colore evidenziazione, dimensione UI, altezza riga, posizione iniziale e altro</sys:String>
     <!--  Settings Page Items  -->
