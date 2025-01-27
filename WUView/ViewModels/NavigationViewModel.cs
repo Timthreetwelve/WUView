@@ -422,9 +422,23 @@ public partial class NavigationViewModel : ObservableObject
                 case Key.S:
                     TextFileViewer.ViewTextFile(ConfigHelpers.SettingsFileName);
                     break;
+                case Key.Add:
+                case Key.OemPlus:
+                    if (UserSettings.Setting!.SelectedFontSize < 24)
+                    {
+                        UserSettings.Setting.SelectedFontSize++;
+                    }
+                    break;
+                case Key.Subtract:
+                case Key.OemMinus:
+                    if (UserSettings.Setting!.SelectedFontSize > 8)
+                    {
+                        UserSettings.Setting.SelectedFontSize--;
+                    }
+                    break;
             }
+            #endregion Keys with Ctrl and Shift
         }
-        #endregion Keys with Ctrl and Shift
+        #endregion Key down events
     }
-    #endregion Key down events
 }

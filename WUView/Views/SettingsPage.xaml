@@ -12,7 +12,9 @@
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="650" d:DesignWidth="700"
-             FontFamily="Segoe UI" FontSize="14"
+             FontFamily="Segoe UI"
+             FontSize="{Binding SelectedFontSize,
+                                Source={x:Static config:UserSettings.Setting}}"
              TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}">
 
     <!--#region DataContext & Resources-->
@@ -304,6 +306,7 @@
                                 <RowDefinition Height="38" />
                                 <RowDefinition Height="38" />
                                 <RowDefinition Height="38" />
+                                <RowDefinition Height="38" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto" MinWidth="100" />
@@ -363,8 +366,20 @@
 
                             <Label Grid.Row="4" Grid.Column="0"
                                    VerticalAlignment="Center"
+                                   Content="Font Size" />
+                            <materialDesign:NumericUpDown Grid.Row="4" Grid.Column="2"
+                                                          MinWidth="200"
+                                                          Margin="0,4" Padding="3,0,0,0"
+                                                          HorizontalAlignment="Left"
+                                                          VerticalContentAlignment="Center"
+                                                          Maximum="24" Minimum="8"
+                                                          Value="{Binding SelectedFontSize,
+                                                                          Source={x:Static config:UserSettings.Setting}}" />
+
+                            <Label Grid.Row="5" Grid.Column="0"
+                                   VerticalAlignment="Center"
                                    Content="{DynamicResource SettingsItem_RowHeight}" />
-                            <ComboBox Grid.Row="4" Grid.Column="2"
+                            <ComboBox Grid.Row="5" Grid.Column="2"
                                       Width="Auto" MinWidth="200"
                                       Margin="0,3,0,0" Padding="2,0,0,3"
                                       HorizontalAlignment="Left"

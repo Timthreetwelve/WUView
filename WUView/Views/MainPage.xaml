@@ -14,7 +14,8 @@
              d:DesignHeight="500" d:DesignWidth="800"
              KeyboardNavigation.TabNavigation="Local"
              Loaded="UserControl_Loaded"
-             TextElement.FontSize="14"
+             TextElement.FontSize="{Binding SelectedFontSize,
+                                       Source={x:Static config:UserSettings.Setting}}"
              TextElement.FontWeight="Regular"
              TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
              TextOptions.TextFormattingMode="Ideal"
@@ -121,11 +122,11 @@
                 <!--#region Filter box-->
                 <TextBox x:Name="TbxSearch"
                          Width="300" Height="35"
-                         Margin="20,0" Padding="10,6"
-                         VerticalContentAlignment="Top"
+                         Margin="20,0" Padding="10,0"
+                         VerticalContentAlignment="Center"
                          materialDesign:HintAssist.Hint="{DynamicResource FilterHint}"
                          materialDesign:TextFieldAssist.HasClearButton="True"
-                         FontSize="14" IsTabStop="True"
+                         IsTabStop="True"
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"
                          TabIndex="2" Tag="Filter Text"
                          TextChanged="TbxSearch_TextChanged" />
@@ -146,7 +147,7 @@
                    Margin="0,0,10,6"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
-                   Cursor="Hand" FontSize="14">
+                   Cursor="Hand" >
             <Run Text="{Binding ElementName=DataGrid, Path=Items.Count, Mode=OneWay}" />
             <Run Text="/" />
             <Run Text="{Binding UpdatesFullList.Count, Mode=OneWay}" />
@@ -174,7 +175,8 @@
                   Focusable="True"
                   FontFamily="{Binding SelectedFont,
                                        Source={x:Static config:UserSettings.Setting}}"
-                  FontSize="14" HeadersVisibility="Column"
+                  FontSize="{Binding SelectedFontSize,
+                                       Source={x:Static config:UserSettings.Setting}}" HeadersVisibility="Column"
                   IsReadOnly="True" IsTabStop="True"
                   ItemsSource="{Binding HideExcluded,
                                         Converter={StaticResource ItemsConverter},
