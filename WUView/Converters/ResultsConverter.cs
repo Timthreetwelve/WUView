@@ -15,9 +15,16 @@ internal sealed class ResultsConverter : IValueConverter
             return string.Empty;
         }
 
-        return parameter is "HResult" && value is string hrString
-            ? $"0x{int.Parse(hrString, CultureInfo.InvariantCulture):X8}"
-            : value.ToString();
+        try
+        {
+            return parameter is "HResult" && value is string hrString
+        ? $"0x{int.Parse(hrString, CultureInfo.InvariantCulture):X8}"
+        : value.ToString();
+        }
+        catch (Exception)
+        {
+            return value.ToString();
+        }
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
