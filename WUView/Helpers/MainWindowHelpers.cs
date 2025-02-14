@@ -1,4 +1,4 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Helpers;
 
@@ -126,7 +126,7 @@ internal static class MainWindowHelpers
 
         // Log the .NET version and OS platform
         _log.Debug($"Operating System version: {AppInfo.OsPlatform}");
-        _log.Debug($".Net version: {AppInfo.RuntimeVersion.Replace(".NET", "")}");
+        _log.Debug($".NET version: {AppInfo.RuntimeVersion.Replace(".NET", "")}");
     }
     #endregion Log Startup
 
