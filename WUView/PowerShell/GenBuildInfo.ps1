@@ -8,11 +8,13 @@ $nowUTC = (Get-Date).ToUniversalTime().ToString('yyyy/MM/dd HH:mm:ss')
 $class =
 "// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
-// This file is generated during a pre-build event by PowerShell\GenBuildInfo.ps1.
-// Any edits to this file will be overwritten during the next build!
-
 namespace $assemblyName;
 
+/// <summary>
+/// Class containing git commit id and actual build date.
+/// This file is generated during a pre-build event by PowerShell\GenBuildInfo.ps1.
+/// Any edits to this file will be overwritten during the next build!
+/// </summary>
 public static class BuildInfo
 {
     public static readonly string CommitIDString = ThisAssembly.GitCommitId[..7];
@@ -30,4 +32,4 @@ public static class BuildInfo
 }"
 
 $outputPath = Join-Path -Path $(Get-Location).Path -ChildPath $outputFile
-Set-Content -Path "$outputPath" -Value $class
+Set-Content -Path "$outputPath" -Value $class -Encoding utf8BOM
