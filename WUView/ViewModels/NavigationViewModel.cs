@@ -29,7 +29,7 @@ public partial class NavigationViewModel : ObservableObject
     #region List of navigation items
     public static List<NavigationItem> NavigationViewModelTypes { get; set; } =
     [
-        new ()
+        new()
         {
             Name = GetStringResource("NavItem_Updates"),
             NavPage = NavPage.Viewer,
@@ -37,7 +37,7 @@ public partial class NavigationViewModel : ObservableObject
             IconKind = PackIconKind.ViewList,
             PageTitle = GetStringResource("NavTitle_Updates")
         },
-            new ()
+        new()
         {
             Name = GetStringResource("NavItem_Settings"),
             NavPage = NavPage.Settings,
@@ -45,7 +45,7 @@ public partial class NavigationViewModel : ObservableObject
             IconKind = PackIconKind.SettingsOutline,
             PageTitle = GetStringResource("NavTitle_Settings")
         },
-        new ()
+        new()
         {
             Name = GetStringResource("NavItem_About"),
             NavPage = NavPage.About,
@@ -53,7 +53,7 @@ public partial class NavigationViewModel : ObservableObject
             IconKind = PackIconKind.AboutCircleOutline,
             PageTitle = GetStringResource("NavTitle_About")
         },
-        new ()
+        new()
         {
             Name = GetStringResource("NavItem_Exit"),
             IconKind = PackIconKind.ExitToApp,

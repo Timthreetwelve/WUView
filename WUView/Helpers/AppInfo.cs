@@ -113,7 +113,7 @@ public static class AppInfo
     /// <summary>
     /// Returns the Process ID as Int
     /// </summary>
-    public static int AppProcessID =>  Environment.ProcessId;
+    public static int AppProcessID => Environment.ProcessId;
 
     /// <summary>
     /// Returns the Process Start Time as DateTime
