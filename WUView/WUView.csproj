@@ -63,7 +63,10 @@
     </PropertyGroup>
     <Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name)" />
   </Target>
-
+  <Target Name="BuildInfo2" AfterTargets="BuildInfo">
+    <Message Importance="high" Text="Completed GenBuildInfo for $(AssemblyName)." />
+  </Target>
+  
   <!-- Build complete message -->
   <Target Name="VersionMessage" AfterTargets="AfterBuild">
     <Message Importance="high" Text="Build complete for $(AssemblyName). Assembly Version is $(AssemblyVersion)." />
