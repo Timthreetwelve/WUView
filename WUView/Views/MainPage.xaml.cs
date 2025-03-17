@@ -117,6 +117,10 @@ public partial class MainPage : UserControl
         string filter = TbxSearch.Text;
 
         ICollectionView cv = CollectionViewSource.GetDefaultView(DataGrid.ItemsSource);
+        if (cv is null)
+        {
+            return;
+        }
         if (filter.Length == 0)
         {
             cv.Filter = null;
