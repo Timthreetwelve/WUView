@@ -1,4 +1,4 @@
-﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.SettingsPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -59,7 +59,10 @@
                             Command="{Binding EditExcludeCommand,
                                               Source={StaticResource NavVm}}"
                             Content="{DynamicResource MenuItem_EditExclude}"
-                            FontSize="16"
+                            FontSize="{Binding SelectedFontSize,
+                                               Source={x:Static config:UserSettings.Setting},
+                                               Converter={StaticResource FontSizeConverter},
+                                               ConverterParameter=2}"
                             Style="{StaticResource PlainOutlinedButton}"
                             ToolTip="{DynamicResource SettingsItem_EditExcludeToolTip}" />
                 </Border>
@@ -567,7 +570,7 @@
                                         ToolTipService.InitialShowDelay="300"
                                         ToolTipService.Placement="Top">
                                 <TextBlock VerticalAlignment="Center"
-                                           FontSize="13" Opacity=".8">
+                                           Opacity=".8">
                                     <Run Text="{Binding CurrentLanguageStringCount}" />
                                     <Run Text="/" />
                                     <Run Text="{Binding DefaultStringCount}" />

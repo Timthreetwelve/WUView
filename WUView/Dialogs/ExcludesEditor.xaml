@@ -13,7 +13,8 @@
              mc:Ignorable="d"
              MinWidth="400" MinHeight="200"
              MaxHeight="400"
-             FontSize="16"
+             FontSize="{Binding SelectedFontSize,
+                                Source={x:Static config:UserSettings.Setting}}"
              Loaded="UserControl_Loaded"
              TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
              TextOptions.TextFormattingMode="Ideal"
@@ -22,7 +23,11 @@
     <!--#region Resources-->
     <UserControl.Resources>
         <convert:ExcludedItemsConverter x:Key="ExclConv" />
-        <ScaleTransform x:Key="DialogScale" ScaleX="{Binding Path=DialogScale, Source={x:Static config:UserSettings.Setting}}" ScaleY="{Binding Path=DialogScale, Source={x:Static config:UserSettings.Setting}}" />
+        <ScaleTransform x:Key="DialogScale"
+                        ScaleX="{Binding Path=DialogScale,
+                                         Source={x:Static config:UserSettings.Setting}}"
+                        ScaleY="{Binding Path=DialogScale,
+                                         Source={x:Static config:UserSettings.Setting}}" />
     </UserControl.Resources>
     <!--#endregion-->
 
@@ -49,7 +54,7 @@
                 <TextBlock Grid.Row="1" Grid.Column="1"
                            Margin="7,0"
                            HorizontalAlignment="Center"
-                           FontSize="16" FontWeight="Regular">
+                           FontWeight="Regular">
                     <Run Text="{DynamicResource ExcludesEditor_TextLine1}" />
                     <LineBreak />
                     <Run Text="{DynamicResource ExcludesEditor_TextLine2}" />
@@ -81,6 +86,7 @@
                             Margin="0,10,0,0"
                             HorizontalAlignment="Center"
                             Orientation="Horizontal">
+
                     <Button Width="90"
                             Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
                             Content="{DynamicResource Button_OK}"
