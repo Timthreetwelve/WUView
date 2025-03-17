@@ -21,12 +21,13 @@ public static partial class FileHelpers
     public static void GetExcludes()
     {
         Stopwatch rxStopWatch = Stopwatch.StartNew();
-        string json = File.ReadAllText(GetExcludesFile());
-        rxStopWatch.Stop();
+        string xFile = GetExcludesFile();
+        string json = File.ReadAllText(xFile);
         ExcludedItems.ExcludedStrings = JsonSerializer.Deserialize<ObservableCollection<ExcludedItems>>(json)!;
+        rxStopWatch.Stop();
         int xCount = ExcludedItems.ExcludedStrings!.Count;
         string xRecs = xCount == 1 ? "record" : "records";
-        _log.Debug($"Read {ExcludedItems.ExcludedStrings.Count} exclude {xRecs} from disk in {rxStopWatch.Elapsed.TotalMilliseconds:N2} milliseconds");
+        _log.Debug($"Read {ExcludedItems.ExcludedStrings.Count} exclude {xRecs} from {xFile} in {rxStopWatch.Elapsed.TotalMilliseconds:N2} milliseconds");
         if (xCount > 0)
         {
             foreach (ExcludedItems item in ExcludedItems.ExcludedStrings)
