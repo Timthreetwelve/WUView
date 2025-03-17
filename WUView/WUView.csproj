@@ -42,7 +42,7 @@
     <PackageReference Include="NLog" Version="5.4.0" />
     <PackageReference Include="Octokit" Version="14.0.0" />
     <PackageReference Include="Vanara.PInvoke.User32" Version="4.1.1" />
-    <PackageReference Include="Vanara.PInvoke.WUApi" Version="4.0.5" />
+    <PackageReference Include="Vanara.PInvoke.WUApi" Version="4.1.1" />
   </ItemGroup>
 
   <ItemGroup>
