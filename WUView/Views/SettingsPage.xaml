@@ -1,4 +1,4 @@
-<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
+﻿<!--  Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.  -->
 
 <UserControl x:Class="WUView.Views.SettingsPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -70,40 +70,21 @@
 
                 <!--#region Application Settings-->
                 <Expander Grid.Row="2"
+                          materialDesign:ExpanderAssist.HorizontalHeaderPadding="20,10,20,10"
                           IsExpanded="{Binding AppExpanderOpen,
                                                Source={x:Static config:TempSettings.Setting}}">
                     <Expander.Header>
-                        <Grid>
-                            <!--#region Row definitions-->
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition Height="5" />
-                                <RowDefinition Height="24" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="55" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <!--#endregion-->
-                            <materialDesign:PackIcon Grid.RowSpan="3"
-                                                     Width="28" Height="28"
-                                                     Margin="0,5,0,0"
-                                                     VerticalAlignment="Center"
-                                                     Foreground="{DynamicResource MaterialDesign.Brush.Primary}"
-                                                     Kind="Wrench" />
-                            <TextBlock Grid.Row="0" Grid.Column="1"
-                                       FontSize="16" FontWeight="SemiBold"
-                                       Text="{DynamicResource SettingsSection_AppSettings}"
-                                       TextWrapping="Wrap" />
-                            <TextBlock Grid.Row="2" Grid.Column="1"
-                                       HorizontalAlignment="Left"
-                                       VerticalAlignment="Center"
-                                       FontSize="12"
-                                       Text="{DynamicResource SettingsSubHead_AppSettings}"
-                                       TextWrapping="Wrap" />
-                        </Grid>
+                        <ItemsControl Style="{StaticResource ExpanderHeaderGrid}">
+                            <Border Style="{StaticResource ExpanderIndicator}" />
+                            <materialDesign:PackIcon Kind="Wrench"
+                                                     Style="{StaticResource ExpanderHeaderIcon}" />
+                            <TextBlock Style="{StaticResource ExpanderHeaderTitle}"
+                                       Text="{DynamicResource SettingsSection_AppSettings}" />
+                            <TextBlock Style="{StaticResource ExpanderHeaderSubHead}"
+                                       Text="{DynamicResource SettingsSubHead_AppSettings}" />
+                        </ItemsControl>
                     </Expander.Header>
-                    <Grid Margin="30,10,0,20">
+                    <Grid Margin="35,10,0,20">
                         <!--#region Row & Column definitions-->
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -255,41 +236,22 @@
 
                 <!--#region UI Settings-->
                 <Expander Grid.Row="4"
+                          materialDesign:ExpanderAssist.HorizontalHeaderPadding="20,10,20,10"
                           IsExpanded="{Binding UIExpanderOpen,
                                                Source={x:Static config:TempSettings.Setting}}">
                     <Expander.Header>
-                        <Grid>
-                            <!--#region Row definitions-->
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition Height="5" />
-                                <RowDefinition Height="24" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="55" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <!--#endregion-->
-                            <materialDesign:PackIcon Grid.RowSpan="3"
-                                                     Width="28" Height="28"
-                                                     Margin="0,5,0,0"
-                                                     VerticalAlignment="Center"
-                                                     Foreground="{DynamicResource MaterialDesign.Brush.Primary}"
-                                                     Kind="MonitorEdit" />
-                            <TextBlock Grid.Row="0" Grid.Column="1"
-                                       FontSize="16" FontWeight="SemiBold"
-                                       Text="{DynamicResource SettingsSection_UISettings}"
-                                       TextWrapping="Wrap" />
-                            <TextBlock Grid.Row="2" Grid.Column="1"
-                                       HorizontalAlignment="Left"
-                                       VerticalAlignment="Center"
-                                       FontSize="12"
-                                       Text="{DynamicResource SettingsSubHead_UISettings}"
-                                       TextWrapping="Wrap" />
-                        </Grid>
+                        <ItemsControl Style="{StaticResource ExpanderHeaderGrid}">
+                            <Border Style="{StaticResource ExpanderIndicator}" />
+                            <materialDesign:PackIcon Kind="MonitorEdit"
+                                                     Style="{StaticResource ExpanderHeaderIcon}" />
+                            <TextBlock Style="{StaticResource ExpanderHeaderTitle}"
+                                       Text="{DynamicResource SettingsSection_UISettings}" />
+                            <TextBlock Style="{StaticResource ExpanderHeaderSubHead}"
+                                       Text="{DynamicResource SettingsSubHead_UISettings}" />
+                        </ItemsControl>
                     </Expander.Header>
 
-                    <Grid Margin="30,10,0,20">
+                    <Grid Margin="35,10,0,20">
                         <!--#region Row & Column definitions-->
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -445,41 +407,22 @@
 
                 <!--#region Language-->
                 <Expander Grid.Row="6"
+                          materialDesign:ExpanderAssist.HorizontalHeaderPadding="20,10,20,10"
                           IsExpanded="{Binding LangExpanderOpen,
                                                Source={x:Static config:TempSettings.Setting}}">
                     <Expander.Header>
-                        <Grid>
-                            <!--#region Row definitions-->
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition Height="5" />
-                                <RowDefinition Height="24" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="55" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <!--#endregion-->
-                            <materialDesign:PackIcon Grid.RowSpan="3"
-                                                     Width="28" Height="28"
-                                                     Margin="0,5,0,0"
-                                                     VerticalAlignment="Center"
-                                                     Foreground="{DynamicResource MaterialDesign.Brush.Primary}"
-                                                     Kind="Language" />
-                            <TextBlock Grid.Row="0" Grid.Column="1"
-                                       FontSize="16" FontWeight="SemiBold"
-                                       Text="{DynamicResource SettingsSection_Language}"
-                                       TextWrapping="Wrap" />
-                            <TextBlock Grid.Row="2" Grid.Column="1"
-                                       HorizontalAlignment="Left"
-                                       VerticalAlignment="Center"
-                                       FontSize="12"
-                                       Text="{DynamicResource SettingsSubHead_Language}"
-                                       TextWrapping="Wrap" />
-                        </Grid>
+                        <ItemsControl Style="{StaticResource ExpanderHeaderGrid}">
+                            <Border Style="{StaticResource ExpanderIndicator}" />
+                            <materialDesign:PackIcon Kind="Language"
+                                                     Style="{StaticResource ExpanderHeaderIcon}" />
+                            <TextBlock Style="{StaticResource ExpanderHeaderTitle}"
+                                       Text="{DynamicResource SettingsSection_Language}" />
+                            <TextBlock Style="{StaticResource ExpanderHeaderSubHead}"
+                                       Text="{DynamicResource SettingsSubHead_Language}" />
+                        </ItemsControl>
                     </Expander.Header>
 
-                    <Grid Margin="30,10,0,20">
+                    <Grid Margin="35,10,0,20">
                         <Grid.DataContext>
                             <models:UILanguage />
                         </Grid.DataContext>
@@ -637,41 +580,21 @@
 
                 <!--#region Settings File-->
                 <Expander Grid.Row="8"
+                          materialDesign:ExpanderAssist.HorizontalHeaderPadding="20,10,20,10"
                           IsExpanded="{Binding BackupExpanderOpen,
                                                Source={x:Static config:TempSettings.Setting}}">
                     <Expander.Header>
-                        <Grid>
-                            <!--#region Row definitions-->
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition Height="5" />
-                                <RowDefinition Height="24" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="55" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <!--#endregion-->
-                            <materialDesign:PackIcon Grid.RowSpan="3"
-                                                     Width="28" Height="28"
-                                                     Margin="0,5,0,0"
-                                                     VerticalAlignment="Center"
-                                                     Foreground="{DynamicResource MaterialDesign.Brush.Primary}"
-                                                     Kind="CogTransferOutline" />
-                            <TextBlock Grid.Row="0" Grid.Column="1"
-                                       FontSize="16" FontWeight="SemiBold"
-                                       Text="{DynamicResource SettingsSection_SettingsFile}"
-                                       TextWrapping="Wrap" />
-
-                            <TextBlock Grid.Row="2" Grid.Column="1"
-                                       HorizontalAlignment="Left"
-                                       VerticalAlignment="Center"
-                                       FontSize="12"
-                                       Text="{DynamicResource SettingsSubHead_SettingsFile}"
-                                       TextWrapping="Wrap" />
-                        </Grid>
+                        <ItemsControl Style="{StaticResource ExpanderHeaderGrid}">
+                            <Border Style="{StaticResource ExpanderIndicator}" />
+                            <materialDesign:PackIcon Kind="CogTransferOutline"
+                                                     Style="{StaticResource ExpanderHeaderIcon}" />
+                            <TextBlock Style="{StaticResource ExpanderHeaderTitle}"
+                                       Text="{DynamicResource SettingsSection_SettingsFile}" />
+                            <TextBlock Style="{StaticResource ExpanderHeaderSubHead}"
+                                       Text="{DynamicResource SettingsSubHead_SettingsFile}" />
+                        </ItemsControl>
                     </Expander.Header>
-                    <Grid Margin="30,10,0,20">
+                    <Grid Margin="35,10,0,20">
                         <Grid.DataContext>
                             <viewmodels:SettingsViewModel />
                         </Grid.DataContext>

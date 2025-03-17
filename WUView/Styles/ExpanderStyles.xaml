@@ -1,0 +1,106 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:config="clr-namespace:WUView.Configuration"
+                    xmlns:convert="clr-namespace:WUView.Converters"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <convert:FontSizeConverter x:Key="FontSizeConverter" />
+
+    <!--#region Expander Icon Style-->
+    <Style TargetType="materialDesign:PackIcon"
+           x:Key="ExpanderHeaderIcon">
+        <Setter Property="Foreground" Value="{DynamicResource MaterialDesign.Brush.Primary}" />
+        <Setter Property="Grid.Column" Value="1" />
+        <Setter Property="Grid.RowSpan" Value="2" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Margin" Value="0,5,0,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Width" Value="28" />
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Expander Header Title Style-->
+    <Style TargetType="TextBlock"
+           x:Key="ExpanderHeaderTitle"
+           BasedOn="{StaticResource MaterialDesignTextBlock}">
+        <Setter Property="FontSize">
+            <Setter.Value>
+                <Binding Converter="{StaticResource FontSizeConverter}"
+                         ConverterParameter="4"
+                         Path="SelectedFontSize"
+                         Source="{x:Static config:UserSettings.Setting}" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Grid.Column" Value="2" />
+        <Setter Property="Grid.Row" Value="0" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Expander Header SubHead Style-->
+    <Style TargetType="TextBlock"
+           x:Key="ExpanderHeaderSubHead"
+           BasedOn="{StaticResource MaterialDesignTextBlock}">
+        <Setter Property="FontSize">
+            <Setter.Value>
+                <Binding Path="SelectedFontSize"
+                         Source="{x:Static config:UserSettings.Setting}" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Grid.Column" Value="2" />
+        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Navigation Item Indicator Style-->
+    <Style TargetType="Border"
+           x:Key="ExpanderIndicator">
+        <Setter Property="Background" Value="{DynamicResource MaterialDesign.Brush.Primary}" />
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Margin" Value="-15,0,0,0" />
+        <Setter Property="Opacity" Value=".8" />
+        <Setter Property="Grid.RowSpan" Value="2" />
+        <Setter Property="Visibility" Value="Hidden" />
+        <Setter Property="Width" Value="4" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Expander}}"
+                         Value="True">
+                <Setter Property="Visibility" Value="Visible" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Row and column definitions for expander headers-->
+    <!--  Inspired by https://stackoverflow.com/q/2883837/15237757  -->
+    <Style TargetType="ItemsControl"
+           x:Key="ExpanderHeaderGrid">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="55" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+</ResourceDictionary>
