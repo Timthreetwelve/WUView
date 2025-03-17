@@ -79,6 +79,7 @@ public partial class App : Application
         {
             if (currentLanguage == "en-US")
             {
+                LocalizationHelpers.LanguageStrings = DefaultLanguageStrings;
                 _log.Debug("Use OS Language option is true. Language is en-US. No need to load language file.");
                 return;
             }
