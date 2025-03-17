@@ -16,7 +16,7 @@ internal static class LocalizationHelpers
     /// <summary>
     /// Number of language strings in a resource dictionary
     /// </summary>
-    public static int LanguageStrings { get; private set; }
+    public static int LanguageStrings { get; set; }
     #endregion Properties
 
     #region Get current culture
