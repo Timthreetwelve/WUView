@@ -5,7 +5,7 @@ namespace WUView.ViewModels;
 internal sealed class MainViewModel : ObservableObject
 {
     #region Event record and WUpdate Lists
-    private static List<EventRecord> EventLogRecords { get; } = [];
+    private static List<WuEventRecord> EventLogRecords { get; } = [];
     public static ObservableCollection<WUpdate> UpdatesFullList { get; } = [];
     public static ObservableCollection<WUpdate> UpdatesWithoutExcludedItems { get; } = [];
     #endregion Event record and WUpdate Lists
@@ -38,14 +38,12 @@ internal sealed class MainViewModel : ObservableObject
         IUpdateSession updateSession = new();
         IUpdateSearcher updateSearcher = updateSession.CreateUpdateSearcher();
         int count = updateSearcher.GetTotalHistoryCount();
-        _log.Debug($"Read {count} Windows Update records in {sw.Elapsed.TotalMilliseconds:N2} milliseconds");
+        _log.Debug($"Collected {count} Windows Update records in {sw.Elapsed.TotalMilliseconds:N2} milliseconds");
         sw.Restart();
         // Believe it or not, it's possible to not have any updates.
         if (count >= 1)
         {
-            Stopwatch gkbStopwatch = new();
-            Stopwatch updStopwatch = new();
-            var maxUpdates = UserSettings.Setting!.MaxUpdates switch
+            int maxUpdates = UserSettings.Setting!.MaxUpdates switch
             {
                 MaxUpdates.All => count,
                 MaxUpdates.Max50 => 50,
@@ -54,17 +52,12 @@ internal sealed class MainViewModel : ObservableObject
                 MaxUpdates.Max500 => 500,
                 _ => count,
             };
-            if (maxUpdates > count)
-            {
-                maxUpdates = count;
-            }
-            _log.Debug($"Using {maxUpdates} update records");
+            maxUpdates = Math.Min(maxUpdates, count);
+            _log.Debug(UserSettings.Setting.MaxUpdates == MaxUpdates.All ? $"Using all {maxUpdates} update records" : $"Using {maxUpdates} update records");
+
             foreach (IUpdateHistoryEntry hist in updateSearcher.QueryHistory(0, maxUpdates))
             {
-                gkbStopwatch.Start();
                 string kbNum = GetKB(hist.Title);
-                gkbStopwatch.Stop();
-                updStopwatch.Start();
                 try
                 {
                     WUpdate update = new()
@@ -73,7 +66,7 @@ internal sealed class MainViewModel : ObservableObject
                         KBNum = kbNum,
                         Date = hist.Date.ToLocalTime(),
                         ResultCode = ResultCodeHelper.TranslateResultCode(hist.ResultCode),
-                        HResult = hist.HResult.ToString(CultureInfo.InvariantCulture),
+                        HResult = hist.UnmappedResultCode.ToString(CultureInfo.InvariantCulture),
                         Operation = OperationHelper.TranslateOperation(hist.Operation),
                         UpdateID = hist.UpdateIdentity.UpdateID,
                         Description = hist.Description ?? string.Empty,
@@ -82,7 +75,6 @@ internal sealed class MainViewModel : ObservableObject
                         ELDescription = FindEventLogs(kbNum)
                     };
                     UpdatesFullList.Add(update);
-                    updStopwatch.Stop();
                     if (hist.HResult != 0 && UserSettings.Setting.ShowLogWarnings)
                     {
                         string operation = update.Operation.Replace("uo", "");
@@ -94,11 +86,8 @@ internal sealed class MainViewModel : ObservableObject
                 catch (Exception ex)
                 {
                     _log.Error(ex, "Error while parsing Windows Update records.");
-                    updStopwatch.Stop();
                 }
             }
-            _log.Debug($"Extracting KB numbers from update titles took {gkbStopwatch.Elapsed.TotalMilliseconds:N2} milliseconds");
-            _log.Debug($"Building WUpdate object took {updStopwatch.Elapsed.TotalMilliseconds:N2} milliseconds");
         }
         else
         {
@@ -107,7 +96,7 @@ internal sealed class MainViewModel : ObservableObject
                     "Windows Update Viewer",
                     ButtonType.Ok).Show();
         }
-        _log.Debug($"Building the list of updates took {sw.Elapsed.TotalMilliseconds:N2} milliseconds");
+        _log.Debug($"Building the list of {count} updates took {sw.Elapsed.TotalMilliseconds:N2} milliseconds");
     }
     #endregion Get the list of Windows updates
 
@@ -143,7 +132,7 @@ internal sealed class MainViewModel : ObservableObject
     /// <summary>
     /// Matches up any Event Log records with a Windows Update based on KB number
     /// </summary>
-    /// <param name="kb"></param>
+    /// <param name="kb">KB number to search for</param>
     /// <returns>Returns a string containing relevant Event Log records or a message saying that none could be found</returns>
     public static string FindEventLogs(string kb)
     {
@@ -152,9 +141,9 @@ internal sealed class MainViewModel : ObservableObject
             return GetStringResource("MsgText_EventLogNA");
         }
         StringBuilder sbEventLog = new();
-        foreach (EventRecord? item in EventLogRecords.Where(item => item.Properties[0].Value.ToString()!.Contains(kb)))
+        foreach (WuEventRecord item in EventLogRecords.Where(item => item.KayBee!.Contains(kb, StringComparison.InvariantCultureIgnoreCase)))
         {
-            string tc = string.Format(CultureInfo.InvariantCulture, $"{item.TimeCreated} - {item.FormatDescription()}  Event ID: {item.Id}.");
+            string tc = string.Format(CultureInfo.InvariantCulture, $"{item.TimeCreated} - {item.Description}  Event ID: {item.EventId}.  Record ID: {item.RecordId}.");
             _ = sbEventLog.AppendLine(tc);
         }
 
@@ -215,8 +204,7 @@ internal sealed class MainViewModel : ObservableObject
             }
         }
         esw.Stop();
-        _log.Debug($"Removing {UpdatesFullList.Count - UpdatesWithoutExcludedItems.Count} " +
-                   $"excluded items took {esw.Elapsed.TotalMilliseconds:N2} milliseconds");
+        _log.Debug($"Excluding {UpdatesFullList.Count - UpdatesWithoutExcludedItems.Count} records took {esw.Elapsed.TotalMilliseconds:N2} milliseconds");
 
         if (UpdatesFullList.Count > 0 && UpdatesWithoutExcludedItems.Count == 0)
         {
@@ -236,28 +224,49 @@ internal sealed class MainViewModel : ObservableObject
     /// </summary>
     private static void GetEventLog()
     {
-        Stopwatch swe = new();
-        swe.Start();
+        Stopwatch swe = Stopwatch.StartNew();
         const string query = "*[System/Provider/@Name=\"Microsoft-Windows-Servicing\"]";
         EventLogQuery eventsQuery = new("Setup", PathType.LogName, query);
 
         try
         {
-            EventLogReader logReader = new(eventsQuery);
-            for (EventRecord eventDetail = logReader.ReadEvent(); eventDetail != null; eventDetail = logReader.ReadEvent())
+            using EventLogReader logReader = new(eventsQuery);
+            EventRecord eventDetail = logReader.ReadEvent();
+            while (eventDetail != null)
             {
-                if (eventDetail.FormatDescription().Contains("KB"))
+                string kb = eventDetail.Properties[0].Value.ToString()!;
+                if (kb.StartsWith("KB", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    EventLogRecords.Add(eventDetail);
+                    WuEventRecord eventRecord = new()
+                    {
+                        KayBee = kb,
+                        TimeCreated = eventDetail.TimeCreated!.Value.ToLocalTime(),
+                        Description = eventDetail.FormatDescription(),
+                        EventId = eventDetail.Id,
+                        RecordId = eventDetail.RecordId
+                    };
+                    EventLogRecords.Add(eventRecord);
                 }
+                eventDetail = logReader.ReadEvent();
             }
         }
-        catch (EventLogNotFoundException ex)
+        catch (UnauthorizedAccessException ex)
+        {
+            _log.Error(ex, $"Unauthorized Access Error while reading the event logs.\n{ex.Message}");
+            _ = MessageBox.Show($"Unauthorized Access Error while reading the event logs.\n{ex.Message} ",
+                            "Windows Update Viewer",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error);
+        }
+        catch (Exception ex)
         {
             _log.Error(ex, $"Error while reading the event logs\n{ex.Message}");
         }
-        swe.Stop();
-        _log.Debug($"Read {EventLogRecords.Count} Setup event log records in {swe.Elapsed.TotalMilliseconds:N2} milliseconds");
+        finally
+        {
+            swe.Stop();
+            _log.Debug($"Collected {EventLogRecords.Count} Setup event log records in {swe.Elapsed.TotalMilliseconds:N2} milliseconds");
+        }
     }
     #endregion Get Event Log details
 
