@@ -22,19 +22,27 @@
     <AnalysisMode>Recommended</AnalysisMode>
     <AnalysisLevel>8.0</AnalysisLevel>
   </PropertyGroup>
-  
+
+  <!-- Disable satellite assemblies except those specified -->
+  <PropertyGroup>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <!-- Files to copy -->
   <ItemGroup>
-    <Content Include="Strings.test.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="LICENSE.txt" CopyToOutputDirectory ="PreserveNewest" />
+    <Content Include="Readme.txt" CopyToOutputDirectory ="PreserveNewest" />
+    <Content Include="Strings.test.xaml" CopyToOutputDirectory ="PreserveNewest" />
   </ItemGroup>
 
+  <!-- Resources to include -->
   <ItemGroup>
     <Resource Include="Images\InvertedUV.png" />
     <Resource Include="Images\UV.ico" />
     <Resource Include="Images\UV.png" />
   </ItemGroup>
 
+  <!-- NuGet Packages -->
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
@@ -43,15 +51,6 @@
     <PackageReference Include="Octokit" Version="14.0.0" />
     <PackageReference Include="Vanara.PInvoke.User32" Version="4.1.1" />
     <PackageReference Include="Vanara.PInvoke.WUApi" Version="4.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="LICENSE.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Readme.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <!-- Generate BuildInfo.cs-->
@@ -74,7 +73,7 @@
 
   <!-- Remove obj folder after Clean -->
   <Target Name="SpicNSpan" AfterTargets="AfterClean">
-    <Message Importance="high" Text="obj folder deleted." />
+    <Message Importance="high" Text="The obj folder has been deleted." />
     <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
   </Target>
 </Project>
