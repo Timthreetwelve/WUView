@@ -24,9 +24,7 @@
 
 </div>
 
-#### Windows Update Viewer uses .NET 8
-Self-contained versions are available if .NET 8 isn't installed. See the [releases page](https://github.com/Timthreetwelve/WUView/releases).
-
+### What is Windows Update Viewer?
 Windows Update Viewer (WUView) is an application that displays Windows Update history. It is meant to be a lightweight application that is easy to use. There aren't any confusing categories; every update is listed in one place. Updates that you don't want to see can be permanently excluded or temporarily filtered.
 
 WUView uses the Windows Update Agent API and Windows event logs to display details of installed updates. Event log entries are associated with individual updates by using the "KB" number. If an update does not use a KB number or isn't presented in a consistent format, no event log entries will be displayed.
@@ -39,6 +37,9 @@ See the [Wiki](https://github.com/Timthreetwelve/WUView/wiki) for additional inf
 
 ### Windows Update Viewer is multilingual!
 Languages are being added as of version 0.5.21. Please see [Contribute a Translation](https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation) topic in the Wiki if you would like to contribute a translation. 
+
+### Windows Update Viewer uses .NET 8
+Self-contained versions are available if .NET 8 isn't installed. See the [releases page](https://github.com/Timthreetwelve/WUView/releases).
 
 ### Download Windows Update Viewer
 You can always download the latest release from the [releases page](https://github.com/Timthreetwelve/WUView/releases). Note that "portable" releases are provided as well as the traditional installers.
