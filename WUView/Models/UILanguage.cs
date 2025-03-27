@@ -73,7 +73,7 @@ public partial class UILanguage : ObservableObject
     [
         new () {Language = "English",             LanguageCode = "en-US", LanguageNative = "English",            Contributor = "Timthreetwelve", Note="Default"},
         new () {Language = "English",             LanguageCode = "en-GB", LanguageNative = "English",            Contributor = "Timthreetwelve"},
-        new () {Language = "Spanish",             LanguageCode = "es-ES", LanguageNative = "Español",            Contributor = "My AWESOME brother Steve"},
+        new () {Language = "Spanish",             LanguageCode = "es-ES", LanguageNative = "Español",            Contributor = "My AWESOME brother Steve and me"},
         new () {Language = "Italian",             LanguageCode = "it-IT", LanguageNative = "Italiano",           Contributor = "RB"},
         new () {Language = "Dutch",               LanguageCode = "nl-NL", LanguageNative = "Nederlands",         Contributor = "Tim"},
         new () {Language = "German",              LanguageCode = "de-DE", LanguageNative = "Deutsch",            Contributor = "Timthreetwelve & Henry2o1o"},
