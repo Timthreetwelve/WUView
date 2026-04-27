@@ -15,7 +15,7 @@ namespace $assemblyName;
 /// This file is generated during a pre-build event by PowerShell\GenBuildInfo.ps1.
 /// Any edits to this file will be overwritten during the next build!
 /// </summary>
-public static class BuildInfo
+internal static class BuildInfo
 {
     public static readonly string CommitIDString = ThisAssembly.GitCommitId[..7];
 
