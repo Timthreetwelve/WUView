@@ -13,7 +13,7 @@ internal static class NLogHelpers
     /// <remarks>
     /// Used with a "static using" in GlobalUsings.cs to avoid creating an instance in every class.
     /// </remarks>
-    internal static readonly Logger _log = LogManager.GetLogger("logTemp");
+    internal static readonly Logger _log = LogManager.GetLogger("logfile");
 
     #region Create the NLog configuration
     /// <summary>
@@ -118,7 +118,7 @@ internal static class NLogHelpers
     {
         {
             LoggingConfiguration? config = LogManager.Configuration;
-            Target? target = config!.FindTargetByName("logtemp");
+            Target? target = config!.FindTargetByName("logfile");
             if (target is FileTarget ft)
             {
                 // remove the enclosing apostrophes
