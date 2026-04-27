@@ -46,7 +46,7 @@ public partial class UILanguage : ObservableObject
     private string? _languageNative;
 
     /// <summary>
-    /// Note field. Currently unused.
+    /// Note field.
     /// </summary>
     [ObservableProperty]
     private string? _note = string.Empty;
