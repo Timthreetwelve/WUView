@@ -124,9 +124,11 @@
     <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">ERROR</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">Error exporting settings file.</sys:String>
+    <sys:String x:Key="MsgText_ErrorGeneral">An error has occurred.</sys:String>
     <sys:String x:Key="MsgText_ErrorImportingSettings">Error importing settings file.</sys:String>
     <sys:String x:Key="MsgText_ErrorOpeningFile">Error opening {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorReadingFile">Error reading {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorSeeLog">See the log file for more information.</sys:String>
     <sys:String x:Key="MsgText_ErrorSavingSettings">Error saving settings file.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">No Event Logs records were found for this update.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">No Event Log records containing "{0}" were found.</sys:String>
@@ -338,4 +340,9 @@
     <!-- A | SettingsSubHead_SettingsFile -->
     <!-- A | SettingsItem_EditSettingsWarning -->
     <!-- End changes on 2025/01/07 @ 02:50 UTC-->
+
+    <!-- Begin changes on 2026/04/27 @ 19:00 UTC-->
+    <!-- A | MsgText_ErrorGeneral -->
+    <!-- A | MsgText_ErrorSeeLog -->    
+    <!-- End changes on 2026/04/27 @ 19:00 UTC-->
 </ResourceDictionary>

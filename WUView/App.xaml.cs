@@ -5,7 +5,9 @@ namespace WUView;
 /// <summary>
 /// Interaction logic for App.xaml
 /// </summary>
+#pragma warning disable CA1515
 public partial class App : Application
+#pragma warning restore CA1515
 {
     #region Properties
     /// <summary>
@@ -22,6 +24,11 @@ public partial class App : Application
     /// Number of language strings in the default resource dictionary
     /// </summary>
     public static int DefaultLanguageStrings { get; private set; }
+
+    /// <summary>
+    /// Flag indicating if session is ending
+    /// </summary>
+    private static bool SessionEndingFlag { get; set; }
     #endregion Properties
 
     #region On startup event
@@ -37,6 +44,10 @@ public partial class App : Application
 
         // Only allows a single instance of the application to run.
         SingleInstance.Create(AppInfo.AppName);
+
+
+        // Listen for session ending events (logoff/shutdown)
+        SessionEnding += SystemEvents_SessionEnding;
 
         // Initialize settings here so that saved language can be accessed below.
         ConfigHelpers.InitializeSettings();
@@ -57,8 +68,8 @@ public partial class App : Application
     /// Set the UI language.
     /// </summary>
     /// <remarks>
-    /// Strings.en-US.xaml is loaded in App.xaml as the fallback language.
-    /// Consequently there is no need to explicitly load it in case of an error.
+    /// Strings.en-US.xaml is loaded in App.xaml as the fallback language. Consequently there is no need to explicitly
+    /// load it in case of an error.
     /// </remarks>
     private void SetLanguage()
     {
@@ -177,19 +188,84 @@ public partial class App : Application
     /// </remarks>
     private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs args)
     {
-        _log.Error("Unhandled Exception");
-        Exception e = (Exception)args.ExceptionObject;
-        _log.Error(e.Message);
-        if (e.InnerException != null)
+        if (args.ExceptionObject is Exception e)
         {
-            _log.Error(e.InnerException.ToString());
-        }
-        _log.Error(e.StackTrace);
+            _log.Error($"Exception message: {e.Message}");
+            if (e.InnerException != null)
+            {
+                _log.Error(e.InnerException, $"Inner Exception: {e.InnerException.Message}");
+            }
+            else
+            {
+                _log.Error("Inner exception not available.");
+            }
 
-        _ = MessageBox.Show($"An error has occurred.\n{e.Message}\n\nSee the log file. ",
-            GetStringResource("MsgText_ErrorCaption"),
-            MessageBoxButton.OK,
-            MessageBoxImage.Error);
+            if (e.StackTrace != null)
+            {
+                _log.Error("StackTrace follows:");
+                _log.Error(e.StackTrace);
+            }
+            else
+            {
+                _log.Error("StackTrace not available.");
+            }
+
+            string msg = string.Format(CultureInfo.CurrentCulture,
+                                       $"{GetStringResource("MsgText_ErrorGeneral")}\n" +
+                                       $"{e.Message}\n\n" +
+                                       $"{GetStringResource("MsgText_ErrorSeeLog")}");
+
+            ShowMessageBox(msg);
+            _log.Fatal("Application cannot continue.");
+        }
+        else
+        {
+            string t = args.ExceptionObject.GetType().FullName ?? "null";
+            _log.Error($"Unhandled exception object is not of type Exception. Type: {t}");
+            string msg = string.Format(CultureInfo.CurrentCulture,
+                                       $"{GetStringResource("MsgText_ErrorGeneral")}\n\n" +
+                                       $"{GetStringResource("MsgText_ErrorSeeLog")}");
+            ShowMessageBox(msg);
+        }
     }
     #endregion Unhandled Exception Handler
+
+    #region Session Ending Handler
+    /// <summary>
+    /// Listens for Windows session ending events (logoff/shutdown).
+    /// </summary>
+    private void SystemEvents_SessionEnding(object sender, SessionEndingCancelEventArgs e)
+    {
+        _log.Info($"Windows session ending: {e.ReasonSessionEnding}");
+        SessionEndingFlag = true;
+    }
+    #endregion Session Ending Handler
+
+    #region Show Message Box
+    /// <summary>
+    /// Message box display method that handles dispatcher thread access. Message box is not displayed if session is
+    /// ending.
+    /// </summary>
+    private static void ShowMessageBox(string msg)
+    {
+        if (SessionEndingFlag)
+            return;
+
+        if ((Current.Dispatcher?.CheckAccess()) == true || Current.Dispatcher == null)
+        {
+            _ = MessageBox.Show(msg,
+                GetStringResource("MsgText_ErrorCaption"),
+                MessageBoxButton.OK,
+                MessageBoxImage.Error);
+        }
+        else
+        {
+            _ = Current.Dispatcher.Invoke(() =>
+                MessageBox.Show(msg,
+                    GetStringResource("MsgText_ErrorCaption"),
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error));
+        }
+    }
+    #endregion Show Message Box
 }
