@@ -30,9 +30,9 @@
 
   <!-- Files to copy -->
   <ItemGroup>
-    <Content Include="LICENSE.txt" CopyToOutputDirectory ="PreserveNewest" />
-    <Content Include="Readme.txt" CopyToOutputDirectory ="PreserveNewest" />
-    <Content Include="Strings.test.xaml" CopyToOutputDirectory ="PreserveNewest" />
+    <Content Include="LICENSE.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Readme.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Strings.test.xaml" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <!-- Resources to include -->
