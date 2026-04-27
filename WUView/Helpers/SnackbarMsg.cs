@@ -5,7 +5,7 @@ namespace WUView.Helpers;
 /// <summary>
 /// Methods for displaying SnackBar messages
 /// </summary>
-public static class SnackbarMsg
+internal static class SnackbarMsg
 {
     #region Clear message queue then queue a message (default duration)
     public static void ClearAndQueueMessage(string message)

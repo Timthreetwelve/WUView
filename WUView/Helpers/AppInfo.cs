@@ -5,7 +5,7 @@ namespace WUView.Helpers;
 /// <summary>
 /// Class to return information about the current application
 /// </summary>
-public static class AppInfo
+internal static class AppInfo
 {
     /// <summary>
     /// Returns the operating system description e.g. Microsoft Windows 10.0.19044
@@ -25,7 +25,7 @@ public static class AppInfo
     /// <summary>
     ///  Returns the version number in Major.Minor.Build format
     /// </summary>
-    private static string TitleVersion => Assembly.GetEntryAssembly()!.GetName().Version!.ToString().Remove(Assembly.GetEntryAssembly()!.GetName().Version!.ToString().LastIndexOf('.'));
+    private static string TitleVersion => Assembly.GetEntryAssembly()!.GetName().Version!.ToString()[..Assembly.GetEntryAssembly()!.GetName().Version!.ToString().LastIndexOf('.')];
 
     /// <summary>
     /// Returns the file version

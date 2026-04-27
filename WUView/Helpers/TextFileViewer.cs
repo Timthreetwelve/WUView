@@ -9,7 +9,7 @@ namespace WUView.Helpers;
 ///  Class for viewing text files. If the file extension is not associated
 ///  with an application, notepad.exe will be attempted.
 /// </summary>
-public static class TextFileViewer
+internal static class TextFileViewer
 {
     #region Text file viewer
     /// <summary>

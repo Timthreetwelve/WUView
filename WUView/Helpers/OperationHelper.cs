@@ -4,7 +4,7 @@ namespace WUView.Helpers;
 /// <summary>
 /// Class to localize Operation string.
 /// </summary>
-public static class OperationHelper
+internal static class OperationHelper
 {
     /// <summary>
     /// Localizes the Operation string. Also removes the unwanted "uo" prefix.

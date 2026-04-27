@@ -5,7 +5,7 @@ namespace WUView.Helpers;
 /// <summary>
 /// Methods for reading and writing files
 /// </summary>
-public static partial class FileHelpers
+internal static partial class FileHelpers
 {
     #region JSON options
     private static JsonSerializerOptions JsonOptions { get; } = new()

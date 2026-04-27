@@ -11,7 +11,7 @@ namespace WUView.Helpers;
 /// If another instance of the application is started, it will activate
 /// the first instance and then shut down.
 /// </remarks>
-public static class SingleInstance
+internal static class SingleInstance
 {
     #region Private fields
     private static bool _alreadyProcessedOnThisInstance;
