@@ -48,11 +48,21 @@
     <sys:String x:Key="Button_Cancel">Cancelar</sys:String>
     <sys:String x:Key="Button_CheckUpdate">Comprobar actualización</sys:String>
     <sys:String x:Key="Button_Close">Cerrar este menú</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip">Haga clic para comparar el lenguaje actual con el predeterminado (EN-US). Los resultados se escriben en el archivo de registro.</sys:String>
+    <sys:String x:Key="Button_ExportSettings">Configuración de exportación</sys:String>
+    <sys:String x:Key="Button_ExportSettingsToolTip">Exportar la configuración actual a un archivo.</sys:String>
+    <sys:String x:Key="Button_ImportSettings">Configuración de importación</sys:String>
+    <sys:String x:Key="Button_ImportSettingsToolTip">Importar la configuración de un archivo.</sys:String>
+    <sys:String x:Key="Button_ListSettings">Enumere la configuración</sys:String>
+    <sys:String x:Key="Button_ListSettingsTooltip">Enumere (escriba) la configuración en el archivo de registro.</sys:String>
     <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Abra la carpeta de la aplicación</sys:String>
+    <sys:String x:Key="Button_OpenAppFolderToolTip">Abra la carpeta de esta aplicación en el explorador de archivos.</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Ver archivo de registro</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Abrir el archivo de registro en la aplicación por defecto</sys:String>
+    <sys:String x:Key="Button_OpenSettings">Abrir Configuración</sys:String>
+    <sys:String x:Key="Button_OpenSettingsToolTip">Abra el archivo de configuración.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Acciones adicionales</sys:String>
     <sys:String x:Key="Button_Yes">Sí</sys:String>
     <!--  Details Pane  -->
@@ -111,16 +121,20 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Mostrando las {0} actualizaciones</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Mostrando {0} de {1} actualizaciones</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Tiempo transcurrido</sys:String>
+    <sys:String x:Key="MsgText_Error_TestLanguage">Hay un problema con el archivo de idioma.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">ERROR</sys:String>
+    <sys:String x:Key="MsgText_ErrorExportingSettings">Error al exportar el archivo de configuración.</sys:String>
+    <sys:String x:Key="MsgText_ErrorImportingSettings">Error al importar el archivo de configuración.</sys:String>
     <sys:String x:Key="MsgText_ErrorOpeningFile">Error al abrir el archivo {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorReadingFile">Error de lectura del archivo {0}</sys:String>
-    <sys:String x:Key="MsgText_Error_TestLanguage">Hay un problema con el archivo de idioma.</sys:String>
+    <sys:String x:Key="MsgText_ErrorSavingSettings">Error al guardar el archivo de configuración.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">No se encontraron registros de eventos para esta actualización.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">No se encontraron registros de registro de eventos que contienen {0}.</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Excluyendo las actualizaciones que contienen:</sys:String>
     <sys:String x:Key="MsgText_FilterOneRowShown">1 fila visualizada</sys:String>
     <sys:String x:Key="MsgText_FilterRowsShown">{0} filas visualizadas</sys:String>
     <sys:String x:Key="MsgText_HResultCopiedToClipboard">HResult {0} Copiado al portapapeles</sys:String>
+    <sys:String x:Key="MsgText_ImportSettingsRestart">Reinicie TimVer para usar la configuración importada.</sys:String>
     <sys:String x:Key="MsgText_ListRefreshed">Lista actualizada</sys:String>
     <sys:String x:Key="MsgText_NoUpdatesFound">¡No se encontraron actualizaciones!</sys:String>
     <sys:String x:Key="MsgText_Opening">Abriendo</sys:String>
@@ -152,9 +166,11 @@
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Configuración de la aplicación</sys:String>
     <sys:String x:Key="SettingsSection_Language">Idioma</sys:String>
+    <sys:String x:Key="SettingsSection_SettingsFile">Archivo de configuración</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Configuración de la interfaz de usuario</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Número de actualizaciones, formato de fecha, elementos excluidos, detalles</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Configuración y pruebas de idiomas</sys:String>
+    <sys:String x:Key="SettingsSubHead_SettingsFile">Importar, Exportar, Abrir y Enumerar la configuración de la aplicación</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Tema, color acentuado, tamaño de la interfaz, altura de la fila, posición inicial</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Color de acento</sys:String>
@@ -162,6 +178,7 @@
     <sys:String x:Key="SettingsItem_DateFormat">Formato de fecha de cuadrícula</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Fuente</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-Clic para abrir el archivo con la aplicación por defecto</sys:String>
+    <sys:String x:Key="SettingsItem_EditSettingsWarning">¡Cualquier cambio realizado en el archivo de configuración mientras se ejecuta la aplicación se sobrescribirá!</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Habilitar las pruebas de idioma</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Ocultar elementos excluidos</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Incluir mensajes de nivel de depuración en el archivo de registro</sys:String>
@@ -177,8 +194,11 @@
     <sys:String x:Key="SettingsItem_ShowExit">Mostrar Salida en la barra de navegación</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Mostrar mensajes de advertencia en el registro para valores HResult distintos de cero</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Mostrar actualizaciones con la fecha actual en negrita</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Use el color de acento para el fondo de mensajes</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Empezar con la ventana centrada en la pantalla</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Representa el número de cadenas en el idioma actual en comparación con el valor predeterminado (en-US).</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Presione Ctrl+Shift+K para comparar archivos de idioma. Los resultados se escriben en el archivo de registro.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Tamaño de la IU</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Utilizar el idioma de visualización de Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Cuando se selecciona esta opción, se utilizará el idioma especificado en la configuración de Windows.</sys:String>

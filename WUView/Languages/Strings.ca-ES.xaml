@@ -47,11 +47,21 @@
     <sys:String x:Key="Button_Cancel">Cancel·lar</sys:String>
     <sys:String x:Key="Button_CheckUpdate">Comprova si hi ha actualitzacions</sys:String>
     <sys:String x:Key="Button_Close">Tanca aquest menú</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip">Feu clic per comparar l'idioma actual amb el predeterminat (en-US). Els resultats s'escriuen al fitxer de registre.</sys:String>
+    <sys:String x:Key="Button_ExportSettings">Configuració d'exportació</sys:String>
+    <sys:String x:Key="Button_ExportSettingsToolTip">Exporta la configuració actual a un fitxer.</sys:String>
+    <sys:String x:Key="Button_ImportSettings">Configuració d'importació</sys:String>
+    <sys:String x:Key="Button_ImportSettingsToolTip">Importa la configuració d'un fitxer.</sys:String>
+    <sys:String x:Key="Button_ListSettings">Configuració de la llista</sys:String>
+    <sys:String x:Key="Button_ListSettingsTooltip">Llista (escriptura) la configuració al fitxer de registre.</sys:String>
     <sys:String x:Key="Button_No">No</sys:String>
     <sys:String x:Key="Button_OK">D'acord</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Obrir la carpeta d'aplicacions</sys:String>
+    <sys:String x:Key="Button_OpenAppFolderToolTip">Obriu la carpeta d'aquesta aplicació a l'Explorador de fitxers.</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Veure fitxer de registre</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Obriu el fitxer de registre a l'aplicació predeterminada.</sys:String>
+    <sys:String x:Key="Button_OpenSettings">Obriu Configuració</sys:String>
+    <sys:String x:Key="Button_OpenSettingsToolTip">Obriu el fitxer de configuració.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Accions addicionals</sys:String>
     <sys:String x:Key="Button_Yes">Sí</sys:String>
     <!--  Details Pane  -->
@@ -114,12 +124,16 @@
     <sys:String x:Key="MsgText_ErrorCaption">ERROR</sys:String>
     <sys:String x:Key="MsgText_ErrorOpeningFile">S'ha produït un error en obrir {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorReadingFile">S'ha produït un error en llegir {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorExportingSettings">S'ha produït un error en exportar el fitxer de configuració.</sys:String>
+    <sys:String x:Key="MsgText_ErrorImportingSettings">S'ha produït un error en importar el fitxer de configuració.</sys:String>
+    <sys:String x:Key="MsgText_ErrorSavingSettings">S'ha produït un error en desar el fitxer de configuració.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">No s'han trobat registres d'esdeveniments per a aquesta actualització.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">No s'ha trobat cap registre d'esdeveniments que contingui "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">S'exclouen les actualitzacions que continguin:</sys:String>
     <sys:String x:Key="MsgText_FilterOneRowShown">Es mostra 1 fila</sys:String>
     <sys:String x:Key="MsgText_FilterRowsShown">Es mostren {0} files</sys:String>
     <sys:String x:Key="MsgText_HResultCopiedToClipboard">HResultat {0} copiat al porta-retalls</sys:String>
+    <sys:String x:Key="MsgText_ImportSettingsRestart">Reinicieu Windows Update Viewer per utilitzar la configuració importada.</sys:String>
     <sys:String x:Key="MsgText_ListRefreshed">Llista actualitzada</sys:String>
     <sys:String x:Key="MsgText_NoUpdatesFound">No s'han trobat actualitzacions!</sys:String>
     <sys:String x:Key="MsgText_Opening">Obertura</sys:String>
@@ -151,16 +165,19 @@
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Configuració de l'aplicació</sys:String>
     <sys:String x:Key="SettingsSection_Language">Llenguatge</sys:String>
+    <sys:String x:Key="SettingsSection_SettingsFile">Arxiu de configuració</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Configuració de la IU</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Nombre d'actualitzacions, format de data, elements exclosos, detalls i molt més</sys:String>
-    <sys:String x:Key="SettingsSubHead_UISettings">Tema, color d'accent, mida de la IU, alçada de fila, posició inicial i molt més</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Configuració d'idioma</sys:String>
+    <sys:String x:Key="SettingsSubHead_SettingsFile">Importa, exporta, obre i llista la configuració de l'aplicació</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">Tema, color d'accent, mida de la IU, alçada de fila, posició inicial i molt més</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Color d'accent</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Si canvieu d'idioma, l'aplicació es reiniciarà!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Format de data de quadrícula</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Tipus de lletra</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Maj+Feu clic per obrir el fitxer amb l'aplicació predeterminada</sys:String>
+    <sys:String x:Key="SettingsItem_EditSettingsWarning">Qualsevol canvi fet al fitxer de configuració mentre l'aplicació s'executa es sobreescriurà!</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Habilitar les proves d'idioma</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Amaga els elements exclosos</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Inclou missatges de nivell de depuració al fitxer de registre</sys:String>
@@ -176,8 +193,11 @@
     <sys:String x:Key="SettingsItem_ShowExit">Mostra Sortida a la barra de navegació</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Mostra missatges d'advertència al registre per a valors de HResult diferents de zero</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Mostra les actualitzacions amb la data actual en negreta</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Utilitzeu el color d'accent per al fons del missatge</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Comenceu amb la finestra centrada a la pantalla</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Representa el nombre de cadenes en l'idioma actual en comparació amb el predeterminat (en-US).</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Premeu Ctrl+Maj+K o feu clic al botó Comparar per comparar fitxers d'idioma. Els resultats s'escriuen al fitxer de registre.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Mida de la IU</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Utilitzeu l'idioma de visualització de Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quan se selecciona aquesta opció, s'utilitzarà l'idioma especificat a la configuració de Windows.</sys:String>
