@@ -82,7 +82,7 @@ public static partial class FileHelpers
         string filename = "WUView_" + DateTime.Now.Date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture) + ".csv";
         SaveFileDialog dialog = new()
         {
-            Title = ResourceHelpers.GetStringResource("MenuItem_SaveCSV"),
+            Title = GetStringResource("MenuItem_SaveCSV"),
             Filter = "CSV File|*.csv",
             InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
             FileName = filename
@@ -91,7 +91,7 @@ public static partial class FileHelpers
         if (result == true)
         {
             MainPage.Instance!.Copy2Clipboard();
-            string gridData = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
+            string? gridData = (string?)Clipboard.GetData(DataFormats.CommaSeparatedValue);
             await File.WriteAllTextAsync(dialog.FileName, gridData, Encoding.UTF8);
             _log.Debug($"Details written to {dialog.FileName}");
         }
