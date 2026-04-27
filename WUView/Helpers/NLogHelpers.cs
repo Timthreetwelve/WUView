@@ -114,7 +114,7 @@ internal static class NLogHelpers
     /// Gets the filename for the NLog log fie
     /// </summary>
     /// <returns>Name of the log file.</returns>
-    public static string? GetLogfileName()
+    public static string GetLogfileName()
     {
         {
             LoggingConfiguration? config = LogManager.Configuration;
