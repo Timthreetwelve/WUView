@@ -96,15 +96,16 @@ internal static class NLogHelpers
     /// <param name="debug">If true set level to Debug, otherwise set to Info</param>
     public static void SetLogLevel(bool debug)
     {
-        LoggingConfiguration config = LogManager.Configuration;
+        LoggingConfiguration? config = LogManager.Configuration;
 
-        LoggingRule rule = config.FindRuleByName("LogToFile");
+        LoggingRule? rule = config!.FindRuleByName("LogToFile");
         if (rule != null)
         {
             LogLevel level = debug ? LogLevel.Debug : LogLevel.Info;
             rule.SetLoggingLevels(level, LogLevel.Fatal);
             LogManager.ReconfigExistingLoggers();
         }
+        LogManager.ReconfigExistingLoggers();
     }
     #endregion Set NLog logging level
 
@@ -115,9 +116,16 @@ internal static class NLogHelpers
     /// <returns>Name of the log file.</returns>
     public static string? GetLogfileName()
     {
-        LoggingConfiguration config = LogManager.Configuration;
-        return (config.FindTargetByName("logfile")
-                as FileTarget)?.FileName.Render(new LogEventInfo { TimeStamp = DateTime.Now });
+        {
+            LoggingConfiguration? config = LogManager.Configuration;
+            Target? target = config!.FindTargetByName("logtemp");
+            if (target is FileTarget ft)
+            {
+                // remove the enclosing apostrophes
+                return ft.FileName.ToString()!.Trim('\'');
+            }
+            return string.Empty;
+        }
     }
     #endregion Get the log file name
 }
