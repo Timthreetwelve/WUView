@@ -2,7 +2,7 @@
 
 namespace WUView.ViewModels;
 
-public partial class AboutViewModel
+internal partial class AboutViewModel
 {
     #region Constructor
     public AboutViewModel()
@@ -11,8 +11,30 @@ public partial class AboutViewModel
         {
             AddNote();
         }
+        _ = CheckForNewReleaseOnLoadAsync();
     }
     #endregion Constructor
+
+    #region Auto check for new release on load
+    /// <summary>
+    /// Automatically checks for a new release on loading the About page.
+    /// </summary>
+    private static async Task<bool> CheckForNewReleaseOnLoadAsync()
+    {
+        if (!UserSettings.Setting!.AutoCheckForUpdates)
+        {
+            return true;
+        }
+        if (TempSettings.Setting!.CheckedForNewRelease)
+        {
+            return true;
+        }
+        TempSettings.Setting.CheckedForNewRelease = true;
+        TempSettings.Setting.NewReleaseAvailable = await GitHubHelpers.CheckForNewReleaseAsync();
+        TempSettings.Setting.GitHubRelease = GitHubHelpers.GitHubVersion?.ToString() ?? string.Empty;
+        return true;
+    }
+    #endregion
 
     #region Relay Commands
     [RelayCommand]

@@ -13,6 +13,11 @@ internal static class GitHubHelpers
     private static readonly MainWindow? _mainWindow = System.Windows.Application.Current.MainWindow as MainWindow;
     #endregion MainWindow Instance
 
+    /// <summary>
+    /// The application version from GitHub.
+    /// </summary>
+    public static Version? GitHubVersion { get; private set; }
+
     #region Check for newer release
     /// <summary>
     /// Checks to see if a newer release is available.
@@ -94,6 +99,51 @@ internal static class GitHubHelpers
     }
     #endregion Check for newer release
 
+    #region Check for new release async
+    /// <summary>
+    /// Checks to see if a newer release is available asynchronously.
+    /// </summary>
+    /// <returns>True if a newer release is available, otherwise false.</returns>
+    public static async Task<bool> CheckForNewReleaseAsync()
+    {
+        try
+        {
+            Release release = await GetLatestReleaseAsync(AppConstString.RepoOwner, AppConstString.RepoName);
+            if (release.TagName == null)
+            {
+                return false;
+            }
+
+            string tag = release.TagName.Trim();
+            if (string.IsNullOrEmpty(tag))
+            {
+                return false;
+            }
+
+            if (tag.StartsWith("v", StringComparison.InvariantCultureIgnoreCase))
+            {
+                tag = tag[1..]; // Remove the leading 'v'
+            }
+
+            if (!Version.TryParse(tag, out var version))
+            {
+                _log.Error($"Failed to parse version tag: {tag}");
+                return false;
+            }
+
+            GitHubVersion = version;
+            _log.Debug($"Latest version is {GitHubVersion} released on {release.PublishedAt!.Value.UtcDateTime} UTC");
+
+            return GitHubVersion > AppInfo.AppVersionVer;
+        }
+        catch (Exception ex)
+        {
+            _log.Error(ex, "Error encountered while checking GitHub for latest release.");
+            return false;
+        }
+    }
+    #endregion Check for new release async
+
     #region Get latest release
     /// <summary>
     /// Gets the latest release.
@@ -101,7 +151,7 @@ internal static class GitHubHelpers
     /// <param name="repoOwner">The repository owner.</param>
     /// <param name="repoName">Name of the repository.</param>
     /// <returns>Release object</returns>
-    private static async Task<Release?> GetLatestReleaseAsync(string repoOwner, string repoName)
+    private static async Task<Release> GetLatestReleaseAsync(string repoOwner, string repoName)
     {
         try
         {
@@ -113,7 +163,7 @@ internal static class GitHubHelpers
         catch (Exception ex)
         {
             _log.Error(ex, "Get latest release from GitHub failed.");
-            return null!;
+            return new ();
         }
     }
     #endregion Get latest release

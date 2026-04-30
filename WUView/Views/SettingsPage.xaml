@@ -162,6 +162,7 @@
                                 <RowDefinition Height="auto" MinHeight="31" />
                                 <RowDefinition Height="auto" MinHeight="31" />
                                 <RowDefinition Height="auto" MinHeight="31" />
+                                <RowDefinition Height="auto" MinHeight="31" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <!--#endregion-->
@@ -228,6 +229,11 @@
                                                 TextWrapping="Wrap" />
                                 </TextBlock>
                             </CheckBox>
+                            <CheckBox Grid.Row="7"
+                                  Padding="10,0"
+                                  Content="{DynamicResource SettingsItem_AutoUpdateCheck}"
+                                  IsChecked="{Binding AutoCheckForUpdates,
+                                                      Source={x:Static config:UserSettings.Setting}}" />
                         </Grid>
                         <!--#endregion-->
                     </Grid>

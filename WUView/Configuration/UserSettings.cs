@@ -7,6 +7,12 @@ public partial class UserSettings : ConfigManager<UserSettings>
 {
     #region Properties
     /// <summary>
+    /// Check for updates automatically when About page is opened.
+    /// </summary>
+    [ObservableProperty]
+    private bool _autoCheckForUpdates = true;
+
+    /// <summary>
     /// Select the first row of the data grid.
     /// </summary>
     [ObservableProperty]

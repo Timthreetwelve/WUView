@@ -22,6 +22,7 @@
     <!--#region Resources-->
     <UserControl.Resources>
         <convert:SpacingConverter x:Key="Spacing" />
+        <convert:InvertibleBooleanToVisibilityConverter x:Key="InvertibleVisibilityConverter" />
     </UserControl.Resources>
     <!--#endregion-->
 
@@ -177,17 +178,34 @@
                 </TextBlock>
                 <!--#endregion-->
 
+
                 <!--#region Check for new release-->
                 <TextBlock Grid.Row="9" Grid.Column="0"
                            Text="{DynamicResource About_UpdateWU}" />
-                <TextBlock Grid.Row="9" Grid.Column="2">
+                <TextBlock Grid.Row="9" Grid.Column="2"
+                           Visibility="{Binding NewReleaseAvailable,
+                                                Source={x:Static config:TempSettings.Setting},
+                                                Converter={StaticResource InvertibleVisibilityConverter},
+                                                ConverterParameter=Normal}">
+                    <Hyperlink Command="{Binding CheckReleaseCommand}"
+                               Foreground="OrangeRed"
+                               ToolTip="{DynamicResource About_UpdateFoundTooltip}"
+                               ToolTipService.Placement="Top">
+                        <TextBlock Text="{DynamicResource About_UpdateFound}"
+                                   TextWrapping="Wrap" />
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock Grid.Row="9" Grid.Column="2"
+                           Visibility="{Binding NewReleaseAvailable,
+                                                Source={x:Static config:TempSettings.Setting},
+                                                Converter={StaticResource InvertibleVisibilityConverter},
+                                                ConverterParameter=Inverted}">
                     <Hyperlink Command="{Binding CheckReleaseCommand}"
                                Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
                                ToolTip="{DynamicResource About_UpdateWUToolTip}"
                                ToolTipService.Placement="Top">
-                        <InlineUIContainer>
-                            <TextBlock Text="{DynamicResource About_UpdateWUText}" />
-                        </InlineUIContainer>
+                        <TextBlock Text="{DynamicResource About_UpdateWUText}"
+                                   TextWrapping="Wrap" />
                     </Hyperlink>
                 </TextBlock>
                 <!--#endregion-->

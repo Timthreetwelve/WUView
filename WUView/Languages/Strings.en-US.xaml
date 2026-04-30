@@ -40,6 +40,8 @@
     <sys:String x:Key="About_LicenseText">This project is licensed under the terms of the MIT license.</sys:String>
     <sys:String x:Key="About_LicenseToolTip">View the license document</sys:String>
     <sys:String x:Key="About_Translations">Translations</sys:String>
+    <sys:String x:Key="About_UpdateFound">A newer release is available</sys:String>
+    <sys:String x:Key="About_UpdateFoundTooltip">Click to go to GitHub release page</sys:String>
     <sys:String x:Key="About_UpdateWU">Update WUView</sys:String>
     <sys:String x:Key="About_UpdateWUText">Check for new release of Windows Update Viewer</sys:String>
     <sys:String x:Key="About_UpdateWUToolTip">Check GitHub for a newer release</sys:String>
@@ -176,6 +178,7 @@
     <sys:String x:Key="SettingsSubHead_UISettings">Theme, Accent Color, UI Size, Row Height, Start Position and more</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Accent Color</sys:String>
+    <sys:String x:Key="SettingsItem_AutoUpdateCheck">Automatically check for newer version when About page is opened</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Changing Language will cause application to restart!</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Font</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Grid Date Format</sys:String>
@@ -345,4 +348,10 @@
     <!-- A | MsgText_ErrorGeneral -->
     <!-- A | MsgText_ErrorSeeLog -->    
     <!-- End changes on 2026/04/27 @ 19:00 UTC-->
+
+    <!-- Begin changes on 2026/04/30 @ 01:30 UTC-->
+    <!-- A | SettingsItem_AutoUpdateCheck -->
+    <!-- A | About_UpdateFound -->
+    <!-- A | About_UpdateFoundTooltip -->
+    <!-- End changes on 2026/04/30 @ 01:30 UTC-->
 </ResourceDictionary>
