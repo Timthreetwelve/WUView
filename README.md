@@ -10,7 +10,7 @@
 <div align="center">
   
 [![GitHub](https://img.shields.io/github/license/Timthreetwelve/WUView?style=plastic&color=seagreen)](https://github.com/Timthreetwelve/WUView/blob/main/LICENSE)
-[![NET6win](https://img.shields.io/badge/.NET-8.0--Windows-blueviolet?style=plastic)](https://dotnet.microsoft.com/en-us/download) 
+[![NET6win](https://img.shields.io/badge/.NET-10.0--Windows-blueviolet?style=plastic)](https://dotnet.microsoft.com/en-us/download) 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Timthreetwelve/WUView?style=plastic)](https://github.com/Timthreetwelve/WUView/releases/latest) 
 [![GitHub Release Date](https://img.shields.io/github/release-date/timthreetwelve/WUView?style=plastic&color=orange)](https://github.com/Timthreetwelve/WUView/releases/latest) 
 [![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/timthreetwelve/WUView/latest?style=plastic)](https://github.com/Timthreetwelve/WUView/commits/main)
@@ -38,8 +38,8 @@ See the [Wiki](https://github.com/Timthreetwelve/WUView/wiki) for additional inf
 ### Windows Update Viewer is multilingual!
 Languages are being added as of version 0.5.21. Please see [Contribute a Translation](https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation) topic in the Wiki if you would like to contribute a translation. 
 
-### Windows Update Viewer uses .NET 8
-Self-contained versions are available if .NET 8 isn't installed. See the [releases page](https://github.com/Timthreetwelve/WUView/releases).
+### Windows Update Viewer uses .NET 10
+Self-contained versions are available if .NET 10 isn't installed. See the [releases page](https://github.com/Timthreetwelve/WUView/releases).
 
 ### Download Windows Update Viewer
 You can always download the latest release from the [releases page](https://github.com/Timthreetwelve/WUView/releases). Note that "portable" releases are provided as well as the traditional installers.
