@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            11.01.2025
+        Date last update:            30.04.2025
 
         ========================================================================
 
@@ -43,6 +43,8 @@
     <sys:String x:Key="About_UpdateWU">Aggiorna WUView</sys:String>
     <sys:String x:Key="About_UpdateWUText">Controlla disponibilità nuova versione di Windows Update Viewer</sys:String>
     <sys:String x:Key="About_UpdateWUToolTip">Controlla disponibilità nuova versione su GitHub</sys:String>
+    <sys:String x:Key="About_UpdateWUText">Verifica disponibilità aggiornamenti Windows Update Viewer</sys:String>
+    <sys:String x:Key="About_UpdateWUToolTip">Controlla in GitHub disponibilità aggiornamenti</sys:String>
     <sys:String x:Key="About_Version">Versione</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Annulla</sys:String>
@@ -124,9 +126,11 @@
     <sys:String x:Key="MsgText_Error_TestLanguage">Si è verificato un problema con il file lingua GUI.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">ERRORE</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">Errore durante l'esportazione del file impostazioni.</sys:String>
+    <sys:String x:Key="MsgText_ErrorGeneral">Si è verificato un errore.</sys:String>
     <sys:String x:Key="MsgText_ErrorImportingSettings">Errore durante l'importazione del file impostazioni.</sys:String>
     <sys:String x:Key="MsgText_ErrorOpeningFile">Error in apertura di {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorReadingFile">Error in lettura di {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorSeeLog">Per maggiori info consulta il registro eventi.</sys:String>
     <sys:String x:Key="MsgText_ErrorSavingSettings">Errore durante il salvataggio del file impostazioni.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Non è stato trovato alcun record del registro eventi per questo aggiornamento.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Non è stato trovato alcun record del registro eventi contenente "{0}".</sys:String>
@@ -174,6 +178,7 @@
     <sys:String x:Key="SettingsSubHead_UISettings">Tema, colore evidenziazione, dimensione UI, altezza riga, posizione iniziale e altro</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Colore evidenziazione</sys:String>
+    <sys:String x:Key="SettingsItem_AutoUpdateCheck">Quando apri la pagina Info controlla automaticamente aggiornamenti</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">La modifica dell'impostazione lingua avrà effetto dopo il riavvio dell'applicazione!</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Font</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formato data griglia</sys:String>
@@ -338,4 +343,15 @@
     <!-- A | SettingsSubHead_SettingsFile -->
     <!-- A | SettingsItem_EditSettingsWarning -->
     <!-- End changes on 2025/01/07 @ 02:50 UTC-->
+
+    <!-- Begin changes on 2026/04/27 @ 19:00 UTC-->
+    <!-- A | MsgText_ErrorGeneral -->
+    <!-- A | MsgText_ErrorSeeLog -->    
+    <!-- End changes on 2026/04/27 @ 19:00 UTC-->
+
+    <!-- Begin changes on 2026/04/30 @ 01:30 UTC-->
+    <!-- A | SettingsItem_AutoUpdateCheck -->
+    <!-- A | About_UpdateFound -->
+    <!-- A | About_UpdateFoundTooltip -->
+    <!-- End changes on 2026/04/30 @ 01:30 UTC-->
 </ResourceDictionary>
