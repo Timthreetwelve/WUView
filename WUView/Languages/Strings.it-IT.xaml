@@ -40,11 +40,11 @@
     <sys:String x:Key="About_LicenseText">Questo progetto è concesso in licenza secondo i termini della licenza MIT.</sys:String>
     <sys:String x:Key="About_LicenseToolTip">Visualizza il documento della licenza</sys:String>
     <sys:String x:Key="About_Translations">Traduzioni</sys:String>
+    <sys:String x:Key="About_UpdateFound">È disponibile una nuova versioend el programma</sys:String>
+    <sys:String x:Key="About_UpdateFoundTooltip">Clic  qui per anadre alla pagina GitHub del programma</sys:String>
     <sys:String x:Key="About_UpdateWU">Aggiorna WUView</sys:String>
     <sys:String x:Key="About_UpdateWUText">Controlla disponibilità nuova versione di Windows Update Viewer</sys:String>
     <sys:String x:Key="About_UpdateWUToolTip">Controlla disponibilità nuova versione su GitHub</sys:String>
-    <sys:String x:Key="About_UpdateWUText">Verifica disponibilità aggiornamenti Windows Update Viewer</sys:String>
-    <sys:String x:Key="About_UpdateWUToolTip">Controlla in GitHub disponibilità aggiornamenti</sys:String>
     <sys:String x:Key="About_Version">Versione</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Annulla</sys:String>
