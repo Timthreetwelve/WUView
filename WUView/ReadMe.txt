@@ -139,7 +139,7 @@ Windows Update Viewer uses the following packages and applications:
     * And of course, the essential PowerToys https://github.com/microsoft/PowerToys
 
 MIT License
-Copyright (c) 2023 Tim Kennedy
+Copyright (c) 2019 - 2026 Tim Kennedy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
 associated documentation files (the "Software"), to deal in the Software without restriction, including
