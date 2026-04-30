@@ -145,6 +145,12 @@ internal static class ResourceHelpers
             dict2.Source = new Uri(compareLang, UriKind.RelativeOrAbsolute);
             _log.Info($"Comparing keys in {dict1.Source} and {dict2.Source}");
 
+            if (dict1.Source == dict2.Source)
+            {
+                _log.Warn($"Comparing to the same dictionary is not allowed: {dict1.Source}");
+                return;
+            }
+
             Dictionary<string, string> enUSDict = [];
             Dictionary<string, string> compareDict = [];
 
