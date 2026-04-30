@@ -1,9 +1,9 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Configuration;
 
 [INotifyPropertyChanged]
-public partial class UserSettings : ConfigManager<UserSettings>
+internal partial class UserSettings : ConfigManager<UserSettings>
 {
     #region Properties
     /// <summary>

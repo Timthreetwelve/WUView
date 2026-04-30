@@ -2,7 +2,7 @@
 
 namespace WUView.ViewModels;
 
-public partial class SettingsViewModel : ObservableObject
+internal partial class SettingsViewModel : ObservableObject
 {
     #region Properties
     public static List<FontFamily>? FontList { get; private set; }

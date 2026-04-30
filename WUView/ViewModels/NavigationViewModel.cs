@@ -1,8 +1,8 @@
-﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
-public partial class NavigationViewModel : ObservableObject
+internal partial class NavigationViewModel : ObservableObject
 {
     #region MainWindow Instance
     private static readonly MainWindow? _mainWindow = Application.Current.MainWindow as MainWindow;
