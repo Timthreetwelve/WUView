@@ -3,7 +3,7 @@
 namespace WUView.Configuration;
 
 [INotifyPropertyChanged]
-internal partial class UserSettings : ConfigManager<UserSettings>
+internal sealed partial class UserSettings : ConfigManager<UserSettings>
 {
     #region Properties
 #pragma warning disable MVVMTK0042

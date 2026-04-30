@@ -2,7 +2,7 @@
 
 namespace WUView.ViewModels;
 
-internal partial class AboutViewModel
+internal sealed partial class AboutViewModel
 {
     #region Constructor
     public AboutViewModel()

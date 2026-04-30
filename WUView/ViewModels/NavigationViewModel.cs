@@ -2,7 +2,7 @@
 
 namespace WUView.ViewModels;
 
-internal partial class NavigationViewModel : ObservableObject
+internal sealed partial class NavigationViewModel : ObservableObject
 {
     #region MainWindow Instance
     private static readonly MainWindow? _mainWindow = Application.Current.MainWindow as MainWindow;
