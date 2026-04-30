@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.ViewModels;
 
@@ -19,11 +19,13 @@ internal partial class NavigationViewModel : ObservableObject
     #endregion Constructor
 
     #region Properties
+#pragma warning disable MVVMTK0042 
     [ObservableProperty]
     private object? _currentViewModel;
 
     [ObservableProperty]
     private string? _pageTitle;
+#pragma warning restore MVVMTK0042
     #endregion Properties
 
     #region List of navigation items

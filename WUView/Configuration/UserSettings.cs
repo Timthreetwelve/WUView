@@ -1,4 +1,4 @@
-// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
 namespace WUView.Configuration;
 
@@ -6,6 +6,7 @@ namespace WUView.Configuration;
 internal partial class UserSettings : ConfigManager<UserSettings>
 {
     #region Properties
+#pragma warning disable MVVMTK0042
     /// <summary>
     /// Check for updates automatically when About page is opened.
     /// </summary>
@@ -61,7 +62,7 @@ internal partial class UserSettings : ConfigManager<UserSettings>
     private double _detailsHeight = 300;
 
     /// <summary>
-    ///  Used to determine used to determine scaling of dialogs.
+    /// Used to determine used to determine scaling of dialogs.
     /// </summary>
     [ObservableProperty]
     private static double _dialogScale = 1;
@@ -121,8 +122,7 @@ internal partial class UserSettings : ConfigManager<UserSettings>
     private string? _selectedFont = "Segoe UI";
 
     /// <summary>
-    /// Font size used throughout the application.
-    /// Defaults to 14 which was the original size.
+    /// Font size used throughout the application. Defaults to 14 which was the original size.
     /// </summary>
     [ObservableProperty]
     private double _selectedFontSize = 14;
@@ -204,5 +204,6 @@ internal partial class UserSettings : ConfigManager<UserSettings>
     /// </summary>
     [ObservableProperty]
     private double _windowWidth = 1200;
+#pragma warning restore MVVMTK0042
     #endregion Properties
 }
