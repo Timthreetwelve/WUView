@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
@@ -9,11 +9,11 @@
 
         =======================================================================
 
-        Application name:            Windows Update Viewer
-        Language name : Japanese (日本語)
-        Language code : ja-JP
+        Application name :           Windows Update Viewer
+        Language name :              Japanese (日本語)
+        Language code :              ja-JP
         Translation contributed by : coolvitto
-        Date last updated : 2024/12/28
+        Date last updated :          2026/05/02
 
         ========================================================================
 
@@ -42,16 +42,28 @@
     <sys:String x:Key="About_UpdateWUText">Windows Update Viewer の新リリースをチェック</sys:String>
     <sys:String x:Key="About_UpdateWUToolTip">GitHubで新しいリリースを確認する</sys:String>
     <sys:String x:Key="About_Version">バージョン</sys:String>
+    <sys:String x:Key="About_UpdateWUToolTip">最新リリースについてはGitHubを確認してください。</sys:String>
+    <sys:String x:Key="About_Version">バージョン</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">キャンセル</sys:String>
     <sys:String x:Key="Button_CheckUpdate">更新の確認</sys:String>
     <sys:String x:Key="Button_Close">閉じる</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip">クリックすると、現在の言語とデフォルト言語（en-US）を比較できます。比較結果はログファイルに書き込まれます。</sys:String>
+    <sys:String x:Key="Button_ExportSettings">設定のエクスポート</sys:String>
+    <sys:String x:Key="Button_ExportSettingsToolTip">現在の設定をファイルにエクスポートします。</sys:String>
+    <sys:String x:Key="Button_ImportSettings">設定のインポート</sys:String>
+    <sys:String x:Key="Button_ImportSettingsToolTip">ファイルから設定をインポートします。</sys:String>
+    <sys:String x:Key="Button_ListSettings">設定一覧</sys:String>
+    <sys:String x:Key="Button_ListSettingsTooltip">ログファイルに設定を一覧表示 (書き込み) します。</sys:String>
     <sys:String x:Key="Button_No">いいえ</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">アプリのフォルダーを開く</sys:String>
+    <sys:String x:Key="Button_OpenAppFolderToolTip">エクスプローラーでこのアプリケーションのフォルダーを開きます。</sys:String>
     <sys:String x:Key="Button_OpenLogFile">ログファイルの表示</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">既定のアプリでログ ファイルを開く。</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">追加アクション</sys:String>
+    <sys:String x:Key="Button_OpenSettingsToolTip">設定ファイルを開く。</sys:String>
+    <sys:String x:Key="Button_ThreeDotToolTip">その他の操作</sys:String>
     <sys:String x:Key="Button_Yes">はい</sys:String>
     <!--  Details Pane  -->
     <sys:String x:Key="Details_Date">日付 :</sys:String>
@@ -128,7 +140,13 @@
     <sys:String x:Key="MsgText_UIColorSet">アクセントカラーを {0} に設定</sys:String>
     <sys:String x:Key="MsgText_UISizeSet">サイズを {0} に設定</sys:String>
     <sys:String x:Key="MsgText_UIThemeSet">テーマを {0} に設定</sys:String>
-    <sys:String x:Key="MsgText_WindowTitleAdministrator">Administrator</sys:String>
+    <sys:String x:Key="MsgText_OpeningLogFile">ログファイルを開く</sys:String>
+    <sys:String x:Key="MsgText_OpeningReadMeFile">ReadMeファイルを開く</sys:String>
+    <sys:String x:Key="MsgText_OpeningWindowsUpdate">Windows Update を開く</sys:String>
+    <sys:String x:Key="MsgText_UIColorSet">アクセントカラーの設定 {0}</sys:String>
+    <sys:String x:Key="MsgText_UISizeSet">サイズの設定 {0}</sys:String>
+    <sys:String x:Key="MsgText_UIThemeSet">テーマの設定 {0}</sys:String>
+    <sys:String x:Key="MsgText_WindowTitleAdministrator">管理者</sys:String>
     <!--  Navigation Items  -->
     <sys:String x:Key="NavItem_About">Windows Update Viewer について</sys:String>
     <sys:String x:Key="NavItem_Exit">終了</sys:String>
@@ -154,12 +172,16 @@
     <sys:String x:Key="SettingsSubHead_AppSettings">更新回数、日付形式、除外項目、詳細など</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">言語設定とテスト</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">テーマ、アクセントカラー、UI サイズ、行の高さ、開始位置など</sys:String>
+    <sys:String x:Key="SettingsSubHead_SettingsFile">アプリケーション設定のインポート、エクスポート、開く、および一覧表示</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">テーマ、アクセントカラー、UIサイズ、行の高さ、開始位置など</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">アクセントカラー</sys:String>
+    <sys:String x:Key="SettingsItem_AutoUpdateCheck">「バージョン情報」を開いたときに、新しいバージョンを自動的に確認する</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">言語を変更するとアプリケーションが再起動します!</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">フォント</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">グリッド日付形式</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift + クリックで、既定のアプリでファイルを開くことができます。</sys:String>
+    <sys:String x:Key="SettingsItem_EditSettingsWarning">アプリの実行中に設定ファイルに変更を加えると、その変更は上書きされます！</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">言語テストを有効にする</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">除外アイテムを非表示</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">ログファイルにデバッグレベルのメッセージを含める</sys:String>
@@ -175,12 +197,15 @@
     <sys:String x:Key="SettingsItem_ShowExit">ナビゲーションバーに終了を表示</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">ゼロ以外の HResult 値に対してログに警告メッセージを表示する</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">現在の日付の更新を太字で表示</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">メッセージの背景にアクセントカラーを使用する</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">ウィンドウを画面の中央に配置して開始する</sys:String>
     <sys:String x:Key="SettingsItem_Theme">テーマ</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">現在の言語の文字列数を、デフォルト言語（en-US）と比較した数を表します。</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">言語ファイルを比較するには、Ctrl+Shift+K を押すか、比較ボタンをクリックしてください。結果はログファイルに記録されます。</sys:String>
     <sys:String x:Key="SettingsItem_UISize">UI サイズ</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Windowsの表示言語を使用する</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">このオプションを選択すると、翻訳が利用可能な場合は Windows 設定で指定された言語が</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">使用され、そうでない場合は英語 (en-US) が使用されます。</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">このオプションを選択すると、翻訳が利用可能な場合はWindowsの設定で指定された言語が</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">使用され、利用できない場合は英語（en-US）が使用されます。</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">琥珀</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">黒</sys:String>
@@ -217,12 +242,13 @@
     <sys:String x:Key="SettingsEnum_Size_Small">95%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Smaller">90%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Smallest">80%</sys:String>
-    <sys:String x:Key="SettingsEnum_Spacing_Comfortable">最適</sys:String>
-    <sys:String x:Key="SettingsEnum_Spacing_Compact">コンパクト</sys:String>
-    <sys:String x:Key="SettingsEnum_Spacing_Wide">ワイド</sys:String>
-    <sys:String x:Key="SettingsEnum_Theme_Dark">マテリアルダーク</sys:String>
-    <sys:String x:Key="SettingsEnum_Theme_Darker">暗い</sys:String>
-    <sys:String x:Key="SettingsEnum_Theme_Light">明るい</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Comfortable">Comfortable</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Compact">Compact</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Wide">Wide</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Dark">Material Dark</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Midnight Blue</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Darker">Darker</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Light">Light</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">システム</sys:String>
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -292,4 +318,38 @@
     <!-- Begin changes on 2024/10/13 @ 17:40 UTC-->
     <!-- A | Button_CheckUpdate -->
     <!-- End of changes on 2024/10/13 @ 17:40 UTC-->
+
+    <!-- Begin changes on 2025/01/06 @ 14:50 UTC-->
+    <!-- A | MSettingsEnum_Theme_DarkBlue -->
+    <!-- End of changes on 2025/01/06 @ 14:50 UTC-->
+
+    <!-- Begin changes on 2025/01/07 @ 02:50 UTC-->
+    <!-- A | Button_ExportSettings -->
+    <!-- A | Button_ExportSettingsToolTip -->
+    <!-- A | Button_ImportSettings -->
+    <!-- A | Button_ImportSettingsToolTip -->
+    <!-- A | Button_ListSettings -->
+    <!-- A | Button_ListSettingsTooltip -->
+    <!-- A | Button_OpenAppFolderToolTip -->
+    <!-- A | Button_OpenSettings -->
+    <!-- A | Button_OpenSettingsToolTip -->
+    <!-- A | MsgText_ErrorExportingSettings -->
+    <!-- A | MsgText_ErrorImportingSettings -->
+    <!-- A | MsgText_ErrorSavingSettings -->
+    <!-- A | MsgText_ImportSettingsRestart -->
+    <!-- A | SettingsSection_SettingsFile -->
+    <!-- A | SettingsSubHead_SettingsFile -->
+    <!-- A | SettingsItem_EditSettingsWarning -->
+    <!-- End changes on 2025/01/07 @ 02:50 UTC-->
+
+    <!-- Begin changes on 2026/04/27 @ 19:00 UTC-->
+    <!-- A | MsgText_ErrorGeneral -->
+    <!-- A | MsgText_ErrorSeeLog -->    
+    <!-- End changes on 2026/04/27 @ 19:00 UTC-->
+
+    <!-- Begin changes on 2026/04/30 @ 01:30 UTC-->
+    <!-- A | SettingsItem_AutoUpdateCheck -->
+    <!-- A | About_UpdateFound -->
+    <!-- A | About_UpdateFoundTooltip -->
+    <!-- End changes on 2026/04/30 @ 01:30 UTC-->
 </ResourceDictionary>
