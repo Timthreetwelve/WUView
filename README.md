@@ -60,4 +60,10 @@ You can always download the latest release from the [releases page](https://gith
 ### The Main Window
 ![WUView screenshot](https://github.com/Timthreetwelve/WUView/blob/main/Images/WUView_2024-04-04_17-11-03.png)
 
+### Contributors
 
+<a href="https://github.com/timthreetwelve/wuview/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=timthreetwelve/wuview" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
