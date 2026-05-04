@@ -36,8 +36,8 @@
     <sys:String x:Key="About_LicenseText">Este projeto é licenciado sob os termos da licença MIT.</sys:String>
     <sys:String x:Key="About_LicenseToolTip">Exibir o documento de licença</sys:String>
     <sys:String x:Key="About_Translations">Traduções</sys:String>
-    <sys:String x:Key="About_UpdateFound">Atualização encontrada</String>
-    <sys:String x:Key="About_UpdateFoundTooltip">Uma nova versão está disponível para download</String>    <sys:String x:Key="About_UpdateWU">Atualizar o WUView</sys:String>
+    <sys:String x:Key="About_UpdateFound">Atualização encontrada</sys:String>
+    <sys:String x:Key="About_UpdateFoundTooltip">Uma nova versão está disponível para download</sys:String>
     <sys:String x:Key="About_UpdateWU">Atualizar o WUView</sys:String>
     <sys:String x:Key="About_UpdateWUText">Verificar se há uma nova versão do Windows Update Viewer</sys:String>
     <sys:String x:Key="About_UpdateWUToolTip">Verifique o GitHub para uma versão mais recente</sys:String>
