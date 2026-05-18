@@ -9,6 +9,7 @@ namespace WUView.Models;
 public partial class UILanguage : ObservableObject
 {
     #region Properties
+#pragma warning disable MVVMTK0042
     /// <summary>
     /// The name of the contributor. Can be any string chosen by the contributor.
     /// </summary>
@@ -50,6 +51,7 @@ public partial class UILanguage : ObservableObject
     /// </summary>
     [ObservableProperty]
     private string? _note = string.Empty;
+#pragma warning restore MVVMTK0042
     #endregion Properties
 
     #region Override ToString
@@ -75,13 +77,13 @@ public partial class UILanguage : ObservableObject
         new () {Language = "English",             LanguageCode = "en-GB", LanguageNative = "English",            Contributor = "Timthreetwelve"},
         new () {Language = "Spanish",             LanguageCode = "es-ES", LanguageNative = "Español",            Contributor = "My AWESOME brother Steve and me"},
         new () {Language = "Italian",             LanguageCode = "it-IT", LanguageNative = "Italiano",           Contributor = "RB"},
-        new () {Language = "Dutch",               LanguageCode = "nl-NL", LanguageNative = "Nederlands",         Contributor = "Tim"},
+        new () {Language = "Dutch",               LanguageCode = "nl-NL", LanguageNative = "Nederlands",         Contributor = "CMTriX"},
         new () {Language = "German",              LanguageCode = "de-DE", LanguageNative = "Deutsch",            Contributor = "Timthreetwelve & Henry2o1o"},
         new () {Language = "French",              LanguageCode = "fr-FR", LanguageNative = "Français",           Contributor = "Timthreetwelve"},
         new () {Language = "Catalan",             LanguageCode = "ca-ES", LanguageNative = "Català",             Contributor = "Timthreetwelve"},
         new () {Language = "Polish",              LanguageCode = "pl-PL", LanguageNative = "Polski",             Contributor = "FadeMind"},
         new () {Language = "Slovak",              LanguageCode = "sk-SK", LanguageNative = "Slovenčina",         Contributor = "VAIO"},
-        new () {Language = "Slovenian",           LanguageCode = "sl-SL", LanguageNative = "Slovenščina",        Contributor = "Jadran Rudec"},
+        new () {Language = "Slovenian",           LanguageCode = "sl-SL", LanguageNative = "Slovenščina",        Contributor = "Jadran Rudec & Marko K.(MaXi)"},
         new () {Language = "Portuguese (Brazil)", LanguageCode = "pt-BR", LanguageNative = "Português (Brasil)", Contributor = "igorruckert"},
         new () {Language = "Korean",              LanguageCode = "ko-KR", LanguageNative = "한국어",              Contributor = "VenusGirl💗 (비너스걸)"},
         new () {Language = "Japanese",            LanguageCode = "ja-JP", LanguageNative = "日本語",              Contributor = "coolvitto"},
