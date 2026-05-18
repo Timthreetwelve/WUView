@@ -15,7 +15,7 @@
 
         Translation contributed by:  @Timthreetwelve & Google Translate
 
-        Date LAST UPDATE:            2024/10/20
+        Date LAST UPDATE:            2026/05/18
 
         ========================================================================
 
@@ -40,6 +40,8 @@
     <sys:String x:Key="About_LicenseText">Ce projet est sous licence selon les termes de la licence MIT.</sys:String>
     <sys:String x:Key="About_LicenseToolTip">Consulter le document de licence</sys:String>
     <sys:String x:Key="About_Translations">Traductions</sys:String>
+    <sys:String x:Key="About_UpdateFound">Une nouvelle version est disponible</sys:String>
+    <sys:String x:Key="About_UpdateFoundTooltip">Cliquez ici pour accéder à la page des versions sur GitHub</sys:String>
     <sys:String x:Key="About_UpdateWU">Mettre à jour WUView</sys:String>
     <sys:String x:Key="About_UpdateWUText">Rechercher une nouvelle version de Windows Update Viewer</sys:String>
     <sys:String x:Key="About_UpdateWUToolTip">Vérifiez GitHub pour une version plus récente</sys:String>
@@ -48,13 +50,23 @@
     <sys:String x:Key="Button_Cancel">Annuler</sys:String>
     <sys:String x:Key="Button_CheckUpdate">Vérifier mise à jour</sys:String>
     <sys:String x:Key="Button_Close">Fermer le menu</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip">Cliquez ici pour comparer la langue actuelle à la langue par défaut (en-US). Les résultats sont consignés dans le fichier journal.</sys:String>
+    <sys:String x:Key="Button_ExportSettings">Exporter les paramètres</sys:String>
+    <sys:String x:Key="Button_ExportSettingsToolTip">Exporter les paramètres vers un fichier</sys:String>
+    <sys:String x:Key="Button_ImportSettings">Importer les paramètres</sys:String>
+    <sys:String x:Key="Button_ImportSettingsToolTip">Importer les paramètres depuis un fichier</sys:String>
+    <sys:String x:Key="Button_ListSettings">Afficher les paramètres</sys:String>
+    <sys:String x:Key="Button_ListSettingsTooltip">Afficher (enregistrer) les paramètres dans le fichier journal.</sys:String>
+    <sys:String x:Key="Button_No">Non</sys:String>
     <sys:String x:Key="Button_OK">D'accord</sys:String>
+    <sys:String x:Key="Button_OpenAppFolder">Ouvrir le dossier de l’application</sys:String>
+    <sys:String x:Key="Button_OpenAppFolderToolTip">Ouvrir le dossier de cette application dans l'Explorateur de fichiers.</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Afficher le fichier journal</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Ouvrez le fichier journal dans l'application par défaut.</sys:String>
+    <sys:String x:Key="Button_OpenSettings">Ouvrir les paramètres</sys:String>
+    <sys:String x:Key="Button_OpenSettingsToolTip">Ouvrir les paramètres de l'application.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Actions supplémentaires</sys:String>
-    <sys:String x:Key="Button_No">Non</sys:String>
-    <sys:String x:Key="Button_OpenAppFolder">Ouvrir le dossier de l’application</sys:String>
-    <sys:String x:Key="Button_Yes">OPui</sys:String>
+    <sys:String x:Key="Button_Yes">Oui</sys:String>
     <!--  Details Pane  -->
     <sys:String x:Key="Details_Date">Date:</sys:String>
     <sys:String x:Key="Details_Description">Description:</sys:String>
@@ -113,14 +125,20 @@
     <sys:String x:Key="MsgText_ElapsedTime">Temps écoulé</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Il y a un problème avec le fichier de langue.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">ERREUR</sys:String>
+    <sys:String x:Key="MsgText_ErrorExportingSettings">Erreur lors de l'exportation du fichier de paramètres.</sys:String>
+    <sys:String x:Key="MsgText_ErrorGeneral">Une erreur s'est produite.</sys:String>
+    <sys:String x:Key="MsgText_ErrorImportingSettings">Erreur lors de l'importation du fichier de paramètres.</sys:String>
     <sys:String x:Key="MsgText_ErrorOpeningFile">Erreur lors de l'ouverture de {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorReadingFile">Erreur lors de la lecture de {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorSavingSettings">Erreur lors de la sauvegarde du fichier de paramètres.</sys:String>
+    <sys:String x:Key="MsgText_ErrorSeeLog">Consultez le fichier journal pour plus d'informations.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Aucun enregistrement de journaux d'événements n'a été trouvé pour cette mise à jour.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Aucun enregistrement du journal des événements contenant «{0}» n'a été trouvé.</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Hors mises à jour contenant:</sys:String>
     <sys:String x:Key="MsgText_FilterOneRowShown">1 ligne affichée</sys:String>
     <sys:String x:Key="MsgText_FilterRowsShown">{0} lignes affichées</sys:String>
     <sys:String x:Key="MsgText_HResultCopiedToClipboard">HResult {0} copié dans le presse-papiers</sys:String>
+    <sys:String x:Key="MsgText_ImportSettingsRestart">Veuillez redémarrer Windows Update Viewer pour utiliser les paramètres importés.</sys:String>
     <sys:String x:Key="MsgText_ListRefreshed">Liste actualisée</sys:String>
     <sys:String x:Key="MsgText_NoUpdatesFound">Aucune mise à jour n'a été trouvée!</sys:String>
     <sys:String x:Key="MsgText_Opening">Ouverture</sys:String>
@@ -152,16 +170,20 @@
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Paramètres de l'application</sys:String>
     <sys:String x:Key="SettingsSection_Language">Langue</sys:String>
-    <sys:String x:Key="SettingsSection_UISettings">Paramètres de l'interface utilisateur</sys:String>
+    <sys:String x:Key="SettingsSection_SettingsFile">Fichier de paramètres</sys:String>
+    <sys:String x:Key="SettingsSection_UISettings">Paramètres d'apparence</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Nombre de mises à jour, format de date, éléments exclus, détails, etc.</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Paramètres linguistiques et tests</sys:String>
+    <sys:String x:Key="SettingsSubHead_SettingsFile">Importer, exporter, ouvrir et lister les paramètres de l'application</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Thème, couleur d'accentuation, taille de l'interface utilisateur, hauteur de ligne, position de départ et plus encore</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Couleur d'accentuation</sys:String>
+    <sys:String x:Key="SettingsItem_AutoUpdateCheck">Rechercher automatiquement une version plus récente à l'ouverture de la page À propos</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Changer la langue entraînera le redémarrage de l'application!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Format de date de grille</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Fonte</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Maj-Clic pour ouvrir le fichier avec l'application par défaut</sys:String>
+    <sys:String x:Key="SettingsItem_EditSettingsWarning">Toute modification apportée au fichier de paramètres pendant l'exécution de l'application sera écrasée !</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Permettre les tests linguistiques</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Masquer les éléments exclus</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Inclure les messages de niveau de débogage dans le fichier journal</sys:String>
@@ -183,6 +205,9 @@
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Utiliser la langue d'affichage de Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Lorsque cette option est sélectionnée, la langue spécifiée dans les paramètres Windows sera utilisée.</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La plupart du texte de la candidature restera en anglais (en-US), mais les formats de chiffres changeront.</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Utiliser la couleur d'accentuation pour l'arrière-plan du message</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Représente le nombre de chaînes dans la langue actuelle par rapport à la langue par défaut (en-US).</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Appuyez sur Ctrl+Maj+K ou cliquez sur le bouton Comparer pour comparer les fichiers de langue. Les résultats sont enregistrés dans le fichier journal.</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Ambre</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Noir</sys:String>
