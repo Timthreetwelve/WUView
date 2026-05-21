@@ -181,6 +181,7 @@
     <sys:String x:Key="SettingsItem_AutoUpdateCheck">Automatically check for newer version when About page is opened</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Changing Language will cause application to restart!</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Font</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFontSize">Font Size</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Grid Date Format</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-Click to open file with default application</sys:String>
     <sys:String x:Key="SettingsItem_EditSettingsWarning">Any changes made to the settings file while the app is running will be overwritten!</sys:String>
@@ -354,4 +355,8 @@
     <!-- A | About_UpdateFound -->
     <!-- A | About_UpdateFoundTooltip -->
     <!-- End changes on 2026/04/30 @ 01:30 UTC-->
+
+    <!-- Begin changes on 2026/05/21 @ 15:00 UTC-->
+    <!-- A | SettingsItem_DisplayFontSize -->
+    <!-- End changes on 2026/05/21 @ 15:00 UTC-->
 </ResourceDictionary>
