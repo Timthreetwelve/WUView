@@ -177,6 +177,7 @@
     <sys:String x:Key="SettingsItem_AutoUpdateCheck">Verificar automaticamente a versão mais recente quando a página Sobre for aberta</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Alterar o idioma fará com que o aplicativo seja reiniciado!</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Fonte</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFontSize">Tamanho da fonte</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formato de data da grade</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift+Clique para abrir o arquivo com o aplicativo padrão</sys:String>
     <sys:String x:Key="SettingsItem_EditSettingsWarning">Quaisquer alterações feitas no arquivo de configurações enquanto o aplicativo estiver em execução serão substituídas!</sys:String>
