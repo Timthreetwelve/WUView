@@ -15,7 +15,7 @@
 
         Translation contributed by:  My AWESOME brother Steve
 
-        Date last update:            2026/04/30
+        Date last update:            2026/05/18
 
         =======================================================================
 
@@ -182,6 +182,7 @@
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">El cambio de idioma hará que la aplicación se reinicie</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formato de fecha de cuadrícula</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Fuente</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFontSize">Tamaño de la fuente</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-Clic para abrir el archivo con la aplicación por defecto</sys:String>
     <sys:String x:Key="SettingsItem_EditSettingsWarning">¡Cualquier cambio realizado en el archivo de configuración mientras se ejecuta la aplicación se sobrescribirá!</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Habilitar las pruebas de idioma</sys:String>
