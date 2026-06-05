@@ -37,7 +37,7 @@ internal static class TextFileViewer
                 p.StartInfo.UseShellExecute = true;
                 p.StartInfo.ErrorDialog = false;
                 _ = p.Start();
-                _log.Debug($"Opening {textFile} in Notepad.exe");
+                _log.Debug($"Opening {PathHelpers.AnonymizePath(textFile)} in Notepad.exe");
             }
             else
             {
@@ -48,7 +48,7 @@ internal static class TextFileViewer
                                     MessageBoxButton.OK,
                                     MessageBoxImage.Error);
 #endif
-                _log.Error(ex, $"Unable to open {textFile}");
+                _log.Error(ex, $"Unable to open {PathHelpers.AnonymizePath(textFile)}");
             }
         }
         catch (Exception ex)
@@ -60,7 +60,7 @@ internal static class TextFileViewer
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Error);
 #endif
-            _log.Error(ex, $"Unable to open {textFile}");
+            _log.Error(ex, $"Unable to open {PathHelpers.AnonymizePath(textFile)}");
         }
     }
     #endregion Text file viewer

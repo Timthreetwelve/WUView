@@ -157,12 +157,12 @@ public partial class App : Application
                         Resources.MergedDictionaries.Add(testDict);
                         TestLanguageStrings = testDict.Count;
                         TestLanguageFile = testDict.Source.OriginalString;
-                        _log.Debug($"{TestLanguageStrings} strings loaded from {TestLanguageFile}");
+                        _log.Debug($"{TestLanguageStrings} strings loaded from {PathHelpers.AnonymizePath(TestLanguageFile)}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    _log.Error(ex, $"Error loading test language file {TestLanguageFile}");
+                    _log.Error(ex, $"Error loading test language file {PathHelpers.AnonymizePath(TestLanguageFile!)}");
                     string msg = string.Format(CultureInfo.CurrentCulture,
                                                $"{GetStringResource("MsgText_Error_TestLanguage")}\n\n{ex.Message}\n\n{ex.InnerException}");
                     _ = MessageBox.Show(msg,
@@ -173,7 +173,7 @@ public partial class App : Application
             }
             else
             {
-                _log.Error($"Error loading test language file {TestLanguageFile}. File not found.");
+                _log.Error($"Error loading test language file {PathHelpers.AnonymizePath(TestLanguageFile!)}. File not found.");
             }
         }
     }

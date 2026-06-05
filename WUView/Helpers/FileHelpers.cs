@@ -27,7 +27,7 @@ internal static partial class FileHelpers
         rxStopWatch.Stop();
         int xCount = ExcludedItems.ExcludedStrings!.Count;
         string xRecs = xCount == 1 ? "record" : "records";
-        _log.Debug($"Read {ExcludedItems.ExcludedStrings.Count} exclude {xRecs} from {xFile} in {rxStopWatch.Elapsed.TotalMilliseconds:N2} milliseconds");
+        _log.Debug($"Read {ExcludedItems.ExcludedStrings.Count} exclude {xRecs} from {PathHelpers.AnonymizePath(xFile)} in {rxStopWatch.Elapsed.TotalMilliseconds:N2} milliseconds");
         if (xCount > 0)
         {
             foreach (ExcludedItems item in ExcludedItems.ExcludedStrings)
@@ -46,7 +46,7 @@ internal static partial class FileHelpers
     {
         string json = JsonSerializer.Serialize(ExcludedItems.ExcludedStrings, JsonOptions);
         await File.WriteAllTextAsync(GetExcludesFile(), json);
-        _log.Info($"Saving {GetExcludesFile()}");
+        _log.Info($"Saving {PathHelpers.AnonymizePath(GetExcludesFile())}");
 
         foreach (ExcludedItems item in ExcludedItems.ExcludedStrings)
         {
@@ -67,7 +67,7 @@ internal static partial class FileHelpers
         {
             File.Create(filePath).Dispose();
             File.WriteAllText(filePath, "[{ \"ExcludedString\": \"Defender\"}]");
-            _log.Debug($"New Exclude file created: {filePath}");
+            _log.Debug($"New Exclude file created: {PathHelpers.AnonymizePath(filePath)}");
         }
         return filePath;
     }

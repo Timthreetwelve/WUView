@@ -40,7 +40,7 @@ internal sealed partial class SettingsViewModel : ObservableObject
         }
         catch (Exception ex)
         {
-            _log.Error(ex, $"Error trying to open {filePath}: {ex.Message}");
+            _log.Error(ex, $"Error trying to open {PathHelpers.AnonymizePath(filePath)}: {ex.Message}");
             _ = new MDCustMsgBox(GetStringResource("MsgText_Error_FileExplorer"),
                      GetStringResource("MsgText_ErrorCaption"),
                      ButtonType.Ok,
