@@ -85,7 +85,7 @@
                 <TextBlock Grid.Row="1" Grid.Column="0"
                            Text="{DynamicResource About_Version}" />
                 <TextBlock Grid.Row="1" Grid.Column="2"
-                           Text="{x:Static helpers:AppInfo.AppVersion}"
+                           Text="{x:Static buildinfo:BuildInfo.VersionString}"
                            TextWrapping="Wrap"
                            ToolTip="{x:Static helpers:AppInfo.AppProductVersion}"
                            ToolTipService.Placement="Top" />

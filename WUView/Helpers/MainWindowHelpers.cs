@@ -65,8 +65,8 @@ internal static class MainWindowHelpers
     {
         // Set the windows title
         return AppInfo.IsAdmin
-            ? $"{AppInfo.AppProduct}  {AppInfo.AppVersion} - ({GetStringResource("MsgText_WindowTitleAdministrator")})"
-            : $"{AppInfo.AppProduct}  {AppInfo.AppVersion}";
+            ? $"{AppInfo.AppProduct}  {BuildInfo.VersionString} - ({GetStringResource("MsgText_WindowTitleAdministrator")})"
+            : $"{AppInfo.AppProduct}  {BuildInfo.VersionString}";
     }
     #endregion Window Title
 
@@ -125,6 +125,15 @@ internal static class MainWindowHelpers
         _log.Debug($"{AppInfo.AppName} was started from {PathHelpers.AnonymizePath(AppInfo.AppPath)}");
         _log.Debug($"{AppInfo.AppName} Build date: {BuildInfo.BuildDateUtc:f} (UTC)");
         _log.Debug($"{AppInfo.AppName} Commit ID: {BuildInfo.CommitIDString} ");
+        _log.Debug($"{AppInfo.AppName} Process ID: {AppInfo.AppProcessID}");
+        if (!string.IsNullOrEmpty(BuildInfo.Prerelease))
+        {
+            _log.Warn($"{AppInfo.AppName} is a prerelease version: {BuildInfo.Prerelease}");
+        }
+        if (AppInfo.IsAdmin)
+        {
+            _log.Debug($"{AppInfo.AppName} is running as Administrator");
+        }
 
         // Log the .NET version and OS platform
         _log.Debug($"Operating System version: {AppInfo.OsPlatform}");
