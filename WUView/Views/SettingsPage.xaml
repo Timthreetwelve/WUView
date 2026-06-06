@@ -337,7 +337,7 @@
 
                             <Label Grid.Row="4" Grid.Column="0"
                                    VerticalAlignment="Center"
-                                   Content="{DynamicResource SettingsItem_FontSize}" />
+                                   Content="{DynamicResource SettingsItem_DisplayFontSize}" />
                             <materialDesign:NumericUpDown Grid.Row="4" Grid.Column="2"
                                                           MinWidth="200"
                                                           Margin="0,4" Padding="3,0,0,0"
