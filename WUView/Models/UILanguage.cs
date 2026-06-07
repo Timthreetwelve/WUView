@@ -80,7 +80,7 @@ public partial class UILanguage : ObservableObject
         new () {Language = "Dutch",               LanguageCode = "nl-NL", LanguageNative = "Nederlands",         Contributor = "CMTriX"},
         new () {Language = "German",              LanguageCode = "de-DE", LanguageNative = "Deutsch",            Contributor = "Timthreetwelve & Henry2o1o"},
         new () {Language = "French",              LanguageCode = "fr-FR", LanguageNative = "Français",           Contributor = "Timthreetwelve"},
-        new () {Language = "Catalan",             LanguageCode = "ca-ES", LanguageNative = "Català",             Contributor = "Timthreetwelve"},
+        //new () {Language = "Catalan",             LanguageCode = "ca-ES", LanguageNative = "Català",             Contributor = "Timthreetwelve"},
         new () {Language = "Polish",              LanguageCode = "pl-PL", LanguageNative = "Polski",             Contributor = "FadeMind"},
         new () {Language = "Slovak",              LanguageCode = "sk-SK", LanguageNative = "Slovenčina",         Contributor = "VAIO"},
         new () {Language = "Slovenian",           LanguageCode = "sl-SL", LanguageNative = "Slovenščina",        Contributor = "Jadran Rudec & Marko K.(MaXi)"},
