@@ -40,18 +40,31 @@
     <sys:String x:Key="About_LicenseText">Dieses Projekt ist unter den Bedingungen der MIT-Lizenz lizenziert.</sys:String>
     <sys:String x:Key="About_LicenseToolTip">Sehen Sie sich das Lizenzdokument an</sys:String>
     <sys:String x:Key="About_Translations">Übersetzungen</sys:String>
+    <sys:String x:Key="About_UpdateFound">Eine neuere Version ist verfügbar</sys:String>
+    <sys:String x:Key="About_UpdateFoundTooltip">Hier klicken, um die Releases auf Github aufzurufen</sys:String>
     <sys:String x:Key="About_UpdateWU">WUView aktualisieren</sys:String>
     <sys:String x:Key="About_UpdateWUText">Suchen Sie nach einer neuen Version von Windows Update Viewer</sys:String>
     <sys:String x:Key="About_UpdateWUToolTip">Suchen Sie auf GitHub nach einer neueren Version</sys:String>
     <sys:String x:Key="About_Version">Ausführung</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Abbrechen</sys:String>
+    <sys:String x:Key="Button_CheckUpdate">Auf Updates prüfen</sys:String>
     <sys:String x:Key="Button_Close">Abbrechen</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip">Hier klicken, um die aktuelle Sprache mit der Standardeinstellung zu vergleichen (US-Englisch). Die Ergebnisse werden in die Protokolldatei geschrieben.</sys:String>
+    <sys:String x:Key="Button_ExportSettings">Einstellungen exportieren</sys:String>
+    <sys:String x:Key="Button_ExportSettingsToolTip">Exportiert die aktuellen Einstellungen in eine Datei.</sys:String>
+    <sys:String x:Key="Button_ImportSettings">Einstellungen importieren</sys:String>
+    <sys:String x:Key="Button_ImportSettingsToolTip">Importiert die aktuellen Einstellungen aus einer Datei.</sys:String>
+    <sys:String x:Key="Button_ListSettings">Einstellungen auflisten</sys:String>
+    <sys:String x:Key="Button_ListSettingsTooltip">Auflisten (Schreiben) der Einstellungen in die Protokolldatei.</sys:String>
     <sys:String x:Key="Button_No">Nein</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Anwendungsordner öffnen</sys:String>
+    <sys:String x:Key="Button_OpenAppFolderToolTip">Den Ordner dieser Anwendung im Datei-Explorer öffnen.</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Protokolldatei anzeigen</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Öffnen Sie die Protokolldatei in der Standardanwendung.</sys:String>
+    <sys:String x:Key="Button_OpenSettings">Einstellungen öffnen</sys:String>
+    <sys:String x:Key="Button_OpenSettingsToolTip">Öffnet die Datei mit den Einstellungen.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Zusätzliche Aktionen</sys:String>
     <sys:String x:Key="Button_Yes">Ja</sys:String>
     <!--  Details Pane  -->
@@ -100,6 +113,7 @@
     <sys:String x:Key="MsgText_ApplicationStarting">Starten …</sys:String>
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">Suche nach Updates ist fehlgeschlagen.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Suche nach Updates.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateClose">Mit Klick auf „Ja“ wird Windows Update Viewer geschlossen.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Möchten Sie zur Release-Seite gehen?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">Es wurde eine neuere Version ({0}) gefunden.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">Es wurden keine neueren Versionen gefunden.</sys:String>
@@ -109,6 +123,14 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Alle {0} Updates werden angezeigt</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Es werden {0} von {1} Updates angezeigt</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Verstrichene Zeit</sys:String>
+    <sys:String x:Key="MsgText_ErrorCaption">FEHLER</sys:String>
+    <sys:String x:Key="MsgText_ErrorExportingSettings">Fehler beim Exportieren der Einstellungen.</sys:String>
+    <sys:String x:Key="MsgText_ErrorGeneral">Ein Fehler ist aufgetreten.</sys:String>
+    <sys:String x:Key="MsgText_ErrorImportingSettings">Fehler beim Importieren der Einstellungen.</sys:String>
+    <sys:String x:Key="MsgText_ErrorOpeningFile">{0} kann nicht geöffnet werden</sys:String>
+    <sys:String x:Key="MsgText_ErrorReadingFile">{0} kann nicht gelesen werden</sys:String>
+    <sys:String x:Key="MsgText_ErrorSavingSettings">Fehler beim Schreiben der Datei mit den Einstellungen.</sys:String>
+    <sys:String x:Key="MsgText_ErrorSeeLog">Weitere Informationen finden Sie in der Protokolldatei.</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Es gibt ein Problem mit der Sprachdatei.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Für dieses Update wurden keine Ereignisprotokolleinträge gefunden.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Es wurden keine Ereignisprotokolleinträge gefunden, die „{0}“ enthalten.</sys:String>
@@ -116,6 +138,7 @@
     <sys:String x:Key="MsgText_FilterOneRowShown">1 Reihe angezeigt</sys:String>
     <sys:String x:Key="MsgText_FilterRowsShown">{0} Zeilen angezeigt</sys:String>
     <sys:String x:Key="MsgText_HResultCopiedToClipboard">HResult {0} in Zwischenablage kopiert</sys:String>
+    <sys:String x:Key="MsgText_ImportSettingsRestart">Bitte starten Windows Update Viewer neu, um die importierten Einstellungen zu verwenden.</sys:String>
     <sys:String x:Key="MsgText_ListRefreshed">Liste aktualisiert</sys:String>
     <sys:String x:Key="MsgText_NoUpdatesFound">Es wurden keine Updates gefunden!</sys:String>
     <sys:String x:Key="MsgText_Opening">Öffnung</sys:String>
@@ -147,15 +170,21 @@
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Anwendungseinstellungen</sys:String>
     <sys:String x:Key="SettingsSection_Language">Sprache</sys:String>
+    <sys:String x:Key="SettingsSection_SettingsFile">Einstellungsdatei</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">UI-Einstellungen</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Anzahl der Aktualisierungen, Datumsformat, ausgeschlossene Elemente, Details und mehr</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Sprach- und Prüfungseinstellungen</sys:String>
+    <sys:String x:Key="SettingsSubHead_SettingsFile">Importieren, Exportieren, Öffnen und Auflisten der Anwendungseinstellungen</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Thema, Akzentfarbe, UI-Größe, Zeilenhöhe, Startposition und mehr</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Akzentfarbe</sys:String>
+    <sys:String x:Key="SettingsItem_AutoUpdateCheck">Automatisch auf neue Version prüfen, wenn der Über-Dialog geöffnet ist</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Wenn Sie die Sprache ändern, wird die Anwendung neu gestartet!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Rasterdatumsformat</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFont">Schriftart</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFontSize">Schriftgröße</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Umschalt-Klick, um die Datei mit der Standardanwendung zu öffnen</sys:String>
+    <sys:String x:Key="SettingsItem_EditSettingsWarning">Alle Änderungen an der Einstellungsdatei, während die App ausgeführt wird, werden überschrieben!</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Sprachprüfung aktivieren</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Ausgeschlossene Elemente ausblenden</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Fügen Sie Meldungen auf Debug-Ebene in die Protokolldatei ein</sys:String>
@@ -171,8 +200,11 @@
     <sys:String x:Key="SettingsItem_ShowExit">Beenden in der Navigationsleiste anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Warnmeldungen im Protokoll für HResult-Werte ungleich Null anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Aktualisierungen mit aktuellem Datum in Fettschrift anzeigen</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Akzentfarbe für den Hintergrund von Nachrichten verwenden</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Beginnen Sie mit einem zentrierten Fenster auf dem Bildschirm</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Thema</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Repräsentiert die Anzahl der Zeichenfolgen in der aktuellen Sprache im Vergleich zum Standard (en-US).</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Drücken Sie Strg+Shift+K oder klicken Sie auf die Schaltfläche Vergleichen, um Sprachdateien zu vergleichen. Die Ergebnisse werden in die Protokolldatei geschrieben.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">UI-Größe</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Verwenden Sie die Windows-Anzeigesprache</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Wenn diese Option ausgewählt ist, wird die in den Windows-Einstellungen angegebene Sprache verwendet.</sys:String>
@@ -217,6 +249,7 @@
     <sys:String x:Key="SettingsEnum_Spacing_Compact">Kompakt</sys:String>
     <sys:String x:Key="SettingsEnum_Spacing_Wide">Breit</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Dark">Material dunkel</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Mitternachtblau</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Dunkler</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Hell</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">System</sys:String>
@@ -302,4 +335,66 @@
 <!--  A | About_GitHub  -->
 <!--  A | Button_Close  -->
 <!--  End of changes on 2023/11/13  -->
+
+<!-- Begin changes on 2023/11/28 @ 02:00 UTC -->
+<!-- A | MsgText_AppUpdateCloseGetMyIP -->
+<!-- End of changes on 2023/11/28 @ 02:00 UTC -->
+
+<!-- Begin changes on 2024/04/03 @ 18:00 UTC -->
+<!-- A | MsgText_ErrorCaption  -->
+<!-- A | MsgText_ErrorOpeningFile  -->
+<!-- A | MsgText_ErrorReadingFile  -->
+<!-- End of changes on 2024/04/03 @ 18:00 UTC -->
+
+<!-- Begin changes on 2024/05/05 @ 17:30 UTC-->
+<!-- D | MsgText_AppUpdateCloseGetMyIP -->
+<!-- A | MsgText_AppUpdateClose -->
+<!-- End of changes on 2024/05/05 @ 17:30 UTC-->
+
+<!-- Begin changes on 2024/10/13 @ 00:05 UTC-->
+<!-- U | Corrected key ResultCode_ResultCode_Aborted to ResultCode_Aborted in 12 language files. -->
+<!-- U | No additional action from translators should be needed. -->
+<!-- End of changes on 2024/10/13 @ 00:05 UTC-->
+
+<!-- Begin changes on 2024/10/13 @ 17:40 UTC-->
+<!-- A | Button_CheckUpdate -->
+<!-- End of changes on 2024/10/13 @ 17:40 UTC-->
+
+<!-- Begin changes on 2025/01/06 @ 14:50 UTC-->
+<!-- A | MSettingsEnum_Theme_DarkBlue -->
+<!-- End of changes on 2025/01/06 @ 14:50 UTC-->
+
+<!-- Begin changes on 2025/01/07 @ 02:50 UTC-->
+<!-- A | Button_ExportSettings -->
+<!-- A | Button_ExportSettingsToolTip -->
+<!-- A | Button_ImportSettings -->
+<!-- A | Button_ImportSettingsToolTip -->
+<!-- A | Button_ListSettings -->
+<!-- A | Button_ListSettingsTooltip -->
+<!-- A | Button_OpenAppFolderToolTip -->
+<!-- A | Button_OpenSettings -->
+<!-- A | Button_OpenSettingsToolTip -->
+<!-- A | MsgText_ErrorExportingSettings -->
+<!-- A | MsgText_ErrorImportingSettings -->
+<!-- A | MsgText_ErrorSavingSettings -->
+<!-- A | MsgText_ImportSettingsRestart -->
+<!-- A | SettingsSection_SettingsFile -->
+<!-- A | SettingsSubHead_SettingsFile -->
+<!-- A | SettingsItem_EditSettingsWarning -->
+<!-- End changes on 2025/01/07 @ 02:50 UTC-->
+
+<!-- Begin changes on 2026/04/27 @ 19:00 UTC-->
+<!-- A | MsgText_ErrorGeneral -->
+<!-- A | MsgText_ErrorSeeLog -->
+<!-- End changes on 2026/04/27 @ 19:00 UTC-->
+
+<!-- Begin changes on 2026/04/30 @ 01:30 UTC-->
+<!-- A | SettingsItem_AutoUpdateCheck -->
+<!-- A | About_UpdateFound -->
+<!-- A | About_UpdateFoundTooltip -->
+<!-- End changes on 2026/04/30 @ 01:30 UTC-->
+
+<!-- Begin changes on 2026/05/21 @ 15:00 UTC-->
+<!-- A | SettingsItem_DisplayFontSize -->
+<!-- End changes on 2026/05/21 @ 15:00 UTC-->
 
