@@ -23,7 +23,7 @@
 #define BaseDir              "V:\Source\Repos\WUView\WUView"
 #define MySourceDir          BaseDir + PublishFolder
 #define MySetupIcon          BaseDir + "\Images\UV.ico"
-#define MyOutputDir          "V:\InnoSetup\Output"
+#define MyOutputDir          "V:\Releases\Installer"
 #define MyLargeImage         "V:\InnoSetup\Images\WizardImageWUV.png"
 #define MySmallImage         "V:\InnoSetup\Images\WizardSmallImage.bmp"
 
