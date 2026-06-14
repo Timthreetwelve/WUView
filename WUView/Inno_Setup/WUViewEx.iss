@@ -13,8 +13,8 @@
 ;
 ;             MyAppVersion:     The version string. The built-in  
 ;                               GetVersionNumbersString function
-;                               returns the version as 1.0.0.0 even if
-;                               the file version is 1.0.0.
+;                               returns major, minor, build, revision
+;                               but we want major, minor, build.
 ;----------------------------------------------------------------------
 #define  TempDir             GetEnv("TEMP")
 #define  IncludeFile         TempDir + "\PubSetup.Temp.iss"
