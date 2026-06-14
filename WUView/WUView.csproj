@@ -59,10 +59,7 @@
     <PackageReference Include="Octokit" Version="14.0.0" />
     <PackageReference Include="Vanara.PInvoke.User32" Version="5.0.5" />
     <PackageReference Include="Vanara.PInvoke.WUApi" Version="5.0.5" />
-    <PackageReference Include="VersionInfoGenerator" Version="3.2.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="VersionInfoGenerator" Version="3.2.1" PrivateAssets="all"/>
   </ItemGroup>
 
   <!-- Generate BuildInfo.cs-->
