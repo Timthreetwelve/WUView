@@ -27,7 +27,7 @@
 ### What is Windows Update Viewer?
 Windows Update Viewer (WUView) is an application that displays Windows Update history. It is meant to be a lightweight application that is easy to use. There aren't any confusing categories; every update is listed in one place. Updates that you don't want to see can be permanently excluded or temporarily filtered.
 
-WUView uses the Windows Update Agent API and Windows event logs to display details of installed updates. Event log entries are associated with individual updates by using the "KB" number. If an update does not use a KB number or isn't presented in a consistent format, no event log entries will be displayed.
+Windows Update Viewer uses the Windows Update Agent API and Windows event logs to display details of installed updates. Event log entries are associated with individual updates by using the "KB" number. If an update does not use a KB number or isn't presented in a consistent format, no event log entries will be displayed.
 
 Please be aware that Windows Update Viewer can only display updates provided by the [Windows Update Agent API](https://learn.microsoft.com/en-us/windows/win32/wua_sdk/portal-client). If you have reason to suspect that the application isn't returning correct or complete information, see the [Troubleshooting](https://github.com/Timthreetwelve/WUView/wiki/Troubleshooting) and [Known Issues](https://github.com/Timthreetwelve/WUView/wiki/Known-Issues) topics in the Wiki.
 
