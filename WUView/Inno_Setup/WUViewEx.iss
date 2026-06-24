@@ -21,7 +21,7 @@
 #include IncludeFile
 
 #define BaseDir              "V:\Source\Repos\WUView\WUView"
-#define MySourceDir          BaseDir + PublishFolder
+#define MySourceDir          PublishFolder
 #define MySetupIcon          BaseDir + "\Images\UV.ico"
 #define MyOutputDir          "V:\Releases\Installer"
 #define MyLargeImage         "V:\InnoSetup\Images\WizardImageWUV.png"
