@@ -341,8 +341,8 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-# BuildInfo
-WUView/BuildInfo.cs
+# override .gitignore_global 
+!WUView/BuildInfo.cs
 
 # Inno Setup backup
 *.~is

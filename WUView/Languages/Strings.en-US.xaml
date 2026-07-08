@@ -22,7 +22,7 @@
     -->
 
     <!--  About Page  -->
-    <sys:String x:Key="About_BuildDate">Build Date</sys:String>
+    <sys:String x:Key="About_BuildDate">Commit Date</sys:String>
     <sys:String x:Key="About_CommitID">Commit ID</sys:String>
     <sys:String x:Key="About_CommitIDToolTip">Full Commit ID:</sys:String>
     <sys:String x:Key="About_Contribute">Contribute a Translation</sys:String>
@@ -359,4 +359,8 @@
     <!-- Begin changes on 2026/05/21 @ 15:00 UTC-->
     <!-- A | SettingsItem_DisplayFontSize -->
     <!-- End changes on 2026/05/21 @ 15:00 UTC-->
+
+    <!-- Begin changes on 2026/07/08 @ 16:00 UTC -->
+    <!-- U | About_BuildDate - Changed 'Build' to 'Commit' -->
+    <!-- End of changes on 2026/07/08 @ 16:00 UTC -->
 </ResourceDictionary>
