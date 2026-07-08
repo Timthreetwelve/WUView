@@ -62,27 +62,17 @@
     <PackageReference Include="VersionInfoGenerator" Version="3.2.1" PrivateAssets="all"/>
   </ItemGroup>
 
-  <!-- Generate BuildInfo.cs-->
-  <Target Name="BuildInfo" AfterTargets="VersionInfoGenerator_UpdateProperties">
-    <Message Importance="high" Text="Generating BuildInfo for $(AssemblyName)." />
-    <PropertyGroup>
-      <PowerShellScript>-File "$(ProjectDir)PowerShell\GenBuildInfo.ps1"</PowerShellScript>
-      <Name>-assemblyName $(AssemblyName)</Name>
-    </PropertyGroup>
-    <Exec Command="pwsh -NoProfile $(PowerShellScript) $(Name)" />
-    <Message Importance="high" Text="Completed GenBuildInfo for $(AssemblyName)." />
-  </Target>
-  
   <!-- Build complete messages -->
   <Target Name="VersionMessage" AfterTargets="AfterBuild">
     <Message Importance="high" Text="Assembly Version is $(AssemblyVersion)" />
     <Message Importance="high" Text="Version is $(Version)" />
-    <Message Importance="high" Text="Commit is $(GitRevShort)" />
+    <Message Importance="high" Text="Commit date is $(GitCommitterDate)" />
+    <Message Importance="high" Text="Commit ID is $(GitRevShort)" />
     <Message Importance="high" Condition="'$(VersionPrerelease)' != ''" Text="Build is Prerelease" />
   </Target>
 
   <!-- Remove obj folder after Clean -->
-  <Target Name="SpicNSpan" AfterTargets="AfterClean">
+  <Target Name="MrClean" AfterTargets="AfterClean">
     <Message Importance="high" Text="The obj folder has been deleted." />
     <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
   </Target>
