@@ -2,10 +2,10 @@
 
 namespace WUView;
 
-///<summary>
+/// <summary>
 /// BuildInfo class provides information about the build, including commit ID, commit date, and version string.
 /// If the build is a prerelease, the version string will include the prerelease identifier.
-///</summary>
+/// </summary>
 internal static class BuildInfo
 {
     public static readonly string CommitIDString = VersionInfo.GitRevShort;

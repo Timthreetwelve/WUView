@@ -119,7 +119,7 @@ internal static class MainWindowHelpers
         // Set NLog configuration
         NLogHelpers.NLogConfig(false);
 
-        // Log the version, build date and commit id
+        // Log the version, commit date (UTC/local) and commit id
         _log.Info($"{AppInfo.AppName} ({AppInfo.AppProduct}) {AppInfo.AppVersion} {GetStringResource("MsgText_ApplicationStarting")}");
         _log.Info($"{AppInfo.AppName} {GetStringResource("About_Copyright")} {AppInfo.AppCopyright}");
         _log.Debug($"{AppInfo.AppName} was started from {PathHelpers.AnonymizePath(AppInfo.AppPath)}");
