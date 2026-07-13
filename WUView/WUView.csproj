@@ -25,11 +25,8 @@
   <!-- Set version and prerelease string (if needed) -->
   <PropertyGroup>
     <VersionValidate>true</VersionValidate>
-    <Version>0.7.2</Version>
-    <VersionPrerelease></VersionPrerelease>
-  </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration) == 'Debug'">
-    <VersionInfoGenerateJson>true</VersionInfoGenerateJson>
+    <Version>0.8.0</Version>
+    <VersionPrerelease>PreRelease</VersionPrerelease>
   </PropertyGroup>
   
   <!-- Disable satellite assemblies except those specified -->
@@ -59,7 +56,7 @@
     <PackageReference Include="Octokit" Version="14.0.0" />
     <PackageReference Include="Vanara.PInvoke.User32" Version="5.0.5" />
     <PackageReference Include="Vanara.PInvoke.WUApi" Version="5.0.5" />
-    <PackageReference Include="VersionInfoGenerator" Version="3.2.1" PrivateAssets="all"/>
+    <PackageReference Include="VersionInfoGenerator" Version="3.2.1" PrivateAssets="all" />
   </ItemGroup>
 
   <!-- Build complete messages -->
