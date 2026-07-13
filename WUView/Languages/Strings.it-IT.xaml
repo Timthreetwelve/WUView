@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            09.07.2026
+        Date last update:            13.07.2026
 
         ========================================================================
 
@@ -30,7 +30,7 @@
     <sys:String x:Key="About_Copyright">Copyright</sys:String>
     <sys:String x:Key="About_CreatedBy">Creato da</sys:String>
     <sys:String x:Key="About_CreatedByToolTip">Vedi altri lavori di Tim su https://github.com/Timthreetwelve</sys:String>
-    <sys:String x:Key="About_Description">Un elenco degli aggiornamenti di Windows in questo dispositivo</sys:String>
+    <sys:String x:Key="About_Description">Elenco aggiornamenti di Windows in questo dispositivo</sys:String>
     <sys:String x:Key="About_Documentation">Documentazione</sys:String>
     <sys:String x:Key="About_DocumentationText">Apri il file 'ReadMe'</sys:String>
     <sys:String x:Key="About_DocumentationToolTip">Visualizza il file 'ReadMe'</sys:String>
@@ -40,8 +40,8 @@
     <sys:String x:Key="About_LicenseText">Questo progetto è concesso in licenza secondo i termini della licenza MIT.</sys:String>
     <sys:String x:Key="About_LicenseToolTip">Visualizza il documento della licenza</sys:String>
     <sys:String x:Key="About_Translations">Traduzioni</sys:String>
-    <sys:String x:Key="About_UpdateFound">È disponibile una nuova versioend el programma</sys:String>
-    <sys:String x:Key="About_UpdateFoundTooltip">Clic  qui per anadre alla pagina GitHub del programma</sys:String>
+    <sys:String x:Key="About_UpdateFound">È disponibile una nuova versione del programma</sys:String>
+    <sys:String x:Key="About_UpdateFoundTooltip">Clic  qui per andare alla pagina GitHub del programma</sys:String>
     <sys:String x:Key="About_UpdateWU">Aggiorna WUView</sys:String>
     <sys:String x:Key="About_UpdateWUText">Controlla disponibilità nuova versione di Windows Update Viewer</sys:String>
     <sys:String x:Key="About_UpdateWUToolTip">Controlla disponibilità nuova versione su GitHub</sys:String>
@@ -99,7 +99,7 @@
     <sys:String x:Key="MenuItem_Exit">Esci</sys:String>
     <sys:String x:Key="MenuItem_Larger">Visualizzazione più ampia</sys:String>
     <sys:String x:Key="MenuItem_OpenWindowsUpdate">Apri Windows Update</sys:String>
-    <sys:String x:Key="MenuItem_Refresh">Aggiorna aggiornamenti</sys:String>
+    <sys:String x:Key="MenuItem_Refresh">Aggiorna elenco aggiornamenti</sys:String>
     <sys:String x:Key="MenuItem_RemoveSort">Rimuovi ordinamento colonne</sys:String>
     <sys:String x:Key="MenuItem_SaveCSV">Salva griglia in un file CSV</sys:String>
     <sys:String x:Key="MenuItem_SaveJSON">Salva come file JSON</sys:String>
@@ -128,8 +128,8 @@
     <sys:String x:Key="MsgText_ErrorExportingSettings">Errore durante l'esportazione del file impostazioni.</sys:String>
     <sys:String x:Key="MsgText_ErrorGeneral">Si è verificato un errore.</sys:String>
     <sys:String x:Key="MsgText_ErrorImportingSettings">Errore durante l'importazione del file impostazioni.</sys:String>
-    <sys:String x:Key="MsgText_ErrorOpeningFile">Error in apertura di {0}</sys:String>
-    <sys:String x:Key="MsgText_ErrorReadingFile">Error in lettura di {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorOpeningFile">Errore in apertura di {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorReadingFile">Errore in lettura di {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorSeeLog">Per maggiori info consulta il registro eventi.</sys:String>
     <sys:String x:Key="MsgText_ErrorSavingSettings">Errore durante il salvataggio del file impostazioni.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Non è stato trovato alcun record del registro eventi per questo aggiornamento.</sys:String>
@@ -206,7 +206,7 @@
     <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Indica il numero di stringhe della lingua attuale rispetto a quella predefinita (en-US).</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Premi Ctrl+Maiusc+K o fai clic sul pulsante Confronta per confrontare i file lingua. I risultati verranno scritti nel file registro.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Dimensione UI</sys:String>
-    <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Usa lingua di sistema di Windows</sys:String>
+    <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Usa stessa lingua di sistema di Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quando questa opzione è selezionata, verrà usata la lingua specificata nelle impostazioni di Windows.</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La maggior parte del testo della domanda rimarrà in inglese (en-US), ma i formati dei numeri cambieranno.</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
@@ -245,10 +245,10 @@
     <sys:String x:Key="SettingsEnum_Size_Small">95%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Smaller">90%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Smallest">80%</sys:String>
-    <sys:String x:Key="SettingsEnum_Spacing_Comfortable">Comoda</sys:String>
-    <sys:String x:Key="SettingsEnum_Spacing_Compact">Compatta</sys:String>
-    <sys:String x:Key="SettingsEnum_Spacing_Wide">Larga</sys:String>
-    <sys:String x:Key="SettingsEnum_Theme_Dark">Materiale scuro</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Comfortable">Normale</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Compact">Bassa</sys:String>
+    <sys:String x:Key="SettingsEnum_Spacing_Wide">Alta</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_Dark">Material scuro</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Blu notte</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Scuro</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Chiaro</sys:String>
