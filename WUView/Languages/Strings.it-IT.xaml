@@ -195,12 +195,12 @@
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">L'impostazione di questo valore su un valore inferiore può migliorare le prestazioni.</sys:String>
     <sys:String x:Key="SettingsItem_ParseAdditional">L'esclusione degli elementi analizza il numero KB, il risultato e l'ID aggiornamento oltre al titolo dell'aggiornamento</sys:String>
     <sys:String x:Key="SettingsItem_RowHeight">Altezza riga</sys:String>
-    <sys:String x:Key="SettingsItem_SelectFirstRow">Seleziona la prima riga all'inizio</sys:String>
+    <sys:String x:Key="SettingsItem_SelectFirstRow">All'avvio seleziona la prima riga</sys:String>
     <sys:String x:Key="SettingsItem_ShowDetails">Visualizza pannello Dettagli</sys:String>
     <sys:String x:Key="SettingsItem_ShowExit">Visualizza 'Esci' nella barra navigazione</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Visualizza messaggi avviso nel registro per valori HResult diversi da zero</sys:String>
-    <sys:String x:Key="SettingsItem_ShowTodayInBold">Visualizza gli aggiornamenti con la data attuale in grassetto</sys:String>
-    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Usa il colore principale per lo sfondo del messaggio</sys:String>
+    <sys:String x:Key="SettingsItem_ShowTodayInBold">Visualizza aggiornamenti con la data attuale in grassetto</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Per lo sfondo del messaggio usa il colore principale </sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Avvia con la finestra centrata sullo schermo</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Indica il numero di stringhe della lingua attuale rispetto a quella predefinita (en-US).</sys:String>
