@@ -4,22 +4,16 @@
     <AssemblyName>WUView</AssemblyName>
     <TargetFramework>net10.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>Images\UV.ico</ApplicationIcon>
     <Description>Windows Update Viewer</Description>
     <Copyright>© 2020-$([System.DateTime]::UtcNow.Year) Tim Kennedy</Copyright>
     <Authors>Tim Kennedy</Authors>
     <Company>T_K</Company>
     <Product>Windows Update Viewer</Product>
-    <ApplicationIcon>Images\UV.ico</ApplicationIcon>
     <NeutralLanguage>en-US</NeutralLanguage>
     <CsWinRTAotOptimizerEnabled>false</CsWinRTAotOptimizerEnabled>
-  </PropertyGroup>
-
-  <!-- Analyzers -->
-  <PropertyGroup>
-    <AnalysisLevel>latest-recommended</AnalysisLevel>
-    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <!-- Set version and prerelease string (if needed) -->
@@ -28,24 +22,30 @@
     <Version>0.8.0</Version>
     <VersionPrerelease>PreRelease</VersionPrerelease>
   </PropertyGroup>
+
+  <!-- Analyzers -->
+  <PropertyGroup>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+  </PropertyGroup>
   
   <!-- Disable satellite assemblies except those specified -->
   <PropertyGroup>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
 
-  <!-- Files to copy -->
-  <ItemGroup>
-    <Content Include="LICENSE.txt" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="Readme.txt" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="Strings.test.xaml" CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
-
   <!-- Resources to include -->
   <ItemGroup>
     <Resource Include="Images\InvertedUV.png" />
     <Resource Include="Images\UV.ico" />
     <Resource Include="Images\UV.png" />
+  </ItemGroup>
+
+  <!-- Files to copy -->
+  <ItemGroup>
+    <Content Include="LICENSE.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Readme.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Strings.test.xaml" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <!-- NuGet Packages -->
