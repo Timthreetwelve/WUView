@@ -72,11 +72,10 @@ fr.SelfContainedx86=Ceci installera la version x86 (32 bits) de %1 version %2.%n
 fr.ViewReadme=Voir le fichier ReadMe
 
 it.AppIsRunning=è in esecuzione.%nPer continuare l'installazione chiudi l'applicazione.
-it.DeleteConfigFiles=Vuoi rimuovere le impostazioni e i file di esclusione?%n%nSeleziona 'No' se vuoi reinstallare il programma più avanti.
-it.NotSelfContained=Verrà installata la versione standard di %1 versione %2.%n%nQuesta versione richiede che sia già installato .NET 10 Desktop Runtime ed è compatibile con i sistemi 32bit e 64bit.%n%nPrima di continuare l'installazione ti consigliamo di chiudere tutte le altre applicazioni.%n%nSeleziona 'Avanti' per continuare o 'Annulla' per uscire dall'installazione.
+it.DeleteConfigFiles=Vuoi rimuovere le impostazioni e i file di esclusione?%n%nSe vuoi reinstallare il programma più avanti seleziona 'No'.
 it.SelfContainedx64=Verrà installata la versione standalone di %1 versione %2 64 bit.%n%nPrima di continuare l'installazione ti consigliamo di chiudere tutte le altre applicazioni.%n%nPer continuare seleziona 'Avanti' o 'Annulla' per uscire dall'installazione.
 it.SelfContainedx86=Verrà installata la versione standalone di %1 versione %2 32 bit.%n%nPrima di continuare l'installazione ti consigliamo di chiudere tutte le altre applicazioni.%n%nPer continuare seleziona 'Avanti' o 'Annulla' per uscire dall'installazione.
-it.ViewReadme=Visualizza file ReadMe
+it.ViewReadme=Visualizza file 'ReadMe'
 
 nl.AppIsRunning=wordt uitgevoerd, sluit deze dan af om door te gaan met de installatie.
 nl.DeleteConfigFiles=Wil je de instellingen en uitsluitingsbestanden verwijderen?%n%nSelecteer 'Nee' als je van plan bent om opnieuw te installeren.
