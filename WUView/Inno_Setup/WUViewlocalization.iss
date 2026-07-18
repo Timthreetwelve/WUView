@@ -1,11 +1,11 @@
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
-Name: "ko"; MessagesFile: "compiler:Languages\Korean.isl"
 Name: "ca"; MessagesFile: "compiler:Languages\Catalan.isl"
 Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "fr"; MessagesFile: "compiler:Languages\French.isl"
 Name: "it"; MessagesFile: "compiler:Languages\Italian.isl"
+Name: "ko"; MessagesFile: "compiler:Languages\Korean.isl"
 Name: "nl"; MessagesFile: "compiler:Languages\Dutch.isl"
 Name: "pt"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "sk"; MessagesFile: "compiler:Languages\Slovak.isl"
@@ -73,7 +73,7 @@ fr.ViewReadme=Voir le fichier ReadMe
 
 it.AppIsRunning=è in esecuzione, per continuare l'installazione chiudi l'applicazione.
 it.DeleteConfigFiles=Vuoi rimuovere le impostazioni del programma?%n%nSe vuoi reinstallare il programma più avanti seleziona 'No'.
-it.NotSelfContained=Verrà installata la versione standard di %1 versione %2.%n%nQuesta versione richiede che sia già installato .NET 10 Desktop Runtime ed è compatibile con i sistemi 32bit e 64bit.%n%nPrima di continuare l'installazione ti consigliamo di chiudere tutte le altre applicazioni.%n%nSeleziona 'Avanti' per continuare o 'Annulla' per uscire dall'installazione.
+it.NotSelfContained=Verrà installata la versione standard di %1 %2.%n%nQuesta versione richiede che sia già installato .NET 10 Desktop Runtime ed è compatibile con i sistemi 32bit e 64bit.%n%nPrima di continuare l'installazione ti consigliamo di chiudere tutte le altre applicazioni.%n%nSeleziona 'Avanti' per continuare o 'Annulla' per uscire dall'installazione.
 it.SelfContainedx64=Verrà installata la versione standalone di %1 %2 64 bit.%n%nPrima di continuare l'installazione ti consigliamo di chiudere tutte le altre applicazioni.%n%nPer continuare seleziona 'Avanti' o 'Annulla' per uscire dall'installazione.
 it.SelfContainedx86=Verrà installata la versione standalone di %1 %2 32 bit.%n%nPrima di continuare l'installazione ti consigliamo di chiudere tutte le altre applicazioni.%n%nPer continuare seleziona 'Avanti' o 'Annulla' per uscire dall'installazione.
 it.ViewReadme=Visualizza file 'ReadMe'
