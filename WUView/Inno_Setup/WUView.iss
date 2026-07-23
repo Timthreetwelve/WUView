@@ -31,7 +31,6 @@
 #define MyAppName            "Windows Update Viewer"
 #define MyAppNameNoSpaces    StringChange(MyAppName, " ", "")
 #define MyAppExeName         "WUView.exe"
-;#define MyAppVersion         GetVersionNumbersString(MySourceDir + "\" + MyAppExeName)
 #define MyInstallerFilename  MyAppNameNoSpaces + "_" + MyAppVersion + "_" + InstallType + "_Setup"
 #define MyCompanyName        "T_K"
 #define MyPublisherName      "Tim Kennedy"
@@ -45,7 +44,7 @@
 ; -----------------------------------------------------
 ; Include the localization file. Thanks bovirus!
 ; -----------------------------------------------------
-#include "WUViewLocalization.iss"
+#include "WUView.localization.iss"
 
 
 [Setup]
@@ -189,15 +188,15 @@ var
   Answer: Integer;
   ThisApp: String;
 begin
-  Result := true;
-  ThisApp := ExpandConstant('{#MyAppExeName}');
-  while IsAppRunning(ThisApp) do
-  begin
+    Result := true;
+    ThisApp := ExpandConstant('{#MyAppExeName}');
+    While IsAppRunning(ThisApp) Do
+      begin
         Answer := MsgBox(ThisApp + ' ' + CustomMessage('AppIsRunning'), mbError, MB_OKCANCEL);
-    If Answer = IDCANCEL then
-    begin
-      Result := false;
-      Exit;
+        if Answer = IDCANCEL Then
+          begin
+          Result := false;
+      exit;
     end;
   end;
 end;
@@ -224,10 +223,9 @@ begin
     case CurUninstallStep of
       usPostUninstall:
         begin
-          mres := MsgBox(CustomMessage('DeleteConfigFiles'), mbConfirmation, MB_YESNO or MB_DEFBUTTON2)
+          mres := MsgBox(CustomMessage('DeleteConfigFiles'), mbConfirmation, MB_YESNO or MB_DEFBUTTON2);
           if mres = IDYES then
           begin
-            DelTree(ExpandConstant('{app}\*.json'), False, True, False);
             DelTree(ExpandConstant('{app}'), True, True, True);
           end;
        end;
