@@ -62,7 +62,7 @@ ca.ViewReadme=Veure el fitxer ReadMe
 ;
 de.AppIsRunning=ausgeführt wird, schließen Sie es bitte, um mit der Installation fortzufahren.
 de.DeleteConfigFiles=Möchten Sie die Einstellungen und Ausschlussdateien entfernen?%n%nWählen Sie 'Nein', wenn Sie eine Neuinstallation planen.
-de.NotSelfContained=Dadurch wird die von Standardversion %1 Version %2 installiert.%n%nDiese Version erfordert eine bestehende Installation der .NET 10 Desktop Runtime und ist sowohl mit x64- als auch mit x86-Systemen kompatibel.%n%nEs wird empfohlen, dass Sie alle anderen Anwendungen schließen, bevor Sie fortfahren.%n%nKlicken Sie auf "Weiter", um fortzufahren, oder auf "Abbrechen", um das Setup zu beenden.
+de.NotSelfContained=Dadurch wird die Standardversion von %1 Version %2 installiert.%n%nDiese Version erfordert eine bestehende Installation der .NET 10 Desktop Runtime und ist sowohl mit x64- als auch mit x86-Systemen kompatibel.%n%nEs wird empfohlen, dass Sie alle anderen Anwendungen schließen, bevor Sie fortfahren.%n%nKlicken Sie auf "Weiter", um fortzufahren, oder auf "Abbrechen", um das Setup zu beenden.
 de.SelfContainedx64=Dadurch wird die eigenständige x64 (64-Bit)-Version von %1 Version %2 installiert.%n%nEs wird empfohlen, dass Sie alle anderen Anwendungen schließen, bevor Sie fortfahren.%n%nKlicken Sie auf "Weiter", um fortzufahren, oder auf "Abbrechen", um das Setup zu beenden.
 de.SelfContainedx86=Dadurch wird die eigenständige x86 (32-Bit)-Version von %1 Version %2 installiert.%n%nEs wird empfohlen, dass Sie alle anderen Anwendungen schließen, bevor Sie fortfahren.%n%nKlicken Sie auf "Weiter", um fortzufahren, oder auf "Abbrechen", um das Setup zu beenden.
 de.ViewReadme=Lesen Sie die ReadMe-Datei
@@ -94,8 +94,8 @@ it.ViewReadme=Visualizza file 'ReadMe'
 ;
 ko.AppIsRunning=가 실행 중입니다. 설치를 계속하려면 닫으세요.
 ko.DeleteConfigFiles=설정 파일을 제거하시겠습니까?%n%n다시 설치할 계획인 경우 '아니오'를 선택하세요.
-ko.NotSelfContained=이렇게 하면 %1 버전 %2.의 표준 버전이 설치됩니다.%n%n이 버전은 .NET 10 데스크톱 런타임의 기존 설치가 필요하며 x64 및 x86 시스템과 모두 호환됩니다.%n%n계속하기 전에 다른 모든 응용 프로그램을 닫는 것이 좋습니다.%n%n계속하려면 '다음'을 클릭하거나 설치 프로그램을 종료하려면 '취소'를 클릭합니다.
-ko.SelfContainedx64=이렇게 하면 %1 버전 %2.의 독립 실행형 x64 (64비트) 버전이 설치됩니다.%n%n계속하기 전에 다른 모든 응용 프로그램을 닫는 것이 좋습니다.%n%n계속하려면 '다음'을 클릭하거나 설치 프로그램을 종료하려면 '취소'를 클릭합니다.
+ko.NotSelfContained=이렇게 하면 %1 버전 %2의 표준 버전이 설치됩니다.%n%n이 버전은 .NET 10 데스크톱 런타임의 기존 설치가 필요하며 x64 및 x86 시스템과 모두 호환됩니다.%n%n계속하기 전에 다른 모든 응용 프로그램을 닫는 것이 좋습니다.%n%n계속하려면 '다음'을 클릭하거나 설치 프로그램을 종료하려면 '취소'를 클릭합니다.
+ko.SelfContainedx64=이렇게 하면 %1 버전 %2의 독립 실행형 x64 (64비트) 버전이 설치됩니다.%n%n계속하기 전에 다른 모든 응용 프로그램을 닫는 것이 좋습니다.%n%n계속하려면 '다음'을 클릭하거나 설치 프로그램을 종료하려면 '취소'를 클릭합니다.
 ko.SelfContainedx86=이렇게 하면 %1 버전 %2의 독립 실행형 x86 (32비트) 버전이 설치됩니다.%n%n계속하기 전에 다른 모든 응용 프로그램을 닫는 것이 좋습니다.%n%n계속하려면 '다음'을 클릭하거나 설치 프로그램을 종료하려면 '취소'를 클릭합니다.
 ko.ViewReadme=ReadMe 파일 보기
 ;
