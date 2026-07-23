@@ -195,10 +195,10 @@ begin
         Answer := MsgBox(ThisApp + ' ' + CustomMessage('AppIsRunning'), mbError, MB_OKCANCEL);
         if Answer = IDCANCEL Then
           begin
-          Result := false;
-      exit;
-    end;
-  end;
+            Result := false;
+            exit;
+          end;
+      end;
 end;
 
 // Copies setup log to app folder
