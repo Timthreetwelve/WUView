@@ -11,7 +11,7 @@
   - Indent with 4 spaces, no tabs.
   - Use #region and #endregion.
   - Respect .editorconfig
-  - Use Configuration/Usersettings for settings.
+  - Use Configuration/UserSettings for settings.
 
 ## WPF Architecture (MVVM)
 - Use **MVVM** as the core architectural pattern.
@@ -38,9 +38,9 @@
     - Excessive nested Grids
     - Hardcoded colors (use resource dictionaries)
 
-- ## Error Handling
+## Error Handling
 - Use try/catch to avoid unhandled exceptions
-- Log using _log.Error.
+- Log using `_log.Error(...)`.
 - Avoid swallowing exceptions.
 
 ## Async + UI Thread Rules
@@ -59,7 +59,7 @@
 
 ## Logging
 - Use NLog for logging
-- Use static instance of Logger  (_log) defined in NLogHelpers.cs
+- Use static instance of Logger (_log) defined in NLogHelpers.cs
 - Avoid using _log.Trace
 
 ## Localization
@@ -69,5 +69,5 @@
 - Strings are grouped into sections and sorted by key
 - Keys are prefixed by how and where the string is used
 - Maintain change log located at the bottom of en-US file
-- Ignore languages other than en-US except when requested 
+- Ignore languages other than en-US except when requested
 - Follow the rules in `.github/Translation.instructions.md` for reviewing translations.
