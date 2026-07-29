@@ -58,7 +58,7 @@ You can always download the latest release from the [releases page](https://gith
 * Select the interface language.
 
 ### The Main Window
-![WUView screenshot](https://github.com/Timthreetwelve/WUView/blob/main/Images/WUView_2024-04-04_17-11-03.png)
+![WUView screenshot](https://github.com/Timthreetwelve/WUView/blob/main/Images/WUView_2026-07-29_18-47-02.png)
 
 ### Contributors
 
