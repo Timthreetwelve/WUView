@@ -14,11 +14,18 @@ internal static class BuildInfo
 
     public static readonly string? Prerelease = VersionInfo.VersionPrerelease;
 
+    /// <summary>
+    /// The UTC date and time of the last commit. Returns <see cref="DateTime.MinValue"/>
+    /// if the commit date cannot be parsed.
+    /// </summary>
     public static readonly DateTime CommitDateUtc =
-        DateTime.Parse(
+        DateTime.TryParse(
             VersionInfo.GitCommitterDate,
             CultureInfo.InvariantCulture,
-            DateTimeStyles.AdjustToUniversal);
+            DateTimeStyles.AdjustToUniversal,
+            out DateTime parsedDate)
+        ? parsedDate
+        : DateTime.MinValue;
 
     public static readonly string CommitDateStringUtc = $"{CommitDateUtc:f} (UTC)";
     public static readonly string CommitDateStringLocal = $"{CommitDateUtc.ToLocalTime():f} (Local)";
