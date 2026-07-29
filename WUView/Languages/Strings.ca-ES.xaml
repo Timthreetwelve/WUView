@@ -15,7 +15,7 @@
 
         Translation contributed by:  @Timthreetwelve & Google Translate
 
-        Date last update:            2024/10/20
+        Date last update:            2026/07/29
 
         ======================================================================
     -->
@@ -39,6 +39,8 @@
     <sys:String x:Key="About_LicenseText">Aquest projecte té llicència sota els termes de la llicència MIT.</sys:String>
     <sys:String x:Key="About_LicenseToolTip">Consulta el document de la llicència</sys:String>
     <sys:String x:Key="About_Translations">Traduccions</sys:String>
+    <sys:String x:Key="About_UpdateFound">Hi ha disponible una versió més recent</sys:String>
+    <sys:String x:Key="About_UpdateFoundTooltip">Feu clic per anar a la pàgina de versions de GitHub</sys:String>
     <sys:String x:Key="About_UpdateWU">Actualitza WUView</sys:String>
     <sys:String x:Key="About_UpdateWUText">Comproveu si hi ha una nova versió de Windows Update Viewer</sys:String>
     <sys:String x:Key="About_UpdateWUToolTip">Consulteu GitHub per obtenir una versió més recent</sys:String>
@@ -47,7 +49,7 @@
     <sys:String x:Key="Button_Cancel">Cancel·lar</sys:String>
     <sys:String x:Key="Button_CheckUpdate">Comprova si hi ha actualitzacions</sys:String>
     <sys:String x:Key="Button_Close">Tanca aquest menú</sys:String>
-    <sys:String x:Key="Button_CompareLanguageToolTip">Feu clic per comparar l'idioma actual amb el predeterminat (en-US). Els resultats s'escriuen al fitxer de registre.</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip" xml:space="preserve">Feu clic per comparar l'idioma actual amb el predeterminat (en-US).&#x0a;Els resultats s'escriuen al fitxer de registre.</sys:String>
     <sys:String x:Key="Button_ExportSettings">Configuració d'exportació</sys:String>
     <sys:String x:Key="Button_ExportSettingsToolTip">Exporta la configuració actual a un fitxer.</sys:String>
     <sys:String x:Key="Button_ImportSettings">Configuració d'importació</sys:String>
@@ -108,7 +110,7 @@
     <sys:String x:Key="MsgText_AllUpdatesExcluded">S'han exclòs totes les actualitzacions que es poden mostrar.</sys:String>
     <sys:String x:Key="MsgText_ApplicationShutdown">s'està tancant</sys:String>
     <sys:String x:Key="MsgText_ApplicationStarting">està en marxa</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateCheckFailed">No s'ha pogut comprovar l'actualització.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCheckFailed" xml:space="preserve">No s'ha pogut comprovar l'actualització.&#x0a;Consulteu el fitxer de registre per obtenir més informació.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">S'està comprovant l'actualització.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateClose">Si feu clic a "Sí", es tancarà el visor de Windows Update.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Vols anar a la pàgina de llançament?</sys:String>
@@ -122,11 +124,13 @@
     <sys:String x:Key="MsgText_ElapsedTime">Temps transcorregut</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Hi ha un problema amb el fitxer d'idioma.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">ERROR</sys:String>
+    <sys:String x:Key="MsgText_ErrorGeneral">S'ha produït un error.</sys:String>
     <sys:String x:Key="MsgText_ErrorOpeningFile">S'ha produït un error en obrir {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorReadingFile">S'ha produït un error en llegir {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">S'ha produït un error en exportar el fitxer de configuració.</sys:String>
     <sys:String x:Key="MsgText_ErrorImportingSettings">S'ha produït un error en importar el fitxer de configuració.</sys:String>
     <sys:String x:Key="MsgText_ErrorSavingSettings">S'ha produït un error en desar el fitxer de configuració.</sys:String>
+    <sys:String x:Key="MsgText_ErrorSeeLog">Consulteu el fitxer de registre per obtenir més informació.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">No s'han trobat registres d'esdeveniments per a aquesta actualització.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">No s'ha trobat cap registre d'esdeveniments que contingui "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">S'exclouen les actualitzacions que continguin:</sys:String>
@@ -173,9 +177,11 @@
     <sys:String x:Key="SettingsSubHead_UISettings">Tema, color d'accent, mida de la IU, alçada de fila, posició inicial i molt més</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Color d'accent</sys:String>
+    <sys:String x:Key="SettingsItem_AutoUpdateCheck">Comprova automàticament si hi ha una versió més recent quan s'obre la pàgina Sobre</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Si canvieu d'idioma, l'aplicació es reiniciarà!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Format de data de quadrícula</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Tipus de lletra</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFontSize">Mida de la lletra</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Maj+Feu clic per obrir el fitxer amb l'aplicació predeterminada</sys:String>
     <sys:String x:Key="SettingsItem_EditSettingsWarning">Qualsevol canvi fet al fitxer de configuració mentre l'aplicació s'executa es sobreescriurà!</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Habilitar les proves d'idioma</sys:String>
@@ -197,7 +203,7 @@
     <sys:String x:Key="SettingsItem_StartCentered">Comenceu amb la finestra centrada a la pantalla</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Representa el nombre de cadenes en l'idioma actual en comparació amb el predeterminat (en-US).</sys:String>
-    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Premeu Ctrl+Maj+K o feu clic al botó Comparar per comparar fitxers d'idioma. Els resultats s'escriuen al fitxer de registre.</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2" xml:space="preserve">Premeu Ctrl+Maj+K per comparar fitxers d'idioma.&#x0a;Els resultats s'escriuen al fitxer de registre.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Mida de la IU</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Utilitzeu l'idioma de visualització de Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quan se selecciona aquesta opció, s'utilitzarà l'idioma especificat a la configuració de Windows.</sys:String>
@@ -248,45 +254,5 @@
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regional: data i hora</sys:String>
 
 </ResourceDictionary>
-
-    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    LANGUAGE FILE UPDATES
-
-    Additions, Deletions and Updates will be made in the appropriate sections above. Each change will
-    be associated with a comment made below this block.
-
-    Comment Format:
-       There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
-       Modified lines will follow, one comment line per line changed.
-       Comment lines use this syntax:  Change Type | Key Name
-
-     Change type:
-       A = Added
-       D = Deleted
-       U = Updated
-       * = Comment not related to a single line
-     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-
-    <!-- Begin changes on 2023/11/15 @ 18:55 UTC -->
-    <!-- U | About_Contribute -->
-    <!-- U | About_ContributeToolTip -->
-    <!-- A | About_GitHub -->
-    <!-- A | Button_Close -->
-    <!-- U | Button_No -->
-    <!-- U | Button_OpenAppFolder -->
-    <!-- U | Button_Yes -->
-    <!-- U | MenuItem_SaveJSON -->
-    <!-- U | MsgText_Error_TestLanguage -->
-    <!-- U | OperationType_Installation -->
-    <!-- U | OperationType_Uninstallation -->
-    <!-- U | ResultCode_Failed -->
-    <!-- U | ResultCode_InProgress -->
-    <!-- U | ResultCode_NotStarted -->
-    <!-- U | ResultCode_Aborted -->
-    <!-- U | ResultCode_Succeeded -->
-    <!-- U | ResultCode_SucceededWithErrors -->
-    <!-- U | SettingsItem_EnableLanguageTesting -->
-    <!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
-    <!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
-    <!-- A | SettingsSubHead_Language -->
-    <!-- End of changes on 2023/11/15 -->
+    
+<!-- See Strings.en-US for change history -->

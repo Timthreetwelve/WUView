@@ -15,7 +15,7 @@
 
         Translation contributed by:  My AWESOME brother Steve
 
-        Date last update:            2026/07/08
+        Date last update:            2026/07/29
 
         =======================================================================
 
@@ -50,7 +50,7 @@
     <sys:String x:Key="Button_Cancel">Cancelar</sys:String>
     <sys:String x:Key="Button_CheckUpdate">Comprobar actualización</sys:String>
     <sys:String x:Key="Button_Close">Cerrar este menú</sys:String>
-    <sys:String x:Key="Button_CompareLanguageToolTip">Haga clic para comparar el lenguaje actual con el predeterminado (EN-US). Los resultados se escriben en el archivo de registro.</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip" xml:space="preserve">Haga clic para comparar el lenguaje actual con el predeterminado (EN-US).&#x0a;Los resultados se escriben en el archivo de registro.</sys:String>
     <sys:String x:Key="Button_ExportSettings">Configuración de exportación</sys:String>
     <sys:String x:Key="Button_ExportSettingsToolTip">Exportar la configuración actual a un archivo.</sys:String>
     <sys:String x:Key="Button_ImportSettings">Configuración de importación</sys:String>
@@ -111,7 +111,7 @@
     <sys:String x:Key="MsgText_AllUpdatesExcluded">Se han excluido todas las actualizaciones visualizables.</sys:String>
     <sys:String x:Key="MsgText_ApplicationShutdown">apagando</sys:String>
     <sys:String x:Key="MsgText_ApplicationStarting">iniciando</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateCheckFailed">Error en comprobar las actualizaciones. Consulte el registro para obtener más información.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCheckFailed" xml:space="preserve">Error en comprobar las actualizaciones.&#x0a;Consulte el registro para obtener más información.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Comprobación de actualizaciones.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateClose">Al hacer clic en "Sí" se cerrará el Visor Windows Update.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">¿Ir a la página de lanzamiento?</sys:String>
@@ -204,7 +204,7 @@
     <sys:String x:Key="SettingsItem_StartCentered">Empezar con la ventana centrada en la pantalla</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Representa el número de cadenas en el idioma actual en comparación con el valor predeterminado (en-US).</sys:String>
-    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Presione Ctrl+Shift+K para comparar archivos de idioma. Los resultados se escriben en el archivo de registro.</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2" xml:space="preserve">Presione Ctrl+Shift+K para comparar archivos de idioma.&#x0a;Los resultados se escriben en el archivo de registro.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Tamaño de la IU</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Utilizar el idioma de visualización de Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Cuando se selecciona esta opción, se utilizará el idioma especificado en la configuración de Windows.</sys:String>

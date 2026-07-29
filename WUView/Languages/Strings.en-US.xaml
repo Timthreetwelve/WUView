@@ -11,14 +11,13 @@
 
         Application name:            Windows Update Viewer
 
-        Language name:
+        Language name:               English (en-US)
 
-        Translation contributed by:
+        Translation contributed by:  Timthreetwelve
 
-        Date last update:
+        Date last update:            See the change log section below.
 
         ========================================================================
-
     -->
 
     <!--  About Page  -->
@@ -50,7 +49,7 @@
     <sys:String x:Key="Button_Cancel">Cancel</sys:String>
     <sys:String x:Key="Button_CheckUpdate">Check for Update</sys:String>
     <sys:String x:Key="Button_Close">Close Menu</sys:String>
-    <sys:String x:Key="Button_CompareLanguageToolTip">Click to compare current language to the default (en-US). Results are written to the log file.</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip" xml:space="preserve">Click to compare current language to the default (en-US).&#x0a;Results are written to the log file.</sys:String>
     <sys:String x:Key="Button_ExportSettings">Export Settings</sys:String>
     <sys:String x:Key="Button_ExportSettingsToolTip">Export current settings to a file.</sys:String>
     <sys:String x:Key="Button_ImportSettings">Import Settings</sys:String>
@@ -111,7 +110,7 @@
     <sys:String x:Key="MsgText_AllUpdatesExcluded">All displayable updates have been excluded.</sys:String>
     <sys:String x:Key="MsgText_ApplicationShutdown">is shutting down</sys:String>
     <sys:String x:Key="MsgText_ApplicationStarting">is starting up</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateCheckFailed">Check for update failed. See the log for more information.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCheckFailed" xml:space="preserve">Check for update failed.&#x0a;See the log for more information.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Checking for update.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateClose">Clicking 'Yes' will close Windows Update Viewer.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Do you want to go to the release page?</sys:String>
@@ -204,7 +203,7 @@
     <sys:String x:Key="SettingsItem_StartCentered">Start with window centered on screen</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Theme</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Represents the number of strings in the current language compared to the default (en-US).</sys:String>
-    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Press Ctrl+Shift+K or click compare button to compare language files. Results are written to the log file.</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2" xml:space="preserve">Press Ctrl+Shift+K to compare language files.&#x0a;Results are written to the log file.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">UI Size</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Use Windows display language</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">When this option is selected, the language specified in the Windows settings will</sys:String>
@@ -363,4 +362,11 @@
     <!-- Begin changes on 2026/07/08 @ 16:00 UTC -->
     <!-- U | About_BuildDate - Changed 'Build' to 'Commit' -->
     <!-- End of changes on 2026/07/08 @ 16:00 UTC -->
+
+    <!-- Begin changes on 2026/07/29 @ 18:00 UTC -->
+    <!-- U | Button_CompareLanguageToolTip        - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- U | MsgText_AppUpdateCheckFailed         - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- U | SettingsItem_TranslationToolTipLine2 - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- End of changes on 2026/07/29 @ 18:00 UTC -->
+
 </ResourceDictionary>

@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
@@ -13,12 +13,11 @@
 
         Language name:               Polski (pl-PL)
 
-        Translation contributed by:  FadeMind
+        Translation contributed by:  FadeMind & Google Translate
 
-        Date last update:            2024/04/05
+        Date last update:            2026/07/29
 
         ========================================================================
-
     -->
 
     <!--  About Page  -->
@@ -40,18 +39,31 @@
     <sys:String x:Key="About_LicenseText">Ten projekt jest licencjonowany na warunkach licencji MIT.</sys:String>
     <sys:String x:Key="About_LicenseToolTip">Zobacz licencję</sys:String>
     <sys:String x:Key="About_Translations">Tłumaczenia</sys:String>
+    <sys:String x:Key="About_UpdateFound">Dostępne jest nowsze wydanie</sys:String>
+    <sys:String x:Key="About_UpdateFoundTooltip">Kliknij, aby przejść do strony wydania w serwisie GitHub</sys:String>
     <sys:String x:Key="About_UpdateWU">Sprawdź dostępność aktualizacji WUView</sys:String>
     <sys:String x:Key="About_UpdateWUText">Sprawdź dostępność aktualizacji Windows Update Viewer</sys:String>
     <sys:String x:Key="About_UpdateWUToolTip">Sprawdź GitHub w poszukiwaniu nowszej wersji</sys:String>
     <sys:String x:Key="About_Version">Wersja</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Anuluj</sys:String>
+    <sys:String x:Key="Button_CheckUpdate">Sprawdź dostępność aktualizacji</sys:String>
     <sys:String x:Key="Button_Close">Zamknij Menu</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip" xml:space="preserve">Kliknij, aby porównać bieżący język z domyślnym (en-US).&#x0a;Wyniki są zapisywane w pliku dziennika.</sys:String>
+    <sys:String x:Key="Button_ExportSettings">Eksportuj ustawienia</sys:String>
+    <sys:String x:Key="Button_ExportSettingsToolTip">Eksportuj bieżące ustawienia do pliku.</sys:String>
+    <sys:String x:Key="Button_ImportSettings">Importuj ustawienia</sys:String>
+    <sys:String x:Key="Button_ImportSettingsToolTip">Importuj ustawienia z pliku.</sys:String>
+    <sys:String x:Key="Button_ListSettings">Wyświetl ustawienia</sys:String>
+    <sys:String x:Key="Button_ListSettingsTooltip">Wyświetl (zapisz) ustawienia w pliku dziennika.</sys:String>
     <sys:String x:Key="Button_No">Nie</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Otwórz folder aplikacji</sys:String>
+    <sys:String x:Key="Button_OpenAppFolderToolTip">Otwórz folder tej aplikacji w Eksploratorze plików.</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Przeglądaj dziennik</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Otwórz plik dziennika w domyślnej aplikacji</sys:String>
+    <sys:String x:Key="Button_OpenSettings">Otwórz ustawienia</sys:String>
+    <sys:String x:Key="Button_OpenSettingsToolTip">Otwórz plik ustawień.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Dodatkowe działania</sys:String>
     <sys:String x:Key="Button_Yes">Tak</sys:String>
     <!--  Details Pane  -->
@@ -98,7 +110,7 @@
     <sys:String x:Key="MsgText_AllUpdatesExcluded">Wszystkie widoczne aktualizacje zostały wykluczone.</sys:String>
     <sys:String x:Key="MsgText_ApplicationShutdown">jest zamykany</sys:String>
     <sys:String x:Key="MsgText_ApplicationStarting">uruchamia się</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateCheckFailed">Sprawdzanie aktualizacji nie powiodło się. Więcej informacji można znaleźć w dzienniku.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCheckFailed" xml:space="preserve">Sprawdzanie aktualizacji nie powiodło się.&#x0a;Więcej informacji można znaleźć w dzienniku.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Sprawdzanie dostępności aktualizacji.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateClose">Kliknij 'TAK' aby zamknąć Windows Update Viewer.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Czy chcesz przejść do strony informacyjnej o wydaniu?</sys:String>
@@ -112,14 +124,20 @@
     <sys:String x:Key="MsgText_ElapsedTime">Upływ czasu</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Wystąpił błąd w pliku tłumaczenia.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">BŁĄD</sys:String>
+    <sys:String x:Key="MsgText_ErrorExportingSettings">Błąd eksportowania pliku ustawień.</sys:String>
+    <sys:String x:Key="MsgText_ErrorGeneral">Wystąpił błąd.</sys:String>
+    <sys:String x:Key="MsgText_ErrorImportingSettings">Błąd importowania pliku ustawień.</sys:String>
     <sys:String x:Key="MsgText_ErrorOpeningFile">Błąd otwierania {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorReadingFile">Błąd odczytu {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorSeeLog">Więcej informacji znajduje się w pliku dziennika.</sys:String>
+    <sys:String x:Key="MsgText_ErrorSavingSettings">Błąd zapisywania pliku ustawień.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Nie znaleziono zapisów dziennika zdarzeń dla tej aktualizacji.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Nie znaleziono rekordów Dziennika zdarzeń zawierających "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Z wyłączeniem aktualizacji zawierających:</sys:String>
     <sys:String x:Key="MsgText_FilterOneRowShown">1 pokazany wiersz</sys:String>
     <sys:String x:Key="MsgText_FilterRowsShown">{0} pokazanych wierszy</sys:String>
     <sys:String x:Key="MsgText_HResultCopiedToClipboard">HResult {0} skopiowano do schowka</sys:String>
+    <sys:String x:Key="MsgText_ImportSettingsRestart">Uruchom ponownie Windows Update Viewer, aby użyć zaimportowanych ustawień.</sys:String>
     <sys:String x:Key="MsgText_ListRefreshed">Lista odświeżona</sys:String>
     <sys:String x:Key="MsgText_NoUpdatesFound">Nie znaleziono żadnych aktualizacji!</sys:String>
     <sys:String x:Key="MsgText_Opening">Otwieranie</sys:String>
@@ -151,16 +169,22 @@
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Ustawienia</sys:String>
     <sys:String x:Key="SettingsSection_Language">Język</sys:String>
+    <sys:String x:Key="SettingsSection_SettingsFile">Plik ustawień</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Interfejs</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Liczba aktualizacji, format daty, wykluczone elementy, szczegóły i inne.</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Language Settings and Testing</sys:String>
+    <sys:String x:Key="SettingsSubHead_SettingsFile">Importowanie, eksportowanie, otwieranie i wyświetlanie ustawień aplikacji</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Motyw, kolor akcentu, rozmiar interfejsu użytkownika, wysokość wiersza, pozycja początkowa i wiele więcej</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Kolor akcentu</sys:String>
+    <sys:String x:Key="SettingsItem_AutoUpdateCheck">Automatycznie sprawdzaj nowszą wersję po otwarciu strony Informacje</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Po zmianie języka wymagany jest restart aplikacji!</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFont">Czcionka</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFontSize">Rozmiar czcionki</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Format daty siatki</sys:String>
-    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Włącz testowanie języka</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-Click aby otworzyć plik za pomocą domyślnej aplikacji</sys:String>
+    <sys:String x:Key="SettingsItem_EditSettingsWarning">Wszelkie zmiany wprowadzone w pliku ustawień podczas działania aplikacji zostaną nadpisane!</sys:String>
+    <sys:String x:Key="SettingsItem_EnableLanguageTesting">Włącz testowanie języka</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Ukryj wykluczone elementy</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Uwzględnij komunikaty poziomu debugowania w pliku dziennika</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Okno Windows Update Viewer zawsze na wierzchu</sys:String>
@@ -175,8 +199,11 @@
     <sys:String x:Key="SettingsItem_ShowExit">Pokaż wyjście na pasku nawigacji</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Wyświetlaj komunikaty ostrzegawcze w dzienniku dla niezerowych wartości HResult</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Wyświetlaj aktualizacje z bieżącą datą pogrubioną czcionką</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Użyj koloru akcentu dla tła komunikatu</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Uruchamiaj z oknem wyśrodkowanym na ekranie</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Motyw</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Przedstawia liczbę ciągów w bieżącym języku w porównaniu z domyślnym (en-US).</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2" xml:space="preserve">Naciśnij Ctrl+Shift+K, aby porównać pliki językowe.&#x0a;Wyniki są zapisywane w pliku dziennika.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Skala</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Użyj ustawień regionalnych systemu</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Po wybraniu tej opcji zostanie użyty język określony w ustawieniach systemu Windows</sys:String>
@@ -219,6 +246,7 @@
     <sys:String x:Key="SettingsEnum_Spacing_Compact">Kompaktowy</sys:String>
     <sys:String x:Key="SettingsEnum_Spacing_Wide">Szeroki</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Dark">Material Dark</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Granatowy</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Darker</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Light</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">System</sys:String>
