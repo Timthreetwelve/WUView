@@ -230,10 +230,10 @@
                                 </TextBlock>
                             </CheckBox>
                             <CheckBox Grid.Row="7"
-                                  Padding="10,0"
-                                  Content="{DynamicResource SettingsItem_AutoUpdateCheck}"
-                                  IsChecked="{Binding AutoCheckForUpdates,
-                                                      Source={x:Static config:UserSettings.Setting}}" />
+                                      Padding="10,0"
+                                      Content="{DynamicResource SettingsItem_AutoUpdateCheck}"
+                                      IsChecked="{Binding AutoCheckForUpdates,
+                                                          Source={x:Static config:UserSettings.Setting}}" />
                         </Grid>
                         <!--#endregion-->
                     </Grid>
@@ -288,14 +288,18 @@
                             <Label Grid.Row="0" Grid.Column="0"
                                    VerticalAlignment="Center"
                                    Content="{DynamicResource SettingsItem_Theme}" />
-                            <ComboBox Grid.Row="0" Grid.Column="2"
-                                      Width="Auto" MinWidth="200"
-                                      Margin="0,3,0,0" Padding="2,0,0,3"
-                                      HorizontalAlignment="Left"
-                                      ItemsSource="{Binding Source={convert:EnumBindingSource {x:Type models:ThemeType}}}"
-                                      SelectedItem="{Binding Path=UITheme,
-                                                             Source={x:Static config:UserSettings.Setting}}"
-                                      Style="{StaticResource MaterialDesignComboBox}" />
+                            <StackPanel Grid.Row="0" Grid.Column="2">
+                                <StackPanel.DataContext>
+                                    <viewmodels:SettingsViewModel />
+                                </StackPanel.DataContext>
+                                <ComboBox Width="Auto" MinWidth="200"
+                                          Margin="0,3,0,0" Padding="2,0,0,3"
+                                          HorizontalAlignment="Left"
+                                          ItemsSource="{Binding ThemeTypes}"
+                                          SelectedItem="{Binding Path=UITheme,
+                                                                 Source={x:Static config:UserSettings.Setting}}"
+                                          Style="{StaticResource MaterialDesignComboBox}" />
+                            </StackPanel>
 
                             <Label Grid.Row="1" Grid.Column="0"
                                    VerticalAlignment="Center"

@@ -250,6 +250,7 @@
     <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Negro azulado</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Más Oscuro</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Claro</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_LightGray">Grafito Pálido</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regional: Fecha sola</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regional: Fecha y hora</sys:String>

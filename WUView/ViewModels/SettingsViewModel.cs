@@ -6,12 +6,23 @@ internal sealed partial class SettingsViewModel : ObservableObject
 {
     #region Properties
     public static List<FontFamily>? FontList { get; private set; }
+    public IEnumerable<ThemeType> ThemeTypes { get; private set; }
     #endregion Properties
 
     #region Constructor
     public SettingsViewModel()
     {
         FontList ??= [.. Fonts.SystemFontFamilies.OrderBy(x => x.Source)];
+
+        ThemeTypes =
+[
+    ThemeType.Light,
+            ThemeType.LightGray,
+            ThemeType.Dark,
+            ThemeType.Darker,
+            ThemeType.DarkBlue,
+            ThemeType.System,
+        ];
     }
     #endregion Constructor
 

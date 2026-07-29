@@ -367,6 +367,9 @@ internal sealed partial class NavigationViewModel : ObservableObject
                         switch (UserSettings.Setting!.UITheme)
                         {
                             case ThemeType.Light:
+                                UserSettings.Setting.UITheme = ThemeType.LightGray;
+                                break;
+                            case ThemeType.LightGray:
                                 UserSettings.Setting.UITheme = ThemeType.Dark;
                                 break;
                             case ThemeType.Dark:
