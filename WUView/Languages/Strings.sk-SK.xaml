@@ -12,9 +12,9 @@
 
         Language name:               Slovak (sk-SK)
 
-        Translation contributed by:  VAIO
+        Translation contributed by:  VAIO & Google Translate
 
-        Date:                        02.11.2023
+        Date:                        2026/07/29
 
         ==================================================================================================================================
     -->
@@ -32,22 +32,37 @@
     <sys:String x:Key="About_Documentation">Dokumentácia</sys:String>
     <sys:String x:Key="About_DocumentationText">Otvorte súbor ReadMe</sys:String>
     <sys:String x:Key="About_DocumentationToolTip">Zobraziť súbor ReadMe</sys:String>
+    <sys:String x:Key="About_GitHub">GitHub</sys:String>
     <sys:String x:Key="About_GitHubToolTip">Navštívte stránku WUView na GitHub</sys:String>
     <sys:String x:Key="About_License">Licencia</sys:String>
     <sys:String x:Key="About_LicenseText">Tento projekt je licencovaný podľa podmienok licencie MIT.</sys:String>
     <sys:String x:Key="About_LicenseToolTip">Zobraziť licenčný dokument</sys:String>
     <sys:String x:Key="About_Translations">Preklady</sys:String>
+    <sys:String x:Key="About_UpdateFound">K dispozícii je novšie vydanie</sys:String>
+    <sys:String x:Key="About_UpdateFoundTooltip">Kliknutím prejdete na stránku vydania na GitHube</sys:String>
     <sys:String x:Key="About_UpdateWU">Aktualizovať WUView</sys:String>
     <sys:String x:Key="About_UpdateWUText">Vyhľadajte nové vydanie programu Windows Update Viewer</sys:String>
     <sys:String x:Key="About_UpdateWUToolTip">Vyhľadajte na GitHub novšie vydanie</sys:String>
     <sys:String x:Key="About_Version">Verzia</sys:String>
     <!--  Button Text  -->
     <sys:String x:Key="Button_Cancel">Zrušiť</sys:String>
+    <sys:String x:Key="Button_CheckUpdate">Skontrolovať aktualizáciu</sys:String>
+    <sys:String x:Key="Button_Close">Zavrieť menu</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip" xml:space="preserve">Kliknutím porovnáte aktuálny jazyk s predvoleným (en-US).&#x0a;Výsledky sa zapíšu do súboru denníka.</sys:String>
+    <sys:String x:Key="Button_ExportSettings">Exportovať nastavenia</sys:String>
+    <sys:String x:Key="Button_ExportSettingsToolTip">Exportovať aktuálne nastavenia do súboru.</sys:String>
+    <sys:String x:Key="Button_ImportSettings">Importovať nastavenia</sys:String>
+    <sys:String x:Key="Button_ImportSettingsToolTip">Importovať nastavenia zo súboru.</sys:String>
+    <sys:String x:Key="Button_ListSettings">Zoznam nastavení</sys:String>
+    <sys:String x:Key="Button_ListSettingsTooltip">Vypísať (zapísať) nastavenia do súboru denníka.</sys:String>
     <sys:String x:Key="Button_No">Nie</sys:String>
     <sys:String x:Key="Button_OK">OK</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Otvoriť priečinok aplikácie</sys:String>
+    <sys:String x:Key="Button_OpenAppFolderToolTip">Otvorte priečinok tejto aplikácie v Prieskumníkovi súborov.</sys:String>
     <sys:String x:Key="Button_OpenLogFile">Zobraziť súbor denníka</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Otvorte súbor denníka v predvolenej aplikácii.</sys:String>
+    <sys:String x:Key="Button_OpenSettings">Otvoriť nastavenia</sys:String>
+    <sys:String x:Key="Button_OpenSettingsToolTip">Otvorte súbor nastavení.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Ďalšie akcie</sys:String>
     <sys:String x:Key="Button_Yes">Áno</sys:String>
     <!--  Details Pane  -->
@@ -97,8 +112,9 @@
     <sys:String x:Key="MsgText_AllUpdatesExcluded">Všetky zobrazené aktualizácie boli vylúčené.</sys:String>
     <sys:String x:Key="MsgText_ApplicationShutdown">vypína sa</sys:String>
     <sys:String x:Key="MsgText_ApplicationStarting">spúšťa sa</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateCheckFailed">Kontrola aktualizácie zlyhala. Viac informácií nájdete v denníku.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCheckFailed" xml:space="preserve">Kontrola aktualizácie zlyhala.&#x0a;Viac informácií nájdete v denníku.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Kontroluje sa aktualizácia.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateClose">Kliknutím na „Áno“ sa zavrie Windows Update Viewer.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Chcete prejsť na stránku vydania?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">Našlo sa novšie vydanie ({0}).</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">Nenašli sa žiadne novšie vydania.</sys:String>
@@ -109,12 +125,21 @@
     <sys:String x:Key="MsgText_DisplayedUpdates">Zobrazuje sa {0} z {1} aktualizácií</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Uplynulý čas</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Vyskytol sa problém s jazykovým súborom.</sys:String>
+    <sys:String x:Key="MsgText_ErrorCaption">CHYBA</sys:String>
+    <sys:String x:Key="MsgText_ErrorExportingSettings">Chyba pri exporte súboru nastavení.</sys:String>
+    <sys:String x:Key="MsgText_ErrorGeneral">Vyskytla sa chyba.</sys:String>
+    <sys:String x:Key="MsgText_ErrorImportingSettings">Chyba pri importe súboru nastavení.</sys:String>
+    <sys:String x:Key="MsgText_ErrorOpeningFile">Chyba pri otváraní súboru {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorReadingFile">Chyba pri čítaní súboru {0}</sys:String>
+    <sys:String x:Key="MsgText_ErrorSeeLog">Viac informácií nájdete v súbore denníka.</sys:String>
+    <sys:String x:Key="MsgText_ErrorSavingSettings">Chyba pri ukladaní súboru nastavení.</sys:String>
     <sys:String x:Key="MsgText_EventLogNA">Pre túto aktualizáciu sa nenašli žiadne záznamy denníkov udalostí.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Nenašli sa žiadne záznamy denníka udalostí obsahujúce „{0}“.</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">S výnimkou aktualizácií obsahujúcich:</sys:String>
     <sys:String x:Key="MsgText_FilterOneRowShown">Zobrazuje sa 1 riadok</sys:String>
     <sys:String x:Key="MsgText_FilterRowsShown">Zobrazené riadky: {0}</sys:String>
     <sys:String x:Key="MsgText_HResultCopiedToClipboard">Výsledok HR {0} bol skopírovaný do schránky</sys:String>
+    <sys:String x:Key="MsgText_ImportSettingsRestart">Aby ste mohli použiť importované nastavenia, reštartujte Windows Update Viewer.</sys:String>
     <sys:String x:Key="MsgText_ListRefreshed">Obnovený zoznam</sys:String>
     <sys:String x:Key="MsgText_NoUpdatesFound">Nenašli sa žiadne aktualizácie!</sys:String>
     <sys:String x:Key="MsgText_Opening">Otváranie</sys:String>
@@ -143,15 +168,21 @@
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Nastavenia aplikácie</sys:String>
     <sys:String x:Key="SettingsSection_Language">Jazyk</sys:String>
+    <sys:String x:Key="SettingsSection_SettingsFile">Súbor nastavení</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Nastavenia používateľského rozhrania</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Počet aktualizácií, formát dátumu, vylúčené položky, podrobnosti a ďalšie</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Nastavenia jazyka (prebieha spracovanie)</sys:String>
+    <sys:String x:Key="SettingsSubHead_SettingsFile">Importovať, exportovať, otvoriť a vypísať nastavenia aplikácie</sys:String>
     <sys:String x:Key="SettingsSubHead_UISettings">Motív, farba zvýraznenia, veľkosť používateľského rozhrania, výška riadku, počiatočná pozícia a ďalšie</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Farba zvýraznenia</sys:String>
+    <sys:String x:Key="SettingsItem_AutoUpdateCheck">Automaticky kontrolovať novšiu verziu pri otvorení stránky O programe</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Zmena jazyka spôsobí reštart aplikácie!</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formát dátumu mriežky</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFont">Písmo</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFontSize">Veľkosť písma</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Ak chcete otvoriť súbor s predvolenou aplikáciou, kliknite so stlačeným klávesom Shift</sys:String>
+    <sys:String x:Key="SettingsItem_EditSettingsWarning">Všetky zmeny vykonané v súbore nastavení počas behu aplikácie budú prepísané!</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Povoliť testovanie jazyka</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Skryť vylúčené položky</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Zahrnúť správy na úrovni ladenia do súboru denníka</sys:String>
@@ -167,8 +198,11 @@
     <sys:String x:Key="SettingsItem_ShowExit">Zobraziť ukončenie na navigačnom paneli</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Zobraziť v denníku varovné správy pre nenulové hodnoty HResult</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Zobraziť aktualizácie s aktuálnym dátumom tučným písmom</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Použiť farbu zvýraznenia pre pozadie správy</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Začnite s oknom vycentrovaným na obrazovke</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Motív</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Predstavuje počet reťazcov v aktuálnom jazyku v porovnaní s predvoleným (en-US).</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2" xml:space="preserve">Stlačením Ctrl+Shift+K porovnáte jazykové súbory.&#x0a;Výsledky sa zapíšu do súboru denníka.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Veľkosť používateľského rozhrania</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Použiť jazyk zobrazenia systému Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Ak je vybratá táto možnosť, jazyk zadaný v nastaveniach systému Windows bude</sys:String>
@@ -213,31 +247,10 @@
     <sys:String x:Key="SettingsEnum_Spacing_Compact">Kompaktné</sys:String>
     <sys:String x:Key="SettingsEnum_Spacing_Wide">Široký</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Dark">Tmavý materiál</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Polnočná modrá</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Tmavšie</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Svetlo</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Systém</sys:String>
 
-    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    LANGUAGE FILE UPDATES
-
-    Additions, Deletions and Updates will be made in the appropriate sections above. Each change will
-    be associated with a comment made below this block.
-
-    Comment Format:
-       There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
-       Modified lines will follow, one comment line per line changed.
-       Comment lines use this syntax:  Change Type | Key Name
-
-     Change type:
-       A = Added
-       D = Deleted
-       U = Updated
-       * = Comment not related to a single line
-     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-
-    <!-- Begin changes on 2023/11/14 @ 01:15 UTC -->
-    <!-- U | Value for About_Contribute needs to be updated to "Contribute a Translation" -->
-    <!-- A | About_GitHub needs to be added -->
-    <!-- A | Button_Close needs to be added -->
-    <!-- End of changes on 2023/11/14 -->
 </ResourceDictionary>
+<!-- See Strings.en-US for change history -->
