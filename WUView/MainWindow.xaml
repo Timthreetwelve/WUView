@@ -57,7 +57,7 @@
             <!--#endregion-->
 
             <!--#region Title Row-->
-            <Grid Grid.Column="1" >
+            <Grid Grid.Column="1">
                 <!--#region Column definitions for the title row-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -194,7 +194,10 @@
             <!--#region Content control for views-->
             <Grid Grid.Row="1" Grid.Column="1"
                   Background="{DynamicResource MaterialDesign.Brush.Card.Background}">
-                <ContentControl Content="{Binding CurrentViewModel}" />
+                <Border BorderBrush="{DynamicResource MaterialDesign.Brush.Separator.Background}"
+                        BorderThickness="1,1,0,0">
+                    <ContentControl Content="{Binding CurrentViewModel}" />
+                </Border>
             </Grid>
             <!--#endregion-->
         </Grid>

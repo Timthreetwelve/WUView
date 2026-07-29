@@ -251,6 +251,7 @@
     <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Midnight Blue</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Darker</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Light</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_LightGray">Pale Graphite</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">System</sys:String>
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -368,5 +369,9 @@
     <!-- U | MsgText_AppUpdateCheckFailed         - Added xml:space="preserve" and line break character &#x0a; -->
     <!-- U | SettingsItem_TranslationToolTipLine2 - Added xml:space="preserve" and line break character &#x0a; -->
     <!-- End of changes on 2026/07/29 @ 18:00 UTC -->
+
+    <!-- Begin changes on 2026/07/29 @ 21:00 UTC-->
+    <!-- A | SettingsEnum_Theme_LightGray  -->
+    <!-- End of changes on 2026/07/29 @ 21:00 UTC-->
 
 </ResourceDictionary>

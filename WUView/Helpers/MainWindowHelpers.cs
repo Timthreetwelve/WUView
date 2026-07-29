@@ -174,20 +174,28 @@ internal static class MainWindowHelpers
                 theme.Background = Colors.WhiteSmoke;
                 theme.SetSecondaryColor(Colors.RoyalBlue);
                 break;
-            case ThemeType.Dark:
+            case ThemeType.LightGray: // Pale Graphite
+                theme.SetBaseTheme(BaseTheme.Light);
+                theme.Background = (Color)ColorConverter.ConvertFromString("#FFD3D3D3");
+                theme.Foreground = (Color)ColorConverter.ConvertFromString("#EE111111");
+                theme.Cards.Background = (Color)ColorConverter.ConvertFromString("#FFE0E0E0");
+                theme.DataGrids.Selected = (Color)ColorConverter.ConvertFromString("#FFC0C0C0");
+                theme.Separators.Background = (Color)ColorConverter.ConvertFromString("#FFA9A9A9");
+                break;
+            case ThemeType.Dark: // Material Design default dark theme
                 theme.SetBaseTheme(BaseTheme.Dark);
                 theme.SetSecondaryColor(Colors.DeepSkyBlue);
                 break;
-            case ThemeType.Darker:
-                // Set card and paper background colors a bit darker
+            case ThemeType.Darker:  // Darker theme
                 theme.SetBaseTheme(BaseTheme.Dark);
                 theme.Cards.Background = (Color)ColorConverter.ConvertFromString("#FF141414");
                 theme.Background = (Color)ColorConverter.ConvertFromString("#FF202020");
                 theme.DataGrids.Selected = (Color)ColorConverter.ConvertFromString("#FF303030");
                 theme.Foreground = (Color)ColorConverter.ConvertFromString("#E5F0F0F0");
+                theme.Separators.Background = (Color)ColorConverter.ConvertFromString("#FF444951");
                 theme.SetSecondaryColor(Colors.DodgerBlue);
                 break;
-            case ThemeType.DarkBlue:
+            case ThemeType.DarkBlue: // Midnight Blue theme
                 theme.SetBaseTheme(BaseTheme.Dark);
                 theme.Background = (Color)ColorConverter.ConvertFromString("#FF000F25");
                 theme.Cards.Background = (Color)ColorConverter.ConvertFromString("#FF011636");

@@ -250,6 +250,7 @@
     <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Polnočná modrá</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Tmavšie</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Svetlo</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_LightGray">Bledý grafit</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Systém</sys:String>
 
 </ResourceDictionary>

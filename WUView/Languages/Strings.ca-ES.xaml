@@ -249,6 +249,7 @@
     <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Blau Mitjanit</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Més fosc</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Llum</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_LightGray">Grafit pàl·lid</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regional: només data</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regional: data i hora</sys:String>
