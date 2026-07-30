@@ -14,7 +14,7 @@
 
         Translation contributed by:  VAIO & Google Translate
 
-        Date:                        2026/07/29
+        Date:                        2026/07/30
 
         ==================================================================================================================================
     -->
@@ -178,6 +178,7 @@
     <sys:String x:Key="SettingsItem_AccentColor">Farba zvýraznenia</sys:String>
     <sys:String x:Key="SettingsItem_AutoUpdateCheck">Automaticky kontrolovať novšiu verziu pri otvorení stránky O programe</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Zmena jazyka spôsobí reštart aplikácie!</sys:String>
+    <sys:String x:Key="SettingsItem_DarkModeTheme">Motív tmavého režimu</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formát dátumu mriežky</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Písmo</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFontSize">Veľkosť písma</sys:String>
@@ -188,6 +189,7 @@
     <sys:String x:Key="SettingsItem_IncludeDebug">Zahrnúť správy na úrovni ladenia do súboru denníka</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Uchovávajte Windows Update Viewer nad ostatnými oknami</sys:String>
     <sys:String x:Key="SettingsItem_Language">Jazyk</sys:String>
+    <sys:String x:Key="SettingsItem_LightModeTheme">Téma svetlého režimu</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdates">Počet aktualizácií</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">Toto je maximálny počet aktualizácií, ktoré sa majú spracovať pred vylúčením akýchkoľvek aktualizácií.</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">Nastavenie na nižšiu hodnotu môže zlepšiť výkon.</sys:String>

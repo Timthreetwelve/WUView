@@ -146,16 +146,16 @@ internal static class MainWindowHelpers
     /// Gets the current MDIX theme
     /// </summary>
     /// <returns>Dark or Light</returns>
-    private static string? GetSystemTheme()
+    private static string GetSystemTheme()
     {
         BaseTheme? sysTheme = Theme.GetSystemTheme();
-        return sysTheme != null ? sysTheme.ToString() : string.Empty;
+        return sysTheme != null ? sysTheme.ToString()! : string.Empty;
     }
 
     /// <summary>
     /// Sets the theme
     /// </summary>
-    /// <param name="mode">Light, Dark, Darker or System</param>
+    /// <param name="mode">A value in the ThemeType enum </param>
     internal static void SetBaseTheme(ThemeType mode)
     {
         //Retrieve the app's existing theme
@@ -164,7 +164,18 @@ internal static class MainWindowHelpers
 
         if (mode == ThemeType.System)
         {
-            mode = GetSystemTheme()!.Equals("light", StringComparison.OrdinalIgnoreCase) ? ThemeType.Light : ThemeType.Darker;
+            string systemTheme = GetSystemTheme();
+            mode = systemTheme.Equals("light", StringComparison.OrdinalIgnoreCase)
+                ? UserSettings.Setting!.SystemLightTheme
+                : UserSettings.Setting!.SystemDarkTheme;
+
+            // Guard against invalid config values (e.g., System) so we always apply a concrete theme.
+            if (mode == ThemeType.System)
+            {
+                mode = systemTheme.Equals("light", StringComparison.OrdinalIgnoreCase)
+                    ? ThemeType.Light
+                    : ThemeType.Darker;
+            }
         }
 
         switch (mode)

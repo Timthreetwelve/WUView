@@ -18,6 +18,7 @@
                 <ResourceDictionary Source="Languages/Strings.en-US.xaml" />
                 <!--  Styles  -->
                 <ResourceDictionary Source="Styles/ButtonStyles.xaml" />
+                <ResourceDictionary Source="Styles/ComboBoxStyle.xaml" />
                 <ResourceDictionary Source="Styles/DataGridStyles.xaml" />
                 <ResourceDictionary Source="Styles/ExpanderStyles.xaml" />
                 <ResourceDictionary Source="Styles/HyperlinkStyles.xaml" />

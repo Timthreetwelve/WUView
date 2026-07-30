@@ -44,6 +44,11 @@ public static class SettingChange
             case nameof(UserSettings.Setting.UseOSLanguage):
                 LocalizationHelpers.SaveAndRestart();
                 break;
+
+            case nameof(UserSettings.Setting.SystemLightTheme):
+            case nameof(UserSettings.Setting.SystemDarkTheme):
+                MainWindowHelpers.SetBaseTheme(ThemeType.System);
+                break;
         }
     }
     #endregion User Setting change

@@ -15,7 +15,7 @@
 
         Translation contributed by:  FadeMind & Google Translate
 
-        Date last update:            2026/07/29
+        Date last update:            2026/07/30
 
         ========================================================================
     -->
@@ -179,9 +179,10 @@
     <sys:String x:Key="SettingsItem_AccentColor">Kolor akcentu</sys:String>
     <sys:String x:Key="SettingsItem_AutoUpdateCheck">Automatycznie sprawdzaj nowszą wersję po otwarciu strony Informacje</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Po zmianie języka wymagany jest restart aplikacji!</sys:String>
+    <sys:String x:Key="SettingsItem_DarkModeTheme">Motyw trybu ciemnego</sys:String>
+    <sys:String x:Key="SettingsItem_DateFormat">Format daty siatki</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Czcionka</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFontSize">Rozmiar czcionki</sys:String>
-    <sys:String x:Key="SettingsItem_DateFormat">Format daty siatki</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-Click aby otworzyć plik za pomocą domyślnej aplikacji</sys:String>
     <sys:String x:Key="SettingsItem_EditSettingsWarning">Wszelkie zmiany wprowadzone w pliku ustawień podczas działania aplikacji zostaną nadpisane!</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Włącz testowanie języka</sys:String>
@@ -189,6 +190,7 @@
     <sys:String x:Key="SettingsItem_IncludeDebug">Uwzględnij komunikaty poziomu debugowania w pliku dziennika</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Okno Windows Update Viewer zawsze na wierzchu</sys:String>
     <sys:String x:Key="SettingsItem_Language">Język</sys:String>
+    <sys:String x:Key="SettingsItem_LightModeTheme">Motyw trybu jasnego</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdates">Ilość aktualizacji</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">Jest to maksymalna ilość aktualizacji do przetworzenia, zanim jakiekolwiek aktualizacje zostaną wykluczone.</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">Ustawienie niższej wartości może poprawić wydajność.</sys:String>

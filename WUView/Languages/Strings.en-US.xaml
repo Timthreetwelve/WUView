@@ -179,6 +179,7 @@
     <sys:String x:Key="SettingsItem_AccentColor">Accent Color</sys:String>
     <sys:String x:Key="SettingsItem_AutoUpdateCheck">Automatically check for newer version when About page is opened</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Changing Language will cause application to restart!</sys:String>
+    <sys:String x:Key="SettingsItem_DarkModeTheme">Dark Mode Theme</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Font</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFontSize">Font Size</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Grid Date Format</sys:String>
@@ -189,6 +190,7 @@
     <sys:String x:Key="SettingsItem_IncludeDebug">Include debug level messages in log file</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Keep Windows Update Viewer on top of other windows</sys:String>
     <sys:String x:Key="SettingsItem_Language">Language</sys:String>
+    <sys:String x:Key="SettingsItem_LightModeTheme">Light Mode Theme</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdates">Number of Updates</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">This is the maximum number of updates to process before any updates are excluded.</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">Setting this to a lower value may improve performance.</sys:String>
@@ -372,6 +374,8 @@
 
     <!-- Begin changes on 2026/07/29 @ 21:00 UTC-->
     <!-- A | SettingsEnum_Theme_LightGray  -->
+    <!-- A | SettingsItem_LightModeTheme  -->
+    <!-- A | SettingsItem_DarkModeTheme  -->
     <!-- End of changes on 2026/07/29 @ 21:00 UTC-->
 
 </ResourceDictionary>
