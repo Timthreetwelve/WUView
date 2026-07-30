@@ -15,10 +15,9 @@
 
         Translation contributed by:  RB
 
-        Date last update:            13.07.2026
+        Date last update:            30.07.2026
 
         ========================================================================
-
     -->
 
     <!--  About Page  -->
@@ -50,7 +49,7 @@
     <sys:String x:Key="Button_Cancel">Annulla</sys:String>
     <sys:String x:Key="Button_CheckUpdate">Controlla aggiornamenti</sys:String>
     <sys:String x:Key="Button_Close">Chiudi menu</sys:String>
-    <sys:String x:Key="Button_CompareLanguageToolTip">Fai clic per confrontare la lingua attuale con quella predefinita (en-US). I risultati verranno scritti nel file registro.</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip" xml:space="preserve">Fai clic per confrontare la lingua attuale con quella predefinita (en-US).&#x0a;I risultati verranno scritti nel file registro.</sys:String>
     <sys:String x:Key="Button_ExportSettings">Esporta impostazioni</sys:String>
     <sys:String x:Key="Button_ExportSettingsToolTip">Esporta le impostazioni attuali in un file.</sys:String>
     <sys:String x:Key="Button_ImportSettings">Importa impostazioni</sys:String>
@@ -111,7 +110,7 @@
     <sys:String x:Key="MsgText_AllUpdatesExcluded">Sono stati esclusi tutti gli aggiornamenti visualizzabili.</sys:String>
     <sys:String x:Key="MsgText_ApplicationShutdown">si sta spegnendo</sys:String>
     <sys:String x:Key="MsgText_ApplicationStarting">si sta avviando</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateCheckFailed">Verifica aggiornamento non riuscita. Per ulteriori informazioni consulta il registro .</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateCheckFailed" xml:space="preserve">Verifica aggiornamento non riuscita.&#x0a;Per ulteriori informazioni consulta il registro .</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Controllo aggiornamenti.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateClose">Selezionando 'Sì' verrà chiuso Windows Update Viewer.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateGoToRelease">Vuoi andare alla pagina web del programma?</sys:String>
@@ -204,7 +203,7 @@
     <sys:String x:Key="SettingsItem_StartCentered">Avvia con la finestra centrata sullo schermo</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Indica il numero di stringhe della lingua attuale rispetto a quella predefinita (en-US).</sys:String>
-    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Premi Ctrl+Maiusc+K o fai clic sul pulsante Confronta per confrontare i file lingua. I risultati verranno scritti nel file registro.</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2" xml:space="preserve">Premi Ctrl+Maiusc+K o fai clic sul pulsante Confronta per confrontare i file lingua.&#x0a;I risultati verranno scritti nel file registro.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Dimensione UI</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Usa stessa lingua di sistema di Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Quando questa opzione è selezionata, verrà usata la lingua specificata nelle impostazioni di Windows.</sys:String>
@@ -252,6 +251,7 @@
     <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Blu notte</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Darker">Scuro</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Chiaro</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_LightGray">Grafite pallida</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -363,4 +363,15 @@
     <!-- Begin changes on 2026/07/08 @ 16:00 UTC -->
     <!-- U | About_BuildDate - Changed 'Build' to 'Commit' -->
     <!-- End of changes on 2026/07/08 @ 16:00 UTC -->
+
+    <!-- Begin changes on 2026/07/29 @ 18:00 UTC -->
+    <!-- U | Button_CompareLanguageToolTip        - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- U | MsgText_AppUpdateCheckFailed         - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- U | SettingsItem_TranslationToolTipLine2 - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- End of changes on 2026/07/29 @ 18:00 UTC -->
+
+    <!-- Begin changes on 2026/07/29 @ 21:00 UTC-->
+    <!-- A | SettingsEnum_Theme_LightGray  -->
+    <!-- End of changes on 2026/07/29 @ 21:00 UTC-->
+
 </ResourceDictionary>
