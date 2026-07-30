@@ -15,10 +15,9 @@
 
         Translation contributed by:  My AWESOME brother Steve
 
-        Date last update:            2026/07/29
+        Date last update:            2026/07/30
 
         =======================================================================
-
     -->
 
     <!--  About Page  -->
@@ -180,6 +179,7 @@
     <sys:String x:Key="SettingsItem_AccentColor">Color de acento</sys:String>
     <sys:String x:Key="SettingsItem_AutoUpdateCheck">Buscar automáticamente una versión más nueva al abrir la página Acerca de</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">El cambio de idioma hará que la aplicación se reinicie</sys:String>
+    <sys:String x:Key="SettingsItem_DarkModeTheme">Tema del modo oscuro</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formato de fecha de cuadrícula</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Fuente</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFontSize">Tamaño de la fuente</sys:String>
@@ -190,6 +190,7 @@
     <sys:String x:Key="SettingsItem_IncludeDebug">Incluir mensajes de nivel de depuración en el archivo de registro</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Mantener Windows Update Viewer encima de otras ventanas</sys:String>
     <sys:String x:Key="SettingsItem_Language">Idioma:</sys:String>
+    <sys:String x:Key="SettingsItem_LightModeTheme">Tema del modo claro</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdates">Número de actualizaciones</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">Es el número máximo de actualizaciones a procesar antes de exclusiones.</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">Un valor inferior puede mejorar el rendimiento.</sys:String>

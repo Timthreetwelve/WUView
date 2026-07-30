@@ -7,6 +7,8 @@ internal sealed partial class SettingsViewModel : ObservableObject
     #region Properties
     public static List<FontFamily>? FontList { get; private set; }
     public IEnumerable<ThemeType> ThemeTypes { get; private set; }
+
+    public IEnumerable<ThemeType> SystemThemeTypes { get; private set; }
     #endregion Properties
 
     #region Constructor
@@ -23,7 +25,12 @@ internal sealed partial class SettingsViewModel : ObservableObject
             ThemeType.DarkBlue,
             ThemeType.System,
         ];
+
+        // Used when ThemeType.System is selected. Will display all themes except System theme
+        SystemThemeTypes = [.. ThemeTypes.Where(t => t != ThemeType.System)];
+
     }
+
     #endregion Constructor
 
     #region Relay commands

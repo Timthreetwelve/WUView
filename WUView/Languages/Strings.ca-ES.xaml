@@ -179,6 +179,7 @@
     <sys:String x:Key="SettingsItem_AccentColor">Color d'accent</sys:String>
     <sys:String x:Key="SettingsItem_AutoUpdateCheck">Comprova automàticament si hi ha una versió més recent quan s'obre la pàgina Sobre</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Si canvieu d'idioma, l'aplicació es reiniciarà!</sys:String>
+    <sys:String x:Key="SettingsItem_DarkModeTheme">Tema del mode fosc</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Format de data de quadrícula</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Tipus de lletra</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFontSize">Mida de la lletra</sys:String>
@@ -189,6 +190,7 @@
     <sys:String x:Key="SettingsItem_IncludeDebug">Inclou missatges de nivell de depuració al fitxer de registre</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Manteniu Windows Update Viewer a sobre d'altres finestres</sys:String>
     <sys:String x:Key="SettingsItem_Language">Llenguatge</sys:String>
+    <sys:String x:Key="SettingsItem_LightModeTheme">Tema del mode clar</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdates">Nombre d'actualitzacions</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">Aquest és el nombre màxim d'actualitzacions que cal processar abans que s'excloguin cap actualització.</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">Establir-lo a un valor més baix pot millorar el rendiment.</sys:String>

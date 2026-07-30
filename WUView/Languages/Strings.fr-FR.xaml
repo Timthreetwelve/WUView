@@ -15,10 +15,9 @@
 
         Translation contributed by:  @Timthreetwelve & Google Translate
 
-        Date LAST UPDATE:            2026/05/18
+        Date LAST UPDATE:            2026/07/30
 
         ========================================================================
-
     -->
 
     <!--  About Page  -->
@@ -180,6 +179,7 @@
     <sys:String x:Key="SettingsItem_AccentColor">Couleur d'accentuation</sys:String>
     <sys:String x:Key="SettingsItem_AutoUpdateCheck">Rechercher automatiquement une version plus récente à l'ouverture de la page À propos</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Changer la langue entraînera le redémarrage de l'application!</sys:String>
+    <sys:String x:Key="SettingsItem_DarkModeTheme">Thème sombre</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Format de date de grille</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Fonte</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFontSize">Taille de la police</sys:String>
@@ -190,6 +190,7 @@
     <sys:String x:Key="SettingsItem_IncludeDebug">Inclure les messages de niveau de débogage dans le fichier journal</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Gardez la visionneuse Windows Update au-dessus des autres fenêtres</sys:String>
     <sys:String x:Key="SettingsItem_Language">Langue</sys:String>
+    <sys:String x:Key="SettingsItem_LightModeTheme">Thème clair</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdates">Nombre de mises à jour</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">Il s'agit du nombre maximum de mises à jour à traiter avant que les mises à jour ne soient exclues.</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">Définir cette valeur sur une valeur inférieure peut améliorer les performances.</sys:String>
@@ -200,15 +201,15 @@
     <sys:String x:Key="SettingsItem_ShowExit">Afficher la sortie dans la barre de navigation</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Afficher les messages d'avertissement dans le journal pour les valeurs HResult non nulles</sys:String>
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Afficher les mises à jour avec la date actuelle en gras</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Utiliser la couleur d'accentuation pour l'arrière-plan du message</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Commencez avec la fenêtre centrée sur l'écran</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Thème</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Représente le nombre de chaînes dans la langue actuelle par rapport à la langue par défaut (en-US).</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Appuyez sur Ctrl+Maj+K ou cliquez sur le bouton Comparer pour comparer les fichiers de langue. Les résultats sont enregistrés dans le fichier journal.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Taille de l'interface utilisateur</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Utiliser la langue d'affichage de Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Lorsque cette option est sélectionnée, la langue spécifiée dans les paramètres Windows sera utilisée.</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine2">La plupart du texte de la candidature restera en anglais (en-US), mais les formats de chiffres changeront.</sys:String>
-    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Utiliser la couleur d'accentuation pour l'arrière-plan du message</sys:String>
-    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Représente le nombre de chaînes dans la langue actuelle par rapport à la langue par défaut (en-US).</sys:String>
-    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Appuyez sur Ctrl+Maj+K ou cliquez sur le bouton Comparer pour comparer les fichiers de langue. Les résultats sont enregistrés dans le fichier journal.</sys:String>
     <!--  Enums for Combo Boxes on the Settings Page  -->
     <sys:String x:Key="SettingsEnum_AccentColor_Amber">Ambre</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Black">Noir</sys:String>
