@@ -15,7 +15,7 @@
 
         Translation contributed by:  RB
 
-        Date last update:            30.07.2026
+        Date last update:            31.07.2026
 
         ========================================================================
     -->
@@ -179,6 +179,7 @@
     <sys:String x:Key="SettingsItem_AccentColor">Colore evidenziazione</sys:String>
     <sys:String x:Key="SettingsItem_AutoUpdateCheck">Quando apri la pagina Info controlla automaticamente aggiornamenti</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">La modifica dell'impostazione lingua avrà effetto dopo il riavvio dell'applicazione!</sys:String>
+    <sys:String x:Key="SettingsItem_DarkModeTheme">Tema scuro</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Font</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFontSize">Dimensione font</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Formato data griglia</sys:String>
@@ -189,6 +190,7 @@
     <sys:String x:Key="SettingsItem_IncludeDebug">Includi nel file registro eventi i messaggi debug</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Mantieni sempre Windows Update Viewer in primo piano</sys:String>
     <sys:String x:Key="SettingsItem_Language">Lingua</sys:String>
+    <sys:String x:Key="SettingsItem_LightModeTheme">Tema chiaro</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdates">Numero aggiornamenti</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">Questo è il numero massimo di aggiornamenti da elaborare prima che eventuali aggiornamenti vengano esclusi.</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">L'impostazione di questo valore su un valore inferiore può migliorare le prestazioni.</sys:String>
@@ -372,6 +374,8 @@
 
     <!-- Begin changes on 2026/07/29 @ 21:00 UTC-->
     <!-- A | SettingsEnum_Theme_LightGray  -->
+    <!-- A | SettingsItem_LightModeTheme  -->
+    <!-- A | SettingsItem_DarkModeTheme  -->
     <!-- End of changes on 2026/07/29 @ 21:00 UTC-->
 
 </ResourceDictionary>
