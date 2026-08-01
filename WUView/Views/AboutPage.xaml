@@ -178,7 +178,6 @@
                 </TextBlock>
                 <!--#endregion-->
 
-
                 <!--#region Check for new release-->
                 <TextBlock Grid.Row="9" Grid.Column="0"
                            Text="{DynamicResource About_UpdateWU}" />
@@ -218,58 +217,68 @@
                 <!--#endregion-->
 
                 <!--#region Translations-->
-                <Grid Grid.Row="11" Grid.Column="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="26" />
-                        <RowDefinition Height="26" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0"
-                               FontWeight="SemiBold"
-                               Text="{DynamicResource About_Translations}" />
+                <Expander Grid.Row="11" Grid.Column="0"
+                          Grid.ColumnSpan="3"
+                          Margin="0,10,0,10"
+                          materialDesign:ExpanderAssist.ExpanderButtonPosition="Start"
+                          materialDesign:ExpanderAssist.HorizontalHeaderPadding="5,10"
+                          IsExpanded="{Binding TranslatorExpanderOpen,
+                                               Source={x:Static config:UserSettings.Setting}}">
+                    <Expander.Header>
+                        <Grid>
+                            <TextBlock Margin="10,0"
+                                       FontWeight="SemiBold"
+                                       Text="{DynamicResource About_Translations}"
+                                       TextWrapping="Wrap" />
+                        </Grid>
+                    </Expander.Header>
+                    <Grid Margin="40,0,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="20" />
+                        </Grid.RowDefinitions>
+                        <DataGrid Grid.Row="0"
+                                  HorizontalAlignment="Left"
+                                  d:ItemsSource="{d:SampleData ItemCount=4}"
+                                  materialDesign:DataGridAssist.CellPadding="15,5,15,5"
+                                  materialDesign:DataGridAssist.SelectedCellBorderBrush="Transparent"
+                                  AutoGenerateColumns="False"
+                                  Background="{DynamicResource MaterialDesign.Brush.Card.Background}"
+                                  BorderThickness="2"
+                                  FontSize="{Binding SelectedFontSize,
+                                                     Source={x:Static config:UserSettings.Setting}}"
+                                  HeadersVisibility="None"
+                                  IsReadOnly="True"
+                                  ItemsSource="{Binding AnnotatedLanguageList,
+                                                        Mode=OneWay}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding LanguageNative}"
+                                                    MinWidth="130" />
+                                <DataGridTextColumn Binding="{Binding LanguageCode}"
+                                                    MinWidth="60" />
+                                <DataGridTextColumn Binding="{Binding Contributor}"
+                                                    MinWidth="200" />
+                                <DataGridTextColumn Binding="{Binding Note}"
+                                                    MinWidth="90"
+                                                    CellStyle="{StaticResource AlignRight}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
 
-                    <TextBlock Grid.Row="1"><Hyperlink Command="{Binding GoToGitHubCommand}"
-                                   CommandParameter="https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation"
-                                   Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
-                                   ToolTip="{DynamicResource About_ContributeToolTip}"
-                                   ToolTipService.Placement="Top">
-                            <InlineUIContainer>
-                                <TextBlock Text="{DynamicResource About_Contribute}" />
-                            </InlineUIContainer>
-                        </Hyperlink></TextBlock>
-                </Grid>
-
-                <DataGrid Grid.Row="11" Grid.Column="2"
-                          MaxHeight="270"
-                          HorizontalAlignment="Left"
-                          materialDesign:DataGridAssist.CellPadding="{Binding RowSpacing,
-                                                                              Converter={StaticResource Spacing},
-                                                                              Source={x:Static config:UserSettings.Setting}}"
-                          materialDesign:DataGridAssist.SelectedCellBorderBrush="Transparent"
-                          AutoGenerateColumns="False"
-                          Background="{DynamicResource MaterialDesign.Brush.Card.Background}"
-                          BorderThickness="1"
-                          FontSize="{Binding SelectedFontSize,
-                                             Source={x:Static config:UserSettings.Setting}}"
-                          HeadersVisibility="None"
-                          IsReadOnly="True"
-                          ItemsSource="{Binding AnnotatedLanguageList,
-                                                Mode=OneWay}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding LanguageNative}"
-                                            MinWidth="110" />
-                        <DataGridTextColumn MinWidth="10" />
-                        <DataGridTextColumn Binding="{Binding LanguageCode}"
-                                            MinWidth="90" />
-                        <DataGridTextColumn Binding="{Binding Contributor}"
-                                            MinWidth="200" />
-                        <DataGridTextColumn Binding="{Binding Note}"
-                                            MinWidth="90"
-                                            CellStyle="{StaticResource AlignRight}" />
-                    </DataGrid.Columns>
-                </DataGrid>
+                        <TextBlock Grid.Row="2">
+                            <Hyperlink Command="{Binding GoToGitHubCommand}"
+                                       CommandParameter="https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation"
+                                       Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+                                       ToolTip="{DynamicResource About_ContributeToolTip}"
+                                       ToolTipService.Placement="Top">
+                                <InlineUIContainer>
+                                    <TextBlock Text="{DynamicResource About_Contribute}" />
+                                </InlineUIContainer>
+                            </Hyperlink></TextBlock>
+                    </Grid>
+                </Expander>
                 <!--#endregion-->
-
             </Grid>
         </ScrollViewer>
     </Grid>

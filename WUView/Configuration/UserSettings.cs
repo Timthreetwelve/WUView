@@ -164,6 +164,12 @@ internal sealed partial class UserSettings : ConfigManager<UserSettings>
     private ThemeType _systemDarkTheme = ThemeType.Darker;
 
     /// <summary>
+    /// Whether the translator expander is open.
+    /// </summary>
+    [ObservableProperty]
+    private bool _translatorExpanderOpen = true;
+
+    /// <summary>
     /// Defined language to use in the UI.
     /// </summary>
     [ObservableProperty]
