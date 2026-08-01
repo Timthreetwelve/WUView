@@ -34,7 +34,7 @@ public partial class WUpdate : ObservableObject
     private string? _operation;
 
     [ObservableProperty]
-    private string? _supportURL;
+    private string _supportURL = string.Empty;
     #endregion Properties from WUApi
 
     #region Properties from Event Log
