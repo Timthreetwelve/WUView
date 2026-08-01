@@ -33,8 +33,7 @@ internal sealed class MainViewModel : ObservableObject
     /// </summary>
     private static void GetListOfUpdates()
     {
-        Stopwatch sw = new();
-        sw.Start();
+        Stopwatch sw = Stopwatch.StartNew();
         IUpdateSession updateSession = new();
         IUpdateSearcher updateSearcher = updateSession.CreateUpdateSearcher();
         int count = updateSearcher.GetTotalHistoryCount();
@@ -70,17 +69,17 @@ internal sealed class MainViewModel : ObservableObject
                         Operation = OperationHelper.TranslateOperation(hist.Operation),
                         UpdateID = hist.UpdateIdentity.UpdateID,
                         Description = hist.Description ?? string.Empty,
-                        // ReSharper disable once NullCoalescingConditionIsAlwaysNotNullAccordingToAPIContract
-                        SupportURL = hist.SupportUrl ?? string.Empty,
+                        SupportURL = hist.SupportUrl,
                         ELDescription = FindEventLogs(kbNum)
                     };
                     UpdatesFullList.Add(update);
-                    if (hist.HResult != 0 && UserSettings.Setting.ShowLogWarnings)
+                    if (hist.UnmappedResultCode != 0 && UserSettings.Setting.ShowLogWarnings)
                     {
                         string operation = update.Operation.Replace("uo", "");
-                        string HResultHex = string.Format(CultureInfo.InvariantCulture, $"0x{int.Parse(update.HResult, CultureInfo.InvariantCulture):X8}");
-                        _log.Warn($"KB: {update.KBNum,-10} Date: {update.Date,-23} HResult: {HResultHex,-10} " +
-                                 $" Operation: {operation,-12}  UpdateID: {update.UpdateID}");
+                        int hResultValue = hist.UnmappedResultCode;
+                        string hResultHex = $"0x{hResultValue:X8}";
+                        _log.Warn($"KB: {update.KBNum,-10} Date: {update.Date,-23} HResult: {hResultHex,-10} " +
+                                 $" Operation: {operation,-12}  UpdateID: {update.UpdateID}  Title: {update.Title}");
                     }
                 }
                 catch (Exception ex)
