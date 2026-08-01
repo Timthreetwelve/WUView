@@ -21,7 +21,6 @@
 
     <!--#region Resources-->
     <UserControl.Resources>
-        <convert:SpacingConverter x:Key="Spacing" />
         <convert:InvertibleBooleanToVisibilityConverter x:Key="InvertibleVisibilityConverter" />
     </UserControl.Resources>
     <!--#endregion-->
