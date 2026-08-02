@@ -53,7 +53,7 @@ You can always download the latest release from the [releases page](https://gith
 * Toggle the visibility of the details pane.
 * Save to a text or CSV file.
 * Open Windows Update from the app.
-* Choose accent color and one of four themes.
+* Choose accent color and one of five themes.
 * Adjust app size and row spacing. (Helpful for us users that don't see as well as we used to.)
 * Select the interface language.
 
