@@ -83,11 +83,15 @@
 
                 <TextBlock Grid.Row="1" Grid.Column="0"
                            Text="{DynamicResource About_Version}" />
-                <TextBlock Grid.Row="1" Grid.Column="2"
+                <StackPanel Grid.Row="1" Grid.Column="2"
+                            Orientation="Horizontal">
+                    <TextBlock 
                            Text="{x:Static buildinfo:BuildInfo.VersionString}"
                            TextWrapping="Wrap"
                            ToolTip="{x:Static helpers:AppInfo.AppProductVersion}"
                            ToolTipService.Placement="Top" />
+                    <TextBlock Text="{Binding Source={x:Static helpers:AppInfo.Architecture}, StringFormat='({0})'}" Margin="10,0,0,0" />
+                </StackPanel>
 
                 <TextBlock Grid.Row="2" Grid.Column="0"
                            Text="{DynamicResource About_CreatedBy}" />

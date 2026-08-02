@@ -126,6 +126,7 @@ internal static class MainWindowHelpers
         _log.Debug($"{AppInfo.AppName} Commit date: {BuildInfo.CommitDateStringUtc} - {BuildInfo.CommitDateStringLocal}");
         _log.Debug($"{AppInfo.AppName} Commit ID: {BuildInfo.CommitIDString} ");
         _log.Debug($"{AppInfo.AppName} Process ID: {AppInfo.AppProcessID}");
+        _log.Debug($"{AppInfo.AppName} App architecture: {AppInfo.Architecture}");
         if (!string.IsNullOrEmpty(BuildInfo.Prerelease))
         {
             _log.Warn($"{AppInfo.AppName} is a prerelease version: {BuildInfo.Prerelease}");
