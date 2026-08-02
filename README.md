@@ -38,9 +38,6 @@ See the [Wiki](https://github.com/Timthreetwelve/WUView/wiki) for additional inf
 ### Windows Update Viewer uses .NET 10
 Self-contained versions are available if .NET 10 isn't installed. See the [releases page](https://github.com/Timthreetwelve/WUView/releases).
 
-### Windows Update Viewer is multilingual!
-Languages are being added as of version 0.5.21. Please see [Contribute a Translation](https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation) topic in the Wiki if you would like to contribute a translation. 
-
 ### Download Windows Update Viewer
 You can always download the latest release from the [releases page](https://github.com/Timthreetwelve/WUView/releases). Note that "portable" releases are provided as well as the traditional installers.
 
@@ -56,6 +53,9 @@ You can always download the latest release from the [releases page](https://gith
 * Choose accent color and one of five themes.
 * Adjust app size and row spacing. (Helpful for us users that don't see as well as we used to.)
 * Select the interface language.
+
+### Windows Update Viewer is multilingual!
+Languages are being added as of version 0.5.21. Please see [Contribute a Translation](https://github.com/Timthreetwelve/WUView/wiki/Contribute-a-Translation) topic in the Wiki if you would like to contribute a translation. 
 
 ### The Main Window
 ![WUView screenshot](https://github.com/Timthreetwelve/WUView/blob/main/Images/WUView_2026-07-29_18-47-02.png)
