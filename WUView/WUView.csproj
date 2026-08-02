@@ -20,7 +20,7 @@
   <PropertyGroup>
     <VersionValidate>true</VersionValidate>
     <Version>0.8.0</Version>
-    <VersionPrerelease>PreRelease</VersionPrerelease>
+    <VersionPrerelease></VersionPrerelease>
   </PropertyGroup>
 
   <!-- Analyzers -->
