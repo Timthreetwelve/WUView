@@ -180,7 +180,9 @@
     <sys:String x:Key="SettingsItem_AccentColor">Barva poudarka</sys:String>
 	<sys:String x:Key="SettingsItem_AutoUpdateCheck">Samodejno preverjanje novejše različice, ko se odpre stran Vizitka</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Spreminjanje jezika bo povzročila ponovni zagon aplikacije!</sys:String>
-	<sys:String x:Key="SettingsItem_DisplayFont">Font</sys:String>																														  
+    <sys:String x:Key="SettingsItem_DarkModeTheme">Tema s temnim načinom</sys:String>
+	<sys:String x:Key="SettingsItem_DisplayFont">Pisava</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFontSize">Velikost pisave</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Oblika datuma v mreži</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-klik, da odprete datoteko s privzeto aplikacijo</sys:String>
 	<sys:String x:Key="SettingsItem_EditSettingsWarning">Vse spremembe nastavitvene datoteke, ki jih naredite med delovanjem aplikacije, bodo prepisane!</sys:String>																																					 
@@ -189,6 +191,7 @@
     <sys:String x:Key="SettingsItem_IncludeDebug">V dnevniško datoteko vključi sporočila na ravni odpravljanja napak</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Obdrži Windows Update Viewer na vrhu drugih oken</sys:String>
     <sys:String x:Key="SettingsItem_Language">Jezik</sys:String>
+    <sys:String x:Key="SettingsItem_LightModeTheme">Tema v svetlem načinu</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdates">Število posodobitev</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine1">To je največje število posodobitev za obdelavo, preden so morebitne posodobitve izključene.</sys:String>
     <sys:String x:Key="SettingsItem_NumberOfUpdatesToolTipLine2">Nastavitev tega na nižjo vrednost lahko izboljša delovanje.</sys:String>
@@ -251,6 +254,7 @@
 	<sys:String x:Key="SettingsEnum_Theme_DarkBlue">Polnočno modra</sys:String>																		  
     <sys:String x:Key="SettingsEnum_Theme_Darker">Temnejša</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Svetla</sys:String>
+    <sys:String x:Key="SettingsEnum_Theme_LightGray">Svetlo grafitna</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">Sistemska</sys:String>
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
