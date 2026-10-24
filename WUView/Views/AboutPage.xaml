@@ -3,7 +3,7 @@
 <UserControl x:Class="WUView.Views.AboutPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:buildinfo="clr-namespace:WUView"
+             xmlns:buildinfo="clr-namespace:WUView.Helpers"
              xmlns:config="clr-namespace:WUView.Configuration"
              xmlns:convert="clr-namespace:WUView.Converters"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
