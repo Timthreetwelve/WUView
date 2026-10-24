@@ -107,6 +107,7 @@ SourceDir={#MySourceDir}
 Source: "{#MySourceDir}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#MySourceDir}\*.dll"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
 Source: "{#MySourceDir}\*.json"; Excludes: "usersettings.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MySourceDir}\*.pdb"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#MySourceDir}\ReadMe.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#MySourceDir}\License.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#MySourceDir}\Strings.test.xaml"; DestDir: "{app}"; Flags: ignoreversion
