@@ -1,5 +1,7 @@
 ﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
+using static Vanara.PInvoke.Kernel32.FILE_REMOTE_PROTOCOL_INFO;
+
 namespace WUView.Helpers;
 
 /// <summary>
@@ -28,6 +30,20 @@ internal static class NLogHelpers
         // New NLog configuration
         LoggingConfiguration config = new();
 
+        // create custom layout for the _log file
+        const string stdLayout = "${date:format=yyyy/MM/dd HH\\:mm\\:ss.ff} " +
+                        "${pad:padding=-5:inner=${level:uppercase=true}}  " +
+                        "${message}";
+
+        const string errLayout = "${date:format=yyyy/MM/dd HH\\:mm\\:ss.ff} " +
+                        "${pad:padding=-5:inner=${level:uppercase=true}}  " +
+                        "${message}  " +
+                        "[${callsite:className=true:includeNamespace=false:fileName=false:methodName=true}\\:${callsite-lineNumber}]" +
+                        "[${threadid}]" +
+                        "${onexception:${newline}${exception:format=tostring}}";
+
+        const string thisLayout = "${when:when=level<=LogLevel.Info:inner=" + stdLayout + ":else=" + errLayout + "}";
+
         // create log file Target for NLog
         FileTarget logfile = new("logfile")
         {
@@ -39,9 +55,7 @@ internal static class NLogHelpers
 
             // message and footer layouts
             Footer = "${date:format=yyyy/MM/dd HH\\:mm\\:ss}",
-            Layout = "${date:format=yyyy/MM/dd HH\\:mm\\:ss} " +
-                         "${pad:padding=-5:inner=${level:uppercase=true}}  " +
-                         "${message}${onexception:${newline}${exception:format=tostring}}"
+            Layout = thisLayout
         };
 
         // add the log file target
