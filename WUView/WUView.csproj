@@ -43,9 +43,9 @@
 
   <!-- Files to copy -->
   <ItemGroup>
-    <Content Include="LICENSE.txt" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="Readme.txt" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="Strings.test.xaml" CopyToOutputDirectory="PreserveNewest" />
+    <FilesToCopy Include="Content_Files\LICENSE.txt" />
+    <FilesToCopy Include="Content_Files\Readme.txt" />
+    <FilesToCopy Include="Content_Files\Strings.test.xaml" />
   </ItemGroup>
 
   <!-- NuGet Packages -->
@@ -59,6 +59,18 @@
     <PackageReference Include="VersionInfoGenerator" Version="3.2.2" PrivateAssets="all" />
   </ItemGroup>
 
+  <!-- Copy files to output directory after build-->
+  <Target Name="CopyFiles" AfterTargets="AfterBuild">
+    <Message Importance="high" Text="Copying @(FilesToCopy) to output directory..." />
+    <Copy SourceFiles="@(FilesToCopy)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+
+  <!-- Copy files to publish directory after publish-->
+  <Target Name="CopyFilesPub" AfterTargets="Publish">
+    <Message Importance="high" Text="Copying @(FilesToCopy) to publish directory..." />
+    <Copy SourceFiles="@(FilesToCopy)" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="true" />
+  </Target>
+    
   <!-- Build complete messages -->
   <Target Name="VersionMessage" AfterTargets="AfterBuild">
     <Message Importance="high" Text="Assembly Version is $(AssemblyVersion)" />
