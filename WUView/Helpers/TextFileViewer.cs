@@ -12,56 +12,64 @@ namespace WUView.Helpers;
 internal static class TextFileViewer
 {
     #region Text file viewer
-    /// <summary>
-    /// Opens specified text file
-    /// </summary>
-    /// <param name="textFile">Full path for text file</param>
-    ///
     public static void ViewTextFile(string textFile)
     {
+        string fname = string.Empty;
         try
         {
+            fname = PathHelpers.AnonymizePath(textFile);
+
             using Process p = new();
-            p.StartInfo.FileName = textFile;
+            p.StartInfo.FileName = $"\"{textFile}\"";
             p.StartInfo.UseShellExecute = true;
             p.StartInfo.ErrorDialog = false;
             _ = p.Start();
+            _log.Debug($"Opening {fname}");
         }
         catch (Win32Exception ex)
         {
-            if (ex.NativeErrorCode == 1155)
+            const int ERROR_NO_ASSOCIATION = 1155;
+            if (ex.NativeErrorCode == ERROR_NO_ASSOCIATION)
             {
+                string notepadPath = PathHelpers.FindOnPath("notepad.exe");
+                if (string.IsNullOrEmpty(notepadPath))
+                {
+                    _log.Error("Unable to find notepad.exe in PATH");
+                    string msg = string.Format(CultureInfo.InvariantCulture, MsgTextErrorOpeningFile, textFile);
+                    _ = MessageBox.Show($"{msg}\n\nUnable to find notepad.exe in PATH",
+                                        GetStringResource("MsgText_Error_Caption"),
+                                        MessageBoxButton.OK,
+                                        MessageBoxImage.Error);
+                    return;
+                }
                 using Process p = new();
-                p.StartInfo.FileName = "notepad.exe";
-                p.StartInfo.Arguments = textFile;
+                p.StartInfo.FileName = notepadPath;
+                p.StartInfo.Arguments = $"\"{textFile}\"";
                 p.StartInfo.UseShellExecute = true;
                 p.StartInfo.ErrorDialog = false;
                 _ = p.Start();
-                _log.Debug($"Opening {PathHelpers.AnonymizePath(textFile)} in Notepad.exe");
+                _log.Debug($"Opening {fname} in Notepad.exe");
             }
             else
             {
-#if messagebox
-                string msg = string.Format(CultureInfo.InvariantCulture, MsgTextErrorReadingFile, textFile);
-                _ = MessageBox.Show($"{msg}\n{ex.Message}",
-                                    GetStringResource("MsgText_ErrorCaption"),
+                string msg = string.Format(CultureInfo.InvariantCulture, MsgTextErrorOpeningFile, textFile);
+                _ = MessageBox.Show($"{msg}\n\n{ex.Message}",
+                                    GetStringResource("MsgText_Error_Caption"),
                                     MessageBoxButton.OK,
                                     MessageBoxImage.Error);
-#endif
-                _log.Error(ex, $"Unable to open {PathHelpers.AnonymizePath(textFile)}");
+                _log.Error(ex, $"Unable to open {fname}");
             }
         }
         catch (Exception ex)
         {
-#if messagebox
             string msg = string.Format(CultureInfo.InvariantCulture, MsgTextErrorOpeningFile, textFile);
-            _ = MessageBox.Show($"{msg}\n{ex.Message}",
-                                GetStringResource("MsgText_ErrorCaption"),
+            _ = MessageBox.Show($"{msg}\n\n{ex.Message}",
+                                GetStringResource("MsgText_Error_Caption"),
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Error);
-#endif
-            _log.Error(ex, $"Unable to open {PathHelpers.AnonymizePath(textFile)}");
+            _log.Error($"Unable to open {fname}. {ex.Message} ");
         }
     }
-    #endregion Text file viewer
+#endregion Text file viewer
+
 }
