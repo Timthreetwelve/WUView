@@ -1,3 +1,8 @@
 <Solution>
-  <Project Path="WUView/WUView.csproj" />
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="WUView/WUView.csproj">
+    <Platform Project="x64" />
+  </Project>
 </Solution>
