@@ -15,6 +15,10 @@
 ;                               GetVersionNumbersString function
 ;                               returns major, minor, build, revision
 ;                               but we want major, minor, build.
+;
+;             MyInfoVersion:    Version string for VersionInfoVersion
+;                               Needed if MyAppVersion is not in the 
+;                               correct format for VersionInfoVersion
 ;----------------------------------------------------------------------
 #define  TempDir             GetEnv("TEMP")
 #define  IncludeFile         TempDir + "\PubSetup.Temp.iss"
@@ -31,7 +35,7 @@
 #define MyAppName            "Windows Update Viewer"
 #define MyAppNameNoSpaces    StringChange(MyAppName, " ", "")
 #define MyAppExeName         "WUView.exe"
-#define MyInstallerFilename  MyAppNameNoSpaces + "_" + MyAppVersion + "_" + InstallType + "_Setup"
+#define MyInstallerFilename  MyAppNameNoSpaces + "_" + MyAppVersion + InstallType + "_Setup"
 #define MyCompanyName        "T_K"
 #define MyPublisherName      "Tim Kennedy"
 #define StartCopyrightYear   "2019"
@@ -72,7 +76,7 @@ AppPublisher={#MyPublisherName}
 
 VersionInfoDescription={#MyAppName} installer
 VersionInfoProductName={#MyAppName}
-VersionInfoVersion={#MyAppVersion}
+VersionInfoVersion={#MyInfoVersion}
 
 UninstallDisplayName={#MyAppName} {#MyAppVersion}
 UninstallDisplayIcon={app}\{#MyAppExeName}
@@ -155,9 +159,8 @@ var
   Text: String;
 begin
   case ExpandConstant('{#InstallType}') of
-    'x64x86': Text := FmtMessage( CustomMessage('NotSelfContained'), [ExpandConstant('{#MyAppName}'), ExpandConstant('{#MyAppVersion}')]); 
-    'SC_x86': Text := FmtMessage( CustomMessage('SelfContainedx86'), [ExpandConstant('{#MyAppName}'), ExpandConstant('{#MyAppVersion}')]); 
-    'SC_x64': Text := FmtMessage( CustomMessage('SelfContainedx64'), [ExpandConstant('{#MyAppName}'), ExpandConstant('{#MyAppVersion}')]);
+    '_x64': Text := FmtMessage(CustomMessage('NotSelfContained64'), ['{#MyAppName}', '{#MyAppVersion}']); 
+    '_SC_x64': Text := FmtMessage(CustomMessage('SelfContainedx64'), ['{#MyAppName}', '{#MyAppVersion}']);
   else
       Text := WizardForm.WelcomeLabel2.Caption;
   end;
