@@ -15,7 +15,7 @@
 
         Translation contributed by: VenusGirl (비너스걸)
 
-        Date last update:              2026/04/30
+        Date last update:              2026/10/25
 
         ========================================================================
 
@@ -123,6 +123,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">모든 {0}개의 업데이트 표시</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">{1}개의 업데이트 중 {0}개 표시</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">경과 시간</sys:String>
+    <sys:String x:Key="MsgText_Error_FileExplorer">파일 탐색기를 여는 중 오류가 발생했습니다.</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">언어 파일에 문제가 있습니다.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">오류</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">설정 파일을 내보내는 중 오류가 발생했습니다.</sys:String>
@@ -359,4 +360,10 @@
     <!-- Begin changes on 2026/05/21 @ 15:00 UTC-->
     <!-- A | SettingsItem_DisplayFontSize -->
     <!-- End changes on 2026/05/21 @ 15:00 UTC-->
+
+    <!-- Missing updates -->
+
+    <!-- Begin changes on 2026/10/25 @ 16:00 UTC-->
+    <!-- A | MsgText_Error_FileExplorer  -->
+    <!-- End of changes on 2026/10/25 @ 16:00 UTC-->
 </ResourceDictionary>

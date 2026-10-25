@@ -15,7 +15,7 @@
 
         Translation contributed by:  My AWESOME brother Steve
 
-        Date last update:            2026/07/30
+        Date last update:            22026/10/25
 
         =======================================================================
     -->
@@ -122,6 +122,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Mostrando las {0} actualizaciones</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Mostrando {0} de {1} actualizaciones</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Tiempo transcurrido</sys:String>
+    <sys:String x:Key="MsgText_Error_FileExplorer">Error al intentar abrir el Explorador de archivos.</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Hay un problema con el archivo de idioma.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">ERROR</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">Error al exportar el archivo de configuración.</sys:String>
@@ -258,106 +259,4 @@
 
 </ResourceDictionary>
 
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    LANGUAGE FILE UPDATES
-
-    Additions, Deletions and Updates will be made in the appropriate sections above. Each change will
-    be associated with a comment made below this block.
-
-    Comment Format:
-       There will be a header indicating when the change was made (date yyyy/mm/dd and UTC time).
-       Modified lines will follow, one comment line per line changed.
-       Comment lines use this syntax:  Change Type | Key Name
-
-     Change type:
-       A = Added
-       D = Deleted
-       U = Updated
-       * = Comment not related to a single line
-     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-
-<!-- Begin changes on 2023/11/15 @ 02:30 UTC -->
-<!-- U | About_Contribute -->
-<!-- U | About_ContributeToolTip -->
-<!-- A | About_GitHub -->
-<!-- A | Button_Close -->
-<!-- U | Button_No -->
-<!-- U | Button_OpenAppFolder -->
-<!-- U | Button_Yes -->
-<!-- U | MenuItem_SaveJSON -->
-<!-- U | MsgText_Error_TestLanguage -->
-<!-- U | OperationType_Installation -->
-<!-- U | OperationType_Uninstallation -->
-<!-- U | ResultCode_Failed -->
-<!-- U | ResultCode_InProgress -->
-<!-- U | ResultCode_NotStarted -->
-<!-- U | ResultCode_Aborted -->
-<!-- U | ResultCode_Succeeded -->
-<!-- U | ResultCode_SucceededWithErrors -->
-<!-- U | SettingsItem_EnableLanguageTesting -->
-<!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
-<!-- U | SettingsItem_UseOSLanguageToolTipLine1 -->
-<!-- A | SettingsSubHead_Language -->
-<!-- End of changes on 2023/11/15 -->
-
-<!-- Begin changes on 2023/11/28 @ 02:00 UTC -->
-<!-- A | MsgText_AppUpdateCloseGetMyIP -->
-<!-- End of changes on 2023/11/28 @ 02:00 UTC -->
-
-<!-- Begin changes on 2024/04/03 @ 18:00 UTC -->
-<!-- A | MsgText_ErrorCaption  -->
-<!-- A | MsgText_ErrorOpeningFile  -->
-<!-- A | MsgText_ErrorReadingFile  -->
-<!-- End of changes on 2024/04/03 @ 18:00 UTC -->
-
-<!-- Begin changes on 2024/05/05 @ 17:30 UTC-->
-<!-- D | MsgText_AppUpdateCloseGetMyIP -->
-<!-- A | MsgText_AppUpdateClose -->
-<!-- End of changes on 2024/05/05 @ 17:30 UTC-->
-
-<!-- Begin changes on 2024/10/13 @ 00:05 UTC-->
-<!-- U | Corrected key ResultCode_ResultCode_Aborted to ResultCode_Aborted in 12 language files. -->
-<!-- U | No additional action from translators should be needed. -->
-<!-- End of changes on 2024/10/13 @ 00:05 UTC-->
-
-<!-- Begin changes on 2024/10/13 @ 17:40 UTC-->
-<!-- A | Button_CheckUpdate -->
-<!-- End of changes on 2024/10/13 @ 17:40 UTC-->
-
-<!-- Begin changes on 2025/01/06 @ 14:50 UTC-->
-<!-- A | MSettingsEnum_Theme_DarkBlue -->
-<!-- End of changes on 2025/01/06 @ 14:50 UTC-->
-
-<!-- Begin changes on 2025/01/07 @ 02:50 UTC-->
-<!-- A | Button_ExportSettings -->
-<!-- A | Button_ExportSettingsToolTip -->
-<!-- A | Button_ImportSettings -->
-<!-- A | Button_ImportSettingsToolTip -->
-<!-- A | Button_ListSettings -->
-<!-- A | Button_ListSettingsTooltip -->
-<!-- A | Button_OpenAppFolderToolTip -->
-<!-- A | Button_OpenSettings -->
-<!-- A | Button_OpenSettingsToolTip -->
-<!-- A | MsgText_ErrorExportingSettings -->
-<!-- A | MsgText_ErrorImportingSettings -->
-<!-- A | MsgText_ErrorSavingSettings -->
-<!-- A | MsgText_ImportSettingsRestart -->
-<!-- A | SettingsSection_SettingsFile -->
-<!-- A | SettingsSubHead_SettingsFile -->
-<!-- A | SettingsItem_EditSettingsWarning -->
-<!-- End changes on 2025/01/07 @ 02:50 UTC-->
-
-<!-- Begin changes on 2026/04/27 @ 19:00 UTC-->
-<!-- A | MsgText_ErrorGeneral -->
-<!-- A | MsgText_ErrorSeeLog -->
-<!-- End changes on 2026/04/27 @ 19:00 UTC-->
-
-<!-- Begin changes on 2026/04/30 @ 01:30 UTC-->
-<!-- A | SettingsItem_AutoUpdateCheck -->
-<!-- A | About_UpdateFound -->
-<!-- A | About_UpdateFoundTooltip -->
-<!-- End changes on 2026/04/30 @ 01:30 UTC-->
-
-<!-- Begin changes on 2026/07/08 @ 16:00 UTC -->
-<!-- U | About_BuildDate - Changed 'Build' to 'Commit' -->
-<!-- End of changes on 2026/07/08 @ 16:00 UTC -->
+<!-- See Strings.en-US for change history -->

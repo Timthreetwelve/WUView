@@ -15,7 +15,7 @@
 
         Translation contributed by:  @Timthreetwelve & Google Translate
 
-        Date LAST UPDATE:            2026/08/02
+        Date LAST UPDATE:            2026/10/25
 
         ========================================================================
     -->
@@ -122,6 +122,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Affichage de toutes les {0} mises à jour</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Affichage de {0} des {1} mises à jour</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Temps écoulé</sys:String>
+    <sys:String x:Key="MsgText_Error_FileExplorer">Erreur en essayant d'ouvrir l'explorateur de fichiers.</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Il y a un problème avec le fichier de langue.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">ERREUR</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">Erreur lors de l'exportation du fichier de paramètres.</sys:String>
@@ -257,3 +258,6 @@
     <sys:String x:Key="SettingsEnum_Theme_System">Système</sys:String>
 
 </ResourceDictionary>
+
+<!-- See Strings.en-US for change history -->
+    
