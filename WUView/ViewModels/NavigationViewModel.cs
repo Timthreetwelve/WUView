@@ -1,7 +1,5 @@
 ﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
 
-using System.Runtime.CompilerServices;
-
 namespace WUView.ViewModels;
 
 internal sealed partial class NavigationViewModel : ObservableObject
