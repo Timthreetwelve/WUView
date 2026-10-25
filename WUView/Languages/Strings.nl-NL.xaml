@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
@@ -122,6 +122,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Alle {0} updates worden weergegeven</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">{0} van de {1} updates worden weergegeven</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Verstreken tijd</sys:String>
+    <sys:String x:Key="MsgText_Error_FileExplorer">Fout bij het openen van Verkenner.</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Er is een probleem met het taalbestand.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">FOUT</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">Fout bij het exporteren van het instellingenbestand.</sys:String>
@@ -378,4 +379,7 @@
     <!-- A | SettingsItem_DarkModeTheme  -->
     <!-- Einde wijzigingen op 2026/07/29 @ 21:00 UTC-->
 
+    <!-- Begin changes on 2026/10/25 @ 16:00 UTC-->
+    <!-- A | MsgText_Error_FileExplorer  -->
+    <!-- End of changes on 2026/10/25 @ 16:00 UTC-->
 </ResourceDictionary>

@@ -16,7 +16,7 @@
         
         Translation contributed by:  @Timthreetwelve with Google Translate & @Henry2o1o
         
-        Date last update:            2023/11/19
+        Date last update:            2026/10/25
         
         ======================================================================
     -->
@@ -123,6 +123,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Alle {0} Updates werden angezeigt</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Es werden {0} von {1} Updates angezeigt</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Verstrichene Zeit</sys:String>
+    <sys:String x:Key="MsgText_Error_FileExplorer">Fehler beim Versuch, den Datei-Explorer zu öffnen.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">FEHLER</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">Fehler beim Exportieren der Einstellungen.</sys:String>
     <sys:String x:Key="MsgText_ErrorGeneral">Ein Fehler ist aufgetreten.</sys:String>
@@ -398,3 +399,9 @@
 <!-- A | SettingsItem_DisplayFontSize -->
 <!-- End changes on 2026/05/21 @ 15:00 UTC-->
 
+
+<!-- Missing updates -->
+
+<!-- Begin changes on 2026/10/25 @ 16:00 UTC-->
+<!-- A | MsgText_Error_FileExplorer  -->
+<!-- End of changes on 2026/10/25 @ 16:00 UTC-->

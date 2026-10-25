@@ -45,7 +45,22 @@ internal sealed partial class SettingsViewModel : ObservableObject
             filePath = Path.Combine(AppInfo.AppDirectory, "Strings.test.xaml");
             if (File.Exists(filePath))
             {
-                _ = Process.Start("explorer.exe", string.Format(CultureInfo.InvariantCulture, "/select,\"{0}\"", filePath));
+                string explorerPath = PathHelpers.FindOnPath("explorer.exe");
+                if (string.IsNullOrEmpty(explorerPath))
+                {
+                    _log.Error($"Error trying to open {filePath}: FindOnPath returned null or empty");
+                    string msg = $"{GetStringResource("MsgText_Error_FileExplorer")}" +
+                                 $"\n\n{GetStringResource("MsgText_ErrorSeeLog")}";
+                    _ = new MDCustMsgBox(msg,
+                             GetStringResource("MsgText_ErrorCaption"),
+                             ButtonType.Ok,
+                             false,
+                             true,
+                             null,
+                             true).ShowDialog();
+                    return;
+                }
+                Process.Start(explorerPath, $"/select,\"{filePath}\"");
             }
             else
             {

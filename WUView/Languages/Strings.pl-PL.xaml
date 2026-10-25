@@ -15,7 +15,7 @@
 
         Translation contributed by:  FadeMind & Google Translate
 
-        Date last update:            2026/07/30
+        Date last update:            2026/10/25
 
         ========================================================================
     -->
@@ -122,6 +122,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Wyświetlanie wszystkich {0} aktualizacji</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Wyświetlanie {0} z {1} aktualizacji</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Upływ czasu</sys:String>
+    <sys:String x:Key="MsgText_Error_FileExplorer">Błąd podczas próby otwarcia Eksploratora plików.</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Wystąpił błąd w pliku tłumaczenia.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">BŁĄD</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">Błąd eksportowania pliku ustawień.</sys:String>

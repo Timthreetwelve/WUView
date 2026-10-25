@@ -122,6 +122,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Displaying all {0} updates</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Displaying {0} of {1} updates</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Elapsed time</sys:String>
+    <sys:String x:Key="MsgText_Error_FileExplorer">Error trying to open File Explorer.</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">There is a problem with the language file.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">ERROR</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">Error exporting settings file.</sys:String>
@@ -377,5 +378,9 @@
     <!-- A | SettingsItem_LightModeTheme  -->
     <!-- A | SettingsItem_DarkModeTheme  -->
     <!-- End of changes on 2026/07/29 @ 21:00 UTC-->
+    
+    <!-- Begin changes on 2026/10/25 @ 16:00 UTC-->
+    <!-- A | MsgText_Error_FileExplorer  -->
+    <!-- End of changes on 2026/10/25 @ 16:00 UTC-->
 
 </ResourceDictionary>

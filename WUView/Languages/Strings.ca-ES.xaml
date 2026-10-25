@@ -15,7 +15,7 @@
 
         Translation contributed by:  @Timthreetwelve & Google Translate
 
-        Date last update:            2026/07/29
+        Date last update:            2026/10/25
 
         ======================================================================
     -->
@@ -122,6 +122,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Es mostren totes les {0} actualitzacions</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Es mostren {0} de {1} actualitzacions</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Temps transcorregut</sys:String>
+    <sys:String x:Key="MsgText_Error_FileExplorer">Error en intentar obrir l'Explorador de fitxers.</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Hi ha un problema amb el fitxer d'idioma.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">ERROR</sys:String>
     <sys:String x:Key="MsgText_ErrorGeneral">S'ha produït un error.</sys:String>

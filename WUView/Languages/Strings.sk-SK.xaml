@@ -14,7 +14,7 @@
 
         Translation contributed by:  VAIO & Google Translate
 
-        Date:                        2026/07/30
+        Date:                        2026/10/25
 
         ==================================================================================================================================
     -->
@@ -124,6 +124,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Zobrazujú sa všetky aktualizácie {0}</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Zobrazuje sa {0} z {1} aktualizácií</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Uplynulý čas</sys:String>
+    <sys:String x:Key="MsgText_Error_FileExplorer">Chyba pri pokuse otvoriť Prieskumníka súborov.</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Vyskytol sa problém s jazykovým súborom.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">CHYBA</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">Chyba pri exporte súboru nastavení.</sys:String>
