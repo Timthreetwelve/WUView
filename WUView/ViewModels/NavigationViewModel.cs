@@ -300,180 +300,226 @@ internal sealed partial class NavigationViewModel : ObservableObject
     [RelayCommand]
     private void KeyDown(KeyEventArgs e)
     {
-        #region Keys without modifiers
-        if (e.KeyboardDevice.Modifiers == ModifierKeys.None)
+        // The case statements are in order by modifier keys (none, alt, control, control+shift), then by key.
+        // The underscore (_) is a discard for a value if it is not needed.
+        switch ((e.KeyboardDevice.Modifiers, e.Key, e.SystemKey))
         {
-            switch (e.Key)
-            {
-                case Key.F1:
-                    _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.About);
-                    break;
-                case Key.F5:
-                    MainPage.RefreshAll();
-                    break;
-                case Key.Escape:
-                    {
-                        if (CurrentViewModel is MainViewModel)
-                        {
-                            MainPage.Instance!.TbxSearch.Clear();
-                        }
-                        e.Handled = true;
-                        break;
-                    }
-            }
-        }
-        #endregion Keys without modifiers
+            // No modifier keys
+            case (ModifierKeys.None, Key.F1, _):
+                _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.About);
+                break;
 
-        #region Keys with Ctrl
-        if (e.KeyboardDevice.Modifiers == ModifierKeys.Control)
-        {
-            switch (e.Key)
-            {
-                case Key.OemComma:
-                    _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.Settings);
-                    break;
-                case Key.U:
-                    _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.Viewer);
-                    break;
-                case Key.L:
-                    _ = MainViewModel.EditExcludes();
-                    break;
-                case Key.D:
-                    UserSettings.Setting!.ShowDetails = !UserSettings.Setting.ShowDetails;
-                    MainPage.Instance!.SetDetailsHeight();
-                    break;
-                case Key.E:
-                    ToggleExcluded();
-                    break;
-                case Key.F:
-                    MainPage.Instance!.TbxSearch.Focus();
-                    break;
-                case Key.R:
-                    MainPage.Instance!.ClearColumnSort();
-                    break;
-                case Key.T:
-                    {
-                        if (UserSettings.Setting!.DateFormat >= 9)
-                        {
-                            UserSettings.Setting.DateFormat = 0;
-                        }
-                        else
-                        {
-                            UserSettings.Setting.DateFormat++;
-                        }
-                        MainPage.Instance!.UpdateGrid();
-                        SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_DateFormatChange"), 2000);
-                        break;
-                    }
-                case Key.Add:
-                case Key.OemPlus:
-                    {
-                        MainWindowHelpers.EverythingLarger();
-                        string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
-                        string message = string.Format(CultureInfo.InvariantCulture, MsgTextUISizeSet, size);
-                        SnackbarMsg.ClearAndQueueMessage(message, 2000);
-                        break;
-                    }
-                case Key.Subtract:
-                case Key.OemMinus:
-                    {
-                        MainWindowHelpers.EverythingSmaller();
-                        string size = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
-                        string message = string.Format(CultureInfo.InvariantCulture, MsgTextUISizeSet, size);
-                        SnackbarMsg.ClearAndQueueMessage(message, 2000);
-                        break;
-                    }
-            }
-        }
-        #endregion Keys with Ctrl
+            case (ModifierKeys.None, Key.F5, _):
+                MainPage.RefreshAll();
+                break;
 
-        #region Keys with Ctrl and Shift
-        if (e.KeyboardDevice.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift))
-        {
-            switch (e.Key)
-            {
-                case Key.T:
-                    {
-                        switch (UserSettings.Setting!.UITheme)
-                        {
-                            case ThemeType.Light:
-                                UserSettings.Setting.UITheme = ThemeType.LightGray;
-                                break;
-                            case ThemeType.LightGray:
-                                UserSettings.Setting.UITheme = ThemeType.Dark;
-                                break;
-                            case ThemeType.Dark:
-                                UserSettings.Setting.UITheme = ThemeType.Darker;
-                                break;
-                            case ThemeType.Darker:
-                                UserSettings.Setting.UITheme = ThemeType.System;
-                                break;
-                            case ThemeType.System:
-                                UserSettings.Setting.UITheme = ThemeType.DarkBlue;
-                                break;
-                            case ThemeType.DarkBlue:
-                                UserSettings.Setting.UITheme = ThemeType.Light;
-                                break;
-                        }
-                        string theme = EnumDescConverter.GetEnumDescription(UserSettings.Setting.UITheme);
-                        string message = string.Format(CultureInfo.InvariantCulture, MsgTextUIThemeSet, theme);
-                        SnackbarMsg.ClearAndQueueMessage(message, 2000);
-                        break;
-                    }
-                case Key.C:
-                    {
-                        if (UserSettings.Setting!.PrimaryColor >= AccentColor.White)
-                        {
-                            UserSettings.Setting.PrimaryColor = AccentColor.Red;
-                        }
-                        else
-                        {
-                            UserSettings.Setting.PrimaryColor++;
-                        }
-                        string color = EnumDescConverter.GetEnumDescription(UserSettings.Setting.PrimaryColor);
-                        string message = string.Format(CultureInfo.InvariantCulture, MsgTextUIColorSet, color);
-                        SnackbarMsg.ClearAndQueueMessage(message, 2000);
-                        break;
-                    }
-                case Key.F:
-                    {
-                        using Process p = new();
-                        p.StartInfo.FileName = AppInfo.AppDirectory;
-                        p.StartInfo.UseShellExecute = true;
-                        p.StartInfo.ErrorDialog = false;
-                        _ = p.Start();
-                        break;
-                    }
-                case Key.K:
-                    CompareLanguageDictionaries();
-                    ViewLogFile();
-                    break;
-                case Key.R when UserSettings.Setting?.RowSpacing >= Spacing.Wide:
-                    UserSettings.Setting.RowSpacing = Spacing.Compact;
-                    break;
-                case Key.R:
-                    UserSettings.Setting!.RowSpacing++;
-                    break;
-                case Key.S:
-                    TextFileViewer.ViewTextFile(ConfigHelpers.SettingsFileName);
-                    break;
-                case Key.Add:
-                case Key.OemPlus:
-                    if (UserSettings.Setting!.SelectedFontSize < 24)
-                    {
-                        UserSettings.Setting.SelectedFontSize++;
-                    }
-                    break;
-                case Key.Subtract:
-                case Key.OemMinus:
-                    if (UserSettings.Setting!.SelectedFontSize > 8)
-                    {
-                        UserSettings.Setting.SelectedFontSize--;
-                    }
-                    break;
-            }
-            #endregion Keys with Ctrl and Shift
+            case (ModifierKeys.None, Key.Escape, _):
+                if (CurrentViewModel is MainViewModel)
+                {
+                    MainPage.Instance!.TbxSearch.Clear();
+                }
+                e.Handled = true;
+                break;
+
+            // Alt key
+            // No alt key commands defined yet.
+
+            // Control key
+            case (ModifierKeys.Control, Key.D, _):
+                UserSettings.Setting!.ShowDetails = !UserSettings.Setting.ShowDetails;
+                MainPage.Instance!.SetDetailsHeight();
+                break;
+
+            case (ModifierKeys.Control, Key.E, _):
+                ToggleExcluded();
+                break;
+
+            case (ModifierKeys.Control, Key.F, _):
+                MainPage.Instance!.TbxSearch.Focus();
+                break;
+
+            case (ModifierKeys.Control, Key.L, _):
+                _ = MainViewModel.EditExcludes();
+                break;
+
+            case (ModifierKeys.Control, Key.R, _):
+                MainPage.Instance!.ClearColumnSort();
+                break;
+
+            case (ModifierKeys.Control, Key.T, _):
+                ChangeDateFormat();
+                break;
+
+            case (ModifierKeys.Control, Key.U, _):
+                _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.Viewer);
+                break;
+
+            case (ModifierKeys.Control, Key.Add, _):
+            case (ModifierKeys.Control, Key.OemPlus, _):
+                MainWindowHelpers.EverythingLarger();
+                ShowUIChangeMessage("size");
+                break;
+
+            case (ModifierKeys.Control, Key.Subtract, _):
+            case (ModifierKeys.Control, Key.OemMinus, _):
+                MainWindowHelpers.EverythingSmaller();
+                ShowUIChangeMessage("size");
+                break;
+
+            case (ModifierKeys.Control, Key.OemComma, _):
+                _mainWindow!.NavigationListBox.SelectedValue = FindNavPage(NavPage.Settings);
+                break;
+
+            // Control + Shift keys
+            case (ModifierKeys.Control | ModifierKeys.Shift, Key.C, _):
+                CycleColor();
+                break;
+
+            case (ModifierKeys.Control | ModifierKeys.Shift, Key.F, _):
+                OpenAppFolder();
+                break;
+
+            case (ModifierKeys.Control | ModifierKeys.Shift, Key.K, _):
+                CompareLanguageDictionaries();
+                ViewLogFile();
+                e.Handled = true;
+                break;
+
+            case (ModifierKeys.Control | ModifierKeys.Shift, Key.R, _):
+                CycleRowSpacing(e);
+                break;
+
+            case (ModifierKeys.Control | ModifierKeys.Shift, Key.S, _):
+                TextFileViewer.ViewTextFile(ConfigHelpers.SettingsFileName);
+                break;
+
+            case (ModifierKeys.Control | ModifierKeys.Shift, Key.T, _):
+                CycleTheme();
+                break;
+
+            case (ModifierKeys.Control | ModifierKeys.Shift, Key.Add, _):
+            case (ModifierKeys.Control | ModifierKeys.Shift, Key.OemPlus, _):
+                IncreaseFontSize();
+                break;
+
+            case (ModifierKeys.Control | ModifierKeys.Shift, Key.Subtract, _):
+            case (ModifierKeys.Control | ModifierKeys.Shift, Key.OemMinus, _):
+                DecreaseFontSize();
+                break;
         }
-        #endregion Key down events
+    #endregion Key down events
     }
+
+    #region Helper methods for key down events
+    private static void ChangeDateFormat()
+    {
+        switch (UserSettings.Setting!.DateFormat)
+        {
+            case >= 9:
+                UserSettings.Setting.DateFormat = 0;
+                break;
+            default:
+                UserSettings.Setting.DateFormat++;
+                break;
+        }
+        MainPage.Instance!.UpdateGrid();
+
+        ShowUIChangeMessage("date");
+    }
+
+    private static void CycleTheme()
+    {
+        UserSettings.Setting!.UITheme = UserSettings.Setting.UITheme switch
+        {
+            ThemeType.Light => ThemeType.LightGray,
+            ThemeType.LightGray => ThemeType.Dark,
+            ThemeType.Dark => ThemeType.Darker,
+            ThemeType.Darker => ThemeType.DarkBlue,
+            ThemeType.DarkBlue => ThemeType.System,
+            _ => ThemeType.Light,
+        };
+        ShowUIChangeMessage("theme");
+    }
+
+    private static void CycleColor()
+    {
+        if (UserSettings.Setting!.PrimaryColor >= AccentColor.White)
+        {
+            UserSettings.Setting.PrimaryColor = AccentColor.Red;
+        }
+        else
+        {
+            UserSettings.Setting.PrimaryColor++;
+        }
+        ShowUIChangeMessage("color");
+    }
+
+    private static void CycleRowSpacing(KeyEventArgs e)
+    {
+        if (UserSettings.Setting!.RowSpacing >= Spacing.Wide)
+        {
+            UserSettings.Setting.RowSpacing = Spacing.Compact;
+        }
+        else
+        {
+            UserSettings.Setting.RowSpacing++;
+        }
+        e.Handled = true;
+    }
+
+    private static void DecreaseFontSize()
+    {
+        if (UserSettings.Setting!.SelectedFontSize > 8)
+        {
+            UserSettings.Setting.SelectedFontSize--;
+        }
+    }
+
+    private static void IncreaseFontSize()
+    {
+        if (UserSettings.Setting!.SelectedFontSize < 24)
+        {
+            UserSettings.Setting.SelectedFontSize++;
+        }
+    }
+    #endregion Helper methods for key down events
+
+    #region Show snack bar message for UI changes
+    private static void ShowUIChangeMessage(string messageType)
+    {
+        CompositeFormat? composite = null;
+        string messageVar = string.Empty;
+        string messageTxt = string.Empty;
+
+        switch (messageType)
+        {
+            case "size":
+                composite = MsgTextUISizeSet;
+                messageVar = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
+                break;
+            case "theme":
+                composite = MsgTextUIThemeSet;
+                messageVar = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UITheme);
+                break;
+            case "color":
+                composite = MsgTextUIColorSet;
+                messageVar = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.PrimaryColor);
+                break;
+            case "date":
+                composite = null;
+                messageTxt  = GetStringResource("MsgText_DateFormatChange");
+                break;
+        }
+
+        if (composite is not null)
+        {
+            string message = string.Format(CultureInfo.InvariantCulture, composite, messageVar);
+            SnackbarMsg.ClearAndQueueMessage(message, 2000);
+        }
+        else if(!string.IsNullOrEmpty(messageTxt))
+        {
+            SnackbarMsg.ClearAndQueueMessage(messageTxt, 2000);
+        }
+    }
+    #endregion Show snack bar message for UI changes
 }
