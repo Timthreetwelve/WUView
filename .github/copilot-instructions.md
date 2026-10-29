@@ -1,5 +1,8 @@
 # Copilot Instructions for WPF Desktop Applications (C#)
 
+## General Guidelines
+- User prefers keyboard shortcut display order to follow intended curated order from resource definitions rather than alphabetical/sorted order.
+
 ## Coding Style
 - Follow C# conventions
   - Classes, methods, properties → PascalCase
