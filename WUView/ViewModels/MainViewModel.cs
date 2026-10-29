@@ -69,7 +69,7 @@ internal sealed class MainViewModel : ObservableObject
                         Operation = OperationHelper.TranslateOperation(hist.Operation),
                         UpdateID = hist.UpdateIdentity.UpdateID,
                         Description = hist.Description ?? string.Empty,
-                        SupportURL = hist.SupportUrl,
+                        SupportURL = hist.SupportUrl ?? string.Empty,
                         ELDescription = FindEventLogs(kbNum)
                     };
                     UpdatesFullList.Add(update);
