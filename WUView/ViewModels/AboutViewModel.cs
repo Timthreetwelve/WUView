@@ -11,6 +11,12 @@ internal sealed partial class AboutViewModel
         {
             AddNote();
         }
+
+        if (AnnotatedShortcutList.Count == 0)
+        {
+            AddShortcuts();
+        }
+
         _ = CheckForNewReleaseOnLoadAsync();
     }
     #endregion Constructor
@@ -71,6 +77,10 @@ internal sealed partial class AboutViewModel
     public List<UILanguage> AnnotatedLanguageList { get; } = [];
     #endregion Annotated Language translation list
 
+    #region Annotated keyboard shortcut list
+    public List<ShortcutItem> AnnotatedShortcutList { get; } = [];
+    #endregion Annotated keyboard shortcut list
+
     #region Add note to list of languages
     private void AddNote()
     {
@@ -86,4 +96,16 @@ internal sealed partial class AboutViewModel
         }
     }
     #endregion Add note to list of languages
+
+    #region Add keyboard shortcuts
+    private void AddShortcuts()
+    {
+        List<ShortcutItem> shortcuts = ShortcutHelpers.GetShortcutList();
+
+        foreach (ShortcutItem shortcut in shortcuts)
+        {
+            AnnotatedShortcutList.Add(shortcut);
+        }
+    }
+    #endregion Add keyboard shortcuts
 }
