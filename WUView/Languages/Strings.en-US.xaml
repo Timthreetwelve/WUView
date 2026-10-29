@@ -38,6 +38,7 @@
     <sys:String x:Key="About_License">License</sys:String>
     <sys:String x:Key="About_LicenseText">This project is licensed under the terms of the MIT license.</sys:String>
     <sys:String x:Key="About_LicenseToolTip">View the license document</sys:String>
+    <sys:String x:Key="About_Shortcuts">Keyboard Shortcuts</sys:String>
     <sys:String x:Key="About_Translations">Translations</sys:String>
     <sys:String x:Key="About_UpdateFound">A newer release is available</sys:String>
     <sys:String x:Key="About_UpdateFoundTooltip">Click to go to GitHub release page</sys:String>
@@ -256,6 +257,50 @@
     <sys:String x:Key="SettingsEnum_Theme_Light">Light</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_LightGray">Pale Graphite</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_System">System</sys:String>
+    <!--Keyboard Shortcuts-->
+    <sys:String x:Key="Shortcut_ClearFilter_Description">Clear the filter box (Updates page)</sys:String>
+    <sys:String x:Key="Shortcut_ClearFilter_Gesture">Esc</sys:String>
+    <sys:String x:Key="Shortcut_CompareLanguage_Description">Compare current language to en-US</sys:String>
+    <sys:String x:Key="Shortcut_CompareLanguage_Gesture">Ctrl+Shift+K</sys:String>
+    <sys:String x:Key="Shortcut_CycleAccentColor_Description">Cycle through the accent colors</sys:String>
+    <sys:String x:Key="Shortcut_CycleAccentColor_Gesture">Ctrl+Shift+C</sys:String>
+    <sys:String x:Key="Shortcut_CycleDateFormat_Description">Cycle through the grid date formats</sys:String>
+    <sys:String x:Key="Shortcut_CycleDateFormat_Gesture">Ctrl+T</sys:String>
+    <sys:String x:Key="Shortcut_CycleRowHeight_Description">Cycle through row height spacing</sys:String>
+    <sys:String x:Key="Shortcut_CycleRowHeight_Gesture">Ctrl+Shift+R</sys:String>
+    <sys:String x:Key="Shortcut_CycleTheme_Description">Cycle through the application themes</sys:String>
+    <sys:String x:Key="Shortcut_CycleTheme_Gesture">Ctrl+Shift+T</sys:String>
+    <sys:String x:Key="Shortcut_DecreaseFontSize_Description">Decrease display font size</sys:String>
+    <sys:String x:Key="Shortcut_DecreaseFontSize_Gesture">Ctrl+Shift+Minus / Ctrl+Shift+Numpad Minus</sys:String>
+    <sys:String x:Key="Shortcut_DecreaseUISize_Description">Decrease UI size</sys:String>
+    <sys:String x:Key="Shortcut_DecreaseUISize_Gesture">Ctrl+Minus / Ctrl+Numpad Minus</sys:String>
+    <sys:String x:Key="Shortcut_EditExcludeList_Description">Edit the exclude list</sys:String>
+    <sys:String x:Key="Shortcut_EditExcludeList_Gesture">Ctrl+L</sys:String>
+    <sys:String x:Key="Shortcut_FocusFilter_Description">Focus the filter box</sys:String>
+    <sys:String x:Key="Shortcut_FocusFilter_Gesture">Ctrl+F</sys:String>
+    <sys:String x:Key="Shortcut_GoToAbout_Description">Open the About page (this page)</sys:String>
+    <sys:String x:Key="Shortcut_GoToAbout_Gesture">F1</sys:String>
+    <sys:String x:Key="Shortcut_GoToSettings_Description">Open the Settings page</sys:String>
+    <sys:String x:Key="Shortcut_GoToSettings_Gesture">Ctrl+Comma</sys:String>
+    <sys:String x:Key="Shortcut_GoToUpdates_Description">Open the Updates page</sys:String>
+    <sys:String x:Key="Shortcut_GoToUpdates_Gesture">Ctrl+U</sys:String>
+    <sys:String x:Key="Shortcut_IncreaseFontSize_Description">Increase display font size</sys:String>
+    <sys:String x:Key="Shortcut_IncreaseFontSize_Gesture">Ctrl+Shift+Plus / Ctrl+Shift+Numpad Plus</sys:String>
+    <sys:String x:Key="Shortcut_IncreaseUISize_Description">Increase UI size</sys:String>
+    <sys:String x:Key="Shortcut_IncreaseUISize_Gesture">Ctrl+Plus / Ctrl+Numpad Plus</sys:String>
+    <sys:String x:Key="Shortcut_OpenAppFolder_Description">Open the application folder</sys:String>
+    <sys:String x:Key="Shortcut_OpenAppFolder_Gesture">Ctrl+Shift+F</sys:String>
+    <sys:String x:Key="Shortcut_OpenSettingsFile_Description">Open the settings file</sys:String>
+    <sys:String x:Key="Shortcut_OpenSettingsFile_Gesture">Ctrl+Shift+S</sys:String>
+    <sys:String x:Key="Shortcut_RefreshUpdates_Description">Refresh updates</sys:String>
+    <sys:String x:Key="Shortcut_RefreshUpdates_Gesture">F5</sys:String>
+    <sys:String x:Key="Shortcut_RemoveColumnSort_Description">Remove column sort</sys:String>
+    <sys:String x:Key="Shortcut_RemoveColumnSort_Gesture">Ctrl+R</sys:String>
+    <sys:String x:Key="Shortcut_ToggleDetails_Description">Toggle details pane</sys:String>
+    <sys:String x:Key="Shortcut_ToggleDetails_Gesture">Ctrl+D</sys:String>
+    <sys:String x:Key="Shortcut_ToggleExcluded_Description">Toggle excluded items</sys:String>
+    <sys:String x:Key="Shortcut_ToggleExcluded_Gesture">Ctrl+E</sys:String>
+
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     LANGUAGE FILE UPDATES
@@ -382,5 +427,51 @@
     <!-- Begin changes on 2026/10/25 @ 16:00 UTC-->
     <!-- A | MsgText_Error_FileExplorer  -->
     <!-- End of changes on 2026/10/25 @ 16:00 UTC-->
+
+    <!-- Begin changes on 2026/10/26 @ 16:30 UTC -->
+    <!-- A | About_Shortcuts -->
+    <!-- A | Shortcut_CycleDateFormat_Description -->
+    <!-- A | Shortcut_CycleDateFormat_Gesture -->
+    <!-- A | Shortcut_ClearFilter_Description -->
+    <!-- A | Shortcut_ClearFilter_Gesture -->
+    <!-- A | Shortcut_CompareLanguage_Description -->
+    <!-- A | Shortcut_CompareLanguage_Gesture -->
+    <!-- A | Shortcut_CycleAccentColor_Description -->
+    <!-- A | Shortcut_CycleAccentColor_Gesture -->
+    <!-- A | Shortcut_CycleRowHeight_Description -->
+    <!-- A | Shortcut_CycleRowHeight_Gesture -->
+    <!-- A | Shortcut_CycleTheme_Description -->
+    <!-- A | Shortcut_CycleTheme_Gesture -->
+    <!-- A | Shortcut_DecreaseFontSize_Description -->
+    <!-- A | Shortcut_DecreaseFontSize_Gesture -->
+    <!-- A | Shortcut_DecreaseUISize_Description -->
+    <!-- A | Shortcut_DecreaseUISize_Gesture -->
+    <!-- A | Shortcut_EditExcludeList_Description -->
+    <!-- A | Shortcut_EditExcludeList_Gesture -->
+    <!-- A | Shortcut_FocusFilter_Description -->
+    <!-- A | Shortcut_FocusFilter_Gesture -->
+    <!-- A | Shortcut_GoToAbout_Description -->
+    <!-- A | Shortcut_GoToAbout_Gesture -->
+    <!-- A | Shortcut_GoToSettings_Description -->
+    <!-- A | Shortcut_GoToSettings_Gesture -->
+    <!-- A | Shortcut_GoToUpdates_Description -->
+    <!-- A | Shortcut_GoToUpdates_Gesture -->
+    <!-- A | Shortcut_IncreaseFontSize_Description -->
+    <!-- A | Shortcut_IncreaseFontSize_Gesture -->
+    <!-- A | Shortcut_IncreaseUISize_Description -->
+    <!-- A | Shortcut_IncreaseUISize_Gesture -->
+    <!-- A | Shortcut_OpenAppFolder_Description -->
+    <!-- A | Shortcut_OpenAppFolder_Gesture -->
+    <!-- A | Shortcut_OpenSettingsFile_Description -->
+    <!-- A | Shortcut_OpenSettingsFile_Gesture -->
+    <!-- A | Shortcut_RefreshUpdates_Description -->
+    <!-- A | Shortcut_RefreshUpdates_Gesture -->
+    <!-- A | Shortcut_RemoveColumnSort_Description -->
+    <!-- A | Shortcut_RemoveColumnSort_Gesture -->
+    <!-- A | Shortcut_ToggleDetails_Description -->
+    <!-- A | Shortcut_ToggleDetails_Gesture -->
+    <!-- A | Shortcut_ToggleExcluded_Description -->
+    <!-- A | Shortcut_ToggleExcluded_Gesture -->
+    <!-- End of changes on 2026/10/26 @ 16:30 UTC -->
 
 </ResourceDictionary>

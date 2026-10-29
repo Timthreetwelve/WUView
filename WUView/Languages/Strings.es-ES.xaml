@@ -38,6 +38,7 @@
     <sys:String x:Key="About_License">Licencia</sys:String>
     <sys:String x:Key="About_LicenseText">Este proyecto está de acuerdo con los términos de la licencia MIT.</sys:String>
     <sys:String x:Key="About_LicenseToolTip">Ver el documento de licencia</sys:String>
+    <sys:String x:Key="About_Shortcuts">Atajos de teclado</sys:String>
     <sys:String x:Key="About_Translations">Traducciones</sys:String>
     <sys:String x:Key="About_UpdateWU">Actualizar WUView</sys:String>
     <sys:String x:Key="About_UpdateFound">Una versión más reciente está disponiblee</sys:String>
@@ -256,7 +257,49 @@
     <sys:String x:Key="SettingsEnum_Theme_System">Sistema</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDate">Regional: Fecha sola</sys:String>
     <sys:String x:Key="SettingsEnum_DateFormat_RegionalDateTime">Regional: Fecha y hora</sys:String>
-
+    <!--Keyboard Shortcuts-->
+    <sys:String x:Key="Shortcut_CycleDateFormat_Description">Cambiar entre los formatos de fecha de la cuadrícula</sys:String>
+    <sys:String x:Key="Shortcut_CycleDateFormat_Gesture">Ctrl+T</sys:String>
+    <sys:String x:Key="Shortcut_ClearFilter_Description">Borrar el cuadro de filtro (página de Actualizaciones)</sys:String>
+    <sys:String x:Key="Shortcut_ClearFilter_Gesture">Esc</sys:String>
+    <sys:String x:Key="Shortcut_CompareLanguage_Description">Comparar el idioma actual con en-US</sys:String>
+    <sys:String x:Key="Shortcut_CompareLanguage_Gesture">Ctrl+Shift+K</sys:String>
+    <sys:String x:Key="Shortcut_CycleAccentColor_Description">Cambiar entre los colores de acento</sys:String>
+    <sys:String x:Key="Shortcut_CycleAccentColor_Gesture">Ctrl+Shift+C</sys:String>
+    <sys:String x:Key="Shortcut_CycleRowHeight_Description">Cambiar entre los espacios de altura de fila</sys:String>
+    <sys:String x:Key="Shortcut_CycleRowHeight_Gesture">Ctrl+Shift+R</sys:String>
+    <sys:String x:Key="Shortcut_CycleTheme_Description">Cambiar entre los temas de la aplicación</sys:String>
+    <sys:String x:Key="Shortcut_CycleTheme_Gesture">Ctrl+Shift+T</sys:String>
+    <sys:String x:Key="Shortcut_DecreaseFontSize_Description">Disminuir el tamaño de la fuente de visualización</sys:String>
+    <sys:String x:Key="Shortcut_DecreaseFontSize_Gesture">Ctrl+Shift+Minus / Ctrl+Shift+Numpad Minus</sys:String>
+    <sys:String x:Key="Shortcut_DecreaseUISize_Description">Disminuir el tamaño de la interfaz de usuario</sys:String>
+    <sys:String x:Key="Shortcut_DecreaseUISize_Gesture">Ctrl+Minus / Ctrl+Numpad Minus</sys:String>
+    <sys:String x:Key="Shortcut_EditExcludeList_Description">Editar la lista de exclusión</sys:String>
+    <sys:String x:Key="Shortcut_EditExcludeList_Gesture">Ctrl+L</sys:String>
+    <sys:String x:Key="Shortcut_FocusFilter_Description">Enfocar el cuadro de filtro</sys:String>
+    <sys:String x:Key="Shortcut_FocusFilter_Gesture">Ctrl+F</sys:String>
+    <sys:String x:Key="Shortcut_GoToAbout_Description">Abra la página Acerca de (esta página)</sys:String>
+    <sys:String x:Key="Shortcut_GoToAbout_Gesture">F1</sys:String>
+    <sys:String x:Key="Shortcut_GoToSettings_Description">Abrir la página de Configuración</sys:String>
+    <sys:String x:Key="Shortcut_GoToSettings_Gesture">Ctrl+Comma</sys:String>
+    <sys:String x:Key="Shortcut_GoToUpdates_Description">Abrir la página de Actualizaciones</sys:String>
+    <sys:String x:Key="Shortcut_GoToUpdates_Gesture">Ctrl+U</sys:String>
+    <sys:String x:Key="Shortcut_IncreaseFontSize_Description">Aumentar el tamaño de la fuente de visualización</sys:String>
+    <sys:String x:Key="Shortcut_IncreaseFontSize_Gesture">Ctrl+Shift+Plus / Ctrl+Shift+Numpad Plus</sys:String>
+    <sys:String x:Key="Shortcut_IncreaseUISize_Description">Aumentar el tamaño de la interfaz de usuario</sys:String>
+    <sys:String x:Key="Shortcut_IncreaseUISize_Gesture">Ctrl+Plus / Ctrl+Numpad Plus</sys:String>
+    <sys:String x:Key="Shortcut_OpenAppFolder_Description">Abrir la carpeta de la aplicación</sys:String>
+    <sys:String x:Key="Shortcut_OpenAppFolder_Gesture">Ctrl+Shift+F</sys:String>
+    <sys:String x:Key="Shortcut_OpenSettingsFile_Description">Abrir el archivo de configuración</sys:String>
+    <sys:String x:Key="Shortcut_OpenSettingsFile_Gesture">Ctrl+Shift+S</sys:String>
+    <sys:String x:Key="Shortcut_RefreshUpdates_Description">Actualizar actualizaciones</sys:String>
+    <sys:String x:Key="Shortcut_RefreshUpdates_Gesture">F5</sys:String>
+    <sys:String x:Key="Shortcut_RemoveColumnSort_Description">Eliminar orden de columna</sys:String>
+    <sys:String x:Key="Shortcut_RemoveColumnSort_Gesture">Ctrl+R</sys:String>
+    <sys:String x:Key="Shortcut_ToggleDetails_Description">Alternar panel de detalles</sys:String>
+    <sys:String x:Key="Shortcut_ToggleDetails_Gesture">Ctrl+D</sys:String>
+    <sys:String x:Key="Shortcut_ToggleExcluded_Description">Alternar elementos excluidos</sys:String>
+    <sys:String x:Key="Shortcut_ToggleExcluded_Gesture">Ctrl+E</sys:String>
 </ResourceDictionary>
 
 <!-- See Strings.en-US for change history -->

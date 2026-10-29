@@ -128,6 +128,12 @@ internal sealed partial class UserSettings : ConfigManager<UserSettings>
     private double _selectedFontSize = 14;
 
     /// <summary>
+    /// Whether the shortcut expander is open.
+    /// </summary>
+    [ObservableProperty]
+    private bool _shortcutExpanderOpen = true;
+
+    /// <summary>
     /// Show the details pane at the bottom.
     /// </summary>
     [ObservableProperty]
