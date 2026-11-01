@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
@@ -18,7 +18,6 @@
         Date last update:            09.14.2026
 
         ========================================================================
-
     -->
 
     <!--  About Page  -->
@@ -113,8 +112,8 @@
     <sys:String x:Key="MsgText_ApplicationStarting">se začenja</sys:String>
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">Preverjanje posodobitev ni uspelo. Za več informacij si oglejte dnevnik.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Preverjanje posodobitev.</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateGoToRelease">Ali želite iti na stran za izdajo?</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateClose">Klik na 'Da' bo zaprl 'Pregledovalnik posodobitev Windows'.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateClose">Klik na 'Da' bo zaprl 'Pregledovalnik posodobitev Windows'.</sys:String
+	<sys:String x:Key="MsgText_AppUpdateGoToRelease">Ali želite iti na stran za izdajo?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">Najdena je bila novejša izdaja ({0}).</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">Novejših izdaj ni bilo mogoče najti.</sys:String>
     <sys:String x:Key="MsgText_ColumnSortCleared">Razvrščanje stolpca je počiščeno</sys:String>
@@ -122,7 +121,8 @@
     <sys:String x:Key="MsgText_DateFormatChange">Oblika datuma spremenjena</sys:String>
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Prikaz vseh {0} posodobitev</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Prikaz {0} od {1} posodobitev</sys:String>
-    <sys:String x:Key="MsgText_ElapsedTime">Potekel čas</sys:String>
+    <sys:String x:Key="MsgText_ElapsedTime">Potekel čas</sys:String
+    <sys:String x:Key="MsgText_Error_FileExplorer">Napaka pri poskusu odpiranja Raziskovalca datotek.</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Prišlo je do težave z jezikovno datoteko.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">NAPAKA</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">Napaka pri izvozu datoteke z nastavitvami.</sys:String>
@@ -359,4 +359,28 @@
     <!-- A | About_UpdateFoundTooltip -->
     <!-- End changes on 2026/04/30 @ 01:30 UTC-->
 													
+    <!-- Begin changes on 2026/05/21 @ 15:00 UTC-->
+    <!-- A | SettingsItem_DisplayFontSize -->
+    <!-- End changes on 2026/05/21 @ 15:00 UTC-->
+
+    <!-- Begin changes on 2026/07/08 @ 16:00 UTC -->
+    <!-- U | About_BuildDate - Changed 'Build' to 'Commit' -->
+    <!-- End of changes on 2026/07/08 @ 16:00 UTC -->
+
+    <!-- Begin changes on 2026/07/29 @ 18:00 UTC -->
+    <!-- U | Button_CompareLanguageToolTip        - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- U | MsgText_AppUpdateCheckFailed         - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- U | SettingsItem_TranslationToolTipLine2 - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- End of changes on 2026/07/29 @ 18:00 UTC -->
+
+    <!-- Begin changes on 2026/07/29 @ 21:00 UTC-->
+    <!-- A | SettingsEnum_Theme_LightGray  -->
+    <!-- A | SettingsItem_LightModeTheme  -->
+    <!-- A | SettingsItem_DarkModeTheme  -->
+    <!-- End of changes on 2026/07/29 @ 21:00 UTC-->
+    
+    <!-- Begin changes on 2026/10/25 @ 16:00 UTC-->
+    <!-- A | MsgText_Error_FileExplorer  -->
+    <!-- End of changes on 2026/10/25 @ 16:00 UTC-->
+
 </ResourceDictionary>
