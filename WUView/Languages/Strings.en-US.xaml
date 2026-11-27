@@ -198,6 +198,7 @@
     <sys:String x:Key="SettingsItem_ParseAdditional">Excluding items parses the KB Number, Result and Update ID in addition to the update Title</sys:String>
     <sys:String x:Key="SettingsItem_RowHeight">Row Height</sys:String>
     <sys:String x:Key="SettingsItem_SelectFirstRow">Select first row on start</sys:String>
+    <sys:String x:Key="SettingsItem_ShowCopyButton">Show Copy button next to details</sys:String>
     <sys:String x:Key="SettingsItem_ShowDetails">Show Details Panel</sys:String>
     <sys:String x:Key="SettingsItem_ShowExit">Show Exit in Navigation bar</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Show warning messages in log for non-zero HResult values</sys:String>
@@ -373,14 +374,18 @@
     <!-- U | SettingsItem_TranslationToolTipLine2 - Added xml:space="preserve" and line break character &#x0a; -->
     <!-- End of changes on 2026/07/29 @ 18:00 UTC -->
 
-    <!-- Begin changes on 2026/07/29 @ 21:00 UTC-->
+    <!-- Begin changes on 2026/07/29 @ 21:00 UTC -->
     <!-- A | SettingsEnum_Theme_LightGray  -->
     <!-- A | SettingsItem_LightModeTheme  -->
     <!-- A | SettingsItem_DarkModeTheme  -->
-    <!-- End of changes on 2026/07/29 @ 21:00 UTC-->
+    <!-- End of changes on 2026/07/29 @ 21:00 UTC -->
     
-    <!-- Begin changes on 2026/10/25 @ 16:00 UTC-->
+    <!-- Begin changes on 2026/10/25 @ 16:00 UTC -->
     <!-- A | MsgText_Error_FileExplorer  -->
-    <!-- End of changes on 2026/10/25 @ 16:00 UTC-->
+    <!-- End of changes on 2026/10/25 @ 16:00 UTC -->
+    
+    <!-- Begin changes on 2026/11/09 @ 01:00 UTC -->
+    <!-- A | SettingsItem_ShowCopyButton -->
+    <!-- End of changes on 2026/11/09 @ 01:00 UTC -->
 
 </ResourceDictionary>

@@ -12,14 +12,11 @@
              xmlns:viewmodels="clr-namespace:WUView.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="500" d:DesignWidth="800"
+             FontSize="{Binding SelectedFontSize,
+                                Source={x:Static config:UserSettings.Setting}}"
+             Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
              KeyboardNavigation.TabNavigation="Local"
              Loaded="UserControl_Loaded"
-             TextElement.FontSize="{Binding SelectedFontSize,
-                                       Source={x:Static config:UserSettings.Setting}}"
-             TextElement.FontWeight="Regular"
-             TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
-             TextOptions.TextFormattingMode="Ideal"
-             TextOptions.TextRenderingMode="Auto"
              Unloaded="UserControl_Unloaded">
 
     <!--#region Resources & DataContext-->
@@ -29,6 +26,7 @@
         <convert:ItemsSourceConverter x:Key="ItemsConverter" />
         <convert:SpacingConverter x:Key="Spacing" />
         <convert:ResultsConverter x:Key="Results" />
+        <convert:SubtractDoubleConverter x:Key="SubtractDouble" />
         <viewmodels:NavigationViewModel x:Key="NavVm" />
     </UserControl.Resources>
 
@@ -147,7 +145,7 @@
                    Margin="0,0,10,6"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
-                   Cursor="Hand" >
+                   Cursor="Hand">
             <Run Text="{Binding ElementName=DataGrid, Path=Items.Count, Mode=OneWay}" />
             <Run Text="/" />
             <Run Text="{Binding UpdatesFullList.Count, Mode=OneWay}" />
@@ -176,7 +174,8 @@
                   FontFamily="{Binding SelectedFont,
                                        Source={x:Static config:UserSettings.Setting}}"
                   FontSize="{Binding SelectedFontSize,
-                                       Source={x:Static config:UserSettings.Setting}}" HeadersVisibility="Column"
+                                     Source={x:Static config:UserSettings.Setting}}"
+                  HeadersVisibility="Column"
                   IsReadOnly="True" IsTabStop="True"
                   ItemsSource="{Binding HideExcluded,
                                         Converter={StaticResource ItemsConverter},
@@ -191,16 +190,16 @@
                   TabIndex="0"
                   VerticalScrollBarVisibility="Auto">
             <DataGrid.Columns>
-                <!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->
+                <!--  ReSharper disable once Xaml.BindingWithContextNotResolved  -->
                 <DataGridTextColumn Binding="{Binding KBNum}"
                                     Header="{DynamicResource GridColumn_KBNum}" />
-                <!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->
+                <!--  ReSharper disable once Xaml.BindingWithContextNotResolved  -->
                 <DataGridTextColumn Binding="{Binding Date, Converter={StaticResource DateFormat}}"
                                     Header="{DynamicResource GridColumn_Date}" />
-                <!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->
+                <!--  ReSharper disable once Xaml.BindingWithContextNotResolved  -->
                 <DataGridTextColumn Binding="{Binding Title}"
                                     Header="{DynamicResource GridColumn_Title}" />
-                <!-- ReSharper disable once Xaml.BindingWithContextNotResolved -->
+                <!--  ReSharper disable once Xaml.BindingWithContextNotResolved  -->
                 <DataGridTextColumn Binding="{Binding ResultCode}"
                                     Header="{DynamicResource GridColumn_Result}" />
             </DataGrid.Columns>
@@ -284,109 +283,237 @@
                         <RowDefinition />
                         <RowDefinition />
                         <RowDefinition />
+                        <RowDefinition />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <!--#endregion-->
+
                     <TextBlock Grid.Row="0" Grid.Column="1"
                                Grid.ColumnSpan="3"
                                Margin="0,10"
                                FontSize="15" FontWeight="SemiBold"
                                Text="{DynamicResource Details_HeadingUpdate}" />
+
                     <TextBlock Grid.Row="1" Grid.Column="1"
-                               Margin="10,0" VerticalAlignment="Center"
+                               Margin="10,0" VerticalAlignment="Top"
                                Text="{DynamicResource Details_Title}" />
-                    <!--  https://stackoverflow.com/a/48733836  -->
-                    <TextBox Grid.Row="1" Grid.Column="3"
-                             Style="{StaticResource ReadOnlyTextBox}"
-                             Tag="{DynamicResource Details_TitleFallback}">
-                        <TextBox.Text>
-                            <PriorityBinding>
-                                <Binding Path="Title" />
-                                <Binding Path="Tag"
-                                         RelativeSource="{RelativeSource Mode=Self}" />
-                            </PriorityBinding>
-                        </TextBox.Text>
-                    </TextBox>
+                    <Border x:Name="TitleBorder"
+                            Grid.Row="1" Grid.Column="3"
+                            Background="Transparent">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0"
+                                     MaxWidth="{Binding ActualWidth,
+                                                        ElementName=TitleBorder,
+                                                        Converter={StaticResource SubtractDouble},
+                                                        ConverterParameter=36}"
+                                     AcceptsReturn="True"
+                                     Style="{StaticResource ReadOnlyTextBox}"
+                                     Text="{Binding Title}" />
+
+                            <Button Grid.Column="1"
+                                    Margin="6,2,0,0" VerticalAlignment="Top"
+                                    Command="{Binding DataContext.CopyTextBlockCommand,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding Title}"
+                                    Style="{StaticResource DetailCopyButtonStyle}" />
+                        </Grid>
+                    </Border>
+
                     <TextBlock Grid.Row="2" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
                                Text="{DynamicResource Details_KBNum}" />
-                    <TextBox Grid.Row="2" Grid.Column="3"
-                             Style="{StaticResource ReadOnlyTextBox}"
-                             Text="{Binding KBNum}" />
+                    <Border Grid.Row="2" Grid.Column="3"
+                            Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Style="{StaticResource ReadOnlyTextBox}"
+                                     Text="{Binding KBNum}" />
+                            <Button Command="{Binding DataContext.CopyTextBlockCommand,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding KBNum}"
+                                    Style="{StaticResource DetailCopyButtonStyle}" />
+                        </StackPanel>
+                    </Border>
+
                     <TextBlock Grid.Row="3" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
                                Text="{DynamicResource Details_Date}" />
-                    <TextBox Grid.Row="3" Grid.Column="3"
-                             Style="{StaticResource ReadOnlyTextBox}"
-                             Text="{Binding Date,
-                                            Converter={StaticResource DateFormat}}" />
+                    <Border Grid.Row="3" Grid.Column="3"
+                            Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Style="{StaticResource ReadOnlyTextBox}"
+                                     Text="{Binding Date,
+                                                    Converter={StaticResource DateFormat}}" />
+                            <Button Command="{Binding DataContext.CopyTextBlockCommand,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding Date,
+                                                               Converter={StaticResource DateFormat}}"
+                                    Style="{StaticResource DetailCopyButtonStyle}" />
+                        </StackPanel>
+                    </Border>
+
                     <TextBlock Grid.Row="4" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Top"
                                Text="{DynamicResource Details_Description}" />
-                    <TextBox Grid.Row="4" Grid.Column="3"
-                             Style="{StaticResource ReadOnlyTextBox}"
-                             Text="{Binding Description}" />
+                    <Border x:Name="DescriptionBorder"
+                            Grid.Row="4" Grid.Column="3"
+                            Background="Transparent">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0"
+                                     MaxWidth="{Binding ActualWidth,
+                                                        ElementName=DescriptionBorder,
+                                                        Converter={StaticResource SubtractDouble},
+                                                        ConverterParameter=36}"
+                                     AcceptsReturn="True"
+                                     Style="{StaticResource ReadOnlyTextBox}"
+                                     Text="{Binding Description}" />
+
+                            <Button Grid.Column="1"
+                                    Margin="6,2,0,0" VerticalAlignment="Top"
+                                    Command="{Binding DataContext.CopyTextBlockCommand,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding Description}"
+                                    Style="{StaticResource DetailCopyButtonStyle}" />
+                        </Grid>
+                    </Border>
+
                     <TextBlock Grid.Row="5" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
                                Text="{DynamicResource Details_Operation}" />
-                    <TextBox Grid.Row="5" Grid.Column="3"
-                             Style="{StaticResource ReadOnlyTextBox}"
-                             Text="{Binding Operation}" />
+                    <Border Grid.Row="5" Grid.Column="3"
+                            Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Style="{StaticResource ReadOnlyTextBox}"
+                                     Text="{Binding Operation}" />
+                            <Button Command="{Binding DataContext.CopyTextBlockCommand,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding Operation}"
+                                    Style="{StaticResource DetailCopyButtonStyle}" />
+                        </StackPanel>
+                    </Border>
+
                     <TextBlock Grid.Row="6" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
                                Text="{DynamicResource Details_ResultCode}" />
-                    <TextBlock Grid.Row="6" Grid.Column="3"
-                               PreviewMouseDown="ResultCode_PreviewMouseDown">
-                        <Hyperlink Focusable="False">
-                            <Hyperlink.Inlines>
-                                <Run Text="{Binding ResultCode}" />
-                            </Hyperlink.Inlines>
-                        </Hyperlink>
-                    </TextBlock>
+
+                    <Border Grid.Row="6" Grid.Column="3"
+                            Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="2,1"
+                                       PreviewMouseDown="ResultCode_PreviewMouseDown">
+                                <Hyperlink Focusable="False">
+                                    <Hyperlink.Inlines>
+                                        <Run Text="{Binding ResultCode}" />
+                                    </Hyperlink.Inlines>
+                                </Hyperlink>
+                            </TextBlock>
+                            <Button Command="{Binding DataContext.CopyTextBlockCommand,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding ResultCode}"
+                                    Style="{StaticResource DetailCopyButtonStyle}" />
+                        </StackPanel>
+                    </Border>
+
                     <TextBlock Grid.Row="7" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
                                Text="{DynamicResource Details_HResult}" />
-                    <TextBlock Grid.Row="7" Grid.Column="3"
-                               Width="100"
-                               HorizontalAlignment="Left"
-                               PreviewMouseDown="HResult_PreviewMouseDown">
-                        <Hyperlink x:Name="HypHResult"
-                                   Focusable="False">
-                            <Hyperlink.Inlines>
-                                <Run Text="{Binding HResult, Converter={StaticResource Results}, ConverterParameter='HResult'}" />
-                            </Hyperlink.Inlines>
-                        </Hyperlink>
-                    </TextBlock>
+                    <Border Grid.Row="7" Grid.Column="3"
+                            Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="2,1"
+                                       PreviewMouseDown="HResult_PreviewMouseDown">
+                                <Hyperlink x:Name="HypHResult"
+                                           Focusable="False">
+                                    <Hyperlink.Inlines>
+                                        <Run Text="{Binding HResult, Converter={StaticResource Results}, ConverterParameter='HResult'}" />
+                                    </Hyperlink.Inlines>
+                                </Hyperlink>
+                            </TextBlock>
+                            <Button Command="{Binding DataContext.CopyTextBlockCommand,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding HResult,
+                                                               Converter={StaticResource Results},
+                                                               ConverterParameter='HResult'}"
+                                    Style="{StaticResource DetailCopyButtonStyle}" />
+                        </StackPanel>
+                    </Border>
+
                     <TextBlock Grid.Row="8" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
                                Text="{DynamicResource Details_UpdateID}" />
-                    <TextBox Grid.Row="8" Grid.Column="3"
-                             Style="{StaticResource ReadOnlyTextBox}"
-                             Text="{Binding UpdateID}" />
+                    <Border Grid.Row="8" Grid.Column="3"
+                            Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Style="{StaticResource ReadOnlyTextBox}"
+                                     Text="{Binding UpdateID}" />
+                            <Button Command="{Binding DataContext.CopyTextBlockCommand,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding UpdateID}"
+                                    Style="{StaticResource DetailCopyButtonStyle}" />
+                        </StackPanel>
+                    </Border>
+
                     <TextBlock Grid.Row="9" Grid.Column="1"
                                Margin="10,0" VerticalAlignment="Center"
                                Text="{DynamicResource Details_SupportURL}" />
-                    <TextBlock Grid.Row="9" Grid.Column="3"
-                               Margin="0,1">
-                        <Hyperlink Focusable="False"
-                                   NavigateUri="{Binding SupportURL}"
-                                   RequestNavigate="Hyperlink_RequestNavigate">
-                            <Hyperlink.Inlines>
-                                <Run Text="{Binding Path=SupportURL}" />
-                            </Hyperlink.Inlines>
-                        </Hyperlink>
-                    </TextBlock>
+                    <Border Grid.Row="9" Grid.Column="3"
+                            Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="2,1">
+                                <Hyperlink Focusable="False"
+                                           NavigateUri="{Binding SupportURL}"
+                                           RequestNavigate="Hyperlink_RequestNavigate">
+                                    <Hyperlink.Inlines>
+                                        <Run Text="{Binding Path=SupportURL}" />
+                                    </Hyperlink.Inlines>
+                                </Hyperlink>
+                            </TextBlock>
+                            <Button Command="{Binding DataContext.CopyTextBlockCommand,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding SupportURL}"
+                                    Style="{StaticResource DetailCopyButtonStyle}" />
+                        </StackPanel>
+                    </Border>
+
                     <TextBlock Grid.Row="10" Grid.Column="1"
                                Grid.ColumnSpan="3"
                                Margin="0,15,0,10"
                                FontSize="15" FontWeight="SemiBold"
                                Text="{DynamicResource Details_HeadingEventLog}" />
-                    <TextBox Grid.Row="11" Grid.Column="1"
-                             Grid.ColumnSpan="3"
-                             Margin="10,0"
-                             Style="{StaticResource ReadOnlyTextBox}"
-                             Text="{Binding ELDescription,
-                                            Mode=OneWay}" />
+                    <Border x:Name="EventLogBorder"
+                            Grid.Row="11" Grid.Column="1"
+                            Grid.ColumnSpan="3"
+                            Background="Transparent">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0"
+                                     MaxWidth="{Binding ActualWidth,
+                                                        ElementName=EventLogBorder,
+                                                        Converter={StaticResource SubtractDouble},
+                                                        ConverterParameter=36}"
+                                     Margin="10,0"
+                                     AcceptsReturn="True"
+                                     Style="{StaticResource ReadOnlyTextBox}"
+                                     Text="{Binding ELDescription}" />
+                            <Button Grid.Column="1"
+                                    Margin="-10,2,0,0"
+                                    VerticalAlignment="Top"
+                                    Command="{Binding DataContext.CopyTextBlockCommand,
+                                                      RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding ELDescription}"
+                                    Style="{StaticResource DetailCopyButtonStyle}" />
+                        </Grid>
+                    </Border>
                 </Grid>
             </ScrollViewer>
         </Grid>

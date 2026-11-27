@@ -291,6 +291,40 @@ internal sealed partial class NavigationViewModel : ObservableObject
     }
     #endregion Open the app folder
 
+    #region Copy TextBlock value
+    /// <summary>
+    /// Copy a TextBlock value to clipboard.
+    /// </summary>
+    [RelayCommand]
+    public static async Task CopyTextBlock(string? text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            _log.Debug("Copy to clipboard called with no text to copy.");
+            return;
+        }
+
+        try
+        {
+            if (ClipboardHelper.CopyTextToClipboard(text))
+            {
+                _log.Debug($"{text.Length} characters copied to the clipboard");
+                SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_CopiedToClipboard"));
+            }
+            else
+            {
+                _log.Error("CopyCellValue clipboard copy failed.");
+                SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_CopyToClipboardFail"));
+            }
+        }
+        catch (Exception ex)
+        {
+            _log.Error(ex, $"CopyCellValue command failed. {ex.Message}");
+            SnackbarMsg.ClearAndQueueMessage(GetStringResource("MsgText_CopyToClipboardFail"));
+        }
+    }
+    #endregion Copy TextBlock value
+
     #endregion Relay Commands
 
     #region Key down events
