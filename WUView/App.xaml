@@ -21,6 +21,7 @@
                 <ResourceDictionary Source="Styles/ComboBoxStyle.xaml" />
                 <ResourceDictionary Source="Styles/DataGridStyles.xaml" />
                 <ResourceDictionary Source="Styles/ExpanderStyles.xaml" />
+                <ResourceDictionary Source="Styles/GridSplitterStyles.xaml" />
                 <ResourceDictionary Source="Styles/HyperlinkStyles.xaml" />
                 <ResourceDictionary Source="Styles/NavigationStyles.xaml" />
                 <ResourceDictionary Source="Styles/ScrollBarStyle.xaml" />

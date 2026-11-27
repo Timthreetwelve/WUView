@@ -395,6 +395,7 @@
                                 <RowDefinition Height="auto" MinHeight="38" />
                                 <RowDefinition Height="auto" MinHeight="38" />
                                 <RowDefinition Height="auto" MinHeight="38" />
+                                <RowDefinition Height="auto" MinHeight="38" />
                             </Grid.RowDefinitions>
                             <CheckBox Grid.Row="0"
                                       Padding="10,0"
@@ -425,6 +426,15 @@
                             </CheckBox>
                             <CheckBox Grid.Row="3"
                                       Padding="10,0"
+                                      IsChecked="{Binding ShowCopyButton,
+                                                          Source={x:Static config:UserSettings.Setting}}">
+                                <TextBlock>
+                                    <AccessText Text="{DynamicResource SettingsItem_ShowCopyButton}"
+                                                TextWrapping="Wrap" />
+                                </TextBlock>
+                            </CheckBox>
+                            <CheckBox Grid.Row="4"
+                                      Padding="10,0"
                                       IsChecked="{Binding ShowExitInNav,
                                                           Source={x:Static config:UserSettings.Setting}}">
                                 <TextBlock>
@@ -432,6 +442,7 @@
                                                 TextWrapping="Wrap" />
                                 </TextBlock>
                             </CheckBox>
+
                         </Grid>
                         <!--#endregion-->
                     </Grid>

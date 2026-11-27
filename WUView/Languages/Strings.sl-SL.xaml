@@ -18,7 +18,6 @@
         Date last update:            09.14.2026
 
         ========================================================================
-
     -->
 
     <!--  About Page  -->
@@ -50,20 +49,20 @@
     <sys:String x:Key="Button_Cancel">Prekliči</sys:String>
     <sys:String x:Key="Button_CheckUpdate">Preveri posodobitev</sys:String>																		
     <sys:String x:Key="Button_Close">Zapri meni</sys:String>
-	<sys:String x:Key="Button_CompareLanguageToolTip">Kliknite za primerjavo trenutnega jezika s privzetim (en-US). Rezultati se zapišejo v dnevniško datoteko.</sys:String>
+    <sys:String x:Key="Button_CompareLanguageToolTip">Kliknite za primerjavo trenutnega jezika s privzetim (en-US). Rezultati se zapišejo v dnevniško datoteko.</sys:String>
     <sys:String x:Key="Button_ExportSettings">Izvoz nastavitev</sys:String>
     <sys:String x:Key="Button_ExportSettingsToolTip">Izvozi trenutne nastavitve v datoteko.</sys:String>
     <sys:String x:Key="Button_ImportSettings">Uvozi nastavitve</sys:String>
     <sys:String x:Key="Button_ImportSettingsToolTip">Uvozi nastavitve iz datoteke.</sys:String>
     <sys:String x:Key="Button_ListSettings">Nastavitve seznama</sys:String>
     <sys:String x:Key="Button_ListSettingsTooltip">Seznam (zapis) nastavitev v datoteko dnevnika.</sys:String>
-	<sys:String x:Key="Button_No">Ne</sys:String>												 
+    <sys:String x:Key="Button_No">Ne</sys:String>												 
     <sys:String x:Key="Button_OK">Vredu</sys:String>
     <sys:String x:Key="Button_OpenAppFolder">Odpri mapo aplikacije</sys:String>
-	<sys:String x:Key="Button_OpenAppFolderToolTip">Odprite mapo te aplikacije v Raziskovalcu.</sys:String>																											 
+    <sys:String x:Key="Button_OpenAppFolderToolTip">Odprite mapo te aplikacije v Raziskovalcu.</sys:String>																											 
     <sys:String x:Key="Button_OpenLogFile">Ogled datoteke dnevnika</sys:String>
     <sys:String x:Key="Button_OpenLogFileToolTip">Odprite dnevniško datoteko v privzeti aplikaciji.</sys:String>
-	<sys:String x:Key="Button_OpenSettings">Odpri nastavitve</sys:String>
+    <sys:String x:Key="Button_OpenSettings">Odpri nastavitve</sys:String>
     <sys:String x:Key="Button_OpenSettingsToolTip">Odprite datoteko z nastavitvami.</sys:String>
     <sys:String x:Key="Button_ThreeDotToolTip">Dodatne akcije</sys:String>
     <sys:String x:Key="Button_Yes">Da</sys:String>
@@ -113,8 +112,8 @@
     <sys:String x:Key="MsgText_ApplicationStarting">se začenja</sys:String>
     <sys:String x:Key="MsgText_AppUpdateCheckFailed">Preverjanje posodobitev ni uspelo. Za več informacij si oglejte dnevnik.</sys:String>
     <sys:String x:Key="MsgText_AppUpdateChecking">Preverjanje posodobitev.</sys:String>
-    <sys:String x:Key="MsgText_AppUpdateGoToRelease">Ali želite iti na stran za izdajo?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateClose">Klik na 'Da' bo zaprl 'Pregledovalnik posodobitev Windows'.</sys:String>
+    <sys:String x:Key="MsgText_AppUpdateGoToRelease">Ali želite iti na stran za izdajo?</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNewerFound">Najdena je bila novejša izdaja ({0}).</sys:String>
     <sys:String x:Key="MsgText_AppUpdateNoneFound">Novejših izdaj ni bilo mogoče najti.</sys:String>
     <sys:String x:Key="MsgText_ColumnSortCleared">Razvrščanje stolpca je počiščeno</sys:String>
@@ -123,6 +122,7 @@
     <sys:String x:Key="MsgText_DisplayedAllUpdates">Prikaz vseh {0} posodobitev</sys:String>
     <sys:String x:Key="MsgText_DisplayedUpdates">Prikaz {0} od {1} posodobitev</sys:String>
     <sys:String x:Key="MsgText_ElapsedTime">Potekel čas</sys:String>
+    <sys:String x:Key="MsgText_Error_FileExplorer">Napaka pri poskusu odpiranja Raziskovalca datotek.</sys:String>
     <sys:String x:Key="MsgText_Error_TestLanguage">Prišlo je do težave z jezikovno datoteko.</sys:String>
     <sys:String x:Key="MsgText_ErrorCaption">NAPAKA</sys:String>
     <sys:String x:Key="MsgText_ErrorExportingSettings">Napaka pri izvozu datoteke z nastavitvami.</sys:String>
@@ -132,14 +132,14 @@
     <sys:String x:Key="MsgText_ErrorReadingFile">Napaka pri branju {0}</sys:String>
     <sys:String x:Key="MsgText_ErrorSeeLog">Za več informacij glejte datoteko dnevnika.</sys:String>
     <sys:String x:Key="MsgText_ErrorSavingSettings">Napaka pri shranjevanju datoteke z nastavitvami.</sys:String>
-	<sys:String x:Key="MsgText_EventLogNA">Za to posodobitev ni bilo najdenih zapisov dnevnika dogodkov.</sys:String>
+    <sys:String x:Key="MsgText_EventLogNA">Za to posodobitev ni bilo najdenih zapisov dnevnika dogodkov.</sys:String>
     <sys:String x:Key="MsgText_EventLogNoRecords">Ni bil najden noben zapis v dnevniku dogodkov, ki bi vseboval "{0}".</sys:String>
     <sys:String x:Key="MsgText_ExcludingContaining">Izključujoč posodobitve, ki vsebujejo:</sys:String>
     <sys:String x:Key="MsgText_FilterOneRowShown">1 prikazana vrstica</sys:String>
     <sys:String x:Key="MsgText_FilterRowsShown">{0} prikazanih vrstic</sys:String>
     <sys:String x:Key="MsgText_HResultCopiedToClipboard">HResult {0} kopirano v odložišče</sys:String>
     <sys:String x:Key="MsgText_ImportSettingsRestart">Za uporabo uvoženih nastavitev znova zaženite pregledovalnik posodobitev sistema Windows.</sys:String>
-	<sys:String x:Key="MsgText_ListRefreshed">Seznam je osvežen</sys:String>
+    <sys:String x:Key="MsgText_ListRefreshed">Seznam je osvežen</sys:String>
     <sys:String x:Key="MsgText_NoUpdatesFound">Ni bilo najdenih nobenih posodobitev!</sys:String>
     <sys:String x:Key="MsgText_Opening">Odpiranje</sys:String>
     <sys:String x:Key="MsgText_OpeningLogFile">Odpiranje datoteke dnevnika</sys:String>
@@ -170,22 +170,22 @@
     <!--  Settings Page Expander Headings  -->
     <sys:String x:Key="SettingsSection_AppSettings">Nastavitve aplikacije</sys:String>
     <sys:String x:Key="SettingsSection_Language">Jezik</sys:String>
-	<sys:String x:Key="SettingsSection_SettingsFile">Datoteka z nastavitvami</sys:String>
+    <sys:String x:Key="SettingsSection_SettingsFile">Datoteka z nastavitvami</sys:String>
     <sys:String x:Key="SettingsSection_UISettings">Nastavitve vmesnika</sys:String>
     <sys:String x:Key="SettingsSubHead_AppSettings">Število posodobitev, oblika datuma, izključeni vnosi, podrobnosti in še več</sys:String>
     <sys:String x:Key="SettingsSubHead_Language">Jezikovne nastavitve in preizkušanje</sys:String>
     <sys:String x:Key="SettingsSubHead_SettingsFile">Uvoz, izvoz, odpiranje in seznam nastavitev aplikacije</sys:String>
-	<sys:String x:Key="SettingsSubHead_UISettings">Tema, poudarjena barva, velikost uporabniškega vmesnika, višina vrstice, začetni položaj in več</sys:String>
+    <sys:String x:Key="SettingsSubHead_UISettings">Tema, poudarjena barva, velikost uporabniškega vmesnika, višina vrstice, začetni položaj in več</sys:String>
     <!--  Settings Page Items  -->
     <sys:String x:Key="SettingsItem_AccentColor">Barva poudarka</sys:String>
-	<sys:String x:Key="SettingsItem_AutoUpdateCheck">Samodejno preverjanje novejše različice, ko se odpre stran Vizitka</sys:String>
+    <sys:String x:Key="SettingsItem_AutoUpdateCheck">Samodejno preverjanje novejše različice, ko se odpre stran Vizitka</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Spreminjanje jezika bo povzročila ponovni zagon aplikacije!</sys:String>
     <sys:String x:Key="SettingsItem_DarkModeTheme">Tema s temnim načinom</sys:String>
-	<sys:String x:Key="SettingsItem_DisplayFont">Pisava</sys:String>
+    <sys:String x:Key="SettingsItem_DisplayFont">Pisava</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFontSize">Velikost pisave</sys:String>
     <sys:String x:Key="SettingsItem_DateFormat">Oblika datuma v mreži</sys:String>
     <sys:String x:Key="SettingsItem_EditExcludeToolTip">Shift-klik, da odprete datoteko s privzeto aplikacijo</sys:String>
-	<sys:String x:Key="SettingsItem_EditSettingsWarning">Vse spremembe nastavitvene datoteke, ki jih naredite med delovanjem aplikacije, bodo prepisane!</sys:String>																																					 
+    <sys:String x:Key="SettingsItem_EditSettingsWarning">Vse spremembe nastavitvene datoteke, ki jih naredite med delovanjem aplikacije, bodo prepisane!</sys:String>																																					 
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Omogoči preizkušanje jezika</sys:String>
     <sys:String x:Key="SettingsItem_HideExcluded">Skrij izključene vnose</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">V dnevniško datoteko vključi sporočila na ravni odpravljanja napak</sys:String>
@@ -202,10 +202,10 @@
     <sys:String x:Key="SettingsItem_ShowExit">Prikaži 'Izhod' v navigacijski vrstici</sys:String>
     <sys:String x:Key="SettingsItem_ShowLogWarnings">Prikaži opozorilna sporočila v dnevniku za vrednosti HResult, ki niso nič</sys:String>																										
     <sys:String x:Key="SettingsItem_ShowTodayInBold">Prikaži posodobitve s krepkim trenutnim datumom</sys:String>
-	<sys:String x:Key="SettingsItem_SnackbarAccentColor">Uporabite poudarjeno barvo za ozadje sporočila</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Uporabite poudarjeno barvo za ozadje sporočila</sys:String>
     <sys:String x:Key="SettingsItem_StartCentered">Začni z oknom na sredini zaslona</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
-	<sys:String x:Key="SettingsItem_TranslationToolTipLine1">Predstavlja število nizov v trenutnem jeziku v primerjavi s privzeto vrednostjo (en-US).</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Predstavlja število nizov v trenutnem jeziku v primerjavi s privzeto vrednostjo (en-US).</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Pritisnite Ctrl+Shift+K ali kliknite gumb za primerjavo, da primerjate jezikovne datoteke. Rezultati se zapišejo v dnevniško datoteko.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Velikost uporabniškega vmesnika</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Uporabi prikazni jezik Windows</sys:String>
@@ -251,7 +251,7 @@
     <sys:String x:Key="SettingsEnum_Spacing_Compact">Kompaktno</sys:String>
     <sys:String x:Key="SettingsEnum_Spacing_Wide">Široko</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Dark">Temen material</sys:String>
-	<sys:String x:Key="SettingsEnum_Theme_DarkBlue">Polnočno modra</sys:String>																		  
+    <sys:String x:Key="SettingsEnum_Theme_DarkBlue">Polnočno modra</sys:String>																		  
     <sys:String x:Key="SettingsEnum_Theme_Darker">Temnejša</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_Light">Svetla</sys:String>
     <sys:String x:Key="SettingsEnum_Theme_LightGray">Svetlo grafitna</sys:String>
@@ -358,5 +358,29 @@
     <!-- A | About_UpdateFound -->
     <!-- A | About_UpdateFoundTooltip -->
     <!-- End changes on 2026/04/30 @ 01:30 UTC-->
-													
+                                                    
+    <!-- Begin changes on 2026/05/21 @ 15:00 UTC-->
+    <!-- A | SettingsItem_DisplayFontSize -->
+    <!-- End changes on 2026/05/21 @ 15:00 UTC-->
+
+    <!-- Begin changes on 2026/07/08 @ 16:00 UTC -->
+    <!-- U | About_BuildDate - Changed 'Build' to 'Commit' -->
+    <!-- End of changes on 2026/07/08 @ 16:00 UTC -->
+
+    <!-- Begin changes on 2026/07/29 @ 18:00 UTC -->
+    <!-- U | Button_CompareLanguageToolTip        - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- U | MsgText_AppUpdateCheckFailed         - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- U | SettingsItem_TranslationToolTipLine2 - Added xml:space="preserve" and line break character &#x0a; -->
+    <!-- End of changes on 2026/07/29 @ 18:00 UTC -->
+
+    <!-- Begin changes on 2026/07/29 @ 21:00 UTC-->
+    <!-- A | SettingsEnum_Theme_LightGray  -->
+    <!-- A | SettingsItem_LightModeTheme  -->
+    <!-- A | SettingsItem_DarkModeTheme  -->
+    <!-- End of changes on 2026/07/29 @ 21:00 UTC-->
+    
+    <!-- Begin changes on 2026/10/25 @ 16:00 UTC-->
+    <!-- A | MsgText_Error_FileExplorer  -->
+    <!-- End of changes on 2026/10/25 @ 16:00 UTC-->
+
 </ResourceDictionary>

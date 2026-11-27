@@ -132,6 +132,10 @@ internal sealed partial class UserSettings : ConfigManager<UserSettings>
     /// </summary>
     [ObservableProperty]
     private bool _shortcutExpanderOpen = true;
+    /// Show the copy button next to each item.
+    /// </summary>
+    [ObservableProperty]
+    private bool _showCopyButton = true;
 
     /// <summary>
     /// Show the details pane at the bottom.
