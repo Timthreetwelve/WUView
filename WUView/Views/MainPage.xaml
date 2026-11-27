@@ -209,14 +209,14 @@
 
         <!--#region GridSplitter-->
         <GridSplitter Grid.Row="2"
-                      Height="4"
+                      Height="5"
                       Margin="0,3"
                       HorizontalAlignment="Stretch"
                       Background="{DynamicResource MaterialDesign.Brush.Foreground}"
                       DragCompleted="DetailsSplitter_DragCompleted"
                       IsTabStop="False"
                       ResizeBehavior="PreviousAndNext"
-                      Style="{DynamicResource MaterialDesignGridSplitter}"
+                      Style="{DynamicResource GridSplitterStyle}"
                       Visibility="{Binding ShowDetails,
                                            Source={x:Static config:UserSettings.Setting},
                                            Converter={StaticResource BoolVisConverter}}" />

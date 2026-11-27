@@ -189,19 +189,22 @@ internal static class MainWindowHelpers
             case ThemeType.LightGray: // Pale Graphite
                 theme.SetBaseTheme(BaseTheme.Light);
                 theme.Background = (Color)ColorConverter.ConvertFromString("#FFD3D3D3");
-                theme.Foreground = (Color)ColorConverter.ConvertFromString("#EE111111");
                 theme.Cards.Background = (Color)ColorConverter.ConvertFromString("#FFE0E0E0");
+                theme.ComboBoxes.DropDowns.Background = (Color)ColorConverter.ConvertFromString("#FFE0E0E0");
                 theme.DataGrids.Selected = (Color)ColorConverter.ConvertFromString("#FFC0C0C0");
+                theme.Foreground = (Color)ColorConverter.ConvertFromString("#EE111111");
                 theme.Separators.Background = (Color)ColorConverter.ConvertFromString("#FFA9A9A9");
                 break;
             case ThemeType.Dark: // Material Design default dark theme
                 theme.SetBaseTheme(BaseTheme.Dark);
                 theme.SetSecondaryColor(Colors.DeepSkyBlue);
+                theme.ComboBoxes.DropDowns.Background = (Color)ColorConverter.ConvertFromString("#FF242424");
                 break;
             case ThemeType.Darker:  // Darker theme
                 theme.SetBaseTheme(BaseTheme.Dark);
-                theme.Cards.Background = (Color)ColorConverter.ConvertFromString("#FF141414");
                 theme.Background = (Color)ColorConverter.ConvertFromString("#FF202020");
+                theme.Cards.Background = (Color)ColorConverter.ConvertFromString("#FF141414");
+                theme.ComboBoxes.DropDowns.Background = (Color)ColorConverter.ConvertFromString("#FF141414");
                 theme.DataGrids.Selected = (Color)ColorConverter.ConvertFromString("#FF303030");
                 theme.Foreground = (Color)ColorConverter.ConvertFromString("#E5F0F0F0");
                 theme.Separators.Background = (Color)ColorConverter.ConvertFromString("#FF444951");
@@ -211,11 +214,12 @@ internal static class MainWindowHelpers
                 theme.SetBaseTheme(BaseTheme.Dark);
                 theme.Background = (Color)ColorConverter.ConvertFromString("#FF000F25");
                 theme.Cards.Background = (Color)ColorConverter.ConvertFromString("#FF011636");
+                theme.ComboBoxes.DropDowns.Background = (Color)ColorConverter.ConvertFromString("#FF011636");
                 theme.DataGrids.Selected = (Color)ColorConverter.ConvertFromString("#FF274470");
                 theme.Foreground = (Color)ColorConverter.ConvertFromString("#FFD3D3E3");
                 theme.GridSplitters.Background = (Color)ColorConverter.ConvertFromString("#46516A");
                 theme.Separators.Background = (Color)ColorConverter.ConvertFromString("#FF003C85");
-                theme.ToolTips.Background = (Color)ColorConverter.ConvertFromString("#FF63afff");
+                theme.ToolTips.Background = (Color)ColorConverter.ConvertFromString("#FF63AFFF");
                 theme.SetSecondaryColor(Colors.DodgerBlue);
                 break;
             default:
