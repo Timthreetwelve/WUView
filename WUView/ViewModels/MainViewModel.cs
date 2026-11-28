@@ -205,7 +205,7 @@ internal sealed class MainViewModel : ObservableObject
         esw.Stop();
         _log.Debug($"Excluding {UpdatesFullList.Count - UpdatesWithoutExcludedItems.Count} records took {esw.Elapsed.TotalMilliseconds:N2} milliseconds");
 
-        if (UpdatesFullList.Count > 0 && UpdatesWithoutExcludedItems.Count == 0)
+        if (UpdatesFullList.Count > 0 && UpdatesWithoutExcludedItems.Count == 0 && UserSettings.Setting!.HideExcluded)
         {
             new MDCustMsgBox(GetStringResource("MsgText_AllUpdatesExcluded"),
                 "Windows Update Viewer",
